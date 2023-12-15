@@ -193,8 +193,8 @@ pub async fn login(mut payload: Multipart, req: HttpRequest) -> actix_web::Resul
     }
     else {
         let form = login_form(payload.borrow_mut()).await;
-        println!("{:?}", form.username.clone());
-        println!("{:?}", form.password.clone());
+        //println!("{:?}", form.username.clone());
+        //println!("{:?}", form.password.clone());
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
 }

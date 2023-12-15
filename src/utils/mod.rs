@@ -31,7 +31,7 @@ pub async fn get_request_user(req: &HttpRequest) -> Option<AuthResponseData> {
         if _token_ok.is_ok() {
             let _token = _token_ok.expect("E.").unwrap();
             let _user: AuthResponseData = serde_json::from_str(&_token);
-            return _user;
+            return Some(_user);
         }
         return None;
     }
@@ -112,7 +112,7 @@ pub async fn get_first_load_page (
     uri:         &String,
     image:       &String,
 ) -> actix_web::Result<HttpResponse> {
-    let _request_user_some = get_request_user(&req);
+    let _request_user_some = get_request_user(&req).await;
     if _request_user_some.is_some() {
         let _request_user = _request_user_some.unwrap();
         if is_desctop {
