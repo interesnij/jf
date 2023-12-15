@@ -27,7 +27,7 @@ pub struct ClientData {
     pub last_name:         String,
     pub email:             String,
     pub phone:             String,
-    pub type:              String,
+    pub r#type:            String,
     pub twofa:             bool,
     pub job:               String,
     pub avatar:            Option<String>,

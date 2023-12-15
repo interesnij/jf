@@ -114,7 +114,7 @@ pub struct InvoicesData {
     pub next:       Option<String>,
     pub page_count: i32,
     pub previous:   Option<String>,
-    pub results:    Vec<MatterData>,
+    pub results:    Vec<crate::views::MatterData>,
 }
 
 //////////////  TIME BILLINGS  //////
@@ -319,7 +319,7 @@ pub struct PostedMattersStatData {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct PostedMattersStatData { 
+pub struct PostedMattersStatsData { 
     pub count:      i32,
     pub next:       Option<String>,
     pub page_count: i32,

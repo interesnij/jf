@@ -33,6 +33,7 @@ mod utils;
 mod views;
 
 use crate::views::not_found;
+use crate::routes::routes;
 
 
 #[actix_web::main]

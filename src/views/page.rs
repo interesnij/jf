@@ -29,7 +29,7 @@ pub struct ActivitiesData {
     pub matter:   i32,
     pub modified: String,
     pub title:    String,
-    pub type:     String,
+    pub r#type:   String,
 }
 
 ///////////////////////////// Attorney board /////////
@@ -72,7 +72,7 @@ pub struct LastMessageData {
     pub files:      Vec<String>,
     pub text:       String,
     pub timestamp1: Option<String>,
-    pub type:       String,
+    pub r#type:     String,
 }
 
 #[derive(Debug, Deserialize)]
@@ -173,7 +173,7 @@ pub struct DocumentsParams {
     pub attorney:    Option<i32>,
     pub matter:      Option<i32>,
     pub owner:       Option<i32>,
-    pub type:        Option<String>,
+    pub r#type:      Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -206,7 +206,7 @@ pub struct DocumentData {
     pub shared_with_data:   Vec<crate::utils::UserSmallData>,
     pub created_by:         Option<i32>,
     pub created_by_data:    Option<crate::utils::UserCardData>,
-    pub type:               String,
+    pub r#type:             String,
 }
 
 #[derive(Debug, Deserialize)]

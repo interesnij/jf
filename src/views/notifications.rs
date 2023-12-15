@@ -35,7 +35,7 @@ pub struct NotifyData {
     pub title:       String,
     pub object_id:   i32,  
     pub content:     String,
-    pub type:        i32,
+    pub r#type:      i32,
     pub runtime_tag: String,
 }
 

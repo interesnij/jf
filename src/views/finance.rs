@@ -28,7 +28,7 @@ pub struct ProductData {
     pub id:          String,
     pub name:        String,
     pub description: String,
-    pub type:        String,
+    pub r#type:      String,
     pub active:      bool,
     pub created:     String,
 }
@@ -162,7 +162,7 @@ pub struct FinanceProfileCurrentData {
     pub djstripe_created: String,
     pub djstripe_updated: String,
     pub card_present:     String,
-    pub type:             String,
+    pub r#type:           String,
     pub customer:         i32,
 }
 

@@ -1,10 +1,8 @@
-mod forms;
 mod auth;
 mod crypto;
 
 pub use self::{
-    forms::*,
-    auth::*,
+    auth::*, 
     crypto::*,
 };
 use actix_web::{
@@ -61,7 +59,7 @@ pub struct NotifyCardData {
     pub object_id:   i32,
     pub runtime_tag: String,
     pub title:       String,
-    pub type:        i32,
+    pub r#type:      i32,
 }
 #[derive(Debug, Deserialize)]
 pub struct NotifyData { 

@@ -54,7 +54,7 @@ pub async fn signup_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
 
         if is_ajax == 0 {
             crate::utils::get_first_load_page (
-                &reg,
+                &req,
                 is_desctop,
                 &title,
                 &description,
@@ -77,7 +77,7 @@ pub async fn signup_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         }
         else {
             #[derive(TemplateOnce)]
-            #[template(path = "mobile/auth/signup.stpl")]
+            #[template(path = "desctop/auth/signup.stpl")]
             struct Template {
                 is_ajax: i32,
             }
@@ -112,7 +112,7 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
 
         if is_ajax == 0 {
             crate::utils::get_first_load_page (
-                &reg,
+                &req,
                 is_desctop,
                 &title,
                 &description,
@@ -135,7 +135,7 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         }
         else {
             #[derive(TemplateOnce)]
-            #[template(path = "mobile/auth/login.stpl")]
+            #[template(path = "desctop/auth/login.stpl")]
             struct Template {
                 is_ajax: i32,
                 }
@@ -195,7 +195,7 @@ pub async fn login(mut payload: Multipart, req: HttpRequest) -> actix_web::Resul
         let form = login_form(payload.borrow_mut()).await;
         println!("{:?}", form.username.clone());
         println!("{:?}", form.password.clone());
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(i.to_string()))
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
 }
 

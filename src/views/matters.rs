@@ -96,8 +96,8 @@ pub struct UserrCardData {
 #[derive(Debug, Deserialize)]
 pub struct InviteMatterData {
     pub uuid:              String,
-    pub user:              UserCardData,
-    pub client:            UserCardData,
+    pub user:              crate::utils::UserCardData,
+    pub client:            crate::utils::UserCardData,
     pub first_name:        String,
     pub middle_name:       String,
     pub last_name:         String,
@@ -134,7 +134,7 @@ pub struct EnvelopeMatterData {
     pub docusign_id: i32,
     pub matter:      i32,
     pub status:      String,
-    pub type:        String,
+    pub r#type:      String,
     pub documents:   Vec<EnvelopeDocumentData>,
 }
 
@@ -151,7 +151,7 @@ pub struct MatterData {
     pub description:     String,
     pub fees_earned:     Option<String>,
     pub rate:            String,
-    pub rate_type:       Vec<crate::utils::RateTypeData>,
+    pub rate_type:       Vec<crate::views::RateTypeData>,
     pub country:         i32,
     pub country_data:    crate::utils::CountryData,
     pub speciality:      i32,
@@ -237,7 +237,7 @@ pub struct MatterDetailData {
     pub description:           String,
     pub fees_earned:           Option<String>,
     pub rate:                  String,
-    pub rate_type:             Vec<crate::utils::RateTypeData>,
+    pub rate_type:             Vec<crate::views::RateTypeData>,
     pub country:               i32,
     pub country_data:          crate::utils::CountryData,
     pub speciality:            i32,
@@ -299,7 +299,7 @@ pub struct MatterPostsParams {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct AttachmentData { 
+pub struct AttachmenttData {  
     pub file:       String,
     pub file_size:  String,
     pub file_nane:  String,
@@ -315,7 +315,7 @@ pub struct LastCommentData {
     pub participants:      Vec<i32>,
     pub participants_data: Vec<crate::utils::UserCardData>,
     pub attachments:       Vec<i32>,
-    pub attachments_data:  Vec<AttachmentData>,
+    pub attachments_data:  Vec<AttachmenttData>,
     pub created:           String,
     pub modified:          String,
     pub seen:              bool,
@@ -332,7 +332,7 @@ pub struct MatterPostData {
     pub participants:      Vec<i32>,
     pub participants_data: Vec<crate::utils::UserCardData>,
     pub attachments:       Vec<i32>,
-    pub attachments_data:  Vec<AttachmentData>,
+    pub attachments_data:  Vec<AttachmenttData>,
     pub created:           String,
     pub modified:          String,
     pub seen:              bool,

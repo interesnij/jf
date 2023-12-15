@@ -98,7 +98,7 @@ pub struct RequestClient {
     pub last_name:         String,
     pub email:             String,
     pub phone:             String,
-    pub type:              Option<String>,
+    pub r#type:            Option<String>,
     pub twofa:             bool,
     pub job:               Option<String>,
     pub avatar:            Option<String>,
@@ -202,11 +202,6 @@ pub struct FeeCurrencyData {
     pub id:    i32,
     pub title: String,
 }
-#[derive(Debug, Deserialize)]
-pub struct TimezoneData {
-    pub id:    i32,
-    pub title: String,
-}
 
 #[derive(Debug, Deserialize)] 
 pub struct RequestAttorney {
@@ -217,7 +212,7 @@ pub struct RequestAttorney {
     pub last_name:                String,
     pub email:                    String,
     pub phone:                    String,
-    pub type:                     Option<String>,
+    pub r#type:                   Option<String>,
     pub avatar:                   Option<String>,
     pub biography:                Option<String>,
     pub firm_name:                Option<String>,

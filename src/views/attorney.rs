@@ -51,7 +51,7 @@ pub struct LeadsAndClientsParams {
     pub limit:  Option<i64>,
     pub offset: Option<i64>,
     pub search: Option<String>,
-    pub type:   Option<String>,
+    pub r#type: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -70,7 +70,7 @@ pub struct LeadOrClientData {
     pub address:       String,
     pub zipcode:       String,
     pub note:          Option<String>,
-    pub type:          String,
+    pub r#type:        String,
     pub email:         String,
     pub matters_count: i32,
     pub is_pending:    bool,
@@ -95,7 +95,7 @@ pub struct ContactsParams {
     pub limit:  Option<i64>,
     pub offset: Option<i64>,
     pub search: Option<String>,
-    pub type:   Option<String>,
+    pub r#type: Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -103,7 +103,7 @@ pub struct ContactData {
     pub user_id: i32,
     pub name:    String,
     pub firm:    String,
-    pub type:    String,
+    pub r#type:  String,
     pub phone:   String,
     pub pending: bool,
     pub email:   String,
@@ -134,7 +134,7 @@ pub struct PersonalDetailsData {
     pub user_id:        i32,
     pub name:           String,
     pub firm:           String,
-    pub type:           String,
+    pub r#type:         String,
     pub phone:          String,
     pub pending:        bool,
     pub email:          String,

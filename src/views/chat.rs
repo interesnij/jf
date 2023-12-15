@@ -97,7 +97,7 @@ pub struct MessageData {
     pub id:          i32,
     pub author:      i32,
     pub author_data: crate::utils::UserCardData,
-    pub type:        String,
+    pub r#type:      String,
     pub chat:        i32,
     pub text:        String,
     pub files:       Vec<FilesData>,
