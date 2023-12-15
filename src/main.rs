@@ -1,6 +1,6 @@
 #[macro_use]
 extern crate log;
-|use actix::Actor;
+use actix::Actor;
 use actix_cors::Cors;
 use dotenv::dotenv;
 use env_logger;
