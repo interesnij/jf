@@ -53,14 +53,14 @@ pub async fn signup_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         }
 
         if is_ajax == 0 {
-            crate::utils::get_first_load_page (
+            return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
                 &title,
                 &description,
                 &link,
                 &image,
-            ).await
+            ).await;
         }
         if is_desctop {
             #[derive(TemplateOnce)]
@@ -111,14 +111,14 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         }
 
         if is_ajax == 0 {
-            crate::utils::get_first_load_page (
+            return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
                 &title,
                 &description,
                 &link,
                 &image,
-            ).await
+            ).await;
         }
         if is_desctop {
             #[derive(TemplateOnce)]

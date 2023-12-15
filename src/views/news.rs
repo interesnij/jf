@@ -56,4 +56,4 @@ pub struct NewsData {
 //////////////  NEWS DETAIL //////
 
 
-/// NewData
+// NewData

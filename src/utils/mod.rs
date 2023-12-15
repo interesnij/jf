@@ -118,8 +118,8 @@ pub async fn get_first_load_page (
         if is_desctop {
             #[derive(TemplateOnce)] 
             #[template(path = "desctop/generic/first_load.stpl")]
-            struct Template<'a> {
-                request_user: User,
+            struct Template<'a> { 
+                request_user: AuthResponseData,
                 title:        &'a String,
                 description:  &'a String,
                 image:        &'a String,
@@ -140,7 +140,7 @@ pub async fn get_first_load_page (
             #[derive(TemplateOnce)]
             #[template(path = "desctop/generic/first_load.stpl")]
             struct Template<'a> {
-                request_user: User,
+                request_user: AuthResponseData,
                 title:        &'a String,
                 description:  &'a String,
                 image:        &'a String,
