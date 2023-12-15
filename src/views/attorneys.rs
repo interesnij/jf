@@ -159,7 +159,7 @@ pub struct PersonalAboutData {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct ContactData { 
+pub struct ContactsData { 
     pub personal_details: PersonalDetailsData,
     pub about:            PersonalAboutData,
     pub payment_methods:  crate::utils::PaymentMethodData,

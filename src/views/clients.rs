@@ -82,7 +82,7 @@ pub struct ClientData {
 //////////////  CLIENT FAVOURITES  //////
 
 #[derive(Debug, Deserialize)]
-pub struct ClientsData { 
+pub struct ClientssData { 
     pub favorite_attorneys:      Vec<i32>,
     pub favorite_attorneys_data: Vec<crate::utils::RequestAttorney>,
 }

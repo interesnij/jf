@@ -19,8 +19,24 @@ use sailfish::TemplateOnce;
 use crate::models::{
     User, 
 };
-use crate::utils::get_request_user;
 
+fn get_token<'a>(req: &HttpRequest) -> Option<&'a str> {
+    return req.headers().get("Authorization")?.to_str().ok();
+}
+
+pub async fn get_request_user(req: &HttpRequest) -> Option<AuthResponseData> {
+    let _tokenize = get_token(req);
+    if _tokenize.is_some() {
+        let _token_ok = web_local_storage_api::get_item(_tokenize.unwrap());
+        if _token_ok.is_ok() {
+            let _token = _token_ok.expect("E.").unwrap();
+            let _user: AuthResponseData = serde_json::from_str(&_token);
+            return _user;
+        }
+        return None;
+    }
+    return None;
+}
 
 #[derive(Debug, Deserialize)]
 pub struct ElapsedTimeData {
