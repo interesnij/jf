@@ -101,12 +101,6 @@ pub struct AttorneyOnboardingData {
 ///////////////////////////// Client board /////////
 
 #[derive(Debug, Deserialize)]
-pub struct RateTypeData {
-    pub id:    i32,
-    pub title: String,
-}
-
-#[derive(Debug, Deserialize)]
 pub struct RecentMattersData {
     pub attorney_avatar:       Option<String>,
     pub attorney_email:        String,
@@ -116,7 +110,7 @@ pub struct RecentMattersData {
     pub description:           String,
     pub due_amount:            i32,
     pub id:                    i32,
-    pub rate_type:             Vec<RateTypeData>,
+    pub rate_type:             Vec<crate::utils::RateTypeData>,
     pub shared_with_data:      Vec<UserSmallData>,
     pub speciality_data:       Vec<SpecialitiesData>,
     pub stage:                 Option<String>,

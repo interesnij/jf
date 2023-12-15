@@ -45,6 +45,12 @@ pub struct ElapsedTimeData {
 }
 
 #[derive(Debug, Deserialize)]
+pub struct RateTypeData {
+    pub id:    i32,
+    pub title: String,
+}
+
+#[derive(Debug, Deserialize)]
 pub struct UserSmallData { 
     pub id:          i32,
     pub first_name:  String,

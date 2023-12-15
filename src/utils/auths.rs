@@ -16,7 +16,7 @@ pub fn set_token(token: &String, data: &String) {
     let _local_token = web_local_storage_api::set_item(token, data);
 }
 pub fn remove_token(req: &HttpRequest) { 
-    let _tokenize = get_token(req);
+    let _tokenize = crate::utils::get_token(req);
     if _tokenize.is_some() {
         let _token_ok = web_local_storage_api::remove_item(_tokenize.unwrap());
     }

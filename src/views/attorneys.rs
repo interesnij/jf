@@ -148,7 +148,7 @@ pub struct PersonalAboutData {
     pub user_id:       i32,
     pub name:          String, 
     pub firm:          String,
-    pub type:          String,
+    pub r#type:          String,
     pub phone:         String,
     pub pending:       bool,
     pub email:         String,
@@ -159,11 +159,11 @@ pub struct PersonalAboutData {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct ContactsData { 
+pub struct ContactssData { 
     pub personal_details: PersonalDetailsData,
     pub about:            PersonalAboutData,
     pub payment_methods:  crate::utils::PaymentMethodData,
     pub fee_types:        crate::utils::FeeTypesData,
-    pub firm_locations:   crate::utils::Vec<FirmLocationData>,
+    pub firm_locations:   Vec<crate::utils::FirmLocationData>,
     pub address:          Vec<i32>,
 }

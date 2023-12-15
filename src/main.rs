@@ -29,7 +29,7 @@ mod utils;
 #[macro_use]
 mod views;
 
-use crate::views::not_found;
+//use crate::views::not_found;
 use crate::routes::routes;
 
 
@@ -47,7 +47,7 @@ async fn main() -> std::io::Result<()> {
             .data(server.clone())
             .service(_files)
             .configure(routes)
-            .default_service(web::route().to(not_found))
+            //.default_service(web::route().to(not_found))
     })
 
     //.bind("69.167.186.70:9285")?       // порт для разработки
