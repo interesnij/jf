@@ -1,6 +1,6 @@
 #[macro_use]
 extern crate log;
-
+|use actix::Actor;
 use actix_cors::Cors;
 use dotenv::dotenv;
 use env_logger;
@@ -22,9 +22,7 @@ use actix_web::{
 use actix_files::Files;
 pub mod schema;
 pub mod models;
-pub mod routes;
 pub mod websocket;
-mod errors;
 use std::sync::{Arc, Mutex};
 
 #[macro_use]

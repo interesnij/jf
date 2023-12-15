@@ -1,8 +1,8 @@
-mod auth;
+mod auths;
 mod crypto;
 
 pub use self::{
-    auth::*, 
+    auths::*, 
     crypto::*,
 };
 use actix_web::{

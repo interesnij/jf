@@ -238,12 +238,12 @@ pub async fn process_signup(req: HttpRequest, mut payload: Multipart) -> actix_w
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("-300"))
     } 
     else { 
-        let form = signup_form(payload.borrow_mut()).await;
-        println!("{:?}", form.username.clone());
-        println!("{:?}", form.email.clone());
-        println!("{:?}", form.password.clone());
+        //let form = signup_form(payload.borrow_mut()).await;
+        //println!("{:?}", form.username.clone());
+       // println!("{:?}", form.email.clone());
+        //println!("{:?}", form.password.clone());
 
         //set_current_user(&_user);
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body())
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
 }

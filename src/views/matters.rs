@@ -78,8 +78,8 @@ pub struct ReferralMatterData {
     pub sponsored:               bool,
     pub has_active_subscription: bool,
     pub specialities:            Vec<i32,
-    pub is_attorney:              bool,
-    pub is_paralegal:             bool,
+    pub is_attorney:             bool,
+    pub is_paralegal:            bool,
 }
 
 #[derive(Debug, Deserialize)]
