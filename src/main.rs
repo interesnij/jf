@@ -20,7 +20,6 @@ use actix_web::{
 };
 
 use actix_files::Files;
-pub mod schema;
 pub mod models;
 pub mod websocket;
 use std::sync::{Arc, Mutex};
