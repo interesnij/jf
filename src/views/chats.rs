@@ -14,7 +14,6 @@ use crate::utils::{
     get_request_user, UserSmallData, SpecialitiesData, AuthResponseData
 };
 
-
 pub fn page_routes(config: &mut web::ServiceConfig) {
     //config.route("/social/chats/", web::get().to(chats_page));
     //config.route("/social/chats/{id}/", web::get().to(chat_page));
