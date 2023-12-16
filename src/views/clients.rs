@@ -13,6 +13,7 @@ use serde::{Deserialize, Serialize};
 use crate::utils::{
     get_request_user, UserSmallData, SpecialitiesData,
 };
+use async_recursion::async_recursion;
 
 
 pub fn page_routes(config: &mut web::ServiceConfig) {
@@ -29,7 +30,7 @@ pub fn page_routes(config: &mut web::ServiceConfig) {
     //config.route("/users/clients/current/favorite/", web::get().to(client_favorite_page));
 }
 
-
+#[async_recursion]
 pub async fn client_overview_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() {

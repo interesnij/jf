@@ -412,6 +412,7 @@ pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> 
     }
 }
 
+#[async_recursion]
 pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     if get_request_user(&req).is_some() {
         let request_user = get_request_user(&req).unwrap();
