@@ -13,7 +13,6 @@ use serde::{Deserialize, Serialize};
 use crate::utils::{
     get_request_user, UserSmallData, SpecialitiesData,
 };
-use async_recursion::async_recursion;
 
 
 pub fn page_routes(config: &mut web::ServiceConfig) {
@@ -103,9 +102,8 @@ pub async fn client_overview_page(req: HttpRequest) -> actix_web::Result<HttpRes
             Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
         }
     }
-    else { 
-        #[async_recursion::async_recursion]
-        return crate::views::login_page(req).await;
+    else {
+        crate::views::login_page(req).await
     }
 }
 
