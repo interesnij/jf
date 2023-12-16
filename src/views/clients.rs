@@ -36,7 +36,7 @@ pub async fn client_overview_page(req: HttpRequest) -> impl Responder {
         let request_user = user_some.unwrap();
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
         let l = 2;
-        let title: String;
+        let title: String; 
         let description: String;
         let link = "/client/overview".to_string();
         let image = crate::utils::get_default_image();
@@ -99,7 +99,7 @@ pub async fn client_overview_page(req: HttpRequest) -> impl Responder {
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body)
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
         }
     }
     else { 

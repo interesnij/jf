@@ -36,8 +36,9 @@ pub fn auth_routes(config: &mut web::ServiceConfig) {
     config.route("/auth/register/client", web::get().to(register_client_page));
 }
 
-pub async fn register_attorney_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+pub async fn register_attorney_page(req: HttpRequest) -> impl Responder {
     if get_request_user(&req).is_some() {
+
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -411,7 +412,7 @@ pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> 
     }
 }
 
-pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+pub async fn login_page(req: HttpRequest) -> impl Responder {
     if get_request_user(&req).is_some() {
         let request_user = get_request_user(&req).unwrap();
         if request_user.user_type == "client" {
