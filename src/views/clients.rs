@@ -63,18 +63,20 @@ pub async fn client_overview_page(req: HttpRequest) -> actix_web::Result<HttpRes
             #[derive(TemplateOnce)]
             #[template(path = "desctop/client/overview.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -84,18 +86,20 @@ pub async fn client_overview_page(req: HttpRequest) -> actix_web::Result<HttpRes
             #[derive(TemplateOnce)]
             #[template(path = "desctop/client/overview.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
