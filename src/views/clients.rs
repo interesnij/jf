@@ -15,7 +15,7 @@ use crate::utils::{
 };
 
 
-pub fn page_routes(config: &mut web::ServiceConfig) {
+pub fn clients_routes(config: &mut web::ServiceConfig) {
     config.route("/client/overview", web::get().to(client_overview_page));
     //config.route("/client/overview/matters", web::get().to(client_overview_matters_page));
     //config.route("/client/overview/invoices", web::get().to(client_overview_invoices_page));
