@@ -422,9 +422,10 @@ on('body', 'click', '#logg', function() {
     if ( link.readyState == 4 && link.status == 200 ) {
       let data = JSON.stringify(link.response);
       //localStorage.setItem("key", data);
-      console.log(link.response);
-      console.log(link.response[1]);
-      console.log(link.response["key"]);
+      for (var key in link.response) {
+        console.log(key);
+        console.log(JSON_Obj[key]);
+      }
       //window.location.href = "/" 
       }
 
