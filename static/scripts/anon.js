@@ -415,7 +415,7 @@ on('body', 'click', '#logg', function() {
   
     form_data = new FormData(form);
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-    link.open( 'POST', "/login/", true );
+    link.open( 'POST', "https://backend.juslaw.com/api/v1/auth/login/", true );
     //link.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
   
     link.onreadystatechange = function () {
