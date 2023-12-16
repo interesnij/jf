@@ -85,3 +85,4 @@ function check_first_load() {
       }
       ajax_link.send();
 }
+check_first_load();

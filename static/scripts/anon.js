@@ -540,7 +540,7 @@ function disconnect() {
 function check_first_load() {
     span = document.body.querySelector("#reload");
     loc = window.location.href;
-    if (loc.indexOf('template') > -1) {
+    if (loc.indexOf('template') > -1) { 
       url = loc + "&ajax=1"; 
     } 
     else {
@@ -566,3 +566,5 @@ function check_first_load() {
       }
       ajax_link.send();
 }
+
+check_first_load();
