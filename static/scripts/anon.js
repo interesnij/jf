@@ -424,7 +424,7 @@ on('body', 'click', '#logg', function() {
       //localStorage.setItem("key", data);
       for (var key in link.response) {
         console.log(key);
-        console.log(JSON_Obj[key]);
+        console.log(data[key]);
       }
       //window.location.href = "/" 
       }
