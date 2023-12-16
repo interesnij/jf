@@ -20,9 +20,9 @@ use crate::models::{
     User, 
 };
 
-fn get_token<'a>(req: &HttpRequest) -> Option<&'a str> {
+fn get_token<'a>(req: &'a HttpRequest) -> Option<&'a str> {
     return req.headers().get("Authorization")?.to_str().ok();
-}
+} 
 
 pub async fn get_request_user(req: &HttpRequest) -> Option<AuthResponseData> {
     let _tokenize = get_token(req);
