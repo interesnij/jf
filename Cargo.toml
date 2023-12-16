@@ -33,7 +33,7 @@ web-local-storage-api = "*"
 actix-web-httpauth = "0.6.0"
 bcrypt = "0.12.1"
 jsonwebtoken = "8.1.0"
-async-recursion = "1.0.5"
+async-recursion = "^1.0.5"
 
 [profile.release]
 opt-level = 3
