@@ -5,6 +5,7 @@ use actix_web::{
     HttpResponse,
     error::InternalError,
     http::StatusCode,
+    Responder,
 };
 use crate::errors::Error;
 use sailfish::TemplateOnce;
