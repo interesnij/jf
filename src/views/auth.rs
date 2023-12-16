@@ -419,7 +419,7 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         //    crate::views::client_overview_page(req).await
         //}
         //else {
-        //    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("body"))
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("body"))
        //}
     }
     else { 
