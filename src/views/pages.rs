@@ -133,7 +133,7 @@ pub struct UpcomingBillsData {
 } 
 
 #[derive(Debug, Deserialize)] 
-pub struct ResentDocumentsData {
+pub struct RecentDocumentsData {
     pub created:          String,
     pub file_size:        i32,
     pub shared_with_size: i32,
@@ -144,8 +144,8 @@ pub struct ResentDocumentsData {
 #[derive(Debug, Deserialize)]
 pub struct ClientOnboardingData { 
     pub recent_activities: Vec<ActivitiesData>,
-    pub recent_documents:  Vec<ResentDocumentsData>,
-    pub recent_matters:    Vec<ResentMattersData>,
+    pub recent_documents:  Vec<RecentDocumentsData>,
+    pub recent_matters:    Vec<RecentMattersData>,
     pub upcoming_bills:    Vec<UpcomingBillsData>,
 }
 ////////////////////////////////////////////
