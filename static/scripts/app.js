@@ -93,7 +93,7 @@ function ajax_get_reload(url, history_enable, ajax) {
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   ajax_link.onreadystatechange = function () {
     if ( this.readyState == 4 && this.status == 200 ) {
-      rtr = document.getElementById('ajax');
+      rtr = document.getElementById('reload');
       // статистика
       $link = document.location.pathname;
       meta_block = rtr.querySelector(".doc_title");
