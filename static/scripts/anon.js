@@ -545,6 +545,9 @@ function check_first_load() {
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       ajax_link.open( 'GET', url, true );
       ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+      if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+      } 
       ajax_link.onreadystatechange = function () {
         if ( this.readyState == 4 && this.status == 200 ) {
             //get_custom_design();
@@ -570,7 +573,7 @@ function ajax_get_reload(url, history_enable, ajax) {
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
     ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
-  } 
+  }  
   ajax_link.onreadystatechange = function () {
     if ( this.readyState == 4 && this.status == 200 ) {
       rtr = document.getElementById('reload');
