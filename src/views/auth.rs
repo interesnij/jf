@@ -412,11 +412,11 @@ pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> 
     }
 }
 
-#[async_recursion]
 pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     if get_request_user(&req).is_some() {
         let request_user = get_request_user(&req).unwrap();
         if request_user.user_type == "client" {
+            #[async_recursion]
             return crate::views::client_overview_page(req).await;
         } 
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(request_user.key))
