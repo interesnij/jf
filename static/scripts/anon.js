@@ -423,8 +423,10 @@ on('body', 'click', '#logg', function() {
       let data = JSON.stringify(link.response);
       //localStorage.setItem("key", data);
       for (var key in link.response) {
-        console.log(key);
-        console.log(data[key]);
+        console.log(link.response);
+        console.log(link.responseText);
+        console.log(link.response["key"]);
+        console.log(data["key"]);
       }
       //window.location.href = "/" 
       }
