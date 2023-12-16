@@ -21,12 +21,12 @@ use crate::models::{
 };
 
 fn get_data<'a>(req: &'a HttpRequest) -> Option<&'a str> {
-    return req.headers().get("RequestData")?.to_str().ok();
+    return req.headers().get("Request-Data")?.to_str().ok();
 } 
 
 pub async fn get_request_user(req: &HttpRequest) -> Option<AuthResponseData> {
     let _tokenize = get_data(req);
-    if _tokenize.is_some() {
+    if _tokenize.is_some() { 
         let _user_res: Result<AuthResponseData, serde_json::Error> = serde_json::from_str(&_tokenize.unwrap());
         if _user_res.is_ok() {
             let _user: AuthResponseData = _user_res.expect("E.");
