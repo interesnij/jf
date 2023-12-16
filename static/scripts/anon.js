@@ -420,11 +420,11 @@ on('body', 'click', '#logg', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-      let data = JSON.stringify(link.response)
-      localStorage.setItem("key", data["key"]);
-      console.log(data["key"]);
+      localStorage.setItem("key", link.response["key"]);
+      console.log(link.response["key"]);
       window.location.href = "/" 
       }
+
     else {
       _this.disabled = false;
       response.style.display = "block";
