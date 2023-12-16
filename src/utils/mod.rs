@@ -30,7 +30,7 @@ pub async fn get_request_user(req: &HttpRequest) -> Option<AuthResponseData> {
         let _token_ok = web_local_storage_api::get_item(_tokenize.unwrap());
         if _token_ok.is_ok() {
             let _token = _token_ok.expect("E.").unwrap();
-            let _user_res: Result<AuthResponseData, Error> = serde_json::from_str(&_token);
+            let _user_res = serde_json::from_str(&_token);
             if _user_res.is_ok() {
                 let _user: AuthResponseData = serde_json::from_str(&_token).expect("E.");
                 return Some(_user);
