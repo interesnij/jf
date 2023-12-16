@@ -1,0 +1,18 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="icon" href="/static/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="juslaw" content="Juslaw">
+    <link rel="apple-touch-icon" href="/static/images/logo192.png">
+    <title>JusLaw</title>
+
+  <script type="text/javascript" async="" src="https://widget.intercom.io/widget/zgdkbiyq"></script>
+
+</head>
+  <body>
+    <div id="reload" tabindex="-1" style="outline: none;"></div>
+    <script type="text/javascript" src="/static/scripts/app.js"></script>
+</div>
+</body>
+</html>

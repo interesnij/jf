@@ -1,4 +1,34 @@
 <% include!("../anon_header.stpl"); %>
 
+<div class="login-page"><img src="/static/media/logo.0e6664a1d7106c657d4c3f462424936a.svg" alt="logo" class="login-page__logo">
+    <div class="login-page__container mt-auto">
+        <h1 class="mb-4 mt-0">Log In</h1>
+        <form action="#">
+            <div class="input-control">
+                <div class="d-flex justify-content-between align-items-center">
+                    <label for="id_email" class="input-control__label">Email</label>
+                </div>
+                <input name="email" id="id_email" placeholder="Enter your email address" type="email" class="" value="">
+                <div class="api_response"></div>
+            </div>
+            <div class="input-control mt-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <label for="id_password" class="input-control__label">Password</label>
+                </div>
+                <input id="id_password" name="password" placeholder="Enter your password" type="password" class="" value="">
+                <div class="api_response"></div>
+            </div>
+            <div class="d-flex"><a class="ml-auto mt-1 forgot" href="/auth/forgot-password">Forgot password</a></div>
+            <div class="mt-2"><label class="checkbox-control">Keep me signed into JusLaw<input type="checkbox"><span></span></label></div>
+            <div class="d-flex mt-4">
+                <button id="logg" class="btn btn--green ripple-effect large ml-auto" type="button" style="width: 100%;">
+                    <span>Login</span>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="login-page__footer mb-auto"><span>Before logging in, you can read our</span>&nbsp;<a href="/policy" target="_blank" rel="noreferrer">Privacy Policy</a>&nbsp; <span>and</span> &nbsp;<a href="/terms-of-use" target="_blank" rel="noreferrer">Terms of Service</a></div>
+    <div class="login-page__footer mb-3"><span class="mr-1">Don't have an account?</span><a href="/signup">Sign up here</a></div>
+</div>
 
 <% include!("../anon_footer.stpl"); %>

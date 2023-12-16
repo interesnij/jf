@@ -94,7 +94,7 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     if get_request_user(&req).await.is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
-    else {
+    else { 
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
         let l = 2;  
         let title: String;
