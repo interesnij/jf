@@ -45,7 +45,7 @@
                     </form>
                 </div>
             </div>
-            <div class="login-page__footer mb-3"><span class="mr-1">Already have an account?</span><a href="/auth/login">Log in here</a></div>
+            <div class="login-page__footer mb-3"><span class="mr-1">Already have an account?</span><a href="/">Log in here</a></div>
         </div>
     </div>
 </div>
