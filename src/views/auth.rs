@@ -420,7 +420,7 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         //}
         //else {
         //    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("body"))
-       }
+       //}
     }
     else { 
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
