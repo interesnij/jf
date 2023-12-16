@@ -22,7 +22,6 @@ use actix_web::http::header::Header;
 pub fn auth_routes(config: &mut web::ServiceConfig) {
     config.service(web::resource("/")
         .route(web::get().to(login_page))
-        .route(web::post().to(login))
     );
     config.service(web::resource("/signup")
         //.route(web::get().to(signup_page))
@@ -524,17 +523,6 @@ pub async fn login_form(payload: &mut Multipart) -> LoginUser2 {
     form
 }
 
-pub async fn login(mut payload: Multipart, req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if get_request_user(&req).await.is_some() {
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("0"))
-    }
-    else {
-        let form = login_form(payload.borrow_mut()).await;
-        //println!("{:?}", form.username.clone());
-        //println!("{:?}", form.password.clone());
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
-    }
-}
 
 #[derive(Deserialize, Serialize, Debug)]
 pub struct NewUserForm {
