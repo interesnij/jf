@@ -28,7 +28,7 @@ pub fn auth_routes(config: &mut web::ServiceConfig) {
         .route(web::get().to(signup_page))
         .route(web::post().to(process_signup))
     );
-    config.route("/logout", web::get().to(logout_page));
+    config.route("/logout", web::get().to(logout_page)); 
     config.route("/auth/register", web::get().to(register_page));
     config.route("/auth/register/attorney", web::get().to(register_attorney_page));
     config.route("/auth/register/paralegal", web::get().to(register_paralegal_page));
@@ -70,10 +70,18 @@ pub async fn register_attorney_page(req: HttpRequest) -> actix_web::Result<HttpR
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register_attorney.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -83,10 +91,18 @@ pub async fn register_attorney_page(req: HttpRequest) -> actix_web::Result<HttpR
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register_attorney.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -129,10 +145,18 @@ pub async fn register_paralegal_page(req: HttpRequest) -> actix_web::Result<Http
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register_paralegal.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -142,10 +166,18 @@ pub async fn register_paralegal_page(req: HttpRequest) -> actix_web::Result<Http
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register_paralegal.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -188,10 +220,18 @@ pub async fn register_enterprise_page(req: HttpRequest) -> actix_web::Result<Htt
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register_enterprise.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -201,10 +241,18 @@ pub async fn register_enterprise_page(req: HttpRequest) -> actix_web::Result<Htt
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register_enterprise.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -247,10 +295,18 @@ pub async fn register_client_page(req: HttpRequest) -> actix_web::Result<HttpRes
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register_client.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -260,10 +316,18 @@ pub async fn register_client_page(req: HttpRequest) -> actix_web::Result<HttpRes
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register_client.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -306,7 +370,18 @@ pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> 
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
+            }
+            let body = Template {
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             let body = Template {
                 is_ajax: is_ajax,
@@ -319,10 +394,18 @@ pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> 
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/register.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -365,10 +448,18 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/login.stpl")]
             struct Template {
-                is_ajax: i32,
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
             }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -378,10 +469,18 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/login.stpl")]
             struct Template {
-                is_ajax: i32,
-                }
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
+            }
             let body = Template {
-                is_ajax: is_ajax,
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
