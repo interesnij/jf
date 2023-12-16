@@ -25,7 +25,7 @@ pub fn auth_routes(config: &mut web::ServiceConfig) {
         .route(web::post().to(login))
     );
     config.service(web::resource("/signup")
-        .route(web::get().to(signup_page))
+        //.route(web::get().to(signup_page))
         .route(web::post().to(process_signup))
     );
     config.route("/logout", web::get().to(logout_page)); 
@@ -382,9 +382,6 @@ pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> 
                 description: description,
                 link:        link,
                 image:       image,
-            }
-            let body = Template {
-                is_ajax: is_ajax,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
