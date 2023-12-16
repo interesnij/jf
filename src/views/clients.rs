@@ -11,7 +11,7 @@ use crate::errors::Error;
 use sailfish::TemplateOnce;
 use serde::{Deserialize, Serialize};
 use crate::utils::{
-    get_request_user, UserSmallData, SpecialitiesData,
+    get_request_user, UserSmallData, SpecialitiesData, AuthResponseData,
 };
 
 
