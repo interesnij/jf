@@ -10,6 +10,7 @@ use serde::{Deserialize, Serialize};
 use crate::utils::{
     get_request_user,
     get_device_and_ajax,
+    AuthResponseData,
 };
 use futures::StreamExt;
 use crate::errors::AuthError;
@@ -412,7 +413,8 @@ pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> 
 
 pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     if get_request_user(&req).await.is_some() {
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
+        let request_user = get_request_user(&req).await.unwrap();
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(request_user.key))
     }
     else { 
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
