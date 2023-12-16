@@ -37,7 +37,7 @@
             </a>
             <a href="/auth/register/enterprise" class="signup-page-account">
                 <div class="signup-page-account__label"></div>
-                <div class="signup-page-account__title">Law Firm</div><img src="/static/media/arrow-right-green.svg" alt="arrow" class="signup-page-account__arrow">
+                <div class="signup-page-account__title">Law Firm</div><img src="/static/images/arrow-right-green.svg" alt="arrow" class="signup-page-account__arrow">
                 <ul class="signup-page-account__content">
                     <li>No hidden fees – every JusLaw feature included</li>
                     <li>Safe &amp; secure – only platform with patented blockchain technology</li>

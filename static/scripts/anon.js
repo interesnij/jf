@@ -383,7 +383,7 @@ on('body', 'click', '.next_item', function(event) {
 
 on('body', 'click', '#logg', function() {
     _this = this;
-    form = _this.parentElement;
+    form = _this.parentElement.parentElement; 
     response = form.querySelector(".api_response");
     //linguage = document.getElementById("top").getAttribute("data-l")*1;
   
@@ -420,7 +420,11 @@ on('body', 'click', '#logg', function() {
   
     link.onreadystatechange = function () {
     if ( link.readyState == 4 && link.status == 200 ) {
-      window.location.href = "/"
+      let data = JSON.stringify(link.response)
+      localStorage.setItem("key", data.key);
+      console.log(link.response);
+      console.log(data.key);
+      window.location.href = "/" 
       }
     else {
       _this.disabled = false;
