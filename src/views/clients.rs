@@ -22,14 +22,14 @@ pub fn page_routes(config: &mut web::ServiceConfig) {
     //config.route("/client/find", web::get().to(client_find_page));
     //config.route("/client/forums", web::get().to(client_forums_page));
     //config.route("/client/news", web::get().to(client_news_page));
-    
+
     //config.route("/clients/", web::get().to(clients_page));
     //config.route("/users/clients/{id}/", web::get().to(client_page));
     //config.route("/users/clients/current/favorite/", web::get().to(client_favorite_page));
 }
 
 
-pub async fn client_overview_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+pub async fn client_overview_page(req: HttpRequest) -> impl Responder {
     let user_some = get_request_user(&req);
     if user_some.is_some() {
         let request_user = user_some.unwrap();
@@ -98,7 +98,7 @@ pub async fn client_overview_page(req: HttpRequest) -> actix_web::Result<HttpRes
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+            HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body)
         }
     }
     else { 
