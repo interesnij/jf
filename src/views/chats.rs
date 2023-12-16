@@ -6,6 +6,7 @@ use actix_web::{
     error::InternalError,
     http::StatusCode,
 };
+
 use crate::errors::Error;
 use sailfish::TemplateOnce;
 use serde::{Deserialize, Serialize};
