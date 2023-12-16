@@ -30,7 +30,7 @@ pub fn page_routes(config: &mut web::ServiceConfig) {
 }
 
 
-pub async fn client_overview_page(req: HttpRequest) -> impl Responder {
+pub async fn client_overview_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() {
         let request_user = user_some.unwrap();

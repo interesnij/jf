@@ -111,7 +111,7 @@ pub async fn get_first_load_page (
     description: &String,
     uri:         &String,
     image:       &String,
-) -> impl Responder {
+) -> actix_web::Result<HttpResponse> {
     let _request_user_some = get_request_user(&req);
     if _request_user_some.is_some() {
         let _request_user = _request_user_some.unwrap();
