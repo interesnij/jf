@@ -1,4 +1,4 @@
-<% include!("../anon_header.stpl"); %>
+<% include!("../header.stpl"); %>
 
 
-<% include!("../anon_footer.stpl"); %>
+<% include!("../footer.stpl"); %>
