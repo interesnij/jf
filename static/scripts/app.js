@@ -131,3 +131,17 @@ function ajax_get_reload(url, history_enable, ajax) {
   }
   ajax_link.send();
 };
+
+on('body', 'click', '.menu-button', function() {
+  block = this.nextElementSibling;
+  if (this.classList.contains("open")) {
+    this.classList.remove("open");
+    block.style.opacity = "1";
+    block.style.visibility = "visible";
+  }
+  if (this.classList.contains("open")) {
+    this.classList.add("open")
+    block.style.opacity = "0";
+    block.style.visibility = "hidden";
+  }
+})
