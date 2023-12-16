@@ -11,6 +11,7 @@ use actix_web::{
     web,
     error::InternalError,
     http::StatusCode,
+    Responder,
 };
 use crate::errors::Error;
 use serde::{Deserialize, Serialize};
