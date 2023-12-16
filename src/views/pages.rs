@@ -217,11 +217,11 @@ pub struct DocumentsData {
 
 pub async fn index_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
-    let user_id = get_request_user(&req).await;
+    let user_id = get_request_user(&req);
     if user_id.is_some() {
         let _request_user = user_id.unwrap();
     
-        if is_desctop { 
+        if is_desctop {  
             #[derive(TemplateOnce)]
             #[template(path = "desctop/main/mainpage.stpl")]
             struct Template {

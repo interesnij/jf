@@ -1,4 +1,10 @@
+
 <div id="fullscreens_container"></div>
     </span>
 </span>
+ <% if is_ajax == 1 { %>
+</div>
+<% } %>
+
+</div>
 <div class="body_overlay pointer"></div>

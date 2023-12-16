@@ -1,0 +1,62 @@
+<div class="navbar">
+    <a aria-current="page" class="navbar__logo" href="/attorney/overview">
+        <img src="/static/media/logo.svg" alt="logo"></a>
+  <div>
+    <div class="navbar__title">dashboard</div>
+    <div>
+        <a aria-current="page" class="navbar__item ripple-effect ripple-effect-to-right navbar__item--active" href="/attorney/overview">
+            <img src="/static/media/nav_dashboard_active.svg" alt="">
+            <span>Overview</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/matters">
+            <img src="/static/media/nav_matters.svg" alt="">
+            <span>Matters</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/leads">
+            <img src="/static/media/nav_clients.svg" alt="">
+            <span>Leads &amp; Clients</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/documents">
+            <img src="/static/media/nav_document.svg" alt="">
+            <span>Documents</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/chats">
+            <img src="/static/media/nav_chat.svg" alt="">
+            <span>Chats</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/billing">
+            <img src="/static/media/nav_bill.svg" alt="">
+            <span>Billing items</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/invoices">
+            <img src="/static/media/nav_invoice.svg" alt="">
+            <span>Invoices</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/bank">
+            <img src="/static/media/nav_bank.svg" alt="">
+            <span>Bank Accounts</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/engagement">
+            <img src="/static/media/nav_bid.svg" alt="">
+            <span>Potential Engagement</span>
+        </a>
+    </div>
+  </div>
+  <div>
+    <div class="navbar__title">Social</div>
+    <div>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/news">
+            <img src="/static/media/nav_news.svg" alt="">
+            <span>JusLaw News</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/forums">
+            <img src="/static/media/nav_forum.svg" alt="">
+            <span>Forums</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/contacts">
+            <img src="/static/media/nav_industry.svg" alt="">
+            <span>Industry Contacts</span>
+        </a>
+    </div>
+  </div>
+</div>

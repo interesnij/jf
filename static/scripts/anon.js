@@ -384,29 +384,19 @@ on('body', 'click', '.next_item', function(event) {
 on('body', 'click', '#logg', function() {
     _this = this;
     form = _this.parentElement.parentElement; 
-    response = form.querySelector(".api_response");
-    //linguage = document.getElementById("top").getAttribute("data-l")*1;
+    response1 = form.querySelector(".api_response1");
+    response2 = form.querySelector(".api_response2");
   
     if (!form.querySelector("#id_email").value){
       form.querySelector("#id_email").style.border = "1px #FF0000 solid";
-      //if (linguage == 1) {
-        response.innerHTML = "Enter your email!";
-      //}
-      //else {
-      //  response.innerHTML = "Enter your username!";
-      //}
-      response.classList.add("error");
+      response1.innerHTML = "Enter your email!";
+      response1.classList.add("error");
       return
     }
     else if (!form.querySelector("#id_password").value){
       form.querySelector("#id_password").style.border = "1px #FF0000 solid";
-      //if (linguage == 1) {
-        response.innerHTML = "Enter the password!";
-      //}
-      //else {
-      //  response.innerHTML = "Enter your username!";
-      //}
-      response.classList.add("error")
+      response2.innerHTML = "Enter the password!";
+      response2.classList.add("error")
       return
     }
     else {
@@ -441,7 +431,8 @@ on('body', 'click', '#logg', function() {
     _this = this;
     form = _this.parentElement;
     username = form.querySelector("#id_email");
-    response = form.querySelector(".api_response");
+    response1 = form.querySelector(".api_response1");
+    response2 = form.querySelector(".api_response2");
     if (!username.value){
       username.style.border = "1px #FF0000 solid";
       toast_error("Enter your email!");

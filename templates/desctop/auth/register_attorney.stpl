@@ -24,24 +24,24 @@
         <div class="create-account-layout__content">
             <div class="my-auto d-flex flex-column">
                 <div class="create-account-layout__form mx-auto">
-                    <form action="#">
+                    <form>
                         <div class="step mb-2">Step 1 of 2</div>
                         <div class="title mb-3">Create your account</div>
                         <div class="input-control mt-1">
-                            <div class="d-flex justify-content-between align-items-center"><label for="h_A5DSRvr1bkmW2toYZEg" class="input-control__label">Email</label></div><input id="h_A5DSRvr1bkmW2toYZEg" placeholder="Enter your email address" type="text" autocomplete="new-password" class="" value="">
+                            <div class="d-flex justify-content-between align-items-center"><label for="id_email" class="input-control__label">Email</label></div><input name="email" id="id_email" placeholder="Enter your email address" type="text" class="" value="">
                             <div class="input-control__footer"></div>
                         </div>
                         <div class="input-control mt-3">
-                            <div class="d-flex justify-content-between align-items-center"><label for="rBon6wV8z5dRyTuOZFGJa" class="input-control__label">Password</label></div><input id="rBon6wV8z5dRyTuOZFGJa" placeholder="Create password" type="password" autocomplete="new-password" class="" value="">
+                            <div class="d-flex justify-content-between align-items-center"><label for="id_password" class="input-control__label">Password</label></div><input id="id_password" name="password" placeholder="Create password" type="password" autocomplete="new-password" class="" value="">
                             <div class="input-control__footer">
                                 <div class="input-control__help ml-auto">Minimum of 8 characters, 1 number, and 1 symbol</div>
                             </div>
                         </div>
                         <div class="input-control mt-3">
-                            <div class="d-flex justify-content-between align-items-center"><label for="1-mTsJQq_r4vuFUR2yqNc" class="input-control__label">Confirm Password</label></div><input id="1-mTsJQq_r4vuFUR2yqNc" placeholder="Confirm your password" type="password" autocomplete="new-password" class="" value="">
+                            <div class="d-flex justify-content-between align-items-center"><label for="id_password2" class="input-control__label">Confirm Password</label></div><input name="password" id="id_password2" placeholder="Confirm your password" type="password">
                             <div class="input-control__footer"></div>
                         </div>
-                        <div class="d-flex mt-4 mb-2"><button class="btn btn--green ripple-effect large" type="submit" style="width: 100%;"><span>Next</span></button></div>
+                        <div class="d-flex mt-4 mb-2"><button class="btn btn--green ripple-effect large" type="button" style="width: 100%;"><span>Next</span></button></div>
                     </form>
                 </div>
             </div>

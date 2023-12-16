@@ -10,14 +10,14 @@
                     <label for="id_email" class="input-control__label">Email</label>
                 </div>
                 <input name="email" id="id_email" placeholder="Enter your email address" type="email" class="" value="">
-                <div class="api_response"></div>
+                <div class="api_response1"></div>
             </div>
             <div class="input-control mt-2">
                 <div class="d-flex justify-content-between align-items-center">
                     <label for="id_password" class="input-control__label">Password</label>
                 </div>
                 <input id="id_password" name="password" placeholder="Enter your password" type="password" class="" value="">
-                <div class="api_response"></div>
+                <div class="api_response2"></div>
             </div>
             <div class="d-flex"><a class="ml-auto mt-1 forgot" href="/auth/forgot-password">Forgot password</a></div>
             <div class="mt-2"><label class="checkbox-control">Keep me signed into JusLaw<input type="checkbox"><span></span></label></div>

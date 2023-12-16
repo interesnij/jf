@@ -1,0 +1,30 @@
+<div class="navbar">
+    <a aria-current="page" class="navbar__logo" href="/client/overview">
+        <img src="/static/images/logo.svg" alt="logo">
+    </a>
+    <div>
+        <div class="navbar__title"></div>
+    <div>
+        <a aria-current="page" class="navbar__item ripple-effect ripple-effect-to-right navbar__item--active" href="/client/overview">
+            <img src="/static/images/nav_dashboard_active.svg" alt="">
+            <span>Dashboard</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/client/chats">
+            <img src="/static/images/nav_chat.svg" alt="">
+            <span>Chats</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/client/find">
+            <img src="/static/images/nav_search.svg" alt="">
+            <span>Find an Attorney</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/client/forums">
+            <img src="/static/images/nav_forum.svg" alt="">
+            <span>Forums</span>
+        </a>
+        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/client/news">
+            <img src="/static/images/nav_news.svg" alt="">
+            <span>JusLaw News</span>
+        </a>
+    </div>
+  </div>
+</div>

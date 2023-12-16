@@ -1,2 +1,13 @@
+<div class="main-layout">
+ <% if is_ajax == 1 { %>
+    <% if request_user.user_type == "client" { %>
+        <% include!("client_sidebar.stpl"); %>
+    <% } else { %>
+        <% include!("attorney_sidebar.stpl"); %>
+    <% } %>
+    <div class="main-layout__content">
+        <% include!("navbar.stpl"); %>
+ <% } %>
+
 <span id="ajax">
     <span id="reload_block">

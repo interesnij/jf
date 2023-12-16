@@ -37,7 +37,7 @@ pub fn auth_routes(config: &mut web::ServiceConfig) {
 }
 
 pub async fn register_attorney_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if get_request_user(&req).await.is_some() {
+    if get_request_user(&req).is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -112,7 +112,7 @@ pub async fn register_attorney_page(req: HttpRequest) -> actix_web::Result<HttpR
 }
 
 pub async fn register_paralegal_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if get_request_user(&req).await.is_some() {
+    if get_request_user(&req).is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -187,7 +187,7 @@ pub async fn register_paralegal_page(req: HttpRequest) -> actix_web::Result<Http
 }
 
 pub async fn register_enterprise_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if get_request_user(&req).await.is_some() {
+    if get_request_user(&req).is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -262,7 +262,7 @@ pub async fn register_enterprise_page(req: HttpRequest) -> actix_web::Result<Htt
 }
 
 pub async fn register_client_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if get_request_user(&req).await.is_some() {
+    if get_request_user(&req).is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -337,7 +337,7 @@ pub async fn register_client_page(req: HttpRequest) -> actix_web::Result<HttpRes
 }
 
 pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if get_request_user(&req).await.is_some() {
+    if get_request_user(&req).is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -412,8 +412,8 @@ pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> 
 }
 
 pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if get_request_user(&req).await.is_some() {
-        let request_user = get_request_user(&req).await.unwrap();
+    if get_request_user(&req).is_some() {
+        let request_user = get_request_user(&req).unwrap();
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(request_user.key))
     }
     else { 
@@ -421,7 +421,7 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         let l = 2;  
         let title: String;
         let description: String;
-        let link = "/login/".to_string();
+        let link = "/login".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 {
             title = "Login".to_string();
@@ -488,7 +488,7 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
 }
 
 pub async fn logout_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if get_request_user(&req).await.is_none() {
+    if get_request_user(&req).is_none() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -561,7 +561,7 @@ pub async fn signup_form(payload: &mut Multipart) -> NewUserForm {
 }
 pub async fn process_signup(req: HttpRequest, mut payload: Multipart) -> actix_web::Result<HttpResponse> {
     // Если пользователь не аноним, то отправляем его на страницу новостей
-    if get_request_user(&req).await.is_some() {
+    if get_request_user(&req).is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("-300"))
     } 
     else { 

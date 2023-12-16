@@ -1,0 +1,25 @@
+<div class="header">
+  <div class="header__left">
+    <span class="my-auto header__title">Dashboard</span>
+  </div>
+  <div class="header__right">
+        <div class="badge-control my-auto">
+        <div class="notification ml-3">
+            <img src="/static/images/notification.svg" alt="notification"></div>
+            <span class="badge-control__count">13</span>
+        </div>
+        <div tabindex="0" class="profile-drop-down hide">
+        <div class="menu-button">
+        <img src="<%= request_user.get_image() %>" class="avatar" alt="avatar">
+        <img src="/static/images/profile_dropdown.svg" class="menu-button-icon" alt="drop-down"></div>
+        <div class="menu-dropdown"> 
+            <a href="/settings">Account Settings</a>
+            <a href="/vault">My Vault</a>
+            <a href="/terms">Terms of Use</a>
+            <a href="/policy">Privacy Policy</a>
+            <a id="intercom-btn">Help and support</a>
+            <a class="logout">Log out</a>
+        </div>
+        </div>
+  </div>
+</div> 

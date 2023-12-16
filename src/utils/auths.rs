@@ -42,9 +42,10 @@ pub struct TimezoneData {
 }
 
 #[derive(Debug, Deserialize)] 
-pub struct AuthResponseData { 
+pub struct AuthResponseData {  
     pub key:              String,
     pub user_type:        String,
+    pub avatar:           Option<String>,
     pub user_id:          String,
     pub plan_id:          Option<String>,
     pub onboarding:       bool,
@@ -57,6 +58,16 @@ pub struct AuthResponseData {
     pub first_name:       String,
     pub middle_name:      String,
     pub last_name:        String,
+}
+impl AuthResponseData {
+    pub fn get_image(&self) -> String {
+        if self.avatar.is_some() {
+            return self.avatar.as_deref().unwrap().to_string();
+        }
+        else {
+            return "/static/images/avatar.svg".to_string();
+        }
+    }
 }
 
 
