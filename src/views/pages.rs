@@ -10,7 +10,7 @@ use crate::errors::Error;
 use sailfish::TemplateOnce;
 use serde::{Deserialize, Serialize};
 use crate::utils::{
-    get_request_user, UserSmallData, SpecialitiesData,
+    get_request_user, UserSmallData, SpecialitiesData, AuthResponseData,
 };
 
 
@@ -221,14 +221,14 @@ pub async fn index_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     if user_id.is_some() {
         let _request_user = user_id.unwrap();
     
-        if is_desctop {
+        if is_desctop { 
             #[derive(TemplateOnce)]
             #[template(path = "desctop/main/mainpage.stpl")]
             struct Template {
-                request_user:   User,
+                request_user: AuthResponseData,
             }
             let body = Template {
-                request_user:   _request_user,
+                request_user: _request_user,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -236,12 +236,12 @@ pub async fn index_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         }
         else {
             #[derive(TemplateOnce)]
-            #[template(path = "mobile/main/mainpage.stpl")]
+            #[template(path = "desctop/main/mainpage.stpl")]
             struct Template {
-                request_user:   User,
+                request_user: AuthResponseData,
             }
             let body = Template {
-                request_user:   _request_user,
+                request_user: _request_user,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -263,7 +263,7 @@ pub async fn index_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         }
         else {
             #[derive(TemplateOnce)]
-            #[template(path = "mobile/main/anon_mainpage.stpl")]
+            #[template(path = "desctop/main/anon_mainpage.stpl")]
             struct Template {}
             let body = Template {}
             .render_once()
