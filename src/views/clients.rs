@@ -104,7 +104,7 @@ pub async fn client_overview_page(req: HttpRequest) -> actix_web::Result<HttpRes
         }
     }
     else { 
-        #[async_recursion]
+        #[async_recursion::async_recursion]
         return crate::views::login_page(req).await;
     }
 }
