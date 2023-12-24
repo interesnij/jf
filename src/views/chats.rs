@@ -20,6 +20,7 @@ pub fn page_routes(config: &mut web::ServiceConfig) {
     //config.route("/social/chats/{id}/messages/", web::get().to(messages_page));
 }
 
+
 //////////////  CHATS  //////
 //////////////  CHATS  //////
 
@@ -75,11 +76,15 @@ pub struct ChatsData {
     pub previous:   Option<String>,
     pub results:    Vec<ChatData>,
 }
+/////////////////////////////
+
 
 //////////////  CHAT DETAIL  //////
 //////////////  CHAT DETAIL  //////
 
 /// это ChatData
+/////////////////////////////
+
 
 //////////////  CHAT MESSAGES  //////
 //////////////  CHAT MESSAGES  //////

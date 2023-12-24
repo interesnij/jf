@@ -1,0 +1,42 @@
+<div class="main-layout__content-main">
+  <div class="forums-page">
+    <div class="d-flex">
+      <div class="tab-control">
+        <a href="/attorney/engagement">
+          <div class="tab-control__item"><span>Browse Inquiries</span></div>
+        </a>
+        <a aria-current="page" href="/attorney/engagement/submitted">
+          <div class="tab-control__item tab-control__item--active"><span>Submitted Engagements</span></div>
+        </a>
+      </div>
+    </div>
+    <div class="forums-page__content">
+      <div class="forums-page__topic submitted-page">
+        <div class="folder-control">
+          <div class="folder-control__header">
+            <div class="d-flex">
+              <div class="folder-control__heading">Active Engagement</div>
+              <div class="folder-control__heading-after"></div>
+            </div>
+            <div class="d-flex"></div>
+          </div>
+          <div class="folder-control__content"></div>
+        </div>
+        <div class="folder-control mt-4">
+          <div class="folder-control__header">
+            <div class="d-flex">
+              <div class="folder-control__heading">Inactive</div>
+              <div class="folder-control__heading-after"></div>
+            </div>
+            <div class="d-flex"></div>
+          </div>
+          <div class="folder-control__content">
+            <div class="folder-item folder-item--with-separator">
+              <div class="my-4 text-center">No inactive engagements</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

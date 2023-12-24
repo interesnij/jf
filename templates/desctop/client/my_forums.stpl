@@ -1,0 +1,69 @@
+<% include!("../header.stpl"); %>
+
+<div class="forums-page">
+  <div class="d-flex">
+    <div class="tab-control"><a href="/client/forums/all-posts">
+        <div class="tab-control__item"><span>Home</span></div>
+      </a><a aria-current="page" href="/client/forums/my-posts">
+        <div class="tab-control__item tab-control__item--active"><span>My Posts</span></div>
+      </a><a href="/client/forums/following">
+        <div class="tab-control__item"><span>Following</span></div>
+      </a></div>
+    <div class="forum-layout-bar flex-1">
+      <div class="search-bar-container my-auto mr-auto flex-1">
+        <img src="/static/media/search.svg" alt="search">
+        <input placeholder="Search in forums" value="">
+      </div>
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="New Post" src="/static/media/post.svg" alt="New Post">
+    </div>
+  </div>
+  <div class="forums-page__content">
+    <div class="forums-page__my-posts">
+      <div class="folder-control">
+        <div class="folder-control__header">
+          <div class="d-flex">
+            <div class="folder-control__heading">Posts by me</div>
+            <div class="folder-control__heading-after"></div>
+          </div>
+          <div class="d-flex"></div>
+        </div>
+        <div class="folder-control__content">
+          <div class="folder__filter d-flex">
+            <div class="d-flex"><span class="select-label my-auto">Filter by</span>
+              <div tabindex="0" class="select-container">
+                <div class="menu-button">
+                    <span>All</span>
+                    <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+                </div>
+                <div class="menu-dropdown">
+                  <div class="menu-item active" style="width: 160px;">All</div>
+                  <div class="menu-item" style="width: 160px;">No Replies</div>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex ml-3">
+                <span class="select-label my-auto">Sort by</span>
+                <div tabindex="0" class="select-container">
+                    <div class="menu-button">
+                        <span>Most Recent</span>
+                        <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+                    </div>
+                <div class="menu-dropdown align-right">
+                  <div class="menu-item active" style="width: 190px;">Most Recent</div>
+                  <div class="menu-item" style="width: 190px;">Replies (most to least)</div>
+                  <div class="menu-item" style="width: 190px;">Replies (least to most)</div>
+                  <div class="menu-item" style="width: 190px;">Most Followers</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <% include!("../forum/card.stpl"); %>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

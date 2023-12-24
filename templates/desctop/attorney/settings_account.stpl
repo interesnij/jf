@@ -1,0 +1,106 @@
+<div tabindex="0" class="full-modal__background grey-theme open">
+  <div class="full-modal__container open">
+    <div class="full-modal__header">
+        <span class="title my-auto">Settings</span>
+        <img class="my-auto ml-auto close cursor-pointer" src="/static/media/close_white.svg" alt="close">
+    </div>
+    <div class="full-modal__content with-no-footer">
+      <div class="tab-control">
+        <div class="tab-control__item tab-control__item--active"><span>My Account</span></div>
+        <div class="tab-control__item"><span>Subscription</span></div>
+        <div class="tab-control__item"><span>Notification</span></div>
+        <div class="tab-control__item"><span>Integrations</span></div>
+        <div class="tab-control__item"><span>Matter stages</span></div>
+      </div>
+      <div class="sc-bqyKOL cxREUt">
+        <div class="settings settings-modal">
+          <form action="#">
+            <div class="folder-control jumbo">
+              <div class="folder-control__header">
+                <div class="d-flex">
+                  <div class="folder-control__heading">Account Information</div>
+                  <div class="folder-control__heading-after"></div>
+                </div>
+                <div class="d-flex"></div>
+              </div>
+              <div class="folder-control__content">
+                <div class="folder-item folder-item--with-separator">
+                  <div class="row">
+                    <div class="input-control mt-2 col-md-4">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <label for="uqzBSkZ_1hvL2bgVE-OeV" class="input-control__label">First Name</label>
+                      </div>
+                      <input id="uqzBSkZ_1hvL2bgVE-OeV" placeholder="Input first name here" type="text" autocomplete="new-password" disabled="" class="active" value="JusLaw Platform Assessment">
+                      <div class="input-control__footer"></div>
+                    </div>
+                    <div class="input-control mt-2 col-md-4">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <label for="rwrV-npSQgkIlxm8vPH0P" class="input-control__label">Middle Name</label>
+                      </div>
+                      <input id="rwrV-npSQgkIlxm8vPH0P" placeholder="Input middle name here" type="text" autocomplete="new-password" disabled="" class="active" value="A">
+                      <div class="input-control__footer"></div>
+                    </div>
+                    <div class="input-control mt-2 col-md-4">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <label for="haAAC_SLObIaxc8Id0ojW" class="input-control__label">Last Name</label>
+                      </div>
+                      <input id="haAAC_SLObIaxc8Id0ojW" placeholder="Input last name here" type="text" autocomplete="new-password" disabled="" class="active" value="G">
+                      <div class="input-control__footer"></div>
+                    </div>
+                    <div class="input-control mt-2 col-md-6">
+                      <div class="d-flex justify-content-between align-items-center"><label for="Ae2u37Euo7yMQEEDSeQoM" class="input-control__label">Email</label></div><input id="Ae2u37Euo7yMQEEDSeQoM" placeholder="Input email here" type="text" autocomplete="new-password" disabled="" class="active" value="sergejuslaw@gmail.com">
+                      <div class="input-control__footer"></div>
+                    </div>
+                    <div class="input-control mt-2 col-md-6">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <label for="igPqCcxEOrrJC-1UsDBZa" class="input-control__label">Phone</label>
+                      </div>
+                      <input id="igPqCcxEOrrJC-1UsDBZa" placeholder="Input phone here" type="text" autocomplete="new-password" disabled="" class="active" value="+19738016534">
+                      <div class="input-control__footer"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+          <div class="folder-control jumbo mt-3">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Password &amp; Security</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder-item folder-item--with-separator">
+                <div class="d-flex justify-content-between">
+                  <div>
+                    <div class="heading">Password</div>
+                    <div class="desc">Update your password here</div>
+                  </div>
+                  <div class="my-auto text-black font-size-md cursor-pointer">Update</div>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="heading">2-Factor Authentication</div>
+                    <div class="desc">Add an extra layer of security to your account by enabling this 2-step authentication. We'll send you a test message (SMS) of a one-time security code to use along with your password.</div>
+                  </div>
+                  <div class="col-md-6 d-flex">
+                    <div class="switch-control my-auto ml-auto">
+                        <input id="OQBgQeY2210OrMq0syXA_" type="checkbox">
+                        <label for="OQBgQeY2210OrMq0syXA_">
+                            <span></span><span></span>
+                        </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

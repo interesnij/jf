@@ -1,0 +1,89 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main">
+  <div class="find-page ">
+    <div class="tab-control">
+        <a href="/client/find">
+            <div class="tab-control__item tab-control__item--active">
+                <span>Representation</span>
+            </div>
+        </a>
+        <a href="/client/find/search">
+            <div class="tab-control__item"><span>Search</span></div>
+        </a>
+        <a href="/client/find/favorites">
+            <div class="tab-control__item"><span>Favorites</span></div>
+        </a>
+    </div>
+
+    <div class="find-page__main">
+      <div class="representation-page">
+        <div>
+          <div class="representation-page-container">
+            <div class="title">Post Your Matter for Representation</div>
+            <div class="desc">Match with attorneys that fit your legal needs. Compare prices, fees, proposals and attorney profiles.</div>
+            <div class="mx-auto" style="width: fit-content;">
+              <div class="d-flex justify-content-center">
+                <div class="representation-page--item"><img src="/static/images/post_matter.svg" alt="post matter">
+                  <div class="representation-page--item-title">Post your Matter</div>
+                  <div class="representation-page--item-desc">Get started by creating a post about your matter and legal needs. Describe your legal issue and set a budget.</div>
+                </div>
+                <div class="representation-page--item"><img src="/static/images/get_proposals.svg" alt="post matter">
+                  <div class="representation-page--item-title">Get Proposals</div>
+                  <div class="representation-page--item-desc">JusLaw matches you with attorneys most qualified to handle your specific legal matter. Collect and compare prices, fees, proposals, and profiles.</div>
+                </div>
+                <div class="representation-page--item"><img src="/static/images/accept_hire.svg" alt="post matter">
+                  <div class="representation-page--item-title">Accept and Hire your Attorney</div>
+                  <div class="representation-page--item-desc">When you’re ready, accept their proposal and hire the attorney that’s right for you.</div>
+                </div>
+              </div>
+              <div class="divider"></div>
+            </div>
+            <div class="text-black text-center mt-4" style="font-size: 18px;">Post your matter and have attorneys submit their proposals to you.</div>
+            <div class="d-flex mt-2 justify-content-center">
+                <button class="btn btn--green ripple-effect large" type="button">
+                    <span>Get Started</span>
+                </button>
+            </div>
+          </div>
+        </div>
+        <div class="folder-control mt-4">
+          <div class="folder-control__header">
+            <div class="d-flex">
+              <div class="folder-control__heading">Posts</div>
+              <div class="folder-control__heading-after"></div>
+            </div>
+            <div class="d-flex"></div>
+          </div>
+          <div class="folder-control__content">
+            
+            <div class="folder-item folder-item--with-separator">
+              <div class="post-item-client">
+                <a href="/client/find/posts/36">
+                  <div class="justify-content-between">
+                    <div class="">
+                      <div class="d-flex">
+                        <div class="d-flex post-item-client__title text-ellipsis">hi</div>
+                        <div class="tag-control tag-control--custom ml-2">Asset Protection</div>
+                      </div>
+                      <div class="posted-date my-1">Posted 09/01/23</div>
+                      <div class="post-item-client__budget mb-1"><b class="mr-05">Budget:</b> $1 flat fee</div>
+                    </div>
+                    <div class="proposal-count">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAI+SURBVHgB1VXBbtNAEJ3ZGGhEkXLgA9IDUsIF8wXNCZEIqeELIF9QcQPJSBYJXBu+oOEL6IUA4kDyBXEvTRAX98bRiKpxkbPDTkglxzupI/XSjhQlnuy+t2/mzRrgugeu+qPy8nEZHNxHxBoQBRogRMBDPUsCQgp/vvsWwKUIvHrPgD+Di2JBrAiGhjSYdL4M1ia47zVGhOBaGxAjAoqAoCwwhtM/04dhdxCdZ5QE7vrNkgTOoTU+Ja1bIAaWb90uPk9nRII4iSXwIc2gFZ+cBMpRfMKhSIFYyiUAnZGPEI7b/Vp8enrAj0d+P+BnJLAajUBLOUfCR6WWFJCGD/xdvFMccRmqXn0OIpUx0UmYSwBID9L9N6dayFbvDWzT1GEb5Iiy9hVLhLiswCR2q68eNcftT10uDRX0FqJdHiI4zOYsBeygs9nfElgrnY9cGvZ9HE1bG5sbL8xBvi+dI1N/UYHkIPY+sGsQXYXYLG4WazOtouw6TRDmEiAWLAL2PZfGfJAKN7fGnc8HNxy9I+zNV0Ck7RlA2Kt4DX/+Mzlzq6/re0TKzy7jGcnmHBsLLelszXMnGQvvE5HdI+Og9BWxWoGjuzxY1nZ2klcfrQAXHfT/wCui4j2pIZJrGlAGhTvy5ZYiAGhN2v3e2gTpqHoNVrW7gBoS4cDMgWvKWWZFqKB39KbvS3sdWCdSk83gk44MJoVaZ1F6sqVhuhTB/N2Qamz2MsuLQt6CX4NJfHf73jES/TZSjn+8/dqFqxT/AF/V8vnARqKrAAAAAElFTkSuQmCC">
+                            0 Proposals
+                    </div>
+                  </div>
+                  <div class="post-item-client__content mt-1">quya</div>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

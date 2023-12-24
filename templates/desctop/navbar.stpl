@@ -1,3 +1,5 @@
+<% if request_user.user_type == "client" { %>
+
 <div class="header">
   <div class="header__left">
     <span class="my-auto header__title">Dashboard</span>
@@ -23,3 +25,52 @@
         </div>
   </div>
 </div> 
+
+<% } else { %>
+
+<div class="header">
+  <div class="header__left"><span class="my-auto header__title">Overview</span></div>
+  <div class="header__right">
+    <div class="start-timer my-auto">
+      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="black" height="12" width="12" xmlns="http://www.w3.org/2000/svg" style="color: black;">
+        <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+      </svg>
+      <span>Start Timer</span>
+    </div>
+    <div tabindex="0" class="header-create ml-3 my-auto">
+      <div class="menu-button">
+        <img src="/static/media/plus_black.svg" class="menu-button__icon" alt="plus">
+          <span>Create New</span>
+        </div>
+        <div class="menu-dropdown">
+          <div class="menu-item">Time entry</div>
+          <div class="menu-item">Expense entry</div>
+          <div class="menu-item">Matter</div>
+          <div class="menu-item">Contact</div>
+          <div class="menu-item">Document</div>
+          <div class="menu-item">Template</div>
+          <div class="menu-item">Note</div>
+        </div>
+    </div>
+    <div class="badge-control my-auto">
+      <div class="notification ml-3">
+        <img src="/static/media/notification.svg" alt="notification"></div>
+    </div>
+    <div tabindex="0" class="profile-drop-down hide">
+      <div class="menu-button">
+        <img src="<%= request_user.get_image() %>" class="avatar" alt="avatar">
+        <img src="/static/media/profile_dropdown.svg" class="menu-button-icon" alt="drop-down"></div>
+      <div class="menu-dropdown">
+        <div id="profile">Edit profile</div>
+        <div id="settings">Settings</div>
+        <div id="terms">Terms of Use</div>
+        <div id="policy">Privacy Policy</div>
+        <div id="intercom-btn">Help and support</div>
+        <div id="vault">My Vault</div>
+        <div class="logout">Log out</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% } %>

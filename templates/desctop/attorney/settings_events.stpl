@@ -1,0 +1,55 @@
+<div class="full-modal__container open">
+  <div class="full-modal__header">
+    <span class="title my-auto">Edit Profile</span>
+    <img class="my-auto ml-auto close cursor-pointer" src="/static/media/close_white.svg" alt="close">
+  </div>
+  <div class="full-modal__content">
+    <div class="tab-control">
+      <div class="tab-control__item"><span>Profile Information</span></div>
+      <div class="tab-control__item tab-control__item--active"><span>My Events</span></div>
+    </div>
+    <div class="d-flex flex-column flex-1 overflow-auto">
+      <div class="d-flex flex-column flex-1 overflow-auto">
+        <div class="sc-fubCzh dGjVpY">
+          <div class="d-flex my-auto"><span class="select-label my-auto">Sort by</span>
+            <div tabindex="0" class="select-container">
+              <div class="menu-button">
+                <span>All</span>
+                <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+              </div>
+              <div class="menu-dropdown">
+                <div class="menu-item active" style="width: 120px;">All</div>
+                <div class="menu-item" style="width: 120px;">Upcoming</div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn--green ripple-effect normal ml-auto my-auto" type="button">
+          <img src="/static/media/plus_white.svg" alt="plus"><span>New Event</span></button>
+        </div>
+        <div class="sc-pGacB iZltua">
+          <div>
+            <div class="sc-jONnzC bvykoq">
+              <div class="d-flex">
+                <div class="sc-hlTwrV foyitP">Title</div>
+                <img src="/static/media/delete_green.svg" class="sc-kIeSZW jWQoCp ml-auto"><img src="/static/media/edit.f828105f402826e4f4b49ba35563b596.svg" class="sc-kIeSZW jWQoCp ml-3">
+              </div>
+              <div class="d-flex mt-2">
+                <div class="sc-eLgNKc kgVwSy">WHEN:</div>
+                <div class="sc-bTvSiT cWECWR">12/17/2023 08:30:43 PM</div>
+              </div>
+              <div class="d-flex mt-1">
+                <div class="sc-eLgNKc kgVwSy">WHERE:</div>
+                <div class="sc-bTvSiT cWECWR">dfgh</div>
+              </div>
+              <div class="d-flex mt-1">
+                <div class="sc-eLgNKc kgVwSy">WHAT:</div>
+                <div class="sc-bTvSiT cWECWR">Description</div>
+              </div>
+            </div>
+            <div class="divider my-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

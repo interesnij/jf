@@ -1,0 +1,13 @@
+<div class="notification__item-message">
+    <div class="user-avatar-container small toRight">
+        <div class="user-avatar small">
+            <img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg">
+        </div>
+    </div>
+    <div class="notification__item-message-text my-auto text-bold">
+        <a href="/client/overview/matter/18/messages">JusLaw Platform Assessment G sent you a message "Title" in the matter Nice Docs.</a>
+    </div>
+    <div class="notification__item-message-date my-auto">
+        12/12/2023 05:29:21 PM
+    </div>
+</div>

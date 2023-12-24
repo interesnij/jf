@@ -1,0 +1,128 @@
+<div tabindex="0" class="full-modal__background grey-theme open">
+  <div class="full-modal__container open">
+    <div class="full-modal__header">
+        <span class="title my-auto">Settings</span>
+        <img class="my-auto ml-auto close cursor-pointer" src="/static/media/close_white.svg" alt="close"></div>
+    <div class="full-modal__content with-no-footer">
+      <div class="tab-control">
+        <div class="tab-control__item"><span>My Account</span></div>
+        <div class="tab-control__item"><span>Subscription</span></div>
+        <div class="tab-control__item tab-control__item--active"><span>Notification</span></div>
+        <div class="tab-control__item"><span>Integrations</span></div>
+        <div class="tab-control__item"><span>Matter stages</span></div>
+      </div>
+      <div class="sc-bqyKOL cxREUt">
+        <div class="settings settings-modal">
+          <div class="folder-control jumbo">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">JusLaw Dashboard</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="heading">Chats</div>
+                    <div class="desc">This includes all chat and video calls.</div>
+                  </div>
+                  <div class="col-md-6 d-flex">
+                    <div class="switch-control my-auto ml-auto">
+                        <input id="Nw75D3pj9YXg2LYFGrK05" type="checkbox">
+                        <label for="Nw75D3pj9YXg2LYFGrK05">
+                            <span></span><span></span>
+                        </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="heading">Matter Related Activities</div>
+                    <div class="desc">Notify you of all matter related activities including new messages, invoices and billing, status updates, and shared documents.</div>
+                  </div>
+                  <div class="col-md-6 d-flex">
+                    <div class="switch-control my-auto ml-auto">
+                        <input id="nrmJzPMDoBW2tOWHggKhw" type="checkbox">
+                        <label for="nrmJzPMDoBW2tOWHggKhw"><span></span><span></span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="heading">Contacts</div>
+                    <div class="desc">Get notifications about contact related activities including contact sharing and accepted invites.</div>
+                  </div>
+                  <div class="col-md-6 d-flex">
+                    <div class="switch-control my-auto ml-auto">
+                        <input id="jVLX8yvlxEn5CRItwtzq6" type="checkbox">
+                        <label for="jVLX8yvlxEn5CRItwtzq6"><span></span><span></span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="heading">Forum Activities</div>
+                    <div class="desc">Receive notifications on forum activities including posts you’re invloved in and new posts from the topics you are following.</div>
+                  </div>
+                  <div class="col-md-6 d-flex">
+                    <div class="switch-control my-auto ml-auto">
+                        <input id="AcnxxEgcinV8SR2KG8mC0" type="checkbox">
+                        <label for="AcnxxEgcinV8SR2KG8mC0"><span></span><span></span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="folder-control jumbo mt-3">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Delivery Options</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="heading">Email Alerts</div>
+                    <div class="desc">Receive emails of notifications on the above.</div>
+                  </div>
+                  <div class="col-md-6 d-flex">
+                    <div class="switch-control my-auto ml-auto">
+                        <input id="C8zACbJNbp3wkEQKRPJsk" type="checkbox">
+                        <label for="C8zACbJNbp3wkEQKRPJsk"><span></span><span></span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="heading">Push Notifications</div>
+                    <div class="desc">Receive alerts and messages on your mobile device.</div>
+                  </div>
+                  <div class="col-md-6 d-flex">
+                    <div class="switch-control my-auto ml-auto">
+                        <input id="wXb1tCOJqmciZukHfHpac" type="checkbox">
+                        <label for="wXb1tCOJqmciZukHfHpac"><span></span><span></span></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

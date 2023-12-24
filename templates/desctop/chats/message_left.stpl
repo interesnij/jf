@@ -1,0 +1,19 @@
+<div class="d-flex">
+  <div class="chat-message__container chat-message__container--left">
+    <div class="user-avatar-container normal toRight cursor-pointer">
+      <div class="user-avatar normal">
+        <img src="https://k.juslaw.online/media/images/2023/11/09/D9D38D7C-D0AA-4419-85D8-4FE2CA2A4F1F.mpo">
+      </div>
+    </div>
+    <div class="mx-2">
+      <div class="justify-content-start">
+        <span class="chat-message__name">serge gold</span>
+        <span class="chat-message__time mx-1">11/9/23 05:03:10 PM</span>
+      </div>
+      <div class="chat-message__content chat-message__content--text">
+        Good morning!
+      </div>
+      <div></div>
+    </div>
+  </div>
+</div>

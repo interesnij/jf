@@ -116,10 +116,11 @@ pub struct InvoicesData {
     pub previous:   Option<String>,
     pub results:    Vec<crate::views::MatterData>,
 }
+/////////////////////////////
+
 
 //////////////  TIME BILLINGS  //////
 //////////////  TIME BILLINGS //////
-
 
 #[derive(Debug, Deserialize)]
 pub struct TimeBillingParams {
@@ -192,6 +193,8 @@ pub struct TimeBillingsData {
     pub total_fees: i32,
     pub total_time: String,
 }
+/////////////////////////////
+
 
 //////////////  NOTES  //////
 //////////////  NOTES //////
@@ -234,9 +237,12 @@ pub struct NotesData {
     pub previous:   Option<String>,
     pub results:    Vec<NoteData>,
 }
+/////////////////////////////
+
 
 //////////////  POSTEDMATTER  //////
 //////////////  POSTEDMATTER //////
+
 #[derive(Debug, Deserialize)]
 pub struct PostedMatterParams {
     pub client:   Option<i32>,
@@ -294,6 +300,7 @@ pub struct PostedMattersData {
     pub previous:   Option<String>,
     pub results:    Vec<PostedMatterData>,
 }
+/////////////////////////////
 
 
 //////////////  POSTEDMATTER STAT  //////

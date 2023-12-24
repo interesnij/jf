@@ -1,0 +1,22 @@
+<div class="folder-item folder-item--with-separator">
+                <div class="topic-control">
+                  <div class="topic-control__main">
+                    <a href="/client/forums/topic/1" class="topic-control__title">
+                        Accounting Law Practice
+                    </a>
+                    <div class="topic-control__description">
+                        description...
+                    </div>
+                  </div>
+                  <div class="topic-control__post-count mx-3">
+                    <div class="topic-control__title text-center">1</div>
+                    <div class="topic-control__description text-center">Posts</div>
+                  </div>
+                  <div class="topic-control__follow">
+                    <button class="btn btn--outline btn--green ripple-effect normal mx-auto" type="button">
+                        <span>Unfollow</span>
+                    </button>
+                    <div class="mt-1 text-center mx-auto">2&nbsp;Followers </div>
+                  </div>
+                </div>
+</div>

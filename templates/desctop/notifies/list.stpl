@@ -1,0 +1,11 @@
+<div class="side-modal__container open normal">
+  <div class="side-modal__header">
+    <span class="title">Notification</span>
+    <img src="/static/media/close.svg" class="close-button" alt="close">
+  </div>
+  <div class="side-modal__content d-flex flex-column">
+
+    <% include!("card.stpl"); %>
+
+  </div>
+</div>

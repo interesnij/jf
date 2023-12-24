@@ -1,0 +1,719 @@
+<div tabindex="0" class="full-modal__background grey-theme open">
+  <div class="full-modal__container open">
+    <div class="full-modal__header">
+        <span class="title my-auto">Edit Profile</span>
+        <img class="my-auto ml-auto close cursor-pointer" src="/static/media/close_white.svg" alt="close">
+    </div>
+    <div class="full-modal__content">
+      <div class="tab-control">
+        <div class="tab-control__item tab-control__item--active"><span>Profile Information</span></div>
+        <div class="tab-control__item"><span>My Events</span></div>
+      </div>
+      <div class="d-flex flex-column flex-1 overflow-auto">
+        <div class="profile-edit-page">
+          <form action="#">
+
+            <div class="folder-expandable">
+              <div class="folder-expandable-header">
+                <div class="d-flex">
+                  <div class="folder-expandable-heading">
+                    <img src="/static/media/arrow-drop-down.svg" alt="arrow" class="isExpanded">Personal information</div>
+                  <div class="folder-expandable-heading-after"></div>
+                </div>
+                <div class="folder-expandable-expand">Collapse section</div>
+              </div>
+              <div class="folder-expandable-content mb-4 isExpanded">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="heading">Profile Photo</div>
+                    <div class="profile-photo-control mt-2">
+                      <div class="d-flex">
+                        <div class="dropzone">
+                          <div class="d-flex flex-wrap"></div>
+                          <input accept="image/jpeg, image/png" type="file" autocomplete="off" tabindex="-1" style="display: none;">
+                          <div class="user-avatar-container large toRight">
+                            <div class="user-avatar large">
+                                <img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg">
+                            </div>
+                          </div>
+                        </div>
+                        <button class="btn btn--green ripple-effect normal my-auto ml-4" type="button"><span>Update Photo</span></button>
+                        <button class="btn btn--outline btn--green ripple-effect normal my-auto ml-4" type="button"><span>Remove</span></button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="heading mt-3 col-12">Personal Information</div>
+                  <div class="col-md-6 mt-3">
+                    <div class="input-control">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <label for="KW8G8hy18EKsx9yfq9aDp" class="input-control__label">First Name</label>
+                      </div>
+                      <input id="KW8G8hy18EKsx9yfq9aDp" placeholder="Input first name here" type="text" autocomplete="new-password" class="active" value="JusLaw Platform Assessment">
+                      <div class="input-control__footer"></div>
+                    </div>
+                    <div class="input-control mt-2">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <label for="gLodlDNvk1OH6d4htdVzQ" class="input-control__label">Middle Name</label>
+                        <div class="input-control__required">Optional</div>
+                      </div>
+                      <input id="gLodlDNvk1OH6d4htdVzQ" placeholder="Input middle name here" type="text" autocomplete="new-password" class="active" value="A">
+                      <div class="input-control__footer"></div>
+                    </div>
+                    <div class="input-control mt-2">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <label for="4AlZ5v8UayGq13fJiYBsi" class="input-control__label">Last Name</label>
+                      </div>
+                      <input id="4AlZ5v8UayGq13fJiYBsi" placeholder="Input last name here" type="text" autocomplete="new-password" class="active" value="G">
+                      <div class="input-control__footer"></div>
+                    </div>
+                    <div class="input-control mt-2">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <label for="Ky6qvgTmCHJ9g8pSo2FAg" class="input-control__label">Email</label>
+                      </div>
+                      <input id="Ky6qvgTmCHJ9g8pSo2FAg" placeholder="Input email here" type="text" autocomplete="new-password" class="active" value="sergejuslaw@gmail.com">
+                      <div class="input-control__footer"></div>
+                    </div>
+                    <div class="sc-hzMMVR fXVjLt mt-2">
+                      <div class="d-flex justify-content-between">
+                        <label for="EDC5VLMCrWVWnndvctEKb" class="input-control__label">Phone</label>
+                      </div>
+                      <div class="phone-input-2-container react-tel-input">
+                        <div class="special-label">Phone</div>
+                        <input class=" form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+1 (973) 801-6534" style="height: 48px; font-size: 14px;">
+                        <div class=" flag-dropdown">
+                          <div class="selected-flag" title="United States: + 1" tabindex="0" role="button" aria-haspopup="listbox">
+                            <div class="flag us">
+                              <div class="arrow"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="input-control__footer"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 mt-3">
+                    <div class="textarea-form-control d-flex flex-column h-100">
+                      <div class="d-flex justify-content-between">
+                        <div class="textarea-form-control__label">Biography</div>
+                        <div class="textarea-form-control__required">Optional</div>
+                      </div>
+                      <textarea placeholder="Describe your legal practice" class="active flex-1">description</textarea>
+                      <div class="textarea-form-control__footer"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex mt-3 mb-4">
+                  <div class="folder-expandable__btn next-btn">Continue to next section</div>
+                  <div class="folder-expandable__btn ml-auto">Collapse all</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="folder-expandable mt-3">
+              <div class="folder-expandable-header">
+                <div class="d-flex">
+                  <div class="folder-expandable-heading">
+                    <img src="/static/media/arrow-drop-down.svg" alt="arrow" class="isExpanded">Law firm information
+                  </div>
+                  <div class="folder-expandable-heading-after"></div>
+                </div>
+                <div class="folder-expandable-expand">Collapse section</div>
+              </div>
+              <div class="folder-expandable-content mb-4 isExpanded">
+                <div class="row">
+                  <div class="heading w-100">
+                    <div class="col-6 d-flex"><span class="mb-1">Firm Name</span>
+                      <div class="text-gray ml-auto mt-auto">Optional</div>
+                    </div>
+                  </div>
+                  <div class="input-control col-6">
+                    <input id="C73mR6b6Sd8qrSdLFF9tC" placeholder="Enter a name" type="text" autocomplete="new-password" class="active" value="test">
+                    <div class="input-control__footer"></div>
+                  </div>
+                  <div class="mt-3 heading w-100">
+                    <div class="col-6 d-flex">
+                        <span class="mb-1">Website</span>
+                        <div class="text-gray ml-auto mt-auto">Optional</div>
+                    </div>
+                  </div>
+                  <div class="input-control col-6">
+                    <input id="tGZQDIto0iyoGHogmf1r4" placeholder="Enter a website" type="text" autocomplete="new-password" class="active" value="https://juslaw.com">
+                    <div class="input-control__footer"></div>
+                  </div>
+                  <div class="heading col-12 mt-3 mb-2">
+                    Office Address
+                    <span class="heading__desc text-gray ml-4">JusLaw will use this address to match you with potential clients in your proximity</span>
+                  </div>
+                  <div class="d-flex flex-column w-100 pt-2">
+                    <div class="d-flex pr-3"></div>
+                    <div class="col-12">
+                      <div class="row">
+                        <div class="select-control col-md-4">
+                          <div class="d-flex justify-content-between">
+                            <div class="select-control__label">Country</div>
+                          </div>
+                          <div class="select-control__container" tabindex="0">
+                            <div class="select-control__main active">
+                              <div class="flex-1 d-flex justify-content-between"><span class="my-auto">Algeria</span></div><img src="/static/media/arrow-drop-down.f1b9faabf6e9fce89f57a65ca37586aa.svg" class="select-control__arrow" alt="arrow">
+                            </div>
+                            <div class="select-control__menu">
+
+                              <div class="select-control__menu-item active"><span>Algeria</span></div>
+
+                            </div>
+                          </div>
+                          <div class="select-control__footer"></div>
+                        </div>
+                        <div class="input-control col-md-8">
+                          <div class="d-flex justify-content-between align-items-center"><label for="3UzU3-u7bKn2ch3nQQ_KC" class="input-control__label">Address</label></div><input id="3UzU3-u7bKn2ch3nQQ_KC" placeholder="Enter an address here" type="text" autocomplete="new-password" class="active" value="One World Trade Center">
+                          <div class="input-control__footer"></div>
+                        </div>
+                        <div class="select-control col-md-4 mt-2">
+                          <div class="d-flex justify-content-between">
+                            <div class="select-control__label">State</div>
+                          </div>
+                          <div class="select-control__container" tabindex="0">
+                            <div class="select-control__main active">
+                              <div class="flex-1 d-flex justify-content-between">
+                                <span class="my-auto">Adrar</span>
+                              </div>
+                              <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                            </div>
+                            <div class="select-control__menu">
+
+                              <div class="select-control__menu-item active"><span>Adrar</span></div>
+                              
+                            </div>
+                          </div>
+                          <div class="select-control__footer"></div>
+                        </div>
+                        <div class="select-control col-md-4 mt-2">
+                          <div class="d-flex justify-content-between">
+                            <div class="select-control__label">City</div>
+                          </div>
+                          <div class="select-control__container" tabindex="0">
+                            <div class="select-control__main active">
+                              <div class="flex-1 d-flex justify-content-between">
+                                <span class="my-auto">Adrar</span>
+                              </div>
+                              <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                            </div>
+                            <div class="select-control__menu">
+                              <div class="select-control__menu-item active"><span>Adrar</span></div>
+                              <div class="select-control__menu-item"><span>Aoulef</span></div>
+                              <div class="select-control__menu-item"><span>Reggane</span></div>
+                            </div>
+                          </div>
+                          <div class="select-control__footer"></div>
+                        </div>
+                        <div class="input-control col-md-4 mt-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <label for="CPNGRqBJ_fSaCqxW8f8XI" class="input-control__label">Zip code</label>
+                          </div>
+                          <input id="CPNGRqBJ_fSaCqxW8f8XI" placeholder="Enter a zip code here" type="text" autocomplete="new-password" class="active" value="10007">
+                          <div class="input-control__footer"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="add-button cursor-pointer d-flex">
+                        <img src="/static/media/plus_black.svg" alt="plus">
+                        <span class="my-auto ml-1">Add an Office address</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex mt-3 mb-4">
+                  <div class="folder-expandable__btn next-btn">Continue to next section</div>
+                  <div class="folder-expandable__btn ml-auto">Collapse all</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="folder-expandable mt-3">
+              <div class="folder-expandable-header">
+                <div class="d-flex">
+                  <div class="folder-expandable-heading">
+                    <img src="/static/media/arrow-drop-down.svg" alt="arrow" class="">Experience &amp; Practice</div>
+                  <div class="folder-expandable-heading-after"></div>
+                </div>
+                <div class="folder-expandable-expand">Expand section</div>
+              </div>
+              <div class="folder-expandable-content mb-4">
+                <div class="row">
+                  <div class="heading col-12">Education</div>
+                  <div class="d-flex w-100 col-12 mt-0">
+                    <div class="flex-1">
+                      <div class="row">
+                        <div class="input-control col-md-6 mt-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <label for="TqJk0Ai2nBHmjv_7HEN-j" class="input-control__label">
+                                Law school / Graduate Institute
+                            </label>
+                          </div>
+                          <input id="TqJk0Ai2nBHmjv_7HEN-j" placeholder="Enter a school / graduate institute name" type="text" autocomplete="new-password" class="active" value="check">
+                          <div class="input-control__footer"></div>
+                        </div>
+                        <div class="select-control col-md-6 mt-2">
+                          <div class="d-flex justify-content-between">
+                            <div class="select-control__label">Year of graduation</div>
+                          </div>
+                          <div class="select-control__container" tabindex="0">
+                            <div class="select-control__main active">
+                              <div class="flex-1 d-flex justify-content-between">
+                                <span class="my-auto">2023</span>
+                              </div>
+                              <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                            </div>
+                            <div class="select-control__menu">
+                              <div class="select-control__menu-item"><span>1960</span></div>
+                              <div class="select-control__menu-item"><span>1961</span></div>
+                              <div class="select-control__menu-item"><span>1962</span></div>
+                              <div class="select-control__menu-item"><span>1963</span></div>
+                              <div class="select-control__menu-item"><span>1964</span></div>
+                              <div class="select-control__menu-item"><span>1965</span></div>
+                              <div class="select-control__menu-item"><span>1966</span></div>
+                              <div class="select-control__menu-item"><span>1967</span></div>
+                              <div class="select-control__menu-item"><span>1968</span></div>
+                              <div class="select-control__menu-item"><span>1969</span></div>
+                              <div class="select-control__menu-item"><span>1970</span></div>
+                              <div class="select-control__menu-item"><span>1971</span></div>
+                              <div class="select-control__menu-item"><span>1972</span></div>
+                              <div class="select-control__menu-item"><span>1973</span></div>
+                              <div class="select-control__menu-item"><span>1974</span></div>
+                              <div class="select-control__menu-item"><span>1975</span></div>
+                              <div class="select-control__menu-item"><span>1976</span></div>
+                              <div class="select-control__menu-item"><span>1977</span></div>
+                              <div class="select-control__menu-item"><span>1978</span></div>
+                              <div class="select-control__menu-item"><span>1979</span></div>
+                              <div class="select-control__menu-item"><span>1980</span></div>
+                              <div class="select-control__menu-item"><span>1981</span></div>
+                              <div class="select-control__menu-item"><span>1982</span></div>
+                              <div class="select-control__menu-item"><span>1983</span></div>
+                              <div class="select-control__menu-item"><span>1984</span></div>
+                              <div class="select-control__menu-item"><span>1985</span></div>
+                              <div class="select-control__menu-item"><span>1986</span></div>
+                              <div class="select-control__menu-item"><span>1987</span></div>
+                              <div class="select-control__menu-item"><span>1988</span></div>
+                              <div class="select-control__menu-item"><span>1989</span></div>
+                              <div class="select-control__menu-item"><span>1990</span></div>
+                              <div class="select-control__menu-item"><span>1991</span></div>
+                              <div class="select-control__menu-item"><span>1992</span></div>
+                              <div class="select-control__menu-item"><span>1993</span></div>
+                              <div class="select-control__menu-item"><span>1994</span></div>
+                              <div class="select-control__menu-item"><span>1995</span></div>
+                              <div class="select-control__menu-item"><span>1996</span></div>
+                              <div class="select-control__menu-item"><span>1997</span></div>
+                              <div class="select-control__menu-item"><span>1998</span></div>
+                              <div class="select-control__menu-item"><span>1999</span></div>
+                              <div class="select-control__menu-item"><span>2000</span></div>
+                              <div class="select-control__menu-item"><span>2001</span></div>
+                              <div class="select-control__menu-item"><span>2002</span></div>
+                              <div class="select-control__menu-item"><span>2003</span></div>
+                              <div class="select-control__menu-item"><span>2004</span></div>
+                              <div class="select-control__menu-item"><span>2005</span></div>
+                              <div class="select-control__menu-item"><span>2006</span></div>
+                              <div class="select-control__menu-item"><span>2007</span></div>
+                              <div class="select-control__menu-item"><span>2008</span></div>
+                              <div class="select-control__menu-item"><span>2009</span></div>
+                              <div class="select-control__menu-item"><span>2010</span></div>
+                              <div class="select-control__menu-item"><span>2011</span></div>
+                              <div class="select-control__menu-item"><span>2012</span></div>
+                              <div class="select-control__menu-item"><span>2013</span></div>
+                              <div class="select-control__menu-item"><span>2014</span></div>
+                              <div class="select-control__menu-item"><span>2015</span></div>
+                              <div class="select-control__menu-item"><span>2016</span></div>
+                              <div class="select-control__menu-item"><span>2017</span></div>
+                              <div class="select-control__menu-item"><span>2018</span></div>
+                              <div class="select-control__menu-item"><span>2019</span></div>
+                              <div class="select-control__menu-item"><span>2020</span></div>
+                              <div class="select-control__menu-item"><span>2021</span></div>
+                              <div class="select-control__menu-item"><span>2022</span></div>
+                              <div class="select-control__menu-item active"><span>2023</span></div>
+                            </div>
+                          </div>
+                          <div class="select-control__footer"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="add-button cursor-pointer d-flex">
+                        <img src="/static/media/plus_black.svg" alt="plus">
+                        <span class="my-auto ml-1">Add School / Graduate Institute</span>
+                    </div>
+                  </div>
+                  <div class="heading col-12 mt-2">Years of Experience</div>
+                  <div class="input-control col-6 mt-1">
+                    <input id="gfkS_XcjliNv0nO6fUwAi" placeholder="Enter number of years" type="number" autocomplete="new-password" class="active" value="1">
+                    <div class="input-control__footer"></div>
+                  </div>
+                  <div class="heading col-12 mt-3">Jurisdictions</div>
+                  <div class="d-flex col-12 w-100 mt-0">
+                    <div class="flex-1">
+                      <div class="row">
+                        <div class="select-control col-md-3 mt-2">
+                          <div class="d-flex justify-content-between">
+                            <div class="select-control__label">Country</div>
+                          </div>
+                          <div class="select-control__container" tabindex="0">
+                            <div class="select-control__main active">
+                              <div class="flex-1 d-flex justify-content-between">
+                                <span class="my-auto">United States</span>
+                             </div>
+                             <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                            </div>
+                            <div class="select-control__menu">
+                              <div class="select-control__menu-item"><span>Algeria</span></div>
+                            </div>
+                          </div>
+                          <div class="select-control__footer"></div>
+                        </div>
+                        <div class="select-control col-md-3 mt-2">
+                          <div class="d-flex justify-content-between">
+                            <div class="select-control__label">State</div>
+                          </div>
+                          <div class="select-control__container" tabindex="0">
+                            <div class="select-control__main active">
+                              <div class="flex-1 d-flex justify-content-between"><span class="my-auto">New Jersey</span></div><img src="/static/media/arrow-drop-down.f1b9faabf6e9fce89f57a65ca37586aa.svg" class="select-control__arrow" alt="arrow">
+                            </div>
+                            <div class="select-control__menu">
+                              <div class="select-control__menu-item"><span>Alabama</span></div>
+                              
+                              <div class="select-control__menu-item active"><span>New Jersey</span></div>
+                              
+                            </div>
+                          </div>
+                          <div class="select-control__footer"></div>
+                        </div>
+                        <div class="input-control col-md-3 mt-2">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <label for="WLkjn2X3gwFyX-PISSiP1" class="input-control__label">Registration Number</label>
+                          </div>
+                          <input id="WLkjn2X3gwFyX-PISSiP1" placeholder="Enter Registration Number" type="text" autocomplete="new-password" class="active" value="test account">
+                          <div class="input-control__footer"></div>
+                        </div>
+                        <div class="select-control col-md-3 mt-2">
+                          <div class="d-flex justify-content-between">
+                            <div class="select-control__label">Year Admitted</div>
+                          </div>
+                          <div class="select-control__container" tabindex="0">
+                            <div class="select-control__main active">
+                              <div class="flex-1 d-flex justify-content-between">
+                                <span class="my-auto">2023</span>
+                              </div>
+                              <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                            </div>
+                            <div class="select-control__menu">
+                              <div class="select-control__menu-item"><span>1960</span></div>
+                              <div class="select-control__menu-item"><span>1961</span></div>
+                              <div class="select-control__menu-item"><span>1962</span></div>
+                              <div class="select-control__menu-item"><span>1963</span></div>
+                              <div class="select-control__menu-item"><span>1964</span></div>
+                              <div class="select-control__menu-item"><span>1965</span></div>
+                              <div class="select-control__menu-item"><span>1966</span></div>
+                              <div class="select-control__menu-item"><span>1967</span></div>
+                              <div class="select-control__menu-item"><span>1968</span></div>
+                              <div class="select-control__menu-item"><span>1969</span></div>
+                              <div class="select-control__menu-item"><span>1970</span></div>
+                              <div class="select-control__menu-item"><span>1971</span></div>
+                              <div class="select-control__menu-item"><span>1972</span></div>
+                              <div class="select-control__menu-item"><span>1973</span></div>
+                              <div class="select-control__menu-item"><span>1974</span></div>
+                              <div class="select-control__menu-item"><span>1975</span></div>
+                              <div class="select-control__menu-item"><span>1976</span></div>
+                              <div class="select-control__menu-item"><span>1977</span></div>
+                              <div class="select-control__menu-item"><span>1978</span></div>
+                              <div class="select-control__menu-item"><span>1979</span></div>
+                              <div class="select-control__menu-item"><span>1980</span></div>
+                              <div class="select-control__menu-item"><span>1981</span></div>
+                              <div class="select-control__menu-item"><span>1982</span></div>
+                              <div class="select-control__menu-item"><span>1983</span></div>
+                              <div class="select-control__menu-item"><span>1984</span></div>
+                              <div class="select-control__menu-item"><span>1985</span></div>
+                              <div class="select-control__menu-item"><span>1986</span></div>
+                              <div class="select-control__menu-item"><span>1987</span></div>
+                              <div class="select-control__menu-item"><span>1988</span></div>
+                              <div class="select-control__menu-item"><span>1989</span></div>
+                              <div class="select-control__menu-item"><span>1990</span></div>
+                              <div class="select-control__menu-item"><span>1991</span></div>
+                              <div class="select-control__menu-item"><span>1992</span></div>
+                              <div class="select-control__menu-item"><span>1993</span></div>
+                              <div class="select-control__menu-item"><span>1994</span></div>
+                              <div class="select-control__menu-item"><span>1995</span></div>
+                              <div class="select-control__menu-item"><span>1996</span></div>
+                              <div class="select-control__menu-item"><span>1997</span></div>
+                              <div class="select-control__menu-item"><span>1998</span></div>
+                              <div class="select-control__menu-item"><span>1999</span></div>
+                              <div class="select-control__menu-item"><span>2000</span></div>
+                              <div class="select-control__menu-item"><span>2001</span></div>
+                              <div class="select-control__menu-item"><span>2002</span></div>
+                              <div class="select-control__menu-item"><span>2003</span></div>
+                              <div class="select-control__menu-item"><span>2004</span></div>
+                              <div class="select-control__menu-item"><span>2005</span></div>
+                              <div class="select-control__menu-item"><span>2006</span></div>
+                              <div class="select-control__menu-item"><span>2007</span></div>
+                              <div class="select-control__menu-item"><span>2008</span></div>
+                              <div class="select-control__menu-item"><span>2009</span></div>
+                              <div class="select-control__menu-item"><span>2010</span></div>
+                              <div class="select-control__menu-item"><span>2011</span></div>
+                              <div class="select-control__menu-item"><span>2012</span></div>
+                              <div class="select-control__menu-item"><span>2013</span></div>
+                              <div class="select-control__menu-item"><span>2014</span></div>
+                              <div class="select-control__menu-item"><span>2015</span></div>
+                              <div class="select-control__menu-item"><span>2016</span></div>
+                              <div class="select-control__menu-item"><span>2017</span></div>
+                              <div class="select-control__menu-item"><span>2018</span></div>
+                              <div class="select-control__menu-item"><span>2019</span></div>
+                              <div class="select-control__menu-item"><span>2020</span></div>
+                              <div class="select-control__menu-item"><span>2021</span></div>
+                              <div class="select-control__menu-item"><span>2022</span></div>
+                              <div class="select-control__menu-item active"><span>2023</span></div>
+                            </div>
+                          </div>
+                          <div class="select-control__footer"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <div class="add-button cursor-pointer d-flex">
+                        <img src="/static/media/plus_black.svg" alt="plus">
+                        <span class="my-auto ml-1">Add Jurisdictions</span>
+                    </div>
+                  </div>
+                  <div class="heading col-12 mt-3">Practice Area</div>
+                  <div class="col-12 mt-2">
+                    <div class="text-dark">Select practice areas you want to follow:</div>
+                    <div class="row">
+
+                      <div class="col-md-6 test my-1 d-flex justify-content-between practice-area-item">
+                        <div class="">
+                            <label class="checkbox-component">Accounting Law Practice<input type="checkbox" checked=""><span></span></label>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 my-1 d-flex justify-content-between practice-area-item">
+                        <div class=""><label class="checkbox-component">Other<input type="checkbox" checked=""><span></span></label></div>
+                      </div>
+                    </div>
+                    <div class="modal-control-container modal-success">
+                      <div tabindex="-1" class="modal-control">
+                        <div class="modal-control__header">
+                          <div class="my-auto title text-ellipsis w-100 text-left"></div>
+                          <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+                        </div>
+                        <div class="modal-control__content ignore-onclickoutside">
+                          <div class="modal-success-body">
+                            <div>
+                              <h1 class="title">Changes Saved</h1>
+                            </div><button class="btn btn--green ripple-effect large mt-3" type="button"><span>Close</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-control-container modal-success">
+                      <div tabindex="-1" class="modal-control">
+                        <div class="modal-control__header">
+                          <div class="my-auto title text-ellipsis w-100 text-left"></div>
+                          <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+                        </div>
+                        <div class="modal-control__content ignore-onclickoutside">
+                          <div class="modal-success-body">
+                            <div>
+                              <h1 class="title">The practice area was deleted successfully.</h1>
+                            </div><button class="btn btn--green ripple-effect large mt-3" type="button"><span>Close</span></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 row mt-2">
+                    <div class="col-6">
+                      <div class="d-flex w-100">
+                        <div class="input-container flex-1"><input placeholder="Create Practice Area" type="text" value=""></div>
+                        <div class="sc-iBPTik eyRMPo">Create</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="d-flex mt-3 mb-4">
+                  <div class="folder-expandable__btn next-btn">Continue to next section</div>
+                  <div class="folder-expandable__btn ml-auto">Collapse all</div>
+                </div>
+              </div>
+            </div>
+            <div class="folder-expandable mt-3">
+              <div class="folder-expandable-header">
+                <div class="d-flex">
+                  <div class="folder-expandable-heading">
+                    <img src="/static/media/arrow-drop-down.svg" alt="arrow" class="">Service &amp; Pricing
+                  </div>
+                  <div class="folder-expandable-heading-after"></div>
+                </div>
+                <div class="folder-expandable-expand">Expand section</div>
+              </div>
+              <div class="folder-expandable-content mb-4">
+                <div class="row">
+                  <div class="heading col-12">Accepted Appointment Type<span class="text-gray ml-2">Select all that apply</span></div>
+                  <div class="mt-1 d-flex flex-wrap col-12">
+                    <div class="d-flex">
+                      <div class="mr-2"><label class="checkbox-component">In person<input type="checkbox" checked=""><span></span></label></div>
+                      <div class="mr-2"><label class="checkbox-component">JusLaw VC<input type="checkbox" checked=""><span></span></label></div>
+                    </div>
+                  </div>
+                  <div class="heading mt-3 col-12 ">Fees and Payment *</div>
+                  <div class="text-black mt-2 col-12 ">Fee Type<span class="text-gray ml-2">Select all that apply</span></div>
+                  <div class="mt-0 d-flex flex-wrap col-12">
+                    <div class="d-flex">
+                      <div class="mr-2"><label class="checkbox-component">fixed fee<input type="checkbox" checked=""><span></span></label></div>
+                      <div class="mr-2"><label class="checkbox-component">hourly rate<input type="checkbox" checked=""><span></span></label></div>
+                      <div class="mr-2"><label class="checkbox-component">AFA<input type="checkbox" checked=""><span></span></label></div>
+                      <div class="mr-2"><label class="checkbox-component">contingency fees<input type="checkbox" checked=""><span></span></label></div>
+                    </div>
+                  </div>
+                  <div class="text-black mt-2 col-12 ">Accepted Payment Methods<span class="text-gray ml-2">Select all that apply</span></div>
+                  <div class="mt-0 d-flex flex-wrap col-12">
+                    <div class="d-flex">
+                      <div class="mr-2"><label class="checkbox-component">major credit cards<input type="checkbox" checked=""><span></span></label></div>
+                      <div class="mr-2"><label class="checkbox-component">direct deposit ACH<input type="checkbox" checked=""><span></span></label></div>
+                      <div class="mr-2"><label class="checkbox-component">Cryptocurrency<input type="checkbox" checked=""><span></span></label></div>
+                      <div class="mr-2"><label class="checkbox-component">JusLaw payment, points, etc.<input type="checkbox" checked=""><span></span></label></div>
+                      <div class="mr-2"><label class="checkbox-component">Other<input type="checkbox" checked=""><span></span></label></div>
+                    </div>
+                  </div>
+                  <div class="text-black mt-3 w-100">
+                    <div class="col-6 d-flex"><span>Hourly Rate</span>
+                      <div class="text-gray ml-auto mt-auto">Optional</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="sc-fbNZge kcjhkj">
+                      <div class="flex-1 d-flex">
+                        <div class="sc-GTVdH dXaChH">
+                            <input id="u83EpQCPy2G8p_XgO_X1G" pattern="[0-9.]+" placeholder="Enter your hourly rate" value="1.00">
+                        </div>
+                      </div>
+                      <div class="sc-gsxoIA kfwLZt">
+                        <div class="select-control__container w-100" tabindex="0">
+                          <div class="select-control__main border-none w-100 active">
+                            <div class="d-flex"><span class="my-auto">USD</span></div><img src="/static/media/arrow-drop-down.f1b9faabf6e9fce89f57a65ca37586aa.svg" class="select-control__arrow ml-auto" alt="arrow">
+                          </div>
+                          <div class="select-control__menu">
+                            <div class="select-control__menu-item active"><span>USD</span></div>
+                            <div class="select-control__menu-item"><span>GBP</span></div>
+                            <div class="select-control__menu-item"><span>ERU</span></div>
+                          </div>
+                        </div>
+                        <div class="select-control__footer"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="heading mt-3 w-100">
+                    <div class="col-6 d-flex"><span class="mb-1">Languages spoken</span>
+                      <div class="text-gray ml-auto mt-auto">Optional</div>
+                    </div>
+                  </div>
+                  <div class="mt-0 col-6">
+                    <div class="d-flex justify-content-between">
+                      <div class="multi-select-control__label"></div>
+                    </div>
+                    <div class="multi-select-control__container">
+                      <div class="multi-select-control active">
+                        <div class="flex-1 d-flex flex-wrap">
+                            <!-- active languages -->
+                          <div class="multi-select-control__item">
+                            <span class="my-auto">English</span>
+                            <img src="/static/media/close.svg" alt="close" class="multi-select-control__item-close">
+                          </div>  
+                          <!-- active languages -->
+                        </div>
+                      </div>
+                      <div class="multi-select-control__menu">
+                        <!-- languages -->
+                        <div class="multi-select-control__menu-item active"><span>English</span></div>
+                        <div class="multi-select-control__menu-item"><span>Greek</span></div>
+                        <!-- languages -->
+                      </div>
+                    </div>
+                    <div class="multi-select-control__footer"></div>
+                  </div>
+                  <div class="heading mt-3 col-12">Do you want to submit proposals for potential client engagements?</div>
+                  <div class="col-12">
+                    <div>
+                      <div class="d-flex flex-wrap">
+                        <label class="radio-control">Yes<input type="radio" name="is_submittable_potential" checked="">
+                            <span></span>
+                        </label>
+                        <label class="radio-control">No<input type="radio" name="is_submittable_potential">
+                            <span></span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="heading mt-3 w-100">
+                    <div class="col-6 d-flex"><span class="mb-1">Tax Rate</span>
+                      <div class="text-gray ml-auto mt-auto">Optional</div>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="input-control">
+                      <div class="position-relative"><input id="tax_rate" placeholder="0.00" type="text" class="active" value="7.0000">
+                        <div class="input-control__addon"><span class="input-control__addon-label">%</span></div>
+                      </div>
+                      <div class="input-control__footer"></div>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-3">*The amount shown under Fee Type is equivalent to the “composite rate.” Composite Rate = Attorney Legal Fees + Separate and Standalone 5% JusLaw Management Fee. This formula applies to hourly, flat, hourly, contingency, and other rates on our platform.</div>
+                </div>
+                <div class="d-flex mt-3 mb-4">
+                  <div class="folder-expandable__btn ml-auto">Collapse all</div>
+                </div>
+              </div>
+            </div>
+            <div class="full-modal__footer">
+                <button class="btn btn--white ripple-effect large ml-auto" type="submit">
+                    <span>Cancel</span>
+                </button>
+                <button class="btn btn--yellow ripple-effect large ml-3" type="submit">
+                    <span>Save</span>
+                </button>
+            </div>
+          </form>
+          <div class="modal-control-container modal-success">
+            <div tabindex="-1" class="modal-control">
+              <div class="modal-control__header">
+                <div class="my-auto title text-ellipsis w-100 text-left"></div>
+                <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+              </div>
+              <div class="modal-control__content ignore-onclickoutside">
+                <div class="modal-success-body">
+                  <div>
+                    <h1 class="title">Added Successfully</h1>
+                  </div><button class="btn btn--green ripple-effect large mt-3" type="button"><span>Close</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-control-container modal-success">
+            <div tabindex="-1" class="modal-control">
+              <div class="modal-control__header">
+                <div class="my-auto title text-ellipsis w-100 text-left"></div>
+                <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+              </div>
+              <div class="modal-control__content ignore-onclickoutside">
+                <div class="modal-success-body">
+                  <div>
+                    <h1 class="title">Changes Saved</h1>
+                  </div><button class="btn btn--green ripple-effect large mt-3" type="button"><span>Close</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

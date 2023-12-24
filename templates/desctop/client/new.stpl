@@ -1,0 +1,28 @@
+<% include!("../header.stpl"); %>
+
+<div class="news-page">
+  <div class="news-page__card">
+    <span class="news-page__image lazy-load-image-background blur lazy-load-image-loaded" style="display: inline-block;">
+        <img alt="How it works" src="https://juslaw.com/static/images/poster.jpg">
+    </span>
+    <div class="news-page__content">
+      <div class="news-page__title">How it works</div>
+      <div class="d-flex justify-content-between mt-2">
+        <div class="news-page__date">JusLaw</div>
+        <div class="news-page__date">05/25/2023</div>
+      </div>
+    </div>
+  </div>
+  <div class="news-page__card news-page__content news-page__text">
+    <div>
+        JusLaw is an  one-time consults to complex issues with ease and transparency from start to finish.
+        <br><br>
+    </div>
+    <div>&nbsp;</div>
+    <div>
+        <video controls="" poster="https://juslaw.com/static/images/poster.jpg" src="https://juslaw.com/static/images/how_it_works2.mp4" style="width: 100%; border: 1px solid green;">&nbsp;</video>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

@@ -1,0 +1,43 @@
+<% include!("../header.stpl"); %>
+
+<div class="chat-page__main">
+  <div class="chat-sidebar">
+    <div class="chat-sidebar__top"><span class="my-auto">Sort by</span>
+      <div class="d-flex">
+        <div tabindex="0" class="select-container">
+          <div class="menu-button"><span>Newest</span><img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down"></div>
+          <div class="menu-dropdown">
+            <div class="menu-item active" style="width: 160px;">Newest</div>
+            <div class="menu-item" style="width: 160px;">Oldest</div>
+            <div class="menu-item" style="width: 160px;">Priority first</div>
+          </div> 
+        </div>
+      </div>
+    </div>
+    <div class="chat-sidebar__content d-flex flex-column">
+
+      <div class="chat-sidebar__thread">
+        <div class="chat-sidebar__thread-avatar">
+          <div class="user-avatar-container small toRight">
+            <div class="user-avatar small">
+              <img src="https://juslaw.com/static/images/0be.jpg">
+            </div>
+          </div>
+        </div>
+        <div class="w-100">
+          <div class="mb-1 position-relative d-flex align-items-center">
+            <div class="chat-sidebar__thread-name text-ellipsis">Jura Zibas</div><span class="chat-sidebar__thread-star">
+            <img src="/static/images/star_empty.svg" alt="unfavorite"></span>
+          </div>
+          <div class="d-flex"><span class="chat-sidebar__thread-text">jj</span><span class="chat-sidebar__thread-time ml-auto">05:34:50 PM</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="m-auto d-flex">
+    <p class="light-grey-text">Channel not selected</p>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

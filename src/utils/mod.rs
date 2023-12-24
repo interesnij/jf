@@ -1,10 +1,13 @@
 mod auths;
 mod crypto;
+mod request;
 
 pub use self::{
     auths::*, 
     crypto::*,
+    request::*,
 };
+
 use actix_web::{
     HttpRequest,
     HttpResponse,
@@ -114,6 +117,7 @@ pub async fn get_first_load_page (
 ) -> actix_web::Result<HttpResponse> {
     let _request_user_some = get_request_user(&req);
     if _request_user_some.is_some() {
+        println!("is auth!");
         let _request_user = _request_user_some.unwrap();
         if is_desctop {
             #[derive(TemplateOnce)] 
@@ -159,6 +163,7 @@ pub async fn get_first_load_page (
         }
     }
     else {
+        println!("is anon!");
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/generic/anon_first_load.stpl")]
@@ -231,10 +236,7 @@ pub fn get_default_image() -> String {
 }
 
 pub fn is_desctop(req: &HttpRequest) -> bool {
-    if get_content_type(req).unwrap().contains("Mobile") {
-        return false;
-    };
-    return true;
+    return !get_content_type(req).unwrap().contains("Mobile") {
 }
 
 pub fn get_device_and_ajax(req: &HttpRequest) -> (bool, i32) {

@@ -1,0 +1,182 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main">
+  <div class="lead-detail-page__bar"><span class="my-auto">sergey 11 goldobin</span>
+    <div class="d-flex">
+      <div class="d-flex">
+        <div tabindex="0" class="select-container">
+          <div class="menu-button">
+            <span>Client</span>
+            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+          </div>
+          <div class="menu-dropdown">
+            <div class="menu-item active" style="width: 160px;">Client</div>
+            <div class="menu-item" style="width: 160px;">Lead</div>
+          </div>
+        </div>
+      </div>
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="Call" src="/static/media/call.svg" alt="Call">
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="Edit Contact" src="/static/media/edit.svg" alt="Edit Contact">
+      <div class="dropdown ml-3" tabindex="0">
+        <div class="dropdown__button">
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="matters-action-button" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path>
+          </svg>
+        </div>
+        <div class="dropdown__menu">
+          <div class="dropdown__menu-item">Create new matter</div>
+          <div class="dropdown__menu-item">Direct chat</div>
+          <div class="dropdown__menu-item">Add billable items</div>
+          <div class="dropdown__menu-item">Create an invoice</div>
+          <div class="dropdown__menu-item">Share with</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-control">
+    <div class="tab-control__item tab-control__item--active">
+        <span>Overview</span>
+    </div>
+    <div class="tab-control__item"><span>Matters</span></div>
+    <div class="tab-control__item"><span>Documents</span></div>
+  </div>
+  <div class="lead-detail-page__content d-flex flex-column">
+    <div style="padding: 40px;">
+      <div class="folder-control">
+        <div class="folder-control__header">
+          <div class="d-flex">
+            <div class="folder-control__heading">Details</div>
+            <div class="folder-control__heading-after"></div>
+          </div>
+          <div class="d-flex"></div>
+        </div>
+        <div class="folder-control__content">
+          <div class="folder-item folder-item--with-separator">
+            <div class="d-flex flex-wrap">
+              <div class="user-avatar-container large toRight">
+                <div class="user-avatar large">
+                    <img src="https://k.juslaw.online/media/images/2023/09/19/16AFD31A-F866-4076-8E95-09CDF8B87D16.png">
+                </div>
+              </div>
+              <div class="ml-4">
+                <div class="label">CONTACT NAME</div>
+                <div class="value">sergey 11 goldobin</div>
+                <div class="label mt-3">PHONE</div>
+                <div class="value">(040) 525-6152</div>
+              </div>
+              <div class="ml-4">
+                <div class="label">EMAIL</div>
+                <div class="value">serge300@gmail.com</div>
+                <div class="label mt-3">ADDRESS</div>
+                <div class="value">551 bloomfield ave </div>
+              </div>
+              <div class="ml-4">
+                <div class="label">COMPANY NAME</div>
+                <div class="value">google</div>
+                <div class="label mt-3">ROLE</div>
+                <div class="value">test</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col-md-8">
+          <div class="folder-control">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Recent Matters</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex">
+                <img class="icon-button-control my-auto normal" src="/static/media/plus_green.svg"></div>
+            </div>
+            <div class="folder-control__content">
+                <!-- matter item -->
+              <div class="folder-item folder-item--with-separator">
+                <div class="leads__recent-matter">
+                  <div class="leads__recent-matter-name text-ellipsis"><a href="/attorney/matters/18">Nice Docs</a></div>
+                  <div class="leads__recent-matter-desc text-ellipsis">descr</div>
+                  <div class="d-flex mt-1">
+                    <div>
+                      <div class="label">START DATE</div>
+                      <div>07/15/2023</div>
+                    </div>
+                    <div class="ml-3">
+                      <div class="label">PRACTICE AREA</div>
+                      <div>Accounting Law Practice</div>
+                    </div>
+                    <div class="ml-3">
+                      <div class="label">RATE</div>
+                      <div>fixed fee</div>
+                    </div>
+                    <div class="ml-3">
+                      <div class="label">TOTAL AMOUNT</div>
+                      <div></div>
+                    </div>
+                    <div class="ml-3">
+                      <div class="label">UNPAID</div>
+                    </div>
+                  </div>
+                  <div class="mt-1 d-flex justify-content-between">
+                    <div class="d-flex">
+                      <div class="tag-control tag-control--open mt-auto mr-1 status">OPEN</div>
+                      <div class="tag-control tag-control--stage mt-auto mr-1">New stage</div>
+                    </div>
+                    <div class="user-avatar-container small toLeft">
+                      <div class="user-avatar small"><img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg"></div>
+                      <div class="user-avatar__name">JusLaw Platform Assessment A G</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                <!-- matter item -->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="folder-control">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Recent Activities</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder-item folder-item--with-separator">
+                <div class="my-3 text-center text-gray">Recent activities will be there.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-control-container">
+    <div tabindex="-1" class="modal-control">
+      <div class="modal-control__header">
+        <div class="my-auto title text-ellipsis w-100 text-left">Start a Call</div>
+        <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+      </div>
+      <div class="modal-control__content ignore-onclickoutside">
+        <div class="start-call-modal">
+          <div class="start-call-modal__title">
+            Do you want to start a call with sergey goldobin?
+          </div>
+          <div class="d-flex mt-2">
+            <button class="btn btn--white ripple-effect large ml-auto" type="button">
+                <span>Cancel</span>
+            </button>
+            <button class="btn btn--green ripple-effect large ml-3" type="button">
+                <span>Start Call</span>
+            </button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

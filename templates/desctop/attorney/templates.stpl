@@ -1,0 +1,104 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main">
+  <div tabindex="-1" style="outline: none;">
+    <div class="documents-page">
+      <div class="tab-control">
+        <a href="/attorney/documents/documents">
+          <div class="tab-control__item"><span>Documents</span></div>
+        </a>
+        <a aria-current="page" href="/attorney/documents/templates">
+          <div class="tab-control__item tab-control__item--active"><span>Templates</span></div>
+        </a>
+      </div>
+      <div class="documents-page__main">
+        <div class="documents-page__bar">
+          <div class="documents-page__bar-input">
+            <div class="search-bar-container undefined">
+                <img src="/static/media/search.svg" alt="search"><input placeholder="Search in My Templates" value="">
+            </div>
+          </div>
+          <div class="d-flex documents-page__bar-filter">
+            <span class="select-label my-auto">Filter by</span>
+            <div tabindex="0" class="select-container">
+              <div class="menu-button">
+                <span>All</span>
+                <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+              </div>
+              <div class="menu-dropdown">
+                <div class="menu-item active" style="width: 160px;">All</div>
+                <div class="menu-item" style="width: 160px;">Folders</div>
+                <div class="menu-item" style="width: 160px;">Documents</div>
+                <div class="menu-item" style="width: 160px;">Images</div>
+                <div class="menu-item" style="width: 160px;">Voice Messages</div>
+                <div class="menu-item" style="width: 160px;">Owned by me</div>
+                <div class="menu-item" style="width: 160px;">Shared with me</div>
+              </div>
+            </div>
+          </div>
+          <div tabindex="0" class="document-new-button ml-auto">
+            <div class="menu-button">
+                <span>New</span>
+                <img src="/static/media/caret_down_white.svg" class="menu-button-icon" alt="drop-down">
+            </div>
+            <div class="menu-dropdown">
+              <div>Folder</div>
+              <div>Template(s) upload</div>
+            </div>
+          </div>
+        </div>
+        <div class="templates-page__content">
+          <div class="breadcrumb-control">
+            <div class="breadcrumb-control__item">
+              <div class="text-ellipsis cursor-pointer">Templates</div>
+            </div>
+          </div>
+          <div class="templates-page__table mt-2">
+            <div class="templates-page__table-header">
+              <div class="templates-page__table-header-item sortable">
+                <span class="my-auto">Name</span>
+                <img src="/static/media/sort.svg" alt="sort"></div>
+              <div class="templates-page__table-header-item">
+                <span class="my-auto">Owner</span>
+              </div>
+              <div class="templates-page__table-header-item sortable">
+                <span class="my-auto">Last modified</span>
+                <img src="/static/media/sort.svg" alt="sort">
+              </div>
+              <div class="templates-page__table-header-item">
+                <span class="my-auto">Actions</span>
+              </div>
+            </div>
+            <!-- template item -->
+            <div class="templates-page__table-row">
+              <div class="templates-page__table-row-item document-name">
+                <img src="/static/media/folder.d23bde5b8256da5453f560e16921e9f0.svg" alt="folder" class="mr-1 my-auto"><span class="mr-1 text-ellipsis">Personal templates</span></div>
+              <div class="templates-page__table-row-item">
+                <div class="user-avatar-container small toRight">
+                  <div class="user-avatar small"><img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg"></div>
+                  <div class="user-avatar__name">JusLaw Platform Assessment A G</div>
+                </div>
+              </div>
+              <div class="my-documents-page__table-row-item"><span>10:20 PM, 06/09/2023</span></div>
+              <div class="templates-page__table-row-item">
+                <div class="dropdown mx-auto" tabindex="0">
+                  <div class="dropdown__button"><img src="/static/media/action_gray.7169f3572e6128db06d4e62f81b27e59.svg" alt="action" class="templates-page__table-row-item-action"></div>
+                  <div class="dropdown__menu">
+                    <div class="dropdown__menu-item">Share</div>
+                    <div class="dropdown__menu-item">Rename Folder</div>
+                    <div class="dropdown__menu-item">Delete</div>
+                    <div class="dropdown__menu-item">View Details</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- template item -->
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

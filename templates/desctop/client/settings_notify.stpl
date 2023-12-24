@@ -1,0 +1,108 @@
+<div class="fullscreen">
+  <div class="fullscreen__header">
+    <span class="my-auto">Settings</span>
+    <img src="/static/media/close_white.svg" alt="close">
+  </div>
+  <div class="fullscreen__content d-flex flex-column fullscreen__content--grey">
+    <div class="tab-control">
+      <div class="tab-control__item"><span>Profile</span></div>
+      <div class="tab-control__item"><span>Password &amp; Security</span></div>
+      <div class="tab-control__item"><span>Payment Methods</span></div>
+      <div class="tab-control__item tab-control__item--active"><span>Notification</span></div>
+    </div>
+    <div class="settings-modal">
+      <div class="folder-control">
+        <div class="folder-control__header">
+          <div class="d-flex">
+            <div class="folder-control__heading">JusLaw Dashboard</div>
+            <div class="folder-control__heading-after"></div>
+          </div>
+          <div class="d-flex"></div>
+        </div>
+        <div class="folder-control__content">
+          <div class="folder-item folder-item--with-separator">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="heading">Chats</div>
+                <div class="desc">This includes all chat and video calls.</div>
+              </div>
+              <div class="col-md-6 d-flex">
+                <div class="switch-control my-auto ml-auto">
+                    <input id="ISDUHWt6ph0YnLQdOSc3N" type="checkbox">
+                    <label for="ISDUHWt6ph0YnLQdOSc3N"><span></span><span></span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="folder-item folder-item--with-separator">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="heading">Matter Related Activities</div>
+                <div class="desc">Notify you of all matter related activities including new messages, invoices and billing, status updates, and shared documents.</div>
+              </div>
+              <div class="col-md-6 d-flex">
+                <div class="switch-control my-auto ml-auto">
+                    <input id="cVjGlNPHxao_nLF0b_Ta6" type="checkbox">
+                    <label for="cVjGlNPHxao_nLF0b_Ta6"><span></span><span></span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="folder-item folder-item--with-separator">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="heading">Forum Activities</div>
+                <div class="desc">Receive notifications on forum activities including posts you’re invloved in and new posts from the topics you are following.</div>
+              </div>
+              <div class="col-md-6 d-flex">
+                <div class="switch-control my-auto ml-auto">
+                    <input id="Q5Vsb-okO7mKAQ9NiNVPW" type="checkbox">
+                    <label for="Q5Vsb-okO7mKAQ9NiNVPW"><span></span><span></span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="folder-control mt-3">
+        <div class="folder-control__header">
+          <div class="d-flex">
+            <div class="folder-control__heading">Delivery Options</div>
+            <div class="folder-control__heading-after"></div>
+          </div>
+          <div class="d-flex"></div>
+        </div>
+        <div class="folder-control__content">
+          <div class="folder-item folder-item--with-separator">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="heading">Email Alerts</div>
+                <div class="desc">Receive emails of notifications on the above.</div>
+              </div>
+              <div class="col-md-6 d-flex">
+                <div class="switch-control my-auto ml-auto">
+                    <input id="ikYYl4dkxvKCEniu71udr" type="checkbox">
+                    <label for="ikYYl4dkxvKCEniu71udr"><span></span><span></span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="folder-item folder-item--with-separator">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="heading">Push Notifications</div>
+                <div class="desc">Receive alerts and messages on your mobile device.</div>
+              </div>
+              <div class="col-md-6 d-flex">
+                <div class="switch-control my-auto ml-auto">
+                    <input id="GSsQmJjlY8CNnn9eCb0r1" type="checkbox">
+                    <label for="GSsQmJjlY8CNnn9eCb0r1"><span></span><span></span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

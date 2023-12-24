@@ -1,0 +1,171 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main">
+  <div class="lead-detail-page__bar">
+    <span class="my-auto">sergey 11 goldobin</span>
+    <div class="d-flex">
+      <div class="d-flex">
+        <div tabindex="0" class="select-container">
+          <div class="menu-button">
+            <span>Client</span>
+            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+          </div>
+          <div class="menu-dropdown">
+            <div class="menu-item active" style="width: 160px;">Client</div>
+            <div class="menu-item" style="width: 160px;">Lead</div>
+          </div>
+        </div>
+      </div>
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="Call" src="/static/media/call.svg" alt="Call">
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="Edit Contact" src="/static/media/edit.svg" alt="Edit Contact">
+      <div class="dropdown ml-3" tabindex="0">
+        <div class="dropdown__button"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="matters-action-button" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+            <path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path>
+          </svg></div>
+        <div class="dropdown__menu">
+          <div class="dropdown__menu-item">Create new matter</div>
+          <div class="dropdown__menu-item">Direct chat</div>
+          <div class="dropdown__menu-item">Add billable items</div>
+          <div class="dropdown__menu-item">Create an invoice</div>
+          <div class="dropdown__menu-item">Share with</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-control">
+    <div class="tab-control__item"><span>Overview</span></div>
+    <div class="tab-control__item tab-control__item--active"><span>Matters</span></div>
+    <div class="tab-control__item"><span>Documents</span></div>
+  </div>
+  <div class="lead-detail-page__content d-flex flex-column">
+    <div class="matters-page__bar">
+      <div class="matters-page__bar-input">
+        <div class="search-bar-container undefined">
+            <img src="/static/media/search.svg" alt="search">
+            <input placeholder="Search in Matters" value="">
+        </div>
+      </div>
+      <div class="d-flex matters-page__bar-filter">
+        <span class="select-label my-auto">Filter by</span>
+        <div tabindex="0" class="select-container">
+          <div class="menu-button">
+            <span>All</span>
+            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+          </div>
+          <div class="menu-dropdown">
+            <div class="menu-item active" style="width: 120px;">All</div>
+            <div class="menu-item" style="width: 120px;">Open</div>
+            <div class="menu-item" style="width: 120px;">Closed</div>
+            <div class="menu-item" style="width: 120px;">Refer Matter</div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex matters-page__bar-filter">
+        <span class="select-label my-auto">
+            Principle
+        </span>
+        <div tabindex="0" class="select-container">
+          <div class="menu-button">
+            <span>All matters</span>
+            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+          </div>
+          <div class="menu-dropdown">
+            <div class="menu-item active" style="width: 180px;">All matters</div>
+            <div class="menu-item" style="width: 180px;">My matters</div>
+            <div class="menu-item" style="width: 180px;">Created by others</div>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn--green ripple-effect normal ml-auto my-auto" type="button">
+        <img src="/static/media/plus_white.svg" alt="plus">
+        <span>New matter</span>
+      </button>
+    </div>
+    <div class="matters-page__content flex-1 d-flex flex-column">
+      <div class="matters-page__table">
+        <div class="lead-matters-page__table-header">
+          <div class="lead-matters-page__table-header-item sortable">
+            <span class="my-auto">Matter</span>
+            <img src="/static/media/sort.svg" alt="sort">
+          </div>
+          <div class="lead-matters-page__table-header-item">
+            <span class="my-auto">Status</span>
+          </div>
+          <div class="lead-matters-page__table-header-item">
+            <span class="my-auto">Rate</span>
+          </div>
+          <div class="lead-matters-page__table-header-item">
+            <span class="my-auto">Practice area</span>
+          </div>
+          <div class="lead-matters-page__table-header-item sortable">
+            <span class="my-auto">Start date</span>
+            <img src="/static/media/sort.svg" alt="sort">
+          </div>
+          <div class="lead-matters-page__table-header-item sortable">
+            <span class="my-auto">Principle</span>
+            <img src="/static/media/sort.svg" alt="sort">
+          </div>
+          <div class="lead-matters-page__table-header-item">
+            <span class="my-auto">Actions</span>
+          </div>
+        </div>
+
+        <!-- matter item -->
+        <div class="lead-matters-page__table-row">
+          <div class="lead-matters-page__table-row-item matter-name">
+            <span class="mr-1 text-ellipsis">Nice Docs</span>
+          </div>
+          <div class="lead-matters-page__table-row-item">
+            <div class="tag-control tag-control--open status">OPEN</div>
+          </div>
+          <div class="lead-matters-page__table-row-item"><span>fixed fee</span></div>
+          <div class="lead-matters-page__table-row-item"><span>Accounting Law Practice</span></div>
+          <div class="lead-matters-page__table-row-item"><span>07/15/2023</span></div>
+          <div class="lead-matters-page__table-row-item">
+            <div class="user-avatar-container small toRight">
+              <div class="user-avatar small"><img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg"></div>
+            </div>
+            <div class="sc-cKZGGw iDXgUx ml-1">JusLaw Platform Assessment G</div>
+          </div>
+          <div class="lead-matters-page__table-row-item">
+            <div class="dropdown mx-auto" tabindex="0">
+              <div class="dropdown__button"><img src="/static/media/action_gray.7169f3572e6128db06d4e62f81b27e59.svg" alt="action" class="lead-matters-page__table-row-item-action"></div>
+              <div class="dropdown__menu">
+                <div class="dropdown__menu-item">View</div>
+                <div class="dropdown__menu-item">Start a call</div>
+                <div class="dropdown__menu-item">Create a message</div>
+                <div class="dropdown__menu-item">Create an invoice</div>
+                <div class="dropdown__menu-item">Add billable items</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- matter item -->
+
+      </div>
+    </div>
+  </div>
+  <div class="modal-control-container">
+    <div tabindex="-1" class="modal-control">
+      <div class="modal-control__header">
+        <div class="my-auto title text-ellipsis w-100 text-left">Start a Call</div>
+        <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+      </div>
+      <div class="modal-control__content ignore-onclickoutside">
+        <div class="start-call-modal">
+          <div class="start-call-modal__title">Do you want to start a call with sergey goldobin?</div>
+          <div class="d-flex mt-2">
+            <button class="btn btn--white ripple-effect large ml-auto" type="button">
+                <span>Cancel</span>
+            </button>
+            <button class="btn btn--green ripple-effect large ml-3" type="button">
+                <span>Start Call</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

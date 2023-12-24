@@ -1,0 +1,105 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main">
+  <div class="find-page ">
+    <div class="tab-control"><a href="/client/find">
+        <div class="tab-control__item"><span>Representation</span></div>
+      </a><a aria-current="page" href="/client/find/search">
+        <div class="tab-control__item tab-control__item--active"><span>Search</span></div>
+      </a><a href="/client/find/favorites">
+        <div class="tab-control__item"><span>Favorites</span></div>
+      </a></div>
+    <div class="find-page__main">
+      <div class="find-search-page">
+        <h2>Legal help when and where you need it</h2>
+        <div class="card-control mt-4">
+          <div class="text-dark">Search for pre-vetted lawyers across the world that fits your unique needs.</div>
+          <div class="d-flex mt-2" style="max-width: 1200px;">
+            <div class="search-field-wrap flex-1">
+              <div class="search-bar-container flex-1"><img src="/static/images/search.svg" alt="search"><input placeholder="Search by name or practice area" value=""></div>
+            </div>
+            <div class="search-field-wrap ml-3 flex-1">
+              <div class="search-bar-container undefined"><img src="/static/images/location_gray.svg" alt="location"><input placeholder="Enter a location" value=""></div>
+            </div><button class="btn btn--green ripple-effect normal ml-3" type="button"><span>Search for an Attorney</span></button>
+          </div>
+        </div>
+        <div class="d-flex mt-4"><img class="find-search-page__img" src="/static/images/find_attorney_books.jpg" alt="books">
+          <div class="folder-control ml-4">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Browse by Practice Area</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"><a class="folder-control__view-all ml-3" href="/client/find/search?all">View ALL</a></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Accounting Law Practice</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Banking and Finance</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Corporate Trust and Agency</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Corporate/M&amp;A</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Criminal Law</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Education</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Entertainment and Sports</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Intellectual Property</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Labor, Employment &amp; Employee Benefits</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Litigation</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Marketplace Lending &amp; Fin/Tech</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Real Estate</div>
+                  <div class="col-md-4 find-search-page__skill cursor-pointer">Personal Injuries</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex mt-4">
+          <div class="folder-control col-md-6">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Browse by Location</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">Baltimore, MD, US</div>
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">Boston, MA, US</div>
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">Hartford, CT, US</div>
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">Jersey City, NJ, US</div>
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">Newark, NJ, US</div>
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">New Haven, CT, US</div>
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">New York City, NY, US</div>
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">Philadelphia, PA, US</div>
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">Washington, D.C., US</div>
+                  <div class="col-md-6 find-search-page__skill cursor-pointer">Yonkers, NY, US</div>
+                </div>
+              </div>
+            </div>
+          </div><img class="col-md-6" src="/static/images/find_attorney_city.jpg" alt="cities">
+        </div>
+        <div class="py-4 find-search-page-bottom">
+          <h2>Can't find a lawyer?</h2>
+          <div class="folder-item mt-4 folder-item--with-separator">Find topics, answers, or even ask your own question in our Forums section.
+            <button class="btn btn--white ripple-effect normal mt-2 green" type="button">
+                <span>Go to Forums</span>
+            </button>
+        </div>
+        </div>
+        <div class="py-4 find-search-page-bottom">
+          <h2>Invite Your Attorney</h2>
+          <div class="folder-item mt-4 folder-item--with-separator">
+            Add lawyers to your contacts. If the Lawyer is not registered in Juslaw, send him an invitation.
+            <button class="btn btn--white ripple-effect normal mt-2 green" type="button">
+                <span>Get started</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

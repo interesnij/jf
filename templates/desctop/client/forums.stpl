@@ -1,0 +1,105 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main">
+  <div tabindex="-1" style="outline: none;">
+    <div class="forums-page">
+      <div class="d-flex">
+        <div class="tab-control"><a href="/client/forums/all-posts">
+            <div class="tab-control__item tab-control__item--active"><span>Home</span></div>
+          </a><a href="/client/forums/my-posts">
+            <div class="tab-control__item"><span>My Posts</span></div>
+          </a><a href="/client/forums/following">
+            <div class="tab-control__item"><span>Following</span></div>
+          </a></div>
+        <div class="forum-layout-bar flex-1">
+          <div class="search-bar-container my-auto mr-auto flex-1">
+            <img src="/static/media/search.svg" alt="search">
+                <input placeholder="Search in forums" value="">
+            </div><img class="icon-button-control ml-3 my-auto normal" data-tip="New Post" src="/static/media/post.svg" alt="New Post" currentitem="false">
+        </div>
+      </div>
+      <div class="forums-page__content">
+        <div class="forums-page__all-posts">
+          <div class="folder-control">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Recent Posts</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+
+            <div class="folder-control__content">
+              <div class="d-flex">
+
+                <!-- posts list -->
+                <div class="recent-post">
+                    <a href="/client/forums/post/6">
+                        <div class="d-flex">
+                            <div class="user-avatar-container small toRight">
+                                <div class="user-avatar small" data-tip="sergey 11 goldobin">
+                                    <img src="https://k.juslaw.online/media/images/2023/09/19/16AFD31A-F866-4076-8E95-09CDF8B87D16.png" alt="sergey 11 goldobin">
+                                </div>
+                            </div>
+                            <div class="ml-1 flex-2">
+                                <div class="recent-post__title">Need help...</div>
+                                <div class="d-flex w-100">
+                                <div class="recent-post__author">Posted by sergey goldobin</div>
+                                <div class="recent-post__post-date">Jul 12,2023</div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="sc-Azgjq cIiWPa mt-1">Accounting Law Practice</div>
+                            <div class="recent-post__content">Test test test test!!</div>
+                            <div class="d-flex mt-auto">
+                            <div class="recent-post__feature">
+                                <img src="/static/media/comments.svg" alt="comments"><span>4</span>
+                            </div>
+                            <div class="recent-post__feature">
+                                <img src="/static/media/followers.svg" alt="followers"><span>3</span>
+                            </div>
+                            <span class="recent-post__post-date ml-auto mr-0">Last Reply - Aug 27, 11:45:40 AM</span>
+                        </div>
+                    </a>
+                </div>
+                <!-- posts list -->
+                
+              </div>
+            </div>
+
+          </div>
+          <div class="folder-control mt-4">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Topics &amp; Practice Areas</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder__filter">
+                <div class="d-flex ml-auto"><span class="select-label my-auto">Sort by</span>
+                  <div tabindex="0" class="select-container">
+                    <div class="menu-button">
+                        <span>Alphabetical</span>
+                        <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down"></div>
+                    <div class="menu-dropdown align-right">
+                      <div class="menu-item active" style="width: 120px;">Alphabetical</div>
+                      <div class="menu-item" style="width: 120px;">Most Recent</div>
+                      <div class="menu-item" style="width: 120px;">Popular</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <% include!("../forum/post.stpl"); %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

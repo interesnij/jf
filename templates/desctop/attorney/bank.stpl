@@ -1,0 +1,16 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main">
+  <div class="bank-page">
+    <div class="my-auto">
+      <div class="text-gray text-center">
+        Sign in to Stripe to use accounting features
+      </div>
+      <button class="btn btn--green ripple-effect normal mx-auto mt-2" type="button">
+        <span>Sign in</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

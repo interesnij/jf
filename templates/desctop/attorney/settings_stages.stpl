@@ -1,0 +1,50 @@
+<div tabindex="0" class="full-modal__background grey-theme open">
+  <div class="full-modal__container open">
+    <div class="full-modal__header">
+        <span class="title my-auto">Settings</span>
+        <img class="my-auto ml-auto close cursor-pointer" src="/static/media/close_white.svg" alt="close">
+    </div>
+    <div class="full-modal__content with-no-footer">
+      <div class="tab-control">
+        <div class="tab-control__item"><span>My Account</span></div>
+        <div class="tab-control__item"><span>Subscription</span></div>
+        <div class="tab-control__item"><span>Notification</span></div>
+        <div class="tab-control__item"><span>Integrations</span></div>
+        <div class="tab-control__item tab-control__item--active"><span>Matter stages</span></div>
+      </div>
+      <div class="sc-bqyKOL cxREUt">
+        <div class="settings settings-modal">
+          <div class="sc-crrszt grLIMZ d-flex justify-content-end">
+            <button class="btn btn--green ripple-effect normal" type="button">
+                <img src="/static/media/plus_white.svg" alt="plus">
+                <span>New stage</span>
+            </button>
+          </div>
+          <div class="folder-control jumbo">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Manage Matter Stages</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <!-- stages -->
+              <div class="folder-item matter-stage-item folder-item--with-separator">
+                <div class="matter-stage-item__title">New stage</div>
+                <div class="matter-stage-item__action">
+                    <button class="matter-stage-item__icon-button ml-auto">
+                        <img src="/static/media/delete_green.svg" alt="icon">
+                    </button>
+                    <button class="matter-stage-item__icon-button ml-3">
+                        <img src="/static/media/edit.svg" alt="icon">
+                    </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

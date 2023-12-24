@@ -1,0 +1,94 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main">
+  <div class="find-page no-background">
+    <div class="tab-control"><a href="/client/find">
+        <div class="tab-control__item"><span>Representation</span></div>
+      </a><a href="/client/find/search">
+        <div class="tab-control__item"><span>Search</span></div>
+      </a><a aria-current="page" href="/client/find/favorites">
+        <div class="tab-control__item tab-control__item--active"><span>Favorites</span></div>
+      </a></div>
+    <div class="find-page__main">
+      <div class="find-search-result-page">
+        <div class="sc-hYZPxA jlEMIh">You have 6 favorited attorney profiles</div>
+        <div class="d-flex" style="max-height: calc(100vh - 197px);">
+          <div class="attorney-section">
+
+            <div class="find-attorney-search">
+              <div><a href="/client/find/attorneys/238">
+                  <div class="user-avatar-container large toRight">
+                    <div class="user-avatar large">
+                        <img src="https://k.juslaw.online/media/images/2023/09/19/Philip_Kaplan_Photo.jpeg">
+                    </div>
+                  </div>
+                </a>
+                <div class="mt-1 d-flex justify-content-center">
+                  <div class="">
+                    <label class="checkbox-component">Compare<input type="checkbox">
+                        <span></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="ml-3 flex-1">
+                <div class="d-flex"><a href="/client/find/attorneys/238">
+                    <div class="find-attorney-search__name">Philip Kaplan</div>
+                  </a><img class="find-attorney-search__favorite" src="/static/media/favorite_fill.f783f433ffc971cf8af6e06f46d48ab0.svg" alt="favorite"></div>
+                <div class="text-dark">Berliner Corcoran &amp; Rowe LLP</div>
+                <div class="d-flex mt-2">
+                  <div class="find-attorney-search__practice">Asset Protection</div>
+                  <div class="find-attorney-search__practice">Litigation</div>
+                  <div class="find-attorney-search__practice">White Collar Criminal Defense and Government Investigations</div>
+                </div>
+                <div class="d-flex flex-wrap mt-2">
+                  <div class="find-attorney-search__skill">Video Calls</div>
+                  <div class="find-attorney-search__skill">30 Years</div>
+                  <div class="find-attorney-search__skill">English</div>
+                  <div class="find-attorney-search__skill">Spanish</div>
+                  <div class="find-attorney-search__skill">German</div>
+                  <div class="find-attorney-search__skill">French</div>
+                </div>
+                <div class="find-attorney-search__desc mt-1 faded-text">International
+                  - Problem Solving with Governments
+                  - International Asset Recovery
+                  - Trade and Investment
+                  - U.S. Regulatory Issues
+                  - Consular Matters
+                  - Coordination with U.S. Departments of State, Defense, Commerce, Treasury and Intelligence Agencies</div>
+                <div class="view-more mt-1">View More</div>
+                <div class="mt-1 d-flex flex-wrap"><a target="_blank" href="https://bcrlaw.com" style="text-decoration: none;"><button class="btn btn--outline btn--green ripple-effect normal mr-2 mt-2" type="button"><span>View Website</span></button></a><button class="btn btn--outline btn--green ripple-effect normal mr-2 mt-2" type="button"><span>Start a Call</span></button><button class="btn btn--green ripple-effect normal mt-2" type="button"><span>Chat Now</span></button></div>
+              </div>
+            </div>
+          </div>
+          <div class="map-section">
+            
+          </div>
+        </div>
+      </div>
+      <div class="modal-control-container">
+        <div tabindex="-1" class="modal-control">
+          <div class="modal-control__header">
+            <div class="my-auto title text-ellipsis w-100 text-left">Start a Call</div>
+            <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+          </div>
+          <div class="modal-control__content ignore-onclickoutside">
+            <div class="start-call-modal">
+              <div class="start-call-modal__title">Do you want to start a call with undefined undefined?</div>
+                <div class="d-flex mt-2">
+                    <button class="btn btn--white ripple-effect large ml-auto" type="button">
+                        <span>Cancel</span>
+                    </button>
+                    <button class="btn btn--green ripple-effect large ml-3" type="button">
+                        <span>Start Call</span>
+                    </button>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

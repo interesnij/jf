@@ -1,0 +1,12 @@
+<div class="folder-item folder-item--with-separator">
+    <div class="recent-document"><img src="/static/images/document.svg" class="recent-document__img" alt="document">
+        <div>
+            <div class="recent-document__name">4362395 2.epub</div>
+            <div class="recent-document__time">09/19/2023 10:12:53 PM</div>
+            <div class="recent-document__detail">
+              <span class="recent-document__size mr-2">(100 B) </span>
+              <span>Uploaded by sergey goldobin</span>
+            </div>
+        </div>
+    </div>
+</div>

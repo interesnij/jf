@@ -1,0 +1,48 @@
+<div class="fullscreen">
+  <div class="fullscreen__header">
+    <span class="my-auto">Settings</span>
+    <img src="/static/media/close_white.svg" alt="close"></div>
+  <div class="fullscreen__content d-flex flex-column fullscreen__content--grey">
+    <div class="tab-control">
+      <div class="tab-control__item"><span>Profile</span></div>
+      <div class="tab-control__item"><span>Password &amp; Security</span></div>
+      <div class="tab-control__item tab-control__item--active"><span>Payment Methods</span></div>
+      <div class="tab-control__item"><span>Notification</span></div>
+    </div>
+    <div class="settings">
+      <div class="folder-control mb-4">
+        <div class="folder-control__header">
+          <div class="d-flex">
+            <div class="folder-control__heading">Cards</div>
+            <div class="folder-control__heading-after"></div>
+          </div>
+          <div class="d-flex">
+            <button class="btn btn--green ripple-effect normal" type="button">
+                <span>Add Card</span>
+            </button>
+          </div>
+        </div>
+        <div class="folder-control__content">
+          <div class="folder-item folder-item--with-separator">
+            <section class="payment-method-item">
+              <div class="payment-method-item__section section-main cursor-pointer">
+                <div class="align-items-center">
+                    <span class="card-icon mr-2 lazy-load-image-background  lazy-load-image-loaded" style="display: inline-block;">
+                        <img alt="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAcCAYAAAAnbDzKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOJSURBVHgB7VhNSFRRFD7vWU7kDxJpQmNWM5KOCx0DrYSQ8mcjUoqbCK2Fi4SBbFFEFFRUJGSg4EYix9pFQ0aLTBFbiCn5t/BnoTSgg5ag46iBY850z31z79w3OT9FYC/84KH33PPuOd/5uzMjAUF6waPDm5LuOUiQTZYJ8I9DAu8bt8ddZ++5aZeo87JuGDTgeACcG551s/xDjn4K2nMekbCbVI0sgXQOtApS8jJoGwlaJwA7BLYbu7YSluYsQs6RVZVs6EssvBvap5IV5hvog+jqnYaJ6QWwVJ2g64mpBbDahrluXpYeMoyJEBejU/aJLj6OeRfXwf3CU8p5rtV11fu/RQAdHSQOl5oXoebsPCfF9hiqK3KoYwhbxziYDIlQXpJJ162rivG4WB08vl7CiYq4cuctJxBP9JrvlsHB5Hi+b/swDiuESCgELaG5pWho6U6Gh53FEBVziMpOm5b5Phpizju+umBgdBbSCQEGx7yie6u2gDu/srYO/SOz9FF0/NFHHdF5RIZwXjDsCqfQ/XkZ6m/fh+/TLXBsaYDLy4tN/P9Ga59i0JjEZVgeVK/Er1dw4RmPKDorErBUnfzFNhLAwIRC2CbGWpwk9bzXUAMpqUchbs+mz7FMrsOMYLkEEhCB2WBRFp3HTDJ5Y1ufn4AxfAYimkL9ozP0L5I4nuZRGbR1jHFnTL6UI2kW6Sar3yHMxssnlWCpVkf7vBAM6+thfl5eVgr8FQKdZMJQZd1+SE3LVRnE5kXQCePLAE4ghqa2T5QE9gkCieOkqq4w8zUrM+wNJM4ChntiVv+YwCQpBxbRvGw9FPmakjUvIj4mePkgiYvXXpHoDnEZq3k2CBB64vCLhkpV5MM1ckQEsCTGfU4V5ht5VBqF8sjYYgKJ0cOyaN1irovNyyabOI3CEQg7hRgGRmZU0aIyYUKIRlkGBttrlQtr6htdFxHyDF29U7R02Hv95Cy0wXCJ3DEYAMx4qAstYgJowCKsxeZFpAsjFDPGJghGMDCKWOsPmj9C870yLsM+EQOSm52i3N6GJAiFyDNADre9H+PrwHLAxnXMKaWDPYM36436DuqA/kAcJeVac9PIM0dR3+Z7J3De0wDN+Usx2I0spZ1p8IKGsfNxervxXxBwgoYhk2/2I6BRSF5ol6M2pcugzSw43V7pqjzZU2eP8khmL/m5DrQBp9cLPRvEZzvx/Sc1g3wcUonU1AAAAABJRU5ErkJggg==">
+                    </span>
+                    <div>
+                        <h4 class="my-0 capitalize">visa</h4>
+                    </div>
+                </div>
+                <div class="text-dark ">
+                    ****7453
+                    <img src="/static/media/arrow-drop-down.svg" class="payment-method-item__icon-arrow upcoming-bill__arrow ml-2" alt="arrow">
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

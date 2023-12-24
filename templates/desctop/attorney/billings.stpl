@@ -1,0 +1,160 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main">
+  <div class="billings-page__bar">
+    <div class="d-flex mt-3">
+      <div class="billings-page__bar-input">
+        <div class="search-bar-container undefined">
+            <img src="/static/media/search.svg" alt="search">
+            <input placeholder="Search in billing items" value="" wfd-id="id16">
+        </div>
+      </div>
+        <button class="btn btn--outline btn--green ripple-effect normal ml-auto my-auto" type="button">
+            <span>Add Expense</span>
+        </button>
+        <button class="btn btn--outline btn--green ripple-effect normal ml-2 my-auto" type="button">
+            <span>Add Time</span>
+        </button>
+    </div>
+    <div class="d-flex flex-wrap mb-2 mt-3">
+      <div class="d-flex mr-3 my-auto"><span class="select-label my-auto">Filter by</span>
+        <div tabindex="0" class="select-container">
+          <div class="menu-button">
+            <span>All entries</span>
+            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+          </div>
+          <div class="menu-dropdown">
+            <div class="menu-item active" style="width: 150px;">All entries</div>
+            <div class="menu-item" style="width: 150px;">Time entries</div>
+            <div class="menu-item" style="width: 150px;">Expense entries</div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex my-auto"><span class="select-label my-auto">Billable</span>
+        <div tabindex="0" class="select-container">
+          <div class="menu-button">
+            <span>All</span>
+            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+          </div>
+          <div class="menu-dropdown">
+            <div class="menu-item active" style="width: 150px;">All</div>
+            <div class="menu-item" style="width: 150px;">Billable</div>
+            <div class="menu-item" style="width: 150px;">Non-billable</div>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex ml-3 my-auto">
+        <div tabindex="0" class="select-container">
+          <div class="menu-button">
+            <span>All Time</span>
+            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+          </div>
+          <div class="menu-dropdown">
+            <div class="menu-item active" style="width: 180px;">All Time</div>
+            <div class="menu-item" style="width: 180px;">Last 7 days</div>
+            <div class="menu-item" style="width: 180px;">Last 30 days</div>
+            <div class="menu-item" style="width: 180px;">Custom Date Range</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="billings-page__content">
+    <div class="billings-page__table">
+
+      <div class="billings-page__table-header">
+        <div class="billings-page__table-header-item"></div>
+        <div class="billings-page__table-header-item"><span class="my-auto">Type</span></div>
+        <div class="billings-page__table-header-item"><span class="my-auto">Hours</span></div>
+        <div class="billings-page__table-header-item"><span class="my-auto">Description</span></div>
+        <div class="billings-page__table-header-item"><span class="my-auto">Billable</span></div>
+        <div class="billings-page__table-header-item sortable">
+            <span class="my-auto">Matter</span>
+            <img src="/static/media/sort.svg" alt="sort">
+        </div>
+        <div class="billings-page__table-header-item sortable">
+            <span class="my-auto">Client</span>
+            <img src="/static/media/sort.svg" alt="sort">
+        </div>
+        <div class="billings-page__table-header-item"><span class="my-auto">Amount</span></div>
+        <div class="billings-page__table-header-item sortable">
+            <span class="my-auto">Date</span>
+            <img src="/static/media/sort.svg" alt="sort">
+        </div>
+        <div class="billings-page__table-header-item sortable">
+            <span class="my-auto">Billed by</span>
+            <img src="/static/media/sort.svg" alt="sort">
+        </div>
+        <div class="billings-page__table-header-item">
+            <span class="my-auto">Actions</span>
+        </div>
+      </div>
+
+        <!-- billing object -->
+      <div class="billings-page__table-row ">
+        <div class="billings-page__table-row-item">
+            <label class="check-box">
+                <input type="checkbox" wfd-id="id17"><span></span>
+            </label>
+        </div>
+        <div class="billings-page__table-row-item">
+          <div class="tag-control tag-control--time my-auto invoice">Time</div>
+        </div>
+        <div class="billings-page__table-row-item"><span>01:22:22</span></div>
+        <div class="billings-page__table-row-item"><span class="text-ellipsis">texttttt</span></div>
+        <div class="billings-page__table-row-item"><span>Yes</span></div>
+        <div class="billings-page__table-row-item"><span class="text-ellipsis">Nice Docs</span></div>
+        <div class="billings-page__table-row-item">
+          <div class="user-avatar-container small toRight">
+            <div class="user-avatar small">
+                <img src="https://k.juslaw.online/media/images/2023/09/19/16AFD31A-F866-4076-8E95-09CDF8B87D16.png">
+            </div>
+            <div class="user-avatar__name">sergey 11 goldobin</div>
+          </div>
+        </div>
+        <div class="billings-page__table-row-item"><span>$13.73</span></div>
+        <div class="billings-page__table-row-item"><span>12/17/2023</span></div>
+        <div class="billings-page__table-row-item">
+          <div class="user-avatar-container small toRight">
+            <div class="user-avatar small">
+                <img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg">
+            </div>
+            <div class="user-avatar__name">JusLaw Platform Assessment A G</div>
+          </div>
+        </div>
+        <div class="billings-page__table-row-item">
+          <div class="dropdown mx-auto" tabindex="0">
+            <div class="dropdown__button">
+                <img src="/static/media/action_gray.svg" alt="action" class="billings-page__table-row-item-action"></div>
+            <div class="dropdown__menu">
+              <div class="dropdown__menu-item">Edit</div>
+              <div class="dropdown__menu-item">Start timer</div>
+              <div class="dropdown__menu-item">Delete entry</div>
+              <div class="dropdown__menu-item">Create an invoice</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- billing object -->
+
+    </div>
+    <div class="billings-page__table-row table-row-summary mb-4">
+      <div class="billings-page__table-row-item"></div>
+      <div class="billings-page__table-row-item"><span class="billings-page__table-row-item__label total-hours mr-2">Total Hours</span>1:22:22</div>
+      <div class="billings-page__table-row-item "></div>
+      <div class="billings-page__table-row-item"></div>
+      <div class="billings-page__table-row-item"></div>
+      <div class="billings-page__table-row-item"></div>
+      <div class="billings-page__table-row-item"></div>
+      <div class="billings-page__table-row-item "><span class="mr-2">Total Amount</span>$63.73</div>
+      <div class="billings-page__table-row-item"></div>
+      <div class="billings-page__table-row-item"></div>
+      <div class="billings-page__table-row-item"></div>
+    </div>
+    
+    
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>
