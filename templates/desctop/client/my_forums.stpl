@@ -55,10 +55,10 @@
                   <div class="menu-item" style="width: 190px;">Most Followers</div>
                 </div>
               </div>
-            </div>
+            </div> 
           </div>
 
-          <% include!("../forum/card.stpl"); %>
+          <% include!("../forum/post.stpl"); %>
           
         </div>
       </div>

@@ -24,7 +24,6 @@ pub fn attorneys_routes(config: &mut web::ServiceConfig) {
     config.route("/attorney/documents", web::get().to(attorney_documents_page)); 
 
     config.route("/attorney/contacts", web::get().to(attorney_contacts_page));
-    config.route("/attorney/contacts/{id}", web::get().to(attorney_contact_page));
 
     config.route("/attorney/chats/clients", web::get().to(attorney_chats_clients_page));
     config.route("/attorney/chats/opportunities", web::get().to(attorney_chats_clients_page));
@@ -674,87 +673,6 @@ pub async fn attorney_contacts_page(req: HttpRequest) -> actix_web::Result<HttpR
         else {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/contacts.stpl")]
-            struct Template {
-                request_user: AuthResponseData,
-                is_ajax:      i32,
-                title:        String,
-                description:  String,
-                link:         String,
-                image:        String,
-            }
-            let body = Template {
-                request_user: request_user,
-                is_ajax:      is_ajax,
-                title:        title,
-                description:  description,
-                link:         link,
-                image:        image,
-            }
-            .render_once()
-            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
-        }
-    }
-    else {
-        crate::views::login_page(req).await
-    }
-}
-
-pub async fn attorney_contact_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
-    let user_some = get_request_user(&req);
-    if user_some.is_some() { 
-        let request_user = user_some.unwrap();
-        let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
-        let l = 2;
-        let title: String;
-        let description: String;
-        let link = "/attorney/contacts".to_string() + &_id.to_string();
-        let image = crate::utils::get_default_image();
-        if l == 2 { 
-            title = "Industry Contacts".to_string();
-            description = "https://app.juslaw.com: Industry Contacts".to_string();
-        }
-        else {  
-            title = "Industry Contacts".to_string();
-            description = "https://app.juslaw.com: Industry Contacts".to_string();
-        }
-
-        if is_ajax == 0 {
-            return crate::utils::get_first_load_page (
-                &req,
-                is_desctop,
-                &title,
-                &description,
-                &link,
-                &image,
-            ).await;
-        }
-        if is_desctop {
-            #[derive(TemplateOnce)]
-            #[template(path = "desctop/attorney/contact.stpl")]
-            struct Template {
-                request_user: AuthResponseData,
-                is_ajax:      i32,
-                title:        String,
-                description:  String,
-                link:         String,
-                image:        String,
-            }
-            let body = Template {
-                request_user: request_user,
-                is_ajax:      is_ajax,
-                title:        title,
-                description:  description,
-                link:         link,
-                image:        image,
-            }
-            .render_once()
-            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
-        }
-        else {
-            #[derive(TemplateOnce)]
-            #[template(path = "desctop/attorney/contact.stpl")]
             struct Template {
                 request_user: AuthResponseData,
                 is_ajax:      i32,

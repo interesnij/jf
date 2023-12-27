@@ -1,11 +1,11 @@
 mod auths;
 mod crypto;
-mod request;
+mod reqwest;
 
 pub use self::{
     auths::*, 
     crypto::*,
-    request::*,
+    reqwest::*,
 };
 
 use actix_web::{
