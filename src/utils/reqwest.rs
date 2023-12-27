@@ -18,10 +18,10 @@ struct ReqResult<T> {
 
 
 async fn request<U, T> (
-    url: String, 
+    url:    String, 
     method: reqwest::Method, 
-    body: &U,
-    is_auth: bool
+    body:   &U,
+    key:    String
 ) -> Result<T, u16>
 where
     T: DeserializeOwned + Debug + Send,
@@ -32,13 +32,8 @@ where
     let allow_body = method == reqwest::Method::POST || method == reqwest::Method::PUT;
     let mut req = reqwest::Client::new()
         .request(method, url)
-        .header("Content-Type", "application/json");
-
-    if is_auth {
-        if let Some(token) = get_token(){
-            req = req.bearer_auth(token);
-        }
-    }
+        .header("Content-Type", "application/json")
+        .header("Authorization", "Token " + &key);
 
     if allow_body { 
         req = req.json(body);
@@ -73,41 +68,41 @@ where
     }
 }
 
-pub async fn request_delete<T>(url: String, is_auth: bool) -> Result<T, u16>
+pub async fn request_delete<T>(url: String, key: String) -> Result<T, u16>
 where
     T: DeserializeOwned + 'static + std::fmt::Debug + Send,
     //T: DeserializeOwned + 'static + Send,
 {
-    request(url, reqwest::Method::DELETE, &(), is_auth).await
+    request(url, reqwest::Method::DELETE, &(), key).await
 }
 
 /// Get request
-pub async fn request_get<T>(url: String, is_auth: bool) -> Result<T, u16>
+pub async fn request_get<T>(url: String, key: String) -> Result<T, u16>
 where
     T: DeserializeOwned + 'static + std::fmt::Debug + Send,
     //T: DeserializeOwned + 'static + Send,
 {
-    request(url, reqwest::Method::GET, &(), is_auth).await
+    request(url, reqwest::Method::GET, &(), key).await
 }
 
 /// Post request with a body
-pub async fn request_post<U, T>(url: String, body: &U, is_auth: bool) -> Result<T, u16>
+pub async fn request_post<U, T>(url: String, body: &U, key: String) -> Result<T, u16>
 where
     T: DeserializeOwned + 'static + std::fmt::Debug + Send,
     U: Serialize + std::fmt::Debug,
     //T: DeserializeOwned + 'static + Send,
     //U: Serialize,
 {
-    request(url, reqwest::Method::POST, body, is_auth).await
+    request(url, reqwest::Method::POST, body, key).await
 }
 
 /// Put request with a body
-pub async fn request_put<U, T>(url: String, body: &U, is_auth: bool) -> Result<T, u16>
+pub async fn request_put<U, T>(url: String, body: &U, key: String) -> Result<T, u16>
 where
     T: DeserializeOwned + 'static + std::fmt::Debug + Send,
     U: Serialize + std::fmt::Debug,
     //T: DeserializeOwned + 'static + Send,
     //U: Serialize,
 {
-    request(url, reqwest::Method::PUT, body, is_auth).await
+    request(url, reqwest::Method::PUT, body, key).await
 }
