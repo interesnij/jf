@@ -33,7 +33,7 @@ where
     let mut req = reqwest::Client::new()
         .request(method, url)
         .header("Content-Type", "application/json")
-        .header("Authorization", "Token " + &key);
+        .header("Authorization", "Token ".to_owned() + &key);
 
     if allow_body { 
         req = req.json(body);
