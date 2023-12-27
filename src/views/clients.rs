@@ -30,7 +30,11 @@ pub fn clients_routes(config: &mut web::ServiceConfig) {
     config.route("/client/forums/following", web::get().to(client_following_posts_page));
     config.route("/client/news", web::get().to(client_news_page));
     config.route("/client/news/{id}", web::get().to(client_new_page));
-    config.route("/client/settings", web::get().to(client_settings_page));
+
+    config.route("/client/settings", web::get().to(settings_page));
+    config.route("/client/settings/notify", web::get().to(settings_notify_page));
+    config.route("/client/settings/quard", web::get().to(settings_quard_page));
+    config.route("/client/settings/pay", web::get().to(settings_pay_page));
 
     //config.route("/clients/", web::get().to(clients_page));
     //config.route("/users/clients/{id}/", web::get().to(client_page));
@@ -929,86 +933,6 @@ pub async fn client_new_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web
     }
 }
 
-pub async fn client_settings_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    let user_some = get_request_user(&req);
-    if user_some.is_some() {
-        let request_user = user_some.unwrap();
-        let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
-        let l = 2;
-        let title: String; 
-        let description: String;
-        let link = "/client/settings".to_string();
-        let image = crate::utils::get_default_image();
-        if l == 2 {
-            title = "Settings".to_string();
-            description = "https://app.juslaw.com: Settings".to_string();
-        }
-        else { 
-            title = "Settings".to_string();
-            description = "https://app.juslaw.com: Settings".to_string();
-        }
-
-        if is_ajax == 0 {
-            return crate::utils::get_first_load_page (
-                &req,
-                is_desctop,
-                &title,
-                &description,
-                &link,
-                &image,
-            ).await;
-        }
-        if is_desctop {
-            #[derive(TemplateOnce)]
-            #[template(path = "desctop/client/settings.stpl")]
-            struct Template {
-                request_user: AuthResponseData,
-                is_ajax:      i32,
-                title:        String,
-                description:  String,
-                link:         String,
-                image:        String,
-            }
-            let body = Template {
-                request_user: request_user,
-                is_ajax:      is_ajax,
-                title:        title,
-                description:  description,
-                link:         link,
-                image:        image,
-            }
-            .render_once()
-            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
-        }
-        else {
-            #[derive(TemplateOnce)]
-            #[template(path = "desctop/client/settings.stpl")]
-            struct Template {
-                request_user: AuthResponseData,
-                is_ajax:      i32,
-                title:        String,
-                description:  String,
-                link:         String,
-                image:        String,
-            }
-            let body = Template {
-                request_user: request_user,
-                is_ajax:      is_ajax,
-                title:        title,
-                description:  description,
-                link:         link,
-                image:        image,
-            }
-            .render_once()
-            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
-        }
-    }
-    else {
-        crate::views::login_page(req).await
-    }
-}
 
 pub async fn client_search_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
@@ -1122,7 +1046,7 @@ pub async fn client_find_attorney_page(req: HttpRequest, _id: web::Path<i32>) ->
         }
         if is_desctop {
             #[derive(TemplateOnce)]
-            #[template(path = "desctop/client/attorney.stpl")]
+            #[template(path = "desctop/attorney/attorney.stpl")]
             struct Template {
                 request_user: AuthResponseData,
                 is_ajax:      i32,
@@ -1145,7 +1069,7 @@ pub async fn client_find_attorney_page(req: HttpRequest, _id: web::Path<i32>) ->
         }
         else {
             #[derive(TemplateOnce)]
-            #[template(path = "desctop/client/attorney.stpl")]
+            #[template(path = "desctop/attorney/attorney.stpl")]
             struct Template {
                 request_user: AuthResponseData,
                 is_ajax:      i32,
@@ -1172,6 +1096,329 @@ pub async fn client_find_attorney_page(req: HttpRequest, _id: web::Path<i32>) ->
     }
 }
 
+pub async fn settings_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {
+        let request_user = user_some.unwrap();
+        let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
+        let l = 2;
+        let title: String;
+        let description: String;
+        let link = "/client/settings".to_string();
+        let image = crate::utils::get_default_image();
+        if l == 2 {
+            title = "Settings".to_string();
+            description = "https://app.juslaw.com: Settings".to_string();
+        }
+        else { 
+            title = "Settings".to_string();
+            description = "https://app.juslaw.com: Settings".to_string();
+        }
+
+        if is_ajax == 0 {
+            return crate::utils::get_first_load_page (
+                &req,
+                is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        if is_desctop {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/settings_general.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/settings_general.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
+
+pub async fn settings_notify_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {
+        let request_user = user_some.unwrap();
+        let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
+        let l = 2;
+        let title: String;
+        let description: String;
+        let link = "/client/settings/notify".to_string();
+        let image = crate::utils::get_default_image();
+        if l == 2 {
+            title = "Settings".to_string();
+            description = "https://app.juslaw.com: Settings".to_string();
+        }
+        else { 
+            title = "Settings".to_string();
+            description = "https://app.juslaw.com: Settings".to_string();
+        }
+
+        if is_ajax == 0 {
+            return crate::utils::get_first_load_page (
+                &req,
+                is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        if is_desctop {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/settings_notify.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/settings_notify.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
+
+pub async fn settings_quard_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {
+        let request_user = user_some.unwrap();
+        let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
+        let l = 2;
+        let title: String;
+        let description: String;
+        let link = "/client/settings/quard".to_string();
+        let image = crate::utils::get_default_image();
+        if l == 2 {
+            title = "Settings".to_string();
+            description = "https://app.juslaw.com: Settings".to_string();
+        }
+        else { 
+            title = "Settings".to_string();
+            description = "https://app.juslaw.com: Settings".to_string();
+        }
+
+        if is_ajax == 0 {
+            return crate::utils::get_first_load_page (
+                &req,
+                is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        if is_desctop {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/settings_quard.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/settings_quard.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
+
+pub async fn settings_pay_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {
+        let request_user = user_some.unwrap();
+        let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
+        let l = 2;
+        let title: String;
+        let description: String;
+        let link = "/client/settings/pay".to_string();
+        let image = crate::utils::get_default_image();
+        if l == 2 {
+            title = "Settings".to_string();
+            description = "https://app.juslaw.com: Settings".to_string();
+        }
+        else { 
+            title = "Settings".to_string();
+            description = "https://app.juslaw.com: Settings".to_string();
+        }
+
+        if is_ajax == 0 {
+            return crate::utils::get_first_load_page (
+                &req,
+                is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        if is_desctop {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/settings_pay.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/settings_pay.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
 
 pub async fn client_favorites_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
@@ -1253,6 +1500,9 @@ pub async fn client_favorites_page(req: HttpRequest) -> actix_web::Result<HttpRe
         crate::views::login_page(req).await
     }
 }
+
+
+
 
 //////////////  CLIENTS  //////
 //////////////  CLIENTS  //////
