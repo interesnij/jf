@@ -10,7 +10,7 @@ use crate::errors::Error;
 use sailfish::TemplateOnce;
 use serde::{Deserialize, Serialize};
 use crate::utils::{
-    get_request_user, UserSmallData, SpecialitiesData, AuthResponseData
+    get_request_user, UserSmallData, SpecialitiesData, AuthResponseData, request_get, API,
 };
 
 
@@ -80,6 +80,18 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
                 &image,
             ).await;
         }
+
+        let data = request_get::<crate::views::AttorneyOnboardingData> (
+            API.to_owned() 
+            + &"users/attorneys/".to_string() + &request_user.id.to_string() + &"/overview/".to_string(),
+            &request_user.key
+        ).await;
+        let activities = data.activities;
+        let billing = data.billing;
+        let chats = data.chats;
+        let open_matters = data.open_matters;
+        let open_matters_count = data.open_matters_count;
+
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/overview.stpl")]

@@ -24,6 +24,9 @@ use crate::models::{
     User, 
 };
 
+
+pub const API: &str = "https://backend.juslaw.com/api/v1/";
+
 fn get_data<'a>(req: &'a HttpRequest) -> Option<&'a str> {
     return req.headers().get("Request-Data")?.to_str().ok();
 } 
