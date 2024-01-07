@@ -68,16 +68,6 @@ pub struct ChatData {
     pub created:           String,
 } 
 
-#[derive(Debug, Deserialize)]
-pub struct ChatsData { 
-    pub count:      i32,
-    pub next:       Option<String>,
-    pub page_count: i32,
-    pub previous:   Option<String>,
-    pub results:    Vec<ChatData>,
-}
-/////////////////////////////
-
 
 //////////////  CHAT DETAIL  //////
 //////////////  CHAT DETAIL  //////
