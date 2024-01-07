@@ -68,14 +68,6 @@ pub struct BillingItemsSmallData {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct ActivitiesData { 
-    pub activity: String,
-    pub created:  String,
-    pub id:       i32,
-    pub modified: String,
-}
-
-#[derive(Debug, Deserialize)]
 pub struct InvoiceData { 
     pub id:                 i32,
     pub number:             String,
@@ -90,7 +82,7 @@ pub struct InvoiceData {
     pub billing_items:      Vec<i32>,
     pub billing_items_data: Vec<BillingItemsSmallData>,
     pub billable_sum:       i32,
-    pub activities_data:    Vec<ActivitiesData>,
+    pub activities_data:    Vec<crate::views::ActivitiesData>,
     pub address:            String,
     pub country:            i32,
     pub country_data:       crate::utils::CountryData,

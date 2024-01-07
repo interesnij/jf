@@ -85,11 +85,11 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
         let billing: crate::views::BillingData;
         let chats: Vec<crate::views::ChatsData>;
         let open_matters: Vec<crate::views::OpenMattersData>;
-        let open_matters_count: i32;
+        let open_matters_count: i32; 
 
         let resp = request_get::<crate::views::AttorneyOnboardingData> (
-            API.to_owned() 
-            + &"users/attorneys/".to_string() + &request_user.id.to_string() + &"/overview/".to_string(),
+            API.to_owned()
+            + &"users/attorneys/".to_string() + &request_user.user_id + &"/overview/".to_string(),
             &request_user.key
         ).await;
         if resp.is_ok() {
