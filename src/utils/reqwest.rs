@@ -21,7 +21,7 @@ async fn request<U, T> (
     url:    String, 
     method: reqwest::Method, 
     body:   &U,
-    key:    String
+    key:    &String
 ) -> Result<T, u16>
 where
     T: DeserializeOwned + Debug + Send,
@@ -33,7 +33,7 @@ where
     let mut req = reqwest::Client::new()
         .request(method, url)
         .header("Content-Type", "application/json")
-        .header("Authorization", "Token ".to_owned() + &key);
+        .header("Authorization", "Token ".to_owned() + key);
 
     if allow_body { 
         req = req.json(body);
@@ -68,7 +68,7 @@ where
     }
 }
 
-pub async fn request_delete<T>(url: String, key: String) -> Result<T, u16>
+pub async fn request_delete<T>(url: String, key: &String) -> Result<T, u16>
 where
     T: DeserializeOwned + 'static + std::fmt::Debug + Send,
     //T: DeserializeOwned + 'static + Send,
@@ -86,7 +86,7 @@ where
 }
 
 /// Post request with a body
-pub async fn request_post<U, T>(url: String, body: &U, key: String) -> Result<T, u16>
+pub async fn request_post<U, T>(url: String, body: &U, key: &String) -> Result<T, u16>
 where
     T: DeserializeOwned + 'static + std::fmt::Debug + Send,
     U: Serialize + std::fmt::Debug,
@@ -97,7 +97,7 @@ where
 }
 
 /// Put request with a body
-pub async fn request_put<U, T>(url: String, body: &U, key: String) -> Result<T, u16>
+pub async fn request_put<U, T>(url: String, body: &U, key: &String) -> Result<T, u16>
 where
     T: DeserializeOwned + 'static + std::fmt::Debug + Send,
     U: Serialize + std::fmt::Debug,

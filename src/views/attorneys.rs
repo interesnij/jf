@@ -81,16 +81,37 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
             ).await;
         }
 
-        let data = request_get::<crate::views::AttorneyOnboardingData> (
+        let activities: Vec<crate::views::ActivitiesData>;
+        let billing: crate::views::BillingData;
+        let chats: Vec<crate::views::ChatsData>;
+        let open_matters: Vec<crate::views::OpenMattersData>;
+        let open_matters_count: i32;
+
+        let resp = request_get::<crate::views::AttorneyOnboardingData> (
             API.to_owned() 
             + &"users/attorneys/".to_string() + &request_user.id.to_string() + &"/overview/".to_string(),
             &request_user.key
         ).await;
-        let activities = data.activities;
-        let billing = data.billing;
-        let chats = data.chats;
-        let open_matters = data.open_matters;
-        let open_matters_count = data.open_matters_count;
+        if resp.is_ok() {
+            let data = resp.expect();
+            activities = data.activities;
+            billing =data.billing;
+            chats =data.chats;
+            open_matters =data.open_matters;
+            open_matters_count =data.open_matters_count;
+        }
+        else {
+            activities = Vec::new();
+            billing = crate::views::BillingData {
+                overdue:   0,
+                paid:      0,
+                un_billed: 0,
+                unpaid:    0,
+            };
+            chats = Vec::new();
+            open_matters = Vec::new();
+            open_matters_count = 0;
+        }
 
         if is_desctop {
             #[derive(TemplateOnce)]
