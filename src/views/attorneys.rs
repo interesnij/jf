@@ -93,7 +93,7 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
             &request_user.key
         ).await;
         if resp.is_ok() {
-            let data = resp.expect();
+            let data = resp.expect("E.");
             activities = data.activities;
             billing =data.billing;
             chats =data.chats;

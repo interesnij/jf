@@ -77,7 +77,7 @@ where
 }
 
 /// Get request
-pub async fn request_get<T>(url: String, key: String) -> Result<T, u16>
+pub async fn request_get<T>(url: String, key: &String) -> Result<T, u16>
 where
     T: DeserializeOwned + 'static + std::fmt::Debug + Send,
     //T: DeserializeOwned + 'static + Send,
