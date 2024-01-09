@@ -69,7 +69,7 @@
                 <div class="row">
                 <% for object in chats.iter() { %>
 
-                  <% let (message, client) = (object.last_message, object.client_data); %>
+                  <% let (message, client) = (object.last_message.clone(), object.client_data.clone()); %>
                   <div class="chat-item">
                     <div class="user-avatar-container small toRight">
                       <div class="user-avatar small">
