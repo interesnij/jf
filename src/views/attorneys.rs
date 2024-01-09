@@ -123,10 +123,10 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
                 description:        String,
                 link:               String,
                 image:              String,
-                activities:         Vec<ActivitiesData>,
-                billing:            BillingData,
-                chats:              Vec<ChatsData>,
-                open_matters:       Vec<OpenMattersData>,
+                activities:         Vec<crate::views::ActivitiesData>,
+                billing:            crate::views::BillingData,
+                chats:              Vec<crate::views::ChatsData>,
+                open_matters:       Vec<crate::views::OpenMattersData>,
                 open_matters_count: i32,
             }
             let body = Template {
@@ -156,10 +156,10 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
                 description:        String,
                 link:               String,
                 image:              String,
-                activities:         Vec<ActivitiesData>,
-                billing:            BillingData,
-                chats:              Vec<ChatsData>,
-                open_matters:       Vec<OpenMattersData>,
+                activities:         Vec<crate::views::ActivitiesData>,
+                billing:            crate::views::BillingData,
+                chats:              Vec<crate::views::ChatsData>,
+                open_matters:       Vec<crate::views::OpenMattersData>,
                 open_matters_count: i32,
             }
             let body = Template {

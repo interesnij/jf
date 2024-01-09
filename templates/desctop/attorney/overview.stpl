@@ -102,7 +102,6 @@
 
                 <% } %>
                 </div>
-              <% } %>
 
               <% } else { %>
               <div class="d-flex flex-column">
@@ -142,7 +141,7 @@
                   <div class="open-matters__row">
                     <div class="open-matters__item text-ellipsis"> 
                         <a href="/attorney/matters/<%= object.id %>"><%= object.title %></a>
-                    </div>
+                    </div> 
                     <div class="open-matters__item">
                       <div class="user-avatar-container small toRight">
                         <div class="user-avatar small">
@@ -182,7 +181,6 @@
                       </div>
                     </div>
                   </div>
-                  <% } %>
 
                 <% } else { %>
                   <div class="sc-irlQje VUHpI">
