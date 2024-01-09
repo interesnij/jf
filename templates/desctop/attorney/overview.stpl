@@ -15,18 +15,18 @@
         <div class="folder-item folder-item--with-separator">
           <div class="row"><a class="col-md-6" href="/attorney/invoices?filter=paid">
               <div class="text-gray">Paid</div>
-              <div class="text-lg-black">$0.00</div>
+              <div class="text-lg-black">$<%= billing.paid %></div> 
               <div class="divider my-1"></div>
             </a><a class="col-md-6" href="/attorney/invoices?filter=overdue">
               <div class="text-gray">Overdue</div>
-              <div class="text-lg-black">$0.00</div>
+              <div class="text-lg-black">$<%= billing.overdue %></div>
               <div class="divider my-1"></div>
             </a><a class="col-md-6" href="/attorney/billing">
               <div class="text-gray">Unbilled</div>
-              <div class="text-lg-black">$0.00</div>
+              <div class="text-lg-black">$<%= billing.un_billed %></div>
             </a><a class="col-md-6" href="/attorney/invoices?filter=open">
               <div class="text-gray">Unpaid</div>
-              <div class="text-lg-black">$0.00</div>
+              <div class="text-lg-black">$<%= billing.unpaid %></div>
             </a></div>
         </div>
       </div>
@@ -64,18 +64,60 @@
               <div class="chat-title mb-1 d-flex">
                 <span class="capitalize">Leads and clients</span>
               </div>
+
+              <% if chats.len() == 0 { %> 
+                <div class="row">
+                <% for object in chats.iter() { %>
+
+                  <% let (message, client) = (object.last_message, object.client_data); %>
+                  <div class="chat-item">
+                    <div class="user-avatar-container small toRight">
+                      <div class="user-avatar small">
+                        <% if client.avatar.is_some() { %>
+                            <img src="<%= client.avatar.as_deref().unwrap() %>" />
+                        <% } else { %> 
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                            </svg>
+                        <% } %>
+                      </div>
+                    </div>
+                    <div class="ml-1 w-100">
+                      <div class="d-flex">
+                        <div class="text-black">
+                          <%= client.first_name %> <%= client.last_name %>
+                        </div>
+                        <% if message.is_favorite { %>
+                          <img src="/static/static/star_fill.svg" alt="star" class="chat-item__star ml-1">
+                        <% } else { %>
+                          <img src="/static/static/star_empty.svg" alt="star" class="chat-item__star ml-1">
+                        <% } %> 
+                      </div>
+                      <div class="justify-content-between">
+                        <div class="chat-item__message text-gray"><%= message.text %></div>
+                        <div class="text-gray"><%= message.timestamp1 %></div>
+                      </div>
+                    </div>
+                  </div>
+
+                <% } %>
+                </div>
+              <% } %>
+
+              <% } else { %>
               <div class="d-flex flex-column">
                 <div class="text-center">
                     You currently have no chat messages
                 </div>
                 <div class="d-flex justify-content-center mt-2">
-                    <button class="btn btn--outline btn--green ripple-effect normal" type="button">
+                    <button class="btn btn--outline btn--green ripple-effect normal create_chat">
                         <span>Start a new chat now!</span>
                     </button>
                 </div>
               </div>
+              <% } %>
             </div>
-          </div>
+          </div> 
         </div>
 
         <div class="folder-control mt-4">
@@ -94,9 +136,66 @@
                 <div class="open-matters__item"><span>Rate</span></div>
                 <div class="open-matters__item"><span>Practice area</span></div>
                 <div class="open-matters__item"><span>Principle</span></div>
-              </div>
+              </div> 
+              <% if open_matters.len() == 0 { %> 
+                <% for object in open_matters.iter() { %>
+                  <div class="open-matters__row">
+                    <div class="open-matters__item text-ellipsis"> 
+                        <a href="/attorney/matters/<%= object.id %>"><%= object.title %></a>
+                    </div>
+                    <div class="open-matters__item">
+                      <div class="user-avatar-container small toRight">
+                        <div class="user-avatar small">
+                            <% if object.client_avatar.is_some() { %>
+                                <img src="<%= object.client_avatar.as_deref().unwrap() %>" />
+                            <% } else { %>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                                </svg>
+                            <% } %>
+                        </div> 
+                        <div class="user-avatar__name"><%= object.client_name %></div>
+                      </div>
+                    </div> 
+                    <div class="open-matters__item">
+                        <span><%= object.fee_type %></span>
+                    </div>
+                    <div class="open-matters__item">
+                        <span class="text-ellipsis d-block" style="max-width: 140px;">
+                            <!-- matter category -->
+                        </span> 
+                    </div>
+                    <div class="open-matters__item">
+                      <div class="user-avatar-container small toRight">
+                        <div class="user-avatar small">
+                          <div class="user-avatar small">
+                            <% if object.principle_avatar.is_some() { %>
+                                <img src="<%= object.principle_avatar.as_deref().unwrap() %>" />
+                            <% } else { %>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                                </svg>
+                            <% } %>
+                        </div>
+                        </div>  
+                        <div class="user-avatar__name"><%= object.principle_name %></div>
+                      </div>
+                    </div>
+                  </div>
+                  <% } %>
 
-              <% include!("../matters/attorney_card.stpl"); %>
+                <% } else { %>
+                  <div class="sc-irlQje VUHpI">
+                    <div class="d-flex justify-content-center pt-2">
+                      <div class="my-2 text-center text-gray">You currently have no open matters</div>
+                    </div>
+                    <div class="d-flex justify-content-center pb-4">
+                      <button class="btn btn--outline btn--green ripple-effect normal create_matter">
+                        <span>+ New Matter</span>
+                      </button>
+                    </div>
+                  </div>
+                <% } %>
 
             </div>
           </div>

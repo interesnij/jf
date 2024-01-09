@@ -79,7 +79,7 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
                 &link,
                 &image,
             ).await;
-        }
+        } 
 
         let activities: Vec<crate::views::ActivitiesData>;
         let billing: crate::views::BillingData;
@@ -117,20 +117,30 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/overview.stpl")]
             pub struct Template {
-                request_user: AuthResponseData,
-                is_ajax:      i32,
-                title:        String,
-                description:  String,
-                link:         String,
-                image:        String,
+                request_user:       AuthResponseData,
+                is_ajax:            i32,
+                title:              String,
+                description:        String,
+                link:               String,
+                image:              String,
+                activities:         Vec<ActivitiesData>,
+                billing:            BillingData,
+                chats:              Vec<ChatsData>,
+                open_matters:       Vec<OpenMattersData>,
+                open_matters_count: i32,
             }
             let body = Template {
-                request_user: request_user,
-                is_ajax:      is_ajax,
-                title:        title,
-                description:  description,
-                link:         link,
-                image:        image,
+                request_user:       request_user,
+                is_ajax:            is_ajax,
+                title:              title,
+                description:        description,
+                link:               link,
+                image:              image,
+                activities:         activities,
+                billing:            billing,
+                chats:              chats,
+                open_matters:       open_matters,
+                open_matters_count: open_matters_count,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -139,21 +149,31 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
         else {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/overview.stpl")]
-            struct Template {
-                request_user: AuthResponseData,
-                is_ajax:      i32,
-                title:        String,
-                description:  String,
-                link:         String,
-                image:        String,
+            pub struct Template {
+                request_user:       AuthResponseData,
+                is_ajax:            i32,
+                title:              String,
+                description:        String,
+                link:               String,
+                image:              String,
+                activities:         Vec<ActivitiesData>,
+                billing:            BillingData,
+                chats:              Vec<ChatsData>,
+                open_matters:       Vec<OpenMattersData>,
+                open_matters_count: i32,
             }
             let body = Template {
-                request_user: request_user,
-                is_ajax:      is_ajax,
-                title:        title,
-                description:  description,
-                link:         link,
-                image:        image,
+                request_user:       request_user,
+                is_ajax:            is_ajax,
+                title:              title,
+                description:        description,
+                link:               link,
+                image:              image,
+                activities:         activities,
+                billing:            billing,
+                chats:              chats,
+                open_matters:       open_matters,
+                open_matters_count: open_matters_count,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
