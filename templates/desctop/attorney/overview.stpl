@@ -95,7 +95,9 @@
                       </div>
                       <div class="justify-content-between">
                         <div class="chat-item__message text-gray"><%= message.text %></div>
-                        <div class="text-gray"><%= message.timestamp1 %></div>
+                        <% if message.timestamp1.is_some() { %>
+                          <div class="text-gray"><%= message.timestamp1.as_deref().unwrap() %></div>
+                        <% } %>
                       </div>
                     </div>
                   </div>
