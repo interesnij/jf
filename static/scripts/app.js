@@ -139,6 +139,9 @@ function check_first_load() {
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       ajax_link.open( 'GET', url, true );
       ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+      if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+      }
       ajax_link.onreadystatechange = function () {
         if ( this.readyState == 4 && this.status == 200 ) {
             //get_custom_design();
@@ -252,12 +255,6 @@ on('body', 'click', '#logg', function() {
 
   else {
     _this.disabled = false;
-    response.style.display = "block";
-    //response.innerHTML = "Логин или пароль - неверный!";
-    response.classList.add("error");
-    form.querySelector("#id_email").style.display = "block";
-    form.querySelector("#id_email").value = '';
-    form.querySelector("#id_password").value = '';
   }};
   link.send(form_data);
 });
@@ -296,4 +293,13 @@ on('body', 'click', '#signup', function() {
     response.classList.add("error");
   }};
   link.send(form_data);
+});
+
+on('body', 'click', 'a', function(event) {
+  event.preventDefault();
+  //if (this.getAttribute("href") == window.location.pathname){
+  //  toast_info("Вы уже на этой странице");
+  //  return
+  //};
+  ajax_get_reload(this.getAttribute("href"), true, 2)
 });
