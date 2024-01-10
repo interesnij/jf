@@ -10,7 +10,7 @@ use crate::errors::Error;
 use sailfish::TemplateOnce;
 use serde::{Deserialize, Serialize};
 use crate::utils::{
-    get_string, get_request_user, 
+    get_string, get_limit, get_integer, get_request_user, 
     AuthResponseData, request_get, API
 };
 
@@ -75,16 +75,16 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
         let page_count:  i32;
         let object_list: Vec<LeadOrClientData>;
 
-        let limit:  Option<i64>;
-        let offset: Option<i64>;
-        let search: Option<String>;
-        let _type:  Option<String>;
+        let limit:  i64;
+        let offset: i64;
+        let search: String;
+        let _type:  String;
 
         let params_some = web::Query::<LeadsAndClientsParams>::from_query(&req.query_string());
         if params_some.is_ok() {
             let params = params_some.unwrap();
-            limit =  get_string(params.limit);
-            offset = get_string(params.offset);
+            limit =  get_limit(params.limit);
+            offset = get_integer(params.offset);
             search = get_string(params.search.clone());
             _type =  get_string(params.type.clone());
         }

@@ -208,11 +208,23 @@ pub async fn get_first_load_page (
     }
 }
 
-pub fn get_string(value: Option<String>) -> String {
+pub fn get_string(value: Option<String>) -> Option<String> {
     if value.is_some() {
         return value.as_deref().unwrap().to_string();
     }
     return String::new();
+}
+pub fn get_limit(value: Option<i64>) -> i64 {
+    if value.is_some() {
+        return value.unwrap();
+    }
+    return 20;
+}
+pub fn get_integer(value: Option<i64>) -> i64 {
+    if value.is_some() {
+        return value.unwrap();
+    }
+    return 0;
 }
 
 pub fn get_page(req: &HttpRequest) -> i32 {
