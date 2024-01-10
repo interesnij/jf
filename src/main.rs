@@ -47,7 +47,7 @@ async fn main() -> std::io::Result<()> {
             .data(server.clone())
             .service(_files)
             .configure(routes)
-            .default_service(web::route().to(crate::views::login_page))
+            //.default_service(web::route().to(crate::views::login_page))
     })
 
     //.bind("69.167.186.207:9285")?       // порт для разработки
