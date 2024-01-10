@@ -86,7 +86,7 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             limit =  get_limit(params.limit);
             offset = get_integer(params.offset);
             search = get_string(params.search.clone());
-            _type =  get_string(params.type.clone());
+            _type =  get_string(params.r#type.clone());
         }
         else {
             limit =  String::new();
