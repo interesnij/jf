@@ -75,8 +75,8 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
         let page_count:  i32;
         let object_list: Vec<LeadOrClientData>;
 
-        let limit:  i64;
-        let offset: i64;
+        let limit:  String;
+        let offset: String;
         let search: String;
         let _type:  String;
 
