@@ -14,7 +14,7 @@ use crate::utils::{
 };
 
 
-pub fn page_routes(config: &mut web::ServiceConfig) {
+pub fn biznes_routes(config: &mut web::ServiceConfig) {
     //config.route("/business/invoices/", web::get().to(invoices_page));
     //config.route("/business/time-billing/", web::get().to(time_billing_page));
     //config.route("/business/notes/", web::get().to(notes_page));

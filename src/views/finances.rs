@@ -14,7 +14,7 @@ use crate::utils::{
 };
 
 
-pub fn page_routes(config: &mut web::ServiceConfig) {
+pub fn finance_routes(config: &mut web::ServiceConfig) {
     //config.route("/finance/profiles/current/", web::get().to(finance_current_page));
     //config.route("/finance/payment-method/", web::get().to(payment_method_page));
 }

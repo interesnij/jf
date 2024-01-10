@@ -14,7 +14,7 @@ use crate::utils::{
 };
 
 
-pub fn page_routes(config: &mut web::ServiceConfig) {
+pub fn forum_routes(config: &mut web::ServiceConfig) {
     //config.route("/forum/posts/", web::get().to(posts_page));
     //config.route("/forum/topics/", web::get().to(topics_page));
     //config.route("/forum/followed_topics/", web::get().to(followed_topics_page));

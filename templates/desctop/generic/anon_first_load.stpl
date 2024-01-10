@@ -25,7 +25,7 @@
 </head>
   <body>
     <div id="reload" tabindex="-1" style="outline: none;"></div>
-    <script type="text/javascript" src="/static/scripts/anon.js"></script>
+    <script type="text/javascript" src="/static/scripts/app.js"></script>
 </div>
 </body>
 </html> 

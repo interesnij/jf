@@ -14,7 +14,7 @@ use crate::utils::{
 };
 
 
-pub fn page_routes(config: &mut web::ServiceConfig) {
+pub fn matter_routes(config: &mut web::ServiceConfig) {
     //config.route("/business/matters/", web::get().to(matters_page));
     //config.route("/business/matters/{id}/", web::get().to(matter_page));
     //config.route("/business/matter-post/", web::get().to(matter_post_page));

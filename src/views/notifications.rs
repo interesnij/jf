@@ -14,7 +14,7 @@ use crate::utils::{
 };
 
 
-pub fn page_routes(config: &mut web::ServiceConfig) {
+pub fn notification_routes(config: &mut web::ServiceConfig) {
     //config.route("/notifications/", web::get().to(notifications_page));
     //config.route("/notifications/settings/", web::get().to(notifications_settings_page));
 }

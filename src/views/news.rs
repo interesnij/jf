@@ -14,7 +14,7 @@ use crate::utils::{
 };
 
 
-pub fn page_routes(config: &mut web::ServiceConfig) {
+pub fn news_routes(config: &mut web::ServiceConfig) {
     //config.route("/news/", web::get().to(news_page));
     //config.route("/news/{id}/", web::get().to(new_page));
 }
