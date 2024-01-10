@@ -1,18 +1,18 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="billings-page__bar">
     <div class="d-flex mt-3">
       <div class="billings-page__bar-input">
         <div class="search-bar-container undefined">
-            <img src="/static/media/search.svg" alt="search">
+            <img src="/static/images/search.svg" alt="search">
             <input placeholder="Search in billing items" value="" wfd-id="id16">
         </div>
       </div>
-        <button class="btn btn--outline btn--green ripple-effect normal ml-auto my-auto" type="button">
+        <button class="btn btn--outline btn--green ripple-effect normal ml-auto my-auto create_expense">
             <span>Add Expense</span>
         </button>
-        <button class="btn btn--outline btn--green ripple-effect normal ml-2 my-auto" type="button">
+        <button class="btn btn--outline btn--green ripple-effect normal ml-2 my-auto create_time">
             <span>Add Time</span>
         </button>
     </div>
@@ -21,7 +21,7 @@
         <div tabindex="0" class="select-container">
           <div class="menu-button">
             <span>All entries</span>
-            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
           <div class="menu-dropdown">
             <div class="menu-item active" style="width: 150px;">All entries</div>
@@ -34,7 +34,7 @@
         <div tabindex="0" class="select-container">
           <div class="menu-button">
             <span>All</span>
-            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
           <div class="menu-dropdown">
             <div class="menu-item active" style="width: 150px;">All</div>
@@ -47,7 +47,7 @@
         <div tabindex="0" class="select-container">
           <div class="menu-button">
             <span>All Time</span>
-            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
           <div class="menu-dropdown">
             <div class="menu-item active" style="width: 180px;">All Time</div>
@@ -70,20 +70,20 @@
         <div class="billings-page__table-header-item"><span class="my-auto">Billable</span></div>
         <div class="billings-page__table-header-item sortable">
             <span class="my-auto">Matter</span>
-            <img src="/static/media/sort.svg" alt="sort">
+            <img src="/static/images/sort.svg" alt="sort">
         </div>
         <div class="billings-page__table-header-item sortable">
             <span class="my-auto">Client</span>
-            <img src="/static/media/sort.svg" alt="sort">
+            <img src="/static/images/sort.svg" alt="sort">
         </div>
         <div class="billings-page__table-header-item"><span class="my-auto">Amount</span></div>
         <div class="billings-page__table-header-item sortable">
             <span class="my-auto">Date</span>
-            <img src="/static/media/sort.svg" alt="sort">
+            <img src="/static/images/sort.svg" alt="sort">
         </div>
         <div class="billings-page__table-header-item sortable">
             <span class="my-auto">Billed by</span>
-            <img src="/static/media/sort.svg" alt="sort">
+            <img src="/static/images/sort.svg" alt="sort">
         </div>
         <div class="billings-page__table-header-item">
             <span class="my-auto">Actions</span>
@@ -125,12 +125,12 @@
         <div class="billings-page__table-row-item">
           <div class="dropdown mx-auto" tabindex="0">
             <div class="dropdown__button">
-                <img src="/static/media/action_gray.svg" alt="action" class="billings-page__table-row-item-action"></div>
+                <img src="/static/images/action_gray.svg" alt="action" class="billings-page__table-row-item-action"></div>
             <div class="dropdown__menu">
-              <div class="dropdown__menu-item">Edit</div>
-              <div class="dropdown__menu-item">Start timer</div>
-              <div class="dropdown__menu-item">Delete entry</div>
-              <div class="dropdown__menu-item">Create an invoice</div>
+              <div class="dropdown__menu-item edit_billing" data-pk="">Edit</div>
+              <div class="dropdown__menu-item start_timer" data-pk="">Start timer</div>
+              <div class="dropdown__menu-item delete_billing" data-pk="">Delete entry</div>
+              <div class="dropdown__menu-item create billing" data-pk="">Create an invoice</div>
             </div>
           </div>
         </div>
@@ -141,7 +141,9 @@
     </div>
     <div class="billings-page__table-row table-row-summary mb-4">
       <div class="billings-page__table-row-item"></div>
-      <div class="billings-page__table-row-item"><span class="billings-page__table-row-item__label total-hours mr-2">Total Hours</span>1:22:22</div>
+      <div class="billings-page__table-row-item">
+        <span class="billings-page__table-row-item__label total-hours mr-2">Total Hours</span>1:22:22
+      </div>
       <div class="billings-page__table-row-item "></div>
       <div class="billings-page__table-row-item"></div>
       <div class="billings-page__table-row-item"></div>

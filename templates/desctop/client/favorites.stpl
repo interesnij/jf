@@ -1,14 +1,18 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="find-page no-background">
-    <div class="tab-control"><a href="/client/find">
+    <div class="tab-control">
+      <a href="/client/find">
         <div class="tab-control__item"><span>Representation</span></div>
-      </a><a href="/client/find/search">
+      </a>
+      <a href="/client/find/search">
         <div class="tab-control__item"><span>Search</span></div>
-      </a><a aria-current="page" href="/client/find/favorites">
+      </a>
+      <a aria-current="page" href="/client/find/favorites">
         <div class="tab-control__item tab-control__item--active"><span>Favorites</span></div>
-      </a></div>
+      </a>
+    </div>
     <div class="find-page__main">
       <div class="find-search-result-page">
         <div class="sc-hYZPxA jlEMIh">You have 6 favorited attorney profiles</div>
@@ -34,7 +38,7 @@
               <div class="ml-3 flex-1">
                 <div class="d-flex"><a href="/client/find/attorneys/238">
                     <div class="find-attorney-search__name">Philip Kaplan</div>
-                  </a><img class="find-attorney-search__favorite" src="/static/media/favorite_fill.f783f433ffc971cf8af6e06f46d48ab0.svg" alt="favorite"></div>
+                  </a><img class="find-attorney-search__favorite" src="/static/images/favorite_fill.svg" alt="favorite"></div>
                 <div class="text-dark">Berliner Corcoran &amp; Rowe LLP</div>
                 <div class="d-flex mt-2">
                   <div class="find-attorney-search__practice">Asset Protection</div>
@@ -57,9 +61,22 @@
                   - Consular Matters
                   - Coordination with U.S. Departments of State, Defense, Commerce, Treasury and Intelligence Agencies</div>
                 <div class="view-more mt-1">View More</div>
-                <div class="mt-1 d-flex flex-wrap"><a target="_blank" href="https://bcrlaw.com" style="text-decoration: none;"><button class="btn btn--outline btn--green ripple-effect normal mr-2 mt-2" type="button"><span>View Website</span></button></a><button class="btn btn--outline btn--green ripple-effect normal mr-2 mt-2" type="button"><span>Start a Call</span></button><button class="btn btn--green ripple-effect normal mt-2" type="button"><span>Chat Now</span></button></div>
+                <div class="mt-1 d-flex flex-wrap">
+                  <a target="_blank" href="https://bcrlaw.com" style="text-decoration: none;">
+                    <button class="btn btn--outline btn--green ripple-effect normal mr-2 mt-2" type="button">
+                      <span>View Website</span>
+                    </button>
+                  </a>
+                  <button class="btn btn--outline btn--green ripple-effect normal mr-2 mt-2" type="button">
+                    <span>Start a Call</span>
+                  </button>
+                  <button class="btn btn--green ripple-effect normal mt-2" type="button">
+                    <span>Chat Now</span>
+                  </button>
+                </div>
               </div>
             </div>
+
           </div>
           <div class="map-section">
             

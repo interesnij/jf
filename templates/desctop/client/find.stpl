@@ -1,6 +1,6 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="find-page ">
     <div class="tab-control">
         <a href="/client/find">
@@ -24,15 +24,18 @@
             <div class="desc">Match with attorneys that fit your legal needs. Compare prices, fees, proposals and attorney profiles.</div>
             <div class="mx-auto" style="width: fit-content;">
               <div class="d-flex justify-content-center">
-                <div class="representation-page--item"><img src="/static/images/post_matter.svg" alt="post matter">
+                <div class="representation-page--item">
+                  <img src="/static/images/post_matter.svg" alt="post matter">
                   <div class="representation-page--item-title">Post your Matter</div>
                   <div class="representation-page--item-desc">Get started by creating a post about your matter and legal needs. Describe your legal issue and set a budget.</div>
                 </div>
-                <div class="representation-page--item"><img src="/static/images/get_proposals.svg" alt="post matter">
+                <div class="representation-page--item">
+                  <img src="/static/images/get_proposals.svg" alt="post matter">
                   <div class="representation-page--item-title">Get Proposals</div>
                   <div class="representation-page--item-desc">JusLaw matches you with attorneys most qualified to handle your specific legal matter. Collect and compare prices, fees, proposals, and profiles.</div>
                 </div>
-                <div class="representation-page--item"><img src="/static/images/accept_hire.svg" alt="post matter">
+                <div class="representation-page--item">
+                  <img src="/static/images/accept_hire.svg" alt="post matter">
                   <div class="representation-page--item-title">Accept and Hire your Attorney</div>
                   <div class="representation-page--item-desc">When you’re ready, accept their proposal and hire the attorney that’s right for you.</div>
                 </div>

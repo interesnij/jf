@@ -1,7 +1,8 @@
-<div class="fullscreen">
+<div class="fullscreen doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="fullscreen__header">
     <span class="my-auto">Settings</span>
-    <img src="/static/media/close_white.svg" alt="close"></div>
+    <img src="/static/images/close_white.svg" alt="close">
+  </div>
   <div class="fullscreen__content d-flex flex-column fullscreen__content--grey">
     <div class="tab-control">
       <div class="tab-control__item"><span>Profile</span></div>

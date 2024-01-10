@@ -108,50 +108,6 @@ pub struct AttorneysData {
 }
 /////////////////////////////////////////////
 
-//////////////  LEADS AND CLIENTS  //////
-//////////////  LEADS AND CLIENTS  //////
-
-#[derive(Debug, Deserialize)]
-pub struct LeadsAndClientsParams {
-    pub limit:  Option<i64>,
-    pub offset: Option<i64>,
-    pub search: Option<String>,
-    pub r#type: Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-pub struct LeadOrClientData { 
-    pub id:            i32,
-    pub first_name:    String,
-    pub middle_name:   String,
-    pub last_name:     String,
-    pub phone:         String,
-    pub avatar:        Option<String>,
-    pub job:           String,
-    pub company:       Option<String>,
-    pub country_data:  crate::utils::CountryData,
-    pub state_data:    Option<crate::utils::StateData>,
-    pub city_data:     crate::utils::CityData,
-    pub address:       String,
-    pub zipcode:       String,
-    pub note:          Option<String>,
-    pub r#type:        String,
-    pub email:         String,
-    pub matters_count: i32,
-    pub is_pending:    bool,
-}
-
-#[derive(Debug, Deserialize)]
-pub struct LeadsAndClientsData { 
-    pub count:      i32,
-    pub next:       Option<String>,
-    pub page_count: i32,
-    pub previous:   Option<String>,
-    pub results:    Vec<LeadOrClientData>,
-}
-///////////////////////////////////////////
-
-
 //////////////  ATTORNEY CONTACTS  //////
 //////////////  ATTORNEY CONTACTS  //////
 

@@ -1,8 +1,8 @@
 
-<div class="fullscreen">
+<div class="fullscreen doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="fullscreen__header">
     <span class="my-auto">Settings</span>
-    <img src="/static/media/close_white.svg" alt="close">
+    <img src="/static/images/close_white.svg" alt="close">
   </div>
   <div class="fullscreen__content d-flex flex-column fullscreen__content--grey">
     <div class="tab-control">
@@ -48,27 +48,39 @@
               <div class="row">
                 <div class="heading col-md-12">Personal Information</div>
                 <div class="input-control mt-2 col-md-4">
-                  <div class="d-flex justify-content-between align-items-center"><label for="JUf1feIVF1TXG7JTDab0I" class="input-control__label">First Name</label></div><input id="JUf1feIVF1TXG7JTDab0I" placeholder="Input first name here" type="text" autocomplete="new-password" class="active" value="sergey">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <label for="JUf1feIVF1TXG7JTDab0I" class="input-control__label">First Name</label>
+                  </div>
+                  <input id="JUf1feIVF1TXG7JTDab0I" placeholder="Input first name here" type="text" class="active" value="sergey">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="input-control mt-2 col-md-4">
                   <div class="d-flex justify-content-between align-items-center"><label for="muQLNVs2VL3h4YPXY6ndY" class="input-control__label">Middle Name</label>
                     <div class="input-control__required">Optional</div>
-                  </div><input id="muQLNVs2VL3h4YPXY6ndY" placeholder="Input middle name here" type="text" autocomplete="new-password" class="active" value="11">
+                  </div><input id="muQLNVs2VL3h4YPXY6ndY" placeholder="Input middle name here" type="text" class="active" value="11">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="input-control mt-2 col-md-4">
-                  <div class="d-flex justify-content-between align-items-center"><label for="3VuDPmeEqj6Q39sA_P_Cc" class="input-control__label">Last Name</label></div><input id="3VuDPmeEqj6Q39sA_P_Cc" placeholder="Input last name here" type="text" autocomplete="new-password" class="active" value="goldobin">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <label for="3VuDPmeEqj6Q39sA_P_Cc" class="input-control__label">Last Name</label>
+                  </div>
+                  <input id="3VuDPmeEqj6Q39sA_P_Cc" placeholder="Input last name here" type="text" class="active" value="goldobin">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="input-control mt-2 col-md-6">
-                  <div class="d-flex justify-content-between align-items-center"><label for="sUSO88uJ8gF7FzYEq8dXB" class="input-control__label">Email</label></div><input id="sUSO88uJ8gF7FzYEq8dXB" placeholder="Input email here" type="text" autocomplete="new-password" class="active" value="serge300@gmail.com">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <label for="sUSO88uJ8gF7FzYEq8dXB" class="input-control__label">Email</label>
+                  </div>
+                  <input id="sUSO88uJ8gF7FzYEq8dXB" placeholder="Input email here" type="text" class="active" value="serge300@gmail.com">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="sc-hzMMVR fXVjLt mt-2 col-md-6">
-                  <div class="d-flex justify-content-between"><label for="Q_-yBQX3kXlfzb1uw1PZg" class="input-control__label">Phone</label></div>
+                  <div class="d-flex justify-content-between">
+                    <label for="Q_-yBQX3kXlfzb1uw1PZg" class="input-control__label">Phone</label>
+                  </div>
                   <div class="phone-input-2-container react-tel-input">
-                    <div class="special-label">Phone</div><input class=" form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+0 (405) 256-152" style="height: 48px; font-size: 14px;">
+                    <div class="special-label">Phone</div>
+                    <input class=" form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+0 (405) 256-152" style="height: 48px; font-size: 14px;">
                     <div class=" flag-dropdown">
                       <div class="selected-flag" title="United States: + 1" tabindex="0" role="button" aria-haspopup="listbox">
                         <div class="flag us">
@@ -83,18 +95,25 @@
             </div>
             <div class="folder-item">
               <div class="row">
-                <div class="col-12"><label class="checkbox-control">Represents a company<input type="checkbox" checked=""><span></span></label></div>
+                <div class="col-12">
+                  <label class="checkbox-control">Represents a company<input type="checkbox" checked=""><span></span></label>
+                </div>
               </div>
               <div class="row">
                 <div class="heading col-md-12 mt-2">Company Info</div>
                 <div class="input-control col-md-6 mt-2">
-                  <div class="d-flex justify-content-between align-items-center"><label for="O0lt2hK9OrMiO02OJOktF" class="input-control__label">Company Name</label></div><input id="O0lt2hK9OrMiO02OJOktF" placeholder="Enter company name" type="text" autocomplete="new-password" class="active" value="google">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <label for="O0lt2hK9OrMiO02OJOktF" class="input-control__label">Company Name</label>
+                  </div>
+                  <input id="O0lt2hK9OrMiO02OJOktF" placeholder="Enter company name" type="text" class="active" value="google">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="input-control col-md-6 mt-2">
-                  <div class="d-flex justify-content-between align-items-center"><label for="uJ-MnVWWMvTtdwICfORMO" class="input-control__label">Job Title</label>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <label for="uJ-MnVWWMvTtdwICfORMO" class="input-control__label">Job Title</label>
                     <div class="input-control__required">Optional</div>
-                  </div><input id="uJ-MnVWWMvTtdwICfORMO" placeholder="Enter job title" type="text" autocomplete="new-password" class="active" value="test">
+                  </div>
+                  <input id="uJ-MnVWWMvTtdwICfORMO" placeholder="Enter job title" type="text" class="active" value="test">
                   <div class="input-control__footer"></div>
                 </div>
               </div>
@@ -108,55 +127,15 @@
                   </div>
                   <div class="select-control__container" tabindex="0">
                     <div class="select-control__main active">
-                      <div class="flex-1 d-flex justify-content-between"><span class="my-auto">United States</span></div><img src="/static/media/arrow-drop-down.f1b9faabf6e9fce89f57a65ca37586aa.svg" class="select-control__arrow" alt="arrow">
+                      <div class="flex-1 d-flex justify-content-between">
+                        <span class="my-auto">United States</span>
+                      </div>
+                      <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                     </div>
                     <div class="select-control__menu">
-                      <div class="select-control__menu-item"><span>Algeria</span></div>
-                      <div class="select-control__menu-item"><span>Antigua and Barbuda</span></div>
-                      <div class="select-control__menu-item"><span>Aruba</span></div>
-                      <div class="select-control__menu-item"><span>Australia</span></div>
-                      <div class="select-control__menu-item"><span>Austria</span></div>
-                      <div class="select-control__menu-item"><span>Bahamas</span></div>
-                      <div class="select-control__menu-item"><span>Belgium</span></div>
-                      <div class="select-control__menu-item"><span>Brazil</span></div>
-                      <div class="select-control__menu-item"><span>Canada</span></div>
-                      <div class="select-control__menu-item"><span>Chile</span></div>
-                      <div class="select-control__menu-item"><span>Colombia</span></div>
-                      <div class="select-control__menu-item"><span>Costa Rica</span></div>
-                      <div class="select-control__menu-item"><span>Denmark</span></div>
-                      <div class="select-control__menu-item"><span>Dominican Republic</span></div>
-                      <div class="select-control__menu-item"><span>Ecuador</span></div>
-                      <div class="select-control__menu-item"><span>Fiji</span></div>
-                      <div class="select-control__menu-item"><span>Finland</span></div>
-                      <div class="select-control__menu-item"><span>France</span></div>
-                      <div class="select-control__menu-item"><span>Greece</span></div>
-                      <div class="select-control__menu-item"><span>Hong Kong</span></div>
-                      <div class="select-control__menu-item"><span>India</span></div>
-                      <div class="select-control__menu-item"><span>Indonesia</span></div>
-                      <div class="select-control__menu-item"><span>Ireland</span></div>
-                      <div class="select-control__menu-item"><span>Israel</span></div>
-                      <div class="select-control__menu-item"><span>Italy</span></div>
-                      <div class="select-control__menu-item"><span>Japan</span></div>
-                      <div class="select-control__menu-item"><span>Luxembourg</span></div>
-                      <div class="select-control__menu-item"><span>Malaysia</span></div>
-                      <div class="select-control__menu-item"><span>Mexico</span></div>
-                      <div class="select-control__menu-item"><span>Monaco</span></div>
-                      <div class="select-control__menu-item"><span>New Zealand</span></div>
-                      <div class="select-control__menu-item"><span>Panama</span></div>
-                      <div class="select-control__menu-item"><span>Papua New Guinea</span></div>
-                      <div class="select-control__menu-item"><span>Philippines</span></div>
-                      <div class="select-control__menu-item"><span>Portugal</span></div>
-                      <div class="select-control__menu-item"><span>Russian Federation</span></div>
-                      <div class="select-control__menu-item"><span>Singapore</span></div>
-                      <div class="select-control__menu-item"><span>South Africa</span></div>
-                      <div class="select-control__menu-item"><span>Spain</span></div>
-                      <div class="select-control__menu-item"><span>Sweden</span></div>
-                      <div class="select-control__menu-item"><span>Switzerland</span></div>
-                      <div class="select-control__menu-item"><span>United Arab Emirates</span></div>
-                      <div class="select-control__menu-item"><span>United Kingdom</span></div>
+
                       <div class="select-control__menu-item active"><span>United States</span></div>
-                      <div class="select-control__menu-item"><span>Vanuatu</span></div>
-                      <div class="select-control__menu-item"><span>Venezuela</span></div>
+
                     </div>
                   </div>
                   <div class="select-control__footer"></div>
@@ -168,7 +147,10 @@
                   </div>
                   <div class="select-control__container" tabindex="0">
                     <div class="select-control__main active">
-                      <div class="flex-1 d-flex justify-content-between"><span class="my-auto">(UTC-05:00) Eastern Standard Time</span></div><img src="/static/media/arrow-drop-down.f1b9faabf6e9fce89f57a65ca37586aa.svg" class="select-control__arrow" alt="arrow">
+                      <div class="flex-1 d-flex justify-content-between">
+                        <span class="my-auto">(UTC-05:00) Eastern Standard Time</span>
+                      </div>
+                      <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                     </div>
                     <div class="select-control__menu">
                       <div class="select-control__menu-item active"><span>America/New_York</span></div>
@@ -180,7 +162,7 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <label for="tpWpo_ei2TVtg572yJN-T" class="input-control__label">Address Line 1</label>
                   </div>
-                  <input id="tpWpo_ei2TVtg572yJN-T" placeholder="Enter address line 1" type="text" autocomplete="new-password" class="active" value="551 bloomfield ave">
+                  <input id="tpWpo_ei2TVtg572yJN-T" placeholder="Enter address line 1" type="text" class="active" value="551 bloomfield ave">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="input-control col-md-6 mt-2">
@@ -188,7 +170,7 @@
                     <label for="jcusY33kiBNxyX2pkCIeV" class="input-control__label">Address Line 2</label>
                     <div class="input-control__required">Optional</div>
                   </div>
-                  <input id="jcusY33kiBNxyX2pkCIeV" placeholder="Enter address line 2" type="text" autocomplete="new-password" class="" value="">
+                  <input id="jcusY33kiBNxyX2pkCIeV" placeholder="Enter address line 2" type="text" class="" value="">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="select-control col-md-4 mt-2">
@@ -200,7 +182,7 @@
                       <div class="flex-1 d-flex justify-content-between">
                         <span class="my-auto">Alabama</span>
                       </div>
-                      <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                      <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                     </div>
                     <div class="select-control__menu">
 
@@ -219,7 +201,7 @@
                       <div class="flex-1 d-flex justify-content-between">
                         <span class="my-auto">Abbeville</span>
                       </div>
-                      <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                      <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                     </div>
                     <div class="select-control__menu">
 
@@ -235,7 +217,7 @@
                       Zip
                     </label>
                   </div>
-                  <input id="QFMbKnY0igDRhavp4F1lV" placeholder="Enter zip code" type="text" autocomplete="new-password" class="active" value="07006">
+                  <input id="QFMbKnY0igDRhavp4F1lV" placeholder="Enter zip code" type="text" class="active" value="07006">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="col-12 mt-4">
@@ -252,7 +234,7 @@
             <div tabindex="-1" class="modal-control">
               <div class="modal-control__header">
                 <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+                <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
               </div>
               <div class="modal-control__content ignore-onclickoutside">
                 <div class="modal-success-body">

@@ -1,8 +1,8 @@
-<div tabindex="0" class="full-modal__background grey-theme open">
+<div tabindex="0" class="full-modal__background grey-theme open doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="full-modal__container open">
     <div class="full-modal__header">
         <span class="title my-auto">Settings</span>
-        <img class="my-auto ml-auto close cursor-pointer" src="/static/media/close_white.svg" alt="close">
+        <img class="my-auto ml-auto close cursor-pointer" src="/static/images/close_white.svg" alt="close">
     </div>
     <div class="full-modal__content with-no-footer">
       <div class="tab-control">
@@ -16,7 +16,7 @@
         <div class="settings settings-modal">
           <div class="sc-crrszt grLIMZ d-flex justify-content-end">
             <button class="btn btn--green ripple-effect normal" type="button">
-                <img src="/static/media/plus_white.svg" alt="plus">
+                <img src="/static/images/plus_white.svg" alt="plus">
                 <span>New stage</span>
             </button>
           </div>
@@ -34,10 +34,10 @@
                 <div class="matter-stage-item__title">New stage</div>
                 <div class="matter-stage-item__action">
                     <button class="matter-stage-item__icon-button ml-auto">
-                        <img src="/static/media/delete_green.svg" alt="icon">
+                        <img src="/static/images/delete_green.svg" alt="icon">
                     </button>
                     <button class="matter-stage-item__icon-button ml-3">
-                        <img src="/static/media/edit.svg" alt="icon">
+                        <img src="/static/images/edit.svg" alt="icon">
                     </button>
                 </div>
               </div>

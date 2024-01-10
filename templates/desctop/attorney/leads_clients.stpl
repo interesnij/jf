@@ -1,16 +1,17 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="leads-page__bar">
     <div class="leads-page__bar-input">
       <div class="search-bar-container undefined">
-        <img src="/static/media/search.svg" alt="search"><input placeholder="Search in Leads &amp; Clients" value="">
+        <img src="/static/images/search.svg" alt="search">
+        <input placeholder="Search in Leads &amp; Clients" value="">
       </div>
     </div>
     <div class="d-flex leads-page__bar-filter"><span class="select-label my-auto">Type</span>
       <div tabindex="0" class="select-container">
         <div class="menu-button"><span>All</span>
-            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
         </div>
         <div class="menu-dropdown">
           <div class="menu-item active" style="width: 120px;">All</div>
@@ -19,15 +20,18 @@
           <div class="menu-item" style="width: 120px;">Pending</div>
         </div>
       </div>
-    </div><button class="btn btn--green ripple-effect normal ml-auto my-auto" type="button">
-        <img src="/static/media/plus_white.svg" alt="plus"><span>New Contact</span></button>
+    </div>
+    <button class="btn btn--green ripple-effect normal ml-auto my-auto" type="button">
+        <img src="/static/images/plus_white.svg" alt="plus">
+        <span>New Contact</span>
+    </button>
   </div>
   <div class="leads-page__content">
     <div class="leads-page__table">
       <div class="leads-page__table-header">
         <div class="leads-page__table-header-item sortable">
             <span class="my-auto">Name</span>
-            <img src="/static/media/sort.svg" alt="sort">
+            <img src="/static/images/sort.svg" alt="sort">
         </div>
         <div class="leads-page__table-header-item sortable"><span class="my-auto">Company</span></div>
         <div class="leads-page__table-header-item"><span class="my-auto">Type</span></div>
@@ -35,7 +39,7 @@
         <div class="leads-page__table-header-item"><span class="my-auto">Email</span></div>
         <div class="leads-page__table-header-item sortable">
             <span class="my-auto">Matter</span>
-            <img src="/static/media/sort.svg" alt="sort">
+            <img src="/static/images/sort.svg" alt="sort">
         </div>
         <div class="leads-page__table-header-item"><span class="my-auto">Actions</span></div>
       </div>
@@ -57,7 +61,7 @@
         <div class="leads-page__table-row-item">
           <div class="dropdown mx-auto" tabindex="0">
             <div class="dropdown__button">
-                <img src="/static/media/action_gray.svg" alt="action" class="leads-page__table-row-item-action">
+                <img src="/static/images/action_gray.svg" alt="action" class="leads-page__table-row-item-action">
             </div>
             <div class="dropdown__menu">
               <div class="dropdown__menu-item">View</div>

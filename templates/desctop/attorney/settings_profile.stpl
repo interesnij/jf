@@ -1,8 +1,8 @@
-<div tabindex="0" class="full-modal__background grey-theme open">
+<div tabindex="0" class="full-modal__background grey-theme open doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="full-modal__container open">
     <div class="full-modal__header">
         <span class="title my-auto">Edit Profile</span>
-        <img class="my-auto ml-auto close cursor-pointer" src="/static/media/close_white.svg" alt="close">
+        <img class="my-auto ml-auto close cursor-pointer" src="/static/images/close_white.svg" alt="close">
     </div>
     <div class="full-modal__content">
       <div class="tab-control">
@@ -17,7 +17,7 @@
               <div class="folder-expandable-header">
                 <div class="d-flex">
                   <div class="folder-expandable-heading">
-                    <img src="/static/media/arrow-drop-down.svg" alt="arrow" class="isExpanded">Personal information</div>
+                    <img src="/static/images/arrow-drop-down.svg" alt="arrow" class="isExpanded">Personal information</div>
                   <div class="folder-expandable-heading-after"></div>
                 </div>
                 <div class="folder-expandable-expand">Collapse section</div>
@@ -48,7 +48,7 @@
                       <div class="d-flex justify-content-between align-items-center">
                         <label for="KW8G8hy18EKsx9yfq9aDp" class="input-control__label">First Name</label>
                       </div>
-                      <input id="KW8G8hy18EKsx9yfq9aDp" placeholder="Input first name here" type="text" autocomplete="new-password" class="active" value="JusLaw Platform Assessment">
+                      <input id="KW8G8hy18EKsx9yfq9aDp" placeholder="Input first name here" type="text" class="active" value="JusLaw Platform Assessment">
                       <div class="input-control__footer"></div>
                     </div>
                     <div class="input-control mt-2">
@@ -56,21 +56,21 @@
                         <label for="gLodlDNvk1OH6d4htdVzQ" class="input-control__label">Middle Name</label>
                         <div class="input-control__required">Optional</div>
                       </div>
-                      <input id="gLodlDNvk1OH6d4htdVzQ" placeholder="Input middle name here" type="text" autocomplete="new-password" class="active" value="A">
+                      <input id="gLodlDNvk1OH6d4htdVzQ" placeholder="Input middle name here" type="text" class="active" value="A">
                       <div class="input-control__footer"></div>
                     </div>
                     <div class="input-control mt-2">
                       <div class="d-flex justify-content-between align-items-center">
                         <label for="4AlZ5v8UayGq13fJiYBsi" class="input-control__label">Last Name</label>
                       </div>
-                      <input id="4AlZ5v8UayGq13fJiYBsi" placeholder="Input last name here" type="text" autocomplete="new-password" class="active" value="G">
+                      <input id="4AlZ5v8UayGq13fJiYBsi" placeholder="Input last name here" type="text" class="active" value="G">
                       <div class="input-control__footer"></div>
                     </div>
                     <div class="input-control mt-2">
                       <div class="d-flex justify-content-between align-items-center">
                         <label for="Ky6qvgTmCHJ9g8pSo2FAg" class="input-control__label">Email</label>
                       </div>
-                      <input id="Ky6qvgTmCHJ9g8pSo2FAg" placeholder="Input email here" type="text" autocomplete="new-password" class="active" value="sergejuslaw@gmail.com">
+                      <input id="Ky6qvgTmCHJ9g8pSo2FAg" placeholder="Input email here" type="text" class="active" value="sergejuslaw@gmail.com">
                       <div class="input-control__footer"></div>
                     </div>
                     <div class="sc-hzMMVR fXVjLt mt-2">
@@ -113,7 +113,7 @@
               <div class="folder-expandable-header">
                 <div class="d-flex">
                   <div class="folder-expandable-heading">
-                    <img src="/static/media/arrow-drop-down.svg" alt="arrow" class="isExpanded">Law firm information
+                    <img src="/static/images/arrow-drop-down.svg" alt="arrow" class="isExpanded">Law firm information
                   </div>
                   <div class="folder-expandable-heading-after"></div>
                 </div>
@@ -127,7 +127,7 @@
                     </div>
                   </div>
                   <div class="input-control col-6">
-                    <input id="C73mR6b6Sd8qrSdLFF9tC" placeholder="Enter a name" type="text" autocomplete="new-password" class="active" value="test">
+                    <input id="C73mR6b6Sd8qrSdLFF9tC" placeholder="Enter a name" type="text" class="active" value="test">
                     <div class="input-control__footer"></div>
                   </div>
                   <div class="mt-3 heading w-100">
@@ -137,7 +137,7 @@
                     </div>
                   </div>
                   <div class="input-control col-6">
-                    <input id="tGZQDIto0iyoGHogmf1r4" placeholder="Enter a website" type="text" autocomplete="new-password" class="active" value="https://juslaw.com">
+                    <input id="tGZQDIto0iyoGHogmf1r4" placeholder="Enter a website" type="text" class="active" value="https://juslaw.com">
                     <div class="input-control__footer"></div>
                   </div>
                   <div class="heading col-12 mt-3 mb-2">
@@ -154,7 +154,10 @@
                           </div>
                           <div class="select-control__container" tabindex="0">
                             <div class="select-control__main active">
-                              <div class="flex-1 d-flex justify-content-between"><span class="my-auto">Algeria</span></div><img src="/static/media/arrow-drop-down.f1b9faabf6e9fce89f57a65ca37586aa.svg" class="select-control__arrow" alt="arrow">
+                              <div class="flex-1 d-flex justify-content-between">
+                                <span class="my-auto">Algeria</span>
+                              </div>
+                              <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                             </div>
                             <div class="select-control__menu">
 
@@ -165,7 +168,10 @@
                           <div class="select-control__footer"></div>
                         </div>
                         <div class="input-control col-md-8">
-                          <div class="d-flex justify-content-between align-items-center"><label for="3UzU3-u7bKn2ch3nQQ_KC" class="input-control__label">Address</label></div><input id="3UzU3-u7bKn2ch3nQQ_KC" placeholder="Enter an address here" type="text" autocomplete="new-password" class="active" value="One World Trade Center">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <label for="3UzU3-u7bKn2ch3nQQ_KC" class="input-control__label">Address</label>
+                          </div>
+                          <input id="3UzU3-u7bKn2ch3nQQ_KC" placeholder="Enter an address here" type="text" class="active" value="One World Trade Center">
                           <div class="input-control__footer"></div>
                         </div>
                         <div class="select-control col-md-4 mt-2">
@@ -177,7 +183,7 @@
                               <div class="flex-1 d-flex justify-content-between">
                                 <span class="my-auto">Adrar</span>
                               </div>
-                              <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                              <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                             </div>
                             <div class="select-control__menu">
 
@@ -196,7 +202,7 @@
                               <div class="flex-1 d-flex justify-content-between">
                                 <span class="my-auto">Adrar</span>
                               </div>
-                              <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                              <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                             </div>
                             <div class="select-control__menu">
                               <div class="select-control__menu-item active"><span>Adrar</span></div>
@@ -210,7 +216,7 @@
                           <div class="d-flex justify-content-between align-items-center">
                             <label for="CPNGRqBJ_fSaCqxW8f8XI" class="input-control__label">Zip code</label>
                           </div>
-                          <input id="CPNGRqBJ_fSaCqxW8f8XI" placeholder="Enter a zip code here" type="text" autocomplete="new-password" class="active" value="10007">
+                          <input id="CPNGRqBJ_fSaCqxW8f8XI" placeholder="Enter a zip code here" type="text" class="active" value="10007">
                           <div class="input-control__footer"></div>
                         </div>
                       </div>
@@ -218,7 +224,7 @@
                   </div>
                   <div class="col-12 mt-2">
                     <div class="add-button cursor-pointer d-flex">
-                        <img src="/static/media/plus_black.svg" alt="plus">
+                        <img src="/static/images/plus_black.svg" alt="plus">
                         <span class="my-auto ml-1">Add an Office address</span>
                     </div>
                   </div>
@@ -234,7 +240,7 @@
               <div class="folder-expandable-header">
                 <div class="d-flex">
                   <div class="folder-expandable-heading">
-                    <img src="/static/media/arrow-drop-down.svg" alt="arrow" class="">Experience &amp; Practice</div>
+                    <img src="/static/images/arrow-drop-down.svg" alt="arrow" class="">Experience &amp; Practice</div>
                   <div class="folder-expandable-heading-after"></div>
                 </div>
                 <div class="folder-expandable-expand">Expand section</div>
@@ -251,7 +257,7 @@
                                 Law school / Graduate Institute
                             </label>
                           </div>
-                          <input id="TqJk0Ai2nBHmjv_7HEN-j" placeholder="Enter a school / graduate institute name" type="text" autocomplete="new-password" class="active" value="check">
+                          <input id="TqJk0Ai2nBHmjv_7HEN-j" placeholder="Enter a school / graduate institute name" type="text" class="active" value="check">
                           <div class="input-control__footer"></div>
                         </div>
                         <div class="select-control col-md-6 mt-2">
@@ -263,7 +269,7 @@
                               <div class="flex-1 d-flex justify-content-between">
                                 <span class="my-auto">2023</span>
                               </div>
-                              <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                              <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                             </div>
                             <div class="select-control__menu">
                               <div class="select-control__menu-item"><span>1960</span></div>
@@ -339,13 +345,13 @@
                   </div>
                   <div class="col-12 mt-2">
                     <div class="add-button cursor-pointer d-flex">
-                        <img src="/static/media/plus_black.svg" alt="plus">
+                        <img src="/static/images/plus_black.svg" alt="plus">
                         <span class="my-auto ml-1">Add School / Graduate Institute</span>
                     </div>
                   </div>
                   <div class="heading col-12 mt-2">Years of Experience</div>
                   <div class="input-control col-6 mt-1">
-                    <input id="gfkS_XcjliNv0nO6fUwAi" placeholder="Enter number of years" type="number" autocomplete="new-password" class="active" value="1">
+                    <input id="gfkS_XcjliNv0nO6fUwAi" placeholder="Enter number of years" type="number" class="active" value="1">
                     <div class="input-control__footer"></div>
                   </div>
                   <div class="heading col-12 mt-3">Jurisdictions</div>
@@ -361,7 +367,7 @@
                               <div class="flex-1 d-flex justify-content-between">
                                 <span class="my-auto">United States</span>
                              </div>
-                             <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                             <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                             </div>
                             <div class="select-control__menu">
                               <div class="select-control__menu-item"><span>Algeria</span></div>
@@ -375,7 +381,10 @@
                           </div>
                           <div class="select-control__container" tabindex="0">
                             <div class="select-control__main active">
-                              <div class="flex-1 d-flex justify-content-between"><span class="my-auto">New Jersey</span></div><img src="/static/media/arrow-drop-down.f1b9faabf6e9fce89f57a65ca37586aa.svg" class="select-control__arrow" alt="arrow">
+                              <div class="flex-1 d-flex justify-content-between">
+                                <span class="my-auto">New Jersey</span>
+                              </div>
+                              <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                             </div>
                             <div class="select-control__menu">
                               <div class="select-control__menu-item"><span>Alabama</span></div>
@@ -390,7 +399,7 @@
                           <div class="d-flex justify-content-between align-items-center">
                             <label for="WLkjn2X3gwFyX-PISSiP1" class="input-control__label">Registration Number</label>
                           </div>
-                          <input id="WLkjn2X3gwFyX-PISSiP1" placeholder="Enter Registration Number" type="text" autocomplete="new-password" class="active" value="test account">
+                          <input id="WLkjn2X3gwFyX-PISSiP1" placeholder="Enter Registration Number" type="text" class="active" value="test account">
                           <div class="input-control__footer"></div>
                         </div>
                         <div class="select-control col-md-3 mt-2">
@@ -402,7 +411,7 @@
                               <div class="flex-1 d-flex justify-content-between">
                                 <span class="my-auto">2023</span>
                               </div>
-                              <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                              <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                             </div>
                             <div class="select-control__menu">
                               <div class="select-control__menu-item"><span>1960</span></div>
@@ -478,7 +487,7 @@
                   </div>
                   <div class="col-12 mt-2">
                     <div class="add-button cursor-pointer d-flex">
-                        <img src="/static/media/plus_black.svg" alt="plus">
+                        <img src="/static/images/plus_black.svg" alt="plus">
                         <span class="my-auto ml-1">Add Jurisdictions</span>
                     </div>
                   </div>
@@ -486,24 +495,24 @@
                   <div class="col-12 mt-2">
                     <div class="text-dark">Select practice areas you want to follow:</div>
                     <div class="row">
-
                       <div class="col-md-6 test my-1 d-flex justify-content-between practice-area-item">
                         <div class="">
                             <label class="checkbox-component">Accounting Law Practice<input type="checkbox" checked=""><span></span></label>
                         </div>
                       </div>
-                      
                     </div>
+
                     <div class="row">
                       <div class="col-md-6 my-1 d-flex justify-content-between practice-area-item">
                         <div class=""><label class="checkbox-component">Other<input type="checkbox" checked=""><span></span></label></div>
                       </div>
                     </div>
+
                     <div class="modal-control-container modal-success">
                       <div tabindex="-1" class="modal-control">
                         <div class="modal-control__header">
                           <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                          <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+                          <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
                         </div>
                         <div class="modal-control__content ignore-onclickoutside">
                           <div class="modal-success-body">
@@ -518,7 +527,7 @@
                       <div tabindex="-1" class="modal-control">
                         <div class="modal-control__header">
                           <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                          <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+                          <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
                         </div>
                         <div class="modal-control__content ignore-onclickoutside">
                           <div class="modal-success-body">
@@ -549,7 +558,7 @@
               <div class="folder-expandable-header">
                 <div class="d-flex">
                   <div class="folder-expandable-heading">
-                    <img src="/static/media/arrow-drop-down.svg" alt="arrow" class="">Service &amp; Pricing
+                    <img src="/static/images/arrow-drop-down.svg" alt="arrow" class="">Service &amp; Pricing
                   </div>
                   <div class="folder-expandable-heading-after"></div>
                 </div>
@@ -599,7 +608,10 @@
                       <div class="sc-gsxoIA kfwLZt">
                         <div class="select-control__container w-100" tabindex="0">
                           <div class="select-control__main border-none w-100 active">
-                            <div class="d-flex"><span class="my-auto">USD</span></div><img src="/static/media/arrow-drop-down.f1b9faabf6e9fce89f57a65ca37586aa.svg" class="select-control__arrow ml-auto" alt="arrow">
+                            <div class="d-flex">
+                              <span class="my-auto">USD</span>
+                            </div>
+                            <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
                           </div>
                           <div class="select-control__menu">
                             <div class="select-control__menu-item active"><span>USD</span></div>
@@ -626,7 +638,7 @@
                             <!-- active languages -->
                           <div class="multi-select-control__item">
                             <span class="my-auto">English</span>
-                            <img src="/static/media/close.svg" alt="close" class="multi-select-control__item-close">
+                            <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close">
                           </div>  
                           <!-- active languages -->
                         </div>
@@ -686,7 +698,7 @@
             <div tabindex="-1" class="modal-control">
               <div class="modal-control__header">
                 <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+                <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
               </div>
               <div class="modal-control__content ignore-onclickoutside">
                 <div class="modal-success-body">
@@ -701,7 +713,7 @@
             <div tabindex="-1" class="modal-control">
               <div class="modal-control__header">
                 <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+                <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
               </div>
               <div class="modal-control__content ignore-onclickoutside">
                 <div class="modal-success-body">

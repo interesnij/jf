@@ -1,8 +1,8 @@
-<div tabindex="0" class="full-modal__background grey-theme open">
+<div tabindex="0" class="full-modal__background grey-theme open doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="full-modal__container open">
     <div class="full-modal__header">
         <span class="title my-auto">Settings</span>
-        <img class="my-auto ml-auto close cursor-pointer" src="/static/media/close_white.svg" alt="close"></div>
+        <img class="my-auto ml-auto close cursor-pointer" src="/static/images/close_white.svg" alt="close"></div>
     <div class="full-modal__content with-no-footer">
       <div class="tab-control">
         <div class="tab-control__item"><span>My Account</span></div>

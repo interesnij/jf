@@ -1,6 +1,6 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="d-flex">
     <div class="sc-cHjwLt kGZQPu"></div>
     <div class="chat-page__header ml-auto">
@@ -10,12 +10,11 @@
         <div tabindex="-1" class="modal-control">
           <div class="modal-control__header">
             <div class="my-auto title text-ellipsis w-100 text-left">New chat</div>
-            
             <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
           </div>
           <div class="modal-control__content ignore-onclickoutside">
             <div style="width: 700px;">
-              <form action="#">
+              <form>
                 <div>Your contacts list is empty</div>
               </form>
             </div>
@@ -127,11 +126,11 @@
           <div class="dropdown ml-3 mr-3" tabindex="0">
             <div class="dropdown__button"><img src="/static/images/actions.svg" alt="actions" class="my-auto"></div>
             <div class="dropdown__menu">
-              <div class="dropdown__menu-item">Create group</div>
-              <div class="dropdown__menu-item">Create a matter</div>
-              <div class="dropdown__menu-item">Details</div>
-              <div class="dropdown__menu-item">Archive</div>
-              <div class="dropdown__menu-item">Delete</div>
+              <div class="dropdown__menu-item create_group">Create group</div>
+              <div class="dropdown__menu-item create_matter">Create a matter</div>
+              <div class="dropdown__menu-item chat_detail">Details</div>
+              <div class="dropdown__menu-item archive_chat">Archive</div>
+              <div class="dropdown__menu-item delete_chat">Delete</div>
             </div>
           </div>
         </div>
@@ -139,16 +138,16 @@
           <div tabindex="-1" class="modal-control">
             <div class="modal-control__header">
               <div class="my-auto title text-ellipsis w-100 text-left">Start a Call</div>
-              <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+              <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
             </div>
             <div class="modal-control__content ignore-onclickoutside">
               <div class="start-call-modal">
                 <div class="start-call-modal__title">Do you want to start a call with Scott Smyth?</div>
                 <div class="d-flex mt-2">
-                    <button class="btn btn--white ripple-effect large ml-auto" type="button">
+                    <button class="btn btn--white ripple-effect large ml-auto">
                         <span>Cancel</span>
                     </button>
-                    <button class="btn btn--green ripple-effect large ml-3" type="button">
+                    <button class="btn btn--green ripple-effect large ml-3">
                         <span>Start Call</span>
                     </button>
                 </div>

@@ -1,13 +1,15 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
-  <div class="lead-detail-page__bar"><span class="my-auto">sergey 11 goldobin</span>
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
+  <div class="lead-detail-page__bar">
+    <span class="my-auto">sergey 11 goldobin
+  </span>
     <div class="d-flex">
       <div class="d-flex">
         <div tabindex="0" class="select-container">
           <div class="menu-button">
             <span>Client</span>
-            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
           <div class="menu-dropdown">
             <div class="menu-item active" style="width: 160px;">Client</div>
@@ -15,11 +17,11 @@
           </div>
         </div>
       </div>
-      <img class="icon-button-control ml-3 my-auto normal" data-tip="Call" src="/static/media/call.svg" alt="Call">
-      <img class="icon-button-control ml-3 my-auto normal" data-tip="Edit Contact" src="/static/media/edit.svg" alt="Edit Contact">
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="Call" src="/static/images/call.svg" alt="Call">
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="Edit Contact" src="/static/images/edit.svg" alt="Edit Contact">
       <div class="dropdown ml-3" tabindex="0">
         <div class="dropdown__button">
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="matters-action-button" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="matters-action-button" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path>
           </svg>
         </div>
@@ -42,7 +44,7 @@
     <div class="matters-page__bar">
       <div class="matters-page__bar-input">
         <div class="search-bar-container undefined">
-            <img src="/static/media/search.svg" alt="search">
+            <img src="/static/images/search.svg" alt="search">
             <input placeholder="Search in Documents" value="">
         </div>
       </div>
@@ -51,7 +53,7 @@
         <div tabindex="0" class="select-container">
           <div class="menu-button">
             <span>All</span>
-            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
           <div class="menu-dropdown">
             <div class="menu-item active" style="width: 160px;">All</div>
@@ -67,7 +69,7 @@
       <div tabindex="0" class="document-new-button ml-auto">
         <div class="menu-button">
             <span>New</span>
-            <img src="/static/media/caret_down_white.svg" class="menu-button-icon" alt="drop-down">
+            <img src="/static/images/caret_down_white.svg" class="menu-button-icon" alt="drop-down">
         </div>
         <div class="menu-dropdown">
           <div>Folder</div>
@@ -85,7 +87,7 @@
         <div class="lead-matter-document-table-header">
           <div class="lead-matter-document-table-header-item sortable">
             <span class="my-auto">Name</span>
-            <img src="/static/media/sort.svg" alt="sort"> </div>
+            <img src="/static/images/sort.svg" alt="sort"> </div>
           <div class="lead-matter-document-table-header-item sortable">
             <span class="my-auto">Matter</span>
           </div>
@@ -94,7 +96,7 @@
           </div>
           <div class="lead-matter-document-table-header-item sortable">
             <span class="my-auto">Last Modified</span>
-            <img src="/static/media/sort.svg" alt="sort">
+            <img src="/static/images/sort.svg" alt="sort">
           </div>
           <div class="lead-matter-document-table-header-item"><span class="my-auto">Actions</span></div>
         </div>
@@ -102,8 +104,8 @@
         <!-- document item -->
         <div class="lead-matter-document-table-row">
           <div class="lead-matter-document-table-row-item">
-            <img src="/static/media/document.svg" alt="folder" class="mr-1 my-auto">
-            <img src="/static/media/group.svg" alt="share" class="mr-1 my-auto">
+            <img src="/static/images/document.svg" alt="folder" class="mr-1 my-auto">
+            <img src="/static/images/group.svg" alt="share" class="mr-1 my-auto">
             <span class="text-ellipsis cursor-pointer">4362395.epub</span>
           </div>
           <div class="lead-matter-document-table-row-item">
@@ -123,7 +125,7 @@
           <div class="lead-matter-document-table-row-item">
             <div class="dropdown mx-auto" tabindex="0">
               <div class="dropdown__button">
-                <img src="/static/media/action_gray.svg" alt="action" class="lead-matter-document-table-row-item-action">
+                <img src="/static/images/action_gray.svg" alt="action" class="lead-matter-document-table-row-item-action">
               </div>
               <div class="dropdown__menu">
                 <div class="dropdown__menu-item">Download</div>
@@ -142,7 +144,7 @@
     <div tabindex="-1" class="modal-control">
       <div class="modal-control__header">
         <div class="my-auto title text-ellipsis w-100 text-left">Start a Call</div>
-        <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+        <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
       </div>
       <div class="modal-control__content ignore-onclickoutside">
         <div class="start-call-modal">

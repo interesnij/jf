@@ -1,6 +1,6 @@
 <% include!("../header.stpl"); %>
 
-<div class="news-page">
+<div class="news-page doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="news-page__card">
     <span class="news-page__image lazy-load-image-background blur lazy-load-image-loaded" style="display: inline-block;">
         <img alt="How it works" src="https://juslaw.com/static/images/poster.jpg">

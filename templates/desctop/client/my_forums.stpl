@@ -1,20 +1,24 @@
 <% include!("../header.stpl"); %>
 
-<div class="forums-page">
+<div class="forums-page doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="d-flex">
-    <div class="tab-control"><a href="/client/forums/all-posts">
+    <div class="tab-control">
+      <a href="/client/forums/all-posts">
         <div class="tab-control__item"><span>Home</span></div>
-      </a><a aria-current="page" href="/client/forums/my-posts">
+      </a>
+      <a aria-current="page" href="/client/forums/my-posts">
         <div class="tab-control__item tab-control__item--active"><span>My Posts</span></div>
-      </a><a href="/client/forums/following">
+      </a>
+      <a href="/client/forums/following">
         <div class="tab-control__item"><span>Following</span></div>
-      </a></div>
+      </a>
+    </div>
     <div class="forum-layout-bar flex-1">
       <div class="search-bar-container my-auto mr-auto flex-1">
-        <img src="/static/media/search.svg" alt="search">
+        <img src="/static/images/search.svg" alt="search">
         <input placeholder="Search in forums" value="">
       </div>
-      <img class="icon-button-control ml-3 my-auto normal" data-tip="New Post" src="/static/media/post.svg" alt="New Post">
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="New Post" src="/static/images/post.svg" alt="New Post">
     </div>
   </div>
   <div class="forums-page__content">
@@ -33,7 +37,7 @@
               <div tabindex="0" class="select-container">
                 <div class="menu-button">
                     <span>All</span>
-                    <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+                    <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
                 </div>
                 <div class="menu-dropdown">
                   <div class="menu-item active" style="width: 160px;">All</div>
@@ -46,7 +50,7 @@
                 <div tabindex="0" class="select-container">
                     <div class="menu-button">
                         <span>Most Recent</span>
-                        <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+                        <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
                     </div>
                 <div class="menu-dropdown align-right">
                   <div class="menu-item active" style="width: 190px;">Most Recent</div>

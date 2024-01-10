@@ -1,6 +1,6 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div tabindex="-1" style="outline: none;">
     <div class="documents-page">
       <div class="tab-control">
@@ -14,14 +14,15 @@
         <div class="documents-page__bar">
           <div class="documents-page__bar-input">
             <div class="search-bar-container undefined">
-                <img src="/static/media/search.svg" alt="search"><input placeholder="Search in My Documents" value="">
+                <img src="/static/images/search.svg" alt="search">
+                <input placeholder="Search in My Documents" value="">
             </div>
           </div>
           <div class="d-flex documents-page__bar-filter">
             <span class="select-label my-auto">Filter by</span>
             <div tabindex="0" class="select-container">
               <div class="menu-button"><span>All</span>
-                <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down"></div>
+                <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down"></div>
               <div class="menu-dropdown">
                 <div class="menu-item active" style="width: 160px;">All</div>
                 <div class="menu-item" style="width: 160px;">Folders</div>
@@ -36,7 +37,8 @@
           <div tabindex="0" class="document-new-button ml-auto">
             <div class="menu-button">
                 <span>New</span>
-                <img src="/static/media/caret_down_white.svg" class="menu-button-icon" alt="drop-down"></div>
+                <img src="/static/images/caret_down_white.svg" class="menu-button-icon" alt="drop-down">
+            </div>
             <div class="menu-dropdown">
               <div>Folder</div>
               <div>Document(s) upload</div>
@@ -55,7 +57,7 @@
             <div class="my-documents-page__table-header">
               <div class="my-documents-page__table-header-item sortable">
                 <span class="my-auto">Name</span>
-                <img src="/static/media/sort.svg" alt="sort"></div>
+                <img src="/static/images/sort.svg" alt="sort"></div>
               <div class="my-documents-page__table-header-item">
                 <span class="my-auto">Matter</span>
               </div>
@@ -64,7 +66,7 @@
               </div>
               <div class="my-documents-page__table-header-item sortable">
                 <span class="my-auto">Last modified</span>
-                <img src="/static/media/sort.svg" alt="sort">
+                <img src="/static/images/sort.svg" alt="sort">
               </div>
               <div class="my-documents-page__table-header-item ml-auto">
                 <span class="my-auto">Actions</span>
@@ -74,8 +76,8 @@
             <!-- doc object -->
             <div class="my-documents-page__table-row">
               <div class="my-documents-page__table-row-item document-name">
-                <img src="/static/media/document.svg" alt="folder" class="mr-1 my-auto">
-                <img src="/static/media/group.svg" alt="share" class="mr-1 my-auto">
+                <img src="/static/images/document.svg" alt="folder" class="mr-1 my-auto">
+                <img src="/static/images/group.svg" alt="share" class="mr-1 my-auto">
                 <span class="mr-1 text-ellipsis">4362395.epub</span>
               </div>
               <div class="my-documents-page__table-row-item">
@@ -92,7 +94,9 @@
               <div class="my-documents-page__table-row-item"><span>08/28/2023 by sergey 11 goldobin</span></div>
               <div class="my-documents-page__table-row-item ml-auto">
                 <div class="dropdown mx-auto" tabindex="0">
-                  <div class="dropdown__button"><img src="/static/media/action_gray.7169f3572e6128db06d4e62f81b27e59.svg" alt="action" class="my-documents-page__table-row-item-action"></div>
+                  <div class="dropdown__button">
+                    <img src="/static/images/action_gray.svg" alt="action" class="my-documents-page__table-row-item-action">
+                  </div>
                   <div class="dropdown__menu">
                     <div class="dropdown__menu-item">Download</div>
                     <div class="dropdown__menu-item">Share</div>

@@ -1,13 +1,20 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="forums-page">
     <div class="d-flex">
-      <div class="tab-control"><a aria-current="page" href="/attorney/engagement">
-          <div class="tab-control__item tab-control__item--active"><span>Browse Inquiries</span></div>
-        </a><a href="/attorney/engagement/submitted">
-          <div class="tab-control__item"><span>Submitted Engagements</span></div>
-        </a></div>
+      <div class="tab-control">
+        <a aria-current="page" href="/attorney/engagement">
+          <div class="tab-control__item tab-control__item--active">
+            <span>Browse Inquiries</span>
+          </div>
+        </a>
+        <a href="/attorney/engagement/submitted">
+          <div class="tab-control__item">
+            <span>Submitted Engagements</span>
+          </div>
+        </a>
+      </div>
     </div>
     <div class="forums-page__content">
       <div class="forums-page__all-posts">
@@ -59,11 +66,12 @@
           </div>
           <div class="folder-control__content">
             <div class="folder__filter">
-              <div class="d-flex ml-auto"><span class="select-label my-auto">Sort by</span>
+              <div class="d-flex ml-auto">
+                <span class="select-label my-auto">Sort by</span>
                 <div tabindex="0" class="select-container">
                   <div class="menu-button">
                     <span>Alphabetical</span>
-                    <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+                    <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
                   </div>
                   <div class="menu-dropdown align-right">
                     <div class="menu-item active" style="width: 120px;">Alphabetical</div>

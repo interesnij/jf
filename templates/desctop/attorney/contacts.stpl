@@ -1,17 +1,17 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="contacts-page">
     <div class="contacts-page__bar">
       <div class="search-bar-container contacts-page__bar-input">
-        <img src="/static/media/search.svg" alt="search">
+        <img src="/static/images/search.svg" alt="search">
         <input placeholder="Search in Industry Contacts" value="">
       </div>
       <div class="d-flex my-auto ml-3">
         <span class="select-label my-auto">Type</span>
         <div tabindex="0" class="select-container">
           <div class="menu-button"><span>All</span>
-            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
           <div class="menu-dropdown">
             <div class="menu-item active" style="width: 120px;">All</div>
@@ -20,15 +20,18 @@
             <div class="menu-item" style="width: 120px;">Pending</div>
           </div>
         </div>
-      </div><button class="btn btn--green ripple-effect normal ml-auto my-auto" type="button">
-        <img src="/static/media/plus_white.svg" alt="plus"><span>New Contact</span></button>
+      </div>
+      <button class="btn btn--green ripple-effect normal ml-auto my-auto" type="button">
+        <img src="/static/images/plus_white.svg" alt="plus">
+        <span>New Contact</span>
+      </button>
     </div>
     <div class="contacts-page__content">
       <div class="contacts-page__table">
         <div class="contacts-page__table-header">
           <div class="contacts-page__table-header-item sortable">
             <span class="my-auto">Name</span>
-            <img src="/static/media/sort.svg" alt="sort"></div>
+            <img src="/static/images/sort.svg" alt="sort"></div>
           <div class="contacts-page__table-header-item"><span class="my-auto">Firm</span></div>
           <div class="contacts-page__table-header-item"><span class="my-auto">Type</span></div>
           <div class="contacts-page__table-header-item"><span class="my-auto">Actions</span></div>
@@ -52,7 +55,7 @@
           <div class="contacts-page__table-row-item">
             <div class="dropdown my-auto" tabindex="0">
               <div class="dropdown__button">
-                <img src="/static/media/action_gray.svg" alt="action" class="contacts-page__table-row-item-action">
+                <img src="/static/images/action_gray.svg" alt="action" class="contacts-page__table-row-item-action">
               </div>
               <div class="dropdown__menu">
                 <div class="dropdown__menu-item">View Profile</div>

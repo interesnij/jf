@@ -1,5 +1,5 @@
 <% include!("../header.stpl"); %>
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="chat-page">
     <div class="d-flex">
       <div class="tab-control">
@@ -18,18 +18,19 @@
       </div>
 
       <div class="chat-page__header undefined">
-        <img class="icon-button-control ml-3 my-auto normal" data-tip="Archive folder" src="/static/media/archive.svg" alt="Archive folder" currentitem="false">
-        <img class="icon-button-control ml-3 my-auto normal" data-tip="Start a new chat" src="/static/media/chat.svg" alt="Start a new chat" currentitem="false">
+        <img class="icon-button-control ml-3 my-auto normal" data-tip="Archive folder" src="/static/images/archive.svg" alt="Archive folder" currentitem="false">
+        <img class="icon-button-control ml-3 my-auto normal" data-tip="Start a new chat" src="/static/images/chat.svg" alt="Start a new chat" currentitem="false">
         <div class="modal-control-container">
           <div tabindex="-1" class="modal-control">
             <div class="modal-control__header">
               <div class="my-auto title text-ellipsis w-100 text-left">New chat</div>
-              <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+              <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
             </div>
             <div class="modal-control__content ignore-onclickoutside">
               <div style="width: 700px;">
                 <form action="#">
-                  <div class="sc-hOqruk jDTGiE"><img src="/static/media/info_green.svg" class="my-auto" alt="info">
+                  <div class="sc-hOqruk jDTGiE">
+                    <img src="/static/images/info_green.svg" class="my-auto" alt="info">
                     <div>You can add a maximum of ONE client user in a chat.</div>
                   </div>
                   <div class="col-12 mt-1">
@@ -41,7 +42,7 @@
                         <div class="flex-1 d-flex flex-wrap">
                           <span class="my-auto">Add people to start chat with</span>
                         </div>
-                        <img src="/static/media/arrow-drop-down.svg" class="contact-multi-select-control__arrow" alt="arrow">
+                        <img src="/static/images/arrow-drop-down.svg" class="contact-multi-select-control__arrow" alt="arrow">
                       </div>
                       <div class="contact-multi-select-control__menu">
                         <div class="contact-multi-select-control__menu-item">
@@ -95,7 +96,7 @@
                           <div class="text-black" style="font-size: 18px;">You can add a maximum of ONE client user in a chat.</div><br>
                         </div>
                         <div class="d-flex">
-                          <button class="btn btn--green ripple-effect normal ml-auto" type="button">
+                          <button class="btn btn--green ripple-effect normal ml-auto">
                             <span>Ok</span>
                           </button>
                         </div>
@@ -104,10 +105,10 @@
                   </div>
 
                   <div class="d-flex mt-2">
-                    <button class="btn btn--white ripple-effect large ml-auto" type="button">
+                    <button class="btn btn--white ripple-effect large ml-auto">
                       <span>Cancel</span>
                     </button>
-                    <button class="btn btn--green ripple-effect large ml-3" type="submit">
+                    <button class="btn btn--green ripple-effect large ml-3 create_chat">
                       <span>Start Chat</span>
                     </button>
                   </div>
@@ -121,7 +122,7 @@
           <div class="full-modal__container archive-modal">
             <div class="full-modal__header">
               <span class="title my-auto">Archive</span>
-              <img class="my-auto ml-auto close cursor-pointer" src="/static/media/close.svg" alt="close">
+              <img class="my-auto ml-auto close cursor-pointer" src="/static/images/close.svg" alt="close">
             </div>
             <div class="full-modal__content with-no-footer">
               <div class="archive-chat-page">
@@ -130,7 +131,7 @@
                     <div class="d-flex">
                       <div tabindex="0" class="select-container">
                         <div class="menu-button"><span>Network</span>
-                          <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+                          <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
                         </div>
                         <div class="menu-dropdown">
                           <div class="menu-item" style="width: 160px;">Opportunities</div>
@@ -144,7 +145,7 @@
                       <div tabindex="0" class="select-container">
                         <div class="menu-button">
                           <span>Newest</span>
-                          <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+                          <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
                         </div>
                         <div class="menu-dropdown">
                           <div class="menu-item active" style="width: 160px;">Newest</div>
@@ -158,7 +159,9 @@
                     <div class="chat-sidebar__thread">
                       <div class="chat-sidebar__thread-avatar">
                         <div class="user-avatar-container small toRight">
-                          <div class="user-avatar small"><img src="https://k.juslaw.online/media/2023/09/01/img.jpg"></div>
+                          <div class="user-avatar small">
+                            <img src="https://k.juslaw.online/media/2023/09/01/img.jpg">
+                          </div>
                         </div>
                       </div>
                       <div class="w-100">
@@ -167,7 +170,7 @@
                             ооо ооо оооDoe
                           </div>
                           <span class="chat-sidebar__thread-star">
-                            <img src="/static/media/star_empty.svg" alt="unfavorite">
+                            <img src="/static/images/star_empty.svg" alt="unfavorite">
                           </span>
                         </div>
                         <div class="d-flex">
@@ -196,7 +199,7 @@
             <div tabindex="0" class="select-container">
               <div class="menu-button">
                 <span>Newest</span>
-                <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+                <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
               </div>
               <div class="menu-dropdown">
                 <div class="menu-item active" style="width: 160px;">Newest</div>
@@ -230,7 +233,7 @@
               <div class="mb-1 position-relative d-flex align-items-center">
                 <div class="chat-sidebar__thread-name text-ellipsis"></div>
                 <span class="chat-sidebar__thread-star">
-                  <img src="/static/media/star_empty.svg" alt="unfavorite">
+                  <img src="/static/images/star_empty.svg" alt="unfavorite">
                 </span>
               </div>
               <div class="d-flex">

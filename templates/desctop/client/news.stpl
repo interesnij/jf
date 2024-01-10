@@ -1,12 +1,13 @@
 <% include!("../header.stpl"); %>
 
-<div class="news-dashboard">
+<div class="news-dashboard doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="d-flex mb-4">
-    <div class="d-flex ml-auto mr-2"><span class="select-label my-auto">Sort by</span>
+    <div class="d-flex ml-auto mr-2">
+      <span class="select-label my-auto">Sort by</span>
       <div tabindex="0" class="select-container">
         <div class="menu-button">
             <span>Most Recent</span>
-            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
         </div>
         <div class="menu-dropdown align-right">
           <div class="menu-item active" style="width: 120px;">Most Recent</div>

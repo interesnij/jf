@@ -95,10 +95,10 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
         if resp.is_ok() {
             let data = resp.expect("E.");
             activities = data.activities;
-            billing =data.billing;
-            chats =data.chats;
-            open_matters =data.open_matters;
-            open_matters_count =data.open_matters_count;
+            billing = data.billing;
+            chats = data.chats;
+            open_matters = data.open_matters;
+            open_matters_count = data.open_matters_count;
         }
         else {
             activities = Vec::new();
@@ -190,7 +190,7 @@ pub async fn attorney_leads_page(req: HttpRequest) -> actix_web::Result<HttpResp
     if user_some.is_some() {
         let request_user = user_some.unwrap();
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
-        let l = 2;
+        let l = 2; 
         let title: String; 
         let description: String;
         let link = "/attorney/leads".to_string();
@@ -214,6 +214,7 @@ pub async fn attorney_leads_page(req: HttpRequest) -> actix_web::Result<HttpResp
                 &image,
             ).await;
         }
+
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/leads_clients.stpl")]

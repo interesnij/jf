@@ -208,6 +208,13 @@ pub async fn get_first_load_page (
     }
 }
 
+pub fn get_string(value: Option<String>) -> String {
+    if value.is_some() {
+        return value.as_deref().unwrap().to_string();
+    }
+    return String::new();
+}
+
 pub fn get_page(req: &HttpRequest) -> i32 {
     #[derive(Debug, Deserialize)]
     struct Params {

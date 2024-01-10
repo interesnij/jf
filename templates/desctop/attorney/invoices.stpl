@@ -1,6 +1,6 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="invoices-page__bar">
     <div class="d-flex flex-wrap justify-content-between mt-3 mb-2">
       <div class="d-flex flex-wrap ">
@@ -8,7 +8,8 @@
           <div tabindex="0" class="select-container">
             <div class="menu-button">
                 <span>All</span>
-                <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down"></div>
+                <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            </div>
             <div class="menu-dropdown">
               <div class="menu-item active" style="width: 160px;">All</div>
               <div class="menu-item" style="width: 160px;">Draft</div>
@@ -23,7 +24,7 @@
           <div tabindex="0" class="select-container">
             <div class="menu-button">
                 <span>All Time</span>
-                <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down"></div>
+                <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down"></div>
                 <div class="menu-dropdown">
                     <div class="menu-item active" style="width: 180px;">All Time</div>
                     <div class="menu-item" style="width: 180px;">Last 7 days</div>
@@ -39,13 +40,31 @@
   <div class="invoices-page__content">
     <div class="invoices-page__table">
       <div class="invoices-page__table-header">
-        <div class="invoices-page__table-header-item sortable"><span class="my-auto">Amount</span><img src="/static/media/sort.e24951887244d96dc965aafbcc67425f.svg" alt="sort"></div>
-        <div class="invoices-page__table-header-item sortable"><span class="my-auto">Invoice Number</span><img src="/static/media/sort.e24951887244d96dc965aafbcc67425f.svg" alt="sort"></div>
-        <div class="invoices-page__table-header-item"><span class="my-auto">Client</span></div>
-        <div class="invoices-page__table-header-item"><span class="my-auto">Matter</span></div>
-        <div class="invoices-page__table-header-item sortable"><span class="my-auto">Due Date</span><img src="/static/media/sort.e24951887244d96dc965aafbcc67425f.svg" alt="sort"></div>
-        <div class="invoices-page__table-header-item sortable"><span class="my-auto">Created</span><img src="/static/media/sort.e24951887244d96dc965aafbcc67425f.svg" alt="sort"></div>
-        <div class="invoices-page__table-header-item"><span class="my-auto">Actions</span></div>
+        <div class="invoices-page__table-header-item sortable">
+          <span class="my-auto">Amount</span>
+          <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="invoices-page__table-header-item sortable">
+          <span class="my-auto">Invoice Number</span>
+          <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="invoices-page__table-header-item">
+          <span class="my-auto">Client</span>
+        </div>
+        <div class="invoices-page__table-header-item">
+          <span class="my-auto">Matter</span>
+        </div>
+        <div class="invoices-page__table-header-item sortable">
+          <span class="my-auto">Due Date</span>
+          <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="invoices-page__table-header-item sortable">
+          <span class="my-auto">Created</span>
+          <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="invoices-page__table-header-item">
+          <span class="my-auto">Actions</span>
+        </div>
       </div>
 
         <!-- invoice object -->
@@ -71,7 +90,7 @@
         <div class="invoices-page__table-row-item">
           <div class="dropdown mx-auto" tabindex="0">
             <div class="dropdown__button">
-                <img src="/static/media/action_gray.svg" alt="action" class="invoices-page__table-row-item-action">
+                <img src="/static/images/action_gray.svg" alt="action" class="invoices-page__table-row-item-action">
             </div>
             <div class="dropdown__menu">
               <div class="dropdown__menu-item">Edit</div>

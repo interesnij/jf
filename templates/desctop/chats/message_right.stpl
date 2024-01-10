@@ -13,19 +13,19 @@
       <div>
         <div class="chat-message__content chat-message__content--attachment ml-auto">
           <div class="icon my-auto">
-            <img src="/static/media/document.svg" alt="file"></div>
+            <img src="/static/images/document.svg" alt="file"></div>
           <div class="ml-2">
             <div class="name">post-4_e1fbLGV.jpg</div>
             <div class="size">10KB</div>
           </div>
           <div class="actions">
             <span data-tip="Download">
-                <img src="/static/media/download_green.svg" alt="download">
+                <img src="/static/images/download_green.svg" alt="download">
             </span>
             <span data-tip="Send to document">
-                <img src="/static/media/open_green.svg" alt="open"></span>
+                <img src="/static/images/open_green.svg" alt="open"></span>
             <span data-tip="View document">
-                <img src="/static/media/eye_green.svg" alt="eye">
+                <img src="/static/images/eye_green.svg" alt="eye">
             </span>
           </div>
         </div>

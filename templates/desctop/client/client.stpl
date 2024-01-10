@@ -1,13 +1,13 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="lead-detail-page__bar"><span class="my-auto">sergey 11 goldobin</span>
     <div class="d-flex">
       <div class="d-flex">
         <div tabindex="0" class="select-container">
           <div class="menu-button">
             <span>Client</span>
-            <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+            <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
           <div class="menu-dropdown">
             <div class="menu-item active" style="width: 160px;">Client</div>
@@ -15,11 +15,11 @@
           </div>
         </div>
       </div>
-      <img class="icon-button-control ml-3 my-auto normal" data-tip="Call" src="/static/media/call.svg" alt="Call">
-      <img class="icon-button-control ml-3 my-auto normal" data-tip="Edit Contact" src="/static/media/edit.svg" alt="Edit Contact">
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="Call" src="/static/images/call.svg" alt="Call">
+      <img class="icon-button-control ml-3 my-auto normal" data-tip="Edit Contact" src="/static/images/edit.svg" alt="Edit Contact">
       <div class="dropdown ml-3" tabindex="0">
         <div class="dropdown__button">
-            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="matters-action-button" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+          <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" class="matters-action-button" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <path d="M328 256c0 39.8-32.2 72-72 72s-72-32.2-72-72 32.2-72 72-72 72 32.2 72 72zm104-72c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72zm-352 0c-39.8 0-72 32.2-72 72s32.2 72 72 72 72-32.2 72-72-32.2-72-72-72z"></path>
           </svg>
         </div>
@@ -89,13 +89,15 @@
                 <div class="folder-control__heading-after"></div>
               </div>
               <div class="d-flex">
-                <img class="icon-button-control my-auto normal" src="/static/media/plus_green.svg"></div>
+                <img class="icon-button-control my-auto normal" src="/static/images/plus_green.svg"></div>
             </div>
             <div class="folder-control__content">
                 <!-- matter item -->
               <div class="folder-item folder-item--with-separator">
                 <div class="leads__recent-matter">
-                  <div class="leads__recent-matter-name text-ellipsis"><a href="/attorney/matters/18">Nice Docs</a></div>
+                  <div class="leads__recent-matter-name text-ellipsis">
+                    <a href="/attorney/matters/18">Nice Docs</a>
+                  </div>
                   <div class="leads__recent-matter-desc text-ellipsis">descr</div>
                   <div class="d-flex mt-1">
                     <div>
@@ -124,7 +126,9 @@
                       <div class="tag-control tag-control--stage mt-auto mr-1">New stage</div>
                     </div>
                     <div class="user-avatar-container small toLeft">
-                      <div class="user-avatar small"><img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg"></div>
+                      <div class="user-avatar small">
+                        <img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg">
+                      </div>
                       <div class="user-avatar__name">JusLaw Platform Assessment A G</div>
                     </div>
                   </div>
@@ -159,7 +163,7 @@
     <div tabindex="-1" class="modal-control">
       <div class="modal-control__header">
         <div class="my-auto title text-ellipsis w-100 text-left">Start a Call</div>
-        <img class="my-auto ml-auto close" src="/static/media/close.svg" alt="close">
+        <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
       </div>
       <div class="modal-control__content ignore-onclickoutside">
         <div class="start-call-modal">

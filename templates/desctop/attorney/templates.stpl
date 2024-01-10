@@ -1,6 +1,6 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main">
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div tabindex="-1" style="outline: none;">
     <div class="documents-page">
       <div class="tab-control">
@@ -15,7 +15,8 @@
         <div class="documents-page__bar">
           <div class="documents-page__bar-input">
             <div class="search-bar-container undefined">
-                <img src="/static/media/search.svg" alt="search"><input placeholder="Search in My Templates" value="">
+                <img src="/static/images/search.svg" alt="search">
+                <input placeholder="Search in My Templates" value="">
             </div>
           </div>
           <div class="d-flex documents-page__bar-filter">
@@ -23,7 +24,7 @@
             <div tabindex="0" class="select-container">
               <div class="menu-button">
                 <span>All</span>
-                <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+                <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
               </div>
               <div class="menu-dropdown">
                 <div class="menu-item active" style="width: 160px;">All</div>
@@ -39,7 +40,7 @@
           <div tabindex="0" class="document-new-button ml-auto">
             <div class="menu-button">
                 <span>New</span>
-                <img src="/static/media/caret_down_white.svg" class="menu-button-icon" alt="drop-down">
+                <img src="/static/images/caret_down_white.svg" class="menu-button-icon" alt="drop-down">
             </div>
             <div class="menu-dropdown">
               <div>Folder</div>
@@ -57,13 +58,13 @@
             <div class="templates-page__table-header">
               <div class="templates-page__table-header-item sortable">
                 <span class="my-auto">Name</span>
-                <img src="/static/media/sort.svg" alt="sort"></div>
+                <img src="/static/images/sort.svg" alt="sort"></div>
               <div class="templates-page__table-header-item">
                 <span class="my-auto">Owner</span>
               </div>
               <div class="templates-page__table-header-item sortable">
                 <span class="my-auto">Last modified</span>
-                <img src="/static/media/sort.svg" alt="sort">
+                <img src="/static/images/sort.svg" alt="sort">
               </div>
               <div class="templates-page__table-header-item">
                 <span class="my-auto">Actions</span>
@@ -72,7 +73,9 @@
             <!-- template item -->
             <div class="templates-page__table-row">
               <div class="templates-page__table-row-item document-name">
-                <img src="/static/media/folder.d23bde5b8256da5453f560e16921e9f0.svg" alt="folder" class="mr-1 my-auto"><span class="mr-1 text-ellipsis">Personal templates</span></div>
+                <img src="/static/images/folder.svg" alt="folder" class="mr-1 my-auto">
+                <span class="mr-1 text-ellipsis">Personal templates</span>
+              </div>
               <div class="templates-page__table-row-item">
                 <div class="user-avatar-container small toRight">
                   <div class="user-avatar small"><img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg"></div>
@@ -82,7 +85,9 @@
               <div class="my-documents-page__table-row-item"><span>10:20 PM, 06/09/2023</span></div>
               <div class="templates-page__table-row-item">
                 <div class="dropdown mx-auto" tabindex="0">
-                  <div class="dropdown__button"><img src="/static/media/action_gray.7169f3572e6128db06d4e62f81b27e59.svg" alt="action" class="templates-page__table-row-item-action"></div>
+                  <div class="dropdown__button">
+                    <img src="/static/images/action_gray.svg" alt="action" class="templates-page__table-row-item-action">
+                  </div>
                   <div class="dropdown__menu">
                     <div class="dropdown__menu-item">Share</div>
                     <div class="dropdown__menu-item">Rename Folder</div>
