@@ -15,7 +15,7 @@ use crate::utils::{
 };
 
 
-pub fn page_routes(config: &mut web::ServiceConfig) {
+pub fn load_routes(config: &mut web::ServiceConfig) {
     config.route("/load/leads_and_clients/", web::get().to(leads_and_clients_load));
     //config.route("/locations/states/", web::get().to(states_load));
     //config.route("/locations/cities/", web::get().to(cities_load));

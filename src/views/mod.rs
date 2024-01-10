@@ -8,6 +8,7 @@ pub mod enterprises;
 pub mod news;
 pub mod paralegals;
 pub mod matters;
+pub mod load;
 
 
 pub use self::{
@@ -21,4 +22,5 @@ pub use self::{
     news::*,
     paralegals::*,
     matters::*,
+    load::*,
 };
