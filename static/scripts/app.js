@@ -1,5 +1,72 @@
 function on(elSelector, eventName, selector, fn) {var element = document.querySelector(elSelector);element.addEventListener(eventName, function(event) {var possibleTargets = element.querySelectorAll(selector);var target = event.target;for (var i = 0, l = possibleTargets.length; i < l; i++) {var el = target;var p = possibleTargets[i];while (el && el !== element) {if (el === p) {return fn.call(p, event);}el = el.parentNode;}}});}
 
+$height = parseFloat(window.innerHeight * 0.000264).toFixed(2);
+  $seconds = 1;
+  $user_id = 0;
+  $page_time_end = false;
+  
+  $window_height = 0;
+  $window_seconds = 1;
+$window_time_end = false;
+
+var delayedExec = function(after, fn) {
+    var timer;
+    return function() {
+        timer && clearTimeout(timer);
+        timer = setTimeout(fn, after);
+    };
+};
+
+function scrolled(_block) {
+    offset = 0;
+    window.onscroll = function() {
+      // программа отслеживает окончание прокрутки
+      //scrollStopper();
+      // программа считает секунды для внесения в стат страницы и списка, если он есть.
+      if ($page_time_end) {
+        get_page_view_time(120);
+        $page_time_end = false;
+      };
+      if ($window_time_end) {
+        get_window_view_timer(120);
+        $window_time_end = false;
+      };
+
+      // программа останавливает отчет времени просмотра элементов, на которых остановился
+      // пользователь, записывает его всем новым элементам pag, затем их добавляет в основной
+      // список стата, обнуляет счетчик и очищает список новых элементов.
+      if ((window.innerHeight + window.pageYOffset) > offset) {
+        offset = window.innerHeight + window.pageYOffset;
+        $height = parseFloat(offset * 0.000264).toFixed(2);
+      };
+
+      //try {
+          box = _block.querySelector('.next_page_list');
+          if (box && box.classList.contains("next_page_list")) {
+              inViewport = elementInViewport(box);
+              if (inViewport) {
+                  box.classList.remove("next_page_list");
+                  paginate(box);
+              }
+          };
+      //} catch {return}
+    }
+};
+function paginate(block) {
+        var link_3 = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        link_3.open('GET', location.protocol + "//" + location.host + block.getAttribute("data-link") + "&ajax=2", true);
+        link_3.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+
+        link_3.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var elem = document.createElement('span');
+                elem.innerHTML = link_3.responseText;
+                block.parentElement.insertAdjacentHTML('beforeend', elem.querySelector(".is_paginate").innerHTML)
+                block.remove()
+            }
+        }
+        link_3.send();
+};
 
 var socket = null;
 function connect() {
