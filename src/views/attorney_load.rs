@@ -238,13 +238,13 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
         let params_some = web::Query::<AttorneyMattersParams>::from_query(&req.query_string());
         if params_some.is_ok() {
             let params = params_some.unwrap();
-            ordering = get_string_with_string(params.ordering);
+            ordering = get_string_with_string(params.ordering.clone());
             limit =  get_limit(params.limit);
             offset = get_string_withi64(params.offset);
-            search = get_string_with_string(params.search);
+            search = get_string_with_string(params.search.clone());
             attorney = get_string_withi32(params.attorney);
-            status = get_string_with_string(params.status);
-            shared_with = get_string_withi32(params.shared_with);
+            status = get_string_with_string(params.status.clone());
+            shared_with = get_string_withi32(params.shared_with.clone());
         }
         else {
             ordering = String::new();
