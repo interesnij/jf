@@ -10,7 +10,7 @@ use crate::errors::Error;
 use sailfish::TemplateOnce;
 use serde::{Deserialize, Serialize};
 use crate::utils::{
-    get_string_with_string, get_limit, get_string_withi64, get_string_withi64, 
+    get_string_with_string, get_limit, get_string_withi64, get_string_withi32, 
     get_request_user, AuthResponseData, request_get, API
 };
 
@@ -184,7 +184,7 @@ pub struct MatterrrData {
     pub referral_request: bool,
     pub referral_pending: bool,
     pub referral_ignored: bool,
-    pub referral_ignore_attorney_data: Option<crate::utils::UserrCardData>,
+    pub referral_ignore_attorney_data: Option<crate::views::UserrCardData>,
     pub completed:        Option<String>,
     pub shared_with:      Vec<i32>,
     pub shared_with_data: Vec<crate::utils::UserSmallData>,
@@ -216,7 +216,7 @@ pub struct AttorneyMattersData {
     pub results:    Vec<MatterrrData>,
 }
 
-pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() {
         let request_user = user_some.unwrap();
