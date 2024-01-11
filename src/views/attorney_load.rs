@@ -227,13 +227,13 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
         let page_count:  i32;
         let object_list: Vec<MatterrrData>;
 
-        let ordering:    String,
-        let limit:       String,
-        let offset:      String,
-        let search:      String,
-        let attorney:    String,
-        let status:      String,
-        let shared_with: String,
+        let ordering:    String;
+        let limit:       String;
+        let offset:      String;
+        let search:      String;
+        let attorney:    String;
+        let status:      String;
+        let shared_with: String;
 
         let params_some = web::Query::<LeadsAndClientsParams>::from_query(&req.query_string());
         if params_some.is_ok() {
