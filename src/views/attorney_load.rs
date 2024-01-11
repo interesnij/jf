@@ -235,7 +235,7 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
         let status:      String;
         let shared_with: String;
 
-        let params_some = web::Query::<LeadsAndClientsParams>::from_query(&req.query_string());
+        let params_some = web::Query::<AttorneyMattersData>::from_query(&req.query_string());
         if params_some.is_ok() {
             let params = params_some.unwrap();
             ordering = get_string_with_string(params.ordering);
@@ -261,8 +261,8 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
             + &"&search=" + &search
             + &"&offset=" + &offset
             + &"&limit=" + &limit
-            + &"&attorney=" + &attorney,
-            + &"&status=" + &status,
+            + &"&attorney=" + &attorney
+            + &"&status=" + &status
             + &"&shared_with=" + &shared_with,
             &request_user.key
         ).await;
