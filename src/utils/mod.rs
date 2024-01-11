@@ -216,13 +216,13 @@ pub fn get_string_with_string(value: Option<String>) -> String {
 }
 pub fn get_string_withi64(value: Option<i64>) -> String {
     if value.is_some() {
-        return value.as_deref().to_string();
+        return value.unwrap().to_string();
     }
     return String::new();
 }
 pub fn get_string_withi32(value: Option<i32>) -> String {
     if value.is_some() {
-        return value.as_deref().to_string();
+        return value.unwrap().to_string();
     }
     return String::new();
 }

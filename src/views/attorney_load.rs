@@ -155,13 +155,13 @@ pub struct AttorneyMattersParams {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct MatterData { 
+pub struct MatterrrData { 
     pub id:              i32,
     pub lead:            Option<i32>,
     pub client:          i32,
-    pub client_data:     ClientofMatterData,
+    pub client_data:     crate::views::ClientofMatterData,
     pub attorney:        i32,
-    pub attorney_data:   AttorneyofMatterData,
+    pub attorney_data:   crate::views::AttorneyofMatterData,
     pub code:            String,
     pub title:           String,
     pub description:     String,
@@ -180,14 +180,14 @@ pub struct MatterData {
     pub stage:           i32, 
     pub stage_data:      crate::utils::StageData,
     pub referral:        Option<i32>,
-    pub referral_data:   Option<ReferralMatterData>,
+    pub referral_data:   Option<crate::views::ReferralMatterData>,
     pub referral_request: bool,
     pub referral_pending: bool,
     pub referral_ignored: bool,
-    pub referral_ignore_attorney_data: Option<UserrCardData>,
+    pub referral_ignore_attorney_data: Option<crate::utils::UserrCardData>,
     pub completed:        Option<String>,
     pub shared_with:      Vec<i32>,
-    pub shared_with_data: Vec<UserSmallData>,
+    pub shared_with_data: Vec<crate::utils::UserSmallData>,
     pub is_shared:        bool,
     pub created:          String,
     pub modified:         String,
@@ -199,7 +199,7 @@ pub struct MatterData {
     pub fee_type:         i32,
     pub fee_note:         String,
     pub invite:          Option<i32>,
-    pub invite_data:     Option<InviteMatterData>,
+    pub invite_data:     Option<crate::views::InviteMatterData>,
 
     pub unread_document_count: i32,
     pub unread_message_count:  i32,
@@ -213,7 +213,7 @@ pub struct AttorneyMattersData {
     pub next:       Option<String>,
     pub page_count: i32,
     pub previous:   Option<String>,
-    pub results:    Vec<LeadOrClientData>,
+    pub results:    Vec<MatterrrData>,
 }
 
 pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
@@ -225,7 +225,7 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
         let count:       i32;
         let next:        Option<String>;
         let page_count:  i32;
-        let object_list: Vec<LeadOrClientData>;
+        let object_list: Vec<MatterrrData>;
 
         let ordering:    String,
         let limit:       String,
