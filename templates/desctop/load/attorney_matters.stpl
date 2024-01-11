@@ -32,8 +32,7 @@
       </div>
 
       <% for object in object_list.iter() { %>
-        <% let client = object.client_data.clone(); %>
-        <% let attorney = object.attorney_data.clone(); %>
+        <% let (client, attorney) = (&object.client_data, &object.attorney_data); %>
         <div class="matters-page__table-row">
           <div class="matters-page__table-row-item matter-name">
               <span class="mr-1 text-ellipsis"><%= object.title %></span>
