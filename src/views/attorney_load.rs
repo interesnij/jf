@@ -287,7 +287,7 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
             count:        i32,
             next:         Option<String>,
             page_count:   i32,
-            object_list:  Vec<LeadOrClientData>,
+            object_list:  Vec<MatterrrData>,
         }
         let body = Template {
             request_user: request_user,
