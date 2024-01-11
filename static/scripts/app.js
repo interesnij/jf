@@ -178,7 +178,12 @@ function get_document_opacity_1() {
 function ajax_get_reload(url, history_enable, ajax) {
   var ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
   ajax_link.open( 'GET', url + "?ajax=" + ajax, true );
+
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+    ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  }
+
   ajax_link.onreadystatechange = function () {
     if ( this.readyState == 4 && this.status == 200 ) {
       rtr = document.getElementById('ajax');
@@ -263,9 +268,8 @@ on('body', 'click', '#logg', function() {
 
   link.onreadystatechange = function () {
   if ( link.readyState == 4 && link.status == 200 ) {
-    //var jsonData = JSON.parse(link.response);
-    localStorage.setItem("request_data", link.response)
-    window.location.href = "/" 
+    localStorage.setItem("request_data", link.response);
+    window.location.href = "/";
   }
 
   else {
@@ -299,7 +303,8 @@ on('body', 'click', '#signup', function() {
 
   link.onreadystatechange = function () {
   if ( link.readyState == 4 && link.status == 200 ) {
-    window.location.href = "/"
+    localStorage.setItem("request_data", link.response);
+    window.location.href = "/";
     }
   else {
     _this.disabled = false;

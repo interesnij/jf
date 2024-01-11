@@ -1,0 +1,112 @@
+<% if object_list.len() == 0 { %> 
+<div class="matters-page__table">
+      <div class="matters-page__table-header">
+        <div class="matters-page__table-header-item sortable">
+            <span class="my-auto">Matter</span>
+            <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="matters-page__table-header-item sortable">
+            <span class="my-auto">Client</span>
+            <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="matters-page__table-header-item">
+            <span class="my-auto">Status</span>
+        </div>
+        <div class="matters-page__table-header-item">
+            <span class="my-auto">Rate</span>
+        </div>
+        <div class="matters-page__table-header-item">
+            <span class="my-auto">Practice area</span>
+        </div>
+        <div class="matters-page__table-header-item sortable">
+            <span class="my-auto">Start date</span>
+            <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="matters-page__table-header-item sortable">
+            <span class="my-auto">Principle</span>
+            <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="matters-page__table-header-item">
+            <span class="my-auto">Actions</span>
+        </div>
+      </div>
+
+      <% for object in object_list.iter() { %>
+        <%= let client = object.client_data.clone(); %>
+        <%= let attorney = object.attorney_data.clone(); %>
+        <div class="matters-page__table-row">
+          <div class="matters-page__table-row-item matter-name">
+              <span class="mr-1 text-ellipsis"><%= object.title %></span>
+          </div>
+          <div class="matters-page__table-row-item">
+            <div class="user-avatar-container small toRight">
+              <div class="user-avatar small">
+                  <% if client.avatar.is_some() { %>
+                      <img src="<%= client.avatar.as_deref().unwrap() %>" />
+                  <% } else { %>
+                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                      </svg>
+                  <% } %>
+              </div>
+            </div> 
+            <div class="sc-eWvPqa dfPUio ml-1"><%= client.first_name %> <%= client.last_name %></div>
+          </div>
+          <div class="matters-page__table-row-item">
+            <div class="tag-control tag-control--open status"><%= object.status %></div>
+          </div>
+          <div class="matters-page__table-row-item"><span><%= object.fee_type %></span></div>
+          <div class="matters-page__table-row-item">
+            <span class="text-ellipsis" style="max-width: 200px;">
+              <%= object.speciality_data.title %>
+            </span> 
+          </div>
+          <div class="matters-page__table-row-item"><span><%= object.start_date %></span></div>
+          <div class="matters-page__table-row-item">
+            <div class="user-avatar-container small toRight">
+              <div class="user-avatar small">
+                <img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg">
+              </div>
+            </div>
+            <div class="sc-eWvPqa dfPUio ml-1"><%= attorney.first_name %> <%= attorney.last_name %></div>
+          </div>
+          <div class="matters-page__table-row-item">
+            <div class="dropdown mx-auto" tabindex="0">
+              <div class="dropdown__button">
+                <% if attorney.avatar.is_some() { %>
+                      <img src="<%= attorney.avatar.as_deref().unwrap() %>" />
+                  <% } else { %>
+                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                      </svg>
+                  <% } %>
+              </div>
+              <div class="dropdown__menu">
+                <div class="dropdown__menu-item matter_detail" data-pk="<%= object.id %>">View</div>
+                <div class="dropdown__menu-item share_matter" data-pk="<%= object.id %>">Share with</div>
+                <div class="dropdown__menu-item start_call">Start a call</div>
+                <div class="dropdown__menu-item create_message" data-pk="<%= object.id %>">Create a message</div>
+                <div class="dropdown__menu-item create_note" data-pk="<%= object.id %>">Create note</div>
+                <div class="dropdown__menu-item create_billing" data-pk="<%= object.id %>">Add billable items</div>
+                <div class="dropdown__menu-item create_invoice" data-pk="<%= object.id %>">Create an invoice</div>
+                <div class="dropdown__menu-item create_refer" data-pk="<%= object.id %>">Refer matter</div>
+                <div class="dropdown__menu-item delete_matter" data-pk="<%= object.id %>">Delete</div>
+              </div> 
+            </div>
+          </div>
+        </div>
+
+      <% } %>
+    </div>
+  
+<% } else { %>
+  <div class="mx-auto my-auto">
+    <p class=" text-center text-gray">
+      You currently have no matters.
+    </p>
+    <button class="btn btn--green ripple-effect normal mx-auto mt-1 create_matter">
+      <img src="/static/images/plus_white.svg" alt="plus">
+      <span>New matter</span>
+    </button>
+  </div>
+<% } %>

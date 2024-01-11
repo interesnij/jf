@@ -1,9 +1,9 @@
 <div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
-  <div class="matters-page__bar">
+  <div class="matters-page__bar" data-link="/attorney_load/matters/">
     <div class="matters-page__bar-input">
       <div class="search-bar-container undefined">
         <img src="/static/images/search.svg" alt="search">
-        <input placeholder="Search in Matters" value="">
+        <input placeholder="Search in Matters">
       </div>
     </div>
     <div class="d-flex matters-page__bar-filter">
@@ -14,10 +14,10 @@
                 <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
             </div>
             <div class="menu-dropdown">
-            <div class="menu-item active" style="width: 120px;">All</div>
-            <div class="menu-item" style="width: 120px;">Open</div>
-            <div class="menu-item" style="width: 120px;">Closed</div>
-            <div class="menu-item" style="width: 120px;">Refer Matter</div>
+            <div class="menu-item select_double_content active" data-value="&status=" style="width: 120px;">All</div>
+            <div class="menu-item select_double_content" data-value="&status=open" style="width: 120px;">Open</div>
+            <div class="menu-item select_double_content" data-value="&status=close" style="width: 120px;">Closed</div>
+            <div class="menu-item select_double_content" data-value="&status=referral" style="width: 120px;">Refer Matter</div>
             </div>
         </div>
     </div>
@@ -28,95 +28,18 @@
                 <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
             </div>
             <div class="menu-dropdown">
-            <div class="menu-item active" style="width: 180px;">All matters</div>
-            <div class="menu-item" style="width: 180px;">My matters</div>
-            <div class="menu-item" style="width: 180px;">Created by others</div>
+            <div class="menu-item active select_double_content" data-value="&shared_with=&attorney=" style="width: 180px;">All matters</div>
+            <div class="menu-item select_double_content" data-value="&shared_with=&attorney=<%= request_user.user_id %>" style="width: 180px;">My matters</div>
+            <div class="menu-item select_double_content" data-value="&shared_with=<%= request_user.user_id %>&attorney=" style="width: 180px;">Created by others</div>
             </div>
         </div>
     </div>
-    <button class="btn btn--green ripple-effect normal ml-auto my-auto" type="button">
+    <button class="btn btn--green ripple-effect normal ml-auto my-auto create_matter">
         <img src="/static/images/plus_white.svg" alt="plus">
         <span>New matter</span>
     </button>
   </div>
   <div class="matters-page__content">
-    <div class="matters-page__table">
-      <div class="matters-page__table-header">
-        <div class="matters-page__table-header-item sortable">
-            <span class="my-auto">Matter</span>
-            <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="matters-page__table-header-item sortable">
-            <span class="my-auto">Client</span>
-            <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="matters-page__table-header-item">
-            <span class="my-auto">Status</span>
-        </div>
-        <div class="matters-page__table-header-item">
-            <span class="my-auto">Rate</span>
-        </div>
-        <div class="matters-page__table-header-item">
-            <span class="my-auto">Practice area</span>
-        </div>
-        <div class="matters-page__table-header-item sortable">
-            <span class="my-auto">Start date</span>
-            <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="matters-page__table-header-item sortable">
-            <span class="my-auto">Principle</span>
-            <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="matters-page__table-header-item">
-            <span class="my-auto">Actions</span>
-        </div>
-      </div>
-
-      <!-- mattter object -->
-      <div class="matters-page__table-row">
-        <div class="matters-page__table-row-item matter-name">
-            <span class="mr-1 text-ellipsis">Nice Docs</span>
-        </div>
-        <div class="matters-page__table-row-item">
-          <div class="user-avatar-container small toRight">
-            <div class="user-avatar small">
-                <img src="https://k.juslaw.online/media/images/2023/09/19/16AFD31A-F866-4076-8E95-09CDF8B87D16.png"></div>
-          </div>
-          <div class="sc-eWvPqa dfPUio ml-1">sergey 11 goldobin</div>
-        </div>
-        <div class="matters-page__table-row-item">
-          <div class="tag-control tag-control--open status">OPEN</div>
-        </div>
-        <div class="matters-page__table-row-item"><span>fixed fee</span></div>
-        <div class="matters-page__table-row-item"><span class="text-ellipsis" style="max-width: 200px;">Accounting Law Practice</span></div>
-        <div class="matters-page__table-row-item"><span>07/15/2023</span></div>
-        <div class="matters-page__table-row-item">
-          <div class="user-avatar-container small toRight">
-            <div class="user-avatar small"><img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg"></div>
-          </div>
-          <div class="sc-eWvPqa dfPUio ml-1">JusLaw Platform Assessment G</div>
-        </div>
-        <div class="matters-page__table-row-item">
-          <div class="dropdown mx-auto" tabindex="0">
-            <div class="dropdown__button">
-              <img src="/static/images/action_gray.svg" alt="action" class="matters-page__table-row-item-action">
-            </div>
-            <div class="dropdown__menu">
-              <div class="dropdown__menu-item">View</div>
-              <div class="dropdown__menu-item">Share with</div>
-              <div class="dropdown__menu-item">Start a call</div>
-              <div class="dropdown__menu-item">Create a message</div>
-              <div class="dropdown__menu-item">Create note</div>
-              <div class="dropdown__menu-item">Add billable items</div>
-              <div class="dropdown__menu-item">Create an invoice</div>
-              <div class="dropdown__menu-item">Refer matter</div>
-              <div class="dropdown__menu-item">Delete</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- mattter object -->
-
-    </div>
+    <span class="load_content" data-link="/attorney_load/matters/?ordering=-modified&offset=0&limit=10&search=&attorney=&status=&shared_with="></span>
   </div>
 </div>

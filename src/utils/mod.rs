@@ -208,9 +208,21 @@ pub async fn get_first_load_page (
     }
 }
 
-pub fn get_string(value: Option<String>) -> String {
+pub fn get_string_with_string(value: Option<String>) -> String {
     if value.is_some() {
         return value.as_deref().unwrap().to_string();
+    }
+    return String::new();
+}
+pub fn get_string_withi64(value: Option<i64>) -> String {
+    if value.is_some() {
+        return value.as_deref().to_string();
+    }
+    return String::new();
+}
+pub fn get_string_withi32(value: Option<i32>) -> String {
+    if value.is_some() {
+        return value.as_deref().to_string();
     }
     return String::new();
 }
@@ -219,12 +231,6 @@ pub fn get_limit(value: Option<i64>) -> String {
         return value.unwrap().to_string();
     }
     return "20".to_string();
-}
-pub fn get_integer(value: Option<i64>) -> String {
-    if value.is_some() {
-        return value.unwrap().to_string();
-    }
-    return "0".to_string();
 }
 
 pub fn get_page(req: &HttpRequest) -> i32 {

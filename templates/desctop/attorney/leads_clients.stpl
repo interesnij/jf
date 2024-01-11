@@ -5,7 +5,7 @@
     <div class="leads-page__bar-input">
       <div class="search-bar-container undefined">
         <img src="/static/images/search.svg" alt="search">
-        <input placeholder="Search in Leads &amp; Clients" value="">
+        <input placeholder="Search in Leads &amp; Clients">
       </div>
     </div>
     <div class="d-flex leads-page__bar-filter"><span class="select-label my-auto">Type</span>
@@ -14,10 +14,26 @@
             <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
         </div>
         <div class="menu-dropdown">
-          <div class="menu-item active" style="width: 120px;">All</div>
-          <div class="menu-item" style="width: 120px;">Leads</div>
-          <div class="menu-item" style="width: 120px;">Clients</div>
-          <div class="menu-item" style="width: 120px;">Pending</div>
+          <div class="menu-item select_content active"
+              data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=All"
+              style="width: 120px;">
+              All
+          </div>
+          <div class="menu-item select_content"
+              data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=lead"
+              style="width: 120px;">
+              Leads
+          </div>
+          <div class="menu-item select_content"
+              data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=client"
+              style="width: 120px;">
+              Clients
+          </div>
+          <div class="menu-item select_content"
+              data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=pending"
+              style="width: 120px;">
+              Pending
+          </div>
         </div>
       </div>
     </div>
@@ -27,56 +43,7 @@
     </button>
   </div>
   <div class="leads-page__content">
-    <div class="leads-page__table">
-      <div class="leads-page__table-header">
-        <div class="leads-page__table-header-item sortable">
-            <span class="my-auto">Name</span>
-            <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="leads-page__table-header-item sortable"><span class="my-auto">Company</span></div>
-        <div class="leads-page__table-header-item"><span class="my-auto">Type</span></div>
-        <div class="leads-page__table-header-item"><span class="my-auto">Phone</span></div>
-        <div class="leads-page__table-header-item"><span class="my-auto">Email</span></div>
-        <div class="leads-page__table-header-item sortable">
-            <span class="my-auto">Matter</span>
-            <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="leads-page__table-header-item"><span class="my-auto">Actions</span></div>
-      </div>
-
-      <!-- leads object -->
-      <div class="leads-page__table-row">
-        <div class="leads-page__table-row-item lead-name">
-          <div class="user-avatar-container small toRight">
-            <div class="user-avatar small">
-                <img src="https://k.juslaw.online/media/images/2023/09/19/16AFD31A-F866-4076-8E95-09CDF8B87D16.png"></div>
-            <div class="user-avatar__name">sergey 11 goldobin</div>
-          </div>
-        </div>
-        <div class="leads-page__table-row-item"><span class="my-auto">google</span></div>
-        <div class="leads-page__table-row-item"><span class="my-auto">Client</span></div>
-        <div class="leads-page__table-row-item"><span>(040) 525-6152</span></div>
-        <div class="leads-page__table-row-item"><span>serge300@gmail.com</span></div>
-        <div class="leads-page__table-row-item"><span>2 matters</span></div>
-        <div class="leads-page__table-row-item">
-          <div class="dropdown mx-auto" tabindex="0">
-            <div class="dropdown__button">
-                <img src="/static/images/action_gray.svg" alt="action" class="leads-page__table-row-item-action">
-            </div>
-            <div class="dropdown__menu">
-              <div class="dropdown__menu-item">View</div>
-              <div class="dropdown__menu-item">Create new matter</div>
-              <div class="dropdown__menu-item">Direct Chat</div>
-              <div class="dropdown__menu-item">Add billable items</div>
-              <div class="dropdown__menu-item">Create an invoice</div>
-              <div class="dropdown__menu-item">Share with</div>
-              <div class="dropdown__menu-item">Edit Contact</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- leads object -->
-    </div>
+      <span class="load_content" data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=All"></span>
   </div>
 </div>
 

@@ -65,7 +65,7 @@
                 <span class="capitalize">Leads and clients</span>
               </div>
 
-              <% if chats.len() == 0 { %> 
+              <% if chats.len() == 0 { %>
                 <div class="row">
                 <% for object in chats.iter() { %>
 
