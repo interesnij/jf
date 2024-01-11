@@ -244,7 +244,7 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
             search = get_string_with_string(params.search);
             attorney = get_string_withi32(params.attorney);
             status = get_string_with_string(params.status);
-            shared_with = get_string_with_string(params.shared_with);
+            shared_with = get_string_withi32(params.shared_with);
         }
         else {
             ordering = String::new();
