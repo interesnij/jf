@@ -235,7 +235,7 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
         let status:      String;
         let shared_with: String;
 
-        let params_some = web::Query::<AttorneyMattersData>::from_query(&req.query_string());
+        let params_some = web::Query::<AttorneyMattersParams>::from_query(&req.query_string());
         if params_some.is_ok() {
             let params = params_some.unwrap();
             ordering = get_string_with_string(params.ordering);
@@ -255,7 +255,7 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
             status = String::new();
             shared_with = String::new();
         }
-        let resp = request_get::<crate::views::LeadsAndClientsData> (
+        let resp = request_get::<crate::views::AttorneyMattersData> (
             API.to_owned()
             + &"business/matters/?ordering=".to_string() + &ordering
             + &"&search=" + &search
