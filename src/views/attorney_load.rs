@@ -350,7 +350,7 @@ pub struct DocumentData {
     pub is_template:        bool,
     pub is_vault:           bool,
     pub is_global_template: bool,
-    pub file:               Option<String>,
+    pub file:               String,
     pub mime_type:          Option<String>,
     pub shared_with:        Vec<i32>,
     pub shared_with_data:   Vec<crate::utils::UserSmallData>,
@@ -375,7 +375,6 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
         let request_user = user_some.unwrap();
         let l = 2;
 
-        let count:         i32;
         let next:          Option<String>;
         let page_count:    i32;
         let object_list:   Vec<DocumentData>;
@@ -455,7 +454,6 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
 
         if resp.is_ok() {
             let data = resp.expect("E.");
-            count = data.count;
             next = data.next;
             page_count = data.page_count;
             object_list = data.results;
@@ -463,7 +461,6 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             overall_total = data.overall_total;
         }
         else {
-            count = 0;
             next = None;
             page_count = 0;
             object_list = Vec::new();
@@ -475,7 +472,6 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
         #[template(path = "desctop/load/documents.stpl")]
         pub struct Template {
             request_user: AuthResponseData,
-            count:         i32,
             next:          Option<String>,
             page_count:    i32,
             object_list:   Vec<DocumentData>,
@@ -484,7 +480,6 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
         }
         let body = Template {
             request_user:  request_user,
-            count:         count,
             next:          next,
             page_count:    page_count,
             object_list:   object_list,
