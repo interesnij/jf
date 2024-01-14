@@ -306,16 +306,6 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
     }
 }
 
-#[derive(Debug, Deserialize)]
-pub struct DocumentsParams {
-    pub ordering:    Option<String>,
-    pub limit:       Option<i64>,
-    pub offset:      Option<i64>,
-    pub search:      Option<String>,
-    pub attorney:    Option<i32>,
-    pub status:      Option<String>,
-    pub shared_with: Option<i32>,
-}
 
 /////////////////////////////////////////////
 #[derive(Debug, Deserialize)]
@@ -444,17 +434,17 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
         let url = concat_string!(
             API.to_owned(),
             "documents/?ordering=", ordering,
-            "&limit=", limit
-            "&offset=", offset
-            "&search=", search
-            "&status=", status
-            "&is_template=", is_template
-            "&is_parent=", is_parent
-            "&is_vault=", is_vault
-            "&client=", client
-            "&attorney=", attorney
-            "&matter=", matter
-            "&owner=", owner
+            "&limit=", limit,
+            "&offset=", offset,
+            "&search=", search,
+            "&status=", status,
+            "&is_template=", is_template,
+            "&is_parent=", is_parent,
+            "&is_vault=", is_vault,
+            "&client=", client,
+            "&attorney=", attorney,
+            "&matter=", matter,
+            "&owner=", owner,
             "&type=", _type,
             "&shared_with=", shared_with
         );
