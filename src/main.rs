@@ -1,5 +1,8 @@
 #[macro_use]
 extern crate log;
+#[macro_use(concat_string)]
+extern crate concat_string;
+
 use actix::Actor;
 use actix_cors::Cors;
 use dotenv::dotenv;

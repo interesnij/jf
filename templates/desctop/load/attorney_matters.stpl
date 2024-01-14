@@ -1,4 +1,4 @@
-<% if object_list.len() == 0 { %> 
+<% if object_list.len() > 0 { %> 
 <div class="matters-page__table">
       <div class="matters-page__table-header">
         <div class="matters-page__table-header-item sortable">

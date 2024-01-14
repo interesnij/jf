@@ -226,6 +226,16 @@ pub fn get_string_withi32(value: Option<i32>) -> String {
     }
     return String::new();
 }
+pub fn get_string_withbool(value: Option<bool>) -> String {
+    if value.is_some() {
+        let val = value.unwrap();
+        if val {
+            return "true".to_string();
+        }
+        return "false".to_string();
+    }
+    return "false".to_string();
+}
 pub fn get_limit(value: Option<i64>) -> String {
     if value.is_some() {
         return value.unwrap().to_string();

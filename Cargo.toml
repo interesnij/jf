@@ -34,6 +34,7 @@ actix-web-httpauth = "0.6.0"
 bcrypt = "0.12.1"
 jsonwebtoken = "8.1.0"
 async-recursion = "*"
+concat-string = "1.0.1"
 
 [profile.release]
 opt-level = 3
