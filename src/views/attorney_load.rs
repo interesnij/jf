@@ -378,7 +378,7 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
         let count:         i32;
         let next:          Option<String>;
         let page_count:    i32;
-        let object_list:   Vec<MatterrrData>;
+        let object_list:   Vec<DocumentData>;
         let highest_count: i32;
         let overall_total: i32;
 
