@@ -17,7 +17,6 @@ use crate::errors::AuthError;
 use actix_multipart::{Field, Multipart};
 use sailfish::TemplateOnce;
 use std::borrow::BorrowMut;
-use actix_web::http::header::Header;
 
 
 pub fn auth_routes(config: &mut web::ServiceConfig) {

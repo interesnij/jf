@@ -1,14 +1,17 @@
 use actix_web::{
     web,
-    web::block,
+    //web::block,
     HttpRequest,
     HttpResponse,
     error::InternalError,
     http::StatusCode,
 };
-use crate::errors::Error;
+//use crate::errors::Error;
 use sailfish::TemplateOnce;
-use serde::{Deserialize, Serialize};
+use serde::{
+    Deserialize, 
+    //Serialize
+};
 use crate::utils::{
     get_string_with_string, get_limit, get_string_withi64, get_string_withi32, 
     get_string_withbool, get_request_user, AuthResponseData, request_get, API
@@ -393,7 +396,7 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
         let attorney:    String;
         let matter:      String;
         let owner:       String;
-        let r#type:      String;
+        let _type:       String;
         let shared_with: String;
 
         let params_some = web::Query::<DocumentsParams>::from_query(&req.query_string());

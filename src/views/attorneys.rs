@@ -8,7 +8,10 @@ use actix_web::{
 };
 use crate::errors::Error;
 use sailfish::TemplateOnce;
-use serde::{Deserialize, Serialize};
+use serde::{
+    Deserialize, 
+    //Serialize
+};
 use crate::utils::{
     get_request_user, UserSmallData, SpecialitiesData, AuthResponseData, request_get, API,
 };
