@@ -215,7 +215,7 @@ pub struct MatterrrData {
     pub is_billable:      bool,
     pub fee_type:         i32,
     pub fee_note:         String,
-    pub invite:          Option<i32>,
+    pub invite:          Option<i32>, 
     pub invite_data:     Option<crate::views::InviteMatterData>,
 
     pub unread_document_count: i32,

@@ -60,7 +60,7 @@
 
       </div>
       <div class="chat-content__main">
-        <div class="chat-content__main-section load_content" data-link="/load/messages/<%= chat.id %>"></div>
+        <div class="chat-content__main-section load_content" data-link="/load/messages/<%= chat_id %>"></div>
 
         <% include!("../generic/chat_footer.stpl"); %>
       </div>
