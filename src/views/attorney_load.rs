@@ -112,9 +112,9 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
         let url = concat_string!(
             API.to_owned(),
             "users/attorneys/", request_user.user_id, "/leads_and_clients/",
-            "?search=", search
-            "&offset=", offset
-            "&limit=", limit
+            "?search=", search,
+            "&offset=", offset,
+            "&limit=", limit,
             "&type=", _type
         );
         let resp = request_get::<crate::views::LeadsAndClientsData> (
@@ -650,7 +650,7 @@ pub async fn invoices_load(req: HttpRequest) -> actix_web::Result<HttpResponse> 
             "&attorney=", attorney,
             "&status=", status,
             "&ordering=", ordering,
-            "&period_start=", period_start,
+            "&period_start=", period_start
         );
         let resp = request_get::<crate::views::InvoicesData> (
             url,
@@ -827,7 +827,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             "&attorney=", attorney,
             "&status=", status,
             "&ordering=", ordering,
-            "&date__gte=", date__gte,
+            "&date__gte=", date__gte
         );
         let resp = request_get::<crate::views::TimeBillingsData> (
             url,
@@ -944,7 +944,7 @@ pub async fn contacts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> 
             "?search=", search,
             "&offset=", offset,
             "&limit=", limit,
-            "&type=", _type,
+            "&type=", _type
         );
         let resp = request_get::<crate::views::ContactsData> (
             url,

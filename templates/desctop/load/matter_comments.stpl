@@ -110,7 +110,7 @@
                                   <span>Cancel</span>
                               </button>
                               <% 
-                                let mut ids: Vec<i32> = object.participants_data;
+                                let mut ids: Vec<i32> = object.participants;
                                 let joined = itertools::Itertools::join(&mut ids.iter(), ",");
                               %>
                               <button   
