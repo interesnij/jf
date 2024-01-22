@@ -110,8 +110,8 @@
                                   <span>Cancel</span>
                               </button>
                               <% 
-                                let mut ids: Vec<i32> = object.participants;
-                                let joined = ids.iter().join(".");
+                                //let mut ids: Vec<i32> = object.participants;
+                                let joined: String = object.participants.iter().map( |&id| id.to_string() + ",").collect(); 
                               %>
                               <button   
                                 data-post="<%= post_id %>" 
