@@ -44,9 +44,9 @@
           <img src="/static/images/action_gray.svg" alt="action" class="contacts-page__table-row-item-action">
         </div>
         <div class="dropdown__menu">
-          <div class="dropdown__menu-item contact_detail" data-pk="<%= object.id %>">View Profile</div>
-          <div class="dropdown__menu-item create_chat" data-pk="<%= object.id %>">Direct chat</div>
-          <div class="dropdown__menu-item delete_contact" data-pk="<%= object.id %>">Delete</div>
+          <div class="dropdown__menu-item contact_detail" data-pk="<%= object.user_id %>">View Profile</div>
+          <div class="dropdown__menu-item create_chat" data-pk="<%= object.user_id %>">Direct chat</div>
+          <div class="dropdown__menu-item delete_contact" data-pk="<%= object.user_id %>">Delete</div>
         </div>
       </div>
     </div>

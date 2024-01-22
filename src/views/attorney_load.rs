@@ -829,7 +829,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             "&ordering=", ordering,
             "&date__gte=", date__gte,
         );
-        let resp = request_get::<crate::views::InvoicesData> (
+        let resp = request_get::<crate::views::TimeBillingsData> (
             url,
             &request_user.key
         ).await;
@@ -891,7 +891,7 @@ pub struct ContactsParams {
 pub struct ContactData { 
     pub user_id: i32,
     pub name:    String,
-    pub firm:    String,
+    pub firm:    Option<String>,
     pub r#type:  String,
     pub phone:   String,
     pub pending: bool,
@@ -1323,7 +1323,7 @@ pub async fn matter_messages_load(req: HttpRequest) -> actix_web::Result<HttpRes
         let count:       i32;
         let next:        Option<String>;
         let page_count:  i32;
-        let object_list: Vec<MessageData>;
+        let object_list: Vec<MatterMessageData>;
 
         let limit:  String;
         let offset: String;
@@ -1340,7 +1340,7 @@ pub async fn matter_messages_load(req: HttpRequest) -> actix_web::Result<HttpRes
             search = get_string_with_string(params.search.clone());
             ordering = get_string_with_string(params.ordering.clone());
             matter_id = get_id_withi32(params.matter);
-            seen = get_id_withbool(params.seen);
+            seen = get_string_withbool(params.seen);
         } 
         else {
             limit = String::new();
@@ -1562,7 +1562,7 @@ pub async fn notes_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             search = get_string_with_string(params.search.clone());
             ordering = get_string_with_string(params.ordering.clone());
             matter_id = get_id_withi32(params.matter);
-            created_by = get_string_with_string(params.created_by);
+            created_by = get_id_withi32(params.created_by);
             types = get_string_with_string(params.types);
         } 
         else {
