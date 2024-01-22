@@ -111,7 +111,7 @@
                               </button>
                               <% 
                                 let mut ids: Vec<i32> = object.participants;
-                                let joined = itertools::Itertools::join(&mut ids.iter(), ",");
+                                let joined = ids.iter().join(".");
                               %>
                               <button   
                                 data-post="<%= post_id %>" 

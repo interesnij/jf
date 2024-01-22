@@ -877,7 +877,7 @@ pub async fn attorney_matter_messages_page(req: HttpRequest, _id: web::Path<i32>
     }
 }
 
-pub async fn attorney_matter_post_comments_page(req: HttpRequest, params: web::Path<(i32, i32>)) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_matter_post_comments_page(req: HttpRequest, params: web::Path<(i32, i32)>) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() {
         let request_user = user_some.unwrap();
