@@ -109,15 +109,10 @@
                               <button class="btn btn--white ripple-effect normal hide_matter_comment_form">
                                   <span>Cancel</span>
                               </button>
-                              <button 
+                              <% let s: String = object.participants.into_iter().collect(); %>
+                              <button   
                                 data-post="<%= post_id %>" 
-                                data-participants="
-                                  <% 
-                                    for i in object.participants.iter() {
-                                      i,
-                                    } 
-                                  %>
-                                " 
+                                data-participants="<%= s %>" 
                                 class="btn btn--green ripple-effect normal ml-2 matter_comment_send" 
                                 post_id="<%= post_id %>"
                               >
