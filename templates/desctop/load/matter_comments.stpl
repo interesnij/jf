@@ -29,7 +29,7 @@
                         <div class="message-author-name mb-1">
                           <% if author.id == request_user_id { %>
                             You
-                          <% } else { %>
+                          <% } else { %> 
                             <%= author.first_name %> <%= author.last_name %>
                           <% } %>
                         </div>
@@ -109,7 +109,7 @@
                               <button class="btn btn--white ripple-effect normal hide_matter_comment_form">
                                   <span>Cancel</span>
                               </button>
-                              <button data-post="<%= post_id %>" data-participants="<%= object.participants %>" class="btn btn--green ripple-effect normal ml-2 matter_comment_send" post_id="<%= post_id %>">
+                              <button data-post="<%= post_id %>" data-participants="<%= object.participants.to_string() %>" class="btn btn--green ripple-effect normal ml-2 matter_comment_send" post_id="<%= post_id %>">
                                   <span>Send</span>
                               </button>
                             </div>

@@ -1278,7 +1278,7 @@ pub struct MatterMessagesParams {
 pub struct LastCommentData { 
     pub id:                i32,
     pub post:              i32,
-    pub author:            Vec<crate::utils::UserCardData>,
+    pub author:            crate::utils::UserCardData,
     pub text:              String,
     pub participants:      Vec<i32>,
     pub participants_data: Vec<crate::utils::UserCardData>,
@@ -1423,7 +1423,7 @@ pub struct MatterCommentsData {
 
 pub async fn matter_post_comments(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
-    if user_some.is_some() { 
+    if user_some.is_some() {  
         let request_user = user_some.unwrap();
         let l = 2;
 
