@@ -1027,7 +1027,7 @@ pub struct FilesData {
 } 
 #[derive(Debug, Deserialize)]
 pub struct MessageData { 
-    pub id:          i32,
+    pub id:          i32, 
     pub author:      i32,
     pub author_data: crate::utils::UserCardData,
     pub r#type:      String,
@@ -1071,7 +1071,7 @@ pub struct ChatData {
     pub title:             String,
     pub participants:      Vec<i32>,
     pub participants_data: Vec<UserChatCardData>,
-    pub last_message:      crate::views::LastMessageData,
+    pub last_message:      crate::views::MessageData,
     pub is_favorite:       bool,
     pub is_archived:       bool,
     pub is_group:          bool,
