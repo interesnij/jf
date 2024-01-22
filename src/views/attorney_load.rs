@@ -1052,7 +1052,7 @@ impl MessageData {
                 return "Attached files".to_string();
             }
             else if _len == 1 {
-                let file = self.files[0].file;
+                let file = self.files[0].file.clone();
                 if file.contains(".wav") {
                     return "Voice message".to_string();
                 }
