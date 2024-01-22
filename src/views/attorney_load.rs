@@ -1079,7 +1079,7 @@ pub struct ChatData {
     pub created:           String,
 }
 impl ChatData {
-    pub fn get_chat_user(&self, user_id: &String) -> UserChatCardData {
+    pub fn get_chat_user(&self, user_id: &String) -> &UserChatCardData {
         let data = &self.participants_data;
         for i in data.into_iter() {
             if &i.id.to_string() != user_id {
