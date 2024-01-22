@@ -1,7 +1,7 @@
 <% if object_list.len() > 0 { %> 
     <% for object in object_list.iter() { %>
       <% if object.chat_type == chat_type { %>
-        <% let (message, chat_user) = (&object.last_message, object.get_chat_user(request_user.user_id)); %>
+        <% let (message, chat_user) = (&object.last_message, object.get_chat_user(&request_user.user_id)); %>
         <div class="chat-sidebar__thread <% if object.id == chat_id { %>active<% } %>">
           <div class="chat-sidebar__thread-avatar">
             <div class="user-avatar-container small toRight">
