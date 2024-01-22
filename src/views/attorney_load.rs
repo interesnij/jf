@@ -1086,7 +1086,7 @@ impl ChatData {
                 return i;
             }
         }
-        return UserChatCardData { 
+        return &UserChatCardData { 
             id:             0,
             first_name:     "".to_string(),
             middle_name:    "".to_string(),
