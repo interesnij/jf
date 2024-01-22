@@ -65,7 +65,7 @@ pub struct ClientData {
     pub last_name:   String,
 }
 #[derive(Debug, Deserialize)]
-pub struct LastMessageData {
+pub struct LastMessageData { 
     pub chat:       i32,
     pub created:    String,
     pub id:         i32,

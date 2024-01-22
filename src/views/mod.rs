@@ -6,7 +6,7 @@ pub mod clients;
 pub mod enterprises;
 //pub mod news;
 //pub mod paralegals;
-//pub mod matters;
+pub mod matters;
 pub mod attorney_load;
 
 
@@ -19,6 +19,6 @@ pub use self::{
     enterprises::*,
     //news::*,
     //paralegals::*,
-    //matters::*,
+    matters::*,
     attorney_load::*,
 };

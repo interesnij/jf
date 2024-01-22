@@ -1563,7 +1563,7 @@ pub async fn notes_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             ordering = get_string_with_string(params.ordering.clone());
             matter_id = get_id_withi32(params.matter);
             created_by = get_string_withi32(params.created_by);
-            types = get_string_with_string(params.types);
+            types = get_string_with_string(params.types.clone());
         } 
         else {
             limit = String::new();
