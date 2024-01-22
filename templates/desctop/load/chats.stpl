@@ -1,0 +1,49 @@
+<% if object_list.len() > 0 { %> 
+    <% for object in object_list.iter() { %>
+      <% if object.chat_type == chat_type { %>
+        <% let (message, chat_user) = (&object.last_message, object.get_chat_user(request_user.user_id)); %>
+        <div class="chat-sidebar__thread <% if object.id == chat_id { %>active<% } %>">
+          <div class="chat-sidebar__thread-avatar">
+            <div class="user-avatar-container small toRight">
+              <div class="user-avatar small">
+                <% if chat_user.avatar.is_some() { %>
+                      <img src="<%= chat_user.avatar.as_deref().unwrap() %>" />
+                  <% } else { %>
+                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                      </svg>
+                  <% } %>
+              </div>
+            </div>
+          </div>
+          <div class="w-100">
+            <div class="mb-1 position-relative d-flex align-items-center">
+              <div class="chat-sidebar__thread-name text-ellipsis">
+                <%= chat_user.first_name %> <%= chat_user.last_name %>
+              </div>
+              <span class="chat-sidebar__thread-star">
+                <% if object.is_favorite { %>
+                  <img src="/static/images/star_fill.svg" alt="favorite">
+                <% } else { %>
+                  <img src="/static/images/star_empty.svg" alt="no favorite">
+                <% } %>
+              </span>
+            </div>
+            <div class="d-flex">
+              <span class="chat-sidebar__thread-text"><%= message.get_preview() %></span>
+              <span class="chat-sidebar__thread-time ml-auto">
+                <%= message.created %>
+              </span>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    <% } %>
+
+<% } else { %>
+  <div class="mx-auto my-auto">
+    <p class=" text-center text-gray">
+      You currently don't have any chats.
+    </p>
+  </div>
+<% } %>

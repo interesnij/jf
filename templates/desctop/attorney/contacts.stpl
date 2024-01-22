@@ -5,7 +5,7 @@
     <div class="contacts-page__bar">
       <div class="search-bar-container contacts-page__bar-input">
         <img src="/static/images/search.svg" alt="search">
-        <input placeholder="Search in Industry Contacts" value="">
+        <input class="search_input" placeholder="Search in Industry Contacts">
       </div>
       <div class="d-flex my-auto ml-3">
         <span class="select-label my-auto">Type</span>
@@ -14,60 +14,36 @@
             <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
           <div class="menu-dropdown">
-            <div class="menu-item active" style="width: 120px;">All</div>
-            <div class="menu-item" style="width: 120px;">Attorneys</div>
-            <div class="menu-item" style="width: 120px;">Paralegals</div>
-            <div class="menu-item" style="width: 120px;">Pending</div>
+            <div class="menu-item select_content active"
+              data-link="/load/industry_contacts/?search=&offset=0&limit=20&type="
+              style="width: 120px;">
+              All
+            </div> 
+            <div class="menu-item select_content"
+              data-link="/load/industry_contacts/?search=&offset=0&limit=20&type=attorney"
+              style="width: 120px;">
+              Attorneys
+            </div>
+            <div class="menu-item select_content"
+              data-link="/load/industry_contacts/?search=&offset=0&limit=20&type=paralegal"
+              style="width: 120px;">
+              Paralegals
+            </div>
+            <div class="menu-item select_content"
+              data-link="/load/industry_contacts/?search=&offset=0&limit=20&type=pending"
+              style="width: 120px;">
+              Pending
+            </div>
           </div>
         </div>
       </div>
-      <button class="btn btn--green ripple-effect normal ml-auto my-auto" type="button">
+      <button class="btn btn--green ripple-effect normal ml-auto my-auto create_contact">
         <img src="/static/images/plus_white.svg" alt="plus">
         <span>New Contact</span>
       </button>
-    </div>
-    <div class="contacts-page__content">
-      <div class="contacts-page__table">
-        <div class="contacts-page__table-header">
-          <div class="contacts-page__table-header-item sortable">
-            <span class="my-auto">Name</span>
-            <img src="/static/images/sort.svg" alt="sort"></div>
-          <div class="contacts-page__table-header-item"><span class="my-auto">Firm</span></div>
-          <div class="contacts-page__table-header-item"><span class="my-auto">Type</span></div>
-          <div class="contacts-page__table-header-item"><span class="my-auto">Actions</span></div>
-        </div>
+    </div> 
+    <div class="contacts-page__content load_content" data-link="/load/industry_contacts?search=&offset=0&limit=20&type=">
 
-        <!-- contact object -->
-        <div class="contacts-page__table-row">
-          <div class="contacts-page__table-row-item contact-name cursor-pointer">
-            <div class="user-avatar-container small toRight my-auto contact-name">
-              <div class="user-avatar small"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
-                </svg>
-              </div>
-              <div class="user-avatar__name">ооо оооDoe</div>
-            </div>
-          </div>
-          <div class="contacts-page__table-row-item cursor-pointer"><span class="my-auto"> - </span></div>
-          <div class="contacts-page__table-row-item">
-            <div class="tag-control tag-control--attorney my-auto">Attorney</div>
-          </div>
-          <div class="contacts-page__table-row-item">
-            <div class="dropdown my-auto" tabindex="0">
-              <div class="dropdown__button">
-                <img src="/static/images/action_gray.svg" alt="action" class="contacts-page__table-row-item-action">
-              </div>
-              <div class="dropdown__menu">
-                <div class="dropdown__menu-item">View Profile</div>
-                <div class="dropdown__menu-item">Direct chat</div>
-                <div class="dropdown__menu-item">Delete</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- contact object -->
-
-      </div>
     </div>
   </div>
 </div>

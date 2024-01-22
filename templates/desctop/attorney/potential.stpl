@@ -4,12 +4,12 @@
   <div class="forums-page">
     <div class="d-flex">
       <div class="tab-control">
-        <a aria-current="page" href="/attorney/engagement">
+        <a class="ajax" aria-current="page" href="/attorney/engagement">
           <div class="tab-control__item tab-control__item--active">
             <span>Browse Inquiries</span>
           </div>
         </a>
-        <a href="/attorney/engagement/submitted">
+        <a class="ajax" href="/attorney/engagement/submitted">
           <div class="tab-control__item">
             <span>Submitted Engagements</span>
           </div>
@@ -31,7 +31,7 @@
 
                 <!-- posts list -->
               <div class="recent-post">
-                <a href="/attorney/engagement/post/37">
+                <a class="ajax" href="/attorney/engagement/post/37">
                   <div class="d-flex">
                     <div class="user-avatar-container small toRight">
                       <div class="user-avatar small" data-tip="authorName" currentitem="false">
@@ -85,7 +85,7 @@
 
                 <!-- topics list -->
               <div class="folder-item folder-item--with-separator">
-                <a class="topic-control" href="/attorney/engagement/topic/1">
+                <a class="topic-control ajax" href="/attorney/engagement/topic/1">
                   <div class="topic-control__main">
                     <div class="topic-control__title">Accounting Law Practice</div>
                     <div class="topic-control__description"></div>

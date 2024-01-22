@@ -1,5 +1,5 @@
 <div class="forums-page__following-topic-item">
-                <a class="topic" href="/client/forums/topic/1">
+                <a class="topic ajax" href="/client/forums/topic/1">
                     <div class="title">Accounting Law Practice</div>
                     <div class="value">1 posts</div>
                 </a>

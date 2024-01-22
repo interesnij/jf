@@ -57,7 +57,9 @@
               <div class="dropdown__menu-item create_billing">Add billable items</div>
               <div class="dropdown__menu-item create_invoice">Create an invoice</div>
               <div class="dropdown__menu-item load_share">Share with</div>
+              <!--
               <div class="dropdown__menu-item edit_contact">Edit Contact</div>
+              -->
             </div>
           </div>
         </div>

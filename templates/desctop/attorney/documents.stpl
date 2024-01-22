@@ -4,21 +4,24 @@
   <div tabindex="-1" style="outline: none;">
     <div class="documents-page">
       <div class="tab-control">
-        <a href="/attorney/documents/documents">
+        <a href="/attorney/documents/documents" class="ajax">
           <div class="tab-control__item tab-control__item--active"><span>Documents</span></div>
         </a>
-        <a href="/attorney/documents/templates">
+        <a href="/attorney/documents/templates" class="ajax">
           <div class="tab-control__item"><span>Templates</span></div>
-        </a></div>
+        </a>
+      </div>
       <div class="documents-page__main">
         <div class="documents-page__bar">
           <div class="documents-page__bar-input">
             <div class="search-bar-container undefined">
                 <img src="/static/images/search.svg" alt="search">
-                <input placeholder="Search in My Documents" value="">
+                <input class="search_input" placeholder="Search in My Documents">
             </div>
           </div>
+
           <div class="d-flex documents-page__bar-filter">
+            
             <span class="select-label my-auto">Filter by</span>
             <div tabindex="0" class="select-container">
               <div class="menu-button"><span>All</span>
@@ -42,7 +45,7 @@
                 <div class="menu-item select_content"
                     data-link="/documents/documents?ordering=&search=&limit=10&offset=0&is_template=false&type=image&is_vault=false&is_parent=true"
                     style="width: 160px;">
-                    Images
+                    Images 
                 </div>
                 <div class="menu-item select_content" 
                     style="width: 160px;">
@@ -79,9 +82,9 @@
             <div class="breadcrumb-control__item">
               <div class="text-ellipsis cursor-pointer">My Documents</div>
             </div>
-          </div>
+          </div>  
 
-          <span class="load_content" data-link="/documents/?search=&limit=10&offset=0&is_template=false&is_parent=true&ordering=-modified&is_vault=false"></span>
+          <span class="load_content" data-link="/load/documents?search=&limit=10&offset=0&is_template=false&is_parent=true&ordering=-modified&is_vault=false"></span>
 
         </div>
       </div>

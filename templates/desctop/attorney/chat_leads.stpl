@@ -1,2 +1,66 @@
 <% include!("../header.stpl"); %>
+<div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
+  <div class="chat-page">
+    <div class="d-flex">
+      <div class="tab-control">
+        <a href="/attorney/chats/opportunities" class="ajax">
+          <div class="tab-control__item"><span>opportunities</span></div>
+        </a>
+        <a>
+          <div class="tab-control__item tab-control__item--active"><span>leads</span></div>
+        </a>
+        <a href="/attorney/chats/clients" class="ajax">
+          <div class="tab-control__item"><span>clients</span></div>
+        </a>
+        <a href="/attorney/chats/network" class="ajax" aria-current="page">
+          <div class="tab-control__item"><span>network</span></div>
+        </a>
+      </div>
+
+      <div class="chat-page__header undefined">
+        <img class="icon-button-control ml-3 my-auto normal show_arhive_chats" 
+          data-tip="Archive folder" 
+          src="/static/images/archive.svg" 
+          alt="Archive folder" 
+          currentitem="false"
+        >
+        <img class="icon-button-control ml-3 my-auto normal create_chat" 
+          data-tip="Start a new chat" 
+          src="/static/images/chat.svg" 
+          alt="Start a new chat" 
+          currentitem="false"
+        >
+
+        <% include!("../generic/new_chat.stpl"); %>
+        <% include!("../generic/archive_chat.stpl"); %>
+
+      </div>
+    </div>
+    <div class="chat-page__main">
+      <div class="chat-sidebar">
+        <div class="chat-sidebar__top">
+          <span class="my-auto">Sort by</span>
+          <div class="d-flex">
+            <div tabindex="0" class="select-container">
+              <div class="menu-button">
+                <span>Newest</span>
+                <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
+              </div>
+              <div class="menu-dropdown">
+                <div class="menu-item active" style="width: 160px;">Newest</div>
+                <div class="menu-item" style="width: 160px;">Oldest</div>
+                <div class="menu-item" style="width: 160px;">Priority first</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat-sidebar__content d-flex flex-column load_content" data-link="/load/chats?ordering=-created&chat_type=leads">
+        </div>
+      </div>
+      <div class="m-auto d-flex">
+        <p class="light-grey-text">Channel not selected</p>
+      </div>
+    </div>
+  </div>
+</div>
 <% include!("../footer.stpl"); %>

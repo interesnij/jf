@@ -1,0 +1,19 @@
+<% for object in object_list.iter() { %>
+<div class="folder-item folder-item--with-separator">
+    <div class="note-control">
+        <img src="/static/images/note.svg" alt="note">
+        <div class="ml-2 flex-1"> 
+            <div class="text-black text-ellipsis" style="max-width: 320px;">
+              <%= object.title %>
+            </div>
+            <div class="text-gray date"><%= object.modified %></div>
+            <div class="preview d-flex">
+                <span class="text"><%= object.text %></span>
+                <% if object.attachments.len() > 0 { %>
+                  <img src="/static/images/pin.svg" class="ml-auto mt-auto" alt="pin">
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+<% } %>

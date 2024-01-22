@@ -2,13 +2,13 @@
 
 <div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>"> 
   <div class="tab-control">
-    <a aria-current="page" href="/client/overview">
+    <a class="ajax" aria-current="page" href="/client/overview">
       <div class="tab-control__item tab-control__item--active"><span>Overview</span></div>
     </a>
-    <a href="/client/overview/matters">
+    <a class="ajax" href="/client/overview/matters">
       <div class="tab-control__item"><span>Matters</span></div>
     </a>
-    <a href="/client/overview/invoices">
+    <a class="ajax" href="/client/overview/invoices">
       <div class="tab-control__item"><span>Invoices &amp; Payments</span></div>
     </a>
   </div>
@@ -22,7 +22,7 @@
               <div class="folder-control__heading-after"></div>
             </div>
             <div class="d-flex">
-              <a class="folder-control__view-all ml-3" href="/client/overview/matters">View ALL</a>
+              <a class="folder-control__view-all ml-3 ajax" href="/client/overview/matters">View ALL</a>
             </div>
           </div>
           <div class="folder-control__content">
@@ -54,7 +54,7 @@
               <div class="folder-control__heading-after"></div>
             </div>
             <div class="d-flex">
-              <a class="folder-control__view-all ml-3" href="/client/overview/invoices">View ALL</a>
+              <a class="folder-control__view-all ml-3 ajax" href="/client/overview/invoices">View ALL</a>
             </div>
           </div>
 

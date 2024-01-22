@@ -1,0 +1,87 @@
+<% if object_list.len() > 0 { %> 
+
+<div class="invoices-page__table">
+      <div class="invoices-page__table-header">
+        <div class="invoices-page__table-header-item sortable">
+          <span class="my-auto">Amount</span>
+          <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="invoices-page__table-header-item sortable">
+          <span class="my-auto">Invoice Number</span>
+          <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="invoices-page__table-header-item">
+          <span class="my-auto">Client</span>
+        </div>
+        <div class="invoices-page__table-header-item">
+          <span class="my-auto">Matter</span>
+        </div>
+        <div class="invoices-page__table-header-item sortable">
+          <span class="my-auto">Due Date</span>
+          <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="invoices-page__table-header-item sortable">
+          <span class="my-auto">Created</span>
+          <img src="/static/images/sort.svg" alt="sort">
+        </div>
+        <div class="invoices-page__table-header-item">
+          <span class="my-auto">Actions</span>
+        </div>
+      </div>
+
+      <% for object in object_list.iter() { %>
+
+      <% let (client, matter) = (&object.client_data, &object.matter_data); %>
+      <div class="invoices-page__table-row">
+        <div class="invoices-page__table-row-item">
+            <span class="mr-2">$<%= object.billable_sum %></span>
+            <!--
+            <div class="tag-control tag-control--draft my-auto status"><%= object.billable_sum %></div>
+            -->
+        </div>
+        <div class="invoices-page__table-row-item text-ellipsis">
+            <span class="cursor-pointer"><%= object.number %></span>
+        </div>
+        <div class="invoices-page__table-row-item">
+          <div class="user-avatar-container small toRight">
+            <div class="user-avatar small">
+                <% if client.avatar.is_some() { %>
+                    <img src="<%= client.avatar.as_deref().unwrap() %>" />
+                <% } else { %>
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                    </svg>
+                <% } %>
+            </div>
+            <div class="user-avatar__name"><%= client.first_name %> <%= client.last_name %></div>
+          </div> 
+        </div>
+        <div class="invoices-page__table-row-item"><span class="text-ellipsis"><%= matter.title %></span></div>
+        <div class="invoices-page__table-row-item"><span><%= object.due_date %></span></div>  
+        <div class="invoices-page__table-row-item"><span><%= object.created %></span></div>
+        <div class="invoices-page__table-row-item">
+          <div class="dropdown mx-auto" tabindex="0">
+            <div class="dropdown__button">
+                <img src="/static/images/action_gray.svg" alt="action" class="invoices-page__table-row-item-action">
+            </div>
+            <div class="dropdown__menu">
+              <!--
+                <div class="dropdown__menu-item edit_invoice">Edit</div>
+              -->
+              <div class="dropdown__menu-item duplicate_invoice" data-pk="<%= object.id %>">Duplicate invoice</div>
+              <div class="dropdown__menu-item delete_invoice" data-pk="<%= object.id %>">Delete invoice</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% } %>
+
+    </div>
+
+<% } else { %>
+  <div class="mx-auto my-auto">
+    <p class=" text-center text-gray">
+      You currently don't have any invoices.
+    </p>
+  </div>
+<% } %>

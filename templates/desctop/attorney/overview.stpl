@@ -13,18 +13,18 @@
       </div>
       <div class="folder-control__content">
         <div class="folder-item folder-item--with-separator">
-          <div class="row"><a class="col-md-6" href="/attorney/invoices?filter=paid">
+          <div class="row"><a class="col-md-6 ajax" href="/attorney/invoices?filter=paid">
               <div class="text-gray">Paid</div>
               <div class="text-lg-black">$<%= billing.paid %></div> 
               <div class="divider my-1"></div>
-            </a><a class="col-md-6" href="/attorney/invoices?filter=overdue">
+            </a><a class="col-md-6 ajax" href="/attorney/invoices?filter=overdue">
               <div class="text-gray">Overdue</div>
               <div class="text-lg-black">$<%= billing.overdue %></div>
               <div class="divider my-1"></div>
-            </a><a class="col-md-6" href="/attorney/billing">
+            </a><a class="col-md-6 ajax" href="/attorney/billing">
               <div class="text-gray">Unbilled</div>
               <div class="text-lg-black">$<%= billing.un_billed %></div>
-            </a><a class="col-md-6" href="/attorney/invoices?filter=open">
+            </a><a class="col-md-6 ajax" href="/attorney/invoices?filter=open">
               <div class="text-gray">Unpaid</div>
               <div class="text-lg-black">$<%= billing.unpaid %></div>
             </a></div>
@@ -41,7 +41,7 @@
               <div class="folder-control__heading-after"></div>
             </div>
             <div class="d-flex">
-                <a class="folder-control__view-all ml-3" href="/attorney/chats">View ALL</a>
+                <a class="folder-control__view-all ml-3 ajax" href="/attorney/chats">View ALL</a>
             </div>
           </div>
           <div class="folder-control__content">
@@ -127,7 +127,7 @@
               <div class="folder-control__heading">Open Matters</div>
               <div class="folder-control__heading-after"></div>
             </div>
-            <div class="d-flex"><a class="folder-control__view-all ml-3" href="/attorney/matters">View ALL</a></div>
+            <div class="d-flex"><a class="folder-control__view-all ml-3 ajax" href="/attorney/matters">View ALL</a></div>
           </div>
           <div class="folder-control__content">
             <div class="open-matters">
@@ -142,7 +142,7 @@
                 <% for object in open_matters.iter() { %>
                   <div class="open-matters__row">
                     <div class="open-matters__item text-ellipsis"> 
-                        <a href="/attorney/matters/<%= object.id %>"><%= object.title %></a>
+                        <a class="ajax" href="/attorney/matters/<%= object.id %>"><%= object.title %></a>
                     </div> 
                     <div class="open-matters__item">
                       <div class="user-avatar-container small toRight">

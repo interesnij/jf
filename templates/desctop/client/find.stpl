@@ -3,15 +3,15 @@
 <div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="find-page ">
     <div class="tab-control">
-        <a href="/client/find">
+        <a class="ajax" href="/client/find">
             <div class="tab-control__item tab-control__item--active">
                 <span>Representation</span>
             </div>
         </a>
-        <a href="/client/find/search">
+        <a class="ajax" href="/client/find/search">
             <div class="tab-control__item"><span>Search</span></div>
         </a>
-        <a href="/client/find/favorites">
+        <a class="ajax" href="/client/find/favorites">
             <div class="tab-control__item"><span>Favorites</span></div>
         </a>
     </div>
@@ -62,7 +62,7 @@
             
             <div class="folder-item folder-item--with-separator">
               <div class="post-item-client">
-                <a href="/client/find/posts/36">
+                <a class="ajax" href="/client/find/posts/36">
                   <div class="justify-content-between">
                     <div class="">
                       <div class="d-flex">

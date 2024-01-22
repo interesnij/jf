@@ -15,10 +15,10 @@
         <img src="<%= request_user.get_image() %>" class="avatar" alt="avatar">
         <img src="/static/images/profile_dropdown.svg" class="menu-button-icon" alt="drop-down"></div>
         <div class="menu-dropdown"> 
-            <a href="/settings">Account Settings</a>
-            <a href="/vault">My Vault</a>
-            <a href="/terms">Terms of Use</a>
-            <a href="/policy">Privacy Policy</a>
+            <a href="/settings" class="ajax">Account Settings</a>
+            <a href="/vault" class="ajax">My Vault</a>
+            <a href="/terms" class="ajax">Terms of Use</a>
+            <a href="/policy" class="ajax">Privacy Policy</a>
             <a id="intercom-btn">Help and support</a>
             <a class="logout">Log out</a>
         </div>

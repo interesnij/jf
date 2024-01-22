@@ -1,42 +1,42 @@
 <div class="navbar">
-    <a aria-current="page" class="navbar__logo" href="/attorney/overview">
+    <a aria-current="page" class="navbar__logo ajax" href="/attorney/overview">
         <img src="/static/images/logo.svg" alt="logo"></a>
   <div>
     <div class="navbar__title">dashboard</div>
     <div>
-        <a aria-current="page" class="navbar__item ripple-effect ripple-effect-to-right navbar__item--active" href="/attorney/overview">
+        <a aria-current="page" class="navbar__item ripple-effect ripple-effect-to-right navbar__item--active ajax" href="/attorney/overview">
             <img src="/static/images/nav_dashboard_active.svg" alt="">
             <span>Overview</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/matters">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/matters">
             <img src="/static/images/nav_matters.svg" alt="">
             <span>Matters</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/leads">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/leads">
             <img src="/static/images/nav_clients.svg" alt="">
             <span>Leads &amp; Clients</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/documents">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/documents">
             <img src="/static/images/nav_document.svg" alt="">
             <span>Documents</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/chats">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/chats">
             <img src="/static/images/nav_chat.svg" alt="">
             <span>Chats</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/billing">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/billing">
             <img src="/static/images/nav_bill.svg" alt="">
             <span>Billing items</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/invoices">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/invoices">
             <img src="/static/images/nav_invoice.svg" alt="">
             <span>Invoices</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/bank">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/bank">
             <img src="/static/images/nav_bank.svg" alt="">
             <span>Bank Accounts</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/engagement">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/engagement">
             <img src="/static/images/nav_bid.svg" alt="">
             <span>Potential Engagement</span>
         </a>
@@ -45,15 +45,15 @@
   <div>
     <div class="navbar__title">Social</div>
     <div>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/news">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/news">
             <img src="/static/images/nav_news.svg" alt="">
             <span>JusLaw News</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/forums">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/forums">
             <img src="/static/images/nav_forum.svg" alt="">
             <span>Forums</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right" href="/attorney/contacts">
+        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/attorney/contacts">
             <img src="/static/images/nav_industry.svg" alt="">
             <span>Industry Contacts</span>
         </a>

@@ -1,0 +1,97 @@
+<div class="modal-control-container">
+          <div tabindex="-1" class="modal-control">
+            <div class="modal-control__header">
+              <div class="my-auto title text-ellipsis w-100 text-left">New chat</div>
+              <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+            </div>
+            <div class="modal-control__content ignore-onclickoutside">
+              <div style="width: 700px;">
+                <form action="#">
+                  <div class="sc-hOqruk jDTGiE">
+                    <img src="/static/images/info_green.svg" class="my-auto" alt="info">
+                    <div>You can add a maximum of ONE client user in a chat.</div>
+                  </div>
+                  <div class="col-12 mt-1">
+                    <div class="d-flex justify-content-between">
+                      <div class="contact-multi-select-control__label"></div>
+                    </div>
+                    <div class="contact-multi-select-control__container">
+                      <div class="contact-multi-select-control">
+                        <div class="flex-1 d-flex flex-wrap">
+                          <span class="my-auto">Add people to start chat with</span>
+                        </div>
+                        <img src="/static/images/arrow-drop-down.svg" class="contact-multi-select-control__arrow" alt="arrow">
+                      </div>
+                      <div class="contact-multi-select-control__menu">
+                        <div class="contact-multi-select-control__menu-item">
+                          <div class="user-avatar-container small toRight my-auto mr-1">
+                            <div class="user-avatar small">
+                              <img src="https://k.juslaw.online/media/images/2023/11/09/D9D38D7C-D0AA-4419-85D8-4FE2CA2A4F1F.mpo">
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div class="contact-multi-select-control__menu-item-name">serge gold</div>
+                            <div class="contact-multi-select-control__menu-item-email">sergegold100@gmail.com</div>
+                          </div>
+                          <div class="ml-auto my-auto contact-multi-select-control__menu-item-type">client</div>
+                        </div>
+                        <div class="contact-multi-select-control__menu-item">
+                          <div class="user-avatar-container small toRight my-auto mr-1">
+                            <div class="user-avatar small">
+                              <img src="https://k.juslaw.online/media/2023/09/01/img.jpg">
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div class="contact-multi-select-control__menu-item-name">ооо оооDoe</div>
+                            <div class="contact-multi-select-control__menu-item-email">interesnijsim49293@gmail.com</div>
+                          </div>
+                          <div class="ml-auto my-auto contact-multi-select-control__menu-item-type">attorney</div>
+                        </div>
+                        <div class="contact-multi-select-control__menu-item">
+                          <div class="user-avatar-container small toRight my-auto mr-1">
+                            <div class="user-avatar small">
+                              <img src="https://k.juslaw.online/media/images/2023/09/19/16AFD31A-F866-4076-8E95-09CDF8B87D16.png">
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div class="contact-multi-select-control__menu-item-name">sergey goldobin</div>
+                            <div class="contact-multi-select-control__menu-item-email">serge300@gmail.com</div>
+                          </div>
+                          <div class="ml-auto my-auto contact-multi-select-control__menu-item-type">client</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="contact-multi-select-control__footer"></div>
+                  </div>
+
+                  <div class="modal-control-container">
+                    <div tabindex="-1" class="modal-control">
+                      <div class="modal-control__header">
+                        <div class="my-auto title text-ellipsis w-100 text-left">Error</div>
+                      </div>
+                      <div class="modal-control__content ignore-onclickoutside">
+                        <div class="pb-4">
+                          <div class="text-black" style="font-size: 18px;">You can add a maximum of ONE client user in a chat.</div><br>
+                        </div>
+                        <div class="d-flex">
+                          <button class="btn btn--green ripple-effect normal ml-auto">
+                            <span>Ok</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex mt-2">
+                    <button class="btn btn--white ripple-effect large ml-auto">
+                      <span>Cancel</span>
+                    </button>
+                    <button class="btn btn--green ripple-effect large ml-3 create_chat">
+                      <span>Start Chat</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>

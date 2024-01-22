@@ -1,0 +1,127 @@
+<% let request_user_id: i32 = request_user.user_id.parse().unwrap(); %>
+
+<% for object in object_list.iter() { %>
+    <% let author = &object.author; %> 
+          <div>
+            <div class="message">
+              <div class="message-actions">
+                <div class="dropdown mx-auto" tabindex="0">
+                  <div class="dropdown__button">
+                      <img src="/static/images/action_gray.svg" alt="action" class="client-matter-message-page__table-row-item-action">
+                  </div>
+                  <div class="dropdown__menu">
+                    <div class="dropdown__menu-item matter_comment_unread" data-id="<%= object.id %>">Mark as Unread</div>
+                    <div class="dropdown__menu-item matter_comment_delete" data-id="<%= object.id %>">Delete</div>
+                  </div>
+                </div>
+              </div> 
+
+              <div>
+                <div class="d-flex">
+                  <div class="message-user-avatar">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.309 189.836L184.313 37.851C199.719 24.546 224 35.347 224 56.015v80.053c160.629 1.839 288 34.032 288 186.258 0 61.441-39.581 122.309-83.333 154.132-13.653 9.931-33.111-2.533-28.077-18.631 45.344-145.012-21.507-183.51-176.59-185.742V360c0 20.7-24.3 31.453-39.687 18.164l-176.004-152c-11.071-9.562-11.086-26.753 0-36.328z"></path>
+                    </svg>
+                  </div>
+                  <div class="ml-2 flex-1">
+                    <div class="d-flex flex-1 cursor-pointer">
+                      <div>
+                        <div class="message-author-name mb-1">
+                          <% if author.id == request_user_id { %>
+                            You
+                          <% } else { %>
+                            <%= author.first_name %> <%= author.last_name %>
+                          <% } %>
+                        </div>
+                        <div class="message-reply">to </div>
+                      </div>
+                      <span class="text-gray ml-auto my-auto">
+                        <%= object.modified %>
+                      </span>
+                    </div>
+                    <div class="message-text--full mb-4"><%= object.text %></div>
+                    <% if object.attachments.len() > 0 { %>
+                      <div>
+                        <div class="mt-4 mb-1 text-black text-bold">Attachments</div>
+                        <div class="mb-2 d-flex flex-wrap">
+                          <% for file in last_comment.object.iter() { %>
+                            <div class="sc-iNqMzA rGwPE message-attachment">
+                              <img src="/static/images/document.svg" alt="doc">
+                              <div class="my-auto"><%= file.file_name %></div>
+                              <span class="sc-jeGTLq eBVaQx actions">
+                                  <span class="sc-eJMPIT csqrbk download">
+                                      <img title="Download file" src="/static/images/download_green.svg" alt="download">
+                                  </span>
+                              </span>
+                            </div>
+                          <% } %>
+                        </div>
+                      </div>
+                    <% } %>
+                    <div class="d-flex">
+                      <button class="btn btn--outline btn--green ripple-effect normal show_matter_comment_form">
+                          <span>Reply</span>
+                      </button>
+                    </div>
+
+                    <div class="message-editor-hide">
+                      <form class="d-flex mt-2 position-relative">
+                        <div class="message-editor-wrapper">
+                          <div class="textarea-form-control d-flex flex-column message-editor">
+                            <div class="d-flex justify-content-between">
+                              <div class="textarea-form-control__label"></div>
+                              <div class="textarea-form-control__required">Optional</div>
+                            </div>
+                            <textarea name="text" class=""></textarea>
+                            <div class="textarea-form-control__footer"></div>
+                          </div>
+                          <div class="message-editor-header">
+                            <div class="message-icon">
+                              <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M8.309 189.836L184.313 37.851C199.719 24.546 224 35.347 224 56.015v80.053c160.629 1.839 288 34.032 288 186.258 0 61.441-39.581 122.309-83.333 154.132-13.653 9.931-33.111-2.533-28.077-18.631 45.344-145.012-21.507-183.51-176.59-185.742V360c0 20.7-24.3 31.453-39.687 18.164l-176.004-152c-11.071-9.562-11.086-26.753 0-36.328z"></path>
+                              </svg>
+                            </div>
+                            <div class="message-subject-info">Reply</div>
+                            <!--
+                              <div class="message-separator--vertical"></div>
+                              <div class="message-editor-subject">to 
+                                juslaw assessment
+                              </div>
+                            -->
+                          </div>
+                          <div class="message-editor-footer">
+                            <div class="message-editor-footer__icon">
+                              <div>
+                                  <input accept="image/*,.docx,.doc,.pdf,.ppt,.pptx,.xls,.xlsx" 
+                                    multiple="" 
+                                    name="file" 
+                                    type="file" 
+                                    autocomplete="off" 
+                                    tabindex="-1" 
+                                    style="display: none;"
+                                  >
+                                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                      <path d="M43.246 466.142c-58.43-60.289-57.341-157.511 1.386-217.581L254.392 34c44.316-45.332 116.351-45.336 160.671 0 43.89 44.894 43.943 117.329 0 162.276L232.214 383.128c-29.855 30.537-78.633 30.111-107.982-.998-28.275-29.97-27.368-77.473 1.452-106.953l143.743-146.835c6.182-6.314 16.312-6.422 22.626-.241l22.861 22.379c6.315 6.182 6.422 16.312.241 22.626L171.427 319.927c-4.932 5.045-5.236 13.428-.648 18.292 4.372 4.634 11.245 4.711 15.688.165l182.849-186.851c19.613-20.062 19.613-52.725-.011-72.798-19.189-19.627-49.957-19.637-69.154 0L90.39 293.295c-34.763 35.56-35.299 93.12-1.191 128.313 34.01 35.093 88.985 35.137 123.058.286l172.06-175.999c6.177-6.319 16.307-6.433 22.626-.256l22.877 22.364c6.319 6.177 6.434 16.307.256 22.626l-172.06 175.998c-59.576 60.938-155.943 60.216-214.77-.485z"></path>
+                                  </svg>
+                              </div>
+                            </div>
+                            <div class="message-button-group">
+                              <button class="btn btn--white ripple-effect normal hide_matter_comment_form">
+                                  <span>Cancel</span>
+                              </button>
+                              <button data-post="<%= post_id %>" data-participants="<%= object.participants %>" class="btn btn--green ripple-effect normal ml-2 matter_comment_send" post_id="<%= post_id %>">
+                                  <span>Send</span>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="divider"></div>
+          </div>
+
+<% } %>

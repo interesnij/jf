@@ -315,7 +315,7 @@ on('body', 'click', '#signup', function() {
   link.send(form_data);
 });
 
-on('body', 'click', 'a', function(event) {
+on('body', 'click', '.ajax', function(event) {
   event.preventDefault();
   //if (this.getAttribute("href") == window.location.pathname){
   //  toast_info("Вы уже на этой странице");

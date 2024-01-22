@@ -1,11 +1,16 @@
 <div class="client-matter-control">
           <div class="d-flex justify-content-between">
             <div> 
-              <div class="recent-matter__name"><a href="/client/overview/matter/18">Nice Docs</a></div>
+              <div class="recent-matter__name">
+                <a class="ajax" href="/client/overview/matter/18">Nice Docs</a>
+              </div>
               <div class="recent-matter__desc mt-1">Accounting Law Practice</div>
-              <div class="recent-matter__date mt-1"><span class="recent-matter__date-label">START DATE:</span>&nbsp;07/15/2023</div>
+              <div class="recent-matter__date mt-1">
+                <span class="recent-matter__date-label">START DATE:</span>&nbsp;07/15/2023
+              </div>
             </div>
-            <div class="d-flex fit-height"><a class="profile-link" href="/client/find/attorneys/144">
+            <div class="d-flex fit-height">
+              <a class="profile-link ajax" href="/client/find/attorneys/144">
                 <div class="user-avatar-container small toLeft">
                   <div class="user-avatar small"><img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg"></div>
                   <div class="user-avatar__name">JusLaw Platform Assessment A G</div>
@@ -20,12 +25,16 @@
               <div class="recent-matter__date mt-auto ml-2"><span class="recent-matter__date-label">DUE: &nbsp;</span>$0.00</div>
             </div>
             <div class="d-flex">
-              <div class="badge-control"><a href="/client/overview/matter/18/documents">
+              <div class="badge-control">
+                <a class="ajax" href="/client/overview/matter/18/documents">
                   <div class="recent-matter__card"><img src="/static/images/document.svg" alt="document"></div>
-                </a></div>
-              <div class="badge-control ml-2"><a href="/client/overview/matter/18/messages">
+                </a>
+              </div>
+              <div class="badge-control ml-2">
+                <a class="ajax" href="/client/overview/matter/18/messages">
                   <div class="recent-matter__card"><img src="/static/images/envelop.svg" alt="mail"></div>
-                </a></div>
+                </a>
+              </div>
             </div>
           </div>
         </div>

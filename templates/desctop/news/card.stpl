@@ -6,7 +6,9 @@
           <div class="news-control__date">Faq</div>
           <div class="news-control__date">05/25/2023</div>
         </div>
-        <div class="news-control__title"><a href="/client/news/5">How it works</a></div>
+        <div class="news-control__title">
+          <a class="ajax" href="/client/news/5">How it works</a>
+        </div>
         <div class="news-control__content">
           <div>JusLaw is an easy-to-use, app-enabled platform that allows you to find the right lawyer to meet your needs and budget across a wide range of legal practice areas and industries from one-time consults to complex issues with ease and transparency from start to finish.<br><br></div>
           <div>&nbsp;</div>

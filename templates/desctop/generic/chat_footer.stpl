@@ -1,0 +1,27 @@
+<div class="chat-content__main-footer">
+  <div class="dropzone chat-send-box" style="
+                background: white; 
+                border: 1px solid rgb(224, 224, 225); 
+                border-radius: 4px; 
+                margin: 8px; 
+                padding: 16px; 
+                display: flex;">
+        <textarea style="
+                border: none; 
+                outline: none; 
+                font-family: &quot;DM Sans&quot;; 
+                height: 21px !important;">
+        </textarea>
+    <div class="d-flex flex-wrap "></div>
+    <input multiple="" type="file" autocomplete="off" tabindex="-1" style="display: none;">
+    <div class="d-flex justify-content-between mt-1">
+      <div class="d-flex">
+        <img class="add_files" src="/static/images/attach.svg" alt="attachments">
+        <img class="record_voice" src="/static/images/record.svg" data-tip="Send Voice Message" alt="send voice message">
+      </div>
+      <button class="btn btn--disabled btn--green ripple-effect normal send_message" disabled="">
+        <span>Send</span>
+      </button>
+    </div>
+  </div>
+</div>

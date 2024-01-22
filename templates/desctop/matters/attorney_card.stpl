@@ -1,6 +1,6 @@
 <div class="open-matters__row">
                 <div class="open-matters__item text-ellipsis">
-                    <a href="/attorney/matters/18">Nice Docs</a>
+                    <a class="ajax" href="/attorney/matters/18">Nice Docs</a>
                 </div>
                 <div class="open-matters__item">
                   <div class="user-avatar-container small toRight">

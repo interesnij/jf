@@ -372,6 +372,7 @@ pub async fn client_chat_page(req: HttpRequest, _id: web::Path<i32>) -> actix_we
         let request_user = user_some.unwrap();
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
         let l = 2;
+        let chat_id = *_id;
         let title: String; 
         let description: String;
         let link = "/client/chats/".to_string() + &_id.to_string();
@@ -405,6 +406,7 @@ pub async fn client_chat_page(req: HttpRequest, _id: web::Path<i32>) -> actix_we
                 description:  String,
                 link:         String,
                 image:        String,
+                chat_id:      i32,
             }
             let body = Template {
                 request_user: request_user,
@@ -413,6 +415,7 @@ pub async fn client_chat_page(req: HttpRequest, _id: web::Path<i32>) -> actix_we
                 description:  description,
                 link:         link,
                 image:        image,
+                chat_id:      chat_id,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -428,6 +431,7 @@ pub async fn client_chat_page(req: HttpRequest, _id: web::Path<i32>) -> actix_we
                 description:  String,
                 link:         String,
                 image:        String,
+                chat_id:      i32,
             }
             let body = Template {
                 request_user: request_user,
@@ -436,6 +440,7 @@ pub async fn client_chat_page(req: HttpRequest, _id: web::Path<i32>) -> actix_we
                 description:  description,
                 link:         link,
                 image:        image,
+                chat_id:      chat_id,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;

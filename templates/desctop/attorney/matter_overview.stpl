@@ -1,0 +1,172 @@
+<% include!("../header.stpl"); %>
+
+<div class="main-layout__content-main load_matter_detail" data-link="https://backend.juslaw.com/api/v1/business/matters/<%= matter_id %>">
+  
+  <% include!("../generic/matter_header.stpl"); %>
+  <div class="matter-detail-page__content d-flex flex-column flex-1">
+    <div class="matter-detail-overview">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="folder-control">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Billing</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder-item folder-item--with-separator">
+                <div class="d-flex">
+                  <div class="sc-dwcupg iCacsI text-gray my-auto">Total amount:</div>
+                  <div class="sc-dwcupg iCacsI text-black ml-1 my-auto">$10.00</div>
+                  <button class="btn btn--green ripple-effect normal ml-auto create_invoice" data-pk="<%= matter_id %>">
+                    <span>Create Invoice</span>
+                  </button>
+                  <button class="btn btn--outline btn--green ripple-effect normal ml-3 create_billing" data-pk="<%= matter_id %>">
+                    <img src="/static/images/plus_green.svg" alt="plus">
+                    <span>Billing Items</span>
+                  </button>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="text-gray">UNPAID</div>
+                    <div class="sc-dwcupg iCacsI text-dark matter_unpaid">$0.00</div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-gray">OVERDUE</div>
+                    <div class="sc-dwcupg iCacsI text-dark matter_overdue">$0.00</div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-gray">UNBILLED</div>
+                    <div class="sc-dwcupg iCacsI text-dark matter_unbilled">$10.00</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="folder-control mt-4 details">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Details</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="text-gray label">MATTER DESCRIPTION</div>
+                    <div class="sc-kUbgcP kNcApw text-dark content matter_description">Description here</div>
+                  </div>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="text-gray label">BILLABLE</div>
+                    <div class="text-dark content matter_hourly_rate"></div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-gray label">START DATE</div>
+                    <div class="text-dark content matter_start_date"></div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-gray label">CLOSE DATE</div>
+                    <div class="text-dark content matter_close_date"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="text-gray label">PRACTICE AREA</div>
+                    <div class="text-dark content matter_practice_area"></div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-gray label">JURISDICTION</div>
+                    <div class="text-dark content matter_jurisdiction"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="folder-control mt-4">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Recent Activity</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content matter_activities">
+              <div class="folder-item folder-item--with-separator">
+                <div class="my-3 text-center text-gray">You currently have no activities</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="folder-control contacts">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Contacts</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex"></div>
+            </div>
+            <div class="folder-control__content">
+              <div class="folder-item folder-item--with-separator">
+                <div class="sc-jtHLbV gAeipM">Client</div>
+                <div class="user-avatar-container small toRight my-1 cursor-pointer">
+                  <div class="user-avatar small">
+                    <img src="">
+                  </div>
+                  <div class="user-avatar__name"></div>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="sc-jtHLbV gAeipM">Principle</div>
+                <div class="user-avatar-container small toRight my-1">
+                  <div class="user-avatar small">
+                    <img src="">
+                  </div>
+                  <div class="user-avatar__name"></div>
+                </div>
+              </div>
+              <div class="folder-item folder-item--with-separator">
+                <div class="d-flex">
+                  <div class="sc-jtHLbV gAeipM">Shared with</div>
+                  <div class="text-gray ml-2 my-auto shared-length">0</div>
+                  <img class="icon-button-control ml-auto my-auto small share_matter" data-pk="<%= matter_id %>" src="/static/images/plus_gray.svg">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="folder-control mt-4">
+            <div class="folder-control__header">
+              <div class="d-flex">
+                <div class="folder-control__heading">Notes</div>
+                <div class="folder-control__heading-after"></div>
+              </div>
+              <div class="d-flex">
+                <img class="icon-button-control my-auto normal" src="/static/images/plus_green.svg">
+                <a class="folder-control__view-all ml-3 ajax" href="/attorney/matters/<%= matter_id %>/notes">
+                    View ALL
+                </a>
+              </div>
+            </div>
+            <div class="folder-control__content load_content" data-link="/load/notes?matter=<%= matter_id %>&types=mini">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include!("../footer.stpl"); %>

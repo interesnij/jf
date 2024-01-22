@@ -10,13 +10,13 @@
                 <span>All</span>
                 <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
             </div>
-            <div class="menu-dropdown">
-              <div class="menu-item active" style="width: 160px;">All</div>
-              <div class="menu-item" style="width: 160px;">Draft</div>
-              <div class="menu-item" style="width: 160px;">Open</div>
-              <div class="menu-item" style="width: 160px;">Overdue</div>
-              <div class="menu-item" style="width: 160px;">Paid</div>
-              <div class="menu-item" style="width: 160px;">Voided</div>
+            <div class="menu-dropdown"> 
+              <div class="menu-item active select_double_content" data-value="&status=" style="width: 160px;">All</div>
+              <div class="menu-item select_double_content" data-value="&status=draft" style="width: 160px;">Draft</div>
+              <div class="menu-item select_double_content" data-value="&status=open" style="width: 160px;">Open</div>
+              <div class="menu-item select_double_content" data-value="&status=overdue" style="width: 160px;">Overdue</div>
+              <div class="menu-item select_double_content" data-value="&status=paid" style="width: 160px;">Paid</div>
+              <div class="menu-item select_double_content" data-value="&status=voided" style="width: 160px;">Voided</div>
             </div>
           </div>
         </div>
@@ -26,83 +26,18 @@
                 <span>All Time</span>
                 <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down"></div>
                 <div class="menu-dropdown">
-                    <div class="menu-item active" style="width: 180px;">All Time</div>
-                    <div class="menu-item" style="width: 180px;">Last 7 days</div>
-                    <div class="menu-item" style="width: 180px;">Last 30 days</div>
-                    <div class="menu-item" style="width: 180px;">Custom Date Range</div>
+                    <div class="menu-item active select_double_content" data-value="&period_start=&period_end=" style="width: 180px;">All Time</div>
+                    <div class="menu-item select_double_content" data-value="&period_start=&period_end=" style="width: 180px;">Last 7 days</div>
+                    <div class="menu-item select_double_content" data-value="&period_start=&period_end=" style="width: 180px;">Last 30 days</div>
+                    <div class="menu-item select_double_content" data-value="&period_start=&period_end=" style="width: 180px;">Custom Date Range</div>
                 </div>
           </div>
         </div>
       </div>
-      <button class="btn btn--green ripple-effect normal ml-2 my-auto" type="button"><span>Create Invoice</span></button>
+      <button class="btn btn--green ripple-effect normal ml-2 my-auto create_invoice"><span>Create Invoice</span></button>
     </div>
   </div>
-  <div class="invoices-page__content">
-    <div class="invoices-page__table">
-      <div class="invoices-page__table-header">
-        <div class="invoices-page__table-header-item sortable">
-          <span class="my-auto">Amount</span>
-          <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="invoices-page__table-header-item sortable">
-          <span class="my-auto">Invoice Number</span>
-          <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="invoices-page__table-header-item">
-          <span class="my-auto">Client</span>
-        </div>
-        <div class="invoices-page__table-header-item">
-          <span class="my-auto">Matter</span>
-        </div>
-        <div class="invoices-page__table-header-item sortable">
-          <span class="my-auto">Due Date</span>
-          <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="invoices-page__table-header-item sortable">
-          <span class="my-auto">Created</span>
-          <img src="/static/images/sort.svg" alt="sort">
-        </div>
-        <div class="invoices-page__table-header-item">
-          <span class="my-auto">Actions</span>
-        </div>
-      </div>
-
-        <!-- invoice object -->
-      <div class="invoices-page__table-row">
-        <div class="invoices-page__table-row-item">
-            <span class="mr-2">$11.86</span>
-            <div class="tag-control tag-control--draft my-auto status">DRAFT</div>
-        </div>
-        <div class="invoices-page__table-row-item text-ellipsis">
-            <span class="cursor-pointer">7E130E84-0006</span>
-        </div>
-        <div class="invoices-page__table-row-item">
-          <div class="user-avatar-container small toRight">
-            <div class="user-avatar small">
-                <img src="https://k.juslaw.online/media/images/2023/09/19/16AFD31A-F866-4076-8E95-09CDF8B87D16.png">
-            </div>
-            <div class="user-avatar__name">sergey 11 goldobin</div>
-          </div>
-        </div>
-        <div class="invoices-page__table-row-item"><span class="text-ellipsis">Nice Docs</span></div>
-        <div class="invoices-page__table-row-item"><span>12/27/2023</span></div>
-        <div class="invoices-page__table-row-item"><span>12/17/2023</span></div>
-        <div class="invoices-page__table-row-item">
-          <div class="dropdown mx-auto" tabindex="0">
-            <div class="dropdown__button">
-                <img src="/static/images/action_gray.svg" alt="action" class="invoices-page__table-row-item-action">
-            </div>
-            <div class="dropdown__menu">
-              <div class="dropdown__menu-item">Edit</div>
-              <div class="dropdown__menu-item">Duplicate invoice</div>
-              <div class="dropdown__menu-item">Delete draft</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- invoice object -->
-
-    </div>
+  <div class="invoices-page__content load_content" data-link="/load/invoices?limit=10&offset=0&search=&status=&ordering=-modified">
   </div>
 </div>
 

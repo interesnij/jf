@@ -108,39 +108,6 @@ pub struct AttorneysData {
 }
 /////////////////////////////////////////////
 
-//////////////  ATTORNEY CONTACTS  //////
-//////////////  ATTORNEY CONTACTS  //////
-
-#[derive(Debug, Deserialize)]
-pub struct ContactsParams {
-    pub limit:  Option<i64>,
-    pub offset: Option<i64>,
-    pub search: Option<String>,
-    pub r#type: Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-pub struct ContactData { 
-    pub user_id: i32,
-    pub name:    String,
-    pub firm:    String,
-    pub r#type:  String,
-    pub phone:   String,
-    pub pending: bool,
-    pub email:   String,
-    pub avatar:  Option<String>,
-}
-
-#[derive(Debug, Deserialize)]
-pub struct ContactsData { 
-    pub count:      i32,
-    pub next:       Option<String>,
-    pub page_count: i32,
-    pub previous:   Option<String>,
-    pub results:    Vec<ContactData>,
-}
-/////////////////////////////
-
 
 //////////////  ATTORNEY CONTACTS DETAIL  //////
 //////////////  ATTORNEY CONTACTS DETAIL //////

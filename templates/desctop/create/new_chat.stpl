@@ -1,0 +1,17 @@
+<div class="modal-control-container">
+          <div tabindex="-1" class="modal-control">
+            <div class="modal-control__header">
+              <div class="my-auto title text-ellipsis w-100 text-left">New chat</div>
+                <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+            </div>
+            <div class="modal-control__content ignore-onclickoutside">
+              <div style="width: 700px;">
+                <form>
+                  <div class="justify-content-between align-items-center">Your contact list is empty
+                    <button class="btn btn--outline btn--green ripple-effect normal ml-3" type="button"><span>Create New Contact</span></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+</div>

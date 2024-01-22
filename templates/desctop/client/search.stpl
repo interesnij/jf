@@ -3,13 +3,13 @@
 <div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="find-page ">
     <div class="tab-control">
-      <a href="/client/find">
+      <a class="ajax" href="/client/find">
         <div class="tab-control__item"><span>Representation</span></div>
       </a>
-      <a aria-current="page" href="/client/find/search">
+      <a class="ajax" aria-current="page" href="/client/find/search">
         <div class="tab-control__item tab-control__item--active"><span>Search</span></div>
       </a>
-      <a href="/client/find/favorites">
+      <a class="ajax" href="/client/find/favorites">
         <div class="tab-control__item"><span>Favorites</span></div>
       </a>
     </div>
@@ -22,7 +22,7 @@
             <div class="search-field-wrap flex-1">
               <div class="search-bar-container flex-1">
                 <img src="/static/images/search.svg" alt="search">
-                <input placeholder="Search by name or practice area" value="">
+                <input class="search_input" placeholder="Search by name or practice area">
               </div>
             </div>
             <div class="search-field-wrap ml-3 flex-1">
@@ -44,7 +44,7 @@
                 <div class="folder-control__heading">Browse by Practice Area</div>
                 <div class="folder-control__heading-after"></div>
               </div>
-              <div class="d-flex"><a class="folder-control__view-all ml-3" href="/client/find/search?all">View ALL</a></div>
+              <div class="d-flex"><a class="folder-control__view-all ml-3 ajax" href="/client/find/search?all">View ALL</a></div>
             </div>
             <div class="folder-control__content">
               <div class="folder-item folder-item--with-separator">

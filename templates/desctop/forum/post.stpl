@@ -1,7 +1,7 @@
 <div class="folder-item folder-item--with-separator">
                 <div class="topic-control">
                   <div class="topic-control__main">
-                    <a href="/client/forums/topic/1" class="topic-control__title">
+                    <a href="/client/forums/topic/1" class="topic-control__title ajax">
                         Accounting Law Practice
                     </a>
                     <div class="topic-control__description">

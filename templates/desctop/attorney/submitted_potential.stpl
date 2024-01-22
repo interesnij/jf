@@ -2,10 +2,10 @@
   <div class="forums-page">
     <div class="d-flex">
       <div class="tab-control">
-        <a href="/attorney/engagement">
+        <a class="ajax" href="/attorney/engagement">
           <div class="tab-control__item"><span>Browse Inquiries</span></div>
         </a>
-        <a aria-current="page" href="/attorney/engagement/submitted">
+        <a class="ajax" aria-current="page" href="/attorney/engagement/submitted">
           <div class="tab-control__item tab-control__item--active"><span>Submitted Engagements</span></div>
         </a>
       </div>

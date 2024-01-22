@@ -96,7 +96,7 @@
               <div class="folder-item folder-item--with-separator">
                 <div class="leads__recent-matter">
                   <div class="leads__recent-matter-name text-ellipsis">
-                    <a href="/attorney/matters/18">Nice Docs</a>
+                    <a class="ajax" href="/attorney/matters/18">Nice Docs</a>
                   </div>
                   <div class="leads__recent-matter-desc text-ellipsis">descr</div>
                   <div class="d-flex mt-1">

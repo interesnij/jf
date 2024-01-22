@@ -226,6 +226,12 @@ pub fn get_string_withi32(value: Option<i32>) -> String {
     }
     return String::new();
 }
+pub fn get_id_withi32(value: Option<i32>) -> i32 {
+    if value.is_some() {
+        return value.unwrap();
+    }
+    return 0;
+}
 pub fn get_string_withbool(value: Option<bool>) -> String {
     if value.is_some() {
         let val = value.unwrap();
@@ -241,6 +247,12 @@ pub fn get_limit(value: Option<i64>) -> String {
         return value.unwrap().to_string();
     }
     return "20".to_string();
+}
+pub fn get_string_withdate(value: Option<chrono::NaiveDate>) -> String {
+    if value.is_some() {
+        return value.unwrap().to_string();
+    }
+    return "".to_string();
 }
 
 pub fn get_page(req: &HttpRequest) -> i32 {

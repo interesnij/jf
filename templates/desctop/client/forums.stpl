@@ -5,20 +5,20 @@
     <div class="forums-page">
       <div class="d-flex">
         <div class="tab-control">
-          <a href="/client/forums/all-posts">
+          <a class="ajax" href="/client/forums/all-posts">
             <div class="tab-control__item tab-control__item--active"><span>Home</span></div>
           </a>
-          <a href="/client/forums/my-posts">
+          <a class="ajax" href="/client/forums/my-posts">
             <div class="tab-control__item"><span>My Posts</span></div>
           </a>
-          <a href="/client/forums/following">
+          <a class="ajax" href="/client/forums/following">
             <div class="tab-control__item"><span>Following</span></div>
           </a>
         </div>
         <div class="forum-layout-bar flex-1">
           <div class="search-bar-container my-auto mr-auto flex-1">
             <img src="/static/images/search.svg" alt="search">
-            <input placeholder="Search in forums" value="">
+            <input class="search_input" placeholder="Search in forums">
           </div>
           <img class="icon-button-control ml-3 my-auto normal" data-tip="New Post" src="/static/images/post.svg" alt="New Post" currentitem="false">
         </div>
@@ -39,7 +39,7 @@
 
                 <!-- posts list -->
                 <div class="recent-post">
-                    <a href="/client/forums/post/6">
+                    <a class="ajax" href="/client/forums/post/6">
                         <div class="d-flex">
                             <div class="user-avatar-container small toRight">
                                 <div class="user-avatar small" data-tip="sergey 11 goldobin">

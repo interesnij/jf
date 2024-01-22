@@ -1,0 +1,74 @@
+<% let request_user_id: i32 = request_user.user_id.parse().unwrap(); %>
+
+<% for object in object_list.iter() { %>
+
+<div class="d-flex">
+  <% let author = &object.author_data; %>
+  <div class="
+    chat-message__container 
+    <% if author.id == request_user_id { %>
+      chat-message__container--right
+    <% } else { %>
+      chat-message__container--left
+    <% } %>
+    "
+  >
+    <div class="user-avatar-container normal toRight">
+      <div class="user-avatar normal">
+
+        <% if author.avatar.is_some() { %>
+            <img src="<%= author.avatar.as_deref().unwrap() %>" />
+        <% } else { %> 
+            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+            </svg>
+        <% } %>
+      </div>
+    </div>
+    <div class="mx-2">
+      <div class="justify-content-end">
+        <span class="chat-message__time mx-1"><%= object.created %></span>
+        <span class="chat-message__name"><%= author.first_name %> <%= author.last_name %></span>
+      </div>
+      <% if !object.text.is_empty() { %>
+        <div class="chat-message__content chat-message__content--text"><%= object.text %></div>
+      <% } %>
+      <% if object.files.len() > 0 { %>
+        <div>
+          <% for file in object.files.iter() { %>
+            <% if file.file.contains(".wav") { %>
+              <div class="chat-message__content chat-message__content--attachment">
+                <div class="icon my-auto show_record_window" data-uri="<%= file.file %>">
+                  <img src="/static/images/recording.svg" alt="recording"></div>
+                  <div class="ml-2">
+                    <div class="name">Voice Consent</div>
+                    <div class="size">00:00</div>
+                  </div>
+              </div>
+            <% } else { %>
+              <div class="chat-message__content chat-message__content--attachment ml-auto">
+                <div class="icon my-auto">
+                  <img src="/static/images/document.svg" alt="file">
+                </div>
+                <div class="ml-2">
+                  <div class="name"><%= file.file %></div>
+                </div>
+                <div class="actions">
+                  <span data-tip="Download">
+                    <img src="/static/images/download_green.svg" alt="download">
+                  </span>
+                  <span data-tip="Send to document">
+                    <img src="/static/images/open_green.svg" alt="open"></span>
+                  <span data-tip="View document">
+                    <img src="/static/images/eye_green.svg" alt="eye">
+                  </span>
+                </div>
+              </div>
+            <% } %>
+          <% } %>
+        </div>
+      <% } %>
+    </div>
+  </div>
+</div>
+<% } %>

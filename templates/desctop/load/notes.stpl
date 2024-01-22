@@ -1,0 +1,57 @@
+<% if object_list.len() > 0 { %>
+    <div class="client-matter-message-page__table">
+        <div class="client-matter-message-page__table-header">
+            <div class="client-matter-message-page__table-header-item">
+                <span class="my-auto">Title</span>
+            </div>
+            <div class="client-matter-message-page__table-header-item">
+                <span class="my-auto">Message</span>
+            </div>
+            <div class="client-matter-message-page__table-header-item sortable">
+                <span class="my-auto">Attachment</span>
+            </div>
+            <div class="client-matter-message-page__table-header-item sortable">
+                <span class="my-auto">Last Modified</span>
+                <img src="/static/media/sort.svg" alt="sort">
+            </div>
+            <div class="client-matter-message-page__table-header-item">
+                <span class="my-auto">Actions</span>
+            </div>
+        </div>
+
+        <% for object in object_list.iter() { %>
+            <div class="client-matter-message-page__table-row">
+                <div class="client-matter-message-page__table-row-item">
+                    <span class="text-ellipsis cursor-pointer"><%= object.title %></span>
+                </div>
+                <div class="client-matter-message-page__table-row-item">
+                    <span class="text-ellipsis cursor-pointer"> <%= object.text %></span>
+                </div> 
+                <div class="client-matter-message-page__table-row-item d-flex">
+                    <% for file in object.attachments_data.iter() { %>
+                        <div class="sc-iNqMzA rGwPE">
+                            <img src="/static/images/document.svg" alt="doc">
+                            <div class="my-auto"><%= file.file_name %></div> 
+                        </div>
+                    <% } %>
+                </div>
+                <div class="client-matter-message-page__table-row-item">
+                    <span> <%= object.modified %></span> 
+                </div>
+                <div class="client-matter-message-page__table-row-item">
+                    <div class="dropdown mx-auto" tabindex="0">
+                    <div class="dropdown__button">
+                        <img src="/static/images/action_gray.svg" alt="action" class="client-matter-message-page__table-row-item-action">
+                    </div>
+                    <div class="dropdown__menu">
+                        <!--
+                            <div class="dropdown__menu-item edit_note" data-pk="<%= object.id %>">Edit</div>
+                        -->
+                        <div class="dropdown__menu-item delete_note" data-pk="<%= object.id %>">Delete</div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+<% } %>

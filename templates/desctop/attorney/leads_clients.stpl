@@ -5,7 +5,7 @@
     <div class="leads-page__bar-input">
       <div class="search-bar-container undefined">
         <img src="/static/images/search.svg" alt="search">
-        <input placeholder="Search in Leads &amp; Clients">
+        <input class="search_input" placeholder="Search in Leads &amp; Clients">
       </div>
     </div>
     <div class="d-flex leads-page__bar-filter"><span class="select-label my-auto">Type</span>
@@ -43,7 +43,7 @@
     </button>
   </div>
   <div class="leads-page__content">
-      <span class="load_content" data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=All"></span>
+      <span class="load_content" data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All"></span>
   </div>
 </div>
 

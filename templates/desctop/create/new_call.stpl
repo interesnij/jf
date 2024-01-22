@@ -1,0 +1,21 @@
+<div class="modal-control-container">
+          <div tabindex="-1" class="modal-control">
+            <div class="modal-control__header">
+              <div class="my-auto title text-ellipsis w-100 text-left">Start a Call</div>
+              <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+            </div>
+            <div class="modal-control__content ignore-onclickoutside">
+              <div class="start-call-modal">
+                <div class="start-call-modal__title">Do you want to start a call with Scott Smyth?</div>
+                <div class="d-flex mt-2">
+                    <button class="btn btn--white ripple-effect large ml-auto">
+                        <span>Cancel</span>
+                    </button>
+                    <button class="btn btn--green ripple-effect large ml-3">
+                        <span>Start Call</span>
+                    </button>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>

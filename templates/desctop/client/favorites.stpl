@@ -3,13 +3,13 @@
 <div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="find-page no-background">
     <div class="tab-control">
-      <a href="/client/find">
+      <a href="/client/find" class="ajax">
         <div class="tab-control__item"><span>Representation</span></div>
       </a>
-      <a href="/client/find/search">
+      <a href="/client/find/search" class="ajax">
         <div class="tab-control__item"><span>Search</span></div>
       </a>
-      <a aria-current="page" href="/client/find/favorites">
+      <a class="ajax" aria-current="page" href="/client/find/favorites">
         <div class="tab-control__item tab-control__item--active"><span>Favorites</span></div>
       </a>
     </div>
@@ -20,7 +20,7 @@
           <div class="attorney-section">
 
             <div class="find-attorney-search">
-              <div><a href="/client/find/attorneys/238">
+              <div><a class="ajax" href="/client/find/attorneys/238">
                   <div class="user-avatar-container large toRight">
                     <div class="user-avatar large">
                         <img src="https://k.juslaw.online/media/images/2023/09/19/Philip_Kaplan_Photo.jpeg">
@@ -36,7 +36,7 @@
                 </div>
               </div>
               <div class="ml-3 flex-1">
-                <div class="d-flex"><a href="/client/find/attorneys/238">
+                <div class="d-flex"><a class="ajax" href="/client/find/attorneys/238">
                     <div class="find-attorney-search__name">Philip Kaplan</div>
                   </a><img class="find-attorney-search__favorite" src="/static/images/favorite_fill.svg" alt="favorite"></div>
                 <div class="text-dark">Berliner Corcoran &amp; Rowe LLP</div>

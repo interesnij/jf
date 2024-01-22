@@ -57,7 +57,9 @@
                     <div class="dropdown__menu-item share_document" data-pk="<%= object.id %>">Share</div>
                     <div class="dropdown__menu-item sign_document" data-pk="<%= object.id %>">E-sign</div>
                     <div class="dropdown__menu-item duplicate_document" data-pk="<%= object.id %>">Duplicate</div>
-                    <div class="dropdown__menu-item document_detail" data-pk="<%= object.id %>">View Details</div>
+                    <!--
+                      <div class="dropdown__menu-item document_detail" data-pk="<%= object.id %>">View Details</div>
+                    -->
                   </div>
                 </div>
               </div>

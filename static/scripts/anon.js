@@ -524,7 +524,7 @@ function ajax_get_reload(url, history_enable, ajax) {
 };
 
 
-on('body', 'click', 'a', function(event) {
+on('body', 'click', '.ajax', function(event) {
   event.preventDefault();
   //if (this.getAttribute("href") == window.location.pathname){
   //  toast_info("Вы уже на этой странице");

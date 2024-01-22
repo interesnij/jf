@@ -2,13 +2,13 @@
 
 <div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="tab-control">
-    <a href="/client/overview">
+    <a class="ajax" href="/client/overview">
       <div class="tab-control__item"><span>Overview</span></div>
     </a>
-    <a aria-current="page" href="/client/overview/matters">
+    <a class="ajax" aria-current="page" href="/client/overview/matters">
       <div class="tab-control__item tab-control__item--active"><span>Matters</span></div>
     </a>
-    <a href="/client/overview/invoices">
+    <a class="ajax" href="/client/overview/invoices">
       <div class="tab-control__item"><span>Invoices &amp; Payments</span></div>
     </a>
 </div>
