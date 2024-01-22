@@ -995,7 +995,7 @@ pub struct ChatsParams {
     pub chat_type: Option<String>,
     pub chat_id:   Option<i32>,
 }
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Clone)]
 pub struct AddressData { 
     pub country:  String,
     pub state:    String,
