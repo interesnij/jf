@@ -1081,7 +1081,7 @@ pub struct ChatData {
 impl ChatData {
     pub fn get_chat_user(&self, user_id: &String) -> &UserChatCardData {
         let participants = &self.participants_data;
-        let mut cur_user = &UserChatCardData { 
+        let mut cur_user = UserChatCardData { 
             id:             0,
             first_name:     "".to_string(),
             middle_name:    "".to_string(),
@@ -1106,7 +1106,7 @@ impl ChatData {
                 cur_user = i;
             }
         }
-        return cur_user;
+        return &cur_user;
     }
 }
 
