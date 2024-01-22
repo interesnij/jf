@@ -15,7 +15,7 @@ use serde::{
 use crate::utils::{
     get_string_with_string, get_limit, get_string_withi64, get_string_withi32, 
     get_string_withbool, get_request_user, AuthResponseData, request_get, API,
-    get_string_with_date, get_id_withi32,
+    get_string_with_date, get_id_withi32, get_string_withdate,
 };
 
 
@@ -1562,7 +1562,7 @@ pub async fn notes_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             search = get_string_with_string(params.search.clone());
             ordering = get_string_with_string(params.ordering.clone());
             matter_id = get_id_withi32(params.matter);
-            created_by = get_id_withi32(params.created_by);
+            created_by = get_string_withi32(params.created_by);
             types = get_string_with_string(params.types);
         } 
         else {
