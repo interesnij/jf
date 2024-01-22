@@ -1004,7 +1004,7 @@ pub struct AddressData {
     pub address2: String,
     pub zip_code: String,
 } 
-#[derive(Debug, Deserialize)]
+#[derive(Debug, Deserialize, Clone)]
 pub struct UserChatCardData { 
     pub id:             i32,
     pub first_name:     String,
