@@ -44,7 +44,7 @@
                       <div>
                         <div class="mt-4 mb-1 text-black text-bold">Attachments</div>
                         <div class="mb-2 d-flex flex-wrap">
-                          <% for file in last_comment.object.iter() { %>
+                          <% for file in object.attachments_data.iter() { %>
                             <div class="sc-iNqMzA rGwPE message-attachment">
                               <img src="/static/images/document.svg" alt="doc">
                               <div class="my-auto"><%= file.file_name %></div>

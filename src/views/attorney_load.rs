@@ -785,6 +785,8 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         let status:       String;
         let ordering:     String;
         let date__gte:    String;
+        let total_fees:   i32;
+        let total_time:   String;
 
         let params_some = web::Query::<TimeBillingParams>::from_query(&req.query_string());
         if params_some.is_ok() {
@@ -865,7 +867,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             next:         next,
             page_count:   page_count,
             object_list:  object_list,
-            total_fees:   total_fees,
+            total_fees:   total_fees, 
             total_time:   total_time,
         }
         .render_once()
@@ -916,16 +918,10 @@ pub async fn contacts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> 
         let page_count:  i32;
         let object_list: Vec<ContactData>;
 
-        let limit:        String;
-        let offset:       String;
-        let search:       String;
-        let billing_type: String;
-        let matter:       String;
-        let client:       String;
-        let attorney:     String;
-        let status:       String;
-        let ordering:     String;
-        let date__gte:    String;
+        let limit:    String;
+        let offset:   String;
+        let search:   String;
+        let _type:    String;
 
         let params_some = web::Query::<ContactsParams>::from_query(&req.query_string());
         if params_some.is_ok() {
@@ -1084,7 +1080,7 @@ pub struct ChatData {
 }
 impl ChatData {
     pub fn get_chat_user(&self, user_id: String) -> UserChatCardData {
-        for i in participants_data.into_iter() {
+        for i in self.participants_data.into_iter() {
             if i.id.to_string() != user_id {
                 return i;
             }
@@ -1113,7 +1109,7 @@ impl ChatData {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct ChatsData { 
+pub struct ChatssData { 
     pub count:      i32,
     pub next:       Option<String>,
     pub page_count: i32,
@@ -1134,6 +1130,7 @@ pub async fn chats_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
 
         let ordering:  String;
         let chat_type: String;
+        let chat_id:  i32;
 
         let params_some = web::Query::<ChatsParams>::from_query(&req.query_string());
         if params_some.is_ok() {
@@ -1153,7 +1150,7 @@ pub async fn chats_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             "social/chats/",
             "?ordering=", ordering
         );
-        let resp = request_get::<crate::views::ChatsData> (
+        let resp = request_get::<crate::views::ChatssData> (
             url,
             &request_user.key
         ).await;
@@ -1209,7 +1206,7 @@ pub struct MessagesData {
     pub results:    Vec<MessageData>,
 }
 
-pub async fn messages_load(req: HttpRequest, id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn messages_load(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -1290,10 +1287,6 @@ pub struct LastCommentData {
     pub title:             String,
     pub attachments:       Vec<i32>,
     pub attachments_data:  Vec<AttachmentsData>,
-    pub participants:      Vec<i32>,
-    pub participants_data: Vec<crate::utils::UserCardData>,
-    pub seen:              bool,
-    pub seen_by_client:    bool,
     pub created:           String,
     pub modified:          String,
 } 
@@ -1347,7 +1340,7 @@ pub async fn matter_messages_load(req: HttpRequest) -> actix_web::Result<HttpRes
             search = get_string_with_string(params.search.clone());
             ordering = get_string_with_string(params.ordering.clone());
             matter_id = get_id_withi32(params.matter);
-            seen = get_id_withibool(params.seen);
+            seen = get_id_withbool(params.seen);
         } 
         else {
             limit = String::new();
