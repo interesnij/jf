@@ -1080,13 +1080,8 @@ pub struct ChatData {
 }
 impl ChatData {
     pub fn get_chat_user(&self, user_id: &String) -> &UserChatCardData {
-        let data = &self.participants_data;
-        for i in data.into_iter() {
-            if &i.id.to_string() != user_id {
-                return i;
-            }
-        }
-        return &UserChatCardData { 
+        let participants = &self.participants_data;
+        let mut cur_user = &UserChatCardData { 
             id:             0,
             first_name:     "".to_string(),
             middle_name:    "".to_string(),
@@ -1106,6 +1101,12 @@ impl ChatData {
             opportunity_id: None, 
             lead_id:        None,
         };
+        for i in participants.into_iter() {
+            if &i.id.to_string() != user_id {
+                cur_user = i;
+            }
+        }
+        return cur_user;
     }
 }
 
