@@ -109,10 +109,13 @@
                               <button class="btn btn--white ripple-effect normal hide_matter_comment_form">
                                   <span>Cancel</span>
                               </button>
-                              <% let s: String = object.participants.into_iter().collect(); %>
+                              <% 
+                                let mut ids: Vec<i32> = object.participants_data;
+                                let joined = itertools::Itertools::join(&mut ids.iter(), ",");
+                              %>
                               <button   
                                 data-post="<%= post_id %>" 
-                                data-participants="<%= s %>" 
+                                data-participants="<%= joined %>" 
                                 class="btn btn--green ripple-effect normal ml-2 matter_comment_send" 
                                 post_id="<%= post_id %>"
                               >
