@@ -1,7 +1,7 @@
 <% let request_user_id: i32 = request_user.user_id.parse().unwrap(); %>
 
 <% for object in object_list.iter() { %>
-    <% let author = &object.author; %> 
+    <% let author = &object.author; %>  
           <div>
             <div class="message">
               <div class="message-actions">
@@ -109,7 +109,16 @@
                               <button class="btn btn--white ripple-effect normal hide_matter_comment_form">
                                   <span>Cancel</span>
                               </button>
-                              <button data-post="<%= post_id %>" data-participants="<%= object.participants.to_string() %>" class="btn btn--green ripple-effect normal ml-2 matter_comment_send" post_id="<%= post_id %>">
+                              <button 
+                                data-post="<%= post_id %>" 
+                                data-participants="
+                                  <% for i in object.participants.iter() {
+                                    i,
+                                  <% } %>
+                                " 
+                                class="btn btn--green ripple-effect normal ml-2 matter_comment_send" 
+                                post_id="<%= post_id %>"
+                              >
                                   <span>Send</span>
                               </button>
                             </div>
