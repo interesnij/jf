@@ -1080,8 +1080,8 @@ pub struct ChatData {
 }
 impl ChatData {
     pub fn get_chat_user(&self, user_id: &String) -> UserChatCardData {
-        for i in self.participants_data.iter() {
-            if i.id.to_string() != user_id {
+        for i in self.participants_data.into_iter() {
+            if &i.id.to_string() != user_id {
                 return i;
             }
         }
