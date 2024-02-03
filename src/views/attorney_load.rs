@@ -1693,6 +1693,25 @@ pub struct TopicData {
     pub followers_count:    i32,
     pub followed:           bool,
 }
+
+#[derive(Debug, Deserialize)]
+pub struct ProposalsData { 
+    pub id:                     i32,
+    pub name:                   String,
+    pub created:                String,
+    pub modified:               String,
+    pub rate:                   String,
+    pub rate_type:              String,
+    pub description:            String,
+    pub attorney_data:          crate::utils::UserCardData,
+    pub status:                 String,
+    pub status_modified:        String,
+    pub currency:               Vec<i32>,
+    pub currency_data:          Vec<crate::utils::FeeCurrencyData>,
+    pub is_hidden_for_client:   bool,
+    pub is_hidden_for_attorney: bool,
+}
+
 #[derive(Debug, Deserialize)]
 pub struct PostData { 
     pub id:                 i32,
@@ -1708,7 +1727,7 @@ pub struct PostData {
     pub description:        String,
     pub last_comment_time:  Option<String>,
     pub topic_data:         TopicData,
-    pub proposals:          Vec<ProposalsData>,
+    pub proposals:          Vec<ProposalsData>, 
     pub client:             i32,
     pub client_data:        crate::utils::UserCardData,
     pub practice_area_data: crate::utils::PracticeAreaData,
