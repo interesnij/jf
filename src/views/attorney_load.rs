@@ -1824,20 +1824,6 @@ pub struct TopicsParams {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct TopicData { 
-    pub id:                 i32,
-    pub title:              String,
-    pub icon:               String,
-    pub description:        String,
-    pub practice_area:      i32,
-    pub practice_area_data: crate::utils::PracticeAreaData,
-    pub post_count:         i32,
-    pub comment_count:      i32,
-    pub followers_count:    i32,
-    pub followed:           bool,
-}
-
-#[derive(Debug, Deserialize)]
 pub struct TopicsData { 
     pub count:      i32,
     pub next:       Option<String>,
