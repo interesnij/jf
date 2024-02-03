@@ -4,10 +4,18 @@
     <img src="/static/images/close_white.svg" alt="close"></div>
   <div class="fullscreen__content d-flex flex-column fullscreen__content--grey">
     <div class="tab-control">
-      <div class="tab-control__item"><span>Profile</span></div>
-      <div class="tab-control__item"><span>Password &amp; Security</span></div>
-      <div class="tab-control__item tab-control__item--active"><span>Payment Methods</span></div>
-      <div class="tab-control__item"><span>Notification</span></div>
+      <div class="tab-control__item settings_tab_action" data-link="/client/settings">
+        <span>Profile</span>
+      </div>
+      <div class="tab-control__item settings_tab_action" data-link="/client/settings/quard">
+        <span>Password &amp; Security</span>
+      </div>
+      <div class="tab-control__item settings_tab_action tab-control__item--active" data-link="/client/settings/pay">
+        <span>Payment Methods</span>
+      </div>
+      <div class="tab-control__item settings_tab_action" data-link="/client/settings/notify">
+        <span>Notification</span>
+      </div>
     </div>
     <div class="settings">
       <div class="folder-control mb-4">

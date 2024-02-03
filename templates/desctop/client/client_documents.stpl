@@ -45,7 +45,7 @@
       <div class="matters-page__bar-input">
         <div class="search-bar-container undefined">
             <img src="/static/images/search.svg" alt="search">
-            <input class="search_input" placeholder="Search in Documents">
+            <input data-link="" class="search_input" placeholder="Search in Documents">
         </div>
       </div>
       <div class="d-flex ml-4 my-auto">

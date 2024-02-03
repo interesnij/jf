@@ -6,9 +6,9 @@
       <div class="billings-page__bar-input">
         <div class="search-bar-container undefined">
             <img src="/static/images/search.svg" alt="search">
-            <input class="search_input" placeholder="Search in billing items">
+            <input data-link="/load/billing" class="search_input" placeholder="Search in billing items">
         </div>
-      </div>
+      </div> 
         <button class="btn btn--outline btn--green ripple-effect normal ml-auto my-auto create_expense">
             <span>Add Expense</span>
         </button>
@@ -24,9 +24,9 @@
             <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div> 
           <div class="menu-dropdown">
-            <div class="menu-item select_3_content active" data-value="&billing_type=" style="width: 150px;">All entries</div>
-            <div class="menu-item select_3_content" data-value="&billing_type=time" style="width: 150px;">Time entries</div>
-            <div class="menu-item select_3_content" data-value="&billing_type=expense" style="width: 150px;">Expense entries</div>
+            <div class="menu-item select_double_content active" data-value="&billing_type=" style="width: 150px;">All entries</div>
+            <div class="menu-item select_double_content" data-value="&billing_type=time" style="width: 150px;">Time entries</div>
+            <div class="menu-item select_double_content" data-value="&billing_type=expense" style="width: 150px;">Expense entries</div>
           </div>
         </div>
       </div>
@@ -37,9 +37,9 @@
             <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
           <div class="menu-dropdown">
-            <div class="menu-item select_3_content active" data-value="&is_billable=" style="width: 150px;">All</div>
-            <div class="menu-item select_3_content" data-value="&is_billable=true" style="width: 150px;">Billable</div>
-            <div class="menu-item select_3_content" data-value="&is_billable=false" style="width: 150px;">Non-billable</div>
+            <div class="menu-item select_double_content active" data-value="&is_billable=" style="width: 150px;">All</div>
+            <div class="menu-item select_double_content" data-value="&is_billable=true" style="width: 150px;">Billable</div>
+            <div class="menu-item select_double_content" data-value="&is_billable=false" style="width: 150px;">Non-billable</div>
           </div>
         </div>
       </div>
@@ -49,12 +49,12 @@
             <span>All Time</span>
             <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
-          <div class="menu-dropdown">
-            <div class="menu-item select_3_content active" data-value="&date__gte=&date__lte=" style="width: 180px;">All Time</div>
-            <div class="menu-item select_3_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Last 7 days</div>
-            <div class="menu-item select_3_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Last 30 days</div>
-            <div class="menu-item select_3_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Custom Date Range</div>
-          </div>
+          <div class="menu-dropdown"> 
+            <div class="menu-item select_double_content active" data-value="&date__gte=&date__lte=" style="width: 180px;">All Time</div>
+            <div class="menu-item select_double_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Last 7 days</div>
+            <div class="menu-item select_double_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Last 30 days</div>
+            <div class="menu-item select_double_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Custom Date Range</div>
+          </div> 
         </div>
       </div>
     </div>

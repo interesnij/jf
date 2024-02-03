@@ -13,5 +13,5 @@ pub fn routes(cfg: &mut web::ServiceConfig) {
     .configure(clients::clients_routes)
     .configure(attorneys::attorneys_routes)
     .configure(attorney_load::load_routes)
-    ;
+    ; 
 }

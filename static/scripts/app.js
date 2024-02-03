@@ -1,12 +1,12 @@
 function on(elSelector, eventName, selector, fn) {var element = document.querySelector(elSelector);element.addEventListener(eventName, function(event) {var possibleTargets = element.querySelectorAll(selector);var target = event.target;for (var i = 0, l = possibleTargets.length; i < l; i++) {var el = target;var p = possibleTargets[i];while (el && el !== element) {if (el === p) {return fn.call(p, event);}el = el.parentNode;}}});}
 
 $height = parseFloat(window.innerHeight * 0.000264).toFixed(2);
-  $seconds = 1;
-  $user_id = 0;
-  $page_time_end = false;
+$seconds = 1;
+$user_id = 0;
+$page_time_end = false;
   
-  $window_height = 0;
-  $window_seconds = 1;
+$window_height = 0;
+$window_seconds = 1;
 $window_time_end = false;
 
 var delayedExec = function(after, fn) {
@@ -264,7 +264,6 @@ on('body', 'click', '#logg', function() {
   form_data = new FormData(form);
   link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
   link.open( 'POST', "https://backend.juslaw.com/api/v1/auth/login/", true );
-  //link.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
   link.onreadystatechange = function () {
   if ( link.readyState == 4 && link.status == 200 ) {

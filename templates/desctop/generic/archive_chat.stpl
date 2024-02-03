@@ -36,6 +36,8 @@
                     </div>
                   </div>
                   <div class="chat-sidebar__content d-flex flex-column">
+                  
+                    <!-- arhive chat object -->
                     <div class="chat-sidebar__thread">
                       <div class="chat-sidebar__thread-avatar">
                         <div class="user-avatar-container small toRight">
@@ -59,6 +61,8 @@
                         </div>
                       </div>
                     </div>
+                    <!-- arhive chat object -->
+
                   </div>
                 </div>
                 <div class="m-auto d-flex">

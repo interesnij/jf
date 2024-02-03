@@ -16,7 +16,7 @@
           <div class="documents-page__bar-input">
             <div class="search-bar-container undefined">
                 <img src="/static/images/search.svg" alt="search">
-                <input class="search_input" placeholder="Search in My Templates">
+                <input data-link="" class="search_input" placeholder="Search in My Templates">
             </div>
           </div>
           <div class="d-flex documents-page__bar-filter">
@@ -78,7 +78,9 @@
               </div>
               <div class="templates-page__table-row-item">
                 <div class="user-avatar-container small toRight">
-                  <div class="user-avatar small"><img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg"></div>
+                  <div class="user-avatar small">
+                    <img src="https://k.juslaw.online/media/images/2023/08/07/post-1_5PkWP1k_9iatZ8r.jpeg">
+                  </div>
                   <div class="user-avatar__name">JusLaw Platform Assessment A G</div>
                 </div>
               </div>
@@ -90,9 +92,13 @@
                   </div>
                   <div class="dropdown__menu">
                     <div class="dropdown__menu-item">Share</div>
-                    <div class="dropdown__menu-item">Rename Folder</div>
+                    <!--
+                      <div class="dropdown__menu-item">Rename Folder</div>
+                    -->
                     <div class="dropdown__menu-item">Delete</div>
-                    <div class="dropdown__menu-item">View Details</div>
+                    <!--
+                      <div class="dropdown__menu-item">View Details</div>
+                    -->
                   </div>
                 </div>
               </div>

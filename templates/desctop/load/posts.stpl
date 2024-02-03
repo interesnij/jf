@@ -1,0 +1,31 @@
+
+
+<div class="recent-post">
+  <a class="ajax" href="/client/forums/post/6">
+    <div class="d-flex">
+      <div class="user-avatar-container small toRight">
+        <div class="user-avatar small" data-tip="sergey 11 goldobin">
+          <img src="https://k.juslaw.online/media/images/2023/09/19/16AFD31A-F866-4076-8E95-09CDF8B87D16.png" alt="sergey 11 goldobin">
+        </div>
+      </div>
+      <div class="ml-1 flex-2">
+        <div class="recent-post__title">Need help...</div>
+        <div class="d-flex w-100">
+          <div class="recent-post__author">Posted by sergey goldobin</div>
+          <div class="recent-post__post-date">Jul 12,2023</div>
+        </div>
+      </div>
+    </div>
+    <div class="sc-Azgjq cIiWPa mt-1">Accounting Law Practice</div>
+    <div class="recent-post__content">Test test test test!!</div>
+    <div class="d-flex mt-auto">
+      <div class="recent-post__feature">
+        <img src="/static/images/comments.svg" alt="comments"><span>4</span>
+      </div>
+      <div class="recent-post__feature">
+        <img src="/static/images/followers.svg" alt="followers"><span>3</span>
+      </div>
+      <span class="recent-post__post-date ml-auto mr-0">Last Reply - Aug 27, 11:45:40 AM</span>
+    </div>
+  </a>
+</div>

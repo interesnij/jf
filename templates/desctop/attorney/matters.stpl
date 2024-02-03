@@ -3,8 +3,8 @@
     <div class="matters-page__bar-input">
       <div class="search-bar-container undefined">
         <img src="/static/images/search.svg" alt="search">
-        <input class="search_input" placeholder="Search in Matters">
-      </div>
+        <input data-link="/attorney_load/matters" class="search_input" placeholder="Search in Matters">
+      </div> 
     </div>
     <div class="d-flex matters-page__bar-filter">
         <span class="select-label my-auto">Filter by</span>

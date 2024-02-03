@@ -1,9 +1,0 @@
-<div class="forums-page__following-topic-item">
-                <a class="topic ajax" href="/client/forums/topic/1">
-                    <div class="title">Accounting Law Practice</div>
-                    <div class="value">1 posts</div>
-                </a>
-                <button class="btn btn--outline btn--green ripple-effect normal ml-auto my-auto" type="button">
-                    <span>Unfollow</span>
-                </button>
-</div>

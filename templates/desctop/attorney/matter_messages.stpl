@@ -11,19 +11,34 @@
           <div class="col-9 d-flex align-items-center">
             <div class="search-bar-container w-100">
                 <img src="/static/media/search.svg" alt="search">
-                <input placeholder="Search in My Messages">
-            </div>
+                <input class="search_input" placeholder="Search in My Messages">
+            </div> 
             <div class="d-flex ml-3">
                 <span class="select-label my-auto">Filter by</span>
                 <div tabindex="0" class="select-container">
                     <div class="menu-button">
                         <span>All</span>
                         <img src="/static/media/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
-                    </div>
+                    </div> 
                     <div class="menu-dropdown">
-                        <div class="menu-item active" style="width: 160px;">All</div>
-                        <div class="menu-item" style="width: 160px;">Unread</div>
-                        <div class="menu-item" style="width: 160px;">Read</div>
+                        <div 
+                          class="menu-item select_content active"
+                          data-link="/load/matter_messages?ordering=-modified&offset=0&limit=10&search=&matter=<%= matter_id %>&seen="
+                          style="width: 160px;">
+                          All
+                        </div>
+                        <div 
+                          class="menu-item select_content"
+                          data-link="/load/matter_messages?ordering=-modified&offset=0&limit=10&search=&matter=<%= matter_id %>&seen=false"
+                          style="width: 160px;">
+                          Unread
+                        </div>
+                        <div 
+                          class="menu-item select_content"
+                          data-link="/load/matter_messages?ordering=-modified&offset=0&limit=10&search=&matter=<%= matter_id %>&seen=true"
+                          style="width: 160px;">
+                          Read
+                        </div>
                     </div>
               </div>
             </div>
@@ -38,9 +53,9 @@
             >
           </div>
         </div>
-      </div>
+      </div> 
       <div class="flex-1 d-flex flex-column">
-          <span class="load_content" data-link="/load/matter_messages/<%= matter_id %>"></span>
+          <span class="load_content" data-link="/load/matter_messages?ordering=-modified&offset=0&limit=10&search=&matter=<%= matter_id %>&seen="></span>
       </div>
     </div>
   </div>

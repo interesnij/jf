@@ -31,6 +31,9 @@ pub fn load_routes(config: &mut web::ServiceConfig) {
     config.route("/load/matter_messages", web::get().to(matter_messages_load));
     config.route("/load/matter_post_comments", web::get().to(matter_post_comments));
     config.route("/load/notes", web::get().to(notes_load));
+    config.route("/load/posts", web::get().to(posts_load));
+    config.route("/load/topics", web::get().to(topics_load));
+    config.route("/load/events", web::get().to(events_load));
     //config.route("/locations/states/", web::get().to(states_load));
     //config.route("/locations/cities/", web::get().to(cities_load));
     //config.route("/users/specialities/", web::get().to(specialities_load));
@@ -1655,7 +1658,398 @@ pub async fn notes_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         crate::views::login_page(req).await
     }
 }
+//////////////////////////////////////
 
+#[derive(Debug, Deserialize)]
+pub struct PostsParams {
+    pub author:        Option<i32>,
+    pub limit:         Option<i64>,
+    pub offset:        Option<i64>,
+    pub ordering:      Option<String>,
+    pub followed:      Option<bool>,
+    pub comment_count: Option<i32>,
+}
+#[derive(Debug, Deserialize)]
+pub struct PostComment { 
+    pub id:        i32,
+    pub post:      i32,
+    pub author:    crate::utils::UserCardData,
+    pub text:      String,
+    pub created:   String,
+    pub modified:  String,
+    pub user_type: String,
+    pub position:  i32,
+}
+#[derive(Debug, Deserialize)]
+pub struct TopicData { 
+    pub id:                 i32,
+    pub title:              String,
+    pub icon:               String,
+    pub description:        String,
+    pub practice_area:      i32,
+    pub practice_area_data: crate::utils::PracticeAreaData,
+    pub post_count:         i32,
+    pub comment_count:      i32,
+    pub followers_count:    i32,
+    pub followed:           bool,
+}
+#[derive(Debug, Deserialize)]
+pub struct PostData { 
+    pub id:                 i32,
+    pub topic:              i32,
+    pub title:              String,
+    pub last_comment:       Option<PostComment>,
+    pub first_comment:      Option<PostComment>,  
+    pub comment_count:      i32,
+    pub created:            String,
+    pub modified:           String,
+    pub followers_count:    i32,
+    pub followed:           bool,
+    pub description:        String,
+    pub last_comment_time:  Option<String>,
+    pub topic_data:         TopicData,
+    pub proposals:          Vec<ProposalsData>,
+    pub client:             i32,
+    pub client_data:        crate::utils::UserCardData,
+    pub practice_area_data: crate::utils::PracticeAreaData,
+    pub author:             crate::utils::UserSmallData,
+    pub message:            String,
+}
+#[derive(Debug, Deserialize)]
+pub struct PostsData { 
+    pub count:      i32,
+    pub next:       Option<String>,
+    pub page_count: i32,
+    pub previous:   Option<String>,
+    pub results:    Vec<PostData>,
+}
+
+pub async fn posts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {  
+        let request_user = user_some.unwrap();
+        let l = 2;
+
+        let count:       i32;
+        let next:        Option<String>;
+        let page_count:  i32;
+        let object_list: Vec<PostData>;
+
+        let ordering:      String; 
+        let limit:         String;
+        let offset:        String;
+        let author:        String;
+        let followed:      String;
+        let comment_count: String;
+
+        let params_some = web::Query::<PostsParams>::from_query(&req.query_string());
+        if params_some.is_ok() {
+            let params = params_some.unwrap();
+            limit =         get_limit(params.limit);
+            offset =        get_string_withi64(params.offset);
+            ordering =      get_string_with_string(params.ordering.clone());
+            author =        get_string_withi32(params.author);
+            followed =      get_string_withbool(params.followed);
+            comment_count = get_string_withi32(params.comment_count);
+        } 
+        else {
+            limit =         String::new();
+            offset =        String::new();
+            ordering =      String::new();
+            author =        String::new();
+            followed =      String::new();
+            comment_count = String::new();
+        }
+ 
+        let url = concat_string!(
+            API.to_owned(),
+            "forum/posts/",
+            "?ordering=", ordering,
+            "&limit=", limit,
+            "&offset=", offset,
+            "&author=", author,
+            "&followed=", followed,
+            "&comment_count=", comment_count
+        );
+        let resp = request_get::<PostsData> (
+            url,
+            &request_user.key
+        ).await;
+        if resp.is_ok() {
+            let data = resp.expect("E.");
+            count = data.count;
+            next = data.next;
+            page_count = data.page_count;
+            object_list = data.results;
+        }
+        else {
+            count = 0;
+            next = None;
+            page_count = 0;
+            object_list = Vec::new();
+        }
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/load/posts.stpl")]
+        pub struct Template {
+            request_user: AuthResponseData,
+            count:        i32,
+            next:         Option<String>,
+            page_count:   i32,
+            object_list:  Vec<PostData>,
+        }
+        let body = Template {
+            request_user: request_user,
+            count:        count,
+            next:         next,
+            page_count:   page_count,
+            object_list:  object_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
+/////////////////////////////////////
+
+
+#[derive(Debug, Deserialize)]
+pub struct TopicsParams {
+    pub limit:    Option<i64>,
+    pub offset:   Option<i64>,
+    pub ordering: Option<String>,
+    pub followed: Option<bool>,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct TopicData { 
+    pub id:                 i32,
+    pub title:              String,
+    pub icon:               String,
+    pub description:        String,
+    pub practice_area:      i32,
+    pub practice_area_data: crate::utils::PracticeAreaData,
+    pub post_count:         i32,
+    pub comment_count:      i32,
+    pub followers_count:    i32,
+    pub followed:           bool,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct TopicsData { 
+    pub count:      i32,
+    pub next:       Option<String>,
+    pub page_count: i32,
+    pub previous:   Option<String>,
+    pub results:    Vec<TopicData>,
+}
+
+pub async fn topics_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {  
+        let request_user = user_some.unwrap();
+        let l = 2;
+
+        let count:       i32;
+        let next:        Option<String>;
+        let page_count:  i32;
+        let object_list: Vec<TopicData>;
+
+        let ordering: String; 
+        let limit:    String;
+        let offset:   String;
+        let followed: String;
+
+        let params_some = web::Query::<TopicsParams>::from_query(&req.query_string());
+        if params_some.is_ok() {
+            let params = params_some.unwrap();
+            limit =    get_limit(params.limit);
+            offset =   get_string_withi64(params.offset);
+            ordering = get_string_with_string(params.ordering.clone());
+            followed = get_string_withbool(params.followed);
+        } 
+        else {
+            limit =    String::new();
+            offset =   String::new();
+            ordering = String::new();
+            followed = String::new();
+        }
+        
+        let url: String;
+        if followed.is_not_empty() {
+            url = concat_string!(API.to_owned(), "forum/followed_topics/");
+        }
+        else {
+            url = concat_string!(
+                API.to_owned(),
+                "forum/topics/",
+                "?ordering=", ordering,
+                "&limit=", limit,
+                "&offset=", offset
+            );
+        }
+        let resp = request_get::<TopicsData> (
+            url,
+            &request_user.key
+        ).await;
+        if resp.is_ok() {
+            let data = resp.expect("E.");
+            count = data.count;
+            next = data.next;
+            page_count = data.page_count;
+            object_list = data.results;
+        }
+        else {
+            count = 0;
+            next = None;
+            page_count = 0;
+            object_list = Vec::new();
+        }
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/load/topics.stpl")]
+        pub struct Template {
+            request_user: AuthResponseData,
+            count:        i32,
+            next:         Option<String>,
+            page_count:   i32,
+            object_list:  Vec<TopicData>,
+            followed:     String,
+        }
+        let body = Template {
+            request_user: request_user,
+            count:        count,
+            next:         next,
+            page_count:   page_count,
+            object_list:  object_list,
+            followed:     followed,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
+
+#[derive(Debug, Deserialize)]
+pub struct EventsParams {
+    pub ordering:  Option<String>,
+    pub attorney:  Option<i32>,
+    pub client:    Option<i32>,
+    pub paralegal: Option<i32>,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct EventData {  
+    pub id:            i32, 
+    pub attorney:      Option<i32>,
+    pub paralegal:     Option<i32>, 
+    pub title:         String,
+    pub description:   Option<String>,
+    pub is_all_day:    bool,
+    pub start:         String,
+    pub end:           String,
+    pub duration:      String,
+    pub location:      String,
+    pub timezone:      i32,
+    pub timezone_data: crate::utils::TimezoneData,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct EventsData { 
+    pub count:      i32,
+    pub next:       Option<String>,
+    pub page_count: i32,
+    pub previous:   Option<String>,
+    pub results:    Vec<EventData>,
+}
+
+pub async fn events_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {  
+        let request_user = user_some.unwrap();
+        let l = 2;
+
+        let count:       i32;
+        let next:        Option<String>;
+        let page_count:  i32;
+        let object_list: Vec<EventData>;
+
+        let ordering:  String; 
+        let attorney:  String;
+        let client:    String;
+        let paralegal: String;
+
+        let params_some = web::Query::<EventsParams>::from_query(&req.query_string());
+        if params_some.is_ok() {
+            let params = params_some.unwrap();
+            attorney =   get_string_withi32(params.attorney);
+            client =     get_string_withi32(params.client);
+            paralegal =  get_string_withi32(params.paralegal);
+            ordering =   get_string_with_string(params.ordering.clone());
+        } 
+        else {
+            attorney =  String::new();
+            client =    String::new();
+            paralegal = String::new();
+            ordering =  String::new();
+        }
+        
+        let url = concat_string!(
+            API.to_owned(),
+            "promotion/events/",
+            "?ordering=", ordering,
+            "&attorney=", attorney,
+            "&client=", client,
+            "&paralegal=", paralegal
+        );
+        
+        let resp = request_get::<EventsData> (
+            url,
+            &request_user.key
+        ).await;
+        if resp.is_ok() {
+            let data = resp.expect("E.");
+            count = data.count;
+            next = data.next;
+            page_count = data.page_count;
+            object_list = data.results;
+        }
+        else {
+            count = 0;
+            next = None;
+            page_count = 0;
+            object_list = Vec::new();
+        }
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/load/events.stpl")]
+        pub struct Template {
+            request_user: AuthResponseData,
+            count:        i32,
+            next:         Option<String>,
+            page_count:   i32,
+            object_list:  Vec<EventData>,
+        }
+        let body = Template {
+            request_user: request_user,
+            count:        count,
+            next:         next,
+            page_count:   page_count,
+            object_list:  object_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
+
+//////////////////////////////////////
 
 //////////////  COUNTRIES  //////
 //////////////  COUNTRIES //////

@@ -1,0 +1,38 @@
+<% if followed.is_not_empty() { %>
+    <% for object in object_list.iter() { %>
+        <div class="forums-page__following-topic-item">
+            <a class="topic ajax" href="/client/forums/topic/1">
+                <div class="title">Accounting Law Practice</div>
+                <div class="value">1 posts</div>
+            </a>
+            <button class="btn btn--outline btn--green ripple-effect normal ml-auto my-auto" type="button">
+                <span>Unfollow</span>
+            </button>
+        </div>
+    <% } %>
+<% } else { %>
+    <% for object in object_list.iter() { %>
+        <div class="folder-item folder-item--with-separator">
+            <div class="topic-control">
+                <div class="topic-control__main">
+                <a href="/client/forums/topic/1" class="topic-control__title ajax">
+                    Accounting Law Practice
+                </a>
+                <div class="topic-control__description">
+                    description...
+                </div>
+                </div>
+                <div class="topic-control__post-count mx-3">
+                <div class="topic-control__title text-center">1</div>
+                <div class="topic-control__description text-center">Posts</div>
+                </div>
+                <div class="topic-control__follow">
+                <button class="btn btn--outline btn--green ripple-effect normal mx-auto">
+                    <span>Unfollow</span>
+                </button>
+                <div class="mt-1 text-center mx-auto">2&nbsp;Followers </div>
+                </div>
+            </div>
+        </div>
+    <% } %>
+<% } %>

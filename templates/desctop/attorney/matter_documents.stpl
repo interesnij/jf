@@ -11,7 +11,7 @@
         <div class="col-6">
           <div class="search-bar-container undefined">
             <img src="/static/images/search.svg" alt="search">
-            <input placeholder="Search in Documents">
+            <input class="search_input" placeholder="Search in Documents">
         </div>
         </div>
         <div class="d-flex ml-4 my-auto">
@@ -24,7 +24,7 @@
                     data-link="/documents/folders?ordering=&search=&matter=<%= matter_id %>&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
                     style="width: 160px;">
                     All
-                </div>
+                </div> 
                 <div class="menu-item select_content"
                     data-link="/documents/folders?ordering=&search=&matter=<%= matter_id %>&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
                     style="width: 160px;">

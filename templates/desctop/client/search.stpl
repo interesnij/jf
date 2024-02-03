@@ -22,7 +22,7 @@
             <div class="search-field-wrap flex-1">
               <div class="search-bar-container flex-1">
                 <img src="/static/images/search.svg" alt="search">
-                <input class="search_input" placeholder="Search by name or practice area">
+                <input data-link="" class="search_input" placeholder="Search by name or practice area">
               </div>
             </div>
             <div class="search-field-wrap ml-3 flex-1">

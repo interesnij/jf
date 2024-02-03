@@ -7,8 +7,11 @@
             <div class="modal-control__content ignore-onclickoutside">
               <div style="width: 700px;">
                 <form>
-                  <div class="justify-content-between align-items-center">Your contact list is empty
-                    <button class="btn btn--outline btn--green ripple-effect normal ml-3" type="button"><span>Create New Contact</span></button>
+                  <div class="justify-content-between align-items-center">
+                    Your contact list is empty
+                    <button class="btn btn--outline btn--green ripple-effect normal ml-3">
+                      <span>Create New Contact</span>
+                    </button>
                   </div>
                 </form>
               </div>

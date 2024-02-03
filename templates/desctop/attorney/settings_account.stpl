@@ -6,11 +6,21 @@
     </div>
     <div class="full-modal__content with-no-footer">
       <div class="tab-control">
-        <div class="tab-control__item tab-control__item--active"><span>My Account</span></div>
-        <div class="tab-control__item"><span>Subscription</span></div>
-        <div class="tab-control__item"><span>Notification</span></div>
-        <div class="tab-control__item"><span>Integrations</span></div>
-        <div class="tab-control__item"><span>Matter stages</span></div>
+        <div class="tab-control__item settings_tab_action tab-control__item--active" data-link="/attorney/settings/account">
+          <span>My Account</span>  
+        </div>
+        <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/subscription">
+          <span>Subscription</span>
+        </div>
+        <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/notifies">
+          <span>Notification</span>
+        </div>
+        <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/integrations">
+          <span>Integrations</span>
+        </div>
+          <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/stages">
+            <span>Matter stages</span>
+        </div>
       </div>
       <div class="sc-bqyKOL cxREUt">
         <div class="settings settings-modal">
@@ -28,37 +38,71 @@
                   <div class="row">
                     <div class="input-control mt-2 col-md-4">
                       <div class="d-flex justify-content-between align-items-center">
-                        <label for="uqzBSkZ_1hvL2bgVE-OeV" class="input-control__label">First Name</label>
+                        <label for="id_first_name" class="input-control__label">First Name</label>
                       </div>
-                      <input id="uqzBSkZ_1hvL2bgVE-OeV" placeholder="Input first name here" type="text" disabled="" class="active" value="JusLaw Platform Assessment">
+                      <input 
+                          id="id_first_name" 
+                          placeholder="Input first name here" 
+                          type="text"
+                          name="first_name"
+                          class="active" 
+                          value="JusLaw Platform Assessment"
+                      >
                       <div class="input-control__footer"></div>
                     </div>
                     <div class="input-control mt-2 col-md-4">
                       <div class="d-flex justify-content-between align-items-center">
-                        <label for="rwrV-npSQgkIlxm8vPH0P" class="input-control__label">Middle Name</label>
+                        <label for="id_middle_name" class="input-control__label">Middle Name</label>
                       </div>
-                      <input id="rwrV-npSQgkIlxm8vPH0P" placeholder="Input middle name here" type="text" disabled="" class="active" value="A">
+                      <input 
+                          id="id_middle_name" 
+                          placeholder="Input middle name here" 
+                          type="text" 
+                          class="active" 
+                          value="A"
+                      >
                       <div class="input-control__footer"></div>
                     </div>
                     <div class="input-control mt-2 col-md-4">
                       <div class="d-flex justify-content-between align-items-center">
-                        <label for="haAAC_SLObIaxc8Id0ojW" class="input-control__label">Last Name</label>
+                        <label for="id_last_name" class="input-control__label">Last Name</label>
                       </div>
-                      <input id="haAAC_SLObIaxc8Id0ojW" placeholder="Input last name here" type="text" disabled="" class="active" value="G">
+                      <input 
+                          id="id_last_name" 
+                          placeholder="Input last name here" 
+                          type="text"
+                          class="active"
+                          value="G"
+                          name="last_name"
+                      >
                       <div class="input-control__footer"></div>
                     </div>
                     <div class="input-control mt-2 col-md-6">
                       <div class="d-flex justify-content-between align-items-center">
-                        <label for="Ae2u37Euo7yMQEEDSeQoM" class="input-control__label">Email</label>
+                        <label for="id_email" class="input-control__label">Email</label>
                       </div>
-                      <input id="Ae2u37Euo7yMQEEDSeQoM" placeholder="Input email here" type="text" disabled="" class="active" value="sergejuslaw@gmail.com">
+                      <input 
+                          id="id_email" 
+                          placeholder="Input email here" 
+                          type="text"
+                          name="email"
+                          class="active" 
+                          value="sergejuslaw@gmail.com"
+                      >
                       <div class="input-control__footer"></div>
                     </div>
                     <div class="input-control mt-2 col-md-6">
                       <div class="d-flex justify-content-between align-items-center">
-                        <label for="igPqCcxEOrrJC-1UsDBZa" class="input-control__label">Phone</label>
+                        <label for="id_phone" class="input-control__label">Phone</label>
                       </div>
-                      <input id="igPqCcxEOrrJC-1UsDBZa" placeholder="Input phone here" type="text" disabled="" class="active" value="+19738016534">
+                      <input 
+                          id="id_phone"
+                          placeholder="Input phone here"
+                          type="text"
+                          class="active"
+                          name="phone"
+                          value="+19738016534"
+                      >
                       <div class="input-control__footer"></div>
                     </div>
                   </div>

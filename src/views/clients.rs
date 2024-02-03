@@ -25,11 +25,11 @@ pub fn clients_routes(config: &mut web::ServiceConfig) {
     config.route("/client/find/search", web::get().to(client_search_page));
     config.route("/client/find/attorneys/{id}", web::get().to(client_find_attorney_page));
     config.route("/client/find/favorites", web::get().to(client_favorites_page));
-    config.route("/client/forums", web::get().to(client_forums_page));
-    config.route("/client/forums/my-posts", web::get().to(client_my_posts_page));
-    config.route("/client/forums/following", web::get().to(client_following_posts_page));
-    config.route("/client/news", web::get().to(client_news_page));
-    config.route("/client/news/{id}", web::get().to(client_new_page));
+    config.route("/forums", web::get().to(client_forums_page));
+    config.route("/forums/my-posts", web::get().to(client_my_posts_page));
+    config.route("/forums/following", web::get().to(client_following_posts_page));
+    config.route("/news", web::get().to(client_news_page));
+    config.route("/news/{id}", web::get().to(client_new_page));
 
     config.route("/client/settings", web::get().to(settings_page));
     config.route("/client/settings/notify", web::get().to(settings_notify_page));

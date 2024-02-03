@@ -5,11 +5,21 @@
         <img class="my-auto ml-auto close cursor-pointer" src="/static/images/close_white.svg" alt="close"></div>
     <div class="full-modal__content with-no-footer">
       <div class="tab-control">
-        <div class="tab-control__item"><span>My Account</span></div>
-        <div class="tab-control__item tab-control__item--active"><span>Subscription</span></div>
-        <div class="tab-control__item"><span>Notification</span></div>
-        <div class="tab-control__item"><span>Integrations</span></div>
-        <div class="tab-control__item"><span>Matter stages</span></div>
+        <div class="tab-control__item settings_tab_action tab-control__item--active" data-link="/attorney/settings/account">
+          <span>My Account</span> 
+        </div>
+        <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/subscription">
+          <span>Subscription</span>
+        </div>
+        <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/notifies">
+          <span>Notification</span>
+        </div>
+        <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/integrations">
+          <span>Integrations</span>
+        </div>
+          <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/stages">
+        <span>Matter stages</span>
+        </div>
       </div>
       <div class="sc-bqyKOL cxREUt">
         <div class="settings">
@@ -60,6 +70,8 @@
                 </div>
               </div>
               <div class="folder-control__content">
+                
+                <!-- card object -->
                 <div class="folder-item folder-item--with-separator">
                   <section class="payment-method-item">
                     <div class="payment-method-item__section section-main cursor-pointer">
@@ -78,6 +90,8 @@
                     </div>
                   </section>
                 </div>
+                <!-- card object -->
+
               </div>
             </div>
             <div class="folder-control jumbo mt-3">

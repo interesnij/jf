@@ -6,8 +6,12 @@
     </div>
     <div class="full-modal__content">
       <div class="tab-control">
-        <div class="tab-control__item tab-control__item--active"><span>Profile Information</span></div>
-        <div class="tab-control__item"><span>My Events</span></div>
+        <div class="tab-control__item settings_tab_action tab-control__item--active" data-link="/attorney/settings/profile">
+          <span>Profile Information</span>
+        </div>
+        <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/events">
+          <span>My Events</span>
+        </div>
       </div>
       <div class="d-flex flex-column flex-1 overflow-auto">
         <div class="profile-edit-page">
@@ -181,7 +185,9 @@
                           <div class="select-control__container" tabindex="0">
                             <div class="select-control__main active">
                               <div class="flex-1 d-flex justify-content-between">
+
                                 <span class="my-auto">Adrar</span>
+                                
                               </div>
                               <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                             </div>

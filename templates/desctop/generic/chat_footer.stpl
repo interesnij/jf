@@ -10,10 +10,11 @@
                 border: none; 
                 outline: none; 
                 font-family: &quot;DM Sans&quot;; 
-                height: 21px !important;">
+                height: 21px !important;"
+                name="text">
         </textarea>
     <div class="d-flex flex-wrap "></div>
-    <input multiple="" type="file" autocomplete="off" tabindex="-1" style="display: none;">
+    <input multiple="" name="file" type="file" autocomplete="off" tabindex="-1" style="display: none;">
     <div class="d-flex justify-content-between mt-1">
       <div class="d-flex">
         <img class="add_files" src="/static/images/attach.svg" alt="attachments">

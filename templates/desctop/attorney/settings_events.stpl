@@ -5,9 +5,13 @@
   </div>
   <div class="full-modal__content">
     <div class="tab-control">
-      <div class="tab-control__item"><span>Profile Information</span></div>
-      <div class="tab-control__item tab-control__item--active"><span>My Events</span></div>
-    </div>
+        <div class="tab-control__item settings_tab_action tab-control__item--active" data-link="/attorney/settings/profile">
+          <span>Profile Information</span>
+        </div>
+        <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/events">
+          <span>My Events</span>
+        </div>
+      </div>
     <div class="d-flex flex-column flex-1 overflow-auto">
       <div class="d-flex flex-column flex-1 overflow-auto">
         <div class="sc-fubCzh dGjVpY">
@@ -23,10 +27,13 @@
               </div>
             </div>
           </div>
-          <button class="btn btn--green ripple-effect normal ml-auto my-auto" type="button">
-          <img src="/static/images/plus_white.svg" alt="plus"><span>New Event</span></button>
+          <button class="btn btn--green ripple-effect normal ml-auto my-auto create_event">
+            <img src="/static/images/plus_white.svg" alt="plus"><span>New Event</span>
+          </button>
         </div>
         <div class="sc-pGacB iZltua">
+          
+          <!--  item  -->
           <div>
             <div class="sc-jONnzC bvykoq">
               <div class="d-flex">
@@ -49,6 +56,8 @@
             </div>
             <div class="divider my-3"></div>
           </div>
+          <!--  item  -->
+          
         </div>
       </div>
     </div>
