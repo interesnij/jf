@@ -1864,7 +1864,7 @@ pub async fn topics_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         }
         
         let url: String;
-        if followed.is_not_empty() {
+        if !followed.is_empty() {
             url = concat_string!(API.to_owned(), "forum/followed_topics/");
         }
         else {

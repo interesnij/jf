@@ -1,4 +1,4 @@
-<% if followed.is_not_empty() { %>
+<% if !followed.is_empty() { %>
     <% for object in object_list.iter() { %>
         <div class="forums-page__following-topic-item">
             <a class="topic ajax" href="/client/forums/topic/1">
