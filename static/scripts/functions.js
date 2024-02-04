@@ -195,19 +195,19 @@ function get_document_opacity_0() {
   
     ajax_link.onreadystatechange = function () {
       if ( this.readyState == 4 && this.status == 200 ) {
-        rtr = document.getElementById('ajax');
+        meta_block = document.body.querySelector('.doc_title');
         // статистика
   
         try { 
           $link = document.location.pathname;
-          meta_block = rtr.querySelector(".doc_title");
+          meta_block = document.body.querySelector(".doc_title");
           $title = meta_block.getAttribute("data-title");
           //
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
   
-          rtr.innerHTML = elem_.innerHTML;
-          _meta = rtr.querySelector(".doc_title");
+          meta_block.innerHTML = elem_.innerHTML;
+          _meta = elem_.querySelector(".doc_title");
           _title = _meta.getAttribute("data-title");
           _uri = "" + _meta.getAttribute("data-uri");
           _description = _meta.getAttribute("data-description");
@@ -219,8 +219,6 @@ function get_document_opacity_0() {
           document.querySelector('meta[name="image"]').setAttribute("content", _image);
           document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
         } catch { null };
-  
-        rtr.innerHTML = elem_.innerHTML;
   
         window.scrollTo(0,0);
         if (history_enable) { 
