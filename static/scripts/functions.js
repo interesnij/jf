@@ -126,8 +126,8 @@ function disconnect() {
 
 function load_data() {
   blocks = document.querySelectorAll(".load_content");
+  link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
   for (let i = 0; i < blocks.length; i++) {
-    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     if (localStorage.getItem('request_data') !== null) {
       link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
     }
