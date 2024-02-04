@@ -175,6 +175,16 @@ pub struct AttorneyMattersParams {
 }
 
 #[derive(Debug, Deserialize)]
+pub struct EnvelopeMatterrData { 
+    pub id:          i32,
+    pub docusign_id: i32,
+    pub matter:      i32,
+    pub status:      String,
+    pub r#type:      String,
+    pub documents:   Vec<EnvelopeDocumentData>,
+}
+
+#[derive(Debug, Deserialize)]
 pub struct MatterrrData { 
     pub id:              i32,
     pub lead:            Option<i32>,
@@ -211,8 +221,8 @@ pub struct MatterrrData {
     pub is_shared:        bool,
     pub created:          String,
     pub modified:         String,
-    pub currency:         Vec<i32>,
-    pub currency_data:    Vec<crate::utils::FeeCurrencyData>,
+    pub currency:         i32,
+    pub currency_data:    crate::utils::FeeCurrencyData,
     pub start_date:       String,
     pub close_date:       Option<String>,
     pub is_billable:      bool,
@@ -224,8 +234,10 @@ pub struct MatterrrData {
     pub unread_document_count: i32,
     pub unread_message_count:  i32,
     pub due_amount:            i32,
-    pub envelope_data:         Vec<i32>,
+    pub envelope_data:         Option<EnvelopeMatterrData>, 
 }  
+
+
 
 #[derive(Debug, Deserialize)]
 pub struct AttorneyMattersData { 

@@ -95,12 +95,6 @@ on('body', 'click', '#signup', function() {
 
 on('body', 'click', '.ajax', function(event) {
     event.preventDefault();
-    if (this.classList.contains("navbar__item")) {
-        try {
-          document.body.querySelector("header__title").innerHTML = this.innerHTML;
-        } 
-        catch {}
-    }
     ajax_get_reload(this.getAttribute("href"), true, 2);
 });
 

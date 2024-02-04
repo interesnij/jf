@@ -4,7 +4,7 @@
   <div tabindex="-1" style="outline: none;">
     <div class="documents-page">
       <div class="tab-control">
-        <a class="ajax" href="/attorney/documents/documents">
+        <a class="ajax" href="/attorney/documents">
           <div class="tab-control__item"><span>Documents</span></div>
         </a>
         <a class="ajax" aria-current="page" href="/attorney/documents/templates">

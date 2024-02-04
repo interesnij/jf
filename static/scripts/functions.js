@@ -290,6 +290,11 @@ function get_active_button() {
           document.querySelector('meta[name="image"]').setAttribute("content", _image);
           document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
         } catch { null };
+
+        try {
+            document.body.querySelector("header__title").innerHTML = _title;
+        } 
+        catch { null }
   
         window.scrollTo(0,0);
         if (history_enable) { 
@@ -329,7 +334,12 @@ function get_active_button() {
             load_data();
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":loc}, document.title, loc);
-            //create_desing_menu(); 
+
+            try {
+              document.body.querySelector("header__title").innerHTML = _title;
+            } 
+            catch { null }
+            
         }
       }
       ajax_link.send();
