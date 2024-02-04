@@ -47,7 +47,7 @@ pub struct LeadsAndClientsParams {
     pub limit:  Option<i64>,
     pub offset: Option<i64>,
     pub search: Option<String>,
-    pub r#type: Option<String>,
+    //pub r#type: Option<String>,
 } 
 
 #[derive(Debug, Deserialize)]
@@ -103,7 +103,8 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             limit =  get_limit(params.limit);
             offset = get_string_withi64(params.offset);
             search = get_string_with_string(params.search.clone());
-            _type =  get_string_with_string(params.r#type.clone());
+            //_type =  get_string_with_string(params.r#type.clone());
+            _type =  String::new();
         }
         else {
             limit =  String::new();
