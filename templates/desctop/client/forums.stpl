@@ -32,7 +32,7 @@
                 <div class="folder-control__heading-after"></div>
               </div>
               <div class="d-flex"></div>
-            </div>
+            </div> 
 
             <div class="folder-control__content">
               <div class="d-flex load_content" data-link="/load/posts?ordering=-modified&limit=3">
@@ -50,26 +50,7 @@
               <div class="d-flex"></div>
             </div>
             <div class="folder-control__content">
-              <!--
-              <div class="folder__filter">
-                <div class="d-flex ml-auto"><span class="select-label my-auto">Sort by</span>
-                  <div tabindex="0" class="select-container">
-                    <div class="menu-button">
-                        <span>Alphabetical</span>
-                        <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
-                    </div>
-                    <div class="menu-dropdown align-right">
-                      <div class="menu-item active" style="width: 120px;">Alphabetical</div>
-                      <div class="menu-item" style="width: 120px;">Most Recent</div>
-                      <div class="menu-item" style="width: 120px;">Popular</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              -->
-
               <span class="load_content" data-link="/load/topics/?ordering=title&limit=10&offset=0"></span>
-
             </div> 
           </div>
         </div>

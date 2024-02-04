@@ -48,7 +48,7 @@ pub struct LeadsAndClientsParams {
     pub offset: Option<i64>,
     pub search: Option<String>,
     pub r#type: Option<String>,
-}
+} 
 
 #[derive(Debug, Deserialize)]
 pub struct LeadOrClientData {  
@@ -59,10 +59,10 @@ pub struct LeadOrClientData {
     pub phone:         String,
     pub avatar:        Option<String>,
     pub job:           String,
-    pub company:       Option<String>,
+    pub company:       Option<String>, 
     pub country_data:  crate::utils::CountryData,
     pub state_data:    Option<crate::utils::StateData>,
-    pub city_data:     crate::utils::CityData,
+    pub city_data:     Option<crate::utils::CityData>,
     pub address:       String,
     pub zipcode:       String,
     pub note:          Option<String>,

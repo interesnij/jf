@@ -20,9 +20,9 @@
             <img src="/static/images/nav_document.svg" alt="">
             <span>Documents</span>
         </a>
-        <a class="navbar__item ripple-effect chats ripple-effect-to-right ajax" href="/attorney/chats">
+        <a class="navbar__item ripple-effect chats ripple-effect-to-right ajax" href="/attorney/chats/opportunities">
             <img src="/static/images/nav_chat.svg" alt="">
-            <span>Chats</span>
+            <span>Chats</span> 
         </a>
         <a class="navbar__item ripple-effect billing ripple-effect-to-right ajax" href="/attorney/billing">
             <img src="/static/images/nav_bill.svg" alt="">
