@@ -224,7 +224,7 @@ pub fn get_string_withi32(value: Option<i32>) -> String {
     if value.is_some() {
         return value.unwrap().to_string();
     }
-    return String::new();
+    return "null".to_string();
 }
 pub fn get_some_string_withi32(value: Option<i32>) -> Option<String> {
     if value.is_some() {
