@@ -191,7 +191,7 @@ pub struct MatterData {
     pub unread_document_count: i32,
     pub unread_message_count:  i32,
     pub due_amount:            i32,
-    pub envelope_data:         Vec<i32>,
+    pub envelope_data:    Option<EnvelopeMatterData>,
 }  
 
 #[derive(Debug, Deserialize)]
