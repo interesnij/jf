@@ -1,4 +1,5 @@
-<html lang="en"><head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <link rel="icon" href="/static/images/favicon.ico">
 
@@ -11,21 +12,17 @@
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
 
-  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-  <link name="canonical" rel="canonical" href="https://app.juslaw.com<%= uri %>" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link name="canonical" rel="canonical" href="https://app.juslaw.com<%= uri %>" />
     <meta name="theme-color" content="#000000">
     <meta name="juslaw" content="Juslaw">
     <link rel="apple-touch-icon" href="/static/images/logo192.png">
     <link type="text/css" media="all" rel="stylesheet" href="/static/styles/bootstrap.css">
     <link type="text/css" media="all" rel="stylesheet" href="/static/styles/app.css">
     <title>JusLaw</title>
-
-  <script type="text/javascript" async="" src="https://widget.intercom.io/widget/zgdkbiyq"></script>
-
-</head>
+  </head>
   <body>
     <div id="reload" tabindex="-1" style="outline: none;"></div>
     <script type="text/javascript" src="/static/scripts/app.js"></script>
-</div>
 </body>
 </html> 

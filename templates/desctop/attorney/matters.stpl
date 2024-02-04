@@ -1,3 +1,4 @@
+<% include!("../header.stpl"); %>
 <div class="main-layout__content-main doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="matters-page__bar" data-link="/attorney_load/matters/">
     <div class="matters-page__bar-input">
@@ -43,3 +44,4 @@
     <span class="load_content" data-link="/attorney_load/matters?ordering=-modified&offset=0&limit=10&search=&attorney=&status=&shared_with="></span>
   </div>
 </div>
+<% include!("../footer.stpl"); %>
