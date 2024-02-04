@@ -186,10 +186,11 @@ function get_document_opacity_0() {
 
 
 function get_active_button() {
-  try {
+  //try {
     $nav = document.body.querySelector(".navbar");
     links = $nav.querySelectorAll(".navbar__item");
     path = document.location.pathname;
+    console.log("path", path);
     for (var i = 0; i < links.length; i++){links[i].classList.remove("active")};
 
     if (path == "attorney/overview") {
@@ -244,7 +245,7 @@ function get_active_button() {
     else if (path == "client/news") {
       $nav.querySelector(".news").classList.add("navbar__item--active");
     } 
-  } catch { null }
+  //} catch { null }
 };
   
   function ajax_get_reload(url, history_enable, ajax) {
