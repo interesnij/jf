@@ -234,7 +234,7 @@ pub struct MatterrrData {
     pub unread_document_count: i32,
     pub unread_message_count:  i32,
     pub due_amount:            i32,
-    pub envelope_data:         Option<EnvelopeMatterrData>, 
+    pub envelope_data:         Option<crate::views::EnvelopeMatterrData>, 
 }  
 
 
