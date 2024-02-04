@@ -392,7 +392,7 @@ pub struct DocumentData {
     pub shared_with_data:   Vec<crate::utils::UserSmallData>,
     pub created_by:         i32,
     pub created_by_data:    crate::utils::UserCardData,
-    //pub r#type:             String, 
+    pub r#type:             String, 
 }
 
 #[derive(Debug, Deserialize)]
@@ -429,7 +429,7 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
         let attorney:    String;
         let matter:      String;
         let owner:       String;
-        //let _type:       String;
+        let _type:       String;
         let shared_with: String;
 
         let params_some = web::Query::<DocumentsParams>::from_query(&req.query_string());
@@ -447,7 +447,7 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             attorney = gett_string_withi32(params.attorney, "&attorney=".to_string());
             matter = gett_string_withi32(params.matter, "&matter=".to_string()); 
             owner = gett_string_withi32(params.owner, "&owner=".to_string());
-            //_type = get_string_with_string(params.r#type.clone());
+            _type = get_string_with_string(params.r#type.clone());
             shared_with = gett_string_withi32(params.shared_with, "&shared_with=".to_string());
         }
         else {
@@ -463,7 +463,7 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             attorney = String::new();
             matter = String::new();
             owner = String::new();
-            //_type = String::new();
+            _type = String::new();
             shared_with = String::new();
         }
         let url = concat_string!(
@@ -480,7 +480,7 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             attorney,
             matter,
             owner,
-            //"&type=", _type,
+            "&type=", _type,
             shared_with
         );
         let resp = request_get::<crate::views::DocumentsData> (
