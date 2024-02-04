@@ -166,8 +166,8 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
 #[derive(Debug, Deserialize)]
 pub struct AttorneyMattersParams {
     pub ordering:    Option<String>,
-    pub limit:       Option<i64>,
     pub offset:      Option<i64>,
+    pub limit:       Option<i64>,
     pub search:      Option<String>,
     pub attorney:    Option<i32>,
     pub status:      Option<String>,
@@ -291,9 +291,9 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
         let url = concat_string!(
             API.to_owned(),
             "business/matters/?ordering=", ordering,
-            "&search=", search,
             "&offset=", offset,
             "&limit=", limit,
+            "&search=", search,
             "&attorney=", attorney,
             "&status=", status,
             "&shared_with=", shared_with
