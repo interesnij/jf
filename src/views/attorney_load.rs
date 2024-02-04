@@ -74,10 +74,10 @@ pub struct LeadOrClientData {
 
 #[derive(Debug, Deserialize)]
 pub struct LeadsAndClientsData { 
-    pub count:      i32,
-    pub next:       Option<String>,
-    pub page_count: i32,
-    pub previous:   Option<String>,
+    //pub count:      i32,
+    //pub next:       Option<String>,
+    //pub page_count: i32,
+    //pub previous:   Option<String>,
     pub results:    Vec<LeadOrClientData>,
 }
 
@@ -121,7 +121,7 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             "&limit=", limit,
             "&type=", _type
         );
-        let resp = request_get::<crate::views::LeadsAndClientsData> (
+        let resp = request_get::<LeadsAndClientsData> (
             url,
             &request_user.key
         ).await;
