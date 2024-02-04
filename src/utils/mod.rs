@@ -224,13 +224,13 @@ pub fn get_string_withi32(value: Option<i32>) -> String {
     if value.is_some() {
         return value.unwrap().to_string();
     }
-    return "/".to_string();
+    return "".to_string();
 } 
-pub fn get_some_string_withi32(value: Option<i32>) -> Option<String> {
+pub fn gett_string_withi32(value: Option<i32>, f: String) -> Option<String> {
     if value.is_some() {
-        return Some(value.unwrap().to_string());
+        return f + &value.unwrap().to_string();
     }
-    return None;
+    return "".to_string();
 }
 pub fn get_id_withi32(value: Option<i32>) -> i32 {
     if value.is_some() {

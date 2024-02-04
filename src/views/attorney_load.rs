@@ -443,12 +443,12 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             is_template = get_string_withbool(params.is_template);
             is_parent = get_string_withbool(params.is_parent);
             is_vault = get_string_withbool(params.is_vault);
-            client = get_string_withi32(params.client); 
-            attorney = get_string_withi32(params.attorney);
-            matter = get_string_withi32(params.matter); 
-            owner = get_string_withi32(params.owner);
+            client = gett_string_withi32(params.client, "&client=".to_string()); 
+            attorney = gett_string_withi32(params.attorney, "&attorney=".to_string());
+            matter = gett_string_withi32(params.matter, "&matter=".to_string()); 
+            owner = gett_string_withi32(params.owner, "&owner=".to_string());
             //_type = get_string_with_string(params.r#type.clone());
-            shared_with = get_string_withi32(params.shared_with);
+            shared_with = gett_string_withi32(params.shared_with, "&shared_with=".to_string());
         }
         else {
             ordering = String::new();
@@ -476,12 +476,12 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             "&is_template=", is_template,
             "&is_parent=", is_parent,
             "&is_vault=", is_vault,
-            "&client=", client,
-            "&attorney=", attorney,
-            "&matter=", matter,
-            "&owner=", owner,
+            client,
+            attorney,
+            matter,
+            owner,
             //"&type=", _type,
-            "&shared_with=", shared_with
+            shared_with
         );
         let resp = request_get::<crate::views::DocumentsData> (
             url,
