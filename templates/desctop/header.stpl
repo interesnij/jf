@@ -1,5 +1,7 @@
 <div class="main-layout">
  <% if is_ajax == 1 { %>
+    <span id="ajax">
+        <span id="reload_block">
     <% if request_user.user_type == "client" { %>
         <% include!("client_sidebar.stpl"); %>
     <% } else { %>
@@ -8,6 +10,3 @@
     <div class="main-layout__content">
         <% include!("navbar.stpl"); %>
  <% } %>
-
-<span id="ajax">
-    <span id="reload_block">

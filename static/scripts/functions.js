@@ -130,7 +130,7 @@ function load_data() {
     link.open( 'GET', blocks[i].getAttribute("data-link"), true );
     link.onreadystatechange = function () {
       if ( link.readyState == 4 && link.status == 200 ) {
-          blocks[i],innerHTML = link.responseText;
+          blocks[i].innerHTML = link.responseText;
       } else {
           console.log("error");
           return 0;
@@ -205,7 +205,6 @@ function get_document_opacity_0() {
           //
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
-          sidebar = elem_.querySelector(".sidebar");
   
           rtr.innerHTML = elem_.innerHTML;
           _meta = rtr.querySelector(".doc_title");

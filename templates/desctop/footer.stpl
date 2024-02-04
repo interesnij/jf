@@ -1,9 +1,9 @@
 
 <div id="fullscreens_container"></div>
-    </span>
-</span>
  <% if is_ajax == 1 { %>
-</div>
+            </span>
+        </span>
+    </div>
 <% } %>
 
 </div>
