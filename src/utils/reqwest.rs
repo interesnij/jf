@@ -50,8 +50,8 @@ where
             true => {
                 match resp.json::<T>().await{
                     Ok(data) => Ok(data),
-                    Err(_) => {
-                        println!("Failed parse body");
+                    Err(e) => {
+                        println!(e);
                         Err(0)
                     },
                 }
