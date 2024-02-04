@@ -1375,7 +1375,7 @@ pub async fn attorney_contacts_page(req: HttpRequest) -> actix_web::Result<HttpR
     }
 }
 
-pub async fn attorney_chats_clients_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_chats_clients_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -1383,7 +1383,7 @@ pub async fn attorney_chats_clients_page(req: HttpRequest, _id: web::Path<i32>) 
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/chats/clients".to_string() + &_id.to_string();
+        let link = "/attorney/chats/clients".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Chats".to_string();
@@ -1542,7 +1542,7 @@ pub async fn attorney_chat_page(req: HttpRequest, _id: web::Path<i32>) -> actix_
     }
 }
 
-pub async fn attorney_chats_opportunities_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_chats_opportunities_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -1550,7 +1550,7 @@ pub async fn attorney_chats_opportunities_page(req: HttpRequest, _id: web::Path<
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/chats/opportunities".to_string() + &_id.to_string();
+        let link = "/attorney/chats/opportunities".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Chats".to_string();
@@ -1623,7 +1623,7 @@ pub async fn attorney_chats_opportunities_page(req: HttpRequest, _id: web::Path<
     }
 }
 
-pub async fn attorney_chats_leads_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_chats_leads_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -1631,7 +1631,7 @@ pub async fn attorney_chats_leads_page(req: HttpRequest, _id: web::Path<i32>) ->
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/chats/leads".to_string() + &_id.to_string();
+        let link = "/attorney/chats/leads".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Chats".to_string();
@@ -1704,7 +1704,7 @@ pub async fn attorney_chats_leads_page(req: HttpRequest, _id: web::Path<i32>) ->
     }
 }
 
-pub async fn attorney_chats_network_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_chats_network_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -1712,7 +1712,7 @@ pub async fn attorney_chats_network_page(req: HttpRequest, _id: web::Path<i32>) 
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/chats/network".to_string() + &_id.to_string();
+        let link = "/attorney/chats/network".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Chats".to_string();
@@ -1785,7 +1785,7 @@ pub async fn attorney_chats_network_page(req: HttpRequest, _id: web::Path<i32>) 
     }
 }
 
-pub async fn attorney_bank_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_bank_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -1793,7 +1793,7 @@ pub async fn attorney_bank_page(req: HttpRequest, _id: web::Path<i32>) -> actix_
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/bank".to_string() + &_id.to_string();
+        let link = "/attorney/bank".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Bank Accounts".to_string();
@@ -1866,7 +1866,7 @@ pub async fn attorney_bank_page(req: HttpRequest, _id: web::Path<i32>) -> actix_
     }
 }
 
-pub async fn attorney_engagement_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_engagement_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -1874,7 +1874,7 @@ pub async fn attorney_engagement_page(req: HttpRequest, _id: web::Path<i32>) -> 
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/engagement".to_string() + &_id.to_string();
+        let link = "/attorney/engagement".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Potential Engagement".to_string();
@@ -1947,7 +1947,7 @@ pub async fn attorney_engagement_page(req: HttpRequest, _id: web::Path<i32>) -> 
     }
 }
 
-pub async fn attorney_submitted_engagement_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_submitted_engagement_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -1955,7 +1955,7 @@ pub async fn attorney_submitted_engagement_page(req: HttpRequest, _id: web::Path
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/engagement/submitted".to_string() + &_id.to_string();
+        let link = "/attorney/engagement/submitted".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Potential Engagement".to_string();
@@ -2028,7 +2028,7 @@ pub async fn attorney_submitted_engagement_page(req: HttpRequest, _id: web::Path
     }
 }
 
-pub async fn attorney_forums_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_forums_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -2036,7 +2036,7 @@ pub async fn attorney_forums_page(req: HttpRequest, _id: web::Path<i32>) -> acti
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/forums".to_string() + &_id.to_string();
+        let link = "/attorney/forums".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Forums".to_string();
@@ -2109,7 +2109,7 @@ pub async fn attorney_forums_page(req: HttpRequest, _id: web::Path<i32>) -> acti
     }
 }
 
-pub async fn attorney_my_posts_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_my_posts_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -2117,7 +2117,7 @@ pub async fn attorney_my_posts_page(req: HttpRequest, _id: web::Path<i32>) -> ac
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/forums/my-posts".to_string() + &_id.to_string();
+        let link = "/attorney/forums/my-posts".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Posts by me".to_string();
@@ -2190,7 +2190,7 @@ pub async fn attorney_my_posts_page(req: HttpRequest, _id: web::Path<i32>) -> ac
     }
 }
 
-pub async fn attorney_following_posts_page(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+pub async fn attorney_following_posts_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -2198,7 +2198,7 @@ pub async fn attorney_following_posts_page(req: HttpRequest, _id: web::Path<i32>
         let l = 2;
         let title: String;
         let description: String;
-        let link = "/attorney/forums/following".to_string() + &_id.to_string();
+        let link = "/attorney/forums/following".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 { 
             title = "Posts".to_string();

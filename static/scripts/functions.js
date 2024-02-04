@@ -137,12 +137,13 @@ function load_data() {
       link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
     }
     link.onreadystatechange = function () {
-      if ( link.readyState == 4 && link.status == 200 ) {
+      //if ( link.readyState == 4 && link.status == 200 ) {
           blocks[i].innerHTML = link.responseText;
-      } else {
-          console.log("error");
-          return 0;
-      }};
+      //} else {
+      //    console.log("error");
+      //    return 0;
+      //}
+    };
     link.send();
   } 
 }
