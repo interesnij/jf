@@ -51,7 +51,7 @@ where
                 match resp.json::<T>().await{
                     Ok(data) => Ok(data),
                     Err(e) => {
-                        println!(e);
+                        println!("{}", e);
                         Err(0)
                     },
                 }
