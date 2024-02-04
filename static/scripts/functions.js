@@ -187,8 +187,7 @@ function get_document_opacity_0() {
 
 function get_active_button() {
   //try {
-    $nav = document.body.querySelector(".navbar");
-    links = $nav.querySelectorAll(".navbar__item");
+    links = document.body.querySelectorAll(".navbar__item");
     path = document.location.pathname;
     console.log("path", path);
     for (var i = 0; i < links.length; i++){links[i].classList.remove("active")};
