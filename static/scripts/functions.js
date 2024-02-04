@@ -197,7 +197,7 @@ function get_document_opacity_0() {
       if ( this.readyState == 4 && this.status == 200 ) {
         meta_block = document.body.querySelector('.doc_title');
         // статистика
-  
+        
         try { 
           $link = document.location.pathname;
           meta_block = document.body.querySelector(".doc_title");
@@ -226,7 +226,7 @@ function get_document_opacity_0() {
         }
         load_data();
         //get_page_view_time(120);
-        scrolled(rtr);
+        scrolled(meta_block);
         //get_stat_meta($link, $title, $object_id, $page_id);
         get_document_opacity_1();
       }
