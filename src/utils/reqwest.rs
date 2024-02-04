@@ -49,9 +49,12 @@ where
         match resp.status().is_success(){
             true => {
                 match resp.json::<T>().await{
-                    Ok(data) => Ok(data),
+                    Ok(data) => {
+                        println!("data {}", data);
+                        Ok(data)
+                    },
                     Err(e) => {
-                        println!("{}", e);
+                        println!("error {}", e);
                         Err(0)
                     },
                 }
