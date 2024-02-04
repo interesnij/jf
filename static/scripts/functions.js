@@ -193,56 +193,56 @@ function get_active_button() {
     for (var i = 0; i < links.length; i++){links[i].classList.remove("active")};
 
     if (path == "attorney/overview") {
-      $nav.querySelector(".overview").classList.add("navbar__item--active");
+      document.body.querySelector(".overview").classList.add("navbar__item--active");
     }
     else if (path == "attorney/matter") {
-      $nav.querySelector(".matters").classList.add("navbar__item--active");
+      document.body.querySelector(".matters").classList.add("navbar__item--active");
     }
     else if (path == "attorney/leads") {
-      $nav.querySelector(".leads").classList.add("navbar__item--active");
+      document.body.querySelector(".leads").classList.add("navbar__item--active");
     }
     else if (path == "attorney/documents") {
-      $nav.querySelector(".documents").classList.add("navbar__item--active");
+      document.body.querySelector(".documents").classList.add("navbar__item--active");
     }
     else if (path == "attorney/chat") {
-      $nav.querySelector(".chats").classList.add("navbar__item--active");
+      document.body.querySelector(".chats").classList.add("navbar__item--active");
     }
     else if (path == "attorney/billing") {
-      $nav.querySelector(".billing").classList.add("navbar__item--active");
+      document.body.querySelector(".billing").classList.add("navbar__item--active");
     }
     else if (path == "attorney/invoices") {
-      $nav.querySelector(".invoices").classList.add("navbar__item--active");
+      document.body.querySelector(".invoices").classList.add("navbar__item--active");
     }
     else if (path == "attorney/bank") {
-      $nav.querySelector(".bank").classList.add("navbar__item--active");
+      document.body.querySelector(".bank").classList.add("navbar__item--active");
     }
     else if (path == "attorney/engagement") {
-      $nav.querySelector(".engagement").classList.add("navbar__item--active");
+      document.body.querySelector(".engagement").classList.add("navbar__item--active");
     }
     else if (path == "attorney/news") {
-      $nav.querySelector(".news").classList.add("navbar__item--active");
+      document.body.querySelector(".news").classList.add("navbar__item--active");
     }
     else if (path == "attorney/forums") {
-      $nav.querySelector(".forums").classList.add("navbar__item--active");
+      document.body.querySelector(".forums").classList.add("navbar__item--active");
     }
     else if (path == "attorney/contacts") {
-      $nav.querySelector(".contacts").classList.add("navbar__item--active");
+      document.body.querySelector(".contacts").classList.add("navbar__item--active");
     }
 
     else if (path == "/client/overview") {
-      $nav.querySelector(".overview").classList.add("navbar__item--active");
+      document.body.querySelector(".overview").classList.add("navbar__item--active");
     }
     else if (path == "client/chat") {
-      $nav.querySelector(".engagement").classList.add("navbar__item--active");
+      document.body.querySelector(".engagement").classList.add("navbar__item--active");
     }
     else if (path == "client/find") {
-      $nav.querySelector(".find").classList.add("navbar__item--active");
+      document.body.querySelector(".find").classList.add("navbar__item--active");
     }
     else if (path == "client/forums") {
-      $nav.querySelector(".forums").classList.add("navbar__item--active");
+      document.body.querySelector(".forums").classList.add("navbar__item--active");
     }
     else if (path == "client/news") {
-      $nav.querySelector(".news").classList.add("navbar__item--active");
+      document.body.querySelector(".news").classList.add("navbar__item--active");
     } 
   //} catch { null }
 };
