@@ -176,7 +176,7 @@ pub struct AttorneyMattersParams {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct EnvelopeMatterrData { 
+pub struct EnvelopeMatterrData {  
     pub id:          i32,
     pub docusign_id: i32,
     pub matter:      i32,
@@ -193,13 +193,13 @@ pub struct MatterrrData {
     pub client_data:     crate::views::ClientofMatterData,
     pub attorney:        i32,
     pub attorney_data:   crate::views::AttorneyofMatterData,
-    pub code:            String,
+    pub code:            String, 
     pub title:           String,
     pub description:     String,
     pub fees_earned:     Option<String>,
     pub rate:            String,
-    pub rate_type:       Vec<crate::utils::RateTypeData>,
-    pub country:         i32,
+    pub rate_type:       crate::utils::RateTypeData,
+    pub country:         i32, 
     pub country_data:    crate::utils::CountryData,
     pub speciality:      i32,
     pub speciality_data: crate::utils::SpecialitiesData,
