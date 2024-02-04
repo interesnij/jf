@@ -1554,7 +1554,7 @@ pub struct ClientData {
     pub state:             Option<i32>,
     pub state_data:        Option<crate::utils::StateData>,
     pub city:              i32,
-    pub city_data:         crate::utils::CityData, 
+    pub city_data:         Option<crate::utils::CityData>, 
     pub timezone:          i32,
     pub timezone_data:     crate::utils::TimezoneData,
     pub help_description:  Option<String>,
