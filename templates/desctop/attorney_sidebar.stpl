@@ -34,7 +34,7 @@
         </a>
         <a class="navbar__item ripple-effect bank ripple-effect-to-right ajax" href="/attorney/bank">
             <img src="/static/images/nav_bank.svg" alt="">
-            <span>Bank Accounts</span>
+            <span>Bank Accounts</span> 
         </a>
         <a class="navbar__item ripple-effect engagement ripple-effect-to-right ajax" href="/attorney/engagement">
             <img src="/static/images/nav_bid.svg" alt="">
