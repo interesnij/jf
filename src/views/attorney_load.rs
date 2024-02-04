@@ -15,7 +15,7 @@ use serde::{
 use crate::utils::{
     get_string_with_string, get_limit, get_string_withi64, get_string_withi32, 
     get_string_withbool, get_request_user, AuthResponseData, request_get, API,
-    get_id_withi32, get_string_withdate,
+    get_id_withi32, get_string_withdate, get_some_string_withi32,
 };
 
 
@@ -443,12 +443,12 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             is_template = get_string_withbool(params.is_template);
             is_parent = get_string_withbool(params.is_parent);
             is_vault = get_string_withbool(params.is_vault);
-            client = get_string_withi32(params.client);
-            attorney = get_string_withi32(params.attorney);
-            matter = get_string_withi32(params.matter);
-            owner = get_string_withi32(params.owner);
+            client = get_some_string_withi32(params.client);
+            attorney = get_some_string_withi32(params.attorney);
+            matter = get_some_string_withi32(params.matter); 
+            owner = get_some_string_withi32(params.owner);
             //_type = get_string_with_string(params.r#type.clone());
-            shared_with = get_string_withi32(params.shared_with);
+            shared_with = get_some_string_withi32(params.shared_with);
         }
         else {
             ordering = String::new();

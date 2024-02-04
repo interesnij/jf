@@ -226,6 +226,12 @@ pub fn get_string_withi32(value: Option<i32>) -> String {
     }
     return String::new();
 }
+pub fn get_some_string_withi32(value: Option<i32>) -> Option<String> {
+    if value.is_some() {
+        return Some(value.unwrap().to_string());
+    }
+    return None;
+}
 pub fn get_id_withi32(value: Option<i32>) -> i32 {
     if value.is_some() {
         return value.unwrap();
