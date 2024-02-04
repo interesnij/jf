@@ -186,13 +186,13 @@ pub struct MatterData {
     pub fee_type:         i32,
     pub fee_note:         String,
     pub invite:          Option<i32>,
-    pub invite_data:     Option<InviteMatterData>,
+    //pub invite_data:     Option<InviteMatterData>,
 
     pub unread_document_count: i32,
     pub unread_message_count:  i32,
     pub due_amount:            i32,
-    pub envelope_data:    Option<EnvelopeMatterData>,
-}  
+    //pub envelope_data:    Option<EnvelopeMatterData>,
+} 
 
 #[derive(Debug, Deserialize)]
 pub struct MattersData { 
