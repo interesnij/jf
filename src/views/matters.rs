@@ -49,7 +49,7 @@ pub struct ClientofMatterData {
     pub phone:        String,
     pub country_data: crate::utils::CountryData,
     pub state_data:   Option<crate::utils::StateData>,
-    pub city_data:    crate::utils::CityData,
+    pub city_data:    Option<crate::utils::CityData>,
     pub address1:     String,
     pub address2:     String,
     pub zip_code:     String,
