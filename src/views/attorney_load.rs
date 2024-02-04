@@ -459,12 +459,12 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             is_template = String::new();
             is_parent = String::new();
             is_vault = String::new();
-            client = "null".to_string();
-            attorney = "null".to_string();
-            matter = "null".to_string();
-            owner = "null".to_string();
+            client = String::new();
+            attorney = String::new();
+            matter = String::new();
+            owner = String::new();
             //_type = String::new();
-            shared_with = "null".to_string();
+            shared_with = String::new();
         }
         let url = concat_string!(
             API.to_owned(),
