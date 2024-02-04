@@ -269,3 +269,5 @@ function get_document_opacity_0() {
       }
       ajax_link.send();
 }
+
+check_first_load();
