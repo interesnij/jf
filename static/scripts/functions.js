@@ -126,14 +126,16 @@ function disconnect() {
 
 function load_data() {
   blocks = document.querySelectorAll(".load_content");
-  link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  
   for (let i = 0; i < blocks.length; i++) {
-    if (localStorage.getItem('request_data') !== null) {
-      link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
-    }
+    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    
     console.log("link", blocks[i].getAttribute("data-link"));
     console.log("block", blocks[i]);
     link.open( 'GET', blocks[i].getAttribute("data-link"), true );
+    if (localStorage.getItem('request_data') !== null) {
+      link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    }
     link.onreadystatechange = function () {
       if ( link.readyState == 4 && link.status == 200 ) {
           blocks[i].innerHTML = link.responseText;
