@@ -94,11 +94,13 @@ on('body', 'click', '#signup', function() {
 });
 
 on('body', 'click', '.ajax', function(event) {
-  event.preventDefault();
-  //if (this.getAttribute("href") == window.location.pathname){
-  //  toast_info("Вы уже на этой странице");
-  //  return
-  //};
-  ajax_get_reload(this.getAttribute("href"), true, 2)
+    event.preventDefault();
+    if (this.querySelector.contains("navbar__item")) {
+        try {
+          document.body.querySelector("header__title").innerHTML = this.innerHTML;
+        } 
+        catch {}
+    }
+    ajax_get_reload(this.getAttribute("href"), true, 2);
 });
 

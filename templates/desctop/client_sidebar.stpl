@@ -5,23 +5,23 @@
     <div>
         <div class="navbar__title"></div>
     <div>
-        <a aria-current="page" class="navbar__item ripple-effect ripple-effect-to-right navbar__item--active ajax" href="/client/overview">
+        <a aria-current="page" class="overview navbar__item ripple-effect ripple-effect-to-right navbar__item--active ajax" href="/client/overview">
             <img src="/static/images/nav_dashboard_active.svg" alt="">
-            <span>Dashboard</span>
+            <span>Dashboard</span> 
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/client/chats">
+        <a class="navbar__item ripple-effect chats ripple-effect-to-right ajax" href="/client/chats">
             <img src="/static/images/nav_chat.svg" alt="">
             <span>Chats</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/client/find">
+        <a class="navbar__item ripple-effect find ripple-effect-to-right ajax" href="/client/find">
             <img src="/static/images/nav_search.svg" alt="">
             <span>Find an Attorney</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/client/forums">
+        <a class="navbar__item ripple-effect forums ripple-effect-to-right ajax" href="/client/forums">
             <img src="/static/images/nav_forum.svg" alt="">
             <span>Forums</span>
         </a>
-        <a class="navbar__item ripple-effect ripple-effect-to-right ajax" href="/client/news">
+        <a class="navbar__item ripple-effect news ripple-effect-to-right ajax" href="/client/news">
             <img src="/static/images/nav_news.svg" alt="">
             <span>JusLaw News</span>
         </a>

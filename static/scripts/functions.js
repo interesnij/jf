@@ -182,11 +182,74 @@ function get_document_opacity_0() {
     overlay = document.body.querySelector(".body_overlay");
     overlay.style.visibility = "hidden";
     overlay.style.opacity = "0";
-  };
+};
+
+
+function get_active_button() {
+  try {
+    $nav = document.body.querySelector(".navbar");
+    links = $nav.querySelectorAll(".navbar__item");
+    path = document.location.pathname;
+    for (var i = 0; i < links.length; i++){links[i].classList.remove("active")};
+
+    if (path == "attorney/overview") {
+      $nav.querySelector(".overview").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/matter") {
+      $nav.querySelector(".matters").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/leads") {
+      $nav.querySelector(".leads").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/documents") {
+      $nav.querySelector(".documents").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/chat") {
+      $nav.querySelector(".chats").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/billing") {
+      $nav.querySelector(".billing").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/invoices") {
+      $nav.querySelector(".invoices").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/bank") {
+      $nav.querySelector(".bank").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/engagement") {
+      $nav.querySelector(".engagement").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/news") {
+      $nav.querySelector(".news").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/forums") {
+      $nav.querySelector(".forums").classList.add("navbar__item--active");
+    }
+    else if (path == "attorney/contacts") {
+      $nav.querySelector(".contacts").classList.add("navbar__item--active");
+    }
+
+    else if (path == "/client/overview") {
+      $nav.querySelector(".overview").classList.add("navbar__item--active");
+    }
+    else if (path == "client/chat") {
+      $nav.querySelector(".engagement").classList.add("navbar__item--active");
+    }
+    else if (path == "client/find") {
+      $nav.querySelector(".find").classList.add("navbar__item--active");
+    }
+    else if (path == "client/forums") {
+      $nav.querySelector(".forums").classList.add("navbar__item--active");
+    }
+    else if (path == "client/news") {
+      $nav.querySelector(".news").classList.add("navbar__item--active");
+    } 
+  } catch { null }
+};
   
   function ajax_get_reload(url, history_enable, ajax) {
     var ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-    ajax_link.open( 'GET', url + "?ajax=" + ajax, true );
+    ajax_link.open( 'GET', url + "?ajax=" + ajax, true );  
   
     ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     if (localStorage.getItem('request_data') !== null) {
@@ -224,10 +287,9 @@ function get_document_opacity_0() {
         if (history_enable) { 
           window.history.pushState ({"url":url}, $title, url);
         }
+        get_active_button();
         load_data();
-        //get_page_view_time(120);
         scrolled(meta_block);
-        //get_stat_meta($link, $title, $object_id, $page_id);
         get_document_opacity_1();
       }
     }
@@ -252,12 +314,10 @@ function get_document_opacity_0() {
       }
       ajax_link.onreadystatechange = function () {
         if ( this.readyState == 4 && this.status == 200 ) {
-            //get_custom_design();
             elem_ = document.createElement('span');
             elem_.innerHTML = ajax_link.responseText;
             span.innerHTML = elem_.innerHTML;
-            //get_or_create_cookie_user();
-            //get_active_button();
+            get_active_button();
             load_data();
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":loc}, document.title, loc);
