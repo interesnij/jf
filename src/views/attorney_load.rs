@@ -127,9 +127,9 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
         ).await;
         if resp.is_ok() {
             let data = resp.expect("E.");
-            count = data.count;
-            next = data.next;
-            page_count = data.page_count;
+            count = 0;
+            next = None;
+            page_count = 0;
             object_list = data.results;
         }
         else {
