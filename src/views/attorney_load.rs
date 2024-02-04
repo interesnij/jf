@@ -448,7 +448,7 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             matter = get_string_with_string(params.matter); 
             owner = get_string_with_string(params.owner);
             //_type = get_string_with_string(params.r#type.clone());
-            shared_with = get_some_string_withi32(params.shared_with);
+            shared_with = get_string_with_string(params.shared_with);
         }
         else {
             ordering = String::new();
