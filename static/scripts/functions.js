@@ -127,6 +127,9 @@ function load_data() {
   blocks = document.querySelectorAll(".load_content");
   for (let i = 0; i < blocks.length; i++) {
     link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    if (localStorage.getItem('request_data') !== null) {
+      link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    }
     link.open( 'GET', blocks[i].getAttribute("data-link"), true );
     link.onreadystatechange = function () {
       if ( link.readyState == 4 && link.status == 200 ) {
@@ -287,7 +290,7 @@ function get_active_button() {
         if (history_enable) { 
           window.history.pushState ({"url":url}, $title, url);
         }
-        get_active_button();
+        //get_active_button();
         load_data();
         scrolled(meta_block);
         get_document_opacity_1();
@@ -317,7 +320,7 @@ function get_active_button() {
             elem_ = document.createElement('span');
             elem_.innerHTML = ajax_link.responseText;
             span.innerHTML = elem_.innerHTML;
-            get_active_button();
+            //get_active_button();
             load_data();
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":loc}, document.title, loc);

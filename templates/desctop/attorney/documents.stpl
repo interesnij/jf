@@ -78,14 +78,7 @@
         </div>
 
         <div class="my-documents-page__content">
-          <div class="breadcrumb-control">
-            <div class="breadcrumb-control__item">
-              <div class="text-ellipsis cursor-pointer">My Documents</div>
-            </div>
-          </div>  
-
           <span class="load_content" data-link="/load/documents?search=&limit=10&offset=0&is_template=false&is_parent=true&ordering=-modified&is_vault=false"></span>
-
         </div>
       </div>
     </div>

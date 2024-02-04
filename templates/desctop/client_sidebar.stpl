@@ -5,7 +5,7 @@
     <div>
         <div class="navbar__title"></div>
     <div>
-        <a aria-current="page" class="overview navbar__item ripple-effect ripple-effect-to-right navbar__item--active ajax" href="/client/overview">
+        <a aria-current="page" class="overview navbar__item ripple-effect ripple-effect-to-right ajax" href="/client/overview">
             <img src="/static/images/nav_dashboard_active.svg" alt="">
             <span>Dashboard</span> 
         </a>
