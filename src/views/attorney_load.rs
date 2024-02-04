@@ -206,7 +206,7 @@ pub struct MatterrrData {
     pub state:           i32,
     pub state_data:      Option<crate::utils::StateData>,
     pub city:            i32,
-    pub city_data:       crate::utils::CityData,
+    pub city_data:       Option<crate::utils::CityData>,
     pub status:          String,
     pub stage:           i32, 
     pub stage_data:      crate::utils::StageData,
