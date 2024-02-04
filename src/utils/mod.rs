@@ -226,7 +226,7 @@ pub fn get_string_withi32(value: Option<i32>) -> String {
     }
     return "".to_string();
 } 
-pub fn gett_string_withi32(value: Option<i32>, f: String) -> Option<String> {
+pub fn gett_string_withi32(value: Option<i32>, f: String) -> String {
     if value.is_some() {
         return f + &value.unwrap().to_string();
     }
