@@ -190,7 +190,7 @@ function get_active_button() {
     links = document.body.querySelectorAll(".navbar__item");
     path = document.location.pathname;
     console.log("path", path);
-    for (var i = 0; i < links.length; i++){links[i].classList.remove("active")};
+    for (var i = 0; i < links.length; i++){links[i].classList.remove("navbar__item--active")};
 
     if (path == "attorney/overview") {
       document.body.querySelector(".overview").classList.add("navbar__item--active");
