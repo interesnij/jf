@@ -15,7 +15,7 @@ use serde::{
 use crate::utils::{
     get_string_with_string, get_limit, get_string_withi64, get_string_withi32, 
     get_string_withbool, get_request_user, AuthResponseData, request_get, API,
-    get_id_withi32, get_string_withdate, get_some_string_withi32,
+    get_id_withi32, get_string_withdate, gett_string_withi32,
 };
 
 
