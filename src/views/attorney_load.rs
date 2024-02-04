@@ -181,7 +181,7 @@ pub struct EnvelopeMatterrData {
     pub matter:      i32,
     pub status:      String,
     pub r#type:      String,
-    pub documents:   Vec<EnvelopeDocumentData>,
+    pub documents:   Vec<crate::views::EnvelopeDocumentData>,
 }
 
 #[derive(Debug, Deserialize)]
