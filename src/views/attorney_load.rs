@@ -1016,9 +1016,9 @@ pub struct AddressData {
     pub country:  String,
     pub state:    String,
     pub city:     Option<String>,
-    pub address1: String,
-    pub address2: String,
-    pub zip_code: String,
+    //pub address1: String,
+    //pub address2: String,
+    //pub zip_code: String,
 } 
 #[derive(Debug, Deserialize, Clone)]
 pub struct UserChatCardData { 
