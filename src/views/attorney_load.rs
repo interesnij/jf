@@ -750,7 +750,7 @@ pub struct TimeBillingData {
     pub matter_data:           MatterSmallData,
     pub created_by:            i32,
     pub created_by_data:       crate::utils::UserCardData,
-    pub invoice:               i32,
+    //pub invoice:               i32,
     pub description:           String,
     pub time_spent:            Option<String>,
     pub hourly_rate:           Option<String>,
