@@ -1121,7 +1121,7 @@ impl MessageData {
 #[derive(Debug, Deserialize)]
 pub struct ChatData { 
     pub id:                i32, 
-    pub title:             String,
+    pub title:             Option<String>,
     pub participants:      Vec<i32>,
     pub participants_data: Vec<UserChatCardData>,
     pub last_message:      crate::views::MessageData2,
@@ -1131,7 +1131,7 @@ pub struct ChatData {
     pub chat_type:         String,
     pub created:           String,
 }
-impl ChatData {
+impl ChatData { 
     pub fn get_chat_user(&self, user_id: &String) -> UserChatCardData {
         let participants = self.participants_data.clone();
         let mut cur_user = UserChatCardData { 
