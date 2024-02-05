@@ -1040,7 +1040,45 @@ pub struct FilesData {
     pub title:   String,
     pub size:    String,
     pub file:    String,
-} 
+}
+
+#[derive(Debug, Deserialize)]
+pub struct MessageData2 { 
+    pub id:         i32, 
+    pub chat:       i32,
+    pub text:       String,
+    pub r#type:     String,
+    pub files:      Vec<FilesData>,
+    pub timestamp1: Option<String>,
+    pub created:    String,
+}
+impl MessageData2 {
+    pub fn get_preview(&self) -> String {
+        if self.text.is_empty() {
+            if self.text.len() > 60 {
+                return self.text[..60].to_string();
+            }
+            return self.text.to_string();
+        }
+        else {
+            let _len = self.files.len();
+            if _len > 1 {
+                return "Attached files".to_string();
+            }
+            else if _len == 1 {
+                let file = self.files[0].file.clone();
+                if file.contains(".wav") {
+                    return "Voice message".to_string();
+                }
+                else {
+                    return "Attached file".to_string();
+                }
+            }
+            return "".to_string();
+        }
+    }
+}
+
 #[derive(Debug, Deserialize)]
 pub struct MessageData { 
     pub id:          i32, 
@@ -1086,7 +1124,7 @@ pub struct ChatData {
     pub title:             String,
     pub participants:      Vec<i32>,
     pub participants_data: Vec<UserChatCardData>,
-    pub last_message:      crate::views::MessageData,
+    pub last_message:      crate::views::MessageData2,
     pub is_favorite:       bool,
     pub is_archived:       bool,
     pub is_group:          bool,
