@@ -31,7 +31,7 @@
         <span class="chat-message__name"><%= author.first_name %> <%= author.last_name %></span>
       </div>
       <% if !object.text.is_some() { %>
-        <div class="chat-message__content chat-message__content--text"><%= object.text.as_deref().unwrap() %></div>
+        <div class="chat-message__content chat-message__content--text"><%= object.text %></div>
       <% } %>
       <% if object.files.len() > 0 { %>
         <div>
