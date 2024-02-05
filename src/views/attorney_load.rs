@@ -873,7 +873,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             next:         Option<String>,
             page_count:   i32,
             object_list:  Vec<TimeBillingData>,
-            total_fees:   i32,
+            total_fees:   String,
             total_time:   String,
         }
         let body = Template {
