@@ -1037,7 +1037,7 @@ pub struct UserChatCardData {
 #[derive(Debug, Deserialize)]
 pub struct FilesData { 
     pub message: i32,
-    pub title:   String,
+    pub title:   Option<String>,
     pub size:    String,
     pub file:    String,
 }
