@@ -800,7 +800,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         let status:       String;
         let ordering:     String;
         let date__gte:    String;
-        let total_fees:   i64;
+        let total_fees:   String;
         let total_time:   String;
 
         let params_some = web::Query::<TimeBillingParams>::from_query(&req.query_string());
@@ -854,7 +854,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             next = data.next;
             page_count = data.page_count;
             object_list = data.results;
-            total_fees = data.total_fees;
+            total_fees = data.total_fees.to_string();
             total_time = data.total_time;
         }
         else {
@@ -862,7 +862,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             next = None;
             page_count = 0;
             object_list = Vec::new();
-            total_fees = 0.0;
+            total_fees = String::new();
             total_time = String::new();
         }
         #[derive(TemplateOnce)]
