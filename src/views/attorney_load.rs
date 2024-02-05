@@ -1770,7 +1770,7 @@ pub struct PostData {
     pub description:        String,
     pub last_comment_time:  Option<String>,
     pub topic_data:         TopicData,
-    pub proposals:          Vec<ProposalsData>, 
+    pub proposals:          Option<Vec<ProposalsData>>, 
     pub client:             i32,
     pub client_data:        crate::utils::UserCardData,
     pub practice_area_data: crate::utils::PracticeAreaData,
