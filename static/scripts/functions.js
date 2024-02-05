@@ -127,7 +127,6 @@ function disconnect() {
 function load_data() { 
   blocks = document.querySelectorAll(".load_content");
 
-  console.log("blocks.length", blocks.length);
   for (let i = 0; i < blocks.length; i++) {
     if (!blocks[i].firstChild) {
       console.log("block no content!!");
