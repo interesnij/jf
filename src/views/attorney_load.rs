@@ -1055,7 +1055,7 @@ pub struct MessageData {
 }
 impl MessageData {
     pub fn get_preview(&self) -> String {
-        if self.text.is_impty() {
+        if self.text.is_empty() {
             if self.text.len() > 60 {
                 return self.text[..60].to_string();
             }
