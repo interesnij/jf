@@ -744,7 +744,7 @@ pub struct TimeBillingData {
     pub matter:                i32, 
     pub client:                i32, 
     pub client_data:           crate::utils::UserCardData,
-    pub is_billable:           true,
+    pub is_billable:           bool,
     pub billed_by:             i32,
     pub billed_by_data:        crate::utils::UserCardData,
     pub matter_data:           MatterSmallData,
