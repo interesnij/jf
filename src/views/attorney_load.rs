@@ -13,7 +13,7 @@ use serde::{
     //Serialize
 };
 use crate::utils::{
-    get_string_with_string, get_limit, get_string_withi64, get_string_withi32, 
+    get_string_with_string, get_limit, get_string_withi64,
     get_string_withbool, get_request_user, AuthResponseData, request_get, API,
     get_id_withi32, get_string_withdate, gett_string_withi32,
 };
@@ -275,9 +275,9 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
             limit =  get_limit(params.limit);
             offset = get_string_withi64(params.offset);
             search = get_string_with_string(params.search.clone());
-            attorney = get_string_withi32(params.attorney);
+            attorney = gett_string_withi32(params.attorney, "&attorney=".to_string());
             status = get_string_with_string(params.status.clone());
-            shared_with = get_string_withi32(params.shared_with.clone());
+            shared_with = gett_string_withi32(params.shared_with, "&shared_with=".to_string());
         }
         else {
             ordering = String::new();
@@ -295,9 +295,9 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
             "&offset=", offset,
             "&limit=", limit,
             "&search=", search,
-            "&attorney=", attorney,
+            attorney,
             "&status=", status,
-            "&shared_with=", shared_with
+            shared_with
         );
         let resp = request_get::<crate::views::AttorneyMattersData> (
             url,
@@ -442,7 +442,7 @@ pub async fn documents_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             status = get_string_with_string(params.status.clone());
             is_template = get_string_withbool(params.is_template);
             is_parent = get_string_withbool(params.is_parent);
-            is_vault = get_string_withbool(params.is_vault);
+            is_vault = get_string_withbool(params.is_vault); 
             client = gett_string_withi32(params.client, "&client=".to_string()); 
             attorney = gett_string_withi32(params.attorney, "&attorney=".to_string());
             matter = gett_string_withi32(params.matter, "&matter=".to_string()); 
@@ -636,9 +636,9 @@ pub async fn invoices_load(req: HttpRequest) -> actix_web::Result<HttpResponse> 
             limit =  get_limit(params.limit);
             offset = get_string_withi64(params.offset);
             search = get_string_with_string(params.search.clone());
-            matter = get_string_withi32(params.matter);
-            client = get_string_withi32(params.client);
-            attorney = get_string_withi32(params.attorney);
+            matter = gett_string_withi32(params.matter, "&matter=".to_string());
+            attorney = gett_string_withi32(params.attorney, "&attorney=".to_string());
+            client = gett_string_withi32(params.client, "&client=".to_string());
             status = get_string_with_string(params.status.clone());
             ordering = get_string_with_string(params.ordering.clone());
             period_start = get_string_withdate(params.period_start.clone());
@@ -661,9 +661,9 @@ pub async fn invoices_load(req: HttpRequest) -> actix_web::Result<HttpResponse> 
             "?search=", search,
             "&offset=", offset,
             "&limit=", limit,
-            "&matter=", matter,
-            "&client=", client,
-            "&attorney=", attorney,
+            matter,
+            client,
+            attorney,
             "&status=", status,
             "&ordering=", ordering,
             "&period_start=", period_start
@@ -811,9 +811,9 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             offset = get_string_withi64(params.offset);
             search = get_string_with_string(params.search.clone());
             billing_type = get_string_with_string(params.billing_type.clone());
-            matter = get_string_withi32(params.matter);
-            client = get_string_withi32(params.client);
-            attorney = get_string_withi32(params.attorney);
+            matter = gett_string_withi32(params.matter, "&matter=".to_string());
+            attorney = gett_string_withi32(params.attorney, "&attorney=".to_string());
+            client = gett_string_withi32(params.client, "&client=".to_string());
             status = get_string_with_string(params.status.clone());
             ordering = get_string_with_string(params.ordering.clone());
             date__gte = get_string_withdate(params.date__gte.clone());
@@ -838,9 +838,9 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             "&offset=", offset,
             "&limit=", limit,
             "&billing_type=", billing_type,
-            "&matter=", matter,
-            "&client=", client,
-            "&attorney=", attorney,
+            matter,
+            client,
+            attorney,
             "&status=", status,
             "&ordering=", ordering,
             "&date__gte=", date__gte
@@ -1048,7 +1048,7 @@ pub struct MessageData {
     pub author_data: crate::utils::UserCardData,
     pub r#type:      String,
     pub chat:        i32,
-    pub text:        Option<String>,
+    pub text:        String,
     pub files:       Vec<FilesData>,
     pub timestamp1:  Option<String>,
     pub created:     String,
@@ -1083,7 +1083,7 @@ impl MessageData {
 
 #[derive(Debug, Deserialize)]
 pub struct ChatData { 
-    pub id:                i32,
+    pub id:                i32, 
     pub title:             String,
     pub participants:      Vec<i32>,
     pub participants_data: Vec<UserChatCardData>,
@@ -1580,7 +1580,8 @@ pub async fn notes_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             search = get_string_with_string(params.search.clone());
             ordering = get_string_with_string(params.ordering.clone());
             matter_id = get_id_withi32(params.matter);
-            created_by = get_string_withi32(params.created_by);
+
+            created_by = gett_string_withi32(params.created_by, "&created_by=".to_string()); 
             types = get_string_with_string(params.types.clone());
         } 
         else {
@@ -1600,7 +1601,7 @@ pub async fn notes_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             "&limit=", limit,
             "&offset=", offset,
             "&matter=", matter_id.to_string(),
-            "&created_by=", created_by
+            created_by
         );
         let resp = request_get::<crate::views::NotesData> (
             url,
@@ -1780,9 +1781,9 @@ pub async fn posts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             limit =         get_limit(params.limit);
             offset =        get_string_withi64(params.offset);
             ordering =      get_string_with_string(params.ordering.clone());
-            author =        get_string_withi32(params.author);
+            author =        gett_string_withi32(params.author, "&author=".to_string()); 
             followed =      get_string_withbool(params.followed);
-            comment_count = get_string_withi32(params.comment_count);
+            comment_count = gett_string_withi32(params.comment_count, "&comment_count=".to_string()); 
         } 
         else {
             limit =         String::new();
@@ -1799,9 +1800,9 @@ pub async fn posts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             "?ordering=", ordering,
             "&limit=", limit,
             "&offset=", offset,
-            "&author=", author,
+            author,
             "&followed=", followed,
-            "&comment_count=", comment_count
+            comment_count
         );
         let resp = request_get::<PostsData> (
             url,
@@ -2004,10 +2005,10 @@ pub async fn events_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         let params_some = web::Query::<EventsParams>::from_query(&req.query_string());
         if params_some.is_ok() {
             let params = params_some.unwrap();
-            attorney =   get_string_withi32(params.attorney);
-            client =     get_string_withi32(params.client);
-            paralegal =  get_string_withi32(params.paralegal);
-            ordering =   get_string_with_string(params.ordering.clone());
+            client =    gett_string_withi32(params.client, "&client=".to_string()); 
+            attorney =  gett_string_withi32(params.attorney, "&attorney=".to_string());
+            paralegal = gett_string_withi32(params.paralegal, "&paralegal=".to_string()); 
+            ordering =  get_string_with_string(params.ordering.clone());
         } 
         else {
             attorney =  String::new();
@@ -2020,9 +2021,9 @@ pub async fn events_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             API.to_owned(),
             "promotion/events/",
             "?ordering=", ordering,
-            "&attorney=", attorney,
-            "&client=", client,
-            "&paralegal=", paralegal
+            attorney,
+            client,
+            paralegal
         );
         
         let resp = request_get::<EventsData> (
