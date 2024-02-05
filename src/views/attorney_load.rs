@@ -1055,12 +1055,11 @@ pub struct MessageData {
 }
 impl MessageData {
     pub fn get_preview(&self) -> String {
-        if self.text.is_some() {
-            let _text = self.text.as_deref().unwrap();
-            if _text.len() > 60 {
-                return _text[..60].to_string();
+        if self.text.is_impty() {
+            if self.text.len() > 60 {
+                return self.text[..60].to_string();
             }
-            return _text.to_string();
+            return self.text.to_string();
         }
         else {
             let _len = self.files.len();
