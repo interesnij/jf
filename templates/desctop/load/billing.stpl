@@ -40,7 +40,7 @@
         <div class="billings-page__table-row-item">
           <div class="tag-control tag-control--time my-auto invoice"><%= object.billing_type %></div>
         </div> 
-        <div class="billings-page__table-row-item"><span><%= object.time_spent %></span></div> 
+        <div class="billings-page__table-row-item"><span><% if object.time_spent.is_some() { %><%= object.time_spent.as_deref().unwrap() %><% } %></span></div> 
         <div class="billings-page__table-row-item"><span class="text-ellipsis"><%= object.description %></span></div>
         <div class="billings-page__table-row-item">
             <span>
