@@ -129,24 +129,30 @@ function load_data() {
 
   console.log("blocks.length", blocks.length);
   for (let i = 0; i < blocks.length; i++) {
-    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-    
-    console.log("link", blocks[i].getAttribute("data-link"));
-    console.log("block", blocks[i]);
-    link.open( 'GET', blocks[i].getAttribute("data-link"), true );
-    if (localStorage.getItem('request_data') !== null) {
-      link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    if (!blocks[i].firstChild) {
+      console.log("block no content!!");
+      link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+      
+      console.log("link", blocks[i].getAttribute("data-link"));
+      console.log("block", blocks[i]);
+      link.open( 'GET', blocks[i].getAttribute("data-link"), true );
+      if (localStorage.getItem('request_data') !== null) {
+        link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+      }
+      link.onreadystatechange = function () {
+        //if ( link.readyState == 4 && link.status == 200 ) {
+            console.log("target block", blocks[i]);
+            blocks[i].innerHTML = link.responseText;
+        //} else {
+        //    console.log("error");
+        //    return 0;
+        //}
+      };
+      link.send();
     }
-    link.onreadystatechange = function () {
-      //if ( link.readyState == 4 && link.status == 200 ) {
-          console.log("target block", blocks[i]);
-          blocks[i].innerHTML = link.responseText;
-      //} else {
-      //    console.log("error");
-      //    return 0;
-      //}
-    };
-    link.send();
+    else {
+      console.log("block with content!!");
+    }
   } 
 }
 
