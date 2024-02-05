@@ -1756,7 +1756,30 @@ pub struct ProposalsData {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct PostData { 
+pub struct AttorneyPostData { 
+    pub id:                 i32,
+    pub topic:              i32,
+    pub title:              String,
+    pub last_comment:       Option<PostComment>,
+    pub first_comment:      Option<PostComment>,  
+    pub comment_count:      i32,
+    pub created:            String,
+    pub modified:           String,
+    pub followers_count:    i32,
+    pub followed:           bool,
+    pub description:        String,
+    pub last_comment_time:  Option<String>,
+    pub topic_data:         TopicData,
+    //pub proposals:          Option<Vec<ProposalsData>>, 
+    //pub client:             i32,
+    //pub client_data:        crate::utils::UserCardData,
+    //pub practice_area_data: crate::utils::PracticeAreaData,
+    pub author:             crate::utils::UserSmallData,
+    pub message:            String,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct ClientPostData { 
     pub id:                 i32,
     pub topic:              i32,
     pub title:              String,
@@ -1777,13 +1800,14 @@ pub struct PostData {
     pub author:             crate::utils::UserSmallData,
     pub message:            String,
 }
+
 #[derive(Debug, Deserialize)]
 pub struct PostsData { 
     pub count:      i32,
     pub next:       Option<String>,
     pub page_count: i32,
     pub previous:   Option<String>,
-    pub results:    Vec<PostData>,
+    pub results:    Vec<AttorneyPostData>,
 }
 
 pub async fn posts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
@@ -1795,7 +1819,7 @@ pub async fn posts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         let count:       i32;
         let next:        Option<String>;
         let page_count:  i32;
-        let object_list: Vec<PostData>;
+        let object_list: Vec<AttorneyPostData>;
 
         let ordering:      String; 
         let limit:         String;
@@ -1857,7 +1881,7 @@ pub async fn posts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             count:        i32,
             next:         Option<String>,
             page_count:   i32,
-            object_list:  Vec<PostData>,
+            object_list:  Vec<AttorneyPostData>,
         }
         let body = Template {
             request_user: request_user,
