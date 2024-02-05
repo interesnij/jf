@@ -767,7 +767,7 @@ pub struct TimeBillingData {
     pub attachments_data:      Vec<AttachmentsData>,
     pub time_entries:          Vec<TimeEntryData>,
     pub is_billed:             bool,
-    pub fees:                  i32,
+    //pub fees:                  i32,
 }
 
 #[derive(Debug, Deserialize)]
