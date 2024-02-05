@@ -3,10 +3,10 @@
 <div class="forums-page doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="d-flex">
     <div class="tab-control">
-      <a class="ajax" href="/forums/all-posts">
+      <a class="ajax" href="/forums">
         <div class="tab-control__item"><span>Home</span></div>
       </a>
-      <a aria-current="page">
+      <a aria-current="page"> 
         <div class="tab-control__item tab-control__item--active"><span>My Posts</span></div>
       </a>
       <a class="ajax" href="/forums/following">

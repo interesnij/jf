@@ -3,7 +3,7 @@
 <div class="forums-page doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="d-flex">
     <div class="tab-control">
-      <a class="ajax" href="/forums/all-posts">
+      <a class="ajax" href="/forums">
         <div class="tab-control__item"><span>Home</span></div>
       </a>
       <a class="ajax" href="/forums/my-posts">

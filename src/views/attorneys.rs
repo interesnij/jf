@@ -47,9 +47,9 @@ pub fn attorneys_routes(config: &mut web::ServiceConfig) {
     config.route("/attorney/engagement", web::get().to(attorney_engagement_page));
     config.route("/attorney/engagement/submitted", web::get().to(attorney_submitted_engagement_page));
 
-    config.route("/attorney/forums", web::get().to(attorney_forums_page));
-    config.route("/attorney/forums/my-posts", web::get().to(attorney_my_posts_page));
-    config.route("/attorney/forums/following", web::get().to(attorney_following_posts_page));
+    config.route("/forums", web::get().to(attorney_forums_page));
+    config.route("/forums/my-posts", web::get().to(attorney_my_posts_page));
+    config.route("/forums/following", web::get().to(attorney_following_posts_page));
 
     config.route("/attorney/news", web::get().to(attorney_news_page));
     config.route("/attorney/news/{id}", web::get().to(attorney_new_page));
