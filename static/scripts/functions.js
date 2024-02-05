@@ -124,7 +124,7 @@ function disconnect() {
 }
 
 
-function load_data() {
+function load_data() { 
   blocks = document.querySelectorAll(".load_content");
   
   for (let i = 0; i < blocks.length; i++) {
@@ -138,6 +138,7 @@ function load_data() {
     }
     link.onreadystatechange = function () {
       //if ( link.readyState == 4 && link.status == 200 ) {
+          console.log("target block", blocks[i]);
           blocks[i].innerHTML = link.responseText;
       //} else {
       //    console.log("error");
