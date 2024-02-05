@@ -800,7 +800,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         let status:       String;
         let ordering:     String;
         let date__gte:    String;
-        let total_fees =  String:new();
+        let total_fees =  String::new();
         let total_time:   String;
 
         let params_some = web::Query::<TimeBillingParams>::from_query(&req.query_string());
