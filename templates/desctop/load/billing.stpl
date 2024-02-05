@@ -66,7 +66,7 @@
             <div class="user-avatar__name"><%= client.first_name %> <%= client.last_name %></div>
           </div>
         </div>
-        <div class="billings-page__table-row-item"><span>$<%= object.total_amount %></span></div>
+        <div class="billings-page__table-row-item"><span></span></div>
         <div class="billings-page__table-row-item"><span><%= object.date %></span></div>
         <div class="billings-page__table-row-item"> 
           <div class="user-avatar-container small toRight">
