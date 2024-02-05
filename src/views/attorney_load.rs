@@ -1956,7 +1956,7 @@ pub async fn topics_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         else {
             url = concat_string!(
                 API.to_owned(),
-                "forum/topics/",
+                "forum/topics",
                 "?ordering=", ordering,
                 "&limit=", limit,
                 "&offset=", offset
