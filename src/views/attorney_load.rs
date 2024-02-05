@@ -775,7 +775,7 @@ pub struct TimeBillingsData {
     pub page_count: i32,
     pub previous:   Option<String>,
     pub results:    Vec<TimeBillingData>,
-    pub total_fees: i32,
+    pub total_fees: i64,
     pub total_time: String,
 }
 
