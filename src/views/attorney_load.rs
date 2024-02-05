@@ -772,7 +772,7 @@ pub struct TimeBillingData {
 pub struct TimeBillingsData { 
     pub count:      i32,
     pub next:       Option<String>,
-    pub page_count: i32,
+    //pub page_count: i32,
     pub previous:   Option<String>,
     pub results:    Vec<TimeBillingData>,
     //pub total_fees: i64,
@@ -787,7 +787,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
 
         let count:       i32;
         let next:        Option<String>;
-        let page_count:  i32;
+        //let page_count:  i32;
         let object_list: Vec<TimeBillingData>;
 
         let limit:        String;
@@ -852,7 +852,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             let data = resp.expect("E.");
             count = data.count;
             next = data.next;
-            page_count = data.page_count;
+            //page_count = data.page_count;
             object_list = data.results;
             //total_fees = data.total_fees.to_string();
             total_time = data.total_time;
@@ -860,7 +860,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         else {
             count = 0;
             next = None;
-            page_count = 0;
+            //page_count = 0;
             object_list = Vec::new();
             //total_fees = String::new();
             total_time = String::new();
@@ -871,7 +871,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             request_user: AuthResponseData,
             count:        i32,
             next:         Option<String>,
-            page_count:   i32,
+            //page_count:   i32,
             object_list:  Vec<TimeBillingData>,
             total_fees:   String,
             total_time:   String,
@@ -880,7 +880,7 @@ pub async fn billing_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             request_user: request_user,
             count:        count,
             next:         next,
-            page_count:   page_count,
+            //page_count:   page_count,
             object_list:  object_list,
             total_fees:   total_fees, 
             total_time:   total_time,
