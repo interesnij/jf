@@ -45,11 +45,11 @@
   <div>
     <div class="navbar__title">Social</div>
     <div>
-        <a class="navbar__item ripple-effect news ripple-effect-to-right ajax" href="/attorney/news">
+        <a class="navbar__item ripple-effect news ripple-effect-to-right ajax" href="/news">
             <img src="/static/images/nav_news.svg" alt="">
             <span>JusLaw News</span>
         </a>
-        <a class="navbar__item ripple-effect forums ripple-effect-to-right ajax" href="/attorney/forums">
+        <a class="navbar__item ripple-effect forums ripple-effect-to-right ajax" href="/forums">
             <img src="/static/images/nav_forum.svg" alt="">
             <span>Forums</span>
         </a>
