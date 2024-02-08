@@ -323,9 +323,7 @@ function get_active_button() {
     console.log(url);
     if (url == "https://app2.juslaw.com/" && localStorage.getItem('request_data') !== null) {
         loc = JSON.parse(localStorage.getItem('request_data'));
-        console.log(loc.user_type);
-        console.log(loc["user_type"]);
-        url = "https://app2.juslaw.com/" + user_type + "/owerview";
+        url = "https://app2.juslaw.com/" + loc.user_type + "/owerview";
     } 
   
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
