@@ -322,10 +322,11 @@ function get_active_button() {
     url = window.location.href;
     console.log(url);
     if (url == "https://app2.juslaw.com/" && localStorage.getItem('request_data') !== null) {
-        loc = localStorage.getItem('request_data');
-        console.log(loc);
+        loc = JSON.parse(localStorage.getItem('request_data'));
+        console.log(loc.user_type);
+        console.log(loc["user_type"]);
         url = "https://app2.juslaw.com/" + user_type + "/owerview";
-    }
+    } 
   
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       ajax_link.open( 'GET', url, true );
