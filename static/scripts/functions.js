@@ -324,7 +324,7 @@ function get_active_button() {
     if (url == "/" && localStorage.getItem('request_data') !== null) {
         user_type = localStorage.getItem('request_data').user_type;
         url = "/" + user_type + "/owerview";
-    } 
+    }
   
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       ajax_link.open( 'GET', url, true );
@@ -340,7 +340,7 @@ function get_active_button() {
             //get_active_button();
             load_data();
             scrolled(document.body.querySelector(".span"));
-            window.history.pushState ({"url":loc}, document.title, loc);
+            window.history.pushState ({"url":url}, document.title, url);
 
             try {
               document.body.querySelector("header__title").innerHTML = _title;
