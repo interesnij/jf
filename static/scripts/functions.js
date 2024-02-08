@@ -319,13 +319,11 @@ function get_active_button() {
 
   function check_first_load() {
     span = document.body.querySelector("#reload");
-    loc = window.location.href;
-    if (loc.indexOf('template') > -1) {
-      url = loc + "&ajax=1"; 
+    url = window.location.href;
+    if (url == "/" && localStorage.getItem('request_data') !== null) {
+        user_type = localStorage.getItem('request_data').user_type;
+        url = "/" + user_type + "/owerview";
     } 
-    else {
-      url = loc + "?ajax=1"; 
-    }
   
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       ajax_link.open( 'GET', url, true );
