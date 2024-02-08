@@ -320,6 +320,7 @@ function get_active_button() {
   function check_first_load() {
     span = document.body.querySelector("#reload");
     url = window.location.href;
+    console.log(url);
     if (url == "/" && localStorage.getItem('request_data') !== null) {
         user_type = localStorage.getItem('request_data').user_type;
         url = "/" + user_type + "/owerview";
