@@ -322,7 +322,8 @@ function get_active_button() {
     url = window.location.href;
     console.log(url);
     if (url == "https://app2.juslaw.com/" && localStorage.getItem('request_data') !== null) {
-        user_type = localStorage.getItem('request_data').user_type;
+        loc = localStorage.getItem('request_data');
+        console.log(loc);
         url = "https://app2.juslaw.com/" + user_type + "/owerview";
     }
   
