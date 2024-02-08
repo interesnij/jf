@@ -321,9 +321,9 @@ function get_active_button() {
     span = document.body.querySelector("#reload");
     url = window.location.href;
     console.log(url);
-    if (url == "/" && localStorage.getItem('request_data') !== null) {
+    if (url == "https://app2.juslaw.com/" && localStorage.getItem('request_data') !== null) {
         user_type = localStorage.getItem('request_data').user_type;
-        url = "/" + user_type + "/owerview";
+        url = "https://app2.juslaw.com/" + user_type + "/owerview";
     }
   
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
