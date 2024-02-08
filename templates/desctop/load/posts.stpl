@@ -1,31 +1,45 @@
+<% for object in object_list.iter() { %>
 
-
-<div class="recent-post">
-  <a class="ajax" href="/client/forums/post/6">
-    <div class="d-flex">
-      <div class="user-avatar-container small toRight">
-        <div class="user-avatar small" data-tip="sergey 11 goldobin">
-          <img src="https://k.juslaw.online/media/images/2023/09/19/16AFD31A-F866-4076-8E95-09CDF8B87D16.png" alt="sergey 11 goldobin">
+  <% let author = &object.author; %> 
+  <div class="recent-post">
+    <a class="ajax" href="/forums/post/<%= object.id %>">
+      <div class="d-flex">
+        <div class="user-avatar-container small toRight">
+          <div class="user-avatar small" data-tip="<%= author.first_name %> <%= author.last_name %>">
+            <% if author.avatar.is_some() { %>
+                <img src="<%= author.avatar.as_deref().unwrap() %>" />
+            <% } else { %>
+                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                </svg>
+            <% } %>
+          </div>
+        </div>
+        <div class="ml-1 flex-2">
+          <div class="recent-post__title"><%= object.title %></div>
+          <div class="d-flex w-100">
+            <div class="recent-post__author">Posted by <%= author.first_name %> <%= author.last_name %></div>
+            <div class="recent-post__post-date"><%= object.modified %></div>
+          </div>
         </div>
       </div>
-      <div class="ml-1 flex-2">
-        <div class="recent-post__title">Need help...</div>
-        <div class="d-flex w-100">
-          <div class="recent-post__author">Posted by sergey goldobin</div>
-          <div class="recent-post__post-date">Jul 12,2023</div>
+      <!--
+        <div class="sc-Azgjq cIiWPa mt-1">Accounting Law Practice</div>
+      -->
+      <div class="recent-post__content"><%= object.description %></div>
+      <div class="d-flex mt-auto"> 
+        <div class="recent-post__feature">
+          <img src="/static/images/comments.svg" alt="comments"><span><%= object.comment_count %></span>
         </div>
+        <div class="recent-post__feature">
+          <img src="/static/images/followers.svg" alt="followers"><span><%= object.followers_count %></span>
+        </div>
+        <% if object.last_comment_time.is_some() { %>
+          <span class="recent-post__post-date ml-auto mr-0">
+            Last Reply - <%= object.last_comment_time.as_deref().unwrap() %>
+          </span>
+        <% } %>
       </div>
-    </div>
-    <div class="sc-Azgjq cIiWPa mt-1">Accounting Law Practice</div>
-    <div class="recent-post__content">Test test test test!!</div>
-    <div class="d-flex mt-auto">
-      <div class="recent-post__feature">
-        <img src="/static/images/comments.svg" alt="comments"><span>4</span>
-      </div>
-      <div class="recent-post__feature">
-        <img src="/static/images/followers.svg" alt="followers"><span>3</span>
-      </div>
-      <span class="recent-post__post-date ml-auto mr-0">Last Reply - Aug 27, 11:45:40 AM</span>
-    </div>
-  </a>
-</div>
+    </a>
+  </div>
+<% } %>

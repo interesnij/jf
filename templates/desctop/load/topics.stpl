@@ -3,7 +3,7 @@
         <div class="folder-item folder-item--with-separator">
             <div class="topic-control">
                 <div class="topic-control__main">
-                    <a href="/client/forums/topic/<%= object.id %>" class="topic-control__title ajax">
+                    <a href="/forums/topic/<%= object.id %>" class="topic-control__title ajax">
                         <%= object.title %>
                     </a> 
                     <div class="topic-control__description">
