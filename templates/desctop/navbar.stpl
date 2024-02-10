@@ -20,7 +20,7 @@
             <a href="/terms" class="ajax">Terms of Use</a>
             <a href="/policy" class="ajax">Privacy Policy</a>
             <a id="intercom-btn">Help and support</a>
-            <a class="logout">Log out</a>
+            <a class="logout_hundler">Log out</a>
         </div>
         </div>
   </div>

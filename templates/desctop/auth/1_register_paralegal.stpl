@@ -50,7 +50,7 @@
                         <div class="input-control__footer"></div>
                     </div>
                     <div class="d-flex mt-4 mb-2">
-                        <button class="btn btn--green ripple-effect large" type="button" style="width: 100%;">
+                        <button class="btn btn--green ripple-effect large register_2_paralegal_btn" type="button" style="width: 100%;">
                             <span>Next</span>
                         </button>
                     </div>

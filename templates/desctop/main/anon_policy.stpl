@@ -1,4 +1,4 @@
-<% include!("../header.stpl"); %>
+<% include!("../anon_header.stpl"); %>
 
 <div class="login-page d-flex flex-column">
    <img src="/static/images/logo.svg" alt="logo" class="login-page__logo">
@@ -178,4 +178,4 @@
    </div>
 </div>
 
-<% include!("../footer.stpl"); %>
+<% include!("../anon_footer.stpl"); %>

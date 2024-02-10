@@ -208,6 +208,91 @@ pub async fn get_first_load_page (
     }
 }
 
+
+#[derive(Debug, Deserialize)]
+pub struct ProductData { 
+    pub id:          String,
+    pub name:        String,
+    pub description: String,
+    pub r#type:      String,
+    pub active:      bool,
+    pub created:     String,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct PlanData { 
+    pub id:                String,
+    pub amount:            String,
+    pub currency:          String,
+    pub interval:          String,
+    pub nickname:          String,
+    pub description:       String,
+    pub product:           i32,
+    pub product_data:      ProductData,
+    pub trial_period_days: Option<String>,
+    pub is_premium:        bool,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct PlansData { 
+    pub results: Vec<PlanData>,
+}
+
+pub async fn get_plans_page (
+    request_user: AuthResponseData,
+    is_desctop:   bool,
+    is_ajax:      bool,
+) -> actix_web::Result<HttpResponse> {
+    let url = API.to_owned() + &"finance/plans/".to_string();
+    let object_list: Vec<PlanData>;
+    let resp = crate::utils::request_get::<LeadsAndClientsData> (
+        url,
+        &"".to_string()
+    ).await;
+    if resp.is_ok() {
+        let data = resp.expect("E.");
+        object_list = data.results;
+    }
+    else {
+        object_list = Vec::new();
+    }
+
+    if is_desctop {
+        #[derive(TemplateOnce)] 
+        #[template(path = "desctop/auth/plans.stpl")]
+        struct Template<'a> { 
+            request_user: AuthResponseData,
+            object_list:  Vec<PlanData>,
+            is_ajax:      i32,
+        } 
+        let body = Template {
+            request_user: _request_user,
+            object_list:  object_list,
+            is_ajax:      is_ajax,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/auth/plans.stpl")]
+        struct Template<'a> { 
+            request_user: AuthResponseData,
+            object_list:  Vec<PlanData>,
+            is_ajax:      i32,
+        } 
+        let body = Template {
+            request_user: _request_user,
+            object_list:  object_list,
+            is_ajax:      is_ajax,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+}
+
 pub fn get_string_with_string(value: Option<String>) -> String {
     if value.is_some() {
         return value.as_deref().unwrap().to_string();

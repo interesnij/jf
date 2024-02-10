@@ -1,0 +1,103 @@
+<div>
+    <div class="signup-page-layout"><a href="/"><img src="/static/images/logo2.svg" class="signup-page-layout__logo" alt="logo"></a>
+        <div class="signup-page-layout__title">Sign Up with JusLaw</div>
+        <div class="signup-page-layout__form">
+            <form action="#">
+                <div class="label">Step 3 of 3</div>
+                <div class="title pb-4">Set Up Your Profile</div>
+                <div class="desc mx-auto">You can update the <b>profile information</b> later in <b>“My Account &gt; Edit Profile”</b></div>
+                <div class="folder-control mt-4">
+                <div class="folder-control__header">
+                    <div class="d-flex">
+                        <div class="folder-control__heading">Personal Photo</div>
+                        <div class="folder-control__heading-after"></div>
+                    </div>
+                    <div class="d-flex"></div>
+                </div>
+                <div class="folder-control__content">
+                    <div class="folder-item folder-item--with-separator">
+                        <div class="profile-photo-control mt-2">
+                            <div class="d-flex">
+                            <div class="dropzone">
+                                <div class="d-flex flex-wrap"></div>
+                                <input name="avatar" accept="image/jpeg, image/png" type="file" autocomplete="off" tabindex="-1" style="display: none;">
+                                <div class="user-avatar-container large toRight">
+                                        <div class="user-avatar large">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                                            </svg>
+                                        </div>
+                                </div>
+                            </div>
+                            <button class="btn btn--green ripple-effect normal my-auto ml-4">
+                                    <span>Add Photo</span>
+                            </button>
+                            <button class="btn btn--outline btn--disabled btn--green ripple-effect normal my-auto ml-4" disabled="">
+                                    <span>Remove</span>
+                            </button>
+                            </div>
+                        </div> 
+                    </div>
+                </div>
+                </div>
+                <div class="folder-control mt-4">
+                    <div class="folder-control__header">
+                        <div class="d-flex">
+                            <div class="folder-control__heading">Personal Information</div>
+                            <div class="folder-control__heading-after"></div>
+                        </div>
+                        <div class="d-flex"></div>
+                    </div>
+                    <div class="folder-control__content">
+                        <div class="folder-item folder-item--with-separator">
+                            <div class="row">
+                                <div class="input-control col-md-6 mt-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_first_name" class="input-control__label">First Name</label>
+                                    </div>
+                                    <input id="id_first_name" name="first_name" placeholder="Enter your first name" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="input-control col-md-6 mt-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_last_name" class="input-control__label">Last Name</label>
+                                    </div>
+                                    <input id="id_last_name" name="last_name" placeholder="Enter your last name" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="sc-hzMMVR dakRgd col-6 mt-3">
+                                    <div class="d-flex justify-content-between">
+                                        <label for="id_phone" class="input-control__label">Phone number</label>
+                                    </div>
+                                    <div class="phone-input-2-container react-tel-input">
+                                        <div class="special-label">Phone</div>
+                                        <input id="id_phone" name="phone" class="form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+1" style="height: 48px; font-size: 14px;">
+                                    </div>
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="input-control col-6 mt-3 mb-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_role" class="input-control__label">Specify your role</label>
+                                    </div>
+                                    <input id="id_role" name="role" placeholder="E.g. Accounting, Hr, etc" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="signup-bar">
+                    <div class="link-button pointer back_register_2_paralegal_btn">
+                        <img src="/static/images/arrow-left-green.svg" alt="icon">Go Back
+                    </div> 
+                    <div class="ml-auto">By submitting, you acknowledge that you have read the 
+                        <a href="/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a> 
+                        and agree to the 
+                        <a href="/terms-of-use" target="_blank" rel="noreferrer">Terms of Service</a>.
+                    </div> 
+                    <button class="btn btn--green ripple-effect normal ml-auto register_final_other_btn" type="button"><span>Sign Up</span></button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

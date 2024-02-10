@@ -1,0 +1,90 @@
+<% include!("header.stpl"); %>
+
+<div class="onboarding-layout--content">
+    <div class="onboarding-page">
+        <div class="subscription-title">Subscription</div>
+        <div class="onboarding-page__container mt-3">
+            <div class="subscription-heading">Choose the plan that’s right for you...</div>
+            <div class="subscription-desc mt-2 mb-4"></div>
+            <div class="row pt-4">
+                <div class="col-md-6 d-flex">
+                    <img src="/static/images/check_circle.svg" alt="hidden fees">
+                    <span class="ml-2 my-auto">No hidden fees – every JusLaw feature included</span>
+                </div>
+                <div class="col-md-6 d-flex">
+                    <img src="/static/images/check_circle.svg" alt="hidden fees">
+                    <span class="ml-2 my-auto">Exceptional service for all – no tier-based service</span>
+                </div>
+                <div class="col-md-6 d-flex mt-2">
+                    <img src="/static/images/check_circle.svg" alt="hidden fees" class="mb-auto mt-1">
+                    <span class="ml-2">Safe &amp; secure – only platform with patented blockchain technology</span>
+                </div>
+                <div class="col-md-6 d-flex mt-2">
+                    <img src="/static/images/check_circle.svg" alt="hidden fees" class="mb-auto mt-1">
+                    <span class="ml-2">End-to-end solution – only platform to provide an end-to-end solution for you &amp; your clients</span>
+                </div>
+
+                <% for object in plan_list.iter() { %>
+                    <% let product = &object.product_data; %>
+                    <div class="col-md-6 mt-4">
+                        <div class="choose-subscription">
+                            <div class="choose-subscription__check mx-auto"></div>
+                            <div class="choose-subscription__heading mt-3">Try for free subscription</div>
+                            <div class="d-flex mx-auto mt-2"> 
+                                <div class="choose-subscription__dollar">$0.00</div>
+                                <div class="choose-subscription__letter mt-auto">/month</div>
+                            </div>
+                            <div class="mt-1 mx-auto">
+                                <div class="choose-subscription__letter">PER USER (BILLED MONTHLY)</div>
+                            </div>
+                            <div class="choose-subscription__text-info mx-auto">
+                                <p class="my-0 text-bold">6 Months Free Trial</p>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+                
+                <div class="col-12 mt-4">
+                <div class="choose-subscription">
+                    <div class="sc-cbDFGl gNsrOP row ">JusLaw clients are charged a composite rate for projects initiated on our platform.<br><br>The composite rate is displayed on our platform at all times and is comprised of two separate fees: 1. Your legal fees and 2. a 5% JusLaw management fee payable by the client for the use of our platform.<br><br>Composite Rate = Attorney Legal Fees + Separate and Standalone 5% JusLaw Management Fee.<br><br>When a client receives a proposal on our platform and a lawyer's profile has a listed rate of $250 per hour, that is the composite rate that the client would be charged if the client engaged the lawyer for the project. It is comprised of the lawyer's legal fee and a separate and standalone JusLaw management fee. The same formula applies to flat, hourly, contingency, and other rates on our platform.</div>
+                </div>
+                </div>
+                <div class="col-12 mt-4">
+                <div class="choose-subscription">
+                    <div class="choose-subscription__heading mb-3">Feature Details</div>
+                    <div class="sc-httYss fxXhdt row ">
+                        <div class="col-md-4">
+                            <ul>
+                            <li>Community Forum Access</li>
+                            <li>Case Management</li>
+                            <li>Contact Management</li>
+                            <li>Secure Client Portal</li>
+                            <li>Referral Tracking</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul>
+                            <li>In-app Chat &amp; Call </li>
+                            <li>e-Signature </li>
+                            <li>Unlimited Document Storage</li>
+                            <li>Time &amp; Expense Tracking </li>
+                            <li>Lead Generation &amp; New Client Acquisition</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <ul>
+                            <li>Hourly &amp; Flat Fee Billing</li>
+                            <li>Accounting</li>
+                            <li>Mobile apps for iPhone, iPad and Android Devices</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="signup-bar"><button class="btn btn--disabled btn--green ripple-effect normal ml-auto" disabled="" type="button"><span>Next</span></button></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include!("footer.stpl"); %>

@@ -15,11 +15,263 @@ use crate::utils::{
 
 
 pub fn page_routes(config: &mut web::ServiceConfig) {
-    //config.route("/", web::get().to(index_page));
-    //config.route("/documents/", web::get().to(documents_page));
-    //config.route("/terms/", web::get().to(terms_page));
-    //config.route("/policy/", web::get().to(policy_page));
+    config.route("/terms-of-use", web::get().to(terms_page));
+    config.route("/privacy-policy", web::get().to(policy_page));
 }
+
+
+pub async fn terms_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
+    let l = 2;
+    let title: String; 
+    let description: String;
+    let link = "/terms-of-use".to_string();
+    let image = crate::utils::get_default_image();
+    if l == 2 {
+        title = "Terms of Use".to_string();
+        description = "https://app.juslaw.com: Terms of Use".to_string();
+    }
+    else { 
+        title = "Terms of Use".to_string();
+        description = "https://app.juslaw.com: Terms of Use".to_string();
+    }
+
+    if is_ajax == 0 {
+        return crate::utils::get_first_load_page (
+            &req,
+            is_desctop,
+            &title,
+            &description,
+            &link,
+            &image,
+        ).await;
+    } 
+
+    else if user_some.is_some() {
+        let request_user = user_some.unwrap();
+
+        if is_desctop {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/pages/terms.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/terms.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+    }
+
+    else {
+
+        if is_desctop {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/pages/anon_terms.stpl")]
+            struct Template {
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
+            }
+            let body = Template {
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/client/anon_terms.stpl")]
+            struct Template {
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
+            }
+            let body = Template {
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+    }
+}
+
+pub async fn policy_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
+    let l = 2;
+    let title: String; 
+    let description: String;
+    let link = "/privacy-policy".to_string();
+    let image = crate::utils::get_default_image();
+    if l == 2 {
+        title = "JusLaw Privacy Policy".to_string();
+        description = "https://app.juslaw.com: JusLaw Privacy Policy".to_string();
+    }
+    else { 
+        title = "JusLaw Privacy Policy".to_string();
+        description = "https://app.juslaw.com: JusLaw Privacy Policy".to_string();
+    }
+
+    if is_ajax == 0 {
+        return crate::utils::get_first_load_page (
+            &req,
+            is_desctop,
+            &title,
+            &description,
+            &link,
+            &image,
+        ).await;
+    } 
+
+    else if user_some.is_some() {
+        let request_user = user_some.unwrap();
+
+        if is_desctop {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/pages/policy.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/pages/policy.stpl")]
+            struct Template {
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
+            }
+            let body = Template {
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+    }
+
+    else {
+
+        if is_desctop {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/pages/anon_policy.stpl")]
+            struct Template {
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
+            }
+            let body = Template {
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/pages/anon_policy.stpl")]
+            struct Template {
+                is_ajax:     i32,
+                title:       String,
+                description: String,
+                link:        String,
+                image:       String,
+            }
+            let body = Template {
+                is_ajax:     is_ajax,
+                title:       title,
+                description: description,
+                link:        link,
+                image:       image,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+    }
+}
+
 
 #[derive(Debug, Deserialize)]
 pub struct ActivitiesData {

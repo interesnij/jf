@@ -13,7 +13,8 @@ use serde::{
     //Serialize
 };
 use crate::utils::{
-    get_request_user, UserSmallData, SpecialitiesData, AuthResponseData, request_get, API,
+    get_request_user, UserSmallData, SpecialitiesData, 
+    AuthResponseData, request_get, API, get_plans_page,
 };
 
 
@@ -66,9 +67,13 @@ pub fn attorneys_routes(config: &mut web::ServiceConfig) {
 
 pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
+    let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
     if user_some.is_some() {
         let request_user = user_some.unwrap();
-        let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
+        if request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page(request_user, is_desctop, is_ajax);
+        }
+        
         let l = 2;
         let title: String; 
         let description: String;

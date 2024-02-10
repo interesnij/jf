@@ -1,0 +1,17 @@
+<div class="d-flex justify-content-between">
+   <div class="select-control__label">City</div>
+</div>
+<div class="select-control__container" tabindex="0">
+   <div class="select-control__main">
+      <div class="flex-1 d-flex justify-content-between">
+         <span class="my-auto">Select a City</span>
+      </div>
+      <input type="text" name="city" list="city_list" id="id_city">
+      <datalist id="city_list">
+         <% for object in city_list.iter() { %>
+            <option data-pk="<%= object.id %>" value="<%= object.name %>"></option>
+         <% } %>
+      </datalist>
+   </div>
+</div>
+<div class="input-control__footer"></div>

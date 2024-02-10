@@ -1,0 +1,97 @@
+<% include!("header.stpl"); %>
+
+<div class="onboarding-layout--content">
+   <div class="onboarding-page">
+      <div class="onboarding-page__container mt-4 d-flex flex-column">
+         <div class="subscription-title">Welcome to JusLaw</div>
+         <div class="text-gray text-center">Set up your profile so clients can easily find you</div>
+         <div class="mt-4 text-gray text-center">Step 2 of 4</div>
+         <div class="subscription-heading mb-4">Law Firm Information</div>
+         <form action="#">
+            <div class="card-control p-4">
+                <div class="row">
+                    <div class="heading w-100">
+                        <div class="col-6 d-flex"><span class="mb-1">Firm Name</span>
+                            <div class="text-gray ml-auto mt-auto">Optional</div>
+                        </div>
+                    </div>
+                    <div class="input-control col-6">
+                        <input name="firm_name" id="id_firm_name" placeholder="Enter a name" type="text" class="">
+                        <div class="input-control__footer"></div>
+                    </div>
+                    <div class="mt-3 heading w-100">
+                        <div class="col-6 d-flex">
+                            <span class="mb-1">Website</span>
+                            <div class="text-gray ml-auto mt-auto">Optional</div>
+                        </div>
+                    </div>
+
+
+                    <!-- firm locations -->
+                    <div class="input-control col-6">
+                        <input name="website" id="id_website" placeholder="Enter a website" type="text" class="active">
+                        <div class="input-control__footer"></div>
+                    </div>
+                    <div class="heading col-12 mt-3 mb-2">Office Address
+                        <span class="heading__desc ml-4">JusLaw will use this address to match you with potential clients in your proximity</span>
+                    </div>
+                    <div class="d-flex flex-column w-100 pt-2">
+                        <div class="d-flex pr-3"></div>
+                        <div class="col-12">
+                            <div class="row">
+                            
+                            <div class="select-control col-md-4">
+                                <% include!("../generic/countries_form.stpl"); %>
+                            </div>
+                            <div class="input-control col-md-8">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="id_address" class="input-control__label">Address</label>
+                                </div>
+                                <input id="id_address" name="address" placeholder="Enter an address here" type="text" class="">
+                                <div class="input-control__footer"></div>
+                            </div>
+
+                            <div class="select-control col-md-4">
+                                <% include!("../generic/states_form.stpl"); %>
+                            </div>
+
+                            <div class="select-control col-md-4">
+                                <% include!("../generic/cities_form.stpl"); %>
+                            </div>
+
+                            <div class="input-control col-md-4 mt-2">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="id_zip_code" class="input-control__label">Zip code</label>
+                                </div>
+                                <input id="id_zip_code" name="zip_code" placeholder="Enter a zip code here" type="text" class="">
+                                <div class="input-control__footer"></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-2">
+                        <div class="add-button pointer add_firm_location_form">
+                            <img src="/static/images/plus_black.svg" alt="plus">Add an Office address
+                        </div>
+                        <span class="error-text alert-hidden">Please input your Office</span>
+                    </div>
+                </div>
+            </div>
+            <div class="signup-bar">
+                <div class="link-button pointer back_onboard_1_attorney_btn">
+                    <img src="/static/images/arrow-left-green.svg" alt="icon">
+                    Go Back
+                </div>
+                <div class="ml-auto">
+                    You can change your profile information at anytime under <b>Edit Profile</b>
+                </div>
+                <button class="btn btn--green ripple-effect normal ml-auto onboard_3_attorney_btn">
+                    <span>Next</span>
+                </button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+
+<% include!("footer.stpl"); %>

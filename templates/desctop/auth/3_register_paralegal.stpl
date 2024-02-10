@@ -1,0 +1,167 @@
+<% include!("../anon_header.stpl"); %>
+
+<div class="signup-page">
+    <div class="signup-page-layout">
+        <a href="/">
+            <img src="/static/images/logo2.svg" class="signup-page-layout__logo" alt="logo">
+        </a>
+        <div class="signup-page-layout__title">Sign Up with JusLaw</div>
+        <div class="signup-page-layout__form">
+            <div class="label">Step 2 of 2</div>
+            <div class="title">Verification Form</div>
+            <div class="desc mx-auto mt-3">
+                To become a verified attorney on JusLaw, we need to validate the following information. Everything you share is confidential.
+            </div>
+            <form>
+                <div class="folder-control mt-4">
+                    <div class="folder-control__header">
+                        <div class="d-flex">
+                            <div class="folder-control__heading">Basic information</div>
+                            <div class="folder-control__heading-after"></div>
+                        </div>
+                        <div class="d-flex"></div>
+                    </div>
+                    <div class="folder-control__content">
+                        <div class="folder-item folder-item--with-separator">
+                            <div class="row">
+                                <div class="input-control col-md-6 mt-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_first_name" class="input-control__label">First Name</label>
+                                    </div>
+                                    <input id="id_first_name" name="first_name" placeholder="Enter your first name" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="input-control col-md-6 mt-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_last_name" class="input-control__label">Last Name</label>
+                                    </div>
+                                    <input id="id_last_name" name="last_name" placeholder="Enter your last name" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="sc-hzMMVR dakRgd col-12 mt-3">
+                                    <div class="d-flex justify-content-between">
+                                        <label for="id_phone" class="input-control__label">Phone</label>
+                                    </div>
+                                    <div class="phone-input-2-container react-tel-input">
+                                        <div class="special-label">Phone</div>
+                                        <input id="id_phone" name="phone" class=" form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+1" style="height: 48px; font-size: 14px;">
+                                    </div>
+                                    <div class="input-control__footer"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="folder-control mt-4">
+                <div class="folder-control__header">
+                    <div class="d-flex">
+                        <div class="folder-control__heading">Jurisdictions</div>
+                        <div class="folder-control__heading-after"></div>
+                    </div>
+                    <div class="d-flex"></div>
+                </div>
+                <div class="folder-control__content">
+                    <div class="folder-item folder-item--with-separator">
+                        <div class="d-flex col-12 w-100 mt-0">
+                            <div class="flex-1">
+                            <div class="row">
+                                <div class="select-control col-md-3 mt-2">
+                                    <% include!("../generic/countries_form.stpl"); %>
+                                </div>
+                                <div class="select-control col-md-3 mt-2">
+                                    <% include!("../generic/states_form.stpl"); %>
+                                </div>
+                                <div class="input-control col-md-3 mt-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                    <label for="id_number" class="input-control__label">Registration Number</label>
+                                    </div>
+                                    <input name="number" id="id_number" placeholder="Enter Registration Number" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="select-control col-md-3 mt-2">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="select-control__label">Year Admitted</div>
+                                    </div>
+                                    <div class="select-control__container" tabindex="0">
+                                        <div class="select-control__main">
+                                        <input type="text" name="year" list="year_list" id="id_year">
+                                        <% include!("datalist.stpl"); %>
+                                    </div>
+                                    <div class="select-control__footer"></div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="add-button pointer add_jurisdiction_form">
+                            <img src="/static/images/plus_black.svg" alt="plus">Add Jurisdictions
+                        </div>
+                        <span class="error-text alert-hidden">Please input your Jurisdiction</span>
+                    </div>
+                </div>
+                </div>
+                <div class="folder-control mt-4">
+                    <div class="folder-control__header">
+                        <div class="d-flex">
+                            <div class="folder-control__heading">Have you ever suspended, censured as a member of the legal or any other profession?</div>
+                            <div class="folder-control__heading-after"></div>
+                        </div>
+                        <div class="d-flex"></div>
+                    </div>
+                    <div class="folder-control__content">
+                        <div class="folder-item folder-item--with-separator">
+                            <div>
+                                <div class="d-flex flex-wrap">
+                                    <label class="radio-control">Yes<input type="radio" name="id_disciplined"><span></span></label>
+                                    <label class="radio-control">No<input type="radio" name="id_disciplined" checked=""><span></span></label>
+                                </div>
+                            </div>
+                            <div class="mt-4">We will not share your response to app users. This is only for verification purposes. *</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="folder-control mt-4">
+                    <div class="folder-control__header">
+                        <div class="d-flex">
+                            <div class="folder-control__heading">Attach your Bar Admission Document, Resume, and Client List for Verification</div>
+                            <div class="folder-control__heading-after"></div>
+                        </div>
+                        <div class="d-flex"></div>
+                    </div>
+                    <div class="folder-control__content">
+                        <div class="folder-item folder-item--with-separator">
+                            <div class="upload-control">
+                                <div class="d-flex justify-content-between">
+                                    <label for="registration_attachments" class="upload-control__label"></label>
+                                </div>
+                                <div class="dropzone" style="border: 1px solid rgb(224, 224, 225);">
+                                    <div class="d-flex flex-wrap"></div>
+                                    <input accept="image/*,.docx,.doc,.pdf,.ppt,.pptx,.xls,.xlsx" multiple="" type="file" autocomplete="off" tabindex="-1" style="display: none;">
+                                    <span class="mx-auto d-flex justify-content-center mt-4">
+                                        <img src="/static/images/file_open.svg" alt="file">
+                                    </span>
+                                    <div class="mx-auto my-2 text-center">Drag and drop your files here or</div>
+                                    <button class="btn btn--outline btn--green ripple-effect normal mx-auto mb-4" type="button">
+                                        <span>Select from computer</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="signup-bar">
+                    <div class="link-button pointer back_register_2_paralegal_btn">
+                        <img src="/static/images/arrow-left-green.svg" alt="icon">Go Back
+                    </div>
+                    <div class="ml-auto">By submitting, you acknowledge that you have read the 
+                        <a href="/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a> 
+                        and agree to the 
+                        <a href="/terms-of-use" target="_blank" rel="noreferrer">Terms of Service</a>
+                    </div>
+                    <button class="btn btn--green ripple-effect normal ml-auto register_final_paralegal_btn" type="button"><span>Next</span></button>
+                </div>
+            </form>
+        </div>
+   </div>
+</div>
+
+<% include!("../anon_footer.stpl"); %>

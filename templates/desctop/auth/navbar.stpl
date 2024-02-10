@@ -1,0 +1,10 @@
+<div class="onboarding-layout--header">
+    <a class="my-auto" href="/">
+        <img src="/static/images/logo3.svg" alt="logo" class="onboarding-layout--logo">
+    </a>
+    <div tabindex="0" class="onboarding-layout--account ml-auto my-auto">
+        <img src="/static/images/users.svg" alt="account" class="onboarding-layout--account-icon">
+        <img src="/static/images/profile_dropdown.svg" class="onboarding-layout--account-drop" alt="drop-down">
+        <div class="onboarding-layout--account-content logout_hundler">Log out</div>
+    </div>
+</div>

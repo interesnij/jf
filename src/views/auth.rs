@@ -22,17 +22,24 @@ use std::borrow::BorrowMut;
 pub fn auth_routes(config: &mut web::ServiceConfig) {
     config.service(web::resource("/")
         .route(web::get().to(login_page))
-    );
-    config.service(web::resource("/signup")
-        //.route(web::get().to(signup_page))
-        .route(web::post().to(process_signup))
-    );
-    config.route("/logout", web::get().to(logout_page)); 
+    ); 
     config.route("/auth/register", web::get().to(register_page));
-    config.route("/auth/register/attorney", web::get().to(register_attorney_page));
-    config.route("/auth/register/paralegal", web::get().to(register_paralegal_page));
-    config.route("/auth/register/enterprise", web::get().to(register_enterprise_page));
-    config.route("/auth/register/client", web::get().to(register_client_page));
+    config.route("/auth/email-verified", web::get().to(email_verified_page));
+
+    config.route("/auth/register_attorney_1", web::get().to(register_attorney_1_page));
+    config.route("/auth/register_attorney_2", web::get().to(register_attorney_2_page));
+    config.route("/auth/register_client_1", web::get().to(register_client_1_page));
+    config.route("/auth/register_client_2", web::get().to(register_client_2_page));
+    config.route("/auth/register_paralegal_1", web::get().to(register_paralegal_1_page));
+    config.route("/auth/register_paralegal_2", web::get().to(register_paralegal_2_page));
+    config.route("/auth/register_paralegal_3", web::get().to(register_paralegal_3_page));
+    config.route("/auth/register_enterprise_1", web::get().to(register_enterprise_1_page));
+    config.route("/auth/register_enterprise_2", web::get().to(register_enterprise_2_page));
+
+    config.route("/auth/onboard_attorney_1", web::get().to(onboard_attorney_1_page));
+    config.route("/auth/onboard_attorney_2", web::get().to(onboard_attorney_2_page));
+    config.route("/auth/onboard_attorney_3", web::get().to(onboard_attorney_3_page));
+    config.route("/auth/onboard_attorney_4", web::get().to(onboard_attorney_4_page));
 }
 
 pub async fn register_attorney_page(req: HttpRequest) -> impl Responder {
@@ -413,13 +420,8 @@ pub async fn register_page(req: HttpRequest) -> actix_web::Result<HttpResponse> 
 
 pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     if get_request_user(&req).is_some() {
-        let request_user = get_request_user(&req).unwrap();
-        //if request_user.user_type == "client" {
-        //    crate::views::client_overview_page(req).await
-        //}
-        //else {
-            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("body"))
-       //}
+        //let request_user = get_request_user(&req).unwrap();
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else { 
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
@@ -489,92 +491,5 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
             Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
         }
-    }
-}
-
-pub async fn logout_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    if get_request_user(&req).is_none() {
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
-    }
-    else {
-        crate::views::login_page(req).await
-    }
-}
-
-#[derive(Deserialize, Serialize, Debug)]
-pub struct LoginUser2 {
-    pub email:    String,
-    pub password: String,
-}
-pub async fn login_form(payload: &mut Multipart) -> LoginUser2 {
-    let mut form: LoginUser2 = LoginUser2 {
-        email:    "".to_string(),
-        password: "".to_string(),
-    };
-
-    while let Some(item) = payload.next().await {
-        let mut field: Field = item.expect("split_payload err");
-        while let Some(chunk) = field.next().await {
-            let data = chunk.expect("split_payload err chunk");
-            if let Ok(s) = std::str::from_utf8(&data) {
-                let data_string = s.to_string();
-                if field.name() == "email" {
-                    form.email = data_string
-                } else if field.name() == "password" {
-                    form.password = data_string
-                }
-            }
-        }
-    }
-    form
-}
-
-
-#[derive(Deserialize, Serialize, Debug)]
-pub struct NewUserForm {
-    pub username: String,
-    pub email:    String,
-    pub password: String,
-} 
-pub async fn signup_form(payload: &mut Multipart) -> NewUserForm {
-    let mut form: NewUserForm = NewUserForm {
-        username: "".to_string(),
-        email:    "".to_string(),
-        password: "".to_string(),
-    };
-
-    while let Some(item) = payload.next().await {
-        let mut field: Field = item.expect("split_payload err");
-        while let Some(chunk) = field.next().await {
-            let data = chunk.expect("split_payload err chunk");
-            if let Ok(s) = std::str::from_utf8(&data) {
-                let data_string = s.to_string();
-                if field.name() == "username" {
-                    form.username = data_string
-                }
-                else if field.name() == "email" {
-                    form.email = data_string
-                }
-                else if field.name() == "password" {
-                    form.password = data_string
-                }
-            }
-        }
-    }
-    form
-}
-pub async fn process_signup(req: HttpRequest, mut payload: Multipart) -> actix_web::Result<HttpResponse> {
-    // Если пользователь не аноним, то отправляем его на страницу новостей
-    if get_request_user(&req).is_some() {
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("-300"))
-    } 
-    else { 
-        //let form = signup_form(payload.borrow_mut()).await;
-        //println!("{:?}", form.username.clone());
-       // println!("{:?}", form.email.clone());
-        //println!("{:?}", form.password.clone());
-
-        //set_current_user(&_user);
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
 }

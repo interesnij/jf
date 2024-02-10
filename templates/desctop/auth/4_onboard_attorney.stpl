@@ -1,0 +1,149 @@
+<% include!("header.stpl"); %>
+
+<div class="onboarding-layout--content">
+   <div class="onboarding-page">
+      <div class="onboarding-page__container mt-4 d-flex flex-column">
+         <div class="subscription-title">Welcome to JusLaw</div>
+         <div class="text-gray text-center">Set up your profile so clients can easily find you</div>
+         <div class="mt-4 text-gray text-center">Step 4 of 4</div>
+         <div class="subscription-heading mb-4">Service and Pricing</div>
+         <form action="#">
+            <div class="card-control p-4">
+               <div class="row">
+                  <div class="heading col-12">Accepted Appointment Type<span class="text-gray ml-2">Select all that apply</span></div>
+                  <div class="mt-1 d-flex flex-wrap col-12">
+                     <div class="d-flex">
+                        <% for object in appointment_types_list.iter() { %>
+                            <div class="mr-2">
+                                <label class="checkbox-component">
+                                    <%= object.title %>
+                                    <input name="appointment_type" data-pk="<%= object.id %>" type="checkbox">
+                                    <span></span>
+                                </label>
+                            </div>
+                        <% } %>
+                     </div>
+                  </div>
+                  <div class="heading mt-3 col-12 ">Fees and Payment</div>
+                  <div class="text-black mt-2 col-12 ">Fee Type<span class="text-gray ml-2">Select all that apply</span></div>
+                  <div class="mt-0 d-flex flex-wrap col-12">
+                     <div class="d-flex">
+                        <% for object in fee_types_list.iter() { %>
+                            <div class="mr-2">
+                                <label class="checkbox-component"><%= object.title %>
+                                    <input name="fee_type" data-pk="<%= object.id %>" type="checkbox">
+                                    <span></span>
+                                </label>
+                            </div>
+                        <% } %>
+                     </div>
+                  </div>
+                  <div class="text-black mt-2 col-12 ">Accepted Payment Methods<span class="text-gray ml-2">Select all that apply</span></div>
+                  <div class="mt-0 d-flex flex-wrap col-12">
+                     <div class="d-flex">
+                        <% for object in payment_methods_list.iter() { %>
+                            <div class="mr-2">
+                                <label class="checkbox-component"><%= object.title %>
+                                    <input name="payment_method" data-pk="<%= object.id %>" type="checkbox">
+                                    <span></span>
+                                </label>
+                            </div>
+                        <% } %>
+                     </div>
+                  </div>
+                  <div class="text-black mt-3 w-100">
+                     <div class="col-6 d-flex"><span>Hourly Rate</span>
+                        <div class="text-gray ml-auto mt-auto">Optional</div>
+                     </div>
+                  </div>
+                  <div class="col-6">
+                     <div class="sc-fWPcWZ YixBW">
+                        <div class="flex-1 d-flex">
+                            <div class="sc-fHYyUA fHTtxI">
+                                <input name="hourly_rate" id="id_hourly_rate" pattern="[0-9]*" placeholder="Enter your hourly rate">
+                            </div>
+                        </div>
+                        <div class="sc-gyUflj lkAikx">
+                           <div class="select-control__container w-100" tabindex="0">
+                                <div class="select-control__main border-none w-100 active">
+                                    <div class="d-flex">
+                                        <span class="my-auto">USD</span>
+                                    </div>
+                                    <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
+                                </div>
+                              <div class="select-control__menu">
+                                 <div class="select-control__menu-item active"><span>USD</span></div>
+                                 <div class="select-control__menu-item"><span>GBP</span></div>
+                                 <div class="select-control__menu-item"><span>ERU</span></div>
+                              </div>
+                           </div>
+                           <div class="select-control__footer"></div>
+                        </div>
+                     </div>
+                  </div>
+                    <div class="heading mt-3 w-100">
+                            <div class="col-6 d-flex"><span class="mb-1">Languages spoken</span>
+                                <div class="text-gray ml-auto mt-auto">Optional</div>
+                            </div>
+                    </div>
+                    <div class="mt-0 col-6">
+                        <div class="d-flex justify-content-between">
+                            <div class="multi-select-control__label"></div>
+                        </div>
+                        <div class="select-control__container" tabindex="0">
+                            <div class="select-control__main">
+                                <div class="flex-1 d-flex justify-content-between">
+                                    <span class="my-auto">Select a Languages</span>
+                                </div>
+                                <input type="text" name="language" list="language_list" id="id_city">
+                                <datalist id="language_list">
+                                    <% for object in language_list.iter() { %>
+                                        <option data-pk="<%= object.id %>" value="<%= object.title %>"></option>
+                                    <% } %>
+                                </datalist>
+                            </div>
+                        </div>
+                        <div class="input-control__footer"></div>
+                    </div>
+                    <div class="heading mt-3 col-12">Do you want to submit proposals for potential client engagements?</div>
+                    <div class="col-12">
+                        <div>
+                            <div class="d-flex flex-wrap">
+                                <label class="radio-control">Yes<input type="radio" name="id_submittable_potential" checked=""><span></span></label>
+                                <label class="radio-control">No<input type="radio" name="id_submittable_potential"><span></span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="heading mt-3 w-100">
+                        <div class="col-6 d-flex">
+                            <span class="mb-1">Tax Rate</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-control">
+                            <div class="position-relative">
+                                <input id="id_tax_rate" name="tax_rate" placeholder="0.00" type="text" class="" value="">
+                                <div class="input-control__addon"><span class="input-control__addon-label">%</span></div>
+                            </div>
+                            <div class="input-control__footer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="signup-bar">
+                <div class="link-button pointer back_onboard_3_attorney_btn">
+                    <img src="/static/static/arrow-left-green.svg" alt="icon">Go Back
+                </div>
+                <div class="ml-auto">
+                    You can change your profile information at anytime under <b>Edit Profile</b>
+                </div>
+                <button class="btn btn--green ripple-effect normal ml-auto onboard_final_attorney_btn" type="button">
+                    <span>Next</span>
+                </button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+
+<% include!("footer.stpl"); %>

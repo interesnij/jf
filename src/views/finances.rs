@@ -172,5 +172,5 @@ pub struct PaymentttMethodsData {
     pub next:       Option<String>,
     pub page_count: i32,
     pub previous:   Option<String>,
-    pub results:    Vec<PaymentttMethod>,
+    pub results:    Vec<PaymentMethodData>,
 }

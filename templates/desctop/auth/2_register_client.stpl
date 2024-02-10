@@ -1,0 +1,147 @@
+<% include!("../anon_header.stpl"); %>
+
+<div>
+    <div class="signup-page-layout">
+        <a href="/">
+            <img src="/static/media/logo2.svg" class="signup-page-layout__logo" alt="logo">
+        </a>
+        <div class="signup-page-layout__title">Sign Up with JusLaw</div>
+        <div class="signup-page-layout__form">
+            <div class="label">Step 2 of 2</div>
+            <div class="title mb-4">Additional Information</div>
+            <form action="#">
+                <div class="card-control">
+                <div class="d-flex"><span class="my-1">I am signing up as a company or organization</span>
+                    <div class="sc-bQdRvg hZpUCz ml-auto">
+                        <div class=""><label class="checkbox-control"><input type="checkbox"><span></span></label></div>
+                    </div>
+                </div>
+                </div>
+                <div class="folder-control mt-4">
+                <div class="folder-control__header">
+                    <div class="d-flex">
+                        <div class="folder-control__heading">Contact Information</div>
+                        <div class="folder-control__heading-after"></div>
+                    </div>
+                    <div class="d-flex"></div>
+                </div>
+                <div class="folder-control__content">
+                    <div class="folder-item folder-item--with-separator">
+                        <div class="row">
+                            <div class="input-control col-md-6 mt-1">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="id_first_name" class="input-control__label">First Name</label>
+                                </div>
+                                <input id="id_first_name" name="first_name" placeholder="Enter your first name" type="text">
+                                <div class="input-control__footer"></div>
+                            </div>> 
+                            <div class="input-control col-md-6 mt-1">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="id_last_name" class="input-control__label">Last Name</label>
+                                </div>
+                                <input id="id_last_name" name="last_name" placeholder="Enter your last name" type="text">
+                                <div class="input-control__footer"></div>
+                            </div>
+
+                            <div class="select-control col-6 mt-3">
+                                <% include!("../generic/countries_form.stpl"); %>
+                            </div>
+
+                            <div class="sc-hzMMVR dakRgd col-6 mt-3">
+                                <div class="d-flex justify-content-between">
+                                    <label for="id_phone" class="input-control__label">Phone</label>
+                                </div>
+                                <div class="phone-input-2-container react-tel-input">
+                                    <div class="special-label">Phone</div>
+                                    <input id="id_phone" name="phone" class=" form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+1" style="height: 48px; font-size: 14px;">
+                                </div>
+                                <div class="input-control__footer"></div>
+                            </div>
+                            <div class="input-control col-md-6 mt-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="id_address1" class="input-control__label">Address Line 1</label>
+                                </div>
+                                <input id="id_address1" name="address1" placeholder="Address line 1" type="text">
+                                <div class="input-control__footer"></div>
+                            </div>
+                            <div class="input-control col-md-6 mt-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="id_address2" class="input-control__label">Address Line 2</label>
+                                    <div class="input-control__required">Optional</div>
+                                </div>
+                                <input id="id_address2" name="address2" placeholder="Address line 2" type="text">
+                                <div class="input-control__footer"></div>
+                            </div>
+
+                            <div class="select-control col-md-3 mt-3">
+                                <% include!("../generic/states_form.stpl"); %>
+                            </div>
+
+                            <div class="select-control col-md-6 mt-3">
+                                <% include!("../generic/cities_form.stpl"); %>
+                            </div>
+
+                            <div class="input-control col-md-3 mt-3">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="id_zip_code" class="input-control__label">Zip code</label>
+                                </div>
+                                <input id="id_zip_code" name="zip_code" placeholder="Enter zip code" type="text">
+                                <div class="input-control__footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="folder-control mt-4">
+                <div class="folder-control__header">
+                    <div class="d-flex">
+                        <div class="folder-control__heading">Practice Areas</div>
+                        <div class="folder-control__heading-after"></div>
+                    </div>
+                    <div class="d-flex"></div>
+                </div>
+                <div class="folder-control__content">
+                    <div class="folder-item folder-item--with-separator">
+                        <div class="text-dark">Select practice areas you want to follow:</div>
+                        <div class="row">
+                            <% for object in specialities_list.iter() { %>
+                                <div class="col-md-6 my-1">
+                                    <label class="checkbox-component"><%= object.name %>
+                                        <input data-pk="<%= object.id %>" name="speciality" type="checkbox">
+                                            <span></span>
+                                    </label>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6"></div>
+                            <div class="col-md-6">
+                                <label class="checkbox-component">
+                                    Other<input type="checkbox"><span></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="signup-bar">
+                    <div class="link-button pointer back_register_1_client_btn">
+                        <img src="/static/media/arrow-left-green.svg" alt="icon">Go Back
+                    </div>
+                    <div class="ml-auto">
+                        By submitting, you acknowledge that you have read the 
+                        <a href="/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a> 
+                        and agree to the 
+                        <a href="/terms-of-use" target="_blank" rel="noreferrer">Terms of Service</a>.
+                    </div>
+                    <button class="btn btn--disabled btn--green ripple-effect normal ml-auto register_final_client_btn" type="button">
+                        <span>Sign Up</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<% include!("../anon_footer.stpl"); %>
