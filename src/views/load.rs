@@ -124,7 +124,7 @@ pub async fn cities_load(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Re
     let url = concat_string!(
         API.to_owned(),
         "locations/cities/",
-        "?state=", _id.to_string(),
+        "?state=", _id.to_string()
     ); 
     let resp = request_get::<CitiesData> (
         url,
