@@ -82,7 +82,7 @@ pub async fn states_load(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Re
     let url = concat_string!(
         API.to_owned(),
         "locations/states/",
-        "?country=", _id.to_string(),
+        "?country=", _id.to_string()
     );
     let resp = request_get::<StatesData> (
         url,
@@ -223,7 +223,7 @@ pub async fn appointment_types_load(req: HttpRequest) -> actix_web::Result<HttpR
     #[derive(TemplateOnce)]
     #[template(path = "desctop/generic/items/appointment_type_form.stpl")]
     pub struct Template {
-        appointment_types_list: Vec<SpecialitiesData>,
+        appointment_types_list: Vec<AppointmentTypeData>,
     }
     let body = Template {
         appointment_types_list: appointment_types_list,
