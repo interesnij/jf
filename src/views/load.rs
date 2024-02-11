@@ -242,7 +242,7 @@ pub struct FeeTypessData {
 
 pub async fn fee_types_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let l = 2;
-    let fee_types_list: Vec<FeeTypesData>;
+    let object_list: Vec<FeeTypesData>;
 
     let url = concat_string!(
         API.to_owned(),
@@ -255,19 +255,19 @@ pub async fn fee_types_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");
-        fee_types_list = data.results;
+        object_list = data.results;
     }
     else {
-        fee_types_list = Vec::new();
+        object_list = Vec::new();
     }
 
     #[derive(TemplateOnce)]
     #[template(path = "desctop/generic/items/fee_types_form.stpl")]
     pub struct Template {
-        fee_types_list: Vec<FeeTypesData>,
+        object_list: Vec<FeeTypesData>,
     }
     let body = Template {
-        fee_types_list: fee_types_list,
+        object_list: object_list,
     }
     .render_once()
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;

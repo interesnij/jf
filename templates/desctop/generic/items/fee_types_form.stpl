@@ -1,4 +1,4 @@
-<% for object in fee_types_list.iter() { %>
+<% for object in object_list.iter() { %>
     <div class="mr-2">
         <label class="checkbox-component">
             <%= object.title %>
