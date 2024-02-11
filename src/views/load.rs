@@ -303,8 +303,8 @@ pub async fn payment_methods_load(req: HttpRequest) -> actix_web::Result<HttpRes
         payment_methods_list = Vec::new();
     }
 
-    #[derive(TemplateOnce)]
-    #[template(path = "desctop/generic/items/fee_types_form.stpl")]
+    #[derive(TemplateOnce)] 
+    #[template(path = "desctop/generic/items/payment_methods_form.stpl")]
     pub struct Template {
         payment_methods_list: Vec<PaymentTypeData>,
     }

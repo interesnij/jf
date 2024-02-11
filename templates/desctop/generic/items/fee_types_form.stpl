@@ -5,5 +5,5 @@
             <input name="fee_type" data-pk="<%= object.id %>" type="checkbox">
             <span></span>
         </label>
-    </div>
+    </div> 
 <% } %>
