@@ -293,11 +293,19 @@ pub async fn get_plans_page (
             request_user: AuthResponseData,
             plan_list:    Vec<PlanData>,
             is_ajax:      i32,
+            title:        &'a String,
+            description:  &'a String,
+            image:        &'a String,
+            uri:          &'a String,
         } 
         let body = Template {
             request_user: request_user,
             plan_list:    plan_list,
             is_ajax:      is_ajax,
+            title:        title,
+            description:  description,
+            image:        image,
+            uri:          uri,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;

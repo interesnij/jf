@@ -17,7 +17,6 @@ use crate::utils::{
     FeeTypesData, PaymentTypeData, LanguageData,
 };
 
-appointment_types_load
 pub fn load_routes(config: &mut web::ServiceConfig) {
     config.route("/load/countries/", web::get().to(countries_load));
     config.route("/load/states/{id}", web::get().to(states_load));
