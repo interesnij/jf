@@ -249,7 +249,7 @@ pub async fn get_plans_page (
 ) -> actix_web::Result<HttpResponse> {
     let url = API.to_owned() + &"finance/plans/".to_string();
     let plan_list: Vec<PlanData>;
-    let resp = crate::utils::request_get::<LeadsAndClientsData> (
+    let resp = crate::utils::request_get::<PlansData> (
         url,
         &"".to_string()
     ).await;

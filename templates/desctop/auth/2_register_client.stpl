@@ -43,8 +43,8 @@
                                 <div class="input-control__footer"></div>
                             </div>
 
-                            <div class="select-control col-6 mt-3">
-                                <% include!("../generic/countries_form.stpl"); %>
+                            <div class="select-control col-6 mt-3 load_content" data-link="/load/countries">
+                                
                             </div>
 
                             <div class="sc-hzMMVR dakRgd col-6 mt-3">
@@ -73,12 +73,11 @@
                                 <div class="input-control__footer"></div>
                             </div>
 
-                            <div class="select-control col-md-3 mt-3">
-                                <% include!("../generic/states_form.stpl"); %>
+                            <div class="select-control col-md-3 mt-2 states_container">
+                                
                             </div>
-
-                            <div class="select-control col-md-6 mt-3">
-                                <% include!("../generic/cities_form.stpl"); %>
+                            <div class="select-control col-md-3 mt-2 cities_container">
+                                
                             </div>
 
                             <div class="input-control col-md-3 mt-3">

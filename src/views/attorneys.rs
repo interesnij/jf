@@ -83,7 +83,7 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
         else { 
             title = "Overview".to_string();
             description = "https://app.juslaw.com: Overview".to_string();
-        }
+        } 
 
         if is_ajax == 0 {
             return crate::utils::get_first_load_page (
