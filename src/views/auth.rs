@@ -116,11 +116,6 @@ pub async fn register_attorney_1_page(req: HttpRequest) -> impl Responder {
     }
 }
 
-
-#[derive(Debug, Deserialize)]
-pub struct CountriesData { 
-    pub results: Vec<SmallCountryData>,
-}
 #[derive(Debug, Deserialize)]
 pub struct CountriesData { 
     pub results: Vec<SmallCountryData>,

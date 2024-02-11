@@ -70,9 +70,6 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
     let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
     if user_some.is_some() {
         let request_user = user_some.unwrap();
-        if request_user.plan_id.is_none() {
-            return crate::utils::get_plans_page(request_user, is_desctop, is_ajax).await;
-        } 
         
         let l = 2;
         let title: String; 
@@ -92,6 +89,17 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        } 
+        else if request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page(
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
