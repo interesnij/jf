@@ -76,7 +76,7 @@ pub async fn terms_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         }
         else {
             #[derive(TemplateOnce)]
-            #[template(path = "desctop/client/terms.stpl")]
+            #[template(path = "desctop/pages/terms.stpl")]
             struct Template {
                 request_user: AuthResponseData,
                 is_ajax:      i32,
@@ -124,7 +124,7 @@ pub async fn terms_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         }
         else {
             #[derive(TemplateOnce)]
-            #[template(path = "desctop/client/anon_terms.stpl")]
+            #[template(path = "desctop/pages/anon_terms.stpl")]
             struct Template {
                 is_ajax:     i32,
                 title:       String,

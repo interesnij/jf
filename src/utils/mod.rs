@@ -248,17 +248,17 @@ pub async fn get_plans_page (
     image:        &String,
 ) -> actix_web::Result<HttpResponse> {
     let url = API.to_owned() + &"finance/plans/".to_string();
-    let object_list: Vec<PlanData>;
+    let plan_list: Vec<PlanData>;
     let resp = crate::utils::request_get::<LeadsAndClientsData> (
         url,
         &"".to_string()
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");
-        object_list = data.results;
+        plan_list = data.results;
     }
     else {
-        object_list = Vec::new();
+        plan_list = Vec::new();
     }
 
     if is_desctop {
@@ -266,21 +266,21 @@ pub async fn get_plans_page (
         #[template(path = "desctop/auth/plans.stpl")]
         struct Template<'a> { 
             request_user: AuthResponseData,
-            object_list:  Vec<PlanData>,
+            plan_list:    Vec<PlanData>,
             is_ajax:      i32,
-            title:       &'a String,
-            description: &'a String,
-            image:       &'a String,
-            uri:         &'a String,
+            title:        &'a String,
+            description:  &'a String,
+            image:        &'a String,
+            uri:          &'a String,
         } 
         let body = Template {
             request_user: request_user,
-            object_list:  object_list,
+            plan_list:    plan_list,
             is_ajax:      is_ajax,
-            title:       title,
-            description: description,
-            image:       image,
-            uri:         uri,
+            title:        title,
+            description:  description,
+            image:        image,
+            uri:          uri,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -291,12 +291,12 @@ pub async fn get_plans_page (
         #[template(path = "desctop/auth/plans.stpl")]
         struct Template<'a> { 
             request_user: AuthResponseData,
-            object_list:  Vec<PlanData>,
+            plan_list:    Vec<PlanData>,
             is_ajax:      i32,
         } 
         let body = Template {
             request_user: request_user,
-            object_list:  object_list,
+            plan_list:    plan_list,
             is_ajax:      is_ajax,
         }
         .render_once()

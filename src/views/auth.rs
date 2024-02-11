@@ -21,7 +21,7 @@ use std::borrow::BorrowMut;
 pub fn auth_routes(config: &mut web::ServiceConfig) {
     config.route("/", web::get().to(login_page)); 
     config.route("/auth/register", web::get().to(register_page));
-    config.route("/auth/email-verified", web::get().to(email_verified_page));
+    //config.route("/auth/email-verified", web::get().to(email_verified_page));
 
     config.route("/auth/register_attorney_1", web::get().to(register_attorney_1_page));
     config.route("/auth/register_attorney_2", web::get().to(register_attorney_2_page));
