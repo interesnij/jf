@@ -1,0 +1,10 @@
+<div class="row">
+    <% for object in specialities_list.iter() { %>
+        <div class="col-md-6 my-1">
+            <label class="checkbox-component"><%= object.name %>
+                <input data-pk="<%= object.id %>" name="speciality" type="checkbox">
+                <span></span>
+            </label>
+        </div>
+    <% } %>
+</div>

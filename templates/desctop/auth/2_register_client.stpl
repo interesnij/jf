@@ -103,16 +103,7 @@
                 <div class="folder-control__content">
                     <div class="folder-item folder-item--with-separator">
                         <div class="text-dark">Select practice areas you want to follow:</div>
-                        <div class="row">
-                            <% for object in specialities_list.iter() { %>
-                                <div class="col-md-6 my-1">
-                                    <label class="checkbox-component"><%= object.name %>
-                                        <input data-pk="<%= object.id %>" name="speciality" type="checkbox">
-                                            <span></span>
-                                    </label>
-                                </div>
-                            <% } %>
-                        </div>
+                        <span class="load_content" data-link="/load/specialities"></span>
                         <div class="row">
                             <div class="col-md-6"></div>
                             <div class="col-md-6">

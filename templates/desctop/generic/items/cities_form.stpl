@@ -8,7 +8,7 @@
       </div>
       <input type="text" name="city" list="city_list" id="id_city">
       <datalist id="city_list">
-         <% for object in city_list.iter() { %>
+         <% for object in cities_list.iter() { %>
             <option data-pk="<%= object.id %>" value="<%= object.name %>"></option>
          <% } %>
       </datalist>

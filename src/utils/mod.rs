@@ -241,7 +241,7 @@ pub struct PlansData {
 pub async fn get_plans_page (
     request_user: AuthResponseData,
     is_desctop:   bool,
-    is_ajax:      bool,
+    is_ajax:      i32,
 ) -> actix_web::Result<HttpResponse> {
     let url = API.to_owned() + &"finance/plans/".to_string();
     let object_list: Vec<PlanData>;

@@ -71,8 +71,8 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
     if user_some.is_some() {
         let request_user = user_some.unwrap();
         if request_user.plan_id.is_none() {
-            return crate::utils::get_plans_page(request_user, is_desctop, is_ajax);
-        }
+            return crate::utils::get_plans_page(request_user, is_desctop, is_ajax).await;
+        } 
         
         let l = 2;
         let title: String; 

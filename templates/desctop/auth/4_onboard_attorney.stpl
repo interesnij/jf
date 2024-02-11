@@ -10,52 +10,30 @@
          <form action="#">
             <div class="card-control p-4">
                <div class="row">
-                  <div class="heading col-12">Accepted Appointment Type<span class="text-gray ml-2">Select all that apply</span></div>
-                  <div class="mt-1 d-flex flex-wrap col-12">
-                     <div class="d-flex">
-                        <% for object in appointment_types_list.iter() { %>
-                            <div class="mr-2">
-                                <label class="checkbox-component">
-                                    <%= object.title %>
-                                    <input name="appointment_type" data-pk="<%= object.id %>" type="checkbox">
-                                    <span></span>
-                                </label>
-                            </div>
-                        <% } %>
-                     </div>
-                  </div>
-                  <div class="heading mt-3 col-12 ">Fees and Payment</div>
-                  <div class="text-black mt-2 col-12 ">Fee Type<span class="text-gray ml-2">Select all that apply</span></div>
-                  <div class="mt-0 d-flex flex-wrap col-12">
-                     <div class="d-flex">
-                        <% for object in fee_types_list.iter() { %>
-                            <div class="mr-2">
-                                <label class="checkbox-component"><%= object.title %>
-                                    <input name="fee_type" data-pk="<%= object.id %>" type="checkbox">
-                                    <span></span>
-                                </label>
-                            </div>
-                        <% } %>
-                     </div>
-                  </div>
-                  <div class="text-black mt-2 col-12 ">Accepted Payment Methods<span class="text-gray ml-2">Select all that apply</span></div>
-                  <div class="mt-0 d-flex flex-wrap col-12">
-                     <div class="d-flex">
-                        <% for object in payment_methods_list.iter() { %>
-                            <div class="mr-2">
-                                <label class="checkbox-component"><%= object.title %>
-                                    <input name="payment_method" data-pk="<%= object.id %>" type="checkbox">
-                                    <span></span>
-                                </label>
-                            </div>
-                        <% } %>
-                     </div>
-                  </div>
-                  <div class="text-black mt-3 w-100">
-                     <div class="col-6 d-flex"><span>Hourly Rate</span>
-                        <div class="text-gray ml-auto mt-auto">Optional</div>
-                     </div>
-                  </div>
+                    <div class="heading col-12">Accepted Appointment Type<span class="text-gray ml-2">Select all that apply</span></div>
+                    <div class="mt-1 d-flex flex-wrap col-12">
+                        <div class="d-flex load_content" data-link="/load/appointment_types">
+                            
+                        </div>
+                    </div>
+                    <div class="heading mt-3 col-12 ">Fees and Payment</div>
+                    <div class="text-black mt-2 col-12 ">Fee Type<span class="text-gray ml-2">Select all that apply</span></div>
+                    <div class="mt-0 d-flex flex-wrap col-12">
+                        <div class="d-flex load_content" data-link="/load/fee_types_load">
+                            
+                        </div>
+                    </div>
+                    <div class="text-black mt-2 col-12 ">Accepted Payment Methods<span class="text-gray ml-2">Select all that apply</span></div>
+                    <div class="mt-0 d-flex flex-wrap col-12">
+                        <div class="d-flex load_content" data-link="/load/payment_methods">
+                            
+                        </div>
+                    </div>
+                    <div class="text-black mt-3 w-100">
+                        <div class="col-6 d-flex"><span>Hourly Rate</span>
+                            <div class="text-gray ml-auto mt-auto">Optional</div>
+                        </div>
+                    </div>
                   <div class="col-6">
                      <div class="sc-fWPcWZ YixBW">
                         <div class="flex-1 d-flex">
@@ -90,18 +68,8 @@
                         <div class="d-flex justify-content-between">
                             <div class="multi-select-control__label"></div>
                         </div>
-                        <div class="select-control__container" tabindex="0">
-                            <div class="select-control__main">
-                                <div class="flex-1 d-flex justify-content-between">
-                                    <span class="my-auto">Select a Languages</span>
-                                </div>
-                                <input type="text" name="language" list="language_list" id="id_city">
-                                <datalist id="language_list">
-                                    <% for object in language_list.iter() { %>
-                                        <option data-pk="<%= object.id %>" value="<%= object.title %>"></option>
-                                    <% } %>
-                                </datalist>
-                            </div>
+                        <div class="select-control__container load_content" data-link="/load/languages" tabindex="0">
+                            
                         </div>
                         <div class="input-control__footer"></div>
                     </div>

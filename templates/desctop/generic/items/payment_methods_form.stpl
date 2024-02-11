@@ -1,0 +1,9 @@
+<% for object in payment_methods_list.iter() { %>
+    <div class="mr-2">
+        <label class="checkbox-component">
+            <%= object.title %>
+            <input name="payment_method" data-pk="<%= object.id %>" type="checkbox">
+            <span></span>
+        </label>
+    </div>
+<% } %>

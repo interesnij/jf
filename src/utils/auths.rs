@@ -16,6 +16,11 @@ use crate::models::User;
 
 
 #[derive(Debug, Deserialize)]
+pub struct SmallCountryData {
+    pub id:   i32,
+    pub name: String,
+}
+#[derive(Debug, Deserialize)]
 pub struct CountryData {
     pub id:    i32,
     pub name:  String,
@@ -31,6 +36,11 @@ pub struct StateData {
 pub struct StageData {
     pub id:    i32,
     pub title: String,
+}
+#[derive(Debug, Deserialize)]
+pub struct SmallCityData {
+    pub id:   i32,
+    pub name: String,
 }
 #[derive(Debug, Deserialize)]
 pub struct CityData {

@@ -8,8 +8,8 @@
       </div>
       <input type="text" name="country" list="country_list" id="id_country">
       <datalist id="country_list">
-         <% for object in country_list.iter() { %>
-         <option data-pk="<%= object.id %>" value="<%= object.name %>"></option>
+         <% for object in countries_list.iter() { %>
+            <option data-pk="<%= object.id %>" value="<%= object.name %>"></option>
          <% } %>
       </datalist>
    </div>

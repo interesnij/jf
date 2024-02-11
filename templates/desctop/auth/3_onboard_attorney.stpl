@@ -54,11 +54,14 @@
                     <div class="d-flex col-12 w-100 mt-0">
                         <div class="flex-1">
                             <div class="row">
-                            <div class="select-control col-md-3 mt-2">
-                                <% include!("../generic/countries_form.stpl"); %>
+                            <div class="select-control col-md-3 mt-2 load_content" data-link="/load/countries">
+                                
                             </div>
-                            <div class="select-control col-md-3 mt-2">
-                                <% include!("../generic/states_form.stpl"); %>
+                            <div class="select-control col-md-3 mt-2 states_container">
+                                
+                            </div>
+                            <div class="select-control col-md-3 mt-2 cities_container">
+                                
                             </div>
                             <div class="input-control col-md-3 mt-2">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -88,26 +91,9 @@
                         <span class="error-text alert-hidden">Please input your Jurisdiction</span>
                     </div>
                     <div class="heading col-12 mt-3">Practice Area</div>
-                    <div class="col-12 mt-2">
+                    <div class="col-12 mt-2"> 
                         <div class="text-dark">Select practice areas you want to follow:</div>
-                        <div class="row">
-                            <% for object in specialities_list.iter() { %>
-                                <div class="col-md-6 my-1">
-                                    <label class="checkbox-component"><%= object.name %>
-                                        <input data-pk="<%= object.id %>" name="speciality" type="checkbox">
-                                            <span></span>
-                                    </label>
-                                </div>
-                            <% } %>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6"></div>
-                            <div class="col-md-6">
-                                <label class="checkbox-component">Other
-                                    <input type="checkbox"><span></span>
-                                </label>
-                            </div>
-                        </div>
+                        <span class="load_content" data-link="/load/specialities"></span>
                         <div class="row">
                             <div class="col-6 mt-2"></div>
                             <div class="col-6 mt-2">
