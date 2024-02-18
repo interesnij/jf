@@ -363,7 +363,7 @@ pub struct RecentMattersData {
     pub due_amount:            i32,
     pub id:                    i32,
     pub rate_type:             Vec<crate::utils::RateTypeData>,
-    pub shared_with_data:      Vec<UserSharedData>,
+    pub shared_with_data:      Vec<crate::utils::UserSharedData>,
     pub speciality_data:       Vec<SpecialitiesData>,
     pub stage:                 Option<String>,
     pub start_date:            String,
