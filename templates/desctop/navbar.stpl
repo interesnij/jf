@@ -56,17 +56,25 @@
       <div class="notification ml-3">
         <img src="/static/images/notification.svg" alt="notification"></div>
     </div>
-    <div tabindex="0" class="profile-drop-down hide">
+    <div tabindex="0" class="profile-drop-down">
       <div class="menu-button">
         <img src="<%= request_user.get_image() %>" class="avatar" alt="avatar">
         <img src="/static/images/profile_dropdown.svg" class="menu-button-icon" alt="drop-down"></div>
       <div class="menu-dropdown">
-        <div id="profile">Edit profile</div>
-        <div id="settings">Settings</div>
-        <div id="terms">Terms of Use</div>
-        <div id="policy">Privacy Policy</div>
+        <div class="edit_profile">Edit profile</div>
+        <div class="edit_settings">Settings</div>
+        <div>
+          <a href="/terms-of-use" class="ajax">
+              Terms of Use
+          </a>
+        </div>
+        <div>
+          <a href="/privacy-policy" class="ajax">
+              Privacy Policy
+          </a>
+        </div>
         <div id="intercom-btn">Help and support</div>
-        <div id="vault">My Vault</div>
+        <div class="open_vault">My Vault</div>
         <div class="logout">Log out</div>
       </div>
     </div>

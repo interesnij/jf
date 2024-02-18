@@ -26,16 +26,20 @@
             <span class="my-auto">Principle</span>
             <img src="/static/images/sort.svg" alt="sort">
         </div>
+        <!--
         <div class="matters-page__table-header-item">
             <span class="my-auto">Actions</span>
         </div>
+        -->
       </div>
 
       <% for object in matters_list.iter() { %>
         <% let (client, attorney) = (&object.client_data, &object.attorney_data); %>
         <div class="matters-page__table-row">
           <div class="matters-page__table-row-item matter-name">
-              <span class="mr-1 text-ellipsis"><%= object.title %></span>
+              <a class="mr-1 text-ellipsis ajax" href="/attorney/matters/<%= object.id %>">
+                <%= object.title %>
+              </a>
           </div>
           <div class="matters-page__table-row-item">
             <div class="user-avatar-container small toRight">
@@ -54,7 +58,7 @@
           <div class="matters-page__table-row-item">
             <div class="tag-control tag-control--open status"><%= object.status %></div>
           </div>
-          <div class="matters-page__table-row-item"><span><%= object.fee_type %></span></div>
+          <div class="matters-page__table-row-item"><span><%= object.rate_type.title %></span></div>
           <div class="matters-page__table-row-item">
             <span class="text-ellipsis" style="max-width: 200px;">
               <%= object.speciality_data.title %>
@@ -69,19 +73,14 @@
             </div>
             <div class="sc-eWvPqa dfPUio ml-1"><%= attorney.first_name %> <%= attorney.last_name %></div>
           </div>
+          <!--
           <div class="matters-page__table-row-item">
             <div class="dropdown mx-auto" tabindex="0">
               <div class="dropdown__button">
-                <% if attorney.avatar.is_some() { %>
-                      <img src="<%= attorney.avatar.as_deref().unwrap() %>" />
-                  <% } else { %>
-                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
-                      </svg>
-                  <% } %>
+                  <div class="dropdown__button">
+                    <img src="/static/static/action_gray.svg" alt="action" class="matters-page__table-row-item-action"></div>
               </div>
               <div class="dropdown__menu">
-                <div class="dropdown__menu-item matter_detail" data-pk="<%= object.id %>">View</div>
                 <div class="dropdown__menu-item share_matter" data-pk="<%= object.id %>">Share with</div>
                 <div class="dropdown__menu-item start_call">Start a call</div>
                 <div class="dropdown__menu-item create_message" data-pk="<%= object.id %>">Create a message</div>
@@ -93,6 +92,7 @@
               </div> 
             </div>
           </div>
+          -->
         </div>
 
       <% } %>
