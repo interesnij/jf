@@ -1,4 +1,4 @@
-<% if object_list.len() > 0 { %> 
+<% if users_list.len() > 0 { %> 
 <div class="leads-page__table">
     <div class="leads-page__table-header">
         <div class="leads-page__table-header-item sortable">
@@ -16,7 +16,7 @@
         <div class="leads-page__table-header-item"><span class="my-auto">Actions</span></div>
     </div>
 
-    <% for object in object_list.iter() { %>
+    <% for object in users_list.iter() { %>
     <div class="leads-page__table-row">
         <div class="leads-page__table-row-item lead-name">
           <div class="user-avatar-container small toRight">
