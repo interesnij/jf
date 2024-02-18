@@ -30,5 +30,108 @@ pub fn create_routes(config: &mut web::ServiceConfig) {
     config.route("/create/post", web::get().to(create_post));
 }
 
+//////////////////////
+
+#[derive(Debug, Deserialize)]
+pub struct AttorneysParams {
+    pub types: Option<String>,
+} 
+
+pub async fn create_contact(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let types: String;
+    let params_some = web::Query::<AttorneysParams>::from_query(&req.query_string());
+    if params_some.is_ok() {
+        let params = params_some.unwrap();
+        types = get_string_with_string(params.types.clone());
+    } 
+    else {
+        types = String::new();
+    }
+
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/contact.stpl")]
+    pub struct Template {
+        types: String,
+    }
+    let body = Template {
+        types: types,
+    }
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+//////////////////////
+
+pub async fn create_document(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/expense_entry.stpl")]
+    pub struct Template {}
+    let body = Template {}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+pub async fn create_time_entry(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/time_entry.stpl")]
+    pub struct Template {}
+    let body = Template {}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+pub async fn create_flat_fee(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/flat_fee.stpl")]
+    pub struct Template {}
+    let body = Template {}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+pub async fn create_invoice(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/invoice.stpl")]
+    pub struct Template {}
+    let body = Template {}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+pub async fn create_matter(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/matter.stpl")]
+    pub struct Template {}
+    let body = Template {}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+pub async fn create_template(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/template.stpl")]
+    pub struct Template {}
+    let body = Template {}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+pub async fn create_post(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/post.stpl")]
+    pub struct Template {}
+    let body = Template {}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
 
 

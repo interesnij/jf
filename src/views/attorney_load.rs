@@ -43,7 +43,7 @@ pub struct LeadsAndClientsParams {
     pub limit:  Option<i64>,
     pub offset: Option<i64>,
     pub search: Option<String>,
-    //pub r#type: Option<String>,
+    pub types:  Option<String>,
 } 
 
 #[derive(Debug, Deserialize)]
@@ -85,13 +85,13 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
 
         let count:       i32;
         let next:        Option<String>;
-        let page_count:  i32;
+        let page_count:  i32; 
         let object_list: Vec<LeadOrClientData>;
 
         let limit:  String;
         let offset: String;
         let search: String;
-        let _type:  String;
+        let types:  String;
 
         let params_some = web::Query::<LeadsAndClientsParams>::from_query(&req.query_string());
         if params_some.is_ok() {
@@ -99,14 +99,13 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             limit =  get_limit(params.limit);
             offset = get_string_withi64(params.offset);
             search = get_string_with_string(params.search.clone());
-            //_type =  get_string_with_string(params.r#type.clone());
-            _type =  String::new();
+            types = get_string_with_string(params.types.clone());
         }
         else {
             limit =  String::new();
             offset = String::new();
             search = String::new();
-            _type =  String::new();
+            types =  String::new();
         }
 
         let url = concat_string!(
@@ -135,25 +134,40 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             object_list = Vec::new();
         }
 
-        #[derive(TemplateOnce)]
-        #[template(path = "desctop/load/leads_and_clients.stpl")]
-        pub struct Template {
-            request_user: AuthResponseData,
-            count:        i32,
-            next:         Option<String>,
-            page_count:   i32,
-            object_list:  Vec<LeadOrClientData>,
+        if types == "form".to_string() {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/generic/items/users_form.stpl")]
+            pub struct Template {
+                users_list: Vec<LeadOrClientData>,
+            }
+            let body = Template {
+                users_list: users_list,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
         }
-        let body = Template {
-            request_user: request_user,
-            count:        count,
-            next:         next,
-            page_count:   page_count,
-            object_list:  object_list,
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/load/leads_and_clients.stpl")]
+            pub struct Template {
+                request_user: AuthResponseData,
+                count:        i32,
+                next:         Option<String>,
+                page_count:   i32,
+                object_list:  Vec<LeadOrClientData>,
+            }
+            let body = Template {
+                request_user: request_user,
+                count:        count,
+                next:         next,
+                page_count:   page_count,
+                object_list:  object_list,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
         }
-        .render_once()
-        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
         crate::views::login_page(req).await
@@ -169,6 +183,7 @@ pub struct AttorneyMattersParams {
     pub attorney:    Option<i32>,
     pub status:      Option<String>,
     pub shared_with: Option<i32>,
+    pub types:       Option<String>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -254,7 +269,7 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
         let count:       i32;
         let next:        Option<String>;
         let page_count:  i32;
-        let object_list: Vec<MatterrrData>;
+        let matters_list: Vec<MatterrrData>;
 
         let ordering:    String;
         let limit:       String;
@@ -263,6 +278,7 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
         let attorney:    String;
         let status:      String;
         let shared_with: String;
+        let types:       String;
 
         let params_some = web::Query::<AttorneyMattersParams>::from_query(&req.query_string());
         if params_some.is_ok() {
@@ -274,6 +290,7 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
             attorney = gett_string_withi32(params.attorney, "&attorney=".to_string());
             status = get_string_with_string(params.status.clone());
             shared_with = gett_string_withi32(params.shared_with, "&shared_with=".to_string());
+            types = get_string_with_string(params.types.clone());
         }
         else {
             ordering = String::new();
@@ -283,6 +300,7 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
             attorney = String::new();
             status = String::new();
             shared_with = String::new();
+            types = String::new();
         }
 
         let url = concat_string!(
@@ -304,34 +322,48 @@ pub async fn attorney_matters_load(req: HttpRequest) -> actix_web::Result<HttpRe
             count = data.count;
             next = data.next;
             page_count = data.page_count;
-            object_list = data.results;
+            matters_list = data.results;
         }
         else {
             count = 0;
             next = None;
             page_count = 0;
-            object_list = Vec::new();
+            matters_list = Vec::new();
         }
-
-        #[derive(TemplateOnce)]
-        #[template(path = "desctop/load/attorney_matters.stpl")]
-        pub struct Template {
-            request_user: AuthResponseData,
-            count:        i32,
-            next:         Option<String>,
-            page_count:   i32,
-            object_list:  Vec<MatterrrData>,
+        if types == "form".to_string() {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/generic/items/matters_form.stpl")]
+            pub struct Template {
+                matters_list: Vec<MatterrrData>,
+            }
+            let body = Template {
+                matters_list: matters_list,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
         }
-        let body = Template {
-            request_user: request_user,
-            count:        count,
-            next:         next,
-            page_count:   page_count,
-            object_list:  object_list,
+        else {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/load/attorney_matters.stpl")]
+            pub struct Template {
+                request_user: AuthResponseData,
+                count:        i32,
+                next:         Option<String>,
+                page_count:   i32,
+                matters_list: Vec<MatterrrData>,
+            }
+            let body = Template {
+                request_user: request_user,
+                count:        count,
+                next:         next,
+                page_count:   page_count,
+                matters_list: matters_list,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
         }
-        .render_once()
-        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
     else {
         crate::views::login_page(req).await

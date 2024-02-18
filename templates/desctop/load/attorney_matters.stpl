@@ -1,4 +1,4 @@
-<% if object_list.len() > 0 { %> 
+<% if matters_list.len() > 0 { %> 
 <div class="matters-page__table">
       <div class="matters-page__table-header">
         <div class="matters-page__table-header-item sortable">
@@ -31,7 +31,7 @@
         </div>
       </div>
 
-      <% for object in object_list.iter() { %>
+      <% for object in matters_list.iter() { %>
         <% let (client, attorney) = (&object.client_data, &object.attorney_data); %>
         <div class="matters-page__table-row">
           <div class="matters-page__table-row-item matter-name">

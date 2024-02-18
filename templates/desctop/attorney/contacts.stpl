@@ -37,7 +37,7 @@
           </div>
         </div>
       </div>
-      <button class="btn btn--green ripple-effect normal ml-auto my-auto create_contact">
+      <button class="btn btn--green ripple-effect normal ml-auto my-auto create_contact" data-type="attorney">
         <img src="/static/images/plus_white.svg" alt="plus">
         <span>New Contact</span>
       </button>

@@ -20,21 +20,10 @@
                                 </div>
                                 <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
                             </div>                           
-                            <div class="contact-select-control__menu active">
-                                <!-- user object -->
-                                <div class="contact-select-control__menu-item">
-                                    <div class="user-avatar-container small toRight my-auto mr-1">
-                                        <div class="user-avatar small">
-                                            <img src="https://k.juslaw.online/media/images/2023/12/20/2F8B90E3-3A29-47E8-8E65-56596533DEAF.mpo">
-                                        </div>
-                                    </div>
-                                    <div class="d-flex flex-column">
-                                        <div class="contact-select-control__menu-item-name">serge goldobin</div>
-                                        <div class="contact-select-control__menu-item-email">serge300@gmail.com</div>
-                                    </div>
-                                    <div class="ml-auto my-auto contact-select-control__menu-item-type">client</div>
-                                </div>
-                                <!-- user object -->
+                            <div 
+                                class="contact-select-control__menu active load_content" 
+                                data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All&types=form"
+                            >
                             </div>
                         </div>
                         <div class="contact-select-control__footer"></div>
@@ -50,9 +39,10 @@
                                 </div>
                                 <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                             </div>
-                            <div class="select-control__menu active">
-                                <div class="select-control__menu-item active"><span>Name 1</span></div>
-                                <div class="my-3 text-gray text-center">Empty</div>
+                            <div 
+                                class="contact-select-control__menu active matters_container" 
+                                data-link="/attorney_load/matters?types=form"
+                            >
                             </div>
                         </div>
                         <div class="select-control__footer"></div>

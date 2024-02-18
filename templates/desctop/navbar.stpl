@@ -46,7 +46,7 @@
           <div class="menu-item">Time entry</div>
           <div class="menu-item">Expense entry</div>
           <div class="menu-item">Matter</div>
-          <div class="menu-item">Contact</div>
+          <div class="menu-item create_contact" data-type="client">Contact</div>
           <div class="menu-item">Document</div>
           <div class="menu-item">Template</div>
           <div class="menu-item">Note</div>

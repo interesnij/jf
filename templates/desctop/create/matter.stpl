@@ -31,23 +31,10 @@
                                                     <input type="text" placeholder="Search or select a lead/ client contact" value="">
                                                     <img src="/static/images/arrow-drop-down.svg" class="client-select-control__arrow" alt="arrow">
                                                 </div>
-                                                <div class="client-select-control__menu">
-                                                    
-                                                    <!-- client info -->
-                                                    <div class="client-select-control__menu-item">
-                                                        <div class="user-avatar-container small toRight my-auto mr-1">
-                                                            <div class="user-avatar small">
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        <div class="d-flex flex-column">
-                                                            <div class="contact-select-control__menu-item-name"></div>
-                                                            <div class="contact-select-control__menu-item-email"></div>
-                                                        </div>
-                                                        <div class="ml-auto my-auto contact-select-control__menu-item-type"></div>
-                                                    </div>
-                                                    <!-- client info -->
-
+                                                <div 
+                                                    class="contact-select-control__menu active load_content" 
+                                                    data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All&types=form"
+                                                >
                                                 </div>
                                             </div>
                                             <div class="client-select-control__footer"></div>

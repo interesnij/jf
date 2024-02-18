@@ -1,7 +1,9 @@
 <div class="modal-control-container open">
     <div tabindex="-1" class="modal-control">
         <div class="modal-control__header">
-            <div class="my-auto title text-ellipsis w-100 text-left">Create New Contact</div>
+            <div class="my-auto title text-ellipsis w-100 text-left">
+                Add New Contact
+            </div>
             <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
         </div>
         <div class="modal-control__content ignore-onclickoutside">
@@ -10,17 +12,12 @@
                     <div class="contact-search-control__container">
                         <div class="contact-search-control__main">
                             <img src="/static/images/search.svg" class="contact-search-control__find mr-1" alt="search">
-                            <input class="search_attorney" type="text" placeholder="Search by email or name">
-                        </div>
-                        <div class="contact-search-control__menu">
-                            <div>
-                                <div class="mx-auto my-2 text-center text-sm-black">
-                                    Don't see the person you are looking for?<br>
-                                    Enter their email in the search bar and click 
-                                    "<strong>Invite new user</strong>" 
-                                    to invite them to the platform.
-                                </div>
-                            </div>
+                            <input class="search_<%= types %>" type="text" placeholder="Search by email or name">
+                        </div> 
+                        <div 
+                            class="contact-select-control__menu active load_content" 
+                            data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All&types=form"
+                        >
                         </div>
                     </div>
                 </div>
@@ -28,10 +25,10 @@
                     <button class="btn btn--white ripple-effect large ml-auto close_modal">
                         <span>Cancel</span>
                     </button>
-                    <button class="btn btn--disabled btn--green ripple-effect large ml-3 add_btn" type="button">
+                    <button class="btn btn--disabled btn--green ripple-effect large ml-3 add_contact_btn <%= types %>" type="button">
                         <span>Add Contact</span>
                     </button>
-                    <button class="btn btn--green ripple-effect large ml-3 invite_user invite_btn hidden" type="button">
+                    <button class="btn btn--green ripple-effect large ml-3 invite_user invite_user_btn hidden" type="button">
                         <span>Invite New User</span>
                     </button>
                 </div>
@@ -39,3 +36,11 @@
         </div>
     </div>
 </div>
+
+
+<!-- 
+    
+attorney
+POST https://backend.juslaw.com/api/v1/users/attorneys/249/add_industrial_contact/
+
+-->

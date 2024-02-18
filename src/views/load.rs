@@ -14,7 +14,7 @@ use crate::utils::{
     get_string_withbool, get_request_user, AuthResponseData, request_get, API,
     get_id_withi32, get_string_withdate, gett_string_withi32,
     SmallCountryData, StateData, SmallCityData, SpecialitiesData, AppointmentTypeData,
-    FeeTypesData, PaymentTypeData, LanguageData, StageData,
+    FeeTypesData, PaymentTypeData, LanguageData, StageData, RequestClient, RequestAttorney,
 };
 
 pub fn load_routes(config: &mut web::ServiceConfig) {
@@ -29,6 +29,8 @@ pub fn load_routes(config: &mut web::ServiceConfig) {
     config.route("/load/payment_methods", web::get().to(payment_methods_load));
     config.route("/load/languages", web::get().to(languages_load));
     config.route("/load/topics", web::get().to(topics_load));
+    config.route("/load/clients", web::get().to(clients_load));
+    config.route("/load/attorneys", web::get().to(attorneys_load));
 }
 
 
@@ -424,6 +426,128 @@ pub async fn languages_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
     }
     let body = Template {
         languages_list: languages_list,
+    }
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+//////////////////////
+
+#[derive(Debug, Deserialize)]
+pub struct ClientsParams {
+    pub search: Option<String>,
+    pub types:  Option<String>,
+} 
+#[derive(Debug, Deserialize)]
+pub struct ClientsData { 
+    pub results: Vec<RequestClient>,
+}
+
+pub async fn clients_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let l = 2;
+    let users_list: Vec<RequestClient>;
+
+    let search: String;
+    let types: String;
+    let params_some = web::Query::<ClientsParams>::from_query(&req.query_string());
+        if params_some.is_ok() {
+            let params = params_some.unwrap();
+            search = get_string_with_string(params.search.clone());
+            types = get_string_with_string(params.types.clone());
+        }
+        else {
+            search = String::new();
+            types = String::new();
+        }
+
+    let url = concat_string!(
+        API.to_owned(),
+        "users/clients/"
+        "?search=", search,
+    );
+    let resp = request_get::<ClientsData> (
+        url,
+        &"".to_string()
+    ).await;
+    if resp.is_ok() {
+        let data = resp.expect("E.");
+        users_list = data.results;
+    }
+    else {
+        users_list = Vec::new();
+    }
+
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/generic/items/users_form.stpl")]
+    pub struct Template {
+        users_list: Vec<RequestClient>,
+        types:      String,
+    }
+    let body = Template {
+        users_list: users_list,
+        types:      types,
+    }
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+//////////////////////
+
+#[derive(Debug, Deserialize)]
+pub struct AttorneysParams {
+    pub search: Option<String>,
+    pub types:  Option<String>,
+} 
+#[derive(Debug, Deserialize)]
+pub struct AttorneysData { 
+    pub results: Vec<RequestAttorney>,
+}
+
+pub async fn attorneys_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let l = 2;
+    let users_list: Vec<RequestAttorney>;
+
+    let search: String;
+    let types: String;
+    let params_some = web::Query::<AttorneysParams>::from_query(&req.query_string());
+    if params_some.is_ok() {
+        let params = params_some.unwrap();
+        search = get_string_with_string(params.search.clone());
+        types = get_string_with_string(params.types.clone());
+    }
+    else {
+        search = String::new();
+        types = String::new();
+    }
+
+    let url = concat_string!(
+        API.to_owned(),
+        "users/attorneys/"
+        "?search=", search,
+    );
+    let resp = request_get::<AttorneysData> (
+        url,
+        &"".to_string()
+    ).await;
+    if resp.is_ok() {
+        let data = resp.expect("E.");
+        users_list = data.results;
+    }
+    else {
+        users_list = Vec::new();
+    }
+
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/generic/items/users_form.stpl")]
+    pub struct Template {
+        users_list: Vec<RequestAttorney>,
+        types:      String,
+    }
+    let body = Template {
+        users_list: users_list,
+        types:      types,
     }
     .render_once()
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
