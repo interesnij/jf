@@ -65,7 +65,7 @@
             <div class="menu-dropdown">
               <div class="create_folder">Folder</div>
               <div class="create_document">Document(s) upload</div>
-              <div class="create_template_document">Document from template</div>
+              <div class="create_template">Document from template</div>
             </div>
           </div>
       </div>

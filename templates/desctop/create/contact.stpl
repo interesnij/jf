@@ -4,8 +4,8 @@
             <div class="my-auto title text-ellipsis w-100 text-left">
                 Add New Contact
             </div>
-            <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
-        </div>
+            <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
+        </div> 
         <div class="modal-control__content ignore-onclickoutside">
             <div class="new-post-modal">
                 <div class="contact-search-control">

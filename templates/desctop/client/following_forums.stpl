@@ -18,7 +18,7 @@
         <img src="/static/images/search.svg" alt="search">
         <input data-link="/load/posts?followed=true" class="search_input" placeholder="Search in forums">
       </div>
-      <img class="icon-button-control ml-3 my-auto normal" data-tip="New Post" src="/static/images/post.svg" alt="New Post">
+      <img class="icon-button-control ml-3 my-auto normal create_post" data-tip="New Post" src="/static/images/post.svg" alt="New Post">
     </div>
   </div>
   <div class="forums-page__content">

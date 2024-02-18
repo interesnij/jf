@@ -2,7 +2,7 @@
           <div tabindex="-1" class="modal-control">
             <div class="modal-control__header">
               <div class="my-auto title text-ellipsis w-100 text-left">New chat</div>
-              <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+              <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
             </div>
             <div class="modal-control__content ignore-onclickoutside">
               <div style="width: 700px;">

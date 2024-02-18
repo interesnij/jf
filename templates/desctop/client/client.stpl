@@ -24,7 +24,6 @@
           </svg>
         </div>
         <div class="dropdown__menu">
-          <div class="dropdown__menu-item">Create new matter</div>
           <div class="dropdown__menu-item">Direct chat</div>
           <div class="dropdown__menu-item">Add billable items</div>
           <div class="dropdown__menu-item">Create an invoice</div>
@@ -163,7 +162,7 @@
     <div tabindex="-1" class="modal-control">
       <div class="modal-control__header">
         <div class="my-auto title text-ellipsis w-100 text-left">Start a Call</div>
-        <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+        <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
       </div>
       <div class="modal-control__content ignore-onclickoutside">
         <div class="start-call-modal">

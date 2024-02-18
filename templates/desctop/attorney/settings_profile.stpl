@@ -518,7 +518,7 @@
                       <div tabindex="-1" class="modal-control">
                         <div class="modal-control__header">
                           <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                          <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+                          <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
                         </div>
                         <div class="modal-control__content ignore-onclickoutside">
                           <div class="modal-success-body">
@@ -533,7 +533,7 @@
                       <div tabindex="-1" class="modal-control">
                         <div class="modal-control__header">
                           <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                          <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+                          <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
                         </div>
                         <div class="modal-control__content ignore-onclickoutside">
                           <div class="modal-success-body">
@@ -644,7 +644,7 @@
                             <!-- active languages -->
                           <div class="multi-select-control__item">
                             <span class="my-auto">English</span>
-                            <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close">
+                            <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close close_modal">
                           </div>  
                           <!-- active languages -->
                         </div>
@@ -704,7 +704,7 @@
             <div tabindex="-1" class="modal-control">
               <div class="modal-control__header">
                 <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+                <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
               </div>
               <div class="modal-control__content ignore-onclickoutside">
                 <div class="modal-success-body">
@@ -719,7 +719,7 @@
             <div tabindex="-1" class="modal-control">
               <div class="modal-control__header">
                 <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+                <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
               </div>
               <div class="modal-control__content ignore-onclickoutside">
                 <div class="modal-success-body">

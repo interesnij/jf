@@ -1,7 +1,7 @@
 <div class="alert-control-container open">
     <div tabindex="-1" class="alert-control">
         <div class="alert-control__header">
-            <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+            <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
         </div>
         <div class="alert-control__content">
             <div class="title mb-4">Delete event</div>

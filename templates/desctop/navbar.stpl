@@ -43,13 +43,13 @@
           <span>Create New</span>
         </div>
         <div class="menu-dropdown">
-          <div class="menu-item">Time entry</div>
-          <div class="menu-item">Expense entry</div>
-          <div class="menu-item">Matter</div>
+          <div class="menu-item create_time_entry">Time entry</div>
+          <div class="menu-item create_expense_entry">Expense entry</div>
+          <div class="menu-item create_matter">Matter</div>
           <div class="menu-item create_contact" data-type="client">Contact</div>
-          <div class="menu-item">Document</div>
-          <div class="menu-item">Template</div>
-          <div class="menu-item">Note</div>
+          <div class="menu-item create_document">Document</div>
+          <div class="menu-item create_template">Template</div>
+          <div class="menu-item create_note">Note</div>
         </div>
     </div>
     <div class="badge-control my-auto">

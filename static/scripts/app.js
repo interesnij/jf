@@ -76,6 +76,142 @@ on('body', 'click', '.create_contact', function() {
     }
     ajax_link.send();
 });
+on('body', 'click', '.create_matter', function() {
+  span = document.body.querySelector("#reload");
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/matter?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.create_document', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/document?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.create_expense_entry', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/expense_entry?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.create_time_entry', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/time_entry?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.create_flat_fee', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/flat_fee?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.create_invoice', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/invoice?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.create_template', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/template?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.create_post', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/post?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
 
 on('body', 'click', '.close_modal', function() {
   document.body.querySelector(".modal-control-container").remove()

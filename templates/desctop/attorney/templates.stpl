@@ -43,8 +43,8 @@
                 <img src="/static/images/caret_down_white.svg" class="menu-button-icon" alt="drop-down">
             </div>
             <div class="menu-dropdown">
-              <div>Folder</div>
-              <div>Template(s) upload</div>
+              <div class="create_folder">Folder</div>
+              <div class="create_document">Document(s) upload</div>
             </div>
           </div>
         </div>
