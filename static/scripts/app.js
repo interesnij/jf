@@ -54,3 +54,22 @@ on('body', 'click', '#logg', function() {
   link.send(form_data);
 });
 
+
+
+on('body', 'click', '.create_contact', function() {
+span = document.body.querySelector("#reload");
+ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+ajax_link.open( 'GET', url, true );
+ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+if (localStorage.getItem('request_data') !== null) {
+      ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+}
+ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.appned(elem_.innerHTML);
+      } 
+    }
+    ajax_link.send();
+});
