@@ -174,7 +174,7 @@ pub struct MatterData {
     pub referral_ignore_attorney_data: Option<UserrCardData>,
     pub completed:        Option<String>,
     pub shared_with:      Vec<i32>,
-    pub shared_with_data: Vec<UserSharedData>,
+    pub shared_with_data: Vec<crate::utils::UserSharedData>,
     pub is_shared:        bool,
     pub created:          String,
     pub modified:         String,
