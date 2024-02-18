@@ -75,7 +75,7 @@
                                         <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                                     </div>
                                     <div 
-                                        class="contact-select-control__menu active matters_container" 
+                                        class="contact-select-control__menu matters_container" 
                                         data-link="/attorney_load/matters?types=form"
                                     >
                                     </div>
