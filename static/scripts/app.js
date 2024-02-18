@@ -18,19 +18,6 @@ on('body', 'click', '.menu-button', function() {
   }
 });
 
-function create_user_data() {
-    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-    link.open( 'GET', "https://backend.juslaw.com/api/v1/users/attorneys/current/", true );
-
-    link.onreadystatechange = function () {
-    if ( link.readyState == 4 && link.status == 200 ) {
-        data = JSON.parse(link.response);
-
-        localStorage.setItem("firm_locations", data.firm_locations);
-    }
-    link.send();
-}
-
 on('body', 'click', '#logg', function() {
   _this = this;
   form = _this.parentElement.parentElement; 
@@ -61,8 +48,6 @@ on('body', 'click', '#logg', function() {
   if ( link.readyState == 4 && link.status == 200 ) {
     localStorage.setItem("request_data", link.response);
     window.location.href = "/";
-
-    create_user_data();
   }
 
   else {
@@ -70,6 +55,7 @@ on('body', 'click', '#logg', function() {
   }};
   link.send(form_data);
 });
+
 
 on('body', 'click', '#signup', function() {
   _this = this;
@@ -113,3 +99,20 @@ on('body', 'click', '.ajax', function(event) {
     ajax_get_reload(this.getAttribute("href"), true, 2);
 });
 
+on('body', 'click', '.create_contact', function() {
+  span = document.body.querySelector("#reload");
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', url, true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  }
+  ajax_link.onreadystatechange = function () {
+    if ( this.readyState == 4 && this.status == 200 ) {
+            elem_ = document.createElement('span');
+            elem_.innerHTML = ajax_link.responseText;
+            span.appned(elem_.innerHTML);
+        } 
+      }
+      ajax_link.send();
+});
