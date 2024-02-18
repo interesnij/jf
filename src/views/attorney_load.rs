@@ -113,7 +113,7 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             "users/attorneys/", request_user.user_id, "/leads_and_clients/",
             "?search=", search,
             "&offset=", offset,
-            "&limit=", limit,
+            "&limit=", limit
             //"&type=", type
         );
         let resp = request_get::<LeadsAndClientsData> (
@@ -155,14 +155,14 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
                 count:        i32,
                 next:         Option<String>,
                 page_count:   i32,
-                object_list:  Vec<LeadOrClientData>,
+                users_list:   Vec<LeadOrClientData>,
             }
             let body = Template {
                 request_user: request_user,
                 count:        count,
                 next:         next,
                 page_count:   page_count,
-                object_list:  object_list,
+                users_list:   users_list,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;

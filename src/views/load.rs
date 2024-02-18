@@ -240,7 +240,7 @@ pub async fn stages_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let url = concat_string!(
         API.to_owned(),
         "business/stages/",
-        "?attorney=", attorney,
+        "?attorney=", attorney
     ); 
     let resp = request_get::<StagessData> (
         url,
