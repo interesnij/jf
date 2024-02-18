@@ -9,7 +9,7 @@
                 <form>
                   <div class="justify-content-between align-items-center">
                     Your contact list is empty
-                    <button class="btn btn--outline btn--green ripple-effect normal ml-3">
+                    <button class="btn btn--outline btn--green ripple-effect normal ml-3 create_contact" data-type="attorney">
                       <span>Create New Contact</span>
                     </button>
                   </div>

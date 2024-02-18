@@ -60,7 +60,7 @@
   <p class=" text-center text-gray">
     You currently have no contact.
   </p>
-  <button class="btn btn--green ripple-effect normal mx-auto mt-1 create_industry_contact">
+  <button class="btn btn--green ripple-effect normal mx-auto mt-1 create_contact" data-type="attorney">
     <img src="/static/images/plus_white.svg" alt="plus">
     <span>New contact</span>
   </button>

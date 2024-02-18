@@ -2,7 +2,7 @@
   <div class="full-modal__container open">
     <div class="full-modal__header">
         <span class="title my-auto">Settings</span>
-        <img class="my-auto ml-auto close_modal cursor-pointer" src="/static/images/close_white.svg" alt="close"></div>
+        <img class="my-auto ml-auto close_full_modal cursor-pointer" src="/static/images/close_white.svg" alt="close"></div>
     <div class="full-modal__content with-no-footer">
       <div class="tab-control">
         <div class="tab-control__item settings_tab_action tab-control__item--active" data-link="/attorney/settings/account">

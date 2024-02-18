@@ -216,3 +216,11 @@ on('body', 'click', '.create_post', function() {
 on('body', 'click', '.close_modal', function() {
   document.body.querySelector(".modal-control-container").remove()
 });
+
+on('body', 'click', '.close_full_modal', function() {
+  document.body.querySelector(".full-modal__background").remove()
+});
+
+on('body', 'click', '.close_matter_client_container', function() {
+  this.parentElement.remove()
+});

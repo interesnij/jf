@@ -2,7 +2,7 @@
     <div class="full-modal__container open">
         <div class="full-modal__header">
             <span class="title my-auto">Create Matter</span>
-            <img class="my-auto ml-auto close_modal cursor-pointer" src="/static/images/close_white.svg" alt="close">
+            <img class="my-auto ml-auto close_full_modal cursor-pointer" src="/static/images/close_white.svg" alt="close">
         </div>
         <div class="full-modal__content">
             <div class="matter-edit-page">
@@ -42,25 +42,27 @@
                                     </div>
                                     <div class="col-md-6 d-flex">
                                         <span class="sc-eCstlR bwPZuV mt-2 mr-3">OR</span>
-                                        <button class="btn btn--green ripple-effect large" type="button">
+                                        <button class="btn btn--green ripple-effect large create_contact " data-type="client" type="button">
                                             <img src="/static/images/plus_white.svg" alt="plus">
                                             <span>New Contact</span>
                                         </button>
                                     </div>
                                 </div>
 
-                                <div class="col-12">
-                                    <div class="sc-dlfnuX hwMQfB">
+                                <div class="col-12 matter_client_container">
+                                    <div class="sc-dlfnuX hwMQfB"> 
                                         <div class="user-avatar-container large toRight my-auto">
-                                            <div class="user-avatar large"><img src="https://k.juslaw.online/media/images/2023/12/20/2F8B90E3-3A29-47E8-8E65-56596533DEAF.mpo"></div>
+                                            <div class="user-avatar large">
+                                                <img src="https://k.juslaw.online/media/images/2023/12/20/2F8B90E3-3A29-47E8-8E65-56596533DEAF.mpo">
+                                            </div>
                                         </div>
                                         <div class="ml-3 d-flex flex-column align-items-start">
                                             <div>serge goldobin</div>
                                             <div></div>
                                             <div class="mt-auto">+19738016534</div>
                                             <div>serge300@gmail.com</div>
-                                        </div>
-                                        <img src="/static/media/close.f4b79d07fa8d4d27cd42c9af233d76be.svg" class="sc-hKgJUU cfLnUc">
+                                        </div> 
+                                        <img src="/static/media/close.svg" class="sc-hKgJUU cfLnUc close_matter_client_container">
                                     </div>
                                 </div>
                             </div>
