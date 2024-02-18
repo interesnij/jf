@@ -1,0 +1,67 @@
+<div class="modal-control-container open">
+    <div tabindex="-1" class="modal-control">
+        <div class="modal-control__header">
+            <div class="my-auto title text-ellipsis w-100 text-left">New Template Upload</div>
+            <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+        </div>
+        <div class="modal-control__content ignore-onclickoutside">
+            <div class="new-message-modal">
+                
+                <form class="first_step">
+                    <div class="upload-control mt-3">
+                        <% include!("../generic/items/upload_form.stpl"); %>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <button class="btn btn--white ripple-effect large ml-auto close_modal">
+                            <span>Cancel</span>
+                        </button>
+                        <button class="btn btn--green ripple-effect large ml-3 create_document_1" type="button">
+                            <span>Upload File</span>
+                        </button>
+                    </div>
+                </form>
+
+                <div class="sc-gsTEea fvxEYW hidden second_step">
+                    <div class="sc-jHVedQ gFIEcK mt-2">
+
+                        <!-- folder object -->
+                        <div class="sc-aemIz cEGFRQ">
+                            <img src="/static/images/folder_gray.svg" alt="folder">
+                            <span class="ml-2 my-auto text-ellipsis">Personal templates</span>
+                        </div>
+                        <!-- folder object -->
+                        
+                    </div>
+                    <div class="d-flex mt-3">
+                        <button class="btn btn--white ripple-effect large ml-auto close_modal" type="button">
+                            <span>Cancel</span>
+                        </button>
+                        <button class="btn btn--green ripple-effect large ml-3 create_template_2" type="button">
+                            <span>Upload</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
+
+
+
+
+<!--
+    step 2 get templates
+    https://backend.juslaw.com/api/v1/documents/
+        ?search=
+        &limit=1000
+        &offset=0
+        &is_template=true
+        &ordering=-modified
+        &is_vault=false
+{
+    "parent": 193,
+    "file": "https://k.juslaw.online/media/2024/02/13/post-4_jNAFdyS.jpg",
+    "title": "post-4.jpg",
+    "is_template": true
+}
+-->

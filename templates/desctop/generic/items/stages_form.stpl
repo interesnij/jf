@@ -1,0 +1,3 @@
+<% for object in states_list.iter() { %>
+    <div class="select-control__menu-item"><span><%= object.title %></span></div>
+<% } %>

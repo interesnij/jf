@@ -18,6 +18,19 @@ on('body', 'click', '.menu-button', function() {
   }
 });
 
+function create_user_data() {
+    link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    link.open( 'GET', "https://backend.juslaw.com/api/v1/users/attorneys/current/", true );
+
+    link.onreadystatechange = function () {
+    if ( link.readyState == 4 && link.status == 200 ) {
+        data = JSON.parse(link.response);
+
+        localStorage.setItem("firm_locations", data.firm_locations);
+    }
+    link.send();
+}
+
 on('body', 'click', '#logg', function() {
   _this = this;
   form = _this.parentElement.parentElement; 
@@ -48,6 +61,8 @@ on('body', 'click', '#logg', function() {
   if ( link.readyState == 4 && link.status == 200 ) {
     localStorage.setItem("request_data", link.response);
     window.location.href = "/";
+
+    create_user_data();
   }
 
   else {

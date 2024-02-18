@@ -1,0 +1,235 @@
+<div class="full-modal__container open">
+    <div class="full-modal__header">
+        <span class="title my-auto">Create Invoice</span>
+        <img class="my-auto ml-auto close cursor-pointer" src="/static/images/close_white.svg" alt="close">
+    </div>
+    <div class="full-modal__content">
+        <div class="create-invoice-modal">
+            <form action="#">
+                <div class="folder-control">
+                <div class="folder-control__header">
+                    <div class="d-flex">
+                        <div class="folder-control__heading">Client &amp; Matter</div>
+                        <div class="folder-control__heading-after"></div>
+                    </div>
+                    <div class="d-flex"></div>
+                </div>
+                <div class="folder-control__content">
+                    <div class="folder-item folder-item--with-separator">
+                        <div class="row">
+                            <div class="col-md-6">
+                            <div class="">
+                                <div class="d-flex justify-content-between">
+                                    <div class="contact-select-control__label">Client</div>
+                                </div>
+                                <div class="contact-select-control__container">
+                                    <div class="contact-select-control">
+                                        <div class="flex-1 d-flex flex-wrap">
+                                            <span class="my-auto">Select a Client</span>
+                                            <input name="client" type="hidden" >
+                                        </div>
+                                        <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
+                                    </div>
+                                    <div class="contact-select-control__menu">
+                                        <!-- user object -->
+                                        <div class="contact-select-control__menu-item">
+                                            <div class="user-avatar-container small toRight my-auto mr-1">
+                                                <div class="user-avatar small">
+                                                    <img src="https://k.juslaw.online/media/images/2023/12/20/2F8B90E3-3A29-47E8-8E65-56596533DEAF.mpo">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="contact-select-control__menu-item-name">serge goldobin</div>
+                                                <div class="contact-select-control__menu-item-email">serge300@gmail.com</div>
+                                            </div>
+                                            <div class="ml-auto my-auto contact-select-control__menu-item-type">client</div>
+                                        </div>
+                                        <!-- user object -->
+                                    </div>
+                                </div>
+                                <div class="contact-select-control__footer"></div>
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                            <div class="select-control">
+                                <div class="d-flex justify-content-between">
+                                    <div class="select-control__label">Matter</div>
+                                </div>
+                                <div class="select-control__container">
+                                    <div class="select-control__main">
+                                        <div class="flex-1 d-flex justify-content-between">
+                                            <span class="my-auto">Select a Matter</span>
+                                            <input class="form_matter" name="matter" type="hidden" >
+                                        </div>
+                                    </div>
+                                    <div class="select-control__menu">
+
+                                        <div class="select-control__menu-item"><span>Test Matter</span></div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="select-control__footer"></div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="sc-dIUeWJ fHnNRq">
+                    <button class="btn btn--green ripple-effect small ml-auto add_expense_billing" type="button">
+                        <span>Add Flat Fee</span>
+                    </button>
+                    <button class="btn btn--green ripple-effect small ml-auto add_expense_billing" type="button">
+                        <span>Add Expense</span>
+                    </button>
+                    <button class="btn btn--green ripple-effect small ml-auto add_time_billing" type="button">
+                        <span>Add Time</span>
+                    </button>
+                </div>
+                <div class="folder-control mt-3">
+                    <div class="folder-control__header">
+                        <div class="d-flex">
+                            <div class="folder-control__heading">Billing Items</div>
+                            <div class="folder-control__heading-after"></div>
+                        </div>
+                        <div class="d-flex"></div>
+                    </div>
+                    <div class="folder-control__content">
+                        <div class="folder-item folder-item--with-separator">
+                            <div class="d-flex flex-column">
+                                <div class="sc-hBEYId ikBHxE">Time Entries</div>
+                                <div class="sc-fodVek fcmBUN">
+                                    <div>#</div>
+                                    <div>Date</div>
+                                    <div>Description</div>
+                                    <div>Hourly Rate</div>
+                                    <div>Duration</div>
+                                    <div>Billed By</div>
+                                    <div>Total Amount</div>
+                                    <div></div>
+                                </div>
+                                <div class="sc-bkzYnD hWayUK d-flex mt-3">
+                                    <div>Total Billable Hours</div>
+                                    <div>00:00:00</div>
+                                </div>
+                                <div class="sc-bkzYnD hWayUK d-flex mt-2">
+                                    <div>Total Non-Billable Hours</div>
+                                    <div>00:00:00</div>
+                                </div>
+                                <div class="sc-hBEYId ikBHxE mt-3">Expense Entries</div>
+                                <div class="sc-fodVek fcmBUN">
+                                    <div>#</div>
+                                    <div>Date</div>
+                                    <div>Description</div>
+                                    <div>Rate</div>
+                                    <div>Quantity</div>
+                                    <div>Billed By</div>
+                                    <div>Total Amount</div>
+                                    <div></div>
+                                </div>
+                                <div class="sc-hBEYId ikBHxE mt-4">Flat Fee</div>
+                                <div class="sc-fodVek fcmBUN">
+                                    <div>#</div>
+                                    <div>Date</div>
+                                    <div>Description</div>
+                                    <div>Rate</div>
+                                    <div>Quantity</div>
+                                    <div>Billed By</div>
+                                    <div>Total Amount</div>
+                                    <div></div>
+                                </div>
+                                <div class="sc-bkzYnD hWayUK d-flex mt-4">
+                                    <div>Subtotal</div>
+                                    <div>$0.00</div>
+                                </div>
+                                <div class="sc-bkzYnD hWayUK d-flex mt-2 align-items-center">
+                                    <div class="align-items-center summary-group-tax-label"><span class="mr-3">Tax</span>
+                                        <div class="input-control sm">
+                                            <div class="position-relative"><input id="tax_rate" type="text" class="active" value="7.0000">
+                                                <div class="input-control__addon"><span class="input-control__addon-label">%</span></div>
+                                            </div>
+                                            <div class="input-control__footer"></div>
+                                        </div>
+                                    </div>
+                                    <div class="summary-group-tax-value">$0.00</div>
+                                </div>
+                                <div class="sc-bkzYnD sc-idOiZg hWayUK duDMko d-flex mt-3">
+                                    <div>Total</div>
+                                    <div>$0.00</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="folder-control mt-3">
+                    <div class="folder-control__header">
+                        <div class="d-flex">
+                            <div class="folder-control__heading">Payment</div>
+                            <div class="folder-control__heading-after"></div>
+                        </div>
+                        <div class="d-flex"></div>
+                    </div>
+                    <div class="folder-control__content">
+                        <div class="folder-item folder-item--with-separator">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="text-label">Payment Due</div>
+                                    <div class="d-flex">
+                                        <div class="input-day-control">
+                                            <div class="days">DAYS</div>
+                                            <input id="PvSe0fH2SLY7WMvA9_7to" type="number">
+                                            <div class="input-day-control__footer"></div>
+                                        </div>
+                                        <div class="ml-3 my-auto">after invoice is sent</div>
+                                    </div>
+                                    <div class="text-label mt-3">Online Payments</div>
+                                    <div class="">
+                                        <label class="checkbox-control">Direct Debit (ACH/eCheck)
+                                            <input type="checkbox" checked=""><span></span>
+                                        </label>
+                                    </div>
+                                    <div class="d-flex mt-2">
+                                        <div class="">
+                                            <label class="checkbox-control">Credit Cards
+                                                <input type="checkbox" checked=""><span></span>
+                                            </label>
+                                        </div>
+                                        <img class="sc-kstqJO gAWQCI ml-4 my-auto" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAcCAYAAAAnbDzKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAOJSURBVHgB7VhNSFRRFD7vWU7kDxJpQmNWM5KOCx0DrYSQ8mcjUoqbCK2Fi4SBbFFEFFRUJGSg4EYix9pFQ0aLTBFbiCn5t/BnoTSgg5ag46iBY850z31z79w3OT9FYC/84KH33PPuOd/5uzMjAUF6waPDm5LuOUiQTZYJ8I9DAu8bt8ddZ++5aZeo87JuGDTgeACcG551s/xDjn4K2nMekbCbVI0sgXQOtApS8jJoGwlaJwA7BLYbu7YSluYsQs6RVZVs6EssvBvap5IV5hvog+jqnYaJ6QWwVJ2g64mpBbDahrluXpYeMoyJEBejU/aJLj6OeRfXwf3CU8p5rtV11fu/RQAdHSQOl5oXoebsPCfF9hiqK3KoYwhbxziYDIlQXpJJ162rivG4WB08vl7CiYq4cuctJxBP9JrvlsHB5Hi+b/swDiuESCgELaG5pWho6U6Gh53FEBVziMpOm5b5Phpizju+umBgdBbSCQEGx7yie6u2gDu/srYO/SOz9FF0/NFHHdF5RIZwXjDsCqfQ/XkZ6m/fh+/TLXBsaYDLy4tN/P9Ga59i0JjEZVgeVK/Er1dw4RmPKDorErBUnfzFNhLAwIRC2CbGWpwk9bzXUAMpqUchbs+mz7FMrsOMYLkEEhCB2WBRFp3HTDJ5Y1ufn4AxfAYimkL9ozP0L5I4nuZRGbR1jHFnTL6UI2kW6Sar3yHMxssnlWCpVkf7vBAM6+thfl5eVgr8FQKdZMJQZd1+SE3LVRnE5kXQCePLAE4ghqa2T5QE9gkCieOkqq4w8zUrM+wNJM4ChntiVv+YwCQpBxbRvGw9FPmakjUvIj4mePkgiYvXXpHoDnEZq3k2CBB64vCLhkpV5MM1ckQEsCTGfU4V5ht5VBqF8sjYYgKJ0cOyaN1irovNyyabOI3CEQg7hRgGRmZU0aIyYUKIRlkGBttrlQtr6htdFxHyDF29U7R02Hv95Cy0wXCJ3DEYAMx4qAstYgJowCKsxeZFpAsjFDPGJghGMDCKWOsPmj9C870yLsM+EQOSm52i3N6GJAiFyDNADre9H+PrwHLAxnXMKaWDPYM36436DuqA/kAcJeVac9PIM0dR3+Z7J3De0wDN+Usx2I0spZ1p8IKGsfNxervxXxBwgoYhk2/2I6BRSF5ol6M2pcugzSw43V7pqjzZU2eP8khmL/m5DrQBp9cLPRvEZzvx/Sc1g3wcUonU1AAAAABJRU5ErkJggg==">
+                                        <img class="sc-kstqJO gAWQCI ml-2" src="data:image/png;base64,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">
+                                        <img class="sc-kstqJO gAWQCI ml-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAcCAYAAAAnbDzKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAARISURBVHgB7ZhNbFRVFMfPe/1IxyIzgxVD0czEYuJC0jZGl47Bha5k0BUbwbJEbYtxKcSupVqiSwvtxl07JTGRBYSypDG04k6LnRjaoKYzJZA2kPZxfmfeLdPpFKaFBF7CP3259557373n43/OfR1PQM+VtCd1pz0JOnSUkKccgXi5QJZ75fvOGQ/lffGvSAQUr0BxRVY6ffX8dxI95UEC1qgBQVYiCijvS7SRiLoBEnkD6jeaGOlKSSJWZ/2Z+buS3tEQ9u9I37l/ZfDgy1IreCe9o9H6xcVla93eDsjvn7d2/UeDedmUAYfeSuqLK3IsNyefaP/EBy/Jx4MzMnl9SS4cfVU6dsfkzERBzl69KSezrXLq0v+S10NBpq1Z2nUemcMX77RITteiVOK5Oun79YbJcUJvbtbkI11p6R2dlbN/3DR5SmXv/XhNzut5D0JVCqFw37kbcvz9naYIXiioQalko5y5XLDNUT6VbJAFnUN5lPzp4CvSnWmx9Rg+/fXr1uJR1iFHeZzA3JA6oaM1JuN/3dbnlq1JaaQxykXiYVgXgUzbNvlbKcPLUAcMjJe82Z15waJSV++bp8uBElMaIUc1DB9WY4tLy0bHIe07pXAA7Zg6Yf8b201pjHHnT80urp75MPjrvb9ThifmjUYADzo6wNEP9cATv8xZlMqRiPmmSCo0gIj89tVr0q8Uc8qbgnuapevnfyzCpfWNakTcHBAPc2BQIzk8UZBasCYCcDGzZ5t5511tv9Fk7c/u0n6zfn+U5g+/nbQxBx/SPrLiYstqcoLs3u3WTl1fNIVR1AsdwNykyolutxqJ54lCx+4m24NzaYlaLRTy/J6pwA1IPhIUsMnY1QUzyFUE4CpEedXYCNUUyIcUcoD77FcuK1/DOTiiJgNqgRmUbFwjgz5jWj2gAN58kMIbyQBJHC9zyu+qeDx2nyTj07fWOWXTFxm5sX/v86t85yFylDuqS2VUMJjKVCmDfuWAWuyTL9y1ByZ8nnlRjHse7GhaVzi2ZACgeuSNSg32DFz6z7g8oMlOuMenb9s65khWKgqtA0lM0lIc3B5OTmnmIapHdCxBsDquhnrZIiZnl2RGPdXe2mSX0Jvf/mn9C5+1yT69gPJloXYKggUtq3jaUWhoomgtVGnnTgiNJ6mhI9RM6TniNVel3ZYNOGxUKvGdW5nNCf3Q5XmTlQpCk1Utl2RUL0BEXBE4HX6SwP2sll3ARUbpHTmSlv4DrRbxYyqjJD8WA+IaTpRwlw3Kj2rZQ6ne0Tnhnz6Ux3sXlSqURBI/FVYvLisPs/Rv3w/XbI+TB3bJl/ZuCf06Zs5FkjzigqvEpqvQcb3AUKASeIiIlM/x/YTC54+22RhlGLeHpXojVPvgowKdCiP3SAY8bXj2D82TBgYUJcLwAwkmJaIIZGUMAz6VCEZBK09Rnx6fn+f4hUsNyUkEUFI8uKje70T3ey6eFjw4HbmWAAAAAElFTkSuQmCC">
+                                        <img class="sc-kstqJO gAWQCI ml-2" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAcCAYAAAAnbDzKAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAANZSURBVHgB7VhdSFNhGH7OnGUuaJL/f+hUNMl0VmRMgtQgMVLQi5QIQr3qzyCQ6qK6qJAuLOrOpLpIu0hQQbHEfkBLb6Y0SUNxkpg/aWpMnbk6fe+7NucUvFwH9sDHOecb3/s+z/O+7zaOBIG046di1JLvE0BKE49a/PeQG23y6uW+thejkp38tl4ogvg6zNvkX3qVj+RbDeWRJ2ipa1QSpAIoFlKaCsqGVukC4BXgaXgFeBpq942S/CwEBwZgcWkZI18n0dFl5P2ykjz0GD+LvQmcPGZASKAWpkGz8/PszHRkG9Kh8fdDR2cvmtu7EOJrRZH2G+K3W2D5o8bLuQhMaGI4R3P7B45FyEjfA11UGEbGJpChT3ZyqalvQXlxHt9PzcyJXL2YFldXbKjA3iQdC2AxBdl4cOs83x9OT0bwbi0HzMnUw/TFzIkJxfnZTKpbCOzoNEKj8WPy1ZGfUKgdR+qOBRg0s/ycsDzM8bMMemfO8uITsCyvIFaISEmKZbK0NP472BizEKqLDsfdylJ3upu3kGlwRKhvxdWqx8LpAOHsWjJyeGpmnt2//fA5kykpyEJd4xt2lVZ9YweKdo0jVL2yIfa5oBEWmpO5n2MR4WBRTdojWJas7DQtBz4aB7iiDmO3FOAAlYuW60ESRolr711BmagGtZJdtHnd2Xi/xU1jhvpa19rOYG87qpqjNXTRYRyblgPlon2vXzjNItyhxhagMk4Lx11FXbrxiJ27U1kG85i9j0OCtJieXevPYauGW8cdk6t+Yr6saHrdxe1BhC+KeA5Q9a9V1fK9q3E0k1Rld2xaAWob6m8iKP66Oh0j0B6RdxVE7leUFrKbdI6GvGEhggfXHa9+hvC1p3eAyRNh879hdhhG8V1z1NS1cNvSrLnDJzwh9abrRmx0KCLDgpAYF4V+Maj3axuwumpDSmIsjP1DkCT70B05tA8Nre/5G4cE7hSDS47SsBtNQzCNfsdbSxDiti2KtlkRzm/Hsx8xqJ+L5DxzCxZBUsfn16oYIHIHOgV0s8hQjk+5c48eFFWeX9cR0oHcMzIUDO8vsafhFeBpeAV4GiRgHgqGECD3QamQ0aSyyT5nocAqyPRiC6oKVV/b01GbrNLT6zooADKbLb/7LTgT978iEmOoFh/jgQAAAABJRU5ErkJggg==">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-control">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <label for="udmnUsMo6x0tUf_HSpFxO" class="input-control__label">Email Address</label>
+                                        </div>
+                                        <input id="udmnUsMo6x0tUf_HSpFxO" type="text">
+                                        <div class="input-control__footer"></div>
+                                    </div>
+                                    <div class="textarea-form-control d-flex flex-column mt-2">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="textarea-form-control__label">Note on Invoice</div>
+                                            <div class="textarea-form-control__required">Optional</div>
+                                        </div>
+                                        <textarea class=""></textarea>
+                                        <div class="textarea-form-control__footer"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-modal__footer">
+                    <button class="btn btn--disabled btn--white ripple-effect large ml-auto close_modal" type="button">
+                        <span>Save Draft</span>
+                    </button>
+                    <button class="btn btn--disabled btn--yellow ripple-effect large ml-3 create_invoice" type="button">
+                        <span>Send Invoice</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

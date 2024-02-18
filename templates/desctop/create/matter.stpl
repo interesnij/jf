@@ -1,0 +1,412 @@
+<div tabindex="0" class="full-modal__background grey-theme open">
+    <div class="full-modal__container open">
+        <div class="full-modal__header">
+            <span class="title my-auto">Create Matter</span>
+            <img class="my-auto ml-auto close cursor-pointer" src="/static/images/close_white.svg" alt="close">
+        </div>
+        <div class="full-modal__content">
+            <div class="matter-edit-page">
+                <form>
+                    <div class="folder-expandable">
+                        <div class="folder-expandable-header">
+                            <div class="d-flex">
+                                <div class="folder-expandable-heading">
+                                    <img src="/static/images/arrow-drop-down.svg" alt="arrow" class="isExpanded">
+                                    Client Info
+                                </div>
+                                <div class="folder-expandable-heading-after"></div>
+                            </div>
+                            <!--
+                                <div class="folder-expandable-expand">Collapse section</div>
+                            -->
+                        </div>
+
+                        <div class="folder-expandable-content mb-4 isExpanded">
+                            <div class="row mt-2">
+                                <div class="col-12 row mb-3">
+                                    <div class="col-md-6">
+                                        <div class="client-select-control">
+                                            <div class="client-select-control__container">
+                                                <div class="client-select-control__main">
+                                                    <input type="text" placeholder="Search or select a lead/ client contact" value="">
+                                                    <img src="/static/images/arrow-drop-down.svg" class="client-select-control__arrow" alt="arrow">
+                                                </div>
+                                                <div class="client-select-control__menu">
+                                                    
+                                                    <!-- client info -->
+                                                    <div class="client-select-control__menu-item">
+                                                        <div class="user-avatar-container small toRight my-auto mr-1">
+                                                            <div class="user-avatar small">
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="d-flex flex-column">
+                                                            <div class="contact-select-control__menu-item-name"></div>
+                                                            <div class="contact-select-control__menu-item-email"></div>
+                                                        </div>
+                                                        <div class="ml-auto my-auto contact-select-control__menu-item-type"></div>
+                                                    </div>
+                                                    <!-- client info -->
+
+                                                </div>
+                                            </div>
+                                            <div class="client-select-control__footer"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 d-flex">
+                                        <span class="sc-eCstlR bwPZuV mt-2 mr-3">OR</span>
+                                        <button class="btn btn--green ripple-effect large" type="button">
+                                            <img src="/static/images/plus_white.svg" alt="plus">
+                                            <span>New Contact</span>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 hidden client_info">
+                                    <input class="form_client" name="client" type="hidden">
+                                    <div class="sc-dlfnuX hwMQfB">
+                                        <div class="user-avatar-container large toRight my-auto">
+                                            <div class="user-avatar large">
+                                                <img src="https://k.juslaw.online/media/images/2023/12/20/2F8B90E3-3A29-47E8-8E65-56596533DEAF.mpo">
+                                            </div>
+                                        </div>
+                                        <div class="ml-3 d-flex flex-column align-items-start">
+                                            <div>serge  goldobin</div>
+                                        <div>
+                                    </div>
+                                    <div class="mt-auto">+19738016534</div>
+                                    <div>serge300@gmail.com</div>
+                                    <img src="/static/images/close.svg" class="sc-hKgJUU cfLnUc">
+                                </div>
+                            </div>
+                            <!--
+                            <div class="d-flex mt-3 mb-4">
+                                <div class="folder-expandable__btn next-btn">Continue to next section</div>
+                                <div class="folder-expandable__btn ml-auto">Expand all</div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+
+                    <div class="folder-expandable mt-3">
+                        <div class="folder-expandable-header">
+                            <div class="d-flex">
+                                <div class="folder-expandable-heading">
+                                    <img src="/static/images/arrow-drop-down.svg" alt="arrow" class="">Matter Details
+                                </div>
+                                <div class="folder-expandable-heading-after"></div>
+                            </div>
+                            <!--
+                                <div class="folder-expandable-expand">Expand section</div>
+                            -->
+                        </div>
+                        <div class="folder-expandable-content mb-4 isExpanded">
+                            <div class="row">
+                                <div class="input-control col-md-6 mt-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_title" class="input-control__label">Matter Name</label>
+                                    </div>
+                                    <input id="id_title" name="title" placeholder="E.g. Kathryn Murphy - Divorce" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="form-date-picker-control col-md-6 mt-2">
+                                    <div class="d-flex justify-content-between">
+                                        <label for="start_date" class="form-date-picker-control__label">Start Date</label>
+                                    </div>
+                                    <div class="position-relative">
+                                        <input name="start_date" class="form-date-picker-control__input active" placeholder="MM/DD/YYYY" type="datetime_local">
+                                        <img src="/static/images/calendar_gray.svg" class="form-date-picker-control__icon" alt="calendar">
+                                    </div>
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="textarea-form-control d-flex flex-column col-md-6 mt-2">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="textarea-form-control__label">Description</div>
+                                        <div class="textarea-form-control__required">Optional</div>
+                                    </div>
+                                    <textarea name="description" id="id_description"  placeholder=""></textarea>
+                                    <div class="textarea-form-control__footer"></div>
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                <div class="select-control">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="select-control__label">Practice Area</div>
+                                    </div>
+                                    <div class="select-control__container" tabindex="0">
+                                        <div class="select-control__main">
+                                            <div class="flex-1 d-flex justify-content-between">
+                                                <span class="my-auto">Please select Practice Area</span>
+                                            </div> 
+                                        </div> 
+                                        <div class="select-control__menu">
+                                            <span class="load_content" data-link="/load/specialities?types=single"></span>
+                                        </div>
+                                    </div>
+                                    <div class="select-control__footer">
+                                        <div class="select-control__help ml-auto">Manage practice area in Edit profile</div>
+                                    </div>
+                                </div>
+                                <div class="select-control mt-3">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="select-control__label">Case stage</div>
+                                        <div class="select-control__required">Optional</div>
+                                    </div>
+                                    <div class="select-control__container" tabindex="0">
+                                        <div class="select-control__main">
+                                            <div class="flex-1 d-flex justify-content-between">
+                                                <span class="my-auto">Please select Case stages</span>
+                                                <input class="form_stage" name="stage" type="hidden" >
+                                            </div>
+                                            <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                                        </div>
+
+                                        <div class="select-control__menu load_content" data-link="/load/stages?attorney=<%= request_user.user_id %>">
+                                        </div>
+                                    </div>
+                                    <div class="select-control__footer">
+                                        <div class="select-control__help ml-auto">Manage case stages in Settings</div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="mt-4 text-bold">Jurisdiction</div>
+                            <div class="row mb-3">
+                                <div class="select-control col-md-4 mt-1 load_content" data-link="/load/countries">
+
+                                </div>
+                                <div class="select-control col-md-4 mt-1 states_container">
+                                    
+                                </div>
+                                <div class="select-control col-md-4 mt-1 cities_container">
+                                    
+                                </div>
+                                <div class="select-control col-md-4 mt-1">
+                                
+                                </div>
+                                
+                                <div class="upload-control col-12 mt-2">
+                                    <% include!("../generic/items/upload_form.stpl"); %>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="d-flex mt-3 mb-4">
+                                <div class="folder-expandable__btn next-btn">Continue to next section</div>
+                                <div class="folder-expandable__btn ml-auto">Collapse all</div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                    <div class="folder-expandable mt-3">
+                        <div class="folder-expandable-header">
+                            <div class="d-flex">
+                                <div class="folder-expandable-heading">
+                                    <img src="/static/images/arrow-drop-down.svg" alt="arrow" class="">Billing</div>
+                                <div class="folder-expandable-heading-after"></div>
+                            </div>
+                            <!--
+                            <div class="folder-expandable-expand">Expand section</div>
+                            -->
+                        </div>
+                        <div class="folder-expandable-content mb-4 isExpanded">
+                            <div class="mt-3">
+                                <div class="">
+                                    <label class="checkbox-control">Matter is billiable
+                                        <input name="is_billiable" type="checkbox" checked=""><span></span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12">
+                                    <div class="row">
+                                        <div class="select-control col-md-6">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="select-control__label"></div>
+                                            </div>
+                                            <div class="select-control__container" tabindex="0">
+                                                <div class="select-control__main">
+                                                    <div class="flex-1 d-flex justify-content-between">
+                                                        <span class="my-auto">Select fee type</span>
+                                                        <input class="form_fee_type" name="fee_type" type="hidden" >
+                                                    </div>
+                                                    <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                                                </div> 
+                                                <div class="select-control__menu">
+                                                    <div class="select-control__menu-item"><span>fixed fee</span></div>
+                                                    <div class="select-control__menu-item"><span>hourly rate</span></div>
+                                                    <div class="select-control__menu-item"><span>AFA</span></div>
+                                                    <div class="select-control__menu-item"><span>contingency fees</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="select-control__footer"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <div class="text-dark"> Rate</div>
+                                    <div class="sc-fbNZge kcjhkj">
+                                        <div class="flex-1 d-flex">
+                                            <div class="sc-GTVdH dXaChH">
+                                                <input id="id_rate" name="rate" pattern="[0-9.]+" placeholder="Enter your rate" value="">
+                                            </div>
+                                        </div>
+                                        <div class="sc-gsxoIA kfwLZt">
+                                            <input class="form_currency" name="currency" type="hidden" >
+                                            <div class="select-control__container w-100" tabindex="0">
+                                                <div class="select-control__main border-none w-100 active">
+                                                    <div class="d-flex"> 
+                                                        <span class="my-auto">USD</span>
+                                                    </div>
+                                                    <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
+                                                </div>
+                                                <div class="select-control__menu">
+                                                    <div data-id="1" class="select-control__menu-item active">
+                                                        <span>USD</span>
+                                                    </div>
+                                                    <div data-id="2" class="select-control__menu-item">
+                                                        <span>GBP</span>
+                                                    </div>
+                                                    <div data-id="3" class="select-control__menu-item">
+                                                        <span>ERU</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <div class="select-control__footer"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="d-flex mt-3 mb-4">
+                                <div class="folder-expandable__btn next-btn">Continue to next section</div>
+                                <div class="folder-expandable__btn ml-auto">Collapse all</div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                    <div class="folder-expandable mt-3">
+                        <div class="folder-expandable-header">
+                            <div class="d-flex">
+                                <div class="folder-expandable-heading">
+                                    <img src="/static/images/arrow-drop-down.svg" alt="arrow" class="">Share
+                                </div>
+                                <div class="folder-expandable-heading-after"></div>
+                            </div>
+                            <input class="form_shared_with" name="shared_with" type="hidden" >
+                            <!--
+                                <div class="folder-expandable-expand">Expand section</div>
+                            -->
+                        </div>
+                        <div class="folder-expandable-content mb-4 isExpanded">
+                            <div class="row">
+                                <div class="col-12 mt-1">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="contact-multi-select-control__label"></div>
+                                        <div class="contact-multi-select-control__required">Optional</div>
+                                    </div>
+                                    <div class="contact-multi-select-control__container">
+                                        <div class="contact-multi-select-control">
+                                            <div class="flex-1 d-flex flex-wrap">
+                                                <span class="my-auto">Add people you want to share this matter with</span>
+                                            </div>
+                                            <img src="/static/images/arrow-drop-down.svg" class="contact-multi-select-control__arrow" alt="arrow">
+                                        </div>
+                                        <div class="contact-multi-select-control__menu">
+                                            <!-- user object -->
+                                            <div class="contact-multi-select-control__menu-item">
+                                                <div class="user-avatar-container small toRight my-auto mr-1">
+                                                    <div class="user-avatar small">
+                                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-column">
+                                                <div class="contact-multi-select-control__menu-item-name">Benjamin L. Bailey</div>
+                                                <div class="contact-multi-select-control__menu-item-email">bbailey@baileyglasser.com</div>
+                                                </div>
+                                                <div class="ml-auto my-auto contact-multi-select-control__menu-item-type">attorney</div>
+                                            </div>
+                                            <!-- user object -->
+                                        </div>
+                                    </div>
+                                    <div class="contact-multi-select-control__footer"></div>
+                                </div>
+                                <div class="modal-control-container">
+                                <div tabindex="-1" class="modal-control">
+                                    <div class="modal-control__header">
+                                        <div class="my-auto title text-ellipsis w-100 text-left">Error</div>
+                                    </div>
+                                    <div class="modal-control__content ignore-onclickoutside">
+                                        <div class="pb-4">
+                                            <div class="text-black" style="font-size: 18px;">
+                                                You can add a maximum of ONE client user in a chat.
+                                            </div>
+                                            <br>
+                                        </div>
+                                        <div class="d-flex">
+                                            <button class="btn btn--green ripple-effect normal ml-auto" type="button">
+                                                <span>Ok</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+                            <!--
+                            <div class="d-flex mt-3 mb-4">
+                                <div class="folder-expandable__btn ml-auto">Collapse all</div>
+                            </div>
+                            -->
+                        </div>
+                    </div>
+                    <div class="full-modal__footer">
+                        <button class="btn btn--white ripple-effect large ml-auto" type="button">
+                            <span>Cancel</span>
+                        </button>
+                        <button class="btn btn--disabled btn--yellow ripple-effect large ml-3 create_matter" type="button">
+                            <span> Create Matter</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+   {
+    "client": "248",
+    "title": "Name 1",
+    "description": "dfdfdfdfdfd ",
+    "start_date": "2024-02-13",
+    "stage": 302,
+    "speciality": 1,
+    "country": 16,
+    "state": 274,
+    "city": {
+        "id": 14002,
+        "name": "Adrar",
+        "state": {
+            "id": 274,
+            "name": "Adrar"
+        },
+        "country": {
+            "id": 16,
+            "name": "Algeria",
+            "code2": "DZ",
+            "phone": "213"
+        },
+        "latitude": "27.87429",
+        "longitude": "-0.29388"
+    },
+    "currency": 1,
+    "is_billable": true,
+    "fee_type": 1,
+    "rate": "10",
+    "shared_with": [
+        239
+    ],
+    "attachment": [
+        "https://k.juslaw.online/media/2024/02/13/post-5_3oKVlwf.jpg"
+    ]
+} 
+-->

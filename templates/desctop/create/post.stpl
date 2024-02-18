@@ -1,0 +1,55 @@
+<div class="modal-control-container open">
+    <div tabindex="-1" class="modal-control">
+        <div class="modal-control__header">
+            <div class="my-auto title text-ellipsis w-100 text-left">Create New Post</div>
+            <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+        </div>
+        <div class="modal-control__content ignore-onclickoutside">
+            <div class="new-post-modal">
+                <form>
+                    <div class="input-control">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="xMHlVZ4Y6JqNldbW4EotO" class="input-control__label">Title of Post</label>
+                        </div>
+                        <input id="id_title" name="title" placeholder="Name your post" type="text">
+                        <div class="input-control__footer"></div>
+                    </div>
+                    <div class="select-control mt-3">
+                        <div class="d-flex justify-content-between">
+                            <div class="select-control__label">Practice Area</div>
+                        </div>
+                        <div class="select-control__container" tabindex="0">
+                            <span class="load_content" data-link="/load/specialities?types=single"></span>
+                        </div>
+                    </div>
+                    <div class="textarea-form-control d-flex flex-column mt-2">
+                        <div class="d-flex justify-content-between">
+                            <div class="textarea-form-control__label">Message</div>
+                        </div>
+                        <textarea name="message" id="id_message" placeholder="Type your message here"></textarea>
+                        <div class="textarea-form-control__footer"></div>
+                    </div>
+                    <div class="d-flex mt-2">
+                        <button class="btn btn--white ripple-effect large ml-auto close_modal">
+                            <span>Cancel</span>
+                        </button>
+                        <button class="btn btn--green ripple-effect large ml-3 create_post" type="button">
+                            <span>Post</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+POST https://backend.juslaw.com/api/v1/forum/posts/
+{
+    "title": "Title",
+    "topic": 1,
+    "message": "message"
+}
+
+-->

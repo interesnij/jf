@@ -1,0 +1,161 @@
+<div class="modal-control-container open">
+    <div tabindex="-1" class="modal-control">
+        <div class="modal-control__header">
+            <div class="my-auto title text-ellipsis w-100 text-left">Add Time Entry</div>
+            <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+        </div>
+        <div class="modal-control__content ignore-onclickoutside">
+            <div class="add-time-entry-modal">
+                <form>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="">
+                                <label class="checkbox-control">Non-billable entry
+                                    <input name="is_billable" type="checkbox"><span></span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-2">
+                            <div class="row">
+                                <div class="col-12 d-flex">
+                                <div class="input-control flex-1">
+                                    <div class="d-flex justify-content-between">
+                                        <label for="id_time_spent" class="input-control__label">Duration</label>
+                                    </div>
+                                    <input id="id_time_spent" name="time_spent" type="text" class="active" value="00:00:00">
+                                    <div class="input-control__footer"></div>
+                                </div> 
+                                <div class="sc-bdfBQB etgNRe ml-2">
+                                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" color="black" height="12" width="12" xmlns="http://www.w3.org/2000/svg" style="color: black;">
+                                        <path d="M424.4 214.7L72.4 6.6C43.8-10.3 0 6.1 0 47.9V464c0 37.5 40.7 60.1 72.4 41.3l352-208c31.4-18.5 31.5-64.1 0-82.6z"></path>
+                                    </svg>
+                                    <div class="ml-1">0:00:00</div>
+                                </div>
+                                </div>
+                                <div class="textarea-form-control d-flex flex-column col-12 mt-2 h-100">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="textarea-form-control__label">Description</div>
+                                    </div>
+                                    <textarea id="id_description" name="description" placeholder="Type your message here" class="flex-1"></textarea>
+                                    <div class="textarea-form-control__footer"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mt-2">
+                            <div class="">
+                                <div class="d-flex justify-content-between">
+                                <div class="contact-select-control__label">Client</div>
+                                </div>
+                                <div class="contact-select-control__container">
+                                    <div class="contact-select-control">
+                                        <div class="flex-1 d-flex flex-wrap">
+                                            <span class="my-auto">Select a Client</span>
+                                            <input name="client" type="hidden" >
+                                        </div>
+                                        <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
+                                    </div>
+                                    <div class="contact-select-control__menu">
+                                        <!-- user object -->
+                                        <div class="contact-select-control__menu-item">
+                                            <div class="user-avatar-container small toRight my-auto mr-1">
+                                                <div class="user-avatar small">
+                                                    <img src="https://k.juslaw.online/media/images/2023/12/20/2F8B90E3-3A29-47E8-8E65-56596533DEAF.mpo">
+                                                </div>
+                                            </div>
+                                            <div class="d-flex flex-column">
+                                                <div class="contact-select-control__menu-item-name">serge goldobin</div>
+                                                <div class="contact-select-control__menu-item-email">serge300@gmail.com</div>
+                                            </div>
+                                            <div class="ml-auto my-auto contact-select-control__menu-item-type">client</div>
+                                        </div>
+                                        <!-- user object -->
+                                    </div>
+                                </div>
+                                <div class="contact-select-control__footer"></div>
+                            </div>
+                            <div class="select-control mt-2">
+                                <div class="d-flex justify-content-between">
+                                <div class="select-control__label">Matter</div>
+                                </div>
+                                <div class="select-control__container">
+                                <div class="select-control__main">
+                                    <div class="flex-1 d-flex justify-content-between">
+                                        <span class="my-auto">Select a Matter</span>
+                                        <input name="matter" type="hidden" >
+                                    </div>
+                                    <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                                </div>
+                                <div class="select-control__menu">
+
+                                    <div class="select-control__menu-item"><span>Test Matter</span></div>
+                                    
+                                </div>
+                                </div>
+                                <div class="select-control__footer"></div>
+                            </div>
+                            <div class="form-date-picker-control mt-2">
+                                <div class="d-flex justify-content-between">
+                                    <label for="date" class="form-date-picker-control__label">Date</label>
+                                </div>
+                                <div class="position-relative">
+                                    <input name="date" class="form-date-picker-control__input active" placeholder="MM/DD/YYYY" type="datetime_local" value="">
+                                    <img src="/static/images/calendar_gray.svg" class="form-date-picker-control__icon" alt="calendar">
+                                </div>
+                                <div class="input-control__footer"></div>
+                            </div>
+                            <div class="mt-2">
+                                <div class="d-flex justify-content-between">
+                                    <div class="contact-select-control__label">Billed by</div>
+                                    <input name="billed_by" type="hidden" >
+                                </div>
+                                <div class="contact-select-control__container">
+                                    <div class="contact-select-control">
+                                        <div class="flex-1 d-flex flex-wrap">
+                                            <span class="my-auto">Select a Person</span>
+                                        </div>
+                                        <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
+                                    </div>
+                                    <div class="contact-select-control__menu">
+                                        <div class="my-3 text-center text-gray">No results</div>
+                                    </div>
+                                </div>
+                                <div class="contact-select-control__footer"></div>
+                            </div>
+                            <div class="mt-2">
+                                <div class="text-dark">Hourly Rate</div>
+                                <div class="sc-fbNZge kcjhkj">
+                                    <div class="flex-1 d-flex">
+                                        <div class="sc-GTVdH dXaChH">
+                                            <input name="hourly_rate" id="id_hourly_rate" pattern="[0-9.]+" placeholder="Enter your hourly rate">
+                                        </div>
+                                    </div>
+                                    <div class="sc-gsxoIA kfwLZt">
+                                        <div class="select-control__container w-100" tabindex="0">
+                                            <div class="select-control__main border-none w-100 active">
+                                                <input type="text" value="USD" name="currency" list="currency_list" id="id_currency">
+                                                <datalist id="currency_list">
+                                                    <option data-pk="1" value="USD"></option>
+                                                    <option data-pk="2" value="GBP"></option>
+                                                    <option data-pk="3" value="ERU"></option>
+                                                </datalist>
+                                            </div>
+                                        </div>
+                                        <div class="select-control__footer"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-3">
+                        <button class="btn btn--white ripple-effect large ml-auto">
+                            <span>Cancel</span>
+                        </button>
+                        <button billing_type="time" class="btn btn--disabled btn--green ripple-effect large ml-3 create_time_entry" type="button">
+                            <span>Save Entry</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

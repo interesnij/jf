@@ -1,6 +1,6 @@
 <% include!("header.stpl"); %>
 
-<div class="login-page"><img src="/static/media/logo.0e6664a1d7106c657d4c3f462424936a.svg" alt="logo" class="login-page__logo">
+<div class="login-page"><img src="/static/images/logo.0e6664a1d7106c657d4c3f462424936a.svg" alt="logo" class="login-page__logo">
     <div class="login-page__container mt-auto">
         <h1 class="mb-4 mt-0">Email Successfully Confirmed</h1>
         <div class="text-dark"></div>

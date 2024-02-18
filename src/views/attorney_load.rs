@@ -34,10 +34,6 @@ pub fn load_routes(config: &mut web::ServiceConfig) {
     config.route("/load/posts", web::get().to(posts_load));
     config.route("/load/topics", web::get().to(topics_load));
     config.route("/load/events", web::get().to(events_load));
-    //config.route("/locations/states/", web::get().to(states_load));
-    //config.route("/locations/cities/", web::get().to(cities_load));
-    //config.route("/users/specialities/", web::get().to(specialities_load));
-    //config.route("/users/clients/search_attorneys_and_paralegals/", web::get().to(search_attorneys_and_paralegals));
     //config.route("/attorneys/stages/", web::get().to(stages_page));
 }
 

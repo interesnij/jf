@@ -1,0 +1,29 @@
+<!-- return attachments Vec[String] -->
+
+<div class="d-flex justify-content-between">
+   <label for="attachments" class="upload-control__label">Attachment</label>
+</div>
+<div class="dropzone" style="border: 1px solid rgb(224, 224, 225);">
+   <div class="d-flex flex-wrap">
+
+      <!-- added file -->
+      <div class="upload-control__file">
+         <img src="/static/images/document.svg" class="my-auto upload-control__img" alt="file">
+         <span class="ml-1 my-auto text-ellipsis" style="width: 200px;">u4xcKBohO2g — копия.jpg</span>
+         <span class="ml-1 my-auto">(362.52 KB)</span>
+         <img src="/static/images/close.svg" class="my-auto ml-1 upload-control__close" alt="close">
+      </div>
+      <!-- added file -->
+
+   </div>
+   <input accept="image/*,.docx,.doc,.pdf,.ppt,.pptx,.xls,.xlsx" multiple="" type="file" autocomplete="off" tabindex="-1" style="display: none;">
+   <span class="mx-auto d-flex justify-content-center mt-4">
+      <img src="/static/images/file_open.svg" alt="file">
+   </span>
+   <div class="mx-auto my-2 text-center">
+      Drag and drop your files here or
+   </div>
+   <button class="btn btn--outline btn--green ripple-effect normal mx-auto mb-4" type="button">
+      <span>Select from Documents</span>
+   </button>
+</div>

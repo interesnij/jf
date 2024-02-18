@@ -1,0 +1,8 @@
+<!--
+
+    type: "endCall" (call message send)
+        {
+            "text": "{\"participants\":[249],\"callStartedAt\":\"2024-02-15T11:49:58.581Z\"}",
+            "type": "endCall"
+        }
+-->

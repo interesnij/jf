@@ -9,7 +9,7 @@
                 </div>
                 <div class="client-matter-message-page__table-header-item sortable">
                     <span class="my-auto">Date</span>
-                    <img src="/static/media/sort.svg" alt="sort">
+                    <img src="/static/images/sort.svg" alt="sort">
                 </div>
                 <div class="client-matter-message-page__table-header-item"><span class="my-auto">Actions</span></div>
             </div>

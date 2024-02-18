@@ -93,7 +93,7 @@
                     <div class="heading col-12 mt-3">Practice Area</div>
                     <div class="col-12 mt-2"> 
                         <div class="text-dark">Select practice areas you want to follow:</div>
-                        <span class="load_content" data-link="/load/specialities"></span>
+                        <span class="load_content" data-link="/load/specialities?types=many"></span>
                         <div class="row">
                             <div class="col-6 mt-2"></div>
                             <div class="col-6 mt-2">

@@ -3,7 +3,7 @@
 <div>
     <div class="signup-page-layout">
         <a href="/">
-            <img src="/static/media/logo2.svg" class="signup-page-layout__logo" alt="logo">
+            <img src="/static/images/logo2.svg" class="signup-page-layout__logo" alt="logo">
         </a>
         <div class="signup-page-layout__title">Sign Up with JusLaw</div>
         <div class="signup-page-layout__form">
@@ -45,7 +45,7 @@
 
                             <div class="select-control col-6 mt-3 load_content" data-link="/load/countries">
                                 
-                            </div>
+                            </div> 
 
                             <div class="sc-hzMMVR dakRgd col-6 mt-3">
                                 <div class="d-flex justify-content-between">
@@ -102,8 +102,8 @@
                 <div class="folder-control__content">
                     <div class="folder-item folder-item--with-separator">
                         <div class="text-dark">Select practice areas you want to follow:</div>
-                        <span class="load_content" data-link="/load/specialities"></span>
-                        <div class="row">
+                        <span class="load_content" data-link="/load/specialities?types=many"></span>
+                        <div class="row"> 
                             <div class="col-md-6"></div>
                             <div class="col-md-6">
                                 <label class="checkbox-component">
@@ -116,7 +116,7 @@
                 </div>
                 <div class="signup-bar">
                     <div class="link-button pointer back_register_1_client_btn">
-                        <img src="/static/media/arrow-left-green.svg" alt="icon">Go Back
+                        <img src="/static/images/arrow-left-green.svg" alt="icon">Go Back
                     </div>
                     <div class="ml-auto">
                         By submitting, you acknowledge that you have read the 

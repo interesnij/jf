@@ -14,7 +14,7 @@ use crate::utils::{
     get_string_withbool, get_request_user, AuthResponseData, request_get, API,
     get_id_withi32, get_string_withdate, gett_string_withi32,
     SmallCountryData, StateData, SmallCityData, SpecialitiesData, AppointmentTypeData,
-    FeeTypesData, PaymentTypeData, LanguageData,
+    FeeTypesData, PaymentTypeData, LanguageData, StageData,
 };
 
 pub fn load_routes(config: &mut web::ServiceConfig) {
@@ -22,11 +22,13 @@ pub fn load_routes(config: &mut web::ServiceConfig) {
     config.route("/load/states/{id}", web::get().to(states_load));
     config.route("/load/cities/{id}", web::get().to(cities_load));
 
-    config.route("/load/specialities/", web::get().to(specialities_load));
+    config.route("/load/specialities", web::get().to(specialities_load));
+    config.route("/load/stages", web::get().to(stages_load));
     config.route("/load/appointment_types", web::get().to(appointment_types_load));
     config.route("/load/fee_types", web::get().to(fee_types_load));
     config.route("/load/payment_methods", web::get().to(payment_methods_load));
     config.route("/load/languages", web::get().to(languages_load));
+    config.route("/load/topics", web::get().to(topics_load));
 }
 
 
@@ -154,6 +156,11 @@ pub async fn cities_load(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Re
 //////////////////////
 
 #[derive(Debug, Deserialize)]
+pub struct SpecialitiesParams {
+    pub types: Option<String>,
+} 
+
+#[derive(Debug, Deserialize)]
 pub struct SpecialitiessData { 
     pub results: Vec<SpecialitiesData>,
 }
@@ -161,6 +168,15 @@ pub struct SpecialitiessData {
 pub async fn specialities_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let l = 2;
     let specialities_list: Vec<SpecialitiesData>;
+    let types: String;
+    let params_some = web::Query::<SpecialitiesParams>::from_query(&req.query_string());
+    if params_some.is_ok() {
+        let params = params_some.unwrap();
+        types = crate::utils::get_string_with_string(params.types.clone());
+    }
+    else {
+        types =  String::new();
+    }
 
     let url = concat_string!(
         API.to_owned(),
@@ -183,9 +199,66 @@ pub async fn specialities_load(req: HttpRequest) -> actix_web::Result<HttpRespon
     #[template(path = "desctop/generic/items/specialities_form.stpl")]
     pub struct Template {
         specialities_list: Vec<SpecialitiesData>,
+        types:             String,
     }
     let body = Template {
         specialities_list: specialities_list,
+        types:             types,
+    }
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
+//////////////////////
+
+#[derive(Debug, Deserialize)]
+pub struct StagesParams {
+    pub attorney: Option<String>,
+} 
+
+#[derive(Debug, Deserialize)]
+pub struct StagessData { 
+    pub results: Vec<StageData>,
+}
+
+pub async fn specialities_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let l = 2;
+    let stages_list: Vec<StageData>;
+    let attorney: String;
+    let params_some = web::Query::<StagesParams>::from_query(&req.query_string());
+    if params_some.is_ok() {
+        let params = params_some.unwrap();
+        attorney = crate::utils::get_string_with_string(params.attorney.clone());
+    }
+    else {
+        attorney = String::new();
+    }
+
+    let url = concat_string!(
+        API.to_owned(),
+        "business/stages/",
+        "?attorney=", attorney,
+    ); 
+    let resp = request_get::<StagessData> (
+        url,
+        &"".to_string()
+    ).await;
+    if resp.is_ok() {
+        let data = resp.expect("E.");
+        stages_list = data.results;
+    }
+    else {
+        stages_list = Vec::new();
+    }
+
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/generic/items/stages_form.stpl")]
+    pub struct Template {
+        stages_list: Vec<StageData>,
+    }
+    let body = Template {
+        stages_list: stages_list,
     }
     .render_once()
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -356,4 +429,3 @@ pub async fn languages_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
     .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
-

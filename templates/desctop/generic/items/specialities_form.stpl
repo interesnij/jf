@@ -1,3 +1,4 @@
+<% if types == "many" { %>
 <div class="row">
     <% for object in specialities_list.iter() { %>
         <div class="col-md-6 my-1">
@@ -8,3 +9,12 @@
         </div>
     <% } %>
 </div>
+
+<% } else { %>
+    <input type="text" name="speciality" list="speciality_list" id="id_speciality">
+    <datalist id="speciality_list">
+        <% for object in specialities_list.iter() { %>
+            <option data-pk="<%= object.id %>" value="<%= object.title %>"></option>
+        <% } %>
+    </datalist>
+<% } %>

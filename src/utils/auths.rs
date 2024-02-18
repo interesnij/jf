@@ -55,7 +55,7 @@ pub struct TimezoneData {
     pub title: String,
 }
 
-#[derive(Debug, Deserialize)] 
+#[derive(Debug, Deserialize)]  
 pub struct AuthResponseData {  
     pub key:              String,
     pub user_type:        String,

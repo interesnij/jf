@@ -1,0 +1,104 @@
+<div class="modal-control-container open">
+    <div tabindex="-1" class="modal-control">
+        <div class="modal-control__header">
+            <div class="my-auto title text-ellipsis w-100 text-left">
+                Create a Note
+            </div>
+            <img class="my-auto ml-auto close" src="/static/images/close.svg" alt="close">
+        </div>
+        <div class="modal-control__content ignore-onclickoutside">
+            <div class="new-message-modal">
+                <form>
+                    <div class="">
+                        <div class="d-flex justify-content-between">
+                            <div class="contact-select-control__label">Client</div>
+                        </div>
+                        <div class="contact-select-control__container">
+                            <div class="contact-select-control">
+                                <div class="flex-1 d-flex flex-wrap">
+                                    <span class="my-auto"></span>
+                                </div>
+                                <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
+                            </div>                           
+                            <div class="contact-select-control__menu active">
+                                <!-- user object -->
+                                <div class="contact-select-control__menu-item">
+                                    <div class="user-avatar-container small toRight my-auto mr-1">
+                                        <div class="user-avatar small">
+                                            <img src="https://k.juslaw.online/media/images/2023/12/20/2F8B90E3-3A29-47E8-8E65-56596533DEAF.mpo">
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column">
+                                        <div class="contact-select-control__menu-item-name">serge goldobin</div>
+                                        <div class="contact-select-control__menu-item-email">serge300@gmail.com</div>
+                                    </div>
+                                    <div class="ml-auto my-auto contact-select-control__menu-item-type">client</div>
+                                </div>
+                                <!-- user object -->
+                            </div>
+                        </div>
+                        <div class="contact-select-control__footer"></div>
+                    </div>
+                    <div class="select-control mt-1">
+                        <div class="d-flex justify-content-between">
+                            <div class="select-control__label">Matter</div>
+                        </div>
+                        <div class="select-control__container" tabindex="0">
+                            <div class="select-control__main">
+                                <div class="flex-1 d-flex justify-content-between">
+                                    <span class="my-auto"></span>
+                                </div>
+                                <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                            </div>
+                            <div class="select-control__menu active">
+                                <div class="select-control__menu-item active"><span>Name 1</span></div>
+                                <div class="my-3 text-gray text-center">Empty</div>
+                            </div>
+                        </div>
+                        <div class="select-control__footer"></div>
+                    </div>
+                    <div class="input-control mt-1">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="id_title" class="input-control__label">Title</label>
+                        </div><input id="id_title" name="title" placeholder="Title of note" type="text">
+                        <div class="input-control__footer"></div>
+                    </div>
+                    <div class="textarea-form-control d-flex flex-column mt-1">
+                        <div class="d-flex justify-content-between">
+                            <div class="textarea-form-control__label">Note</div>
+                        </div>
+                        <textarea id="id_text" name="text" placeholder="Type your note here"></textarea>
+                        <div class="textarea-form-control__footer"></div>
+                    </div>
+                    <div class="upload-control mt-1">
+                        <% include!("../generic/items/upload_form.stpl"); %>
+                    </div>
+                    <div class="d-flex mt-2">
+                        <button class="btn btn--white ripple-effect large ml-auto" type="button">
+                            <span>Cancel</span>
+                        </button>
+                        <button class="btn btn--green ripple-effect large ml-3 create_note" type="button">
+                            <span>Save Note</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+POST  https://backend.juslaw.com/api/v1/business/notes/
+
+{
+    "title": "Titleeee",
+    "text": "note here",
+    "matter": 35,
+    "client": "248",
+    "attachments": [
+        "https://k.juslaw.online/media/2024/02/13/post-2.jpg"
+    ]
+}
+
+-->
