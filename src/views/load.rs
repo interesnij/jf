@@ -224,7 +224,7 @@ pub struct StagessData {
     pub results: Vec<StageData>,
 }
 
-pub async fn specialities_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+pub async fn stages_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let l = 2;
     let stages_list: Vec<StageData>;
     let attorney: String;
