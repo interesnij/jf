@@ -326,10 +326,10 @@ function get_active_button() {
         loc = JSON.parse(localStorage.getItem('request_data'));
         url = "https://app2.juslaw.com/" + loc.user_type + "/overview";
         console.log("url", url);
-    } 
+    }
   
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-      ajax_link.open( 'GET', url, true );
+      ajax_link.open( 'GET', url + "?ajax=1", true );
       ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       if (localStorage.getItem('request_data') !== null) {
         ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
