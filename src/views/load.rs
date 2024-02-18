@@ -524,8 +524,8 @@ pub async fn attorneys_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
 
     let url = concat_string!(
         API.to_owned(),
-        "users/attorneys/"
-        "?search=", search,
+        "users/attorneys/",
+        "?search=", search
     );
     let resp = request_get::<AttorneysData> (
         url,

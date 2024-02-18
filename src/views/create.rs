@@ -93,6 +93,16 @@ pub async fn create_flat_fee(req: HttpRequest) -> actix_web::Result<HttpResponse
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
+pub async fn create_expense_entry(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/expense_entry.stpl")]
+    pub struct Template {}
+    let body = Template {}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
+
 pub async fn create_invoice(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
     #[template(path = "desctop/create/invoice.stpl")]
@@ -113,7 +123,7 @@ pub async fn create_matter(req: HttpRequest) -> actix_web::Result<HttpResponse> 
             request_user: AuthResponseData,
         }
         let body = Template {
-            request_user: AuthResponseData,
+            request_user: request_user,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
