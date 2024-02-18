@@ -62,7 +62,7 @@ on('body', 'click', '.ajax', function(event) {
 on('body', 'click', '.create_contact', function() {
   span = document.body.querySelector("#reload");
   ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-  ajax_link.open( 'GET', url, true );
+  ajax_link.open( 'GET', url + "?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
         ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
