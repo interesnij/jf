@@ -18,7 +18,9 @@
                 </div>
                 <div class="contact-select-control__menu-item-email"><%= object.email %></div>
             </div>
-            <div class="ml-auto my-auto contact-select-control__menu-item-type"><%= object.r#type %></div>
+            <div class="ml-auto my-auto contact-select-control__menu-item-type">
+                type
+            </div>
         </div>
     <% } %>
 <% } else { %>

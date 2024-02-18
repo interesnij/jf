@@ -463,8 +463,8 @@ pub async fn clients_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
 
     let url = concat_string!(
         API.to_owned(),
-        "users/clients/"
-        "?search=", search,
+        "users/clients/",
+        "?search=", search
     );
     let resp = request_get::<ClientsData> (
         url,

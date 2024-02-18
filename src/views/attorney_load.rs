@@ -131,7 +131,7 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             count = 0;
             next = None;
             page_count = 0;
-            object_list = Vec::new();
+            users_list = Vec::new();
         }
 
         if types == "form".to_string() {
