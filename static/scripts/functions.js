@@ -318,12 +318,14 @@ function get_active_button() {
   };
 
   function check_first_load() {
+
     span = document.body.querySelector("#reload");
     url = window.location.href;
-    console.log(url);
+    
     if (url == "https://app2.juslaw.com/" && localStorage.getItem('request_data') !== null) {
         loc = JSON.parse(localStorage.getItem('request_data'));
         url = "https://app2.juslaw.com/" + loc.user_type + "/overview";
+        console.log("url", url);
     } 
   
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
@@ -336,6 +338,8 @@ function get_active_button() {
         if ( this.readyState == 4 && this.status == 200 ) {
             elem_ = document.createElement('span');
             elem_.innerHTML = ajax_link.responseText;
+            console.log("elem_", elem_);
+            console.log("span", span);
             span.innerHTML = elem_.innerHTML;
             //get_active_button();
             load_data();

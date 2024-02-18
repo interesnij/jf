@@ -2,8 +2,6 @@
 //пока сокеты оставим неактивными
 //connect() 
 
-check_first_load();
-
 on('body', 'click', '.menu-button', function() {
   block = this.nextElementSibling;
   if (this.classList.contains("open")) {
