@@ -23,11 +23,11 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="text-dark">Rate</div>
                                         <div class="input-control__required">Optional</div>
-                                    </div> 
+                                    </div>
                                     <div class="sc-fbNZge kcjhkj">
                                         <div class="flex-1 d-flex">
                                             <div class="sc-GTVdH dXaChH">
-                                                <input id="id_rate" name="rate" pattern="[0-9.]+" placeholder="Enter your rate" value="">
+                                                <input id="id_rate" name="rate" pattern="[0-9.]+" placeholder="Enter your rate">
                                             </div>
                                         </div>
                                         <div class="sc-gsxoIA kfwLZt">
@@ -51,6 +51,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
                                         <div class="select-control__footer"></div>
                                     </div>
                                 </div>
