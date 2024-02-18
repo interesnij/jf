@@ -76,3 +76,7 @@ on('body', 'click', '.create_contact', function() {
     }
     ajax_link.send();
 });
+
+on('body', 'click', '.close_modal', function() {
+  document.body.querySelector(".modal-control-container").remove()
+});
