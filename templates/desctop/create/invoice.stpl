@@ -211,7 +211,7 @@
                     </div>
                 </div>
                 <div class="full-modal__footer">
-                    <button class="btn btn--disabled btn--white ripple-effect large ml-auto close_modal" type="button">
+                    <button class="btn btn--disabled btn--white ripple-effect large ml-auto create_draft_invoice" type="button">
                         <span>Save Draft</span>
                     </button>
                     <button class="btn btn--disabled btn--yellow ripple-effect large ml-3 create_invoice" type="button">

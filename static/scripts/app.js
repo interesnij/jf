@@ -6,13 +6,13 @@ on('body', 'click', '.menu-button', function() {
   block = this.nextElementSibling;
   if (this.classList.contains("open")) {
     this.classList.remove("open");
-    block.style.opacity = "1";
-    block.style.visibility = "visible";
+    block.style.opacity = "0";
+    block.style.visibility = "hidden";
   }
   if (this.classList.contains("open")) {
     this.classList.add("open")
-    block.style.opacity = "0";
-    block.style.visibility = "hidden";
+    block.style.opacity = "1";
+    block.style.visibility = "visible";
   }
 });
 
@@ -199,6 +199,40 @@ on('body', 'click', '.create_post', function() {
   span = document.body.querySelector("#reload"); 
   ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
   ajax_link.open( 'GET', "/create/post?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.create_note', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/note?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.create_invoice', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/invoice?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
         ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));

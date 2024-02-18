@@ -9,10 +9,10 @@
             <input data-link="/load/billing" class="search_input" placeholder="Search in billing items">
         </div>
       </div> 
-        <button class="btn btn--outline btn--green ripple-effect normal ml-auto my-auto create_expense">
+        <button class="btn btn--outline btn--green ripple-effect normal ml-auto my-auto create_expense_entry">
             <span>Add Expense</span>
         </button>
-        <button class="btn btn--outline btn--green ripple-effect normal ml-2 my-auto create_time">
+        <button class="btn btn--outline btn--green ripple-effect normal ml-2 my-auto create_time_entry">
             <span>Add Time</span>
         </button>
     </div>
