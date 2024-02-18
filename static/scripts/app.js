@@ -71,7 +71,7 @@ on('body', 'click', '.create_contact', function() {
   if ( this.readyState == 4 && this.status == 200 ) {
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
-          span.append(elem_.innerHTML);
+          span.append(elem_);
       } 
     }
     ajax_link.send();
