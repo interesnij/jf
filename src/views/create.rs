@@ -28,7 +28,7 @@ pub fn create_routes(config: &mut web::ServiceConfig) {
     config.route("/create/matter", web::get().to(create_matter));
     config.route("/create/template", web::get().to(create_template));
     config.route("/create/post", web::get().to(create_post));
-}
+} 
 
 //////////////////////
 
@@ -104,13 +104,24 @@ pub async fn create_invoice(req: HttpRequest) -> actix_web::Result<HttpResponse>
 }
 
 pub async fn create_matter(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    #[derive(TemplateOnce)]
-    #[template(path = "desctop/create/matter.stpl")]
-    pub struct Template {}
-    let body = Template {}
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {
+        let request_user = user_some.unwrap();
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/create/matter.stpl")]
+        pub struct Template {
+            request_user: AuthResponseData,
+        }
+        let body = Template {
+            request_user: AuthResponseData,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("anon"))
+    }
 }
 
 pub async fn create_template(req: HttpRequest) -> actix_web::Result<HttpResponse> {

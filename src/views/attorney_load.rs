@@ -83,10 +83,10 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
         let request_user = user_some.unwrap();
         let l = 2;
 
-        let count:       i32;
-        let next:        Option<String>;
-        let page_count:  i32; 
-        let object_list: Vec<LeadOrClientData>;
+        let count:      i32;
+        let next:       Option<String>;
+        let page_count: i32; 
+        let users_list: Vec<LeadOrClientData>;
 
         let limit:  String;
         let offset: String;
@@ -114,7 +114,7 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             "?search=", search,
             "&offset=", offset,
             "&limit=", limit,
-            "&type=", _type
+            //"&type=", type
         );
         let resp = request_get::<LeadsAndClientsData> (
             url,
@@ -125,7 +125,7 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             count = 0;
             next = None;
             page_count = 0;
-            object_list = data.results;
+            users_list = data.results;
         }
         else {
             count = 0;

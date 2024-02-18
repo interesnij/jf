@@ -28,7 +28,7 @@ pub fn load_routes(config: &mut web::ServiceConfig) {
     config.route("/load/fee_types", web::get().to(fee_types_load));
     config.route("/load/payment_methods", web::get().to(payment_methods_load));
     config.route("/load/languages", web::get().to(languages_load));
-    config.route("/load/topics", web::get().to(topics_load));
+    //config.route("/load/topics", web::get().to(topics_load));
     config.route("/load/clients", web::get().to(clients_load));
     config.route("/load/attorneys", web::get().to(attorneys_load));
 }
