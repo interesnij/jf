@@ -28,6 +28,7 @@ pub fn create_routes(config: &mut web::ServiceConfig) {
     config.route("/create/matter", web::get().to(create_matter));
     config.route("/create/template", web::get().to(create_template));
     config.route("/create/post", web::get().to(create_post));
+    config.route("/create/note", web::get().to(create_note));
 } 
 
 //////////////////////
@@ -154,5 +155,14 @@ pub async fn create_post(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
+pub async fn create_note(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    #[derive(TemplateOnce)]
+    #[template(path = "desctop/create/note.stpl")]
+    pub struct Template {}
+    let body = Template {}
+    .render_once()
+    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+}
 
 

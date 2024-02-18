@@ -1,6 +1,10 @@
 <% include!("../header.stpl"); %>
 
-<div class="main-layout__content-main load_matter_detail" data-link="https://backend.juslaw.com/api/v1/business/matters/<%= matter_id %>">
+<div 
+  class="main-layout__content-main load_matter_detail doc_title" 
+  data-link="https://backend.juslaw.com/api/v1/business/matters/<%= matter_id %>"
+  data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>"
+>
   
   <% include!("../generic/matter_header.stpl"); %>
   <div class="matter-detail-page__content d-flex flex-column flex-1">

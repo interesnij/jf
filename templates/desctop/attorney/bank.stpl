@@ -10,7 +10,7 @@
         <span>Sign in</span>
       </button>
     </div>
-  </div>
+  </div> 
 </div>
 
 <% include!("../footer.stpl"); %>

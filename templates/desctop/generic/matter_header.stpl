@@ -41,19 +41,21 @@
     </div>
   </div>
   <div class="tab-control capitalize">
-    <div class="tab-control__item tab-control__item--active">
-        <span>overview</span>
+    <div class="tab-control__item">
+        <a class="ajax" href="/attorney/matters/<%= matter_id %>">
+          <span>overview</span>
+        </a>
     </div>
     <div class="tab-control__item">
         <a class="ajax" href="/attorney/matters/<%= matter_id %>/messages">
             <span>messages</span>
-            <span class="unread_message_count badge"></span>
+            <span class="unread_message_count badge hidden"></span>
         </a>
     </div>
     <div class="tab-control__item">
         <a class="ajax" href="/attorney/matters/<%= matter_id %>/documents">
             <span>documents</span>
-            <span class="unread_documents_count badge"></span>
+            <span class="unread_documents_count badge hidden"></span>
         </a>
     </div>
     <div class="tab-control__item">
