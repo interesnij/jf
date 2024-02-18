@@ -20,7 +20,7 @@
                                 <img src="/static/images/arrow-drop-down.svg" class="contact-multi-select-control__arrow" alt="arrow">
                             </div>
                             <div 
-                                class="contact-select-control__menu active load_content" 
+                                class="contact-select-control__menu load_content" 
                                 data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All&types=form"
                             >
                             </div>

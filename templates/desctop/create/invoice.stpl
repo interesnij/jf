@@ -1,7 +1,7 @@
 <div class="full-modal__container open">
     <div class="full-modal__header">
         <span class="title my-auto">Create Invoice</span>
-        <img class="my-auto ml-auto close cursor-pointer" src="/static/images/close_white.svg" alt="close">
+        <img class="my-auto ml-auto close_modal cursor-pointer" src="/static/images/close_white.svg" alt="close">
     </div>
     <div class="full-modal__content">
         <div class="create-invoice-modal">
@@ -31,7 +31,7 @@
                                         <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
                                     </div>
                                     <div 
-                                        class="contact-select-control__menu active load_content" 
+                                        class="contact-select-control__menu load_content" 
                                         data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All&types=form"
                                     >
                                     </div>

@@ -65,7 +65,7 @@ pub async fn create_contact(req: HttpRequest) -> actix_web::Result<HttpResponse>
 
 pub async fn create_document(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     #[derive(TemplateOnce)]
-    #[template(path = "desctop/create/expense_entry.stpl")]
+    #[template(path = "desctop/create/document.stpl")]
     pub struct Template {}
     let body = Template {}
     .render_once()

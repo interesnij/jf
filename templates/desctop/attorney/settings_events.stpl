@@ -1,7 +1,7 @@
 <div class="full-modal__container open doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
   <div class="full-modal__header">
     <span class="title my-auto">Edit Profile</span>
-    <img class="my-auto ml-auto close cursor-pointer" src="/static/images/close_white.svg" alt="close">
+    <img class="my-auto ml-auto close_modal cursor-pointer" src="/static/images/close_white.svg" alt="close">
   </div>
   <div class="full-modal__content">
     <div class="tab-control">
