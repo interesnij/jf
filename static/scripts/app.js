@@ -54,7 +54,10 @@ on('body', 'click', '#logg', function() {
   link.send(form_data);
 });
 
-
+on('body', 'click', '.ajax', function(event) {
+  event.preventDefault();
+  ajax_get_reload(this.getAttribute("href"), true, 2);
+});
 
 on('body', 'click', '.create_contact', function() {
 span = document.body.querySelector("#reload");
