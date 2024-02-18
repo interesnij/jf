@@ -68,6 +68,9 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
+.etgNRe svg {
+  margin: auto 0;
+}
 .dXaChH input {
   width: 100%;
   border: none;
