@@ -57,6 +57,17 @@ pub struct RateTypeData {
 }
 
 #[derive(Debug, Deserialize)]
+pub struct UserSharedData { 
+    pub id:          i32,
+    pub first_name:  String,
+    pub middle_name: Option<String>,
+    pub last_name:   String,
+    pub email:       String,
+    pub avatar:      Option<String>,
+    pub user_type:   String,
+}
+
+#[derive(Debug, Deserialize)]
 pub struct UserSmallData { 
     pub id:          i32,
     pub first_name:  String,

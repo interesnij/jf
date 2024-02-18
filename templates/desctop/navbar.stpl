@@ -42,7 +42,7 @@
         <img src="/static/images/plus_black.svg" class="menu-button__icon" alt="plus">
           <span>Create New</span>
         </div>
-        <div class="menu-dropdown">
+        <div class="menu-dropdown"> 
           <div class="menu-item create_time_entry">Time entry</div>
           <div class="menu-item create_expense_entry">Expense entry</div>
           <div class="menu-item create_matter">Matter</div>
