@@ -300,7 +300,7 @@ function get_active_button() {
         } catch { null };
 
         try {
-            document.body.querySelector("header__title").innerHTML = _title;
+            document.body.querySelector(".header__title").innerHTML = _title;
         } 
         catch { null }
   
@@ -343,7 +343,7 @@ function get_active_button() {
             window.history.pushState ({"url":url}, document.title, url);
 
             try {
-              document.body.querySelector("header__title").innerHTML = _title;
+              document.body.querySelector(".header__title").innerHTML = _title;
             } 
             catch { null }
             
