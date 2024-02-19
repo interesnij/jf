@@ -2,7 +2,8 @@
             <div class="modal-control-container open">
                 <div tabindex="-1" class="modal-control">
                     <div class="modal-control__header">
-                        <div class="my-auto title text-ellipsis w-100 text-left">Add Flat Fee</div><img class="my-auto ml-auto close" src="/static/media/close.f4b79d07fa8d4d27cd42c9af233d76be.svg" alt="close">
+                        <div class="my-auto title text-ellipsis w-100 text-left">Add Flat Fee</div>
+                        <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
                     </div>
                     <div class="modal-control__content ignore-onclickoutside">
                         <div class="add-expense-entry-modal">
@@ -27,7 +28,7 @@
                                                         <div class="d-flex">
                                                             <span class="my-auto">USD</span>
                                                         </div>
-                                                        <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
+                                                        <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
                                                     </div>
                                                     <div class="select-control__menu">
                                                         <div class="select-control__menu-item active"><span>USD</span></div>
@@ -69,7 +70,7 @@
                                                 <div class="select-control__container w-100" tabindex="0">
                                                     <div class="select-control__main border-none w-100 active">
                                                         <div class="d-flex"><span class="my-auto">USD</span></div>
-                                                        <img src="/static/media/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
+                                                        <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
                                                     </div>
                                                     <div class="select-control__menu">
                                                         <div class="select-control__menu-item active"><span>USD</span></div>
@@ -151,7 +152,7 @@
                                 </div>
                                 </div>
                                 <div class="d-flex mt-2">
-                                    <button class="btn btn--white ripple-effect large ml-auto" type="button">
+                                    <button class="btn btn--white ripple-effect large ml-auto close_modal" type="button">
                                         <span>Cancel</span>
                                     </button>
                                     <button class="btn btn--disabled btn--green ripple-effect large ml-3 create_flat_fee" type="button">
