@@ -27,7 +27,7 @@
                                     <div class="sc-fbNZge kcjhkj">
                                         <div class="flex-1 d-flex">
                                             <div class="sc-GTVdH dXaChH">
-                                                <input id="id_rate" name="rate" pattern="[0-9.]+" placeholder="Enter your rate">
+                                                <input id="id_rate" name="rate" pattern="[0-9.]+" placeholder="Enter your rate" value="">
                                             </div>
                                         </div>
                                         <div class="sc-gsxoIA kfwLZt">
@@ -51,7 +51,6 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         <div class="select-control__footer"></div>
                                     </div>
                                 </div>
@@ -78,7 +77,7 @@
                                 <div class="sc-fbNZge kcjhkj">
                                         <div class="flex-1 d-flex">
                                             <div class="sc-GTVdH dXaChH">
-                                                <input id="id_rate" name="rate" pattern="[0-9.]+" placeholder="500">
+                                                <input id="id_rate" name="rate" pattern="[0-9.]+" placeholder="Enter your rate" value="">
                                             </div>
                                         </div>
                                         <div class="sc-gsxoIA kfwLZt">
@@ -102,9 +101,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         <div class="select-control__footer"></div>
-                                    </div>
+                                </div>
                             </div>
                             <div class="mt-2">
                                 <div class="d-flex justify-content-between">
