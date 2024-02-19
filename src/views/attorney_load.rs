@@ -1072,7 +1072,7 @@ pub struct FilesData {
 #[derive(Debug, Deserialize)]
 pub struct MessageData2 { 
     pub id:         i32, 
-    pub chat:       i32,
+    pub chat:       Option<i32>,
     pub text:       String,
     pub r#type:     String,
     pub files:      Vec<FilesData>,
@@ -1190,7 +1190,7 @@ pub struct ChatssData {
     pub page_count: i32,
     pub previous:   Option<String>,
     pub results:    Vec<ChatData>,
-}
+} 
 
 pub async fn chats_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
