@@ -1078,27 +1078,14 @@ pub struct MessageData2 {
 }
 impl MessageData2 {
     pub fn get_preview(&self) -> String {
-        if self.text.is_empty() {
+        if !self.text.is_empty() {
             if self.text.len() > 60 {
                 return self.text[..60].to_string();
             }
             return self.text.to_string();
         }
         else {
-            let _len = self.files.len();
-            if _len > 1 {
-                return "Attached files".to_string();
-            }
-            else if _len == 1 {
-                let file = self.files[0].file.clone();
-                if file.contains(".wav") {
-                    return "Voice message".to_string();
-                }
-                else {
-                    return "Attached file".to_string();
-                }
-            }
-            return "".to_string();
+            return "Attached files".to_string();
         }
     }
 }
