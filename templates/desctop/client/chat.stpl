@@ -52,9 +52,6 @@
           </div>
         </div>
 
-        <% include!("../create/new_call.stpl"); %>
-        <% include!("../create/new_chat.stpl"); %>
-
       </div>
       <div class="chat-content__main">
         <div class="chat-content__main-section load_content" data-link="/load/messages/<%= chat_id %>"></div>
