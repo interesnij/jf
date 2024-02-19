@@ -32,7 +32,9 @@
             <div class="d-flex">
               <span class="chat-sidebar__thread-text"><%= message.get_preview() %></span>
               <span class="chat-sidebar__thread-time ml-auto">
-                <%= message.created %>
+                <!--
+                 message.created
+                -->
               </span>
             </div>
           </div>
