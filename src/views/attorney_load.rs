@@ -1169,10 +1169,10 @@ impl ChatData {
             email:          "".to_string(),
             phone:          "".to_string(),
             avatar:         None,
-            address:        Vec::new(),
+            //address:        Vec::new(),
             user_type:      "".to_string(),
-            opportunity_id: None, 
-            lead_id:        None,
+            //opportunity_id: None, 
+            //lead_id:        None,
         };
         for i in participants.into_iter() {
             if &i.id.to_string() != user_id {
