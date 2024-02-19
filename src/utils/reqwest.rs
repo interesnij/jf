@@ -50,7 +50,8 @@ where
             true => {
                 match resp.json::<T>().await{
                     Ok(data) => {
-                        println!("data ok");
+                        //println!("data ok");
+                        println!("data {}", data);
                         Ok(data)
                     },
                     Err(e) => {
