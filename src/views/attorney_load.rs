@@ -226,7 +226,7 @@ pub struct MatterrrData {
     pub referral_request: bool,
     pub referral_pending: bool,
     pub referral_ignored: bool,
-    pub referral_ignore_attorney_data: Option<crate::views::UserSharedData>,
+    pub referral_ignore_attorney_data: Option<crate::utils::UserSharedData>,
     pub completed:        Option<String>,
     pub shared_with:      Vec<i32>,
     pub shared_with_data: Vec<crate::utils::UserSharedData>, 
