@@ -1071,13 +1071,10 @@ pub struct FilesData {
 
 #[derive(Debug, Deserialize)]
 pub struct MessageData2 { 
-    pub id:         i32, 
     pub chat:       Option<i32>,
     pub text:       String,
     pub r#type:     String,
-    pub files:      Vec<FilesData>,
     pub timestamp1: Option<String>,
-    pub created:    String,
 }
 impl MessageData2 {
     pub fn get_preview(&self) -> String {
