@@ -66,15 +66,17 @@
                 </div>
                 </div>
                 <div class="sc-dIUeWJ fHnNRq">
-                    <button class="btn btn--green ripple-effect small ml-auto add_expense_billing" type="button">
-                        <span>Add Flat Fee</span>
-                    </button>
-                    <button class="btn btn--green ripple-effect small ml-auto add_expense_billing" type="button">
-                        <span>Add Expense</span>
-                    </button>
-                    <button class="btn btn--green ripple-effect small ml-auto add_time_billing" type="button">
-                        <span>Add Time</span>
-                    </button>
+                    <div style="display:flex"> 
+                        <button class="btn btn--green ripple-effect small ml-auto create_flat_fee" type="button">
+                            <span>Add Flat Fee</span>
+                        </button> 
+                        <button class="btn btn--green ripple-effect small ml-auto create_expense_billing" type="button">
+                            <span>Add Expense</span>
+                        </button>
+                        <button class="btn btn--green ripple-effect small ml-auto create_time_billing" type="button">
+                            <span>Add Time</span>
+                        </button>
+                    </div>
                 </div>
                 <div class="folder-control mt-3">
                     <div class="folder-control__header">

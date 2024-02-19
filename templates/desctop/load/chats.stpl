@@ -1,4 +1,4 @@
-<%= object_list.len() %>
+<%= object_list.len() %> 
 <% if object_list.len() > 0 { %> 
     <% for object in object_list.iter() { %>
       <% if object.chat_type == chat_type { %>

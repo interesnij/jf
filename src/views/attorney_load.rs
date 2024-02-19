@@ -1037,7 +1037,7 @@ pub struct ChatsParams {
     pub ordering:  Option<String>,
     pub chat_type: Option<String>,
     pub chat_id:   Option<i32>,
-}
+} 
 #[derive(Debug, Deserialize, Clone)]
 pub struct AddressData { 
     pub country:  String,
@@ -1219,12 +1219,14 @@ pub async fn chats_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             next = data.next;
             page_count = data.page_count;
             object_list = data.results;
+            println!("resp.is_ok()");
         }
         else {
             count = 0;
             next = None;
             page_count = 0;
             object_list = Vec::new();
+            println!("resp.is_err()");
         }
         #[derive(TemplateOnce)]
         #[template(path = "desctop/load/chats.stpl")]
