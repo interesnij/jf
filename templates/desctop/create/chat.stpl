@@ -70,8 +70,8 @@
                   <!-- error modal -->
 
                   <div class="d-flex mt-2">
-                    <button class="btn btn--white ripple-effect large ml-auto close_modal">
-                      <span>Cancel</span>
+                    <button class="btn btn--white ripple-effect large ml-auto close_modal" type="button">
+                      <span>Cancel</span> 
                     </button>
                     <button class="btn btn--green ripple-effect large ml-3 create_chat" type="button">
                       <span>Start Chat</span>

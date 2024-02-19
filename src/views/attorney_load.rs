@@ -1056,10 +1056,10 @@ pub struct UserChatCardData {
     pub email:          String,
     pub phone:          String,
     pub avatar:         Option<String>,
-    pub address:        Vec<AddressData>,
+    //pub address:        Vec<AddressData>,
     pub user_type:      String,
-    pub opportunity_id: Option<i32>, 
-    pub lead_id:        Option<i32>,
+    //pub opportunity_id: Option<i32>, 
+    //pub lead_id:        Option<i32>,
 }
 #[derive(Debug, Deserialize)]
 pub struct FilesData { 
