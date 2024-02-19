@@ -31,9 +31,6 @@
           currentitem="false"
         >
 
-        <% include!("../generic/new_chat.stpl"); %>
-        <% include!("../generic/archive_chat.stpl"); %>
-
       </div>
     </div>
     <div class="chat-page__main">

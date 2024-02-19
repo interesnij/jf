@@ -6,9 +6,6 @@
     <div class="chat-page__header ml-auto">
       <img class="icon-button-control ml-3 my-auto normal" data-tip="Archive folder" src="/static/images/archive.svg" alt="Archive folder" currentitem="false">
       <img class="icon-button-control ml-3 my-auto normal" data-tip="Start a new chat" src="/static/images/chat.svg" alt="Start a new chat" currentitem="false">
-      
-      <% include!("../generic/new_chat.stpl"); %>
-      <% include!("../generic/archive_chat.stpl"); %>
 
     </div>
   </div>

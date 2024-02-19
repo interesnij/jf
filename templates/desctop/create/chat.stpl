@@ -38,7 +38,7 @@
                           </div>
                           <div class="d-flex flex-column">
                             <div class="contact-multi-select-control__menu-item-name"><%= object.first_name %> <%= object.last_name %></div>
-                            <div class="contact-multi-select-control__menu-item-email"><%= object.emsil %></div>
+                            <div class="contact-multi-select-control__menu-item-email"><%= object.email %></div>
                           </div>
                           <div class="ml-auto my-auto contact-multi-select-control__menu-item-type"><%= object.user_type %></div>
                         </div>
