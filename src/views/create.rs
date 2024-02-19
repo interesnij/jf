@@ -178,11 +178,11 @@ pub async fn create_chat(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         let l = 2;
         let object_list: Vec<UserSharedData>;
 
-        url = concat_string!(
+        let url = concat_string!(
             API.to_owned(), 
             "users/attorneys/",
             request_user.user_id.clone(),
-            "/get_all_contacts/",
+            "/get_all_contacts/"
         );
         
         let resp = request_get::<AllContactsData> (
