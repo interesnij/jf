@@ -255,6 +255,23 @@ on('body', 'click', '.create_invoice', function() {
     }
     ajax_link.send();
 });
+on('body', 'click', '.create_chat', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/create/chat?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
 
 on('body', 'click', '.close_modal', function() {
   document.body.querySelector(".modal-control-container").remove()

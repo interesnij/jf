@@ -1164,7 +1164,7 @@ impl ChatData {
         let mut cur_user = UserChatCardData { 
             id:             0,
             first_name:     "".to_string(),
-            middle_name:    "".to_string(),
+            middle_name:    None,
             last_name:      "".to_string(),
             email:          "".to_string(),
             phone:          "".to_string(),

@@ -191,15 +191,9 @@ pub async fn create_chat(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         ).await;
         if resp.is_ok() {
             let data = resp.expect("E.");
-            count = data.count;
-            next = data.next;
-            page_count = data.page_count;
             object_list = data.results;
         }
         else {
-            count = 0;
-            next = None;
-            page_count = 0;
             object_list = Vec::new();
         }
         #[derive(TemplateOnce)]
