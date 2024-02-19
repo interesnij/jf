@@ -1,3 +1,4 @@
+<div tabindex="0" class="full-modal__background grey-theme open">
 <div class="full-modal__container open">
     <div class="full-modal__header">
         <span class="title my-auto">Create Invoice</span>
@@ -221,4 +222,5 @@
             </form>
         </div>
     </div>
+</div>
 </div>

@@ -14,7 +14,7 @@ use crate::utils::{
     get_string_withbool, get_request_user, AuthResponseData, request_get, API,
     get_id_withi32, get_string_withdate, gett_string_withi32,
     SmallCountryData, StateData, SmallCityData, SpecialitiesData, AppointmentTypeData,
-    FeeTypesData, PaymentTypeData, LanguageData, StageData,
+    FeeTypesData, PaymentTypeData, LanguageData, StageData, UserSharedData
 }; 
 
 
@@ -29,6 +29,7 @@ pub fn create_routes(config: &mut web::ServiceConfig) {
     config.route("/create/template", web::get().to(create_template));
     config.route("/create/post", web::get().to(create_post));
     config.route("/create/note", web::get().to(create_note));
+    config.route("/create/chat", web::get().to(create_chat));
 } 
 
 //////////////////////
@@ -165,4 +166,56 @@ pub async fn create_note(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
 }
 
+#[derive(Debug, Deserialize)]
+pub struct AllContactsData { 
+    pub results: Vec<UserSharedData>,
+}
+
+pub async fn create_chat(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {  
+        let request_user = user_some.unwrap();
+        let l = 2;
+        let object_list: Vec<UserSharedData>;
+
+        url = concat_string!(
+            API.to_owned(), 
+            "users/attorneys/",
+            request_user.user_id.clone(),
+            "/get_all_contacts/",
+        );
+        
+        let resp = request_get::<AllContactsData> (
+            url,
+            &request_user.key
+        ).await;
+        if resp.is_ok() {
+            let data = resp.expect("E.");
+            count = data.count;
+            next = data.next;
+            page_count = data.page_count;
+            object_list = data.results;
+        }
+        else {
+            count = 0;
+            next = None;
+            page_count = 0;
+            object_list = Vec::new();
+        }
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/create/chat.stpl")]
+        pub struct Template {
+            object_list: Vec<UserSharedData>,
+        }
+        let body = Template {
+            object_list: object_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
 

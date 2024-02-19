@@ -10,6 +10,16 @@
   <div class="matter-detail-page__content d-flex flex-column flex-1">
     <div class="matter-detail-overview">
       <div class="row">
+        <div class="col-12 mb-3 hidden">
+          <div class="sc-gInthZ eCiSlZ">
+            <div class="sc-fHuLxr dynvzF my-auto referrer_status"></div>
+            <div class="ml-1 my-auto">You have referred this matter to 
+            <span class="referrer_first_name"></span> 
+            <span class="referrer_last_name"></span>.
+          </div>
+          <div class="sc-euMpEg fXiCqr ml-auto my-auto hidden">RESEND</div>
+        </div> 
+        </div>
         <div class="col-md-8">
           <div class="folder-control">
             <div class="folder-control__header">

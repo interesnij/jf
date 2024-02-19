@@ -68,6 +68,32 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
+.dynvzF {
+  color: #00953b;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.fXiCqr {
+  color: #00953b;
+  font-size: 14px;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+  cursor: pointer;
+}
+.eCiSlZ {
+  border: #00953b 1px solid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 24px;
+  border-radius: 4px;
+  height: 48px;
+  color: #2e2e2e;
+  font-size: 14px;
+  background: white;
+}
+
 .etgNRe svg {
   margin: auto 0;
 }

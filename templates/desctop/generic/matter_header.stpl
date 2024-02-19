@@ -1,7 +1,5 @@
 <div class="matter-detail-page__bar">
-    <span class="my-auto heading matter_title">
-        
-    </span>
+    <span class="my-auto heading matter_title"></span>
     <div class="d-flex">
       <div class="d-flex">
         <div tabindex="0" class="select-container">

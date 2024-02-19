@@ -7,7 +7,7 @@
    <div class="d-flex flex-wrap">
 
       <!-- added file -->
-      <div class="upload-control__file">
+      <div class="upload-control__file hidden">
          <img src="/static/images/document.svg" class="my-auto upload-control__img" alt="file">
          <span class="ml-1 my-auto text-ellipsis" style="width: 200px;">u4xcKBohO2g — копия.jpg</span>
          <span class="ml-1 my-auto">(362.52 KB)</span>
@@ -20,9 +20,11 @@
    <span class="mx-auto d-flex justify-content-center mt-4">
       <img src="/static/images/file_open.svg" alt="file">
    </span>
+   <!--
    <div class="mx-auto my-2 text-center">
       Drag and drop your files here or
    </div>
+   -->
    <button class="btn btn--outline btn--green ripple-effect normal mx-auto mb-4" type="button">
       <span>Select from Documents</span>
    </button>

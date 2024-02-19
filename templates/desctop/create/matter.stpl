@@ -1,6 +1,6 @@
 <div tabindex="0" class="full-modal__background grey-theme open">
     <div class="full-modal__container open">
-        <div class="full-modal__header">
+        <div class="full-modal__header"> 
             <span class="title my-auto">Create Matter</span>
             <img class="my-auto ml-auto close_full_modal cursor-pointer" src="/static/images/close_white.svg" alt="close">
         </div>
@@ -49,7 +49,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-12 matter_client_container">
+                                <div class="col-12 matter_client_container hidden">
                                     <div class="sc-dlfnuX hwMQfB"> 
                                         <div class="user-avatar-container large toRight my-auto">
                                             <div class="user-avatar large">

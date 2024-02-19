@@ -15,6 +15,15 @@ on('body', 'click', '.menu-button', function() {
     block.style.visibility = "visible";
   }
 });
+on('body', 'click', '.profile-drop-down', function() {
+  if (this.classList.contains("hide")) {
+    this.classList.remove("hide");
+    this.classList.add("show");
+  } else {
+    this.classList.add("hide");
+    this.classList.remove("show");
+  }
+});
 
 on('body', 'click', '#logg', function() {
   _this = this;

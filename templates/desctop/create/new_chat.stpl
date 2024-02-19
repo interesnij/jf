@@ -1,20 +1,84 @@
-<div class="modal-control-container">
+<div class="modal-control-container open">
           <div tabindex="-1" class="modal-control">
             <div class="modal-control__header">
               <div class="my-auto title text-ellipsis w-100 text-left">New chat</div>
-                <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
+              <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
             </div>
             <div class="modal-control__content ignore-onclickoutside">
               <div style="width: 700px;">
                 <form>
-                  <div class="justify-content-between align-items-center">
-                    Your contact list is empty
-                    <button class="btn btn--outline btn--green ripple-effect normal ml-3 create_contact" data-type="attorney">
-                      <span>Create New Contact</span>
+                  <div class="sc-hOqruk jDTGiE">
+                    <img src="/static/images/info_green.svg" class="my-auto" alt="info">
+                    <div>You can add a maximum of ONE client user in a chat.</div>
+                  </div>
+                  <div class="col-12 mt-1">
+                    <div class="d-flex justify-content-between">
+                      <div class="contact-multi-select-control__label"></div>
+                    </div>
+                    <div class="contact-multi-select-control__container">
+                      <div class="contact-multi-select-control">
+                        <div class="flex-1 d-flex flex-wrap">
+                          <span class="my-auto">Add people to start chat with</span>
+                        </div>
+                        <img src="/static/images/arrow-drop-down.svg" class="contact-multi-select-control__arrow" alt="arrow">
+                      </div> 
+                      <div class="contact-multi-select-control__menu">
+                        <% for object in object_list.iter() { %>
+                        <div class="contact-multi-select-control__menu-item">
+                          <div class="user-avatar-container small toRight my-auto mr-1">
+                            <div class="user-avatar small">
+                              <% if object.avatar.is_some() { %>
+                                <img src="<%= object.avatar.as_deref().unwrap() %>" />
+                              <% } else { %>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                  <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                                </svg>
+                              <% } %>
+                            </div>
+                          </div>
+                          <div class="d-flex flex-column">
+                            <div class="contact-multi-select-control__menu-item-name"><%= object.first_name %> <%= object.last_name %></div>
+                            <div class="contact-multi-select-control__menu-item-email"><%= object.emsil %></div>
+                          </div>
+                          <div class="ml-auto my-auto contact-multi-select-control__menu-item-type"><%= object.user_type %></div>
+                        </div>
+                        <% } %>
+
+                      </div>
+                    </div>
+                    <div class="contact-multi-select-control__footer"></div>
+                  </div>
+
+                  <!-- error modal -->
+                  <div class="modal-control-container">
+                    <div tabindex="-1" class="modal-control">
+                      <div class="modal-control__header">
+                        <div class="my-auto title text-ellipsis w-100 text-left">Error</div>
+                      </div>
+                      <div class="modal-control__content ignore-onclickoutside">
+                        <div class="pb-4">
+                          <div class="text-black" style="font-size: 18px;">You can add a maximum of ONE client user in a chat.</div><br>
+                        </div>
+                        <div class="d-flex">
+                          <button class="btn btn--green ripple-effect normal ml-auto">
+                            <span>Ok</span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- error modal -->
+
+                  <div class="d-flex mt-2">
+                    <button class="btn btn--white ripple-effect large ml-auto close_modal">
+                      <span>Cancel</span>
+                    </button>
+                    <button class="btn btn--green ripple-effect large ml-3 create_chat" type="button">
+                      <span>Start Chat</span>
                     </button>
                   </div>
                 </form>
               </div>
             </div>
           </div>
-</div>
+        </div>

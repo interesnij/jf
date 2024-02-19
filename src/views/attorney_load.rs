@@ -1051,7 +1051,7 @@ pub struct AddressData {
 pub struct UserChatCardData { 
     pub id:             i32,
     pub first_name:     String,
-    pub middle_name:    String,
+    pub middle_name:    Option<String>,
     pub last_name:      String,
     pub email:          String,
     pub phone:          String,
