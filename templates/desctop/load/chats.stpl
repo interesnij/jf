@@ -1,8 +1,6 @@
+<%= object_list.len() %>
 <% if object_list.len() > 0 { %> 
     <% for object in object_list.iter() { %>
-      object.chat_type <%= object.chat_type %>
-      <br>
-      chat_type <%= chat_type %>
       <% if object.chat_type == chat_type { %>
         <% let (message, chat_user) = (&object.last_message, object.get_chat_user(&request_user.user_id)); %>
         <div class="chat-sidebar__thread <% if object.id == chat_id { %>active<% } %>">
