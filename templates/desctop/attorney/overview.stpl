@@ -100,7 +100,13 @@
                         <% } %> 
                       </div>
                       <div class="justify-content-between">
-                        <div class="chat-item__message text-gray"><%= message.text %></div>
+                        <div class="chat-item__message text-gray">
+                          <% if object.r#type == "call_ended".to_string() { %>
+                            call_ended
+                          <% } else { %>
+                            <%= message.text %>
+                          <% } %>
+                        </div>
                         <% if message.timestamp1.is_some() { %>
                           <div class="text-gray"><%= message.timestamp1.as_deref().unwrap() %></div>
                         <% } %>
