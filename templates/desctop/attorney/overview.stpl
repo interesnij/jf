@@ -70,6 +70,7 @@
                 <% for object in chats.iter() { %>
 
                   <% let (message, clients) = (&object.last_message, &object.client_data); %>
+                  <% let clients_len = clients.len(); %>
                   <div class="chat-item">
                     <div class="user-avatar-container small toRight">
                       <% for client in clients.iter() { %>
@@ -87,7 +88,10 @@
                     <div class="ml-1 w-100">
                       <div class="d-flex">
                         <div class="text-black">
-                          <%= client.first_name %> <%= client.last_name %>
+                          <% for (i, client) in clients.iter().enumerate() { %>
+                            <%= client.first_name %> <%= client.last_name %>
+                            <% if (i + 1) != clients_len { %>, <% } %>
+                          <% } %>
                         </div>
                         <% if object.is_favorite { %>
                           <img src="/static/static/star_fill.svg" alt="star" class="chat-item__star ml-1">
