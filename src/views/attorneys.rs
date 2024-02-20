@@ -111,7 +111,7 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
         let billing: crate::views::BillingData;
         let chats: Vec<crate::views::ChatsData>;
         let open_matters: Vec<crate::views::OpenMattersData>;
-        let open_matters_count: i32; 
+        let open_matters_count: i32;  
 
         let resp = request_get::<crate::views::AttorneyOnboardingData> (
             API.to_owned()
@@ -131,7 +131,7 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
             billing = crate::views::BillingData {
                 overdue:   0,
                 paid:      0,
-                un_billed: 0,
+                un_billed: 0.0,
                 unpaid:    0,
             };
             chats = Vec::new();
