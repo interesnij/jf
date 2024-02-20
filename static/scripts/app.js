@@ -285,7 +285,8 @@ on('body', 'click', '.close_matter_client_container', function() {
   this.parentElement.remove()
 });
 
-on('body', 'click', '.logout_hundler', function() {
+on('body', 'click', '.logout_hundler', function(e) {
+  e.preventDefault();
   console.log("click logout_hundler");
   localStorage.clear();
   window.location.href = "/";
