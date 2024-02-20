@@ -1,188 +1,176 @@
 <div class="modal-control-container open">
     <div tabindex="-1" class="modal-control">
         <div class="modal-control__header">
-            <div class="my-auto title text-ellipsis w-100 text-left">
-                Add Expense Entry
-            </div>
+            <div class="my-auto title text-ellipsis w-100 text-left">Add Expense Entry</div>
             <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
         </div>
         <div class="modal-control__content ignore-onclickoutside">
             <div class="add-expense-entry-modal">
-                <form> 
+                <form>
                     <div class="row">
-                        <div class="col-12">
-                            <div class="">
-                                <label class="checkbox-control">Non-billable entry
-                                    <input name="is_billable" type="checkbox"><span></span>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-2">
-                            <div class="row">
-                                <div class="col-8">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="text-dark">Rate</div>
-                                        <div class="input-control__required">Optional</div>
-                                    </div>
-                                    <div class="sc-fbNZge kcjhkj">
-                                        <div class="flex-1 d-flex">
-                                            <div class="sc-GTVdH dXaChH">
-                                                <input id="id_rate" name="rate" pattern="[0-9.]+" placeholder="Enter your rate" value="">
-                                            </div>
-                                        </div>
-                                        <div class="sc-gsxoIA kfwLZt">
-                                            <input class="form_currency" name="currency" type="hidden" >
-                                            <div class="select-control__container w-100" tabindex="0">
-                                                <div class="select-control__main border-none w-100 active">
-                                                    <div class="d-flex"> 
-                                                        <span class="my-auto">USD</span>
-                                                    </div>
-                                                    <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
-                                                </div>
-                                                <div class="select-control__menu">
-                                                    <div data-id="1" class="select-control__menu-item active">
-                                                        <span>USD</span>
-                                                    </div>
-                                                    <div data-id="2" class="select-control__menu-item">
-                                                        <span>GBP</span>
-                                                    </div>
-                                                    <div data-id="3" class="select-control__menu-item">
-                                                        <span>ERU</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <div class="select-control__footer"></div>
-                                    </div>
-                                </div>
-                                <div class="input-control col-md-4">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <label for="id_quantity" class="input-control__label">Quantity</label>
-                                        <div class="input-control__required">Optional</div>
-                                    </div>
-                                    <input id="id_quantity" name="id_quantity" placeholder="1.00" type="number">
-                                    <div class="input-control__footer"></div>
-                                </div>
-                                <div class="textarea-form-control d-flex flex-column col-12 mt-2">
-                                    <div class="d-flex justify-content-between">
-                                        <div class="textarea-form-control__label">Description</div>
-                                    </div>
-                                    <textarea id="id_description" name="description" placeholder="Type your message here"></textarea>
-                                    <div class="textarea-form-control__footer"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mt-2">
-                            <div class="mt-0">
-                                <div class="text-dark">Total Amount</div>
-                                <div class="sc-fbNZge kcjhkj">
-                                        <div class="flex-1 d-flex">
-                                            <div class="sc-GTVdH dXaChH">
-                                                <input id="id_rate" name="rate" pattern="[0-9.]+" placeholder="Enter your rate" value="">
-                                            </div>
-                                        </div>
-                                        <div class="sc-gsxoIA kfwLZt">
-                                            <input class="form_currency" name="currency" type="hidden" >
-                                            <div class="select-control__container w-100" tabindex="0">
-                                                <div class="select-control__main border-none w-100 active">
-                                                    <div class="d-flex"> 
-                                                        <span class="my-auto">USD</span>
-                                                    </div>
-                                                    <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
-                                                </div>
-                                                <div class="select-control__menu">
-                                                    <div data-id="1" class="select-control__menu-item active">
-                                                        <span>USD</span>
-                                                    </div>
-                                                    <div data-id="2" class="select-control__menu-item">
-                                                        <span>GBP</span>
-                                                    </div>
-                                                    <div data-id="3" class="select-control__menu-item">
-                                                        <span>ERU</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        <div class="select-control__footer"></div>
-                                </div>
-                            </div>
-                            <div class="mt-2">
-                                <div class="d-flex justify-content-between">
-                                    <div class="contact-select-control__label">Client</div>
-                                </div>
-                                <div class="contact-select-control__container">
-                                    <div class="contact-select-control">
-                                        <div class="flex-1 d-flex flex-wrap">
-                                            <span class="my-auto">Select a Client</span>
-                                            <input name="client" type="hidden" >
-                                        </div>
-                                        <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
-                                    </div>
-                                    <div 
-                                        class="contact-select-control__menu load_content" 
-                                        data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All&types=form"
-                                    >
-                                    </div>
-                                </div>
-                                <div class="contact-select-control__footer"></div>
-                            </div>
-                            <div class="select-control mt-2">
-                                <div class="d-flex justify-content-between">
-                                    <div class="select-control__label">Matter</div>
-                                </div>
-                                <div class="select-control__container">
-                                    <div class="select-control__main">
-                                        <div class="flex-1 d-flex justify-content-between">
-                                            <span class="my-auto">Select a Matter</span>
-                                            <input class="form_matter" name="matter" type="hidden" >
-                                        </div>
-                                    </div>
-                                    <div 
-                                        class="contact-select-control__menu matters_container" 
-                                        data-link="/attorney_load/matters?types=form"
-                                    >
-                                    </div>
-                                </div>
-                                <div class="select-control__footer"></div>
-                            </div>
-                            <div class="form-date-picker-control mt-2">
-                                <div class="d-flex justify-content-between">
-                                    <label for="date" class="form-date-picker-control__label">Date</label>
-                                </div>
-                                <div class="position-relative">
-                                    <input name="date" class="form-date-picker-control__input active" placeholder="MM/DD/YYYY" type="datetime_local">
-                                    <img src="/static/images/calendar_gray.svg" class="form-date-picker-control__icon" alt="calendar">
-                                </div>
-                                <div class="input-control__footer"></div>
-                            </div>
-                            <div class="mt-2">
-                                <div class="d-flex justify-content-between">
-                                    <div class="contact-select-control__label">Billed by</div>
-                                    <input name="billed_by" type="hidden" >
-                                </div>
-                                <div class="contact-select-control__container">
-                                    <div class="contact-select-control">
-                                        <div class="flex-1 d-flex flex-wrap">
-                                            <span class="my-auto">Select a Person</span>
-                                        </div>
-                                        <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
-                                    </div>
-                                    <div class="contact-select-control__menu">
-                                        <div class="my-3 text-center text-gray">No results</div>
-                                    </div>
-                                </div>
-                                <div class="contact-select-control__footer"></div>
-                            </div>
-                        </div>
-                        <div class="upload-control col-12 mt-2">
-
-                            <% include!("../generic/items/upload_form.stpl"); %>
-
+                    <div class="col-12">
+                        <div class="">
+                            <label class="checkbox-control">Non-billable entry<input type="checkbox"><span></span></label>
                         </div>
                     </div>
+                    <div class="col-md-6 mt-2">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="d-flex justify-content-between align-items-center">
+                                <div class="text-dark">Rate</div>
+                                <div class="input-control__required">Optional</div>
+                                </div>
+                                <div class="sc-fbNZge kcjhkj">
+                                <div class="flex-1 d-flex">
+                                    <div class="sc-GTVdH dXaChH">
+                                        <input id="JT1bxv1zcyS1Tn4WqVfzc" pattern="[0-9.]+" placeholder="0.00" value="">
+                                    </div>
+                                </div>
+                                <div class="sc-gsxoIA kfwLZt">
+                                    <div class="select-control__container w-100" tabindex="0">
+                                        <div class="select-control__main border-none w-100 active">
+                                            <div class="d-flex">
+                                                <span class="my-auto">USD</span>
+                                            </div>
+                                            <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
+                                        </div>
+                                        <div class="select-control__menu">
+                                            <div class="select-control__menu-item active"><span>USD</span></div>
+                                            <div class="select-control__menu-item"><span>GBP</span></div>
+                                            <div class="select-control__menu-item"><span>ERU</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="select-control__footer"></div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="input-control col-md-4">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <label for="kSpPGZfim4S0hw_Sf1ee9" class="input-control__label">Quantity</label>
+                                    <div class="input-control__required">Optional</div>
+                                </div>
+                                <input id="kSpPGZfim4S0hw_Sf1ee9" placeholder="1.00" type="number">
+                                <div class="input-control__footer"></div>
+                            </div>
+                            <div class="textarea-form-control d-flex flex-column col-12 mt-2">
+                                <div class="d-flex justify-content-between">
+                                    <div class="textarea-form-control__label">Description</div>
+                                </div>
+                                <textarea placeholder="Type your message here" class=""></textarea>
+                                <div class="textarea-form-control__footer"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mt-2">
+                        <div class="mt-0">
+                            <div class="text-dark">Total Amount</div>
+                            <div class="sc-fbNZge kcjhkj">
+                                <div class="flex-1 d-flex">
+                                    <div class="sc-GTVdH dXaChH"><input id="eSdjMDGaTWUznzMvBdRSO" pattern="[0-9.]+" placeholder="500" value=""></div>
+                                </div>
+                                <div class="sc-gsxoIA kfwLZt">
+                                    <div class="select-control__container w-100" tabindex="0">
+                                        <div class="select-control__main border-none w-100 active">
+                                            <div class="d-flex"><span class="my-auto">USD</span></div>
+                                            <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
+                                        </div>
+                                        <div class="select-control__menu">
+                                            <div class="select-control__menu-item active"><span>USD</span></div>
+                                            <div class="select-control__menu-item"><span>GBP</span></div>
+                                            <div class="select-control__menu-item"><span>ERU</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="select-control__footer"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="d-flex justify-content-between">
+                                <div class="contact-select-control__label">Client</div>
+                            </div>
+                            <div class="contact-select-control__container">
+                                <div class="contact-select-control">
+                                    <div class="flex-1 d-flex flex-wrap">
+                                        <span class="my-auto">Select a Client</span>
+                                    </div>
+                                    <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
+                                </div>
+                                <div class="contact-select-control__menu">
+                                    <div class="contact-select-control__menu-item">
+                                        <div class="user-avatar-container small toRight my-auto mr-1">
+                                            <div class="user-avatar small">
+                                                <img src="https://k.juslaw.online/media/images/2023/12/20/2F8B90E3-3A29-47E8-8E65-56596533DEAF.mpo">
+                                            </div>
+                                        </div>
+                                        <div class="d-flex flex-column">
+                                            <div class="contact-select-control__menu-item-name">serge goldobin</div>
+                                            <div class="contact-select-control__menu-item-email">serge300@gmail.com</div>
+                                        </div>
+                                        <div class="ml-auto my-auto contact-select-control__menu-item-type">client</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="contact-select-control__footer"></div>
+                        </div>
+                        <div class="select-control mt-2">
+                            <div class="d-flex justify-content-between">
+                                <div class="select-control__label">Matter</div>
+                            </div>
+                            <div class="select-control__container">
+                                <div class="select-control__main">
+                                    <div class="flex-1 d-flex justify-content-between">
+                                        <span class="my-auto">Select a Matter</span>
+                                    </div>
+                                    <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
+                                </div>
+                                <div class="select-control__menu">
+                                    <div class="select-control__menu-item"><span>Test Matter</span></div>
+                                    <div class="select-control__menu-item"><span>Name 1</span></div>
+                                    <div class="select-control__menu-item"><span>Test matter</span></div>
+                                </div>
+                            </div>
+                            <div class="select-control__footer"></div>
+                        </div>
+                        <div class="form-date-picker-control mt-2">
+                            <div class="d-flex justify-content-between">
+                                <label for="date" class="form-date-picker-control__label">Date</label>
+                            </div>
+                            <div class="position-relative">
+                                <input class="form-date-picker-control__input active" placeholder="MM/DD/YYYY" type="text" value="02/19/2024">
+                                <img src="/static/images/calendar_gray.svg" class="form-date-picker-control__icon" alt="calendar">
+                            </div>
+                            <div class="input-control__footer"></div>
+                        </div>
+                        <div class="mt-2">
+                            <div class="d-flex justify-content-between">
+                                <div class="contact-select-control__label">Billed by</div>
+                            </div>
+                            <div class="contact-select-control__container">
+                                <div class="contact-select-control">
+                                <div class="flex-1 d-flex flex-wrap">
+                                <span class="my-auto">Select a Person</span></div><img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
+                                </div>
+                                <div class="contact-select-control__menu">
+                                <div class="my-3 text-center text-gray">No results</div>
+                                </div>
+                            </div>
+                            <div class="contact-select-control__footer"></div>
+                        </div>
+                    </div>
+                    <div class="upload-control col-12 mt-2">
+                        <div class="d-flex justify-content-between"><label for="attachments" class="upload-control__label"></label></div>
+                        <div class="dropzone" style="border: 1px solid rgb(224, 224, 225);">
+                            <div class="d-flex flex-wrap"></div><input accept="image/*,.docx,.doc,.pdf,.ppt,.pptx,.xls,.xlsx" multiple="" type="file" autocomplete="off" tabindex="-1" style="display: none;">
+                            <span class="mx-auto d-flex justify-content-center mt-4"><img src="/static/images/file_open.svg" alt="file"></span>
+                            <div class="mx-auto my-2 text-center">Drag and drop your files here or</div><button class="btn btn--outline btn--green ripple-effect normal mx-auto mb-4" type="button"><span>Select from Documents</span></button>
+                        </div>
+                    </div>
+                    </div>
                     <div class="d-flex mt-2">
-                        <button class="btn btn--white ripple-effect large ml-auto close_modal">
+                        <button class="btn btn--white ripple-effect large ml-auto close_modal" type="button">
                             <span>Cancel</span>
                         </button>
-                        <button billing_type="expense" class="btn btn--disabled btn--green ripple-effect large ml-3 create_expense_entry" type="button">
+                        <button class="btn btn--disabled btn--green ripple-effect large ml-3 create_expense_entry_btn" type="button">
                             <span>Save Entry</span>
                         </button>
                     </div>
@@ -190,4 +178,4 @@
             </div>
         </div>
     </div>
-</div>
+ </div>

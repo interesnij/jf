@@ -21,7 +21,7 @@
                                 <img src="/static/images/arrow-drop-down.svg" class="contact-select-control__arrow" alt="arrow">
                             </div>                           
                             <div 
-                                class="contact-select-control__menu active" 
+                                class="contact-select-control__menu"
                                 data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All&types=form"
                             >
                             </div>

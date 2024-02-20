@@ -284,3 +284,8 @@ on('body', 'click', '.close_full_modal', function() {
 on('body', 'click', '.close_matter_client_container', function() {
   this.parentElement.remove()
 });
+
+on('body', 'click', '.logout', function() {
+  localStorage.clear();
+  window.location.href = "/";
+});
