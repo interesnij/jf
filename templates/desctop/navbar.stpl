@@ -15,12 +15,12 @@
         <img src="<%= request_user.get_image() %>" class="avatar" alt="avatar">
         <img src="/static/images/profile_dropdown.svg" class="menu-button-icon" alt="drop-down"></div>
         <div class="menu-dropdown">  
-            <a class="account_settings">Account Settings</a>
-            <a href="my_vault" class="ajax">My Vault</a>
+            <a class="menu-item account_settings">Account Settings</a>
+            <a href="menu-item my_vault" class="ajax">My Vault</a>
             <a href="/terms" class="ajax">Terms of Use</a>
             <a href="/policy" class="ajax">Privacy Policy</a>
             <a id="intercom-btn">Help and support</a>
-            <a class="logout_hundler">Log out</a>
+            <a class="menu-item logout_hundler pointer">Log out</a>
         </div>
         </div>
   </div>
@@ -61,8 +61,8 @@
         <img src="<%= request_user.get_image() %>" class="avatar" alt="avatar">
         <img src="/static/images/profile_dropdown.svg" class="menu-button-icon" alt="drop-down"></div>
       <div class="menu-dropdown">
-        <div class="profile_settings">Edit profile</div>
-        <div class="account_settings">Settings</div>
+        <div class="menu-item profile_settings pointer">Edit profile</div>
+        <div class="menu-item account_settings pointer">Settings</div>
         <div>
           <a href="/terms-of-use" class="ajax">
               Terms of Use
@@ -74,8 +74,8 @@
           </a>
         </div>
         <div id="intercom-btn">Help and support</div>
-        <div class="my_vault">My Vault</div>
-        <div class="logout_hundler">Log out</div>
+        <div class="menu-item my_vault pointer">My Vault</div>
+        <div class="menu-item logout_hundler pointer">Log out</div>
       </div>
     </div>
   </div>
