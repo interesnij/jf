@@ -330,7 +330,7 @@ pub struct LastMessageData {
 #[derive(Debug, Deserialize)]
 pub struct ChatsData {
     pub chat_type:    String,
-    pub client_data:  ClientData,
+    pub client_data:  Vec<ClientData>,
     pub created:      String,
     pub id:           i32,
     pub is_archived:  bool,
