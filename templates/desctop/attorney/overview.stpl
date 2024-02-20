@@ -100,6 +100,7 @@
                         <% } %> 
                       </div>
                       <div class="justify-content-between">
+                        <%= message.r#type %>
                         <div class="chat-item__message text-gray">
                           <% if message.r#type == "call_ended".to_string() { %>
                             call_ended
