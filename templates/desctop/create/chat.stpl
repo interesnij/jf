@@ -7,8 +7,8 @@
             <div class="modal-control__content ignore-onclickoutside">
               <div style="width: 700px;">
                 <form>
-                  <div class="sc-hOqruk jDTGiE">
-                    <img src="/static/images/info_green.svg" class="my-auto" alt="info">
+                  <div class="sc-hOqruk jDTGiE" style="display: flex">
+                    <img src="/static/images/info_green.svg" style="margin-right: 5px;margin-left: 15px;" class="my-auto" alt="info">
                     <div>You can add a maximum of ONE client user in a chat.</div>
                   </div>
                   <div class="col-12 mt-1">
