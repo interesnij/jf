@@ -303,9 +303,9 @@ pub struct OpenMattersData {
 pub struct BillingData {
     pub overdue:   i32,
     pub paid:      i32,
-    pub un_billed: i32,
+    pub un_billed: f32,
     pub unpaid:    i32,
-}
+} 
 
 #[derive(Debug, Deserialize)]
 pub struct ClientData {
