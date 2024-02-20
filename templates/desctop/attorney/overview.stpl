@@ -94,9 +94,9 @@
                           <% } %>
                         </div>
                         <% if object.is_favorite { %>
-                          <img src="/static/static/star_fill.svg" alt="star" class="chat-item__star ml-1">
+                          <img src="/static/images/star_fill.svg" alt="star" class="chat-item__star ml-1">
                         <% } else { %>
-                          <img src="/static/static/star_empty.svg" alt="star" class="chat-item__star ml-1">
+                          <img src="/static/images/star_empty.svg" alt="star" class="chat-item__star ml-1">
                         <% } %> 
                       </div>
                       <div class="justify-content-between">

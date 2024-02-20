@@ -100,7 +100,7 @@
             </div>
             <div class="signup-bar">
                 <div class="link-button pointer back_onboard_3_attorney_btn">
-                    <img src="/static/static/arrow-left-green.svg" alt="icon">Go Back
+                    <img src="/static/images/arrow-left-green.svg" alt="icon">Go Back
                 </div>
                 <div class="ml-auto">
                     You can change your profile information at anytime under <b>Edit Profile</b>

@@ -78,7 +78,7 @@
             <div class="dropdown mx-auto" tabindex="0">
               <div class="dropdown__button">
                   <div class="dropdown__button">
-                    <img src="/static/static/action_gray.svg" alt="action" class="matters-page__table-row-item-action"></div>
+                    <img src="/static/images/action_gray.svg" alt="action" class="matters-page__table-row-item-action"></div>
               </div>
               <div class="dropdown__menu">
                 <div class="dropdown__menu-item share_matter" data-pk="<%= object.id %>">Share with</div>
