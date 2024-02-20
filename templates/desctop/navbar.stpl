@@ -76,7 +76,7 @@
         </div>
         <div id="intercom-btn">Help and support</div>
         <div class="menu-item my_vault pointer">My Vault</div>
-        <div class="menu-item logout_hundler pointer">Log out</div>
+        <a class="menu-item logout_hundler pointer">Log out</a>
       </div>
     </div>
   </div>

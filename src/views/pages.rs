@@ -14,7 +14,7 @@ use crate::utils::{
 };
 
 
-pub fn page_routes(config: &mut web::ServiceConfig) {
+pub fn pages_routes(config: &mut web::ServiceConfig) {
     config.route("/terms-of-use", web::get().to(terms_page));
     config.route("/privacy-policy", web::get().to(policy_page));
 }
