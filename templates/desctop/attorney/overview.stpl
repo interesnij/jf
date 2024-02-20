@@ -102,7 +102,7 @@
                       <div class="justify-content-between">
                         <div class="chat-item__message text-gray">
                           <% if message.r#type == "endCall".to_string() { %>
-                            call_ended
+                            Call ended
                           <% } else { %>
                             <%= message.text %>
                           <% } %>
@@ -175,8 +175,8 @@
                     </div>
                     <div class="open-matters__item">
                         <span class="text-ellipsis d-block" style="max-width: 140px;">
-                            <!-- matter category -->
-                        </span> 
+                            <%= object.practice_area %>
+                        </span>  
                     </div>
                     <div class="open-matters__item">
                       <div class="user-avatar-container small toRight">

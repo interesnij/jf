@@ -76,7 +76,7 @@ pub struct PostedMatterParams {
     pub limit:    Option<i64>,
     pub offset:   Option<i64>,
     pub ordering: Option<String>,
-    pub status:   Option<String>,
+    pub status:   Option<String>, 
 }
 
 #[derive(Debug, Deserialize)]
@@ -104,7 +104,7 @@ pub struct PostedMatterData {
     pub budget_min:             String,
     pub budget_max:             String,
     pub budget_type:            String,
-    pub budget_detail:          String,
+    //pub budget_detail:          Option<String>,
     pub practice_area:          i32,
     pub created:                String,
     pub proposals:              Vec<ProposalsData>,

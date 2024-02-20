@@ -34,8 +34,8 @@ pub fn load_routes(config: &mut web::ServiceConfig) {
     config.route("/load/posts", web::get().to(posts_load));
     config.route("/load/topics", web::get().to(topics_load));
     config.route("/load/events", web::get().to(events_load));
-    //config.route("/attorneys/stages/", web::get().to(stages_page));
-}
+    config.route("/load/matter_posts", web::get().to(matter_posts_load));
+} 
 
 
 #[derive(Debug, Deserialize)]
@@ -2134,6 +2134,104 @@ pub async fn events_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         crate::views::login_page(req).await
     }
 }
+
+
+pub async fn matter_posts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    use crate::views::{PostedMatterParams, PostedMatterData, PostedMattersData};
+
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {  
+        let request_user = user_some.unwrap();
+        let l = 2;
+
+        let count:       i32;
+        let next:        Option<String>;
+        let page_count:  i32;
+        let object_list: Vec<PostedMatterData>;
+
+        let ordering:  String; 
+        let attorney:  String;
+        let client:    String;
+        let paralegal: String;
+
+        let params_some = web::Query::<PostedMatterParams>::from_query(&req.query_string());
+        if params_some.is_ok() {
+            let params = params_some.unwrap();
+            client =   gett_string_withi32(params.client, "&client=".to_string()); 
+            limit =    get_limit(params.limit);
+            offset =   get_string_withi64(params.offset);
+            ordering = get_string_with_string(params.ordering.clone());
+            status =   get_string_with_string(params.status.clone());
+        } 
+        else {
+            client   = String::new();
+            limit    = String::new();
+            offset   = String::new();
+            ordering = String::new();
+            status   = String::new();
+        }
+        
+        let url = concat_string!(
+            API.to_owned(),
+            "business/posted-matter/",
+            "?ordering=", ordering,
+            client,
+            "&limit=", limit,
+            "&offset=", offset,
+            "&status=", status,
+        );
+        
+        let resp = request_get::<PostedMattersData> (
+            url,
+            &request_user.key
+        ).await;
+        if resp.is_ok() {
+            let data = resp.expect("E.");
+            count = data.count;
+            next = data.next;
+            page_count = data.page_count;
+            object_list = data.results;
+        }
+        else {
+            count = 0;
+            next = None;
+            page_count = 0;
+            object_list = Vec::new();
+        }
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/load/posted_matter.stpl")]
+        pub struct Template {
+            request_user: AuthResponseData,
+            count:        i32,
+            next:         Option<String>,
+            page_count:   i32,
+            object_list:  Vec<PostedMatterData>,
+        }
+        let body = Template {
+            request_user: request_user,
+            count:        count,
+            next:         next,
+            page_count:   page_count,
+            object_list:  object_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 //////////////////////////////////////
 
