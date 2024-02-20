@@ -286,6 +286,7 @@ on('body', 'click', '.close_matter_client_container', function() {
 });
 
 on('body', 'click', '.logout_hundler', function() {
+  console.log("click logout_hundler");
   localStorage.clear();
   window.location.href = "/";
 });
