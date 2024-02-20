@@ -285,7 +285,45 @@ on('body', 'click', '.close_matter_client_container', function() {
   this.parentElement.remove()
 });
 
-on('body', 'click', '.logout', function() {
+on('body', 'click', '.logout_hundler', function() {
   localStorage.clear();
   window.location.href = "/";
+});
+
+on('body', 'click', '.profile_settings', function() {
+  span = document.body.querySelector("#reload"); 
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/attorney/settings/profile?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  if (localStorage.getItem('request_data') !== null) {
+        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+  } 
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
+});
+on('body', 'click', '.account_settings', function() {
+  span = document.body.querySelector("#reload"); 
+  if (localStorage.getItem('request_data') !== null) {
+    request_data = localStorage.getItem('request_data');
+    ajax_link.setRequestHeader('Request-Data', request_data);
+    user_type = request_data.user_type;
+  }
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/" + user_type + "/settings/account?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+   
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          span.append(elem_);
+      } 
+    }
+    ajax_link.send();
 });

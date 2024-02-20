@@ -14,9 +14,9 @@
         <div class="menu-button">
         <img src="<%= request_user.get_image() %>" class="avatar" alt="avatar">
         <img src="/static/images/profile_dropdown.svg" class="menu-button-icon" alt="drop-down"></div>
-        <div class="menu-dropdown"> 
-            <a href="/settings" class="ajax">Account Settings</a>
-            <a href="/vault" class="ajax">My Vault</a>
+        <div class="menu-dropdown">  
+            <a class="account_settings">Account Settings</a>
+            <a href="my_vault" class="ajax">My Vault</a>
             <a href="/terms" class="ajax">Terms of Use</a>
             <a href="/policy" class="ajax">Privacy Policy</a>
             <a id="intercom-btn">Help and support</a>
@@ -57,12 +57,12 @@
         <img src="/static/images/notification.svg" alt="notification"></div>
     </div>
     <div tabindex="0" class="profile-drop-down">
-      <div class="menu-button">
+      <div class="menu-button"> 
         <img src="<%= request_user.get_image() %>" class="avatar" alt="avatar">
         <img src="/static/images/profile_dropdown.svg" class="menu-button-icon" alt="drop-down"></div>
       <div class="menu-dropdown">
-        <div class="edit_profile">Edit profile</div>
-        <div class="edit_settings">Settings</div>
+        <div class="profile_settings">Edit profile</div>
+        <div class="account_settings">Settings</div>
         <div>
           <a href="/terms-of-use" class="ajax">
               Terms of Use
@@ -74,8 +74,8 @@
           </a>
         </div>
         <div id="intercom-btn">Help and support</div>
-        <div class="open_vault">My Vault</div>
-        <div class="logout">Log out</div>
+        <div class="my_vault">My Vault</div>
+        <div class="logout_hundlerd">Log out</div>
       </div>
     </div>
   </div>

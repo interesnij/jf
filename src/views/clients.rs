@@ -31,7 +31,7 @@ pub fn clients_routes(config: &mut web::ServiceConfig) {
     config.route("/news", web::get().to(client_news_page));
     config.route("/news/{id}", web::get().to(client_new_page));
 
-    config.route("/client/settings", web::get().to(settings_page));
+    config.route("/client/settings/account", web::get().to(settings_page));
     config.route("/client/settings/notify", web::get().to(settings_notify_page));
     config.route("/client/settings/quard", web::get().to(settings_quard_page));
     config.route("/client/settings/pay", web::get().to(settings_pay_page));
