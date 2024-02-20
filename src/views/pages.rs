@@ -293,7 +293,7 @@ pub struct OpenMattersData {
     pub created:          String,
     pub fee_type:         String,
     pub id:               i32,
-    pub practice_area:    i32,
+    pub practice_area:    String,
     pub principle_avatar: Option<String>,
     pub principle_name:   String,
     pub title:            String,
