@@ -57,7 +57,7 @@ pub fn attorneys_routes(config: &mut web::ServiceConfig) {
 
     config.route("/attorney/settings/profile", web::get().to(settings_profile_page));
     config.route("/attorney/settings/events", web::get().to(settings_events_page));
-    config.route("/attorney/settings/account", web::get().to(settings_account_page));
+    config.route("/attorney/settings/account", web::get().to(settings_account_page)); 
     config.route("/attorney/settings/subscription", web::get().to(settings_subscriptions_page));
     config.route("/attorney/settings/stages", web::get().to(settings_stages_page));
     config.route("/attorney/settings/notifies", web::get().to(settings_notifies_page));

@@ -1,18 +1,22 @@
-<% include!("header.stpl"); %>
+<% include!("../anon_header.stpl"); %>
 
-<div class="login-page"><img src="/static/images/logo.0e6664a1d7106c657d4c3f462424936a.svg" alt="logo" class="login-page__logo">
+<div class="login-page">
+    <img src="/static/images/logo.svg" alt="logo" class="login-page__logo">
     <div class="login-page__container mt-auto">
         <h1 class="mb-4 mt-0">Email Successfully Confirmed</h1>
         <div class="text-dark"></div>
         <div class="d-flex mt-4">
-            <button class="btn btn--green ripple-effect large mx-auto" style="width: 100%;">
+            <a href="/" class="btn btn--green ripple-effect large mx-auto" style="width: 100%;">
                 <span>Return To Home</span>
-            </button>
+            </a>
         </div>
     </div>
     <div class="login-page__footer mb-auto">
-        <span>Before logging in, you can read our</span>&nbsp;<a href="/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a>
-        &nbsp; <span>and</span> &nbsp;
+        <span>Before logging in, you can read our</span>
+        &nbsp;
+        <a href="/privacy-policy" target="_blank" rel="noreferrer">Privacy Policy</a>
+        &nbsp; 
+        <span>and</span> &nbsp;
         <a href="/terms-of-use" target="_blank" rel="noreferrer">Terms of Service</a>
     </div>
     <div class="login-page__footer mb-3">
@@ -21,4 +25,4 @@
     </div>
 </div>
 
-<% include!("footer.stpl"); %>
+<% include!("../anon_footer.stpl"); %>

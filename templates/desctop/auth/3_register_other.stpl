@@ -1,5 +1,7 @@
+<% include!("../anon_header.stpl"); %>
 <div>
-    <div class="signup-page-layout"><a href="/"><img src="/static/images/logo2.svg" class="signup-page-layout__logo" alt="logo"></a>
+    <div class="signup-page-layout">
+        <a href="/"><img src="/static/images/logo2.svg" class="signup-page-layout__logo" alt="logo"></a>
         <div class="signup-page-layout__title">Sign Up with JusLaw</div>
         <div class="signup-page-layout__form">
             <form action="#">
@@ -101,3 +103,4 @@
         </div>
     </div>
 </div>
+<% include!("../anon_footer.stpl"); %>
