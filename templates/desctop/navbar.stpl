@@ -39,7 +39,7 @@
     </div>
     <div tabindex="0" class="header-create ml-3 my-auto">
       <div class="menu-button">
-        <img src="/static/images/plus_black.svg" class="menu-button__icon" alt="plus">
+          <img src="/static/images/plus_black.svg" class="menu-button__icon" alt="plus">
           <span>Create New</span>
         </div>
         <div class="menu-dropdown"> 
@@ -56,10 +56,11 @@
       <div class="notification ml-3">
         <img src="/static/images/notification.svg" alt="notification"></div>
     </div>
-    <div tabindex="0" class="profile-drop-down">
+    <div tabindex="0" class="profile-drop-down hide">
       <div class="menu-button"> 
         <img src="<%= request_user.get_image() %>" class="avatar" alt="avatar">
-        <img src="/static/images/profile_dropdown.svg" class="menu-button-icon" alt="drop-down"></div>
+        <img src="/static/images/profile_dropdown.svg" class="menu-button-icon" alt="drop-down">
+      </div>
       <div class="menu-dropdown">
         <div class="menu-item profile_settings pointer">Edit profile</div>
         <div class="menu-item account_settings pointer">Settings</div>
