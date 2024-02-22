@@ -446,7 +446,7 @@ on('body', 'click', '.return_login_hundler', function() {
 
 on('body', 'click', '.register_final_attorney_btn', function() {
   if (localStorage.getItem("reg_step_1") === null) {
-    back_register_1_step_low("/auth/register_attorney_1");
+    back_register_1_step_low("/auth/register/attorney");
   }
 
   _tObject = localStorage.getItem('reg_step_1');
@@ -591,7 +591,7 @@ on('body', 'click', '.register_2_attorney_btn', function() {
 });
 
 on('body', 'click', '.register_2_attorney_btn', function() {
-  back_register_1_step_low("/auth/register_attorney_1");
+  back_register_1_step_low("/auth/register/attorney");
 });
 
   //////////////////////////////////////

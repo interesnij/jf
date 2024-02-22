@@ -24,15 +24,15 @@ pub fn auth_routes(config: &mut web::ServiceConfig) {
     config.route("/auth/email-verified", web::get().to(email_verified_page));
     config.route("/auth/forgot-password", web::get().to(forgot_password_page));
 
-    config.route("/auth/register_attorney_1", web::get().to(register_attorney_1_page));
+    config.route("/auth/register/attorney", web::get().to(register_attorney_1_page));
     config.route("/auth/register_attorney_2", web::get().to(register_attorney_2_page));
-    config.route("/auth/register_client_1", web::get().to(register_client_1_page));
+    config.route("/auth/register/client", web::get().to(register_client_1_page));
     config.route("/auth/register_client_2", web::get().to(register_client_2_page));
-    config.route("/auth/register_paralegal_1", web::get().to(register_paralegal_1_page));
+    config.route("/auth/register/paralegal", web::get().to(register_paralegal_1_page));
     config.route("/auth/register_paralegal_2", web::get().to(register_paralegal_2_page));
     config.route("/auth/register_paralegal_3", web::get().to(register_paralegal_3_page));
     config.route("/auth/register_other_3", web::get().to(register_other_3_page));
-    config.route("/auth/register_enterprise_1", web::get().to(register_enterprise_1_page));
+    config.route("/auth/register/enterprise", web::get().to(register_enterprise_1_page));
     config.route("/auth/register_enterprise_2", web::get().to(register_enterprise_2_page));
 
     config.route("/auth/onboard_attorney_1", web::get().to(onboard_attorney_1_page));
