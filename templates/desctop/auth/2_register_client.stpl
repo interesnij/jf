@@ -9,7 +9,7 @@
         <div class="signup-page-layout__form">
             <div class="label">Step 2 of 2</div>
             <div class="title mb-4">Additional Information</div>
-            <form action="#">
+            <form class="js_form">
                 <div class="card-control">
                 <div class="d-flex"><span class="my-1">I am signing up as a company or organization</span>
                     <div class="sc-bQdRvg hZpUCz ml-auto">
@@ -43,7 +43,7 @@
                                 <div class="input-control__footer"></div>
                             </div>
 
-                            <div class="select-control col-6 mt-3 load_content" data-link="/load/countries">
+                            <div class="select-control col-6 mt-3 load_content load_countries states_nieded" data-link="/load/countries">
                                 
                             </div> 
 

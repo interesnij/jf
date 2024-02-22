@@ -14,7 +14,7 @@ use crate::utils::{
     get_string_withbool, get_request_user, AuthResponseData, request_get, API,
     get_id_withi32, get_string_withdate, gett_string_withi32,
     SmallCountryData, StateData, SmallCityData, SpecialitiesData, AppointmentTypeData,
-    FeeTypesData, PaymentTypeData, LanguageData, StageData, UserSharedData
+    FeeTypesData, PaymentTypeData, LanguageData, StageData, UserSharedData,
 }; 
 
 
@@ -30,6 +30,7 @@ pub fn create_routes(config: &mut web::ServiceConfig) {
     config.route("/create/post", web::get().to(create_post));
     config.route("/create/note", web::get().to(create_note));
     config.route("/create/chat", web::get().to(create_chat));
+    config.route("/create/propocal/{}", web::get().to(create_propocal));
 } 
 
 //////////////////////
@@ -207,6 +208,43 @@ pub async fn create_chat(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        crate::views::login_page(req).await
+    }
+}
+
+pub async fn create_proposal(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Result<HttpResponse> {
+    use crate::views::PostedMatterData;
+
+    let user_some = get_request_user(&req);
+    if user_some.is_some() {  
+        let request_user = user_some.unwrap();
+        let l = 2;
+
+        let url = concat_string!(
+            API.to_owned(), 
+            "business/posted-matter/",
+            _id.to_string()
+        );
+        
+        let resp = request_get::<PostedMatterData> (
+            url,
+            &request_user.key
+        ).await;
+        if resp.is_ok() {
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/create/proposal.stpl")]
+            pub struct Template {
+                object: PostedMatterData,
+            }
+            let body = Template {
+                object: resp.expect("E."),
+            }
+        }
+        else {
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("error"))
+        }
     }
     else {
         crate::views::login_page(req).await

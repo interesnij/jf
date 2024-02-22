@@ -1,0 +1,36 @@
+<% if object_list.len() > 0 { %>
+    <% for object in object_list.iter() { %>
+        <% let client = &object.client_data; %>
+        <div class="recent-post">
+            <a href="/attorney/engagement/post/37">
+                <div class="d-flex">
+                    <div class="user-avatar-container small toRight">
+                        <div class="user-avatar small" data-tip="authorName" currentitem="false">
+                            <% if client.avatar.is_some() { %>
+                                <img src="<%= client.avatar.as_deref().unwrap() %>" />
+                            <% } else { %>
+                                <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
+                                </svg>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="ml-1 flex-2">
+                        <div class="recent-post__title"><%= object.title %></div>
+                        <div class="d-flex w-100">
+                            <div class="recent-post__author"><%= client.first_name %> <%= client.last_name %></div>
+                            <div class="recent-post__post-date"><%= object.created %></div>
+                        </div> 
+                    </div>
+                </div>
+            </a> 
+            <div class="sc-fybuyZ hbrjLj mt-1"><%= object.practice_area_data.title %></div>
+            <div class="sc-iWFTwQ oTXcn mt-1"><span class="mr-05">Budget:</span> <%= object.budget_min %> <%= object.currency_data.title %> other</div>
+            <div class="recent-post__content"><%= object.description %></div>
+        </div>
+    <% } %>
+<% } else { %>
+    <div class="folder-item folder-item--with-separator">
+        <div class="my-4 text-center">No active engagements</div>
+    </div>
+<% } %>

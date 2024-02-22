@@ -7,7 +7,7 @@
          <div class="text-gray text-center">Set up your profile so clients can easily find you</div>
          <div class="mt-4 text-gray text-center">Step 1 of 4</div>
          <div class="subscription-heading mb-4">Personal Information</div>
-         <form action="#">
+         <form class="js_form">
             <div class="card-control p-4">
                <div class="row">
                   <div class="col-12">

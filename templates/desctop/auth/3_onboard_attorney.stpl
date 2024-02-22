@@ -7,7 +7,7 @@
          <div class="text-gray text-center">Set up your profile so clients can easily find you</div>
          <div class="mt-4 text-gray text-center">Step 3 of 4</div>
          <div class="subscription-heading mb-4">Experience and Practice</div>
-         <form action="#">
+         <form class="js_form">
             <div class="card-control p-4">
                 <div class="row">
                     <div class="heading col-12">Education</div>
@@ -54,7 +54,7 @@
                     <div class="d-flex col-12 w-100 mt-0">
                         <div class="flex-1">
                             <div class="row">
-                            <div class="select-control col-md-3 mt-2 load_content" data-link="/load/countries">
+                            <div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
                                 
                             </div> 
                             <div class="select-control col-md-3 mt-2 states_container">

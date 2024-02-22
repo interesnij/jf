@@ -25,7 +25,7 @@
         <div class="create-account-layout__content">
             <div class="my-auto d-flex flex-column">
                 <div class="create-account-layout__form mx-auto">
-                    <form action="#">
+                    <form class="js_form">
                         <div class="step mb-2">Step 1 of 2</div>
                         <div class="title mb-3">Create your account</div>
                         <div class="input-control mt-1">

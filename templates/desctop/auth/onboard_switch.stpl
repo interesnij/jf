@@ -1,0 +1,7 @@
+<% match request_user.user_type {
+    "attorney" => include!("1_onboard_attorney.stpl"),
+    "paralegal" => include!("1_onboard_attorney.stpl"),
+    "enterprise" => include!("1_onboard_attorney.stpl"),
+    "other" => include!("1_onboard_attorney.stpl"),
+    _ => include!("1_onboard_attorney.stpl"),
+}; %>

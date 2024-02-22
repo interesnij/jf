@@ -12,7 +12,7 @@
             <div class="desc mx-auto mt-3">
                 To become a verified attorney on JusLaw, we need to validate the following information. Everything you share is confidential.
             </div>
-            <form>
+            <form class="js_form">
                 <div class="folder-control mt-4">
                     <div class="folder-control__header">
                         <div class="d-flex">
@@ -65,7 +65,7 @@
                         <div class="d-flex col-12 w-100 mt-0">
                             <div class="flex-1">
                             <div class="row">
-                                <div class="select-control col-md-3 mt-2 load_content" data-link="/load/countries">
+                                <div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
                                 
                                 </div> 
                                 <div class="select-control col-md-3 mt-2 states_container">

@@ -6,7 +6,7 @@
       <div class="flex-1 d-flex justify-content-between">
          <span class="my-auto">Select a City</span>
       </div>
-      <input type="text" name="city" list="city_list" id="id_city">
+      <input type="text" name="city" list="city_list" class="city">
       <datalist id="city_list">
          <% for object in cities_list.iter() { %>
             <option data-pk="<%= object.id %>" value="<%= object.name %>"></option>

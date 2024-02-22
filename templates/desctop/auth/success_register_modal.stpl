@@ -12,9 +12,9 @@
                 </div>
             </div>
             <div class="d-flex mt-4">
-                <button class="btn btn--green ripple-effect normal ml-auto">
+                <a href="/" class="btn btn--green ripple-effect normal ml-auto">
                     <span>Return Home</span>
-                </button>
+                </a>
             </div>
       </div>
    </div>

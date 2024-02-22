@@ -329,3 +329,260 @@ on('body', 'click', '.account_settings', function() {
     }
     ajax_link.send();
 });
+
+
+//////////////////////////////////////
+/////////// auth function ////////
+
+function get_register_2_step_low(url) {
+    /*
+      reg_step_1 : { 'email': _email.value, 'password': _password1.value}
+    */
+
+    form = document.body.querySelector(".js_form");
+    _email = form.querySelector("#id_email");
+    _password1 = form.querySelector("#id_password");
+    _password2 = form.querySelector("#id_password2");
+
+    _email.style.setProperty('border', 'inherit', 'important');
+    _password1.style.setProperty('border', 'inherit', 'important');
+    _password2.style.setProperty('border', 'inherit', 'important');
+
+    if (!_email.value){
+      _email.style.border = "1px #FF0000 solid";
+      toast_error("Email is required");
+      return
+    } else if (!_password1.value){
+      _password1.style.border = "1px #FF0000 solid";
+      toast_error("Password is required");
+      return
+    }
+    else if (!_password2.value){
+      _password2.style.border = "1px #FF0000 solid";
+      toast_error("Password is required");
+      return
+    }
+
+    else if (_password1.value != _password2.value){
+      _password1.style.border = "1px #FF0000 solid";
+      _password2.style.border = "1px #FF0000 solid";
+      toast_error("Passwords must match");
+      return
+    }
+
+    tObject = { 'email': _email.value, 'password': _password1.value};
+    localStorage.setItem('reg_step_1', JSON.stringify(tObject));
+    ajax_get_reload(url, true, 2);
+}
+
+function back_register_1_step_low(url) {
+    /*
+      reg_step_1 : { 'email': _email.value, 'password': _password1.value}
+    */
+    ajax_get_reload(url, true, 2);
+    form = document.body.querySelector(".js_form");
+    _email = form.querySelector("#id_email");
+    _password1 = form.querySelector("#id_password");
+    _password2 = form.querySelector("#id_password2");
+  
+    _tObject = localStorage.getItem('reg_step_1');
+    tObject = JSON.parse(_tObject);
+    
+    _email.value = tObject.email;
+    _password1.value = tObject.password;
+    _password2.value = tObject.password;
+}
+
+function send_files(file_c) {
+    file_data = new FormData();
+    file_data.append("token", "111");
+    file_data.append("folder", "111");
+    file_data.append("object_id", "111");
+    files = file_c.files;
+    for (let i = 0; i < files.length; i++) {
+      console.log("upload", files[i]);
+      file_data.append("file", files[i]);
+    }
+    _link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    _link.open( 'POST', "https://k.juslaw.online/classic_create/", true );
+    _link.onreadystatechange = function () {
+    if ( _link.readyState == 4 && _link.status == 200 ) {
+      data = JSON.parse(_link.responseText);
+      res_files = data["files"];
+      if (res_files.length < 1) {
+        console.log("res_files.length < 1");
+        return
+      }
+      else {
+        return res_files[0];
+      }
+    } else {
+      console.log("return");
+      return
+    }};
+    _link.send(file_data);
+}
+
+function show_law_reg_success_modal() {
+  span = document.body.querySelector("#reload");
+  span2 = document.createElement("span");
+  span2.innerHTML = '<div class="modal-control-container open"><div tabindex="-1" class="modal-control"><div class="modal-control__header"><div class="my-auto title text-ellipsis w-100 text-center">Application Received</div></div><div class="modal-control__content ignore-onclickoutside"><div class="pb-4" style="width: 600px;"><div class="text-black" style="font-size: 18px;">JusLaw has received your application.</div><br><div class="text-dark">The verification process of your application will take up to 5 days. Please check your inbox for an email from JusLaw to verify your email in the meantime. If your application is approved, our team will guide you to set up your account.</div></div><div class="d-flex mt-4"><a class="btn btn--green ripple-effect normal ml-auto return_login_hundler"><span>Return Home</span></a></div></div></div></div>';
+  span.append(span2);
+}
+on('body', 'click', '.return_login_hundler', function() {
+    document.body.querySelector(".modal-control-container").remove();
+    ajax_get_reload("/", true, 2);
+});
+
+on('body', 'click', '.register_final_attorney_btn', function() {
+  if (localStorage.getItem("reg_step_1") === null) {
+    back_register_1_step_low("/auth/register_attorney_1");
+  }
+
+  _tObject = localStorage.getItem('reg_step_1');
+  tObject = JSON.parse(_tObject);
+
+  form = document.body.querySelector(".js_form");
+  _first_name = form.querySelector("#id_first_name");
+  _last_name = form.querySelector("#id_last_name");
+  _phone = form.querySelector("#id_phone");
+  _attachments = form.querySelector("#id_attachments");
+  email = tObject.email;
+  password1 = tObject.password;
+  password2 = tObject.password;
+
+  _jurisdictions_countries = form.querySelectorAll(".id_country");
+  _jurisdictions_states = form.querySelectorAll(".id_state");
+  _jurisdictions_cities = form.querySelectorAll(".id_city");
+  _jurisdictions_numbers = form.querySelectorAll(".id_number");
+  _jurisdictions_years = form.querySelectorAll(".id_year");
+
+  // return normal fields styles 
+  _first_name.style.setProperty('border', 'inherit', 'important');
+  _last_name.style.setProperty('border', 'inherit', 'important');
+  _phone.style.setProperty('border', 'inherit', 'important');
+  _attachments.style.setProperty('border', 'inherit', 'important');
+  try {
+      for (let i = 0; i < _jurisdictions_countries.length; i++) {
+        _jurisdictions_countries[i].style.setProperty('border', 'inherit', 'important');
+      }
+      for (let i = 0; i < _jurisdictions_cities.length; i++) {
+        _jurisdictions_cities[i].style.setProperty('border', 'inherit', 'important');
+      }
+      for (let i = 0; i < _jurisdictions_numbers.length; i++) {
+        _jurisdictions_numbers[i].style.setProperty('border', 'inherit', 'important');
+      }
+      for (let i = 0; i < _jurisdictions_years.length; i++) {
+        _jurisdictions_years[i].style.setProperty('border', 'inherit', 'important');
+      }
+      for (let i = 0; i < _jurisdictions_states.length; i++) {
+        _jurisdictions_states[i].style.setProperty('border', 'inherit', 'important');
+      }
+  } catch { null }
+  /////
+
+  if (!_first_name.value){
+    _first_name.style.border = "1px #FF0000 solid";
+    toast_error("First Name is required");
+    return
+  } else if (!_last_name.value){
+    _last_name.style.border = "1px #FF0000 solid";
+    toast_error("Last Name is required");
+    return
+  }
+  else if (!_phone.value){
+    _phone.style.border = "1px #FF0000 solid";
+    toast_error("Phone is required");
+    return
+  }
+  else if (!_attachments.value){
+    _attachments.parentElement.style.border = "1px #FF0000 solid";
+    toast_error("Registration Attachments is required");
+    return
+  }
+  else if (!_jurisdictions_countries[0].value){
+    _jurisdictions_countries[0].value.style.border = "1px #FF0000 solid";
+    toast_error("Jurisdiction Country is required");
+    return
+  }
+  else if (!_jurisdictions_cities[0].value){
+    _jurisdictions_cities[0].value.style.border = "1px #FF0000 solid";
+    toast_error("Jurisdiction City is required");
+    return
+  }
+  else if (!_jurisdictions_numbers[0].value){
+    _jurisdictions_numbers[0].value.style.border = "1px #FF0000 solid";
+    toast_error("Jurisdiction Registration Number is required");
+    return
+  }
+  else if (!_jurisdictions_years[0].value){
+    _jurisdictions_years[0].value.style.border = "1px #FF0000 solid";
+    toast_error("Jurisdiction Year Admitted is required");
+    return
+  }
+
+  jurisdictions = [];
+  for (let i = 0; i < _jurisdictions_numbers.length; i++) {
+    try {
+      let country, state, city, number, year;
+      country = _jurisdictions_countries[i].value;
+      state = _jurisdictions_states[i].value;
+      city = _jurisdictions_cities[i].value;
+      number = _jurisdictions_numbers[i].value;
+      year = _jurisdictions_years[i].value;
+      jurisdictions.append({
+        country: country, 
+        state: state,
+        city: city,
+        number: number, 
+        year: year
+      });
+    } catch { 
+      if (i == 0) {
+        return
+      }
+      else {
+        break
+      }
+    }
+  }
+
+  files = send_files(_attachments);
+
+  fObject = {
+    "email": email,
+    "password1": password1,
+    "password2": password2,
+    "first_name": _first_name.value,
+    "last_name": _last_name.value,
+    "phone": _phone.value,
+    "is_disciplined": form.elements["disciplined"],
+    "practice_jurisdictions": jurisdictions,
+    "registration_attachments": files
+  }
+  
+  localStorage.setItem('reg_step_2', JSON.stringify(fObject));
+  fetch('https://backend.juslaw.com/api/v1/users/attorneys/', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(fObject)
+  }).then(res => res.json())
+    .then(res => show_law_reg_success_modal());
+});
+
+//////////////////////////////////////
+/////////// register attorney ////////
+
+on('body', 'click', '.register_2_attorney_btn', function() {
+    get_register_2_step_low("/auth/register_attorney_2");
+});
+
+on('body', 'click', '.register_2_attorney_btn', function() {
+  back_register_1_step_low("/auth/register_attorney_1");
+});
+
+  //////////////////////////////////////
+  //////////////////////////////////////

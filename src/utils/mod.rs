@@ -272,7 +272,7 @@ pub async fn get_plans_page (
         plan_list = Vec::new();
     }
 
-    if is_desctop {
+    if is_desctop { 
         #[derive(TemplateOnce)] 
         #[template(path = "desctop/auth/plans.stpl")]
         struct Template<'a> { 
@@ -312,6 +312,63 @@ pub async fn get_plans_page (
         let body = Template {
             request_user: request_user,
             plan_list:    plan_list,
+            is_ajax:      is_ajax,
+            title:        title,
+            description:  description,
+            image:        image,
+            uri:          uri,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+}
+
+pub async fn get_onboarding_page (
+    request_user: AuthResponseData,
+    is_desctop:   bool,
+    is_ajax:      i32,
+    title:        &String,
+    description:  &String,
+    uri:          &String,
+    image:        &String,
+) -> actix_web::Result<HttpResponse> {
+    if is_desctop { 
+        #[derive(TemplateOnce)] 
+        #[template(path = "desctop/auth/onboard_switch.stpl")]
+        struct Template<'a> { 
+            request_user: AuthResponseData,
+            is_ajax:      i32,
+            title:        &'a String,
+            description:  &'a String,
+            image:        &'a String,
+            uri:          &'a String,
+        } 
+        let body = Template {
+            request_user: request_user,
+            is_ajax:      is_ajax,
+            title:        title,
+            description:  description,
+            image:        image,
+            uri:          uri,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
+    else {
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/auth/onboard_switch.stpl")]
+        struct Template<'a> { 
+            request_user: AuthResponseData,
+            is_ajax:      i32,
+            title:        &'a String,
+            description:  &'a String,
+            image:        &'a String,
+            uri:          &'a String,
+        } 
+        let body = Template {
+            request_user: request_user,
             is_ajax:      is_ajax,
             title:        title,
             description:  description,

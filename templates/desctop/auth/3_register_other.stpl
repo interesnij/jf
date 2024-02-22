@@ -4,7 +4,7 @@
         <a href="/"><img src="/static/images/logo2.svg" class="signup-page-layout__logo" alt="logo"></a>
         <div class="signup-page-layout__title">Sign Up with JusLaw</div>
         <div class="signup-page-layout__form">
-            <form action="#">
+            <form class="js_form">
                 <div class="label">Step 3 of 3</div>
                 <div class="title pb-4">Set Up Your Profile</div>
                 <div class="desc mx-auto">You can update the <b>profile information</b> later in <b>“My Account &gt; Edit Profile”</b></div>

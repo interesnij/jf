@@ -2136,23 +2136,81 @@ pub async fn events_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
 }
 
 
-pub async fn matter_posts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
-    use crate::views::{PostedMatterParams, PostedMatterData, PostedMattersData};
+#[derive(Debug, Deserialize)]
+pub struct PostedMatterParams {
+    pub client:   Option<i32>,
+    pub limit:    Option<i64>,
+    pub offset:   Option<i64>,
+    pub ordering: Option<String>,
+    pub status:   Option<String>,
+    pub types:    Option<String>,  // resent post or practice area list
+}
 
-    let user_some = get_request_user(&req);
+#[derive(Debug, Deserialize)]
+pub struct ProposalsData { 
+    pub id:                     i32,
+    pub name:                   String,
+    pub created:                String,
+    pub rate:                   String,
+    pub rate_type:              String,
+    pub description:            String,
+    pub attorney_data:          crate::utils::UserCardData,
+    pub status:                 String,
+    pub status_modified:        String,
+    pub currency:               Vec<i32>,
+    pub currency_data:          Vec<crate::utils::FeeCurrencyData>,
+    pub is_hidden_for_client:   bool,
+    pub is_hidden_for_attorney: bool,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct PostedMatterData { 
+    pub id:                     i32,
+    pub title:                  String,
+    pub description:            String,
+    pub budget_min:             String,
+    pub budget_max:             String,
+    pub budget_type:            String,
+    //pub budget_detail:          Option<String>,
+    pub practice_area:          i32,
+    pub created:                String,
+    pub proposals:              Vec<ProposalsData>,
+    pub client:                 i32,
+    pub client_data:            crate::utils::UserCardData,
+    pub practice_area_data:     crate::utils::PracticeAreaData,
+    pub currency:               Vec<i32>,
+    pub currency_data:          Vec<crate::utils::FeeCurrencyData>,
+    pub status:                 String,
+    pub status_modified:        String,
+    pub is_hidden_for_client:   bool,
+    pub is_hidden_for_attorney: bool,
+}
+
+#[derive(Debug, Deserialize)]
+pub struct PostedMattersData { 
+    pub count:      i32,
+    pub next:       Option<String>,
+    pub page_count: i32,
+    pub previous:   Option<String>,
+    pub results:    Vec<PostedMatterData>,
+}
+
+pub async fn matter_posts_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+    let user_some = get_request_user(&req); 
     if user_some.is_some() {  
         let request_user = user_some.unwrap();
-        let l = 2;
+        let l = 2; 
 
         let count:       i32;
         let next:        Option<String>;
         let page_count:  i32;
         let object_list: Vec<PostedMatterData>;
 
-        let ordering:  String; 
-        let attorney:  String;
-        let client:    String;
-        let paralegal: String;
+        let client:  String; 
+        let limit:  String;
+        let offset:    String;
+        let ordering: String;
+        let status: String;
 
         let params_some = web::Query::<PostedMatterParams>::from_query(&req.query_string());
         if params_some.is_ok() {
@@ -2178,7 +2236,7 @@ pub async fn matter_posts_load(req: HttpRequest) -> actix_web::Result<HttpRespon
             client,
             "&limit=", limit,
             "&offset=", offset,
-            "&status=", status,
+            "&status=", status
         );
         
         let resp = request_get::<PostedMattersData> (

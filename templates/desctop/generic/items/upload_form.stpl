@@ -16,7 +16,7 @@
       <!-- added file -->
 
    </div>
-   <input accept="image/*,.docx,.doc,.pdf,.ppt,.pptx,.xls,.xlsx" multiple="" type="file" autocomplete="off" tabindex="-1" style="display: none;">
+   <input accept="image/*,.docx,.doc,.pdf,.ppt,.pptx,.xls,.xlsx" id="id_attachments" name="attachments" multiple="" type="file" autocomplete="off" tabindex="-1" style="display: none;">
    <span class="mx-auto d-flex justify-content-center mt-4">
       <img src="/static/images/file_open.svg" alt="file">
    </span>

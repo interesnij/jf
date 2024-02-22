@@ -12,7 +12,7 @@
             <div class="desc mx-auto mt-3">
                 To become a verified attorney on JusLaw, we need to validate the following information. Everything you share is confidential.
             </div>
-            <form>
+            <form class="js_form">
                 <div class="folder-control mt-4">
                     <div class="folder-control__header">
                         <div class="d-flex">
@@ -65,7 +65,7 @@
                         <div class="d-flex col-12 w-100 mt-0">
                             <div class="flex-1">
                             <div class="row">
-                                <div class="select-control col-md-3 mt-2 load_content" data-link="/load/countries">
+                                <div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
                                 
                                 </div> 
                                 <div class="select-control col-md-3 mt-2 states_container">
@@ -87,7 +87,7 @@
                                     </div>
                                     <div class="select-control__container" tabindex="0">
                                         <div class="select-control__main">
-                                        <input type="text" name="year" list="year_list" id="id_year">
+                                        <input type="number" name="year" list="year_list" id="id_year">
                                         <% include!("datalist.stpl"); %>
                                     </div>
                                     <div class="select-control__footer"></div>
@@ -114,8 +114,8 @@
                         <div class="folder-item folder-item--with-separator">
                             <div>
                                 <div class="d-flex flex-wrap">
-                                    <label class="radio-control">Yes<input type="radio" name="id_disciplined"><span></span></label>
-                                    <label class="radio-control">No<input type="radio" name="id_disciplined" checked=""><span></span></label>
+                                    <label class="radio-control">Yes<input type="radio" name="disciplined"><span></span></label>
+                                    <label class="radio-control">No<input type="radio" name="disciplined" checked=""><span></span></label>
                                 </div>
                             </div>
                             <div class="mt-4">We will not share your response to app users. This is only for verification purposes. *</div>
@@ -133,20 +133,7 @@
                     <div class="folder-control__content">
                         <div class="folder-item folder-item--with-separator">
                             <div class="upload-control">
-                                <div class="d-flex justify-content-between">
-                                    <label for="registration_attachments" class="upload-control__label"></label>
-                                </div>
-                                <div class="dropzone" style="border: 1px solid rgb(224, 224, 225);">
-                                    <div class="d-flex flex-wrap"></div>
-                                    <input accept="image/*,.docx,.doc,.pdf,.ppt,.pptx,.xls,.xlsx" multiple="" type="file" autocomplete="off" tabindex="-1" style="display: none;">
-                                    <span class="mx-auto d-flex justify-content-center mt-4">
-                                        <img src="/static/images/file_open.svg" alt="file">
-                                    </span>
-                                    <div class="mx-auto my-2 text-center">Drag and drop your files here or</div>
-                                    <button class="btn btn--outline btn--green ripple-effect normal mx-auto mb-4" type="button">
-                                        <span>Select from computer</span>
-                                    </button>
-                                </div>
+                                <% include!("..generic/items/upload_form.stpl"); %>
                             </div>
                         </div>
                     </div>

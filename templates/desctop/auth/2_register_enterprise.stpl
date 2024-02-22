@@ -10,7 +10,7 @@
             <div class="label">Step 2 of 2</div>
             <div class="title">Intake Form</div>
             <div class="desc mx-auto mt-3">To start your enterprise account, please enter your information below and our team will reach out to you shortly</div>
-            <form>
+            <form class="js_form">
                 <div class="mt-4"> 
                 <div class="row">
                     <div class="col-12 d-flex mb-1">
@@ -81,7 +81,7 @@
                     <div class="d-flex pr-3"></div>
                     <div class="col-12">
                         <div class="row">
-                            <div class="select-control col-md-4 mt-2 load_content" data-link="/load/countries">
+                            <div class="select-control col-md-4 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
                                 
                             </div>
                             <div class="input-control col-md-8">

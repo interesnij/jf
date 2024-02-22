@@ -8,7 +8,7 @@
             Enter the email address that you used to register. We'll send you an email with a link to reset your password.
         </p>
         <div class="forgot-container__form my-4">
-            <form action="#">
+            <form class="js_form">
                 <div class="input-control mt-4">
                     <input id="id_email" name="email" placeholder="Enter your email address" type="text">
                     <div class="input-control__footer"></div>
