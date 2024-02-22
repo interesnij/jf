@@ -57,21 +57,22 @@ pub struct TimezoneData {
 
 #[derive(Debug, Deserialize)]  
 pub struct AuthResponseData {  
-    pub key:              String,
-    pub user_type:        String,
-    pub avatar:           Option<String>,
-    pub user_id:          String,
-    pub plan_id:          Option<String>,
-    pub onboarding:       bool,
-    pub phone:            String,
-    pub timezone_data:    TimezoneData,
-    pub owned_enterprise: Option<String>,
-    pub enterprise:       Option<String>,
-    pub role:             String,
-    pub email:            String,
-    pub first_name:       String,
-    pub middle_name:      String,
-    pub last_name:        String,
+    pub key:                  String,
+    pub user_type:            String,
+    pub avatar:               Option<String>,
+    pub user_id:              String,
+    pub plan_id:              Option<String>,
+    pub onboarding:           bool,
+    pub phone:                String,
+    pub timezone_data:        TimezoneData,
+    pub owned_enterprise:     Option<String>,
+    pub enterprise:           Option<String>,
+    pub role:                 String,
+    pub email:                String,
+    pub first_name:           String,
+    pub middle_name:          String,
+    pub last_name:            String,
+    pub is_free_subscription: bool,
 }
 impl AuthResponseData {
     pub fn get_image(&self) -> String {
