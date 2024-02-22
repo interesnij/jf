@@ -17,8 +17,8 @@
         <div class="menu-dropdown">  
             <a class="menu-item account_settings">Account Settings</a>
             <a href="menu-item my_vault" class="ajax">My Vault</a>
-            <a href="/terms-of-use" class="ajax">Terms of Use</a>
-            <a href="/privacy-policy" class="ajax">Privacy Policy</a>
+            <a href="/terms-of-use" target="_blank">Terms of Use</a>
+            <a href="/privacy-policy" target="_blank">Privacy Policy</a>
             <a id="intercom-btn">Help and support</a>
             <a class="menu-item logout_hundler pointer">Log out</a>
         </div>
@@ -65,12 +65,12 @@
         <div class="menu-item profile_settings pointer">Edit profile</div>
         <div class="menu-item account_settings pointer">Settings</div>
         <div>
-          <a href="/terms-of-use" class="ajax">
+          <a href="/terms-of-use" target="_blank">
               Terms of Use
           </a>
         </div>
         <div>
-          <a href="/privacy-policy" class="ajax">
+          <a href="/privacy-policy" target="_blank">
               Privacy Policy
           </a>
         </div>

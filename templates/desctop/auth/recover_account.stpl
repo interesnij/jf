@@ -21,8 +21,13 @@
             </form>
         </div>
     </div>
-    <div class="login-page__footer mb-auto"><span>If you need help, contact</span>&nbsp;<a href="/privacy-policy">JusLaw Support</a>.</div>
-    <div class="login-page__footer mb-3"><span class="mr-1">Don't have an account?</span><a href="/auth/register">Sign up here</a></div>
+    <div class="login-page__footer mb-auto"><span>If you need help, contact</span>&nbsp;
+        <a href="/privacy-policy" target="_blank">JusLaw Support</a>.
+    </div>
+    <div class="login-page__footer mb-3">
+        <span class="mr-1">Don't have an account?</span>
+        <a href="/auth/register" target="_blank">Sign up here</a>
+    </div>
 </div>
 
 <% include!("../anon_footer.stpl"); %>
