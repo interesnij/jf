@@ -241,6 +241,9 @@ pub async fn create_proposal(req: HttpRequest, _id: web::Path<i32>) -> actix_web
             let body = Template {
                 object: resp.expect("E."),
             }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
         }
         else {
             Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("error"))
