@@ -255,6 +255,28 @@ pub async fn attorney_leads_page(req: HttpRequest) -> actix_web::Result<HttpResp
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
 
         if is_desctop {
             #[derive(TemplateOnce)]
@@ -337,6 +359,28 @@ pub async fn attorney_matters_page(req: HttpRequest) -> actix_web::Result<HttpRe
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/matters.stpl")]
@@ -413,6 +457,28 @@ pub async fn attorney_matter_page(req: HttpRequest, _id: web::Path<i32>) -> acti
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -505,6 +571,28 @@ pub async fn attorney_matter_documents_page(req: HttpRequest, _id: web::Path<i32
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/matter_documents.stpl")]
@@ -585,6 +673,28 @@ pub async fn attorney_matter_notes_page(req: HttpRequest, _id: web::Path<i32>) -
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -677,6 +787,28 @@ pub async fn attorney_matter_billing_page(req: HttpRequest, _id: web::Path<i32>)
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/matter_billing.stpl")]
@@ -763,6 +895,28 @@ pub async fn attorney_matter_invoices_page(req: HttpRequest, _id: web::Path<i32>
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/matter_invoices.stpl")]
@@ -843,6 +997,28 @@ pub async fn attorney_matter_messages_page(req: HttpRequest, _id: web::Path<i32>
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -938,6 +1114,28 @@ pub async fn attorney_matter_post_comments_page(req: HttpRequest, params: web::P
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/matter_comments.stpl")]
@@ -1027,6 +1225,28 @@ pub async fn attorney_invoices_page(req: HttpRequest) -> actix_web::Result<HttpR
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/invoices.stpl")]
@@ -1102,6 +1322,28 @@ pub async fn attorney_billing_page(req: HttpRequest) -> actix_web::Result<HttpRe
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -1189,6 +1431,28 @@ pub async fn attorney_templates_page(req: HttpRequest) -> actix_web::Result<Http
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/templates.stpl")]
@@ -1264,6 +1528,28 @@ pub async fn attorney_documents_page(req: HttpRequest) -> actix_web::Result<Http
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -1351,6 +1637,28 @@ pub async fn attorney_contacts_page(req: HttpRequest) -> actix_web::Result<HttpR
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/contacts.stpl")]
@@ -1426,6 +1734,28 @@ pub async fn attorney_chats_clients_page(req: HttpRequest) -> actix_web::Result<
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -1508,6 +1838,28 @@ pub async fn attorney_chat_page(req: HttpRequest, _id: web::Path<i32>) -> actix_
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -1599,6 +1951,28 @@ pub async fn attorney_chats_opportunities_page(req: HttpRequest) -> actix_web::R
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/chat_opportunities.stpl")]
@@ -1674,6 +2048,28 @@ pub async fn attorney_chats_leads_page(req: HttpRequest) -> actix_web::Result<Ht
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -1761,6 +2157,28 @@ pub async fn attorney_chats_network_page(req: HttpRequest) -> actix_web::Result<
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/chat_network.stpl")]
@@ -1836,6 +2254,28 @@ pub async fn attorney_bank_page(req: HttpRequest) -> actix_web::Result<HttpRespo
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -1923,6 +2363,28 @@ pub async fn attorney_engagement_page(req: HttpRequest) -> actix_web::Result<Htt
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/potential.stpl")]
@@ -1998,6 +2460,28 @@ pub async fn attorney_engagement_topic_page(req: HttpRequest, _id: web::Path<i32
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -2085,6 +2569,28 @@ pub async fn attorney_engagement_post_page(req: HttpRequest, _id: web::Path<i32>
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/engagement_post.stpl")]
@@ -2160,6 +2666,28 @@ pub async fn attorney_submitted_engagement_page(req: HttpRequest) -> actix_web::
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -2247,6 +2775,28 @@ pub async fn attorney_forums_page(req: HttpRequest) -> actix_web::Result<HttpRes
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/client/forums.stpl")]
@@ -2322,6 +2872,28 @@ pub async fn attorney_my_posts_page(req: HttpRequest) -> actix_web::Result<HttpR
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -2409,6 +2981,28 @@ pub async fn attorney_following_posts_page(req: HttpRequest) -> actix_web::Resul
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/client/following_forums.stpl")]
@@ -2490,6 +3084,28 @@ pub async fn attorney_news_page(req: HttpRequest) -> actix_web::Result<HttpRespo
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/client/news.stpl")]
@@ -2565,6 +3181,28 @@ pub async fn attorney_new_page(req: HttpRequest, _id: web::Path<i32>) -> actix_w
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -2653,6 +3291,28 @@ pub async fn settings_profile_page(req: HttpRequest) -> actix_web::Result<HttpRe
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/settings_profile.stpl")]
@@ -2728,6 +3388,28 @@ pub async fn settings_events_page(req: HttpRequest) -> actix_web::Result<HttpRes
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -2815,6 +3497,28 @@ pub async fn settings_account_page(req: HttpRequest) -> actix_web::Result<HttpRe
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/settings_account.stpl")]
@@ -2890,6 +3594,28 @@ pub async fn settings_subscriptions_page(req: HttpRequest) -> actix_web::Result<
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
@@ -2977,6 +3703,28 @@ pub async fn settings_stages_page(req: HttpRequest) -> actix_web::Result<HttpRes
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/settings_stages.stpl")]
@@ -3058,6 +3806,28 @@ pub async fn settings_notifies_page(req: HttpRequest) -> actix_web::Result<HttpR
                 &image,
             ).await;
         }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
         if is_desctop {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/attorney/settings_notifies.stpl")]
@@ -3133,6 +3903,28 @@ pub async fn settings_integrations_page(req: HttpRequest) -> actix_web::Result<H
             return crate::utils::get_first_load_page (
                 &req,
                 is_desctop,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.onboarding {
+            return crate::utils::get_onboarding_page (
+                request_user,
+                is_desctop,
+                is_ajax,
+                &title,
+                &description,
+                &link,
+                &image,
+            ).await;
+        }
+        else if !request_user.is_free_subscription && request_user.plan_id.is_none() {
+            return crate::utils::get_plans_page (
+                request_user,
+                is_desctop,
+                is_ajax,
                 &title,
                 &description,
                 &link,
