@@ -70,63 +70,6 @@ pub struct NotesData {
 //////////////  POSTEDMATTER  //////
 //////////////  POSTEDMATTER //////
 
-#[derive(Debug, Deserialize)]
-pub struct PostedMatterParams {
-    pub client:   Option<i32>,
-    pub limit:    Option<i64>,
-    pub offset:   Option<i64>,
-    pub ordering: Option<String>,
-    pub status:   Option<String>, 
-}
-
-#[derive(Debug, Deserialize)]
-pub struct ProposalsData { 
-    pub id:                     i32,
-    pub name:                   String,
-    pub created:                String,
-    pub rate:                   String,
-    pub rate_type:              String,
-    pub description:            String,
-    pub attorney_data:          crate::utils::UserCardData,
-    pub status:                 String,
-    pub status_modified:        String,
-    pub currency:               Vec<i32>,
-    pub currency_data:          Vec<crate::utils::FeeCurrencyData>,
-    pub is_hidden_for_client:   bool,
-    pub is_hidden_for_attorney: bool,
-}
-
-#[derive(Debug, Deserialize)]
-pub struct PostedMatterData { 
-    pub id:                     i32,
-    pub title:                  String,
-    pub description:            String,
-    pub budget_min:             String,
-    pub budget_max:             String,
-    pub budget_type:            String,
-    //pub budget_detail:          Option<String>,
-    pub practice_area:          i32,
-    pub created:                String,
-    pub proposals:              Vec<ProposalsData>,
-    pub client:                 i32,
-    pub client_data:            crate::utils::UserCardData,
-    pub practice_area_data:     crate::utils::PracticeAreaData,
-    pub currency:               Vec<i32>,
-    pub currency_data:          Vec<crate::utils::FeeCurrencyData>,
-    pub status:                 String,
-    pub status_modified:        String,
-    pub is_hidden_for_client:   bool,
-    pub is_hidden_for_attorney: bool,
-}
-
-#[derive(Debug, Deserialize)]
-pub struct PostedMattersData { 
-    pub count:      i32,
-    pub next:       Option<String>,
-    pub page_count: i32,
-    pub previous:   Option<String>,
-    pub results:    Vec<PostedMatterData>,
-}
 /////////////////////////////
 
 

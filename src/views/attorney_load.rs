@@ -1752,24 +1752,6 @@ pub struct TopicData {
 }
 
 #[derive(Debug, Deserialize)]
-pub struct ProposalsData { 
-    pub id:                     i32,
-    pub name:                   String,
-    pub created:                String,
-    pub modified:               String,
-    pub rate:                   String,
-    pub rate_type:              String,
-    pub description:            String,
-    pub attorney_data:          crate::utils::UserCardData,
-    pub status:                 String,
-    pub status_modified:        String,
-    pub currency:               Vec<i32>,
-    pub currency_data:          Vec<crate::utils::FeeCurrencyData>,
-    pub is_hidden_for_client:   bool,
-    pub is_hidden_for_attorney: bool,
-}
-
-#[derive(Debug, Deserialize)]
 pub struct AttorneyPostData { 
     pub id:                 i32,
     pub topic:              i32,
