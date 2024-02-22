@@ -30,7 +30,7 @@ pub fn create_routes(config: &mut web::ServiceConfig) {
     config.route("/create/post", web::get().to(create_post));
     config.route("/create/note", web::get().to(create_note));
     config.route("/create/chat", web::get().to(create_chat));
-    config.route("/create/proposal/{}", web::get().to(create_proposal));
+    config.route("/create/proposal/{id}", web::get().to(create_proposal));
 } 
 
 //////////////////////

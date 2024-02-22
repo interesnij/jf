@@ -48,8 +48,8 @@ pub fn attorneys_routes(config: &mut web::ServiceConfig) {
     config.route("/attorney/bank", web::get().to(attorney_bank_page));
 
     config.route("/attorney/engagement", web::get().to(attorney_engagement_page));
-    config.route("/attorney/engagement/topic/{}", web::get().to(attorney_engagement_topic_page));
-    config.route("/attorney/engagement/post/{}", web::get().to(attorney_engagement_post_page));
+    config.route("/attorney/engagement/topic/{id}", web::get().to(attorney_engagement_topic_page));
+    config.route("/attorney/engagement/post/{id}", web::get().to(attorney_engagement_post_page));
     config.route("/attorney/engagement/submitted", web::get().to(attorney_submitted_engagement_page));
 
     config.route("/forums", web::get().to(attorney_forums_page));
