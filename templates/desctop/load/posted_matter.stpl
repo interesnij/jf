@@ -23,7 +23,7 @@
                         </div> 
                     </div>
                 </div>
-            </a> 
+            </a>  
             <div class="sc-fybuyZ hbrjLj mt-1"><%= object.practice_area_data.title %></div>
             <div class="sc-iWFTwQ oTXcn mt-1"><span class="mr-05">Budget:</span> <%= object.budget_min %> <%= object.currency_data.title %> other</div>
             <div class="recent-post__content"><%= object.description %></div>

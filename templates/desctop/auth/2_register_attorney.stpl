@@ -133,7 +133,7 @@
                     <div class="folder-control__content">
                         <div class="folder-item folder-item--with-separator">
                             <div class="upload-control">
-                                <% include!("..generic/items/upload_form.stpl"); %>
+                                <% include!("../generic/items/upload_form.stpl"); %>
                             </div>
                         </div>
                     </div>
