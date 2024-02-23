@@ -388,7 +388,8 @@ function back_register_1_step_low(url) {
   
     _tObject = localStorage.getItem('reg_step_1');
     tObject = JSON.parse(_tObject);
-    
+    console.log("tObject", tObject);
+
     _email.value = tObject.email;
     _password1.value = tObject.password;
     _password2.value = tObject.password;
