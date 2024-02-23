@@ -380,20 +380,57 @@ function back_register_1_step_low(url) {
     /*
       reg_step_1 : { 'email': _email.value, 'password': _password1.value}
     */
-    ajax_get_reload(url, true, 2);
-    form = document.body.querySelector(".js_form");
-    _email = form.querySelector("#id_email");
-    _password1 = form.querySelector("#id_password");
-    _password2 = form.querySelector("#id_password2");
-  
-    _tObject = localStorage.getItem('reg_step_1');
-    tObject = JSON.parse(_tObject);
-    console.log("email", tObject.email);
-    console.log("password", tObject.password);
+      ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+      ajax_link.open( 'GET', url + "?ajax=" + ajax, true );  
+      ajax_link.onreadystatechange = function () {
+        if ( this.readyState == 4 && this.status == 200 ) {
+          form = document.body.querySelector(".js_form");
+          _email = form.querySelector("#id_email");
+          _password1 = form.querySelector("#id_password");
+          _password2 = form.querySelector("#id_password2");
+        
+          _tObject = localStorage.getItem('reg_step_1');
+          tObject = JSON.parse(_tObject);
+          console.log("email", tObject.email);
+          console.log("password", tObject.password);
 
-    _email.value = tObject.email;
-    _password1.value = tObject.password;
-    _password2.value = tObject.password;
+          _email.value = tObject.email;
+          _password1.value = tObject.password;
+          _password2.value = tObject.password;
+          meta_block = document.body.querySelector('.doc_title');
+          // статистика
+          
+          try { 
+            $link = document.location.pathname;
+            meta_block = document.body.querySelector(".doc_title");
+            $title = meta_block.getAttribute("data-title");
+            //
+            elem_ = document.createElement('span');
+            elem_.innerHTML = ajax_link.responseText;
+    
+            meta_block.innerHTML = elem_.innerHTML;
+            _meta = elem_.querySelector(".doc_title");
+            _title = _meta.getAttribute("data-title");
+            _uri = "" + _meta.getAttribute("data-uri");
+            _description = _meta.getAttribute("data-description");
+            _image = "https://app.juslaw.com" + _meta.getAttribute("data-image");
+            document.title = _title;
+            document.querySelector('meta[name="url"]').setAttribute("content", _uri);
+            document.querySelector('meta[name="title"]').setAttribute("content", _title);
+            document.querySelector('meta[name="description"]').setAttribute("content", _description);
+            document.querySelector('meta[name="image"]').setAttribute("content", _image);
+            document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
+          } catch { null };
+          window.scrollTo(0,0);
+          if (history_enable) { 
+            window.history.pushState ({"url":url}, $title, url);
+          }
+          load_data();
+          //scrolled(meta_block);
+          //get_document_opacity_1();
+        }
+      }
+      ajax_link.send();
 }
 
 on('body', 'click', '.register_2_attorney_btn', function() {
