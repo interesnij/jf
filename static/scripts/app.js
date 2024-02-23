@@ -381,7 +381,7 @@ function back_register_1_step_low(url) {
       reg_step_1 : { 'email': _email.value, 'password': _password1.value}
     */
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-      ajax_link.open( 'GET', url + "?ajax=2", true );  
+      ajax_link.open( 'GET', url, true );
       ajax_link.onreadystatechange = function () {
         if ( this.readyState == 4 && this.status == 200 ) {
           rtr = document.getElementById('reload');
