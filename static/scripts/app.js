@@ -384,7 +384,8 @@ function back_register_1_step_low(url) {
       ajax_link.open( 'GET', url + "?ajax=" + ajax, true );  
       ajax_link.onreadystatechange = function () {
         if ( this.readyState == 4 && this.status == 200 ) {
-          //form = document.body.querySelector(".js_form");
+          rtr = document.getElementById('reload');
+          rtr.innerHTML = elem_.innerHTML;
           _email = document.body.querySelector("#id_email");
           _password1 = document.body.querySelector("#id_password");
           _password2 = document.body.querySelector("#id_password2");
