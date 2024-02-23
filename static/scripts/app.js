@@ -426,12 +426,7 @@ function back_register_1_step_low(url) {
             document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
           } catch { null };
           window.scrollTo(0,0);
-          if (history_enable) { 
-            window.history.pushState ({"url":url}, $title, url);
-          }
-          load_data();
-          //scrolled(meta_block);
-          //get_document_opacity_1();
+          window.history.pushState ({"url":url}, $title, url);
         }
       }
       ajax_link.send();
