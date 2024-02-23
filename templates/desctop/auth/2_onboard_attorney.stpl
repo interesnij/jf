@@ -1,6 +1,6 @@
 <% include!("header.stpl"); %>
 
-<div class="onboarding-layout--content">
+<div class="onboarding-layout--content doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
    <div class="onboarding-page">
       <div class="onboarding-page__container mt-4 d-flex flex-column">
          <div class="subscription-title">Welcome to JusLaw</div>

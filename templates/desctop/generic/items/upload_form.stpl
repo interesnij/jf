@@ -2,7 +2,7 @@
 
 <div class="d-flex justify-content-between">
    <label for="attachments" class="upload-control__label">Attachment</label>
-</div>
+</div> 
 <div class="dropzone" style="border: 1px solid rgb(224, 224, 225);">
    <div class="d-flex flex-wrap">
 
@@ -25,7 +25,7 @@
       Drag and drop your files here or
    </div>
    -->
-   <button class="btn btn--outline btn--green mt-3 mb-2 ripple-effect normal mx-auto" type="button">
+   <button class="btn btn--outline btn--green mt-3 mb-2 ripple-effect normal mx-auto select_files" type="button">
       <span>Select from Documents</span>
    </button>
 </div>

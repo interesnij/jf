@@ -1,6 +1,6 @@
 <% include!("../anon_header.stpl"); %>
 
-<div class="login-page">
+<div class="login-page doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
     <img src="/static/images/logo.svg" alt="logo" class="login-page__logo">
     <div class="login-page__container mt-auto">
         <h1 class="mb-4 mt-0">Email Successfully Confirmed</h1>

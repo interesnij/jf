@@ -1,6 +1,6 @@
 <% include!("../anon_header.stpl"); %>
 
-<div class="signup-page">
+<div class="signup-page doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
     <div class="signup-page-layout">
         <a href="/">
             <img src="/static/images/logo2.svg" class="signup-page-layout__logo" alt="logo">
@@ -11,7 +11,7 @@
             <div class="title">Verification Form</div>
             <div class="desc mx-auto mt-3">
                 To become a verified attorney on JusLaw, we need to validate the following information. Everything you share is confidential.
-            </div>
+            </div> 
             <form class="js_form">
                 <div class="folder-control mt-4">
                     <div class="folder-control__header">
@@ -38,14 +38,11 @@
                                     <input id="id_last_name" name="last_name" placeholder="Enter your last name" type="text">
                                     <div class="input-control__footer"></div>
                                 </div>
-                                <div class="sc-hzMMVR dakRgd col-12 mt-3">
-                                    <div class="d-flex justify-content-between">
-                                        <label for="id_phone" class="input-control__label">Phone</label>
+                                <div class="input-control col-md-6 mt-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_last_name" class="input-control__label">Phone</label>
                                     </div>
-                                    <div class="phone-input-2-container react-tel-input">
-                                        <div class="special-label">Phone</div>
-                                        <input id="id_phone" name="phone" class=" form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+1" style="height: 48px; font-size: 14px;">
-                                    </div>
+                                    <input id="id_phone" name="phone" placeholder="+1 (123) 456 - 7890" type="tel">
                                     <div class="input-control__footer"></div>
                                 </div>
                             </div>
@@ -62,42 +59,7 @@
                     </div>
                     <div class="folder-control__content">
                         <div class="folder-item folder-item--with-separator">
-                            
-                            <div class="d-flex col-12 w-100 mt-0 juri_block">
-                                <div class="flex-1">
-                                    <div class="row">
-                                        <div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
-                                        
-                                        </div> 
-                                        <div class="select-control col-md-3 mt-2 states_container">
-                                            
-                                        </div>
-                                        <div class="select-control col-md-3 mt-2 cities_container">
-                                            
-                                        </div>
-                                        <div class="input-control col-md-3 mt-2">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <label for="id_number" class="input-control__label">Registration Number</label>
-                                            </div>
-                                            <input name="number" id="id_number" placeholder="Enter Registration Number" type="text">
-                                            <div class="input-control__footer"></div>
-                                        </div>
-                                        <div class="input-control col-md-3 mt-2">
-                                            <div class="d-flex justify-content-between align-items-center">
-                                                <label for="id_year" class="input-control__label">Year Admitted</label>
-                                            </div>
-                                            <input name="year" id="id_year" placeholder="Enter Registration Number" type="number">
-                                            <div class="input-control__footer"></div>
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
-                            <span></span>
-
-                            <div class="add-button pointer add_jurisdiction_form">
-                                <img src="/static/images/plus_black.svg" alt="plus">Add Jurisdictions
-                            </div>
-                            <span class="error-text alert-hidden">Please input your Jurisdiction</span>
+                            <% include!("../generic/items/juri_form.stpl"); %>
                         </div>
                     </div>
                 </div>

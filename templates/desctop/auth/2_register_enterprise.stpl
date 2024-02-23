@@ -1,6 +1,6 @@
 <% include!("../anon_header.stpl"); %>
 
-<div class="signup-page">
+<div class="signup-page doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
     <div class="signup-page-layout">
         <a href="/">
             <img src="/static/images/logo2.svg" class="signup-page-layout__logo" alt="logo">
