@@ -1,6 +1,6 @@
 <% include!("../header.stpl"); %>
 
-<div class="onboarding-layout--content doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
+<div class="onboarding-layout--content">
     <div class="onboarding-page">
         <div class="subscription-title">Subscription</div>
         <div class="onboarding-page__container mt-3">

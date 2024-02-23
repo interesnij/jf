@@ -282,7 +282,7 @@ pub async fn get_plans_page (
             title:        &'a String,
             description:  &'a String,
             image:        &'a String,
-            uri:          &'a String,
+            link:         &'a String,
         } 
         let body = Template {
             request_user: request_user,
@@ -291,7 +291,7 @@ pub async fn get_plans_page (
             title:        title,
             description:  description,
             image:        image,
-            uri:          uri,
+            link:         uri,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -307,7 +307,7 @@ pub async fn get_plans_page (
             title:        &'a String,
             description:  &'a String,
             image:        &'a String,
-            uri:          &'a String,
+            link:         &'a String,
         } 
         let body = Template {
             request_user: request_user,
@@ -316,7 +316,7 @@ pub async fn get_plans_page (
             title:        title,
             description:  description,
             image:        image,
-            uri:          uri,
+            link:         uri,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -342,7 +342,7 @@ pub async fn get_onboarding_page (
             title:        &'a String,
             description:  &'a String,
             image:        &'a String,
-            uri:          &'a String,
+            link:         &'a String,
         } 
         let body = Template {
             request_user: request_user,
@@ -350,7 +350,7 @@ pub async fn get_onboarding_page (
             title:        title,
             description:  description,
             image:        image,
-            uri:          uri,
+            link:         uri,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -365,7 +365,7 @@ pub async fn get_onboarding_page (
             title:        &'a String,
             description:  &'a String,
             image:        &'a String,
-            uri:          &'a String,
+            link:         &'a String,
         } 
         let body = Template {
             request_user: request_user,
@@ -373,7 +373,7 @@ pub async fn get_onboarding_page (
             title:        title,
             description:  description,
             image:        image,
-            uri:          uri,
+            link:         uri,
         }
         .render_once()
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
