@@ -373,24 +373,26 @@ function get_register_2_step_low(url) {
 
     tObject = { 'email': _email.value, 'password': _password1.value};
     localStorage.setItem('reg_step_1', JSON.stringify(tObject));
-    ajax_get_reload(url, true, 2);
+    ajax_get_reload(url + "?ajax=2", true, 2);
 }
 
 function back_register_1_step_low(url) {
     /*
       reg_step_1 : { 'email': _email.value, 'password': _password1.value}
     */
-      ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-      ajax_link.open( 'GET', url + "?ajax=2", true );  
-      ajax_link.onreadystatechange = function () {
-        if ( this.readyState == 4 && this.status == 200 ) {
-          rtr = document.getElementById('reload');
-          elem_ = document.createElement('span');
-          elem_.innerHTML = ajax_link.responseText;
-          rtr.innerHTML = elem_.innerHTML;
-          _email = rtr.querySelector("#id_email");
-          _password1 = rtr.querySelector("#id_password");
-          _password2 = rtr.querySelector("#id_password2");
+      ajax_get_reload(url, true, 2);
+      form = document.body.querySelector(".js_form");
+      //ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+      //ajax_link.open( 'GET', url + "?ajax=2", true );  
+      //ajax_link.onreadystatechange = function () {
+      //  if ( this.readyState == 4 && this.status == 200 ) {
+      //    rtr = document.getElementById('reload');
+      //    elem_ = document.createElement('span');
+      //    elem_.innerHTML = ajax_link.responseText;
+      //    rtr.innerHTML = elem_.innerHTML;
+          _email = form.querySelector("#id_email");
+          _password1 = form.querySelector("#id_password");
+          _password2 = form.querySelector("#id_password2");
         
           _tObject = localStorage.getItem('reg_step_1');
           tObject = JSON.parse(_tObject);
@@ -401,32 +403,32 @@ function back_register_1_step_low(url) {
           _email.value = tObject.email;
           _password1.value = tObject.password;
           _password2.value = tObject.password;
-          meta_block = document.body.querySelector('.doc_title');
+          //meta_block = document.body.querySelector('.doc_title');
           // статистика
           
-          try { 
-            $link = document.location.pathname;
-            meta_block = document.body.querySelector(".doc_title");
-            $title = meta_block.getAttribute("data-title");
+          //try { 
+          //  $link = document.location.pathname;
+          //  meta_block = document.body.querySelector(".doc_title");
+          //  $title = meta_block.getAttribute("data-title");
             //
-            elem_ = document.createElement('span');
-            elem_.innerHTML = ajax_link.responseText;
+          //  elem_ = document.createElement('span');
+          //  elem_.innerHTML = ajax_link.responseText;
     
-            meta_block.innerHTML = elem_.innerHTML;
-            _meta = elem_.querySelector(".doc_title");
-            _title = _meta.getAttribute("data-title");
-            _uri = "" + _meta.getAttribute("data-uri");
-            _description = _meta.getAttribute("data-description");
-            _image = "https://app.juslaw.com" + _meta.getAttribute("data-image");
-            document.title = _title;
-            document.querySelector('meta[name="url"]').setAttribute("content", _uri);
-            document.querySelector('meta[name="title"]').setAttribute("content", _title);
-            document.querySelector('meta[name="description"]').setAttribute("content", _description);
-            document.querySelector('meta[name="image"]').setAttribute("content", _image);
-            document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
-          } catch { null };
-          window.scrollTo(0,0);
-          window.history.pushState ({"url":url}, $title, url);
+          //  meta_block.innerHTML = elem_.innerHTML;
+          //  _meta = elem_.querySelector(".doc_title");
+          //  _title = _meta.getAttribute("data-title");
+          //  _uri = "" + _meta.getAttribute("data-uri");
+          //  _description = _meta.getAttribute("data-description");
+          //  _image = "https://app.juslaw.com" + _meta.getAttribute("data-image");
+          //  document.title = _title;
+          //  document.querySelector('meta[name="url"]').setAttribute("content", _uri);
+          //  document.querySelector('meta[name="title"]').setAttribute("content", _title);
+          //  document.querySelector('meta[name="description"]').setAttribute("content", _description);
+          //  document.querySelector('meta[name="image"]').setAttribute("content", _image);
+          //  document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
+          //} catch { null };
+          //window.scrollTo(0,0);
+          //window.history.pushState ({"url":url}, $title, url);
         }
       }
       ajax_link.send();
