@@ -497,7 +497,8 @@ on('body', 'click', '.select_files', function() {
 
 on('body', 'change', '#id_attachments', function() {
   console.log('Selected file: ' + this.value);
-  len = this.files.length;
+  files = this.files;
+  len = files.length;
   if (len > 10) {
     alert("The maximum number of photos is 10")
   }
