@@ -1,10 +1,10 @@
 <div class="d-flex col-12 w-100 mt-0 juri_block">
     <div class="flex-1">
         <div class="row">
-            <div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
+            <div class="input-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
 
-            </div>
-            <div class="select-control col-md-3 mt-2 states_container">
+            </div> 
+            <div class="input-control col-md-3 mt-2 states_container">
 
             </div>
             <div class="input-control col-md-3 mt-2">

@@ -6,5 +6,5 @@
    <% for object in countries_list.iter() { %>
       <option data-pk="<%= object.id %>" value="<%= object.name %>"></option>
    <% } %>
-</datalist>
+</datalist> 
 <div class="input-control__footer"></div>
