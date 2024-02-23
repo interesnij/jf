@@ -384,10 +384,10 @@ function back_register_1_step_low(url) {
       ajax_link.open( 'GET', url + "?ajax=" + ajax, true );  
       ajax_link.onreadystatechange = function () {
         if ( this.readyState == 4 && this.status == 200 ) {
-          form = document.body.querySelector(".js_form");
-          _email = form.querySelector("#id_email");
-          _password1 = form.querySelector("#id_password");
-          _password2 = form.querySelector("#id_password2");
+          //form = document.body.querySelector(".js_form");
+          _email = document.body.querySelector("#id_email");
+          _password1 = document.body.querySelector("#id_password");
+          _password2 = document.body.querySelector("#id_password2");
         
           _tObject = localStorage.getItem('reg_step_1');
           tObject = JSON.parse(_tObject);
