@@ -503,7 +503,7 @@ on('body', 'change', '#id_attachments', function() {
     alert("The maximum number of photos is 10")
   }
   for (let i = 0; i < len; i++) {
-    console.log("upload", files[i]);
+    console.log("file", files[i].name);
     //file_data.append("file", files[i]);
   }
 }); 
