@@ -7,6 +7,7 @@ use crate::views::{
     attorney_load,
     create,
     pages,
+    load,
 };
 
 pub fn routes(cfg: &mut web::ServiceConfig) {
@@ -17,5 +18,6 @@ pub fn routes(cfg: &mut web::ServiceConfig) {
     .configure(attorney_load::load_routes)
     .configure(create::create_routes)
     .configure(pages::pages_routes)
+    .configure(load::load_routes)
     ; 
 }
