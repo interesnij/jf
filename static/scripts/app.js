@@ -373,7 +373,7 @@ function get_register_2_step_low(url) {
 
     tObject = { 'email': _email.value, 'password': _password1.value};
     localStorage.setItem('reg_step_1', JSON.stringify(tObject));
-    ajax_get_reload(url + "?ajax=2", true, 2);
+    ajax_get_reload(url, true, 2);
 }
 
 function back_register_1_step_low(url) {
@@ -388,7 +388,7 @@ function back_register_1_step_low(url) {
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
           meta_block.innerHTML = elem_.innerHTML;
-          
+
           _email = document.body.querySelector("#id_email");
           _password1 = document.body.querySelector("#id_password");
           _password2 = document.body.querySelector("#id_password2");
