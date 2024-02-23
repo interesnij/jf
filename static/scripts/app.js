@@ -389,9 +389,9 @@ function back_register_1_step_low(url) {
           elem_.innerHTML = ajax_link.responseText;
           meta_block.innerHTML = elem_.innerHTML;
 
-          _email = document.body.querySelector("#id_email");
-          _password1 = document.body.querySelector("#id_password");
-          _password2 = document.body.querySelector("#id_password2");
+          _email = meta_block.querySelector("#id_email");
+          _password1 = meta_block.querySelector("#id_password");
+          _password2 = meta_block.querySelector("#id_password2");
         
           _tObject = localStorage.getItem('reg_step_1');
           tObject = JSON.parse(_tObject);
@@ -402,7 +402,6 @@ function back_register_1_step_low(url) {
           _email.value = tObject.email;
           _password1.value = tObject.password;
           _password2.value = tObject.password;
-          meta_block = document.body.querySelector('.doc_title');
           
           try { 
             $link = document.location.pathname;
