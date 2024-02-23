@@ -429,9 +429,9 @@ function back_register_1_step_low(url) {
           //} catch { null };
           //window.scrollTo(0,0);
           //window.history.pushState ({"url":url}, $title, url);
-        }
-      }
-      ajax_link.send();
+      //  }
+      //}
+      //ajax_link.send();
 }
 
 on('body', 'click', '.register_2_attorney_btn', function() {
