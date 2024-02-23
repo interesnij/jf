@@ -5,7 +5,7 @@
 </div> 
 <div class="dropzone" style="border: 1px solid rgb(224, 224, 225);">
    <div class="d-flex flex-wrap">
-
+      <span></span>
       <!-- added file -->
       <div class="upload-control__file hidden">
          <img src="/static/images/document.svg" class="my-auto upload-control__img" alt="file">

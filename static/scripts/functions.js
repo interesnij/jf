@@ -216,6 +216,9 @@ function load_data() {
   for (let i = 0; i < blocks.length; i++) {
     if (!blocks[i].firstChild) {
       console.log("block no content!!");
+    }
+    else {
+      console.log("block with content!!");
       link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       
       console.log("link", blocks[i].getAttribute("data-link"));
@@ -234,9 +237,6 @@ function load_data() {
         //}
       };
       link.send();
-    }
-    else {
-      console.log("block with content!!");
     }
   } 
 }

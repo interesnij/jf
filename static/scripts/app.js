@@ -473,14 +473,14 @@ function send_files(file_c) {
 on('body', 'click', '.add_jurisdiction_form', function() {
   block = this.previousElementSibling;
   container = this.parentElement;
-  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries"></div><div class="select-control col-md-3 mt-2 states_container"></div><div class="select-control col-md-3 mt-2 cities_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Registration Number</label></div><input class="number" name="number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="select-control col-md-3 mt-2"><div class="d-flex justify-content-between"><div class="select-control__label">Year Admitted</div></div><div class="select-control__container" tabindex="0"><div class="select-control__main"><input id="id_year" type="number" name="year"></div><div class="select-control__footer"></div></div></div></div></div><span></span>';
+  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries"></div><div class="select-control col-md-3 mt-2 states_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_number" class="input-control__label">Registration Number</label></div><input name="number" id="id_number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_year" class="input-control__label">Year Admitted</label></div><input name="year" id="id_year" placeholder="Enter Registration Number" type="number"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
 });
 
 function show_law_reg_success_modal() {
   span = document.body.querySelector("#reload");
   span2 = document.createElement("span");
   span2.innerHTML = '<div class="modal-control-container open"><div tabindex="-1" class="modal-control"><div class="modal-control__header"><div class="my-auto title text-ellipsis w-100 text-center">Application Received</div></div><div class="modal-control__content ignore-onclickoutside"><div class="pb-4" style="width: 600px;"><div class="text-black" style="font-size: 18px;">JusLaw has received your application.</div><br><div class="text-dark">The verification process of your application will take up to 5 days. Please check your inbox for an email from JusLaw to verify your email in the meantime. If your application is approved, our team will guide you to set up your account.</div></div><div class="d-flex mt-4"><a class="btn btn--green ripple-effect normal ml-auto return_login_hundler"><span>Return Home</span></a></div></div></div></div>';
-  span.append(span2);
+  span.append(span2); 
 }
 on('body', 'click', '.return_login_hundler', function() {
     document.body.querySelector(".modal-control-container").remove();
@@ -500,6 +500,10 @@ on('body', 'change', '#id_attachments', function() {
   len = this.files.length;
   if (len > 10) {
     alert("The maximum number of photos is 10")
+  }
+  for (let i = 0; i < len; i++) {
+    console.log("upload", files[i]);
+    //file_data.append("file", files[i]);
   }
 }); 
 
@@ -527,25 +531,25 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   _jurisdictions_years = form.querySelectorAll(".id_year");
 
   // return normal fields styles 
-  _first_name.style.setProperty('border', 'inherit', 'important');
-  _last_name.style.setProperty('border', 'inherit', 'important');
-  _phone.style.setProperty('border', 'inherit', 'important');
-  _attachments.style.setProperty('border', 'inherit', 'important');
+  _first_name.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+  _last_name.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+  _phone.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+  _attachments.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
   try {
       for (let i = 0; i < _jurisdictions_countries.length; i++) {
-        _jurisdictions_countries[i].style.setProperty('border', 'inherit', 'important');
+        _jurisdictions_countries[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
       }
       for (let i = 0; i < _jurisdictions_cities.length; i++) {
-        _jurisdictions_cities[i].style.setProperty('border', 'inherit', 'important');
+        _jurisdictions_cities[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
       }
       for (let i = 0; i < _jurisdictions_numbers.length; i++) {
-        _jurisdictions_numbers[i].style.setProperty('border', 'inherit', 'important');
+        _jurisdictions_numbers[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
       }
       for (let i = 0; i < _jurisdictions_years.length; i++) {
-        _jurisdictions_years[i].style.setProperty('border', 'inherit', 'important');
+        _jurisdictions_years[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
       }
       for (let i = 0; i < _jurisdictions_states.length; i++) {
-        _jurisdictions_states[i].style.setProperty('border', 'inherit', 'important');
+        _jurisdictions_states[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
       }
   } catch { null }
   /////
