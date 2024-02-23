@@ -388,9 +388,9 @@ function back_register_1_step_low(url) {
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
           rtr.innerHTML = elem_.innerHTML;
-          _email = rtr.querySelector("#id_email");
-          _password1 = rtr.querySelector("#id_password");
-          _password2 = rtr.querySelector("#id_password2");
+          _email = document.body.querySelector("#id_email");
+          _password1 = document.body.querySelector("#id_password");
+          _password2 = document.body.querySelector("#id_password2");
         
           _tObject = localStorage.getItem('reg_step_1');
           tObject = JSON.parse(_tObject);
