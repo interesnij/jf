@@ -587,7 +587,7 @@ on('body', 'click', '.register_2_attorney_btn', function() {
     get_register_2_step_low("/auth/register_attorney_2");
 });
 
-on('body', 'click', '.register_2_attorney_btn', function() {
+on('body', 'click', '.back_register_1_attorney_btn', function() {
   back_register_1_step_low("/auth/register/attorney");
 });
 
