@@ -380,16 +380,14 @@ function back_register_1_step_low(url) {
     /*
       reg_step_1 : { 'email': _email.value, 'password': _password1.value}
     */
-      ajax_get_reload(url, true, 0);
-      form = document.body.querySelector(".js_form");
-      //ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-      //ajax_link.open( 'GET', url + "?ajax=2", true );  
-      //ajax_link.onreadystatechange = function () {
-      //  if ( this.readyState == 4 && this.status == 200 ) {
-      //    rtr = document.getElementById('reload');
-      //    elem_ = document.createElement('span');
-      //    elem_.innerHTML = ajax_link.responseText;
-      //    rtr.innerHTML = elem_.innerHTML;
+      ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+      ajax_link.open( 'GET', url + "?ajax=2", true );  
+      ajax_link.onreadystatechange = function () {
+        if ( this.readyState == 4 && this.status == 200 ) {
+          rtr = document.getElementById('reload');
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          rtr.innerHTML = elem_.innerHTML;
           _email = form.querySelector("#id_email");
           _password1 = form.querySelector("#id_password");
           _password2 = form.querySelector("#id_password2");
@@ -403,35 +401,34 @@ function back_register_1_step_low(url) {
           _email.value = tObject.email;
           _password1.value = tObject.password;
           _password2.value = tObject.password;
-          //meta_block = document.body.querySelector('.doc_title');
-          // статистика
+          meta_block = document.body.querySelector('.doc_title');
           
-          //try { 
-          //  $link = document.location.pathname;
-          //  meta_block = document.body.querySelector(".doc_title");
-          //  $title = meta_block.getAttribute("data-title");
-            //
-          //  elem_ = document.createElement('span');
-          //  elem_.innerHTML = ajax_link.responseText;
+          try { 
+            $link = document.location.pathname;
+            meta_block = document.body.querySelector(".doc_title");
+            $title = meta_block.getAttribute("data-title");
+            
+            elem_ = document.createElement('span');
+            elem_.innerHTML = ajax_link.responseText;
     
-          //  meta_block.innerHTML = elem_.innerHTML;
-          //  _meta = elem_.querySelector(".doc_title");
-          //  _title = _meta.getAttribute("data-title");
-          //  _uri = "" + _meta.getAttribute("data-uri");
-          //  _description = _meta.getAttribute("data-description");
-          //  _image = "https://app.juslaw.com" + _meta.getAttribute("data-image");
-          //  document.title = _title;
-          //  document.querySelector('meta[name="url"]').setAttribute("content", _uri);
-          //  document.querySelector('meta[name="title"]').setAttribute("content", _title);
-          //  document.querySelector('meta[name="description"]').setAttribute("content", _description);
-          //  document.querySelector('meta[name="image"]').setAttribute("content", _image);
-          //  document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
-          //} catch { null };
-          //window.scrollTo(0,0);
-          //window.history.pushState ({"url":url}, $title, url);
-      //  }
-      //}
-      //ajax_link.send();
+            meta_block.innerHTML = elem_.innerHTML;
+            _meta = elem_.querySelector(".doc_title");
+            _title = _meta.getAttribute("data-title");
+            _uri = "" + _meta.getAttribute("data-uri");
+            _description = _meta.getAttribute("data-description");
+            _image = "https://app.juslaw.com" + _meta.getAttribute("data-image");
+            document.title = _title;
+            document.querySelector('meta[name="url"]').setAttribute("content", _uri);
+            document.querySelector('meta[name="title"]').setAttribute("content", _title);
+            document.querySelector('meta[name="description"]').setAttribute("content", _description);
+            document.querySelector('meta[name="image"]').setAttribute("content", _image);
+            document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
+          } catch { null };
+          window.scrollTo(0,0);
+          window.history.pushState ({"url":url}, $title, url);
+        }
+      }
+      ajax_link.send();
 }
 
 on('body', 'click', '.register_2_attorney_btn', function() {
