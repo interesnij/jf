@@ -43,7 +43,7 @@
                                 <div class="input-control__footer"></div>
                             </div>
 
-                            <div class="select-control col-6 mt-3 load_content load_countries states_nieded" data-link="/load/countries">
+                            <div class="input-control col-6 mt-3 load_content load_countries states_nieded" data-link="/load/countries">
                                 
                             </div> 
 
@@ -73,10 +73,10 @@
                                 <div class="input-control__footer"></div>
                             </div>
 
-                            <div class="select-control col-md-3 mt-2 states_container">
+                            <div class="input-control col-md-3 mt-2 states_container">
                                 
                             </div>
-                            <div class="select-control col-md-3 mt-2 cities_container">
+                            <div class="input-control col-md-3 mt-2 cities_container">
                                 
                             </div>
 

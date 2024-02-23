@@ -3,7 +3,7 @@
         <div class="row">
             <div class="input-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
 
-            </div> 
+            </div>
             <div class="input-control col-md-3 mt-2 states_container">
 
             </div>

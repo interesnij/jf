@@ -158,16 +158,16 @@
                             </div>
                             <div class="mt-4 text-bold">Jurisdiction</div>
                             <div class="row mb-3">
-                                <div class="select-control col-md-4 mt-1 load_content load_countries states_nieded" data-link="/load/countries">
+                                <div class="input-control col-md-4 mt-1 load_content load_countries states_nieded" data-link="/load/countries">
 
                                 </div>
-                                <div class="select-control col-md-4 mt-1 states_container">
+                                <div class="input-control col-md-4 mt-1 states_container">
                                     
                                 </div>
-                                <div class="select-control col-md-4 mt-1 cities_container">
+                                <div class="input-control col-md-4 mt-1 cities_container">
                                     
                                 </div>
-                                <div class="select-control col-md-4 mt-1">
+                                <div class="input-control col-md-4 mt-1">
                                 
                                 </div>
                                 

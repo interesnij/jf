@@ -81,7 +81,7 @@
                     <div class="d-flex pr-3"></div>
                     <div class="col-12">
                         <div class="row">
-                            <div class="select-control col-md-4 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
+                            <div class="input-control col-md-4 mt-2 load_content load_countries states_nieded" data-link="/load/countries">
                                 
                             </div>
                             <div class="input-control col-md-8">
@@ -91,10 +91,10 @@
                                 <input id="id_address" name="address" placeholder="Enter an address here" type="text" class="">
                                 <div class="input-control__footer"></div>
                             </div>>
-                            <div class="select-control col-md-4 mt-2 states_container">
+                            <div class="input-control col-md-4 mt-2 states_container">
                                 
                             </div>
-                            <div class="select-control col-md-4 mt-2 cities_container">
+                            <div class="input-control col-md-4 mt-2 cities_container">
                                 
                             </div>
                         </div>
