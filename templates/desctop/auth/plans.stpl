@@ -81,7 +81,11 @@
                     </div>
                 </div>
                 </div>
-                <div class="signup-bar"><button class="btn btn--disabled btn--green ripple-effect normal ml-auto" disabled="" type="button"><span>Next</span></button></div>
+                <div class="signup-bar">
+                    <button class="btn btn--disabled btn--green ripple-effect normal ml-auto" type="button">
+                        <span>Next</span>
+                    </button>
+                </div>
             </div>
         </div>
     </div>

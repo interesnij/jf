@@ -160,7 +160,9 @@
                         and agree to the 
                         <a href="/terms-of-use" target="_blank" rel="noreferrer">Terms of Service</a>
                     </div>
-                    <button class="btn btn--green ripple-effect normal ml-auto register_final_paralegal_btn" type="button"><span>Next</span></button>
+                    <button class="btn btn--green ripple-effect normal ml-auto register_final_paralegal_btn" type="button">
+                        <span>Next</span>
+                    </button>
                 </div>
             </form>
         </div>

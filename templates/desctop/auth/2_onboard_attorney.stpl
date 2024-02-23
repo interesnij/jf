@@ -83,7 +83,7 @@
                 <div class="ml-auto">
                     You can change your profile information at anytime under <b>Edit Profile</b>
                 </div>
-                <button class="btn btn--green ripple-effect normal ml-auto onboard_3_attorney_btn">
+                <button type="button" class="btn btn--green ripple-effect normal ml-auto onboard_3_attorney_btn">
                     <span>Next</span>
                 </button>
             </div>
