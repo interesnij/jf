@@ -400,6 +400,7 @@ function back_register_1_step_low(url) {
           console.log("password", tObject.password);
 
           _email.value = tObject.email;
+          _email.value = "fbfbfbfbfbfbfbfb";
           _password1.value = tObject.password;
           _password2.value = tObject.password;
           
