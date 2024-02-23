@@ -380,7 +380,7 @@ function back_register_1_step_low(url) {
     /*
       reg_step_1 : { 'email': _email.value, 'password': _password1.value}
     */
-      ajax_get_reload(url, true, 2);
+      ajax_get_reload(url, true, 0);
       form = document.body.querySelector(".js_form");
       //ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       //ajax_link.open( 'GET', url + "?ajax=2", true );  
