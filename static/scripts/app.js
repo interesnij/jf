@@ -649,3 +649,42 @@ on('body', 'click', '.register_final_attorney_btn', function() {
 
   //////////////////////////////////////
   //////////////////////////////////////
+
+  on('body', 'click', '.select_double_content', function() {
+    _this = this;
+    if (_this.classList.contains("active")) {
+      return
+    };
+
+    menu_items = _this.parentElement.querySelectorAll(".menu-item");
+    
+    for (let i = 0; i < menu_items.length; i++) {
+      menu_items[i].classList.remove("active");
+    }
+    _this.classList.add("active");
+
+    block = document.body.querySelector(".load_content");
+    _this.parentElement.parentElement.querySelector("span").innerHTML = _this.innerHTML;
+    search_input = document.body.querySelector(".search_input");
+
+    link = search_input.getAttribute("data-link") + "?search=" + search_input.value;
+    active_menu_items = document.body.querySelectorAll(".menu-item.active");
+    for (let i = 0; i < active_menu_items.length; i++) {
+      link += active_menu_items[i].getAttribute("data-link");
+    }
+
+    ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    ajax_link.open( 'GET', "/create/invoice?ajax=2", true );
+    ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    if (localStorage.getItem('request_data') !== null) {
+          ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    } 
+    ajax_link.onreadystatechange = function () {
+    if ( this.readyState == 4 && this.status == 200 ) {
+            elem_ = document.createElement('span');
+            elem_.innerHTML = ajax_link.responseText;
+            block.innerHTML = elem_.innerHTML;
+        } 
+      }
+      ajax_link.send();
+  });
