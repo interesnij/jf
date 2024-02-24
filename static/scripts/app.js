@@ -674,7 +674,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     }
 
     ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-    ajax_link.open( 'GET', "/create/invoice?ajax=2", true );
+    ajax_link.open( 'GET', link + "?ajax=2", true );
     ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     if (localStorage.getItem('request_data') !== null) {
           ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
