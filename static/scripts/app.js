@@ -670,11 +670,11 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     link = search_input.getAttribute("data-link") + "?search=" + search_input.value;
     active_menu_items = document.body.querySelectorAll(".menu-item.active");
     for (let i = 0; i < active_menu_items.length; i++) {
-      link += active_menu_items[i].getAttribute("data-link");
+      link += active_menu_items[i].getAttribute("data-value");
     }
 
     ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-    ajax_link.open( 'GET', link + "?ajax=2", true );
+    ajax_link.open( 'GET', link + "&ajax=2", true );
     ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     if (localStorage.getItem('request_data') !== null) {
           ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
