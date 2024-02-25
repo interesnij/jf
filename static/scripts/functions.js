@@ -209,38 +209,33 @@ function disconnect() {
   }
 }
 
-
-function load_data() { 
-  blocks = document.body.querySelectorAll(".load_content");
-
-  for (let i = 0; i < blocks.length; i++) { 
-
-    if (blocks[i].childNodes.length) {
-      console.log("block", blocks[i]);
+function load_contentt(block) { 
+    if (block.childNodes.length) {
+      console.log("block", block);
       console.log("block with content!!");
       continue;
     }
     else {
       console.log("block no content!!");
       link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-      
-      //console.log("link", blocks[i].getAttribute("data-link"));
-      //console.log("block", blocks[i]);
-      link.open( 'GET', blocks[i].getAttribute("data-link"), true );
+      link.open( 'GET', block.getAttribute("data-link"), true );
       if (localStorage.getItem('request_data') !== null) {
         link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
       }
       link.onreadystatechange = function () {
         if ( link.readyState == 4 && link.status == 200 ) {
             console.log("target block", blocks[i]);
-            blocks[i].innerHTML = link.responseText;
-        //} else {
-        //    console.log("error");
-        //    return 0;
+            block.innerHTML = link.responseText;
         }
       };
       link.send();
     }
+}
+
+function load_data() { 
+  blocks = document.body.querySelectorAll(".load_content");
+  for (let i = 0; i < blocks.length; i++) { 
+    load_contentt(blocks[i])
   } 
 }
 
