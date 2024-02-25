@@ -236,7 +236,8 @@ function load_data(number, w_block) {
     block = w_block.querySelector(".load_content");
   }
   else {
-    block = w_block.querySelector(".load_content" + number);
+    _class = ".load_content" + number;
+    block = w_block.querySelector(_class);
   }
 
   if (block) {
