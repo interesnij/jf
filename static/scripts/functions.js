@@ -249,6 +249,7 @@ function load_data1() {
         if ( link.readyState == 4 && link.status == 200 ) {
             console.log("target block", block);
             block.innerHTML = link.responseText;
+            load_data2();
         }
       };
       link.send();
@@ -476,7 +477,7 @@ function get_active_button() {
             span.innerHTML = elem_.innerHTML;
             //get_active_button();
             load_data1();
-            load_data2();
+            //load_data2();
             //load_data1();
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":url}, document.title, url);
