@@ -11,108 +11,128 @@
             <div class="title mb-4">Additional Information</div>
             <form class="js_form">
                 <div class="card-control">
-                <div class="d-flex"><span class="my-1">I am signing up as a company or organization</span>
-                    <div class="sc-bQdRvg hZpUCz ml-auto">
-                        <div class=""><label class="checkbox-control"><input type="checkbox"><span></span></label></div>
-                    </div>
-                </div>
-                </div>
-                <div class="folder-control mt-4">
-                <div class="folder-control__header">
                     <div class="d-flex">
-                        <div class="folder-control__heading">Contact Information</div>
-                        <div class="folder-control__heading-after"></div>
-                    </div>
-                    <div class="d-flex"></div>
-                </div>
-                <div class="folder-control__content">
-                    <div class="folder-item folder-item--with-separator">
-                        <div class="row">
-                            <div class="input-control col-md-6 mt-1">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <label for="id_first_name" class="input-control__label">First Name</label>
-                                </div>
-                                <input id="id_first_name" name="first_name" placeholder="Enter your first name" type="text">
-                                <div class="input-control__footer"></div>
-                            </div>> 
-                            <div class="input-control col-md-6 mt-1">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <label for="id_last_name" class="input-control__label">Last Name</label>
-                                </div>
-                                <input id="id_last_name" name="last_name" placeholder="Enter your last name" type="text">
-                                <div class="input-control__footer"></div>
-                            </div>
-
-                            <div class="input-control col-6 mt-3 load_content load_countries states_nieded" data-link="/load/countries">
-                                
-                            </div> 
-
-                            <div class="sc-hzMMVR dakRgd col-6 mt-3">
-                                <div class="d-flex justify-content-between">
-                                    <label for="id_phone" class="input-control__label">Phone</label>
-                                </div>
-                                <div class="phone-input-2-container react-tel-input">
-                                    <div class="special-label">Phone</div>
-                                    <input id="id_phone" name="phone" class=" form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+1" style="height: 48px; font-size: 14px;">
-                                </div>
-                                <div class="input-control__footer"></div>
-                            </div>
-                            <div class="input-control col-md-6 mt-3">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <label for="id_address1" class="input-control__label">Address Line 1</label>
-                                </div>
-                                <input id="id_address1" name="address1" placeholder="Address line 1" type="text">
-                                <div class="input-control__footer"></div>
-                            </div>
-                            <div class="input-control col-md-6 mt-3">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <label for="id_address2" class="input-control__label">Address Line 2</label>
-                                    <div class="input-control__required">Optional</div>
-                                </div>
-                                <input id="id_address2" name="address2" placeholder="Address line 2" type="text">
-                                <div class="input-control__footer"></div>
-                            </div>
-
-                            <div class="input-control col-md-3 mt-2 states_container">
-                                
-                            </div>
-                            <div class="input-control col-md-3 mt-2 cities_container">
-                                
-                            </div>
-
-                            <div class="input-control col-md-3 mt-3">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <label for="id_zip_code" class="input-control__label">Zip code</label>
-                                </div>
-                                <input id="id_zip_code" name="zip_code" placeholder="Enter zip code" type="text">
-                                <div class="input-control__footer"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="folder-control mt-4">
-                <div class="folder-control__header">
-                    <div class="d-flex">
-                        <div class="folder-control__heading">Practice Areas</div>
-                        <div class="folder-control__heading-after"></div>
-                    </div>
-                    <div class="d-flex"></div>
-                </div>
-                <div class="folder-control__content">
-                    <div class="folder-item folder-item--with-separator">
-                        <div class="text-dark">Select practice areas you want to follow:</div>
-                        <span class="load_content" data-link="/load/specialities?types=many"></span>
-                        <div class="row"> 
-                            <div class="col-md-6"></div>
-                            <div class="col-md-6">
-                                <label class="checkbox-component">
-                                    Other<input type="checkbox"><span></span>
+                        <span class="my-1">I am signing up as a company or organization</span>
+                        <div class="sc-bQdRvg hZpUCz ml-auto">
+                            <div class="">
+                                <label class="checkbox-control">
+                                    <input class="firm_plus_input" type="checkbox"><span></span>
                                 </label>
                             </div>
+                        </div> 
+                    </div>
+
+                    <div class="row mt-1 hidden">
+                        <div class="input-control col-6 mt-1">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label for="KyOVG8RRwAGHZtwjbDF_S" class="input-control__label">Company Name</label>
+                            </div>
+                            <input id="KyOVG8RRwAGHZtwjbDF_S" placeholder="Enter your company name" type="text">
+                            <div class="input-control__footer"></div>
+                        </div>
+                        <div class="input-control col-6 mt-1">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label for="yvtAd_qJmJZc-5KClC4v0" class="input-control__label">Job Title</label>
+                            </div>
+                            <input id="yvtAd_qJmJZc-5KClC4v0" placeholder="Enter your job title" type="text">
+                            <div class="input-control__footer"></div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="folder-control mt-4">
+                    <div class="folder-control__header">
+                        <div class="d-flex">
+                            <div class="folder-control__heading">Contact Information</div>
+                            <div class="folder-control__heading-after"></div>
+                        </div>
+                        <div class="d-flex"></div>
+                    </div>
+                    <div class="folder-control__content">
+                        <div class="folder-item folder-item--with-separator">
+                            <div class="row">
+                                <div class="input-control col-md-6 mt-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_first_name" class="input-control__label">First Name</label>
+                                    </div>
+                                    <input id="id_first_name" name="first_name" placeholder="Enter your first name" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>> 
+                                <div class="input-control col-md-6 mt-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_last_name" class="input-control__label">Last Name</label>
+                                    </div>
+                                    <input id="id_last_name" name="last_name" placeholder="Enter your last name" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+
+                                <div class="input-control col-6 mt-3 load_content load_countries states_nieded" data-link="/load/countries">
+                                    
+                                </div> 
+
+                                <div class="input-control col-md-6 mt-1">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_last_name" class="input-control__label">Phone</label>
+                                    </div>
+                                    <input id="id_phone" name="phone" placeholder="+1 (123) 456 - 7890" type="tel">
+                                    </div class="input-control__footer"></div>
+                                </div>
+                                <div class="input-control col-md-6 mt-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_address1" class="input-control__label">Address Line 1</label>
+                                    </div>
+                                    <input id="id_address1" name="address1" placeholder="Address line 1" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="input-control col-md-6 mt-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_address2" class="input-control__label">Address Line 2</label>
+                                        <div class="input-control__required">Optional</div>
+                                    </div>
+                                    <input id="id_address2" name="address2" placeholder="Address line 2" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+
+                                <div class="input-control col-md-3 mt-2 states_container">
+                                    
+                                </div>
+                                <div class="input-control col-md-3 mt-2 cities_container">
+                                    
+                                </div>
+
+                                <div class="input-control col-md-3 mt-3">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_zip_code" class="input-control__label">Zip code</label>
+                                    </div>
+                                    <input id="id_zip_code" name="zip_code" placeholder="Enter zip code" type="text">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="folder-control mt-4">
+                    <div class="folder-control__header">
+                        <div class="d-flex">
+                            <div class="folder-control__heading">Practice Areas</div>
+                            <div class="folder-control__heading-after"></div>
+                        </div>
+                        <div class="d-flex"></div>
+                    </div>
+                    <div class="folder-control__content">
+                        <div class="folder-item folder-item--with-separator">
+                            <div class="text-dark">Select practice areas you want to follow:</div>
+                            <span class="load_content" data-link="/load/specialities?types=many"></span>
+                            <div class="row"> 
+                                <div class="col-md-6"></div>
+                                <div class="col-md-6">
+                                    <label class="checkbox-component">
+                                        Other<input type="checkbox"><span></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="signup-bar">
                     <div class="link-button pointer back_register_1_client_btn">

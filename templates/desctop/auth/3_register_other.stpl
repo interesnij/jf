@@ -72,8 +72,7 @@
                                     <div class="d-flex justify-content-between">
                                         <label for="id_phone" class="input-control__label">Phone number</label>
                                     </div>
-                                    <div class="phone-input-2-container react-tel-input">
-                                        <div class="special-label">Phone</div>
+                                    <div class="">
                                         <input id="id_phone" name="phone" class="form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+1" style="height: 48px; font-size: 14px;">
                                     </div>
                                     <div class="input-control__footer"></div>

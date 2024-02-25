@@ -210,14 +210,15 @@ function disconnect() {
 }
 
 
-function load_data() { 
-  blocks = document.querySelectorAll(".load_content");
+function load_data(_class) { 
+  blocks = document.querySelectorAll("." + _class);
 
   for (let i = 0; i < blocks.length; i++) {
-    //if (blocks[i].firstChild) {
-    //  console.log("block with content!!");
-    //}
-    //else {
+    if (blocks[i].firstChild) {
+      console.log("block with content!!");
+      continue;
+    }
+    else {
       console.log("block no content!!");
       link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       
@@ -395,7 +396,7 @@ function get_active_button() {
           window.history.pushState ({"url":url}, $title, url);
         }
         //get_active_button();
-        load_data();
+        load_data("doc_title");
         scrolled(meta_block);
         get_document_opacity_1();
       }
@@ -428,7 +429,7 @@ function get_active_button() {
             console.log("span", span);
             span.innerHTML = elem_.innerHTML;
             //get_active_button();
-            load_data();
+            load_data("doc_title");
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":url}, document.title, url);
 

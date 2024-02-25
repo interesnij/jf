@@ -42,14 +42,11 @@
                             <input id="id_last_name" name="last_name" placeholder="Enter your last name" type="text">
                             <div class="input-control__footer"></div>
                         </div>
-                        <div class="sc-hzMMVR dakRgd col-12 mt-3">
-                            <div class="d-flex justify-content-between">
-                                <label for="id_phone" class="input-control__label">Phone</label>
+                        <div class="input-control col-12 mt-3">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <label for="id_last_name" class="input-control__label">Phone</label>
                             </div>
-                            <div class="phone-input-2-container react-tel-input">
-                                <div class="special-label">Phone</div>
-                                <input id="id_phone" name="phone" class=" form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+1" style="height: 48px; font-size: 14px;">
-                            </div>
+                            <input id="id_phone" name="phone" placeholder="+1 (123) 456 - 7890" type="tel">
                             <div class="input-control__footer"></div>
                         </div>
 
@@ -61,7 +58,7 @@
                                 <div class="select-control__main">
                                 <div class="flex-1 d-flex justify-content-between">
                                     <span class="my-auto">Select a firm size</span>
-                                </div>
+                                </div> 
                                 <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                                 </div>
                                 <div class="select-control__menu">
