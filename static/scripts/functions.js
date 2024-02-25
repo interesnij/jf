@@ -237,7 +237,7 @@ function load_data() {
         //} else {
         //    console.log("error");
         //    return 0;
-        //}
+        }
       };
       link.send();
     }
