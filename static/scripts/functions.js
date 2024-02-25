@@ -231,7 +231,56 @@ function load_contentt(block) {
     }
 }
 
-function load_data() { 
+function load_data1() {
+  block = document.body.querySelector(".load_content1");
+  if (block) {
+    if (block.childNodes.length) {
+      console.log("block", block);
+      console.log("block with content!!");
+    }
+    else {
+      console.log("block no content!!");
+      link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+      link.open( 'GET', block.getAttribute("data-link"), true );
+      if (localStorage.getItem('request_data') !== null) {
+        link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+      }
+      link.onreadystatechange = function () {
+        if ( link.readyState == 4 && link.status == 200 ) {
+            console.log("target block", block);
+            block.innerHTML = link.responseText;
+        }
+      };
+      link.send();
+    }
+  }
+}
+function load_data2() {
+  block = document.body.querySelector(".load_content2");
+  if (block) {
+    if (block.childNodes.length) {
+      console.log("block", block);
+      console.log("block with content!!");
+    }
+    else {
+      console.log("block no content!!");
+      link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+      link.open( 'GET', block.getAttribute("data-link"), true );
+      if (localStorage.getItem('request_data') !== null) {
+        link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+      }
+      link.onreadystatechange = function () {
+        if ( link.readyState == 4 && link.status == 200 ) {
+            console.log("target block", block);
+            block.innerHTML = link.responseText;
+        }
+      };
+      link.send();
+    }
+  }
+}
+
+function load_data1111() {
   blocks = document.body.querySelectorAll(".load_content");
   for (let i = 0; i < blocks.length; i++) { 
     load_contentt(blocks[i])
@@ -425,7 +474,8 @@ function get_active_button() {
             //console.log("span", span);
             span.innerHTML = elem_.innerHTML;
             //get_active_button();
-            load_data();
+            load_data1();
+            load_data2();
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":url}, document.title, url);
 

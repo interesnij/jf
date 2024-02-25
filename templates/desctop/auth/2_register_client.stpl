@@ -66,7 +66,7 @@
                                     <div class="input-control__footer"></div>
                                 </div>
 
-                                <div class="input-control col-md-6 mt-1 load_content load_countries states_nieded" data-link="/load/countries"></div> 
+                                <div class="input-control col-md-6 mt-1 load_content load_content1 load_countries states_nieded" data-link="/load/countries"></div> 
 
                                 <div class="input-control col-md-6 mt-1">
                                     <div class="d-flex justify-content-between align-items-center">
@@ -116,7 +116,7 @@
                     <div class="folder-control__content">
                         <div class="folder-item folder-item--with-separator">
                             <div class="text-dark">Select practice areas you want to follow:</div>
-                            <span class="load_content" data-link="/load/specialities?types=many"></span>
+                            <span class="load_content2" data-link="/load/specialities?types=many"></span>
                             <div class="row"> 
                                 <div class="col-md-6"></div>
                                 <div class="col-md-6">
