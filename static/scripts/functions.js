@@ -441,7 +441,8 @@ function get_active_button() {
           window.history.pushState ({"url":url}, $title, url);
         }
         //get_active_button();
-        load_data();
+        load_data1();
+        load_data2();
         scrolled(meta_block);
         get_document_opacity_1();
       }
@@ -475,7 +476,7 @@ function get_active_button() {
             span.innerHTML = elem_.innerHTML;
             //get_active_button();
             load_data1();
-            load_data2();
+            //load_data2();
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":url}, document.title, url);
 
