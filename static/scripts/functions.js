@@ -214,7 +214,7 @@ function load_data() {
   blocks = document.body.querySelectorAll(".load_content");
 
   for (let i = 0; i < blocks.length; i++) {
-    if (blocks[i].firstChild) {
+    if (blocks[i].childNodes.length) {
       console.log("block with content!!");
       continue;
     }
