@@ -3,7 +3,7 @@
 </div>
 <input type="text" placeholder="Start typing" name="city" class="city" list="city_list">
 <datalist id="city_list">
-   <% for object in city_list.iter() { %>
+   <% for object in cities_list.iter() { %>
       <option data-pk="<%= object.id %>" value="<%= object.name %>"></option>
    <% } %>
 </datalist>  
