@@ -475,8 +475,9 @@ function get_active_button() {
             //console.log("span", span);
             span.innerHTML = elem_.innerHTML;
             //get_active_button();
+            
+            load_data2();
             load_data1();
-            //load_data2();
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":url}, document.title, url);
 
