@@ -224,15 +224,15 @@ function load_data() {
       console.log("block no content!!");
       link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       
-      console.log("link", blocks[i].getAttribute("data-link"));
-      console.log("block", blocks[i]);
+      //console.log("link", blocks[i].getAttribute("data-link"));
+      //console.log("block", blocks[i]);
       link.open( 'GET', blocks[i].getAttribute("data-link"), true );
       if (localStorage.getItem('request_data') !== null) {
         link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
       }
       link.onreadystatechange = function () {
-        //if ( link.readyState == 4 && link.status == 200 ) {
-            //console.log("target block", blocks[i]);
+        if ( link.readyState == 4 && link.status == 200 ) {
+            console.log("target block", blocks[i]);
             blocks[i].innerHTML = link.responseText;
         //} else {
         //    console.log("error");
