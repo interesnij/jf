@@ -231,65 +231,20 @@ function load_contentt(block) {
     }
 }
 
-function load_data1() {
-  block = document.body.querySelector(".load_content1");
-  if (block) {
-    if (block.childNodes.length) {
-      console.log("block", block);
-      console.log("block with content!!");
-    }
-    else {
-      console.log("block no content!!");
-      link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-      link.open( 'GET', block.getAttribute("data-link"), true );
-      if (localStorage.getItem('request_data') !== null) {
-        link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
-      }
-      link.onreadystatechange = function () {
-        if ( link.readyState == 4 && link.status == 200 ) {
-            console.log("target block", block);
-            block.innerHTML = link.responseText;
-            load_data2();
-        }
-      };
-      link.send();
-    }
+function load_data(number, w_block) {
+  if (number == 0) {
+    block = w_block.querySelector(".load_content");
   }
-}
-function load_data2() {
-  block = document.body.querySelector(".load_content2");
-  if (block) {
-    if (block.childNodes.length) {
-      console.log("block", block);
-      console.log("block with content!!");
-    }
-    else {
-      console.log("block no content!!");
-      link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-      link.open( 'GET', block.getAttribute("data-link"), true );
-      if (localStorage.getItem('request_data') !== null) {
-        link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
-      }
-      link.onreadystatechange = function () {
-        if ( link.readyState == 4 && link.status == 200 ) {
-            console.log("target block", block);
-            block.innerHTML = link.responseText;
-            load_data3();
-        }
-      };
-      link.send();
-    }
+  else {
+
   }
-}
-function load_data3() {
-  block = document.body.querySelector(".load_content3");
+  block = w_block.querySelector(".load_content" + number);
   if (block) {
     if (block.childNodes.length) {
-      console.log("block", block);
-      console.log("block with content!!");
+      return
     }
     else {
-      console.log("block no content!!");
+      console.log("block" + number + "no content!!");
       link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       link.open( 'GET', block.getAttribute("data-link"), true );
       if (localStorage.getItem('request_data') !== null) {
@@ -299,31 +254,8 @@ function load_data3() {
         if ( link.readyState == 4 && link.status == 200 ) {
             console.log("target block", block);
             block.innerHTML = link.responseText;
-            load_data4();
-        }
-      };
-      link.send();
-    }
-  }
-}
-function load_data4() {
-  block = document.body.querySelector(".load_content4");
-  if (block) {
-    if (block.childNodes.length) {
-      console.log("block", block);
-      console.log("block with content!!");
-    }
-    else {
-      console.log("block no content!!");
-      link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-      link.open( 'GET', block.getAttribute("data-link"), true );
-      if (localStorage.getItem('request_data') !== null) {
-        link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
-      }
-      link.onreadystatechange = function () {
-        if ( link.readyState == 4 && link.status == 200 ) {
-            console.log("target block", block);
-            block.innerHTML = link.responseText;
+            new_number = number + 1;
+            load_data(new_number, w_block);
         }
       };
       link.send();
@@ -484,9 +416,8 @@ function get_active_button() {
         if (history_enable) { 
           window.history.pushState ({"url":url}, $title, url);
         }
-        //get_active_button();
-        load_data1();
-        load_data2();
+        //get_active_button(); 
+        load_data(meta_block, 0);
         scrolled(meta_block);
         get_document_opacity_1();
       }
@@ -515,13 +446,8 @@ function get_active_button() {
         if ( this.readyState == 4 && this.status == 200 ) {
             elem_ = document.createElement('span');
             elem_.innerHTML = ajax_link.responseText;
-            //console.log("elem_", elem_);
-            //console.log("span", span);
             span.innerHTML = elem_.innerHTML;
-            //get_active_button();
-            load_data1();
-            //load_data2();
-            //load_data1();
+            load_data(span, 0);
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":url}, document.title, url);
 
