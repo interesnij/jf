@@ -39,7 +39,9 @@
               <div class="menu-item active" style="width: 160px;">All Time</div>
               <div class="menu-item" style="width: 160px;">Last 7 Days</div>
               <div class="menu-item" style="width: 160px;">Last 30 Days</div>
-              <div class="menu-item" style="width: 160px;">Custom Date Range</div>
+              <!--
+                <div class="menu-item select_double_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Custom Date Range</div>
+              -->
             </div>
           </div>
         </div>

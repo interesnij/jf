@@ -5,32 +5,32 @@
     <div class="contacts-page__bar">
       <div class="search-bar-container contacts-page__bar-input">
         <img src="/static/images/search.svg" alt="search">
-        <input class="search_input" placeholder="Search in Industry Contacts">
-      </div>
+        <input data-link="/load/industry_contacts" class="search_input" placeholder="Search in Industry Contacts">
+      </div> 
       <div class="d-flex my-auto ml-3">
         <span class="select-label my-auto">Type</span>
         <div tabindex="0" class="select-container">
           <div class="menu-button"><span>All</span>
             <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div>
-          <div class="menu-dropdown">
-            <div class="menu-item select_content active"
-              data-link="/load/industry_contacts/?search=&offset=0&limit=20&type="
+          <div class="menu-dropdown"> 
+            <div class="menu-item select_double_content active"
+              data-value="&offset=0&limit=20&type="
               style="width: 120px;">
-              All
+              All 
             </div> 
-            <div class="menu-item select_content"
-              data-link="/load/industry_contacts/?search=&offset=0&limit=20&type=attorney"
+            <div class="menu-item select_double_content"
+              data-value="/load/industry_contacts/?search=&offset=0&limit=20&type=attorney"
               style="width: 120px;">
               Attorneys
             </div>
-            <div class="menu-item select_content"
-              data-link="/load/industry_contacts/?search=&offset=0&limit=20&type=paralegal"
+            <div class="menu-item select_double_content"
+              data-value="/load/industry_contacts/?search=&offset=0&limit=20&type=paralegal"
               style="width: 120px;">
               Paralegals
             </div>
-            <div class="menu-item select_content"
-              data-link="/load/industry_contacts/?search=&offset=0&limit=20&type=pending"
+            <div class="menu-item select_double_content"
+              data-value="/load/industry_contacts/?search=&offset=0&limit=20&type=pending"
               style="width: 120px;">
               Pending
             </div>

@@ -23,7 +23,7 @@
             <span>All entries</span>
             <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
           </div> 
-          <div class="menu-dropdown">
+          <div class="menu-dropdown">  
             <div class="menu-item select_double_content active" data-value="&billing_type=" style="width: 150px;">All entries</div>
             <div class="menu-item select_double_content" data-value="&billing_type=time" style="width: 150px;">Time entries</div>
             <div class="menu-item select_double_content" data-value="&billing_type=expense" style="width: 150px;">Expense entries</div>
@@ -53,7 +53,9 @@
             <div class="menu-item select_double_content active" data-value="&date__gte=&date__lte=" style="width: 180px;">All Time</div>
             <div class="menu-item select_double_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Last 7 days</div>
             <div class="menu-item select_double_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Last 30 days</div>
+            <!--
             <div class="menu-item select_double_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Custom Date Range</div>
+            -->
           </div> 
         </div>
       </div>

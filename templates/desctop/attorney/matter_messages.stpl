@@ -15,7 +15,7 @@
           <div class="col-9 d-flex align-items-center">
             <div class="search-bar-container w-100">
                 <img src="/static/images/search.svg" alt="search">
-                <input class="search_input" placeholder="Search in My Messages">
+                <input data-link="/load/matter_messages" class="search_input" placeholder="Search in My Messages">
             </div> 
             <div class="d-flex ml-3">
                 <span class="select-label my-auto">Filter by</span>
@@ -26,20 +26,20 @@
                     </div> 
                     <div class="menu-dropdown">
                         <div 
-                          class="menu-item select_content active"
-                          data-link="/load/matter_messages?ordering=-modified&offset=0&limit=10&search=&matter=<%= matter_id %>&seen="
+                          class="menu-item select_double_content active"
+                          data-value="&ordering=-modified&offset=0&limit=10&matter=<%= matter_id %>&seen="
                           style="width: 160px;">
                           All
                         </div>
                         <div 
-                          class="menu-item select_content"
-                          data-link="/load/matter_messages?ordering=-modified&offset=0&limit=10&search=&matter=<%= matter_id %>&seen=false"
+                          class="menu-item select_double_content"
+                          data-value="&ordering=-modified&offset=0&limit=10&matter=<%= matter_id %>&seen=false"
                           style="width: 160px;">
                           Unread
                         </div>
                         <div 
-                          class="menu-item select_content"
-                          data-link="/load/matter_messages?ordering=-modified&offset=0&limit=10&search=&matter=<%= matter_id %>&seen=true"
+                          class="menu-item select_double_content"
+                          data-value="&ordering=-modified&offset=0&limit=10&matter=<%= matter_id %>&seen=true"
                           style="width: 160px;">
                           Read
                         </div>

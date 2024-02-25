@@ -28,22 +28,22 @@
                 <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down"></div>
               <div class="menu-dropdown"> 
                 <div class="menu-item select_content active" 
-                    data-link="/documents/folders?ordering=&search=&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
+                    data-link="/documents/folders?ordering=&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
                     style="width: 160px;">
                     All
                 </div>
                 <div class="menu-item select_content"
-                    data-link="/documents/folders?ordering=&search=&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
+                    data-link="/documents/folders?ordering=&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
                     style="width: 160px;">
                     Folders
                 </div>
                 <div class="menu-item select_content"
-                    data-link="/documents/documents?ordering=&search=&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
+                    data-link="/documents/documents?ordering=&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
                     style="width: 160px;">
                     Documents
                 </div>
                 <div class="menu-item select_content"
-                    data-link="/documents/documents?ordering=&search=&limit=10&offset=0&is_template=false&type=image&is_vault=false&is_parent=true"
+                    data-link="/documents/documents?ordering=&limit=10&offset=0&is_template=false&type=image&is_vault=false&is_parent=true"
                     style="width: 160px;">
                     Images 
                 </div>
@@ -52,12 +52,12 @@
                     Voice Messages
                 </div>
                 <div class="menu-item select_content"
-                    data-link="/documents/folders?ordering=&search=&limit=10&offset=0&owner=<%=request_user.user_id %>&is_template=false&type=audio&is_vault=false&is_parent=true"
+                    data-link="/documents/folders?ordering=&limit=10&offset=0&owner=<%=request_user.user_id %>&is_template=false&type=audio&is_vault=false&is_parent=true"
                     style="width: 160px;">
                     Owned by me
                 </div>
                 <div class="menu-item select_content"
-                    data-link="/documents/folders?ordering=&search=&limit=10&shared_with=<%=request_user.user_id %>&offset=0&is_template=false&is_vault=false&is_parent=true"
+                    data-link="/documents/folders?ordering=&limit=10&shared_with=<%=request_user.user_id %>&offset=0&is_template=false&is_vault=false&is_parent=true"
                     style="width: 160px;">
                     Shared with me
                 </div>

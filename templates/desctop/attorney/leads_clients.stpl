@@ -5,7 +5,7 @@
     <div class="leads-page__bar-input">
       <div class="search-bar-container undefined">
         <img src="/static/images/search.svg" alt="search">
-        <input class="search_input" placeholder="Search in Leads &amp; Clients">
+        <input data-link="/load/leads_and_clients" class="search_input" placeholder="Search in Leads &amp; Clients">
       </div>
     </div>
     <div class="d-flex leads-page__bar-filter"><span class="select-label my-auto">Type</span>
@@ -14,23 +14,23 @@
             <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
         </div>
         <div class="menu-dropdown">
-          <div class="menu-item select_content active"
-              data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=All"
+          <div class="menu-item select_double_content active"
+              data-value="&offset=0&limit=10&type=All"
               style="width: 120px;">
               All
           </div>
-          <div class="menu-item select_content"
-              data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=lead"
+          <div class="menu-item select_double_content"
+              data-value="&offset=0&limit=10&type=lead"
               style="width: 120px;">
               Leads
           </div>
-          <div class="menu-item select_content"
-              data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=client"
+          <div class="menu-item select_double_content"
+              data-value="offset=0&limit=10&type=client"
               style="width: 120px;">
               Clients
           </div>
-          <div class="menu-item select_content"
-              data-link="/attorney_load/leads_and_clients/?search=&offset=0&limit=10&type=pending"
+          <div class="menu-item select_double_content"
+              data-value="&offset=0&limit=10&type=pending"
               style="width: 120px;">
               Pending
           </div>

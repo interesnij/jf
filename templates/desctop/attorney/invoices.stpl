@@ -29,7 +29,9 @@
                     <div class="menu-item active select_double_content" data-value="&period_start=&period_end=" style="width: 180px;">All Time</div>
                     <div class="menu-item select_double_content" data-value="&period_start=&period_end=" style="width: 180px;">Last 7 days</div>
                     <div class="menu-item select_double_content" data-value="&period_start=&period_end=" style="width: 180px;">Last 30 days</div>
-                    <div class="menu-item select_double_content" data-value="&period_start=&period_end=" style="width: 180px;">Custom Date Range</div>
+                    <!--
+                      <div class="menu-item select_double_content" data-value="&date__gte=&date__lte=" style="width: 180px;">Custom Date Range</div>
+                    -->
                 </div>
           </div>
         </div>

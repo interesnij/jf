@@ -214,11 +214,11 @@ function load_data() {
   blocks = document.querySelectorAll(".load_content");
 
   for (let i = 0; i < blocks.length; i++) {
-    if (!blocks[i].firstChild) {
-      console.log("block no content!!");
+    if (blocks[i].firstChild) {
+      console.log("block with content!!");
     }
     else {
-      console.log("block with content!!");
+      console.log("block no content!!");
       link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       
       console.log("link", blocks[i].getAttribute("data-link"));
