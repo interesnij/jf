@@ -213,7 +213,7 @@ function disconnect() {
 function load_data() { 
   blocks = document.body.querySelectorAll(".load_content");
 
-  for (let i = 0; i < blocks.length; i++) {
+  for (let i = 0; i < blocks.length; i++) { 
 
     if (blocks[i].childNodes.length) {
       console.log("block", blocks[i]);
@@ -224,8 +224,8 @@ function load_data() {
       console.log("block no content!!");
       link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       
-      //console.log("link", blocks[i].getAttribute("data-link"));
-      //console.log("block", blocks[i]);
+      console.log("link", blocks[i].getAttribute("data-link"));
+      console.log("block", blocks[i]);
       link.open( 'GET', blocks[i].getAttribute("data-link"), true );
       if (localStorage.getItem('request_data') !== null) {
         link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
@@ -427,8 +427,8 @@ function get_active_button() {
         if ( this.readyState == 4 && this.status == 200 ) {
             elem_ = document.createElement('span');
             elem_.innerHTML = ajax_link.responseText;
-            console.log("elem_", elem_);
-            console.log("span", span);
+            //console.log("elem_", elem_);
+            //console.log("span", span);
             span.innerHTML = elem_.innerHTML;
             //get_active_button();
             load_data();
