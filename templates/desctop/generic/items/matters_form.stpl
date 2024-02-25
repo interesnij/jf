@@ -1,4 +1,4 @@
-<input type="text" name="matter" list="matter_list" id="id_matter">
+<input type="text" placeholder="Start typing" name="matter" list="matter_list" id="id_matter">
 <datalist id="matter_list">
     <% for object in matters_list.iter() { %>
         <option data-pk="<%= object.id %>" value="<%= object.title %>"></option>

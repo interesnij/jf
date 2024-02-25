@@ -2,7 +2,7 @@
     <div class="flex-1 d-flex justify-content-between">
         <span class="my-auto">Select a Languages</span>
     </div>
-    <input type="text" name="language" list="language_list" id="id_city">
+    <input type="text" placeholder="Start typing" name="language" list="language_list" id="id_city">
     <datalist id="language_list">
         <% for object in languages_list.iter() { %>
             <option data-pk="<%= object.id %>" value="<%= object.title %>"></option>

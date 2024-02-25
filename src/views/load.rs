@@ -90,7 +90,7 @@ pub async fn states_load(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Re
     );
     let resp = request_get::<StatesData> (
         url,
-        &"".to_string()
+        &"f844491b0ae26140bd3078902a3c1ff4c6b97bf3".to_string()
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");
@@ -132,7 +132,7 @@ pub async fn cities_load(req: HttpRequest, _id: web::Path<i32>) -> actix_web::Re
     ); 
     let resp = request_get::<CitiesData> (
         url,
-        &"".to_string()
+        &"f844491b0ae26140bd3078902a3c1ff4c6b97bf3".to_string()
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");
@@ -187,7 +187,7 @@ pub async fn specialities_load(req: HttpRequest) -> actix_web::Result<HttpRespon
     ); 
     let resp = request_get::<SpecialitiessData> (
         url,
-        &"".to_string()
+        &"f844491b0ae26140bd3078902a3c1ff4c6b97bf3".to_string()
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");
@@ -285,7 +285,7 @@ pub async fn appointment_types_load(req: HttpRequest) -> actix_web::Result<HttpR
     ); 
     let resp = request_get::<AppointmentTypesData> (
         url,
-        &"".to_string()
+        &"f844491b0ae26140bd3078902a3c1ff4c6b97bf3".to_string()
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");
@@ -326,7 +326,7 @@ pub async fn fee_types_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
     ); 
     let resp = request_get::<FeeTypessData> (
         url,
-        &"".to_string()
+        &"f844491b0ae26140bd3078902a3c1ff4c6b97bf3".to_string()
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");
@@ -368,7 +368,7 @@ pub async fn payment_methods_load(req: HttpRequest) -> actix_web::Result<HttpRes
     ); 
     let resp = request_get::<PaymentTypesData> (
         url,
-        &"".to_string()
+        &"f844491b0ae26140bd3078902a3c1ff4c6b97bf3".to_string()
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");
@@ -409,7 +409,7 @@ pub async fn languages_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
     ); 
     let resp = request_get::<LanguagesData> (
         url,
-        &"".to_string()
+        &"f844491b0ae26140bd3078902a3c1ff4c6b97bf3".to_string()
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");

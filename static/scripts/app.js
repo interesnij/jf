@@ -723,3 +723,49 @@ on('body', 'click', '.select_content', function() {
       }
       ajax_link.send();
 });
+
+on('body', 'change', '.country', function() {
+    _this = this;
+    val = _this.value;
+    if (val == '') {
+      return
+    }
+    option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
+    pk = option.getAttribute("data-pk");
+
+    block = _this.parentElement.parentElement.parentElement.querySelector("states_container");
+    ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    ajax_link.open( 'GET', "/load/states/" + pk + "?ajax=2", true );
+    ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+    ajax_link.onreadystatechange = function () {
+    if ( this.readyState == 4 && this.status == 200 ) {
+            elem_ = document.createElement('span');
+            elem_.innerHTML = ajax_link.responseText;
+            block.innerHTML = elem_.innerHTML;
+        } 
+      }
+      ajax_link.send();
+});
+
+on('body', 'change', '.state', function() {
+  _this = this;
+  val = _this.value;
+  if (val == '' || _this.classList.contains("no_cities_load") ) {
+    return 
+  }
+  option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
+  pk = option.getAttribute("data-pk");
+
+  block = _this.parentElement.parentElement.parentElement.querySelector("cities_container");
+  ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  ajax_link.open( 'GET', "/load/cities/" + pk + "?ajax=2", true );
+  ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+  ajax_link.onreadystatechange = function () {
+  if ( this.readyState == 4 && this.status == 200 ) {
+          elem_ = document.createElement('span');
+          elem_.innerHTML = ajax_link.responseText;
+          block.innerHTML = elem_.innerHTML;
+      } 
+    }
+    ajax_link.send();
+});

@@ -6,17 +6,17 @@
             </div>
             <div class="input-control col-md-3 mt-2 states_container">
 
-            </div>
+            </div> 
             <div class="input-control col-md-3 mt-2">
                 <div class="d-flex justify-content-between align-items-center">
-                <label for="id_number" class="input-control__label">Registration Number</label>
+                    <label for="id_number" class="input-control__label">Registration Number</label>
                 </div>
                 <input name="number" id="id_number" placeholder="Enter Registration Number" type="text">
                 <div class="input-control__footer"></div>
             </div>
             <div class="input-control col-md-3 mt-2">
                 <div class="d-flex justify-content-between align-items-center">
-                <label for="id_year" class="input-control__label">Year Admitted</label>
+                    <label for="id_year" class="input-control__label">Year Admitted</label>
                 </div>
                 <input name="year" id="id_year" placeholder="Enter Registration Number" type="number">
                 <div class="input-control__footer"></div>
