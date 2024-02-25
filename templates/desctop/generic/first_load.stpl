@@ -18,6 +18,7 @@
     <link type="text/css" media="all" rel="stylesheet" href="/static/styles/bootstrap.css">
     <link type="text/css" media="all" rel="stylesheet" href="/static/styles/app.css">
     <title>JusLaw</title>
+    
   </head>
   <body>
     <div id="reload" tabindex="-1" style="outline: none;"></div>
