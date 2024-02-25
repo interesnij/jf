@@ -214,10 +214,10 @@ function load_data() {
   blocks = document.querySelectorAll(".load_content");
 
   for (let i = 0; i < blocks.length; i++) {
-    if (blocks[i].firstChild) {
-      console.log("block with content!!");
-    }
-    else {
+    //if (blocks[i].firstChild) {
+    //  console.log("block with content!!");
+    //}
+    //else {
       console.log("block no content!!");
       link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       
@@ -237,7 +237,7 @@ function load_data() {
         //}
       };
       link.send();
-    }
+    //}
   } 
 }
 
