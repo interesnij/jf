@@ -223,7 +223,7 @@ function load_contentt(block) {
       }
       link.onreadystatechange = function () {
         if ( link.readyState == 4 && link.status == 200 ) {
-            console.log("target block", blocks[i]);
+            console.log("target block", block);
             block.innerHTML = link.responseText;
         }
       };
