@@ -733,7 +733,7 @@ on('body', 'change', '.country', function() {
     option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
     pk = option.getAttribute("data-pk");
 
-    block = _this.parentElement.parentElement.parentElement.querySelector("states_container");
+    block = _this.parentElement.parentElement.parentElement.querySelector(".states_container");
     ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     ajax_link.open( 'GET', "/load/states/" + pk + "?ajax=2", true );
     ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
@@ -756,7 +756,7 @@ on('body', 'change', '.state', function() {
   option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
   pk = option.getAttribute("data-pk");
 
-  block = _this.parentElement.parentElement.parentElement.querySelector("cities_container");
+  block = _this.parentElement.parentElement.parentElement.querySelector(".cities_container");
   ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
   ajax_link.open( 'GET', "/load/cities/" + pk + "?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
