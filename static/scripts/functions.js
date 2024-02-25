@@ -213,7 +213,6 @@ function load_contentt(block) {
     if (block.childNodes.length) {
       console.log("block", block);
       console.log("block with content!!");
-      continue;
     }
     else {
       console.log("block no content!!");
