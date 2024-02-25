@@ -236,9 +236,9 @@ function load_data(number, w_block) {
     block = w_block.querySelector(".load_content");
   }
   else {
-
+    block = w_block.querySelector(".load_content" + number);
   }
-  block = w_block.querySelector(".load_content" + number);
+
   if (block) {
     if (block.childNodes.length) {
       return
