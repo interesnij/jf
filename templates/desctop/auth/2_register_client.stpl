@@ -40,6 +40,7 @@
                     </div>
 
                 </div>
+
                 <div class="folder-control mt-4">
                     <div class="folder-control__header">
                         <div class="d-flex">
@@ -73,7 +74,7 @@
                                         <label for="id_phone" class="input-control__label">Phone</label>
                                     </div>
                                     <input id="id_phone" name="phone" placeholder="+1 (123) 456 - 7890" type="tel">
-                                    </div class="input-control__footer"></div>
+                                    <div class="input-control__footer"></div>
                                 </div>
                                 <div class="input-control col-md-6 mt-3">
                                     <div class="d-flex justify-content-between align-items-center">
@@ -105,6 +106,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="folder-control mt-4">
                     <div class="folder-control__header">
                         <div class="d-flex">
