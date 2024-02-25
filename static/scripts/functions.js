@@ -240,6 +240,9 @@ function load_data(number, w_block) {
     block = w_block.querySelector(_class);
   }
 
+  if (!block) {
+    block = w_block.querySelector(".load_content1");
+  }
   if (block) {
     if (block.childNodes.length) {
       return
