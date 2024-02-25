@@ -210,8 +210,8 @@ function disconnect() {
 }
 
 
-function load_data(_class) { 
-  blocks = document.querySelectorAll("." + _class);
+function load_data() { 
+  blocks = document.body.querySelectorAll(".load_content");
 
   for (let i = 0; i < blocks.length; i++) {
     if (blocks[i].firstChild) {
@@ -396,7 +396,7 @@ function get_active_button() {
           window.history.pushState ({"url":url}, $title, url);
         }
         //get_active_button();
-        load_data("doc_title");
+        load_data();
         scrolled(meta_block);
         get_document_opacity_1();
       }
@@ -429,7 +429,7 @@ function get_active_button() {
             console.log("span", span);
             span.innerHTML = elem_.innerHTML;
             //get_active_button();
-            load_data("doc_title");
+            load_data();
             scrolled(document.body.querySelector(".span"));
             window.history.pushState ({"url":url}, document.title, url);
 
