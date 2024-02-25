@@ -436,7 +436,7 @@ function back_register_1_step_low(url) {
 
 on('body', 'click', '.register_2_client_btn', function() {
   get_register_2_step_low("/auth/register_client_2");
-}); d
+});
 on('body', 'click', '.back_register_1_client_btn', function() {
   back_register_1_step_low("/auth/register/client");
 });
