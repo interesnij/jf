@@ -90,7 +90,7 @@
                     <div class="col-6">
                         <div class="input-control">
                             <div class="position-relative">
-                                <input id="id_tax_rate" name="tax_rate" placeholder="0.00" type="text" class="" value="">
+                                <input id="id_tax_rate" name="tax_rate" placeholder="0.00" type="text">
                                 <div class="input-control__addon"><span class="input-control__addon-label">%</span></div>
                             </div>
                             <div class="input-control__footer"></div>

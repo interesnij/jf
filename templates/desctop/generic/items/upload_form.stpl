@@ -4,7 +4,7 @@
    <label for="attachments" class="upload-control__label">Attachment</label>
 </div> 
 <div class="dropzone" style="border: 1px solid rgb(224, 224, 225);">
-   <div class="d-flex flex-wrap">
+   <div class="d-flex flex-wrap files_container">
       <span></span>
       <!-- added file -->
       <div class="upload-control__file hidden">

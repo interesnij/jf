@@ -30,7 +30,7 @@
                         <div class="d-flex justify-content-between align-items-center">
                             <label for="id_email" class="input-control__label">Email</label>
                         </div>
-                        <input id="id_email" placeholder="Enter your email address" name="email" type="email" autocomplete="new-password" class="" value="">
+                        <input id="id_email" placeholder="Enter your email address" name="email" type="email">
                         <div class="input-control__footer"></div>
                     </div>
                     <div class="input-control mt-3">

@@ -432,13 +432,31 @@ function back_register_1_step_low(url) {
       ajax_link.send();
 }
 
+//////////////////////
+
+
+on('body', 'click', '.register_2_client_btn', function() {
+  get_register_2_step_low("/auth/register_client_2");
+});
 on('body', 'click', '.register_2_attorney_btn', function() {
   get_register_2_step_low("/auth/register_attorney_2");
 });
-
 on('body', 'click', '.back_register_1_attorney_btn', function() {
   back_register_1_step_low("/auth/register/attorney");
 });
+on('body', 'click', '.register_2_paralegal_btn', function() {
+  get_register_2_step_low("/auth/register_paralegal_2");
+});
+on('body', 'click', '.back_register_1_paralegal_btn', function() {
+  back_register_1_step_low("/auth/register/paralegal");
+});
+on('body', 'click', '.register_2_enterprise_btn', function() {
+  get_register_2_step_low("/auth/register_enterprise_2");
+});
+on('body', 'click', '.back_register_1_enterprise_btn', function() {
+  back_register_1_step_low("/auth/register/enterprise");
+});
+///////////////////////////
 
 function send_files(file_c) {
     file_data = new FormData();
@@ -473,7 +491,12 @@ function send_files(file_c) {
 on('body', 'click', '.add_jurisdiction_form', function() {
   block = this.previousElementSibling;
   container = this.parentElement;
-  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries"></div><div class="select-control col-md-3 mt-2 states_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_number" class="input-control__label">Registration Number</label></div><input name="number" id="id_number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_year" class="input-control__label">Year Admitted</label></div><input name="year" id="id_year" placeholder="Enter Registration Number" type="number"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries"></div><div class="select-control col-md-3 mt-2 states_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_number" class="input-control__label">Registration Number</label></div><input name="number" class="id_number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Year Admitted</label></div><input name="year" class="id_year" placeholder="Enter Registration Number" type="number"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+});
+on('body', 'click', '.add_firm_location_form', function() {
+  block = this.previousElementSibling;
+  container = this.parentElement;
+  block.innerHTML = '<div class="d-flex flex-column w-100 pt-2"><div class="d-flex pr-3"></div><div class="col-12"><div class="row"><div class="input-control col-md-4 mt-2 load_content load_countries states_nieded" data-link="/load/countries"></div><div class="input-control col-md-8"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Address</label></div><input class="id_address" name="address" placeholder="Enter an address here" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-4 mt-2 states_container"></div><div class="input-control col-md-4 mt-2 cities_container"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
 });
 
 function show_law_reg_success_modal() {
@@ -523,7 +546,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   _attachments = form.querySelector("#id_attachments");
   email = tObject.email;
   password1 = tObject.password;
-  password2 = tObject.password;
+  password2 = tObject.password; 
 
   _jurisdictions_countries = form.querySelectorAll(".country");
   _jurisdictions_states = form.querySelectorAll(".state");
