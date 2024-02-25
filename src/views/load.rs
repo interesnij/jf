@@ -49,7 +49,7 @@ pub async fn countries_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
     );
     let resp = request_get::<CountriesData> (
         url,
-        &"".to_string()
+        &"f844491b0ae26140bd3078902a3c1ff4c6b97bf3".to_string()
     ).await;
     if resp.is_ok() {
         let data = resp.expect("E.");
