@@ -57,11 +57,12 @@
                             <div class="select-control__container" tabindex="0">
                                 <div class="select-control__main">
                                 <div class="flex-1 d-flex justify-content-between">
-                                    <span class="my-auto">Select a firm size</span>
+                                    <span class="my-auto">2-10</span>
+                                    <input class="hidden_input" type="hidden" name="currency" value="1">
                                 </div> 
                                 <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                                 </div>   
-                                <div class="select-control__menu" data-name="firm_size">
+                                <div class="select-control__menu">
                                     <div class="select-control__menu-item" data-pk="1"><span>2-10</span></div>
                                     <div class="select-control__menu-item" data-pk="2"><span>11-50</span></div>
                                     <div class="select-control__menu-item" data-pk="3"><span>51-100</span></div>

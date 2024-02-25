@@ -70,7 +70,7 @@
                                     <div class="select-control__main">
                                         <div class="flex-1 d-flex justify-content-between">
                                             <span class="my-auto">Select a Matter</span>
-                                            <input name="matter" type="hidden" >
+                                            <input class="hidden_input" type="hidden" name="matter" value="">
                                         </div>
                                         <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                                     </div>

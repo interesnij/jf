@@ -131,11 +131,12 @@
                   <div class="select-control__container" tabindex="0">
                     <div class="select-control__main active">
                       <div class="flex-1 d-flex justify-content-between">
-                        <span class="my-auto">(UTC-05:00) Eastern Standard Time</span>
+                        <span class="my-auto">America/New_York</span>
+                        <input class="hidden_input" type="hidden" name="timezone" value="1">
                       </div>
                       <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                     </div>
-                    <div class="select-control__menu" data-name="timazone">
+                    <div class="select-control__menu">
                       <div class="select-control__menu-item active" data-pk="1"><span>America/New_York</span></div>
                     </div>
                   </div>
