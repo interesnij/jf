@@ -753,6 +753,7 @@ on('body', 'change', '.state', function() {
   if (val == '' || _this.classList.contains("no_cities_load") ) {
     return 
   }
+  
   option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
   pk = option.getAttribute("data-pk");
 
