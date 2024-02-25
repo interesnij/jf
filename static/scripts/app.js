@@ -527,7 +527,6 @@ on('body', 'click', '.register_final_attorney_btn', function() {
 
   _jurisdictions_countries = form.querySelectorAll(".country");
   _jurisdictions_states = form.querySelectorAll(".state");
-  _jurisdictions_cities = form.querySelectorAll(".city");
   _jurisdictions_numbers = form.querySelectorAll(".id_number");
   _jurisdictions_years = form.querySelectorAll(".id_year");
 
@@ -539,9 +538,6 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   try {
       for (let i = 0; i < _jurisdictions_countries.length; i++) {
         _jurisdictions_countries[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-      }
-      for (let i = 0; i < _jurisdictions_cities.length; i++) {
-        _jurisdictions_cities[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
       }
       for (let i = 0; i < _jurisdictions_numbers.length; i++) {
         _jurisdictions_numbers[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
@@ -577,11 +573,6 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   else if (!_jurisdictions_countries[0].value){
     _jurisdictions_countries[0].value.style.border = "1px #FF0000 solid";
     toast_error("Jurisdiction Country is required");
-    return
-  }
-  else if (!_jurisdictions_cities[0].value){
-    _jurisdictions_cities[0].value.style.border = "1px #FF0000 solid";
-    toast_error("Jurisdiction City is required");
     return
   }
   else if (!_jurisdictions_numbers[0].value){
