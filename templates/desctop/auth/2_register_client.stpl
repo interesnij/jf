@@ -57,7 +57,7 @@
                                     </div>
                                     <input id="id_first_name" name="first_name" placeholder="Enter your first name" type="text">
                                     <div class="input-control__footer"></div>
-                                </div>> 
+                                </div>
                                 <div class="input-control col-md-6 mt-1">
                                     <div class="d-flex justify-content-between align-items-center">
                                         <label for="id_last_name" class="input-control__label">Last Name</label>
@@ -66,9 +66,7 @@
                                     <div class="input-control__footer"></div>
                                 </div>
 
-                                <div class="input-control col-6 mt-3 load_content load_countries states_nieded" data-link="/load/countries">
-                                    
-                                </div> 
+                                <div class="input-control col-6 mt-3 load_content load_countries states_nieded" data-link="/load/countries"></div> 
 
                                 <div class="input-control col-md-6 mt-1">
                                     <div class="d-flex justify-content-between align-items-center">
@@ -93,12 +91,8 @@
                                     <div class="input-control__footer"></div>
                                 </div>
 
-                                <div class="input-control col-md-3 mt-2 states_container">
-                                    
-                                </div>
-                                <div class="input-control col-md-3 mt-2 cities_container">
-                                    
-                                </div>
+                                <div class="input-control col-md-3 mt-2 states_container"></div>
+                                <div class="input-control col-md-3 mt-2 cities_container"></div>
 
                                 <div class="input-control col-md-3 mt-3">
                                     <div class="d-flex justify-content-between align-items-center">
