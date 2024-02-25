@@ -525,9 +525,9 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   password1 = tObject.password;
   password2 = tObject.password;
 
-  _jurisdictions_countries = form.querySelectorAll(".id_country");
-  _jurisdictions_states = form.querySelectorAll(".id_state");
-  _jurisdictions_cities = form.querySelectorAll(".id_city");
+  _jurisdictions_countries = form.querySelectorAll(".country");
+  _jurisdictions_states = form.querySelectorAll(".state");
+  _jurisdictions_cities = form.querySelectorAll(".city");
   _jurisdictions_numbers = form.querySelectorAll(".id_number");
   _jurisdictions_years = form.querySelectorAll(".id_year");
 
