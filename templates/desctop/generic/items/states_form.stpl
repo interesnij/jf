@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-between align-items-center">
    <label class="input-control__label">State</label>
 </div>
-<input type="text" placeholder="Start typing" name="state" class="state no_cities_load" list="state_list">
+<input type="text" placeholder="Start typing" name="state" class="state" list="state_list">
 <datalist id="state_list">
    <% for object in states_list.iter() { %>
       <option data-pk="<%= object.id %>" value="<%= object.name %>"></option>

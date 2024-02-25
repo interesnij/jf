@@ -492,18 +492,18 @@ function send_files(file_c) {
 
 on('body', 'click', '.add_jurisdiction_form', function() {
   block = this.parentElement.previousElementSibling;
-  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="select-control col-md-3 mt-2 load_content load_countries states_nieded" data-link="/load/countries"></div><div class="select-control col-md-3 mt-2 states_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_number" class="input-control__label">Registration Number</label></div><input name="number" class="id_number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Year Admitted</label></div><input name="year" class="id_year" placeholder="Enter Registration Number" type="number"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="select-control col-md-3 mt-2 load_content1 load_countries" data-link="/load/countries"></div><div class="select-control col-md-3 mt-2 states_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_number" class="input-control__label">Registration Number</label></div><input name="number" class="id_number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Year Admitted</label></div><input name="year" class="id_year" placeholder="Enter Registration Number" type="number"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
   load_data(1, block);
 }); 
 on('body', 'click', '.add_firm_location_form', function() {
   block = this.parentElement.previousElementSibling;
-  block.innerHTML = '<div class="d-flex flex-column w-100 pt-2"><div class="d-flex pr-3"></div><div class="col-12"><div class="row"><div class="input-control col-md-4 mt-2 load_content load_countries states_nieded" data-link="/load/countries"></div><div class="input-control col-md-8"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Address</label></div><input class="id_address" name="address" placeholder="Enter an address here" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-4 mt-2 states_container"></div><div class="input-control col-md-4 mt-2 cities_container"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+  block.innerHTML = '<div class="d-flex flex-column w-100 pt-2"><div class="d-flex pr-3"></div><div class="col-12"><div class="row"><div class="input-control col-md-4 mt-2 load_content1 load_countries" data-link="/load/countries"></div><div class="input-control col-md-8"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Address</label></div><input class="id_address" name="address" placeholder="Enter an address here" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-4 mt-2 states_container"></div><div class="input-control col-md-4 mt-2 cities_container"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
   load_data(1, block);
 });
 on('body', 'click', '.add_education_form', function() {
   block = this.parentElement.previousElementSibling;
   block.innerHTML = '<div class="d-flex w-100 col-12 mt-0"><div class="flex-1"><div class="row"><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Law school / Graduate Institute</label></div><input name="school"  class="school" placeholder="Enter a school / graduate institute name" type="text" class="school active"><div class="input-control__footer"></div></div><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Years</label></div><input name="year" placeholder="Enter number of years" type="number" class="active year" value="1"><div class="input-control__footer"></div></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
-  load_data(1, block);
+  //load_data(1, block);
 });
 
 on('body', 'click', '.select-control__menu-item', function() {
@@ -783,9 +783,9 @@ on('body', 'change', '.country', function() {
 on('body', 'change', '.state', function() {
   _this = this;
   val = _this.value;
-  if (val == '' || _this.classList.contains("no_cities_load") ) {
-    return 
-  }
+  if (val == '' || _this.parentElement.classList.contains("no_cities_load") ) {
+    return
+  } 
   
   option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
   pk = option.getAttribute("data-pk");
