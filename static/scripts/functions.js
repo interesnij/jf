@@ -242,6 +242,7 @@ function load_data(number, w_block) {
 
   if (!block) {
     block = w_block.querySelector(".load_content1");
+    number = number + 1;
   }
   if (block) {
     if (block.childNodes.length) {
