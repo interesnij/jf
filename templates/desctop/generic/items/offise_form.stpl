@@ -1,0 +1,31 @@
+<div class="d-flex flex-column w-100 pt-2">
+    <div class="d-flex pr-3"></div>
+    <div class="col-12">
+        <div class="row">
+            <div class="input-control col-md-4 load_content1 load_countries states_nieded" data-link="/load/countries"></div>
+            <div class="input-control col-md-8">
+                <div class="d-flex justify-content-between align-items-center">
+                <label class="input-control__label">Address</label>
+                </div>
+                <input class="id_address" name="address" placeholder="Enter an address here" type="text">
+                <div class="input-control__footer"></div>
+            </div>
+
+            <div class="input-control col-md-4 states_container"></div>
+            <div class="input-control col-md-4 cities_container"></div>
+            <div class="input-control col-md-4 mt-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <label for="id_zip_code" class="input-control__label">Zip code</label>
+                </div>
+                <input id="id_zip_code" name="zip_code" placeholder="Enter a zip code here" type="text" class="active" value="10007">
+                <div class="input-control__footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-12 mt-2">
+    <div class="add-button cursor-pointer d-flex add_office_address_form">
+        <img src="/static/images/plus_black.svg" alt="plus">
+        <span class="my-auto ml-1">Add an Office address</span>
+    </div>
+</div>

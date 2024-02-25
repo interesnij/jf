@@ -83,21 +83,13 @@
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="sc-hzMMVR fXVjLt mt-2 col-md-6">
-                  <div class="d-flex justify-content-between">
-                    <label for="Q_-yBQX3kXlfzb1uw1PZg" class="input-control__label">Phone</label>
-                  </div>
-                  <div class="phone-input-2-container react-tel-input">
-                    <div class="special-label">Phone</div>
-                    <input class=" form-control" placeholder="+1 (123) 456 - 7890" type="tel" value="+0 (405) 256-152" style="height: 48px; font-size: 14px;">
-                    <div class=" flag-dropdown">
-                      <div class="selected-flag" title="United States: + 1" tabindex="0" role="button" aria-haspopup="listbox">
-                        <div class="flag us">
-                          <div class="arrow"></div>
-                        </div>
+                  <div class="input-control mt-2">
+                      <div class="d-flex justify-content-between align-items-center">
+                          <label for="id_phone" class="input-control__label">Phone</label>
                       </div>
-                    </div>
+                      <input id="id_phone" name="phone" placeholder="+1 (123) 456 - 7890" type="tel">
+                      <div class="input-control__footer"></div>
                   </div>
-                  <div class="input-control__footer"></div>
                 </div>
               </div>
             </div>
@@ -129,25 +121,8 @@
             <div class="folder-item folder-item--with-separator">
               <div class="row">
                 <div class="heading col-md-12">Address</div>
-                <div class="select-control col-md-6 mt-2">
-                  <div class="d-flex justify-content-between">
-                    <div class="select-control__label">Country</div>
-                  </div>
-                  <div class="select-control__container" tabindex="0">
-                    <div class="select-control__main active">
-                      <div class="flex-1 d-flex justify-content-between">
-                        <span class="my-auto">United States</span>
-                      </div>
-                      <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
-                    </div>
-                    <div class="select-control__menu">
+                <div class="input-control col-md-3 mt-2 load_content1 load_countries states_nieded" data-link="/load/countries"></div>
 
-                      <div class="select-control__menu-item active"><span>United States</span></div>
-
-                    </div>
-                  </div>
-                  <div class="select-control__footer"></div>
-                </div>
                 <div class="select-control col-md-6 mt-2">
                   <div class="d-flex justify-content-between">
                     <div class="select-control__label">Time zone</div>
@@ -160,76 +135,42 @@
                       </div>
                       <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
                     </div>
-                    <div class="select-control__menu">
-                      <div class="select-control__menu-item active"><span>America/New_York</span></div>
+                    <div class="select-control__menu" data-name="timazone">
+                      <div class="select-control__menu-item active" data-pk="1"><span>America/New_York</span></div>
                     </div>
                   </div>
                   <div class="select-control__footer"></div>
                 </div>
                 <div class="input-control col-md-6 mt-2">
                   <div class="d-flex justify-content-between align-items-center">
-                    <label for="tpWpo_ei2TVtg572yJN-T" class="input-control__label">Address Line 1</label>
+                    <label for="id_address1" class="input-control__label">Address Line 1</label>
                   </div>
-                  <input id="tpWpo_ei2TVtg572yJN-T" placeholder="Enter address line 1" type="text" class="active" value="551 bloomfield ave">
+                  <input id="id_address1" name="address1" placeholder="Enter address line 1" type="text" class="active" value="">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="input-control col-md-6 mt-2">
                   <div class="d-flex justify-content-between align-items-center">
-                    <label for="jcusY33kiBNxyX2pkCIeV" class="input-control__label">Address Line 2</label>
+                    <label for="id_address2" class="input-control__label">Address Line 2</label>
                     <div class="input-control__required">Optional</div>
                   </div>
-                  <input id="jcusY33kiBNxyX2pkCIeV" placeholder="Enter address line 2" type="text" class="" value="">
+                  <input id="id_address2" name="address2" placeholder="Enter address line 2" type="text">
                   <div class="input-control__footer"></div>
                 </div>
-                <div class="select-control col-md-4 mt-2">
-                  <div class="d-flex justify-content-between">
-                    <div class="select-control__label">State</div>
-                  </div>
-                  <div class="select-control__container" tabindex="0">
-                    <div class="select-control__main active">
-                      <div class="flex-1 d-flex justify-content-between">
-                        <span class="my-auto">Alabama</span>
-                      </div>
-                      <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
-                    </div>
-                    <div class="select-control__menu">
 
-                      <div class="select-control__menu-item active"><span>Alabama</span></div>
-
-                    </div>
-                  </div>
-                  <div class="select-control__footer"></div>
-                </div>
-                <div class="select-control col-md-4 mt-2">
-                  <div class="d-flex justify-content-between">
-                    <div class="select-control__label">City</div>
-                  </div>
-                  <div class="select-control__container" tabindex="0">
-                    <div class="select-control__main active">
-                      <div class="flex-1 d-flex justify-content-between">
-                        <span class="my-auto">Abbeville</span>
-                      </div>
-                      <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow" alt="arrow">
-                    </div>
-                    <div class="select-control__menu">
-
-                      <div class="select-control__menu-item active"><span>Abbeville</span></div>
-
-                    </div>
-                  </div>
-                  <div class="select-control__footer"></div>
-                </div>
+                <div class="input-control col-md-4 mt-2 states_container"></div> 
+                <div class="input-control col-md-4 mt-2 cities_container"></div>
+        
                 <div class="input-control col-md-4 mt-2">
                   <div class="d-flex justify-content-between align-items-center">
-                    <label for="QFMbKnY0igDRhavp4F1lV" class="input-control__label">
+                    <label for="id_zip_code" class="input-control__label">
                       Zip
                     </label>
                   </div>
-                  <input id="QFMbKnY0igDRhavp4F1lV" placeholder="Enter zip code" type="text" class="active" value="07006">
+                  <input id="id_zip_code" name="zip_code" placeholder="Enter zip code" type="text" class="active">
                   <div class="input-control__footer"></div>
                 </div>
                 <div class="col-12 mt-4">
-                  <button class="btn btn--disabled btn--green ripple-effect normal ml-auto" disabled="" type="submit">
+                  <button class="btn btn--green ripple-effect normal ml-auto" type="button">
                     <span>Save Changes</span>
                   </button>
                 </div>
@@ -238,24 +179,6 @@
             </div>
           </form>
 
-          <div class="modal-control-container modal-success">
-            <div tabindex="-1" class="modal-control">
-              <div class="modal-control__header">
-                <div class="my-auto title text-ellipsis w-100 text-left"></div>
-                <img class="my-auto ml-auto close_modal" src="/static/images/close.svg" alt="close">
-              </div>
-              <div class="modal-control__content ignore-onclickoutside">
-                <div class="modal-success-body">
-                  <div>
-                    <h1 class="title">Changes Saved</h1>
-                  </div>
-                  <button class="btn btn--green ripple-effect large mt-3" type="button">
-                    <span>Close</span>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="py-4"></div>
           <div class="my-2"></div>
         </div>

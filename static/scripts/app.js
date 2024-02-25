@@ -434,9 +434,11 @@ function back_register_1_step_low(url) {
 
 //////////////////////
 
-
 on('body', 'click', '.register_2_client_btn', function() {
   get_register_2_step_low("/auth/register_client_2");
+}); d
+on('body', 'click', '.back_register_1_client_btn', function() {
+  back_register_1_step_low("/auth/register/client");
 });
 on('body', 'click', '.register_2_attorney_btn', function() {
   get_register_2_step_low("/auth/register_attorney_2");
@@ -495,6 +497,22 @@ on('body', 'click', '.add_jurisdiction_form', function() {
 on('body', 'click', '.add_firm_location_form', function() {
   block = this.parentElement.previousElementSibling;
   block.innerHTML = '<div class="d-flex flex-column w-100 pt-2"><div class="d-flex pr-3"></div><div class="col-12"><div class="row"><div class="input-control col-md-4 mt-2 load_content load_countries states_nieded" data-link="/load/countries"></div><div class="input-control col-md-8"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Address</label></div><input class="id_address" name="address" placeholder="Enter an address here" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-4 mt-2 states_container"></div><div class="input-control col-md-4 mt-2 cities_container"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+});
+on('body', 'click', '.add_education_form', function() {
+  block = this.parentElement.previousElementSibling;
+  block.innerHTML = '<div class="d-flex w-100 col-12 mt-0"><div class="flex-1"><div class="row"><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Law school / Graduate Institute</label></div><input name="school"  class="school" placeholder="Enter a school / graduate institute name" type="text" class="school active"><div class="input-control__footer"></div></div><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Years</label></div><input name="year" placeholder="Enter number of years" type="number" class="active year" value="1"><div class="input-control__footer"></div></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+});
+
+on('body', 'click', '.select-control__menu-item', function() {
+  _this = this;
+  c = this.parentElement.previousElementSibling;
+  c.querySelector("span").innerHTML = _this.innerHTML;
+  c.querySelector(".hidden_input").value = _this.getAttribute("data-pk");
+  menu_items = _this.parentElement.querySelectorAll(".select-control__menu-item");
+  for (let i = 0; i < menu_items.length; i++) {
+    menu_items[i].classList.remove("active");
+  } 
+  _this.classList.add("active");
 });
 
 function show_law_reg_success_modal() {

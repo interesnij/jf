@@ -2,7 +2,7 @@
    <div class="d-flex pr-3"></div>
    <div class="col-12">
       <div class="row">
-         <div class="input-control col-md-4 load_content load_countries states_nieded" data-link="/load/countries"></div>
+         <div class="input-control col-md-4 load_content1 load_countries states_nieded" data-link="/load/countries"></div>
          <div class="input-control col-md-8">
             <div class="d-flex justify-content-between align-items-center">
                <label class="input-control__label">Address</label>
@@ -15,7 +15,6 @@
       </div>
    </div>
 </div>
-<img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div>
 <span></span>
 
 <div class="col-12 mt-2"> 

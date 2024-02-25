@@ -33,11 +33,11 @@
                                                 <span class="my-auto">USD</span>
                                             </div>
                                             <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
-                                        </div>
-                                        <div class="select-control__menu">
-                                            <div class="select-control__menu-item active"><span>USD</span></div>
-                                            <div class="select-control__menu-item"><span>GBP</span></div>
-                                            <div class="select-control__menu-item"><span>ERU</span></div>
+                                        </div> 
+                                        <div class="select-control__menu" data-name="currency">
+                                            <div class="select-control__menu-item active" data-pk="1"><span>USD</span></div>
+                                            <div class="select-control__menu-item" data-pk="2"><span>GBP</span></div>
+                                            <div class="select-control__menu-item" data-pk="3"><span>ERU</span></div>
                                         </div>
                                     </div>
                                     <div class="select-control__footer"></div>
@@ -74,10 +74,10 @@
                                             <div class="d-flex"><span class="my-auto">USD</span></div>
                                             <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
                                         </div>
-                                        <div class="select-control__menu">
-                                            <div class="select-control__menu-item active"><span>USD</span></div>
-                                            <div class="select-control__menu-item"><span>GBP</span></div>
-                                            <div class="select-control__menu-item"><span>ERU</span></div>
+                                        <div class="select-control__menu" data-name="currency">
+                                            <div class="select-control__menu-item active" data-pk="1"><span>USD</span></div>
+                                            <div class="select-control__menu-item" data-pk="2"><span>GBP</span></div>
+                                            <div class="select-control__menu-item" data-pk="3"><span>ERU</span></div>
                                         </div>
                                     </div>
                                     <div class="select-control__footer"></div>
