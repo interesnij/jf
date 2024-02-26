@@ -27,7 +27,7 @@ pub fn load_routes(config: &mut web::ServiceConfig) {
     config.route("/load/appointment_types", web::get().to(appointment_types_load));
     config.route("/load/fee_types", web::get().to(fee_types_load));
     config.route("/load/payment_methods", web::get().to(payment_methods_load));
-    config.route("/load/languages", web::get().to(languages_load));
+    config.route("/load/languages", web::get().to(languages_load)); 
     //config.route("/load/topics", web::get().to(topics_load));
     config.route("/load/clients", web::get().to(clients_load));
     config.route("/load/attorneys", web::get().to(attorneys_load));
@@ -217,24 +217,28 @@ pub async fn specialities_load(req: HttpRequest) -> actix_web::Result<HttpRespon
 #[derive(Debug, Deserialize)]
 pub struct StagesParams {
     pub attorney: Option<String>,
+    pub types:    Option<String>,
 } 
 
 #[derive(Debug, Deserialize)]
 pub struct StagessData { 
     pub results: Vec<StageData>,
-}
+} 
 
 pub async fn stages_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let l = 2;
     let stages_list: Vec<StageData>;
     let attorney: String;
+    let types: String;
     let params_some = web::Query::<StagesParams>::from_query(&req.query_string());
     if params_some.is_ok() {
         let params = params_some.unwrap();
         attorney = crate::utils::get_string_with_string(params.attorney.clone());
+        types = crate::utils::get_string_with_string(params.types.clone());
     }
     else {
         attorney = String::new();
+        types = String::new();
     }
 
     let url = concat_string!(
@@ -253,18 +257,33 @@ pub async fn stages_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     else {
         stages_list = Vec::new();
     }
-
-    #[derive(TemplateOnce)]
-    #[template(path = "desctop/generic/items/stages_form.stpl")]
-    pub struct Template {
-        stages_list: Vec<StageData>,
+    if types == "dropdown".to_string() {
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/generic/items/stages_form.stpl")]
+        pub struct Template {
+            stages_list: Vec<StageData>,
+        } 
+        let body = Template {
+            stages_list: stages_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
-    let body = Template {
-        stages_list: stages_list,
+    else if types == "settings".to_string() {
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/load/stages.stpl")]
+        pub struct Template {
+            stages_list: Vec<StageData>,
+        } 
+        let body = Template {
+            stages_list: stages_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("types needed"))
 }
 
 //////////////////////

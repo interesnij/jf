@@ -72,7 +72,7 @@
               </div>
             </div>
           </div>
-          <span data-link="/load/posts?limit=10&offset=0&followed=true&ordering=-created"></span>
+          <span class="load_content" data-link="/load/posts?limit=10&offset=0&followed=true&ordering=-created"></span>
 
         </div>
       </div>

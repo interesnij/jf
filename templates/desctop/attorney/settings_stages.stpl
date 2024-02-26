@@ -38,23 +38,8 @@
               </div>
               <div class="d-flex"></div>
             </div>
-            <div class="folder-control__content">
-            
-              <!-- stage -->
-              <div class="folder-item matter-stage-item folder-item--with-separator">
-                <div class="matter-stage-item__title">New stage</div>
-                <div class="matter-stage-item__action">
-                    <button class="matter-stage-item__icon-button ml-auto">
-                        <img src="/static/images/delete_green.svg" alt="icon">
-                    </button>
-                    <button class="matter-stage-item__icon-button ml-3">
-                        <img src="/static/images/edit.svg" alt="icon">
-                    </button>
-                </div>
-              </div>
-              <!-- stage -->
 
-            </div>
+            <div class="folder-control__content load_content1" data-link="/attorney_load/stages?attorney=<%=request_user.user_id %>&types=settings"></div>
           </div>
         </div>
       </div>

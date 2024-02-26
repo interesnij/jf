@@ -1,16 +1,13 @@
-<div class="menu-button">
-  <span class="current_stages_title"></span>
-  <img src="/static/images/arrow-drop-down.svg" class="menu-button__drop-down" alt="drop-down">
-</div>
-<div class="menu-dropdown" style="width: 216px;">
-  <% for object in object_list.iter() { %>
-    <div class="menu-item active" data-id="<%= object.id %>" style="width: 200px;"><%= object.title %></div>
-  <% } %>
-
-  <!--
-  <div class="menu-item d-flex cursor-pointer">
-    <img src="/static/images/plus_green.svg" alt="plus" class="my-auto mr-1" style="width: 16px;">
-    <div>Create matter stage</div>
-  </div>
-  -->
-</div>
+<% for object in object_list.iter() { %>
+    <div class="folder-item matter-stage-item folder-item--with-separator">
+        <div class="matter-stage-item__title"><%= object.title %></div>
+        <div class="matter-stage-item__action">
+            <button class="matter-stage-item__icon-button ml-auto delete_stage" data-pk="<%= object.id %>">
+                <img src="/static/images/delete_green.svg" alt="icon">
+            </button>
+            <button class="matter-stage-item__icon-button ml-3 edit_stage" data-pk="<%= object.id %>">
+                <img src="/static/images/edit.svg" alt="icon">
+            </button>
+        </div>
+    </div>
+<% } %>

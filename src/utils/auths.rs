@@ -36,7 +36,7 @@ pub struct StateData {
 pub struct StageData {
     pub id:    i32,
     pub title: String,
-}
+} 
 #[derive(Debug, Deserialize)]
 pub struct SmallCityData {
     pub id:   i32,

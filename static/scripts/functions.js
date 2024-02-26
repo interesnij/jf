@@ -244,6 +244,10 @@ function load_data(number, w_block) {
     block = w_block.querySelector(".load_content1");
     number = number + 1;
   }
+  if (!block) {
+    block = w_block.querySelector(".load_content2");
+    number = number + 2;
+  }
   if (block) {
     if (block.childNodes.length) {
       return

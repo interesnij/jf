@@ -16,7 +16,7 @@
             <img src="/static/images/nav_clients.svg" alt="">
             <span>Leads &amp; Clients</span>
         </a>
-        <a class="navbar__item documents ripple-effect ripple-effect-to-right ajax" href="/attorney/documents">
+        <a class="navbar__item documents ripple-effect ripple-effect-to-right ajax" href="/documents">
             <img src="/static/images/nav_document.svg" alt="">
             <span>Documents</span>
         </a>

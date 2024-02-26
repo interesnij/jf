@@ -35,7 +35,7 @@ pub fn attorneys_routes(config: &mut web::ServiceConfig) {
     config.route("/attorney/invoices", web::get().to(attorney_invoices_page));
     config.route("/attorney/billing", web::get().to(attorney_billing_page));
     config.route("/attorney/documents/templates", web::get().to(attorney_templates_page));
-    config.route("/attorney/documents", web::get().to(attorney_documents_page)); 
+    config.route("/documents", web::get().to(documents_page)); 
 
     config.route("/attorney/contacts", web::get().to(attorney_contacts_page));
 
@@ -1505,7 +1505,7 @@ pub async fn attorney_templates_page(req: HttpRequest) -> actix_web::Result<Http
     }
 }
 
-pub async fn attorney_documents_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
+pub async fn documents_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let user_some = get_request_user(&req);
     if user_some.is_some() { 
         let request_user = user_some.unwrap();
@@ -1513,7 +1513,7 @@ pub async fn attorney_documents_page(req: HttpRequest) -> actix_web::Result<Http
         let l = 2;
         let title: String; 
         let description: String;
-        let link = "/attorney/documents".to_string();
+        let link = "/documents".to_string();
         let image = crate::utils::get_default_image();
         if l == 2 {
             title = "Documents".to_string();

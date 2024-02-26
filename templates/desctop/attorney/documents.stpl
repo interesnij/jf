@@ -4,12 +4,14 @@
   <div tabindex="-1" style="outline: none;">
     <div class="documents-page">
       <div class="tab-control">
-        <a href="/attorney/documents/documents" class="ajax">
+        <a href="/documents/documents" class="ajax">
           <div class="tab-control__item tab-control__item--active"><span>Documents</span></div>
         </a>
-        <a href="/attorney/documents/templates" class="ajax">
-          <div class="tab-control__item"><span>Templates</span></div>
-        </a>
+        <% if request_user.user_type != "client".to_string() { %>
+          <a href="/attorney/documents/templates" class="ajax">
+            <div class="tab-control__item"><span>Templates</span></div>
+          </a>
+        <% } %>
       </div>
       <div class="documents-page__main">
         <div class="documents-page__bar">
@@ -79,7 +81,7 @@
 
         <div class="my-documents-page__content">
           <span class="load_content" data-link="/load/documents?search=&limit=10&offset=0&is_template=false&is_parent=true&ordering=-modified&is_vault=false"></span>
-        </div>
+        </div> 
       </div>
     </div>
   </div>
