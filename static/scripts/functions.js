@@ -255,7 +255,7 @@ function load_data(number, w_block) {
     console.log("now search load_content2");
   }
   if (block) {
-    if (block.childNodes.length) {
+    if (block.childNodes.length > 10) {
       console.log("block is not empty");
       console.log("childNodes.length", block.childNodes.length);
       console.log("innerHTML", block.innerHTML);
