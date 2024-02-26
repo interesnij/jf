@@ -236,22 +236,27 @@ function load_data(number, w_block) {
   console.log("start with #" + number);
   if (number == 0) {
     block = w_block.querySelector(".load_content");
+    console.log("search load_content");
   }
   else {
     _class = ".load_content" + number;
     block = w_block.querySelector(_class);
+    console.log("search load_content" + number);
   }
 
   if (!block && number == 0) {
     block = w_block.querySelector(".load_content1");
     number = number + 1;
+    console.log("search load_content1");
   }
   if (!block && number == 1) {
     block = w_block.querySelector(".load_content2");
     number = number + 1;
+    console.log("search load_content2");
   }
   if (block) {
     if (block.childNodes.length) {
+      console.log("block is not empty");
       return
     }
     else {
