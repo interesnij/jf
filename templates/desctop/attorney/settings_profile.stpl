@@ -186,7 +186,7 @@
                   <div class="heading col-12 mt-3">Practice Area</div>
                   <div class="col-12 mt-2">  
                     <div class="text-dark">Select practice areas you want to follow:</div>
-                    <div class="input-control col-md-3 mt-2 load_content3" data-link="/load/specialities?types=many"></div>
+                    <div class="input-control mt-2 load_content3" data-link="/load/specialities?types=many"></div>
                   </div>
                   <div class="col-12 row mt-2">
                     <div class="col-6">
@@ -262,7 +262,7 @@
                     <div class="sc-fbNZge kcjhkj">
                       <div class="flex-1 d-flex">
                         <div class="sc-GTVdH dXaChH">
-                            <input id="u83EpQCPy2G8p_XgO_X1G" pattern="[0-9.]+" placeholder="Enter your hourly rate" value="1.00">
+                            <input id="id_hourly_rate" name="hourly_rate" pattern="[0-9.]+" placeholder="Enter your hourly rate" value="1.00">
                         </div>
                       </div>
                       <div class="sc-gsxoIA kfwLZt">

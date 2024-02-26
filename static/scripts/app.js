@@ -99,7 +99,7 @@ on('body', 'click', '.create_matter', function() {
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
           span.append(elem_);
-          load_data(0, span);
+          load_data(0, elem_);
       } 
     }
     ajax_link.send();
@@ -315,6 +315,7 @@ on('body', 'click', '.profile_settings', function() {
 on('body', 'click', '.account_settings', function() {
   span = document.body.querySelector("#reload"); 
   request_data = localStorage.getItem('request_data');
+  console.log(request_data);
   user_type = request_data.user_type;
   ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
   ajax_link.open( 'GET', "/" + user_type + "/settings/account?ajax=2", true );
