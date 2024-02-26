@@ -39,8 +39,7 @@
       <button class="btn btn--green ripple-effect normal ml-2 my-auto create_invoice"><span>Create Invoice</span></button>
     </div>
   </div>
-  <div class="invoices-page__content load_content" data-link="/load/invoices?limit=10&offset=0&search=&status=&ordering=-modified">
-  </div>
+  <div class="invoices-page__content load_content" data-link="/load/invoices?limit=10&offset=0&search=&status=&ordering=-modified"></div>
 </div>
 
 <% include!("../footer.stpl"); %>

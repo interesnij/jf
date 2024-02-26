@@ -327,6 +327,7 @@ on('body', 'click', '.account_settings', function() {
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
           span.append(elem_);
+          load_data(0, span);
       } 
     }
     ajax_link.send();

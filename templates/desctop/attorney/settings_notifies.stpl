@@ -14,9 +14,11 @@
         <div class="tab-control__item settings_tab_action tab-control__item--active" data-link="/attorney/settings/notifies">
           <span>Notification</span>
         </div>
-        <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/integrations">
+        <!--
+        <div class="tab-control__item settings_tab_action tab-control__item--active" data-link="/attorney/settings/integrations">
           <span>Integrations</span>
         </div>
+        -->
           <div class="tab-control__item settings_tab_action" data-link="/attorney/settings/stages">
             <span>Matter stages</span>
         </div>

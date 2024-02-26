@@ -31,9 +31,11 @@
             <div class="d-flex"></div>
           </div>
           <div class="folder-control__content">
-            <div class="folder-item folder-item--with-separator">
-              <div class="my-4 text-center">No inactive engagements</div>
-            </div>
+              <!-- object -->
+              <div class="folder-item folder-item--with-separator">
+                <div class="my-4 text-center">No inactive engagements</div>
+              </div>
+              <!-- object -->
           </div>
         </div>
       </div>

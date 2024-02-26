@@ -19,9 +19,7 @@
         </div>
       </div>
       <div class="divider"></div>
-      <div class="d-flex flex-column flex-1 pr-2 load_content" data-link="/load/matter_post_comments/?post=<%= post_id %>?matter=<%= matter_id %>"> 
-  
-      </div>
+      <div class="d-flex flex-column flex-1 pr-2 load_content" data-link="/load/matter_post_comments/?post=<%= post_id %>?matter=<%= matter_id %>"></div>
     </div>
   </div>
 </div>

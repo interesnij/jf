@@ -184,29 +184,17 @@
                   <% include!("../generic/items/juri_form.stpl"); %>
 
                   <div class="heading col-12 mt-3">Practice Area</div>
-                  <div class="col-12 mt-2"> 
+                  <div class="col-12 mt-2">  
                     <div class="text-dark">Select practice areas you want to follow:</div>
-                    <div class="row">
-                      <div class="col-md-6 test my-1 d-flex justify-content-between practice-area-item">
-                        <div class="">
-                            <label class="checkbox-component">Accounting Law Practice<input type="checkbox" checked=""><span></span></label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="row">
-                      <div class="col-md-6 my-1 d-flex justify-content-between practice-area-item">
-                        <div class=""><label class="checkbox-component">Other<input type="checkbox" checked=""><span></span></label></div>
-                      </div>
-                    </div>
+                    <div class="input-control col-md-3 mt-2 load_content3" data-link="/load/specialities?types=many"></div>
                   </div>
                   <div class="col-12 row mt-2">
                     <div class="col-6">
                       <div class="d-flex w-100">
                         <div class="input-container flex-1">
-                          <input placeholder="Create Practice Area" type="text">
+                          <input name="title" placeholder="Create Practice Area" type="text">
                         </div>
-                        <div class="sc-iBPTik eyRMPo">Create</div>
+                        <div class="sc-iBPTik eyRMPo pointer create_speciality">Create</div>
                       </div>
                     </div>
                   </div>
@@ -233,11 +221,16 @@
               </div>
               <div class="folder-expandable-content isExpanded mb-4">
                 <div class="row">
-                  <div class="heading col-12">Accepted Appointment Type<span class="text-gray ml-2">Select all that apply</span></div>
+                  <div class="heading col-12">
+                    Accepted Appointment Type<span class="text-gray ml-2">Select all that apply</span></div>
                   <div class="mt-1 d-flex flex-wrap col-12">
                     <div class="d-flex">
-                      <div class="mr-2"><label class="checkbox-component">In person<input type="checkbox" checked=""><span></span></label></div>
-                      <div class="mr-2"><label class="checkbox-component">JusLaw VC<input type="checkbox" checked=""><span></span></label></div>
+                      <div class="mr-2">
+                        <label class="checkbox-component">In person<input type="checkbox" checked=""><span></span></label>
+                      </div>
+                      <div class="mr-2">
+                        <label class="checkbox-component">JusLaw VC<input type="checkbox" checked=""><span></span></label>
+                      </div>
                     </div>
                   </div>
                   <div class="heading mt-3 col-12 ">Fees and Payment *</div>
@@ -341,7 +334,8 @@
                   </div>
                   <div class="col-6">
                     <div class="input-control">
-                      <div class="position-relative"><input id="tax_rate" placeholder="0.00" type="text" class="active" value="7.0000">
+                      <div class="position-relative">
+                        <input name="tax_rate" id="id_tax_rate" placeholder="0.00" type="text" class="active" value="7.0000">
                         <div class="input-control__addon"><span class="input-control__addon-label">%</span></div>
                       </div>
                       <div class="input-control__footer"></div>
@@ -349,16 +343,18 @@
                   </div>
                   <div class="col-12 mt-3">*The amount shown under Fee Type is equivalent to the “composite rate.” Composite Rate = Attorney Legal Fees + Separate and Standalone 5% JusLaw Management Fee. This formula applies to hourly, flat, hourly, contingency, and other rates on our platform.</div>
                 </div>
+                <!--
                 <div class="d-flex mt-3 mb-4">
                   <div class="folder-expandable__btn ml-auto">Collapse all</div>
                 </div>
+                -->
               </div>
             </div>
             <div class="full-modal__footer">
                 <button class="btn btn--white ripple-effect large ml-auto close_full_modal" type="button">
                     <span>Cancel</span>
                 </button>
-                <button class="btn btn--yellow ripple-effect large ml-3" type="button">
+                <button class="btn btn--yellow ripple-effect large ml-3 update_settings_profile" type="button">
                     <span>Save</span>
                 </button>
             </div>

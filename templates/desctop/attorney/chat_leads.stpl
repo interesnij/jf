@@ -51,8 +51,7 @@
             </div>
           </div>
         </div>
-        <div class="chat-sidebar__content d-flex flex-column load_content" data-link="/load/chats?ordering=-created&chat_type=leads">
-        </div>
+        <div class="chat-sidebar__content d-flex flex-column load_content" data-link="/load/chats?ordering=-created&chat_type=leads"></div>
       </div>
       <div class="m-auto d-flex">
         <p class="light-grey-text">Channel not selected</p>

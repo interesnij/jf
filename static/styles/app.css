@@ -8,6 +8,9 @@
   right: 40px;
   z-index: 9999;
 }
+.max_width_mode .recent-post {
+  width: 100%;
+}
 .toast {
 width: 100%;
 padding: 10px;

@@ -61,9 +61,7 @@
       </div>
     </div>
   </div>
-  <div class="billings-page__content load_content" data-link="/load/billing?offset=0&limit=10&search=&billing_type=&is_billable=&ordering=-modified">
-    
-  </div> 
+  <div class="billings-page__content load_content" data-link="/load/billing?offset=0&limit=10&search=&billing_type=&is_billable=&ordering=-modified"></div> 
 </div>
 
 <% include!("../footer.stpl"); %>

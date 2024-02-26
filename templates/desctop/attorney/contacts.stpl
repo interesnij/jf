@@ -41,10 +41,8 @@
         <img src="/static/images/plus_white.svg" alt="plus">
         <span>New Contact</span>
       </button>
-    </div> 
-    <div class="contacts-page__content load_content" data-link="/load/industry_contacts?search=&offset=0&limit=20&type=">
-
     </div>
+    <div class="contacts-page__content load_content" data-link="/load/industry_contacts?search=&offset=0&limit=20&type="></div>
   </div>
 </div>
 

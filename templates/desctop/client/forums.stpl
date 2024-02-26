@@ -34,10 +34,8 @@
               <div class="d-flex"></div>
             </div> 
 
-            <div class="folder-control__content">
-              <div class="d-flex load_content1" data-link="/load/posts?ordering=-modified&limit=3">
-
-              </div>
+            <div class="folder-control__content max_width_mode">
+              <div class="d-flex load_content" data-link="/load/posts?ordering=-modified&limit=3"></div>
             </div> 
 
           </div>
@@ -50,7 +48,7 @@
               <div class="d-flex"></div>
             </div>
             <div class="folder-control__content">
-              <span class="load_content2" data-link="/load/topics?ordering=title&limit=10&offset=0"></span>
+              <span class="load_content1" data-link="/load/topics?ordering=title&limit=10&offset=0"></span>
             </div> 
           </div>
         </div>

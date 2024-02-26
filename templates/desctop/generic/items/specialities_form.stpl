@@ -8,7 +8,7 @@
             </label>
         </div>
     <% } %>
-</div>
+</div> 
 
 <% } else { %>
     <input type="text" name="speciality" list="speciality_list" id="id_speciality">
