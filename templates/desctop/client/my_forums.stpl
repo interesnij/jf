@@ -62,7 +62,7 @@
             </div> 
           </div>
 
-          <span data-link="/load/posts?ordering=-modified&author=<%= request_user.user_id %>"></span>
+          <span class="load_content" data-link="/load/posts?ordering=-modified&author=<%= request_user.user_id %>"></span>
           
         </div>
       </div>

@@ -27,7 +27,7 @@
                 <div class="menu-item select_content active" 
                     data-link="/load/documents/folders?ordering=&matter=<%= matter_id %>&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
                     style="width: 160px;">
-                    All
+                    All 
                 </div>
                 <div class="menu-item select_content"
                     data-link="/load/documents/folders?ordering=&matter=<%= matter_id %>&limit=10&offset=0&is_template=false&is_vault=false&is_parent=true"
