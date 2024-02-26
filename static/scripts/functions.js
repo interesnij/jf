@@ -257,6 +257,8 @@ function load_data(number, w_block) {
   if (block) {
     if (block.childNodes.length) {
       console.log("block is not empty");
+      console.log("childNodes.length", block.childNodes.length);
+      console.log("innerHTML", block.innerHTML);
       return
     }
     else {
