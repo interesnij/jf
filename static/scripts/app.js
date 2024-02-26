@@ -307,6 +307,7 @@ on('body', 'click', '.profile_settings', function() {
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
           span.append(elem_);
+          load_data(0, span);
       } 
     }
     ajax_link.send();
@@ -503,7 +504,6 @@ on('body', 'click', '.add_firm_location_form', function() {
 on('body', 'click', '.add_education_form', function() {
   block = this.parentElement.previousElementSibling;
   block.innerHTML = '<div class="d-flex w-100 col-12 mt-0"><div class="flex-1"><div class="row"><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Law school / Graduate Institute</label></div><input name="school"  class="school" placeholder="Enter a school / graduate institute name" type="text" class="school active"><div class="input-control__footer"></div></div><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Years</label></div><input name="year" placeholder="Enter number of years" type="number" class="active year" value="1"><div class="input-control__footer"></div></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
-  //load_data(1, block);
 });
 
 on('body', 'click', '.select-control__menu-item', function() {
