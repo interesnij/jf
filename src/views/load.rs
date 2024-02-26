@@ -283,7 +283,9 @@ pub async fn stages_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("types needed"))
+    else {
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body("types needed"))
+    }
 }
 
 //////////////////////

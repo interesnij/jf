@@ -1,4 +1,4 @@
-<% for object in object_list.iter() { %>
+<% for object in stages_list.iter() { %>
     <div class="folder-item matter-stage-item folder-item--with-separator">
         <div class="matter-stage-item__title"><%= object.title %></div>
         <div class="matter-stage-item__action">
