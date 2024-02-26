@@ -307,7 +307,7 @@ on('body', 'click', '.profile_settings', function() {
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
           span.append(elem_);
-          load_data(0, span);
+          load_data(0, elem_);
       } 
     }
     ajax_link.send();
@@ -326,7 +326,7 @@ on('body', 'click', '.account_settings', function() {
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
           span.append(elem_);
-          load_data(0, span);
+          load_data(0, elem_);
       } 
     }
     ajax_link.send();
