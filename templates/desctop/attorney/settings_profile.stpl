@@ -300,7 +300,7 @@
                             <!-- active languages -->
                           <div class="multi-select-control__item">
                             <span class="my-auto">English</span>
-                            <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close close_modal">
+                            <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close">
                           </div>  
                           <!-- active languages -->
                         </div>

@@ -1,7 +1,6 @@
 <% include!("../header.stpl"); %>
 
-<div class="login-page d-flex flex-column">
-   <img src="/static/images/logo.svg" alt="logo" class="login-page__logo">
+<div class="d-flex flex-column">
    <div class="sc-xyEDr kcRhmt">
       <h1 class="mb-2 mt-0">JusLaw Privacy Policy</h1>
       <div class="mt-0 text-center">Effective Date: April 28, 2023</div>

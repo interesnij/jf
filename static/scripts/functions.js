@@ -232,6 +232,8 @@ function load_contentt(block) {
 }
 
 function load_data(number, w_block) {
+  console.log("=====================");
+  console.log("start with #" + number);
   if (number == 0) {
     block = w_block.querySelector(".load_content");
   }
@@ -240,13 +242,13 @@ function load_data(number, w_block) {
     block = w_block.querySelector(_class);
   }
 
-  if (!block) {
+  if (!block && number == 0) {
     block = w_block.querySelector(".load_content1");
     number = number + 1;
   }
-  if (!block) {
+  if (!block && number == 1) {
     block = w_block.querySelector(".load_content2");
-    number = number + 2;
+    number = number + 1;
   }
   if (block) {
     if (block.childNodes.length) {

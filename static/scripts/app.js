@@ -313,13 +313,11 @@ on('body', 'click', '.profile_settings', function() {
 });
 on('body', 'click', '.account_settings', function() {
   span = document.body.querySelector("#reload"); 
-  if (localStorage.getItem('request_data') !== null) {
-    request_data = localStorage.getItem('request_data');
-    ajax_link.setRequestHeader('Request-Data', request_data);
-    user_type = request_data.user_type;
-  }
+  request_data = localStorage.getItem('request_data');
+  user_type = request_data.user_type;
   ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
   ajax_link.open( 'GET', "/" + user_type + "/settings/account?ajax=2", true );
+  ajax_link.setRequestHeader('Request-Data', request_data);
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
    
   ajax_link.onreadystatechange = function () {
