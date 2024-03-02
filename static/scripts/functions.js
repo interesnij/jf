@@ -458,8 +458,9 @@ function get_active_button() {
       ajax_link.open( 'GET', url + "?ajax=1", true );
       ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       if (localStorage.getItem('request_data') !== null) {
-        console.log("request_data exists");
-        ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
+        data = JSON.parse(localStorage.getItem('request_data'));
+        ajax_link.setRequestHeader('Request-Data', data);
+        console.log("request data" , data);
       } 
       ajax_link.onreadystatechange = function () { 
         if ( this.readyState == 4 && this.status == 200 ) {
