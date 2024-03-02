@@ -449,7 +449,8 @@ function get_active_button() {
     url = window.location.href;
     
     if (url == "https://app2.juslaw.com/" && localStorage.getItem('request_data') !== null) {
-        loc = JSON.parse(localStorage.getItem('request_data'));
+        //loc = JSON.parse(localStorage.getItem('request_data'));
+        loc = localStorage.getItem('request_data');
         url = "https://app2.juslaw.com/" + loc.user_type + "/overview";
         console.log("url", url);
     }
