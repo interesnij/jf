@@ -587,7 +587,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   _phone.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
   _phone.nextElementSibling.innerHTML = "";
 
-  _attachments.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+  _attachments.parentElement.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
   _attachments.parentElement.querySelector(".attachments_error").innerHTML = "";
 
   try {
