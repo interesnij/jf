@@ -554,6 +554,7 @@ on('body', 'change', '#id_attachments', function() {
   }
 }); 
 
+
 on('body', 'click', '.register_final_attorney_btn', function() {
   if (localStorage.getItem("reg_step_1") === null) {
     back_register_1_step_low("/auth/register/attorney");
@@ -609,45 +610,51 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   } catch { null }
   /////
 
+  let is_error = false;
   if (!_first_name.value){
     _first_name.style.border = "1px #FF0000 solid";
     _first_name.nextElementSibling.innerHTML = "First Name is required";
-    return
-  } else if (!_last_name.value){
+    is_error = true;
+  };
+  if (!_last_name.value){
     _last_name.style.border = "1px #FF0000 solid";
     _last_name.nextElementSibling.innerHTML = "Last Name is required";
-    return
-  }
-  else if (!_phone.value){
+    is_error = true;
+  };
+  if (!_phone.value){
     _phone.style.border = "1px #FF0000 solid";
     _phone.nextElementSibling.innerHTML = "Phone is required";
-    return
-  }
-  else if (!_attachments.value){
+    is_error = true;
+  };
+  if (!_attachments.value){
     parent = _attachments.parentElement;
     parent.style.border = "1px #FF0000 solid";
     parent.querySelector(".attachments_error").innerHTML = "Registration Attachments is required";
-    return
-  }
-  else if (!_jurisdictions_countries[0].value){
+    is_error = true;
+  };
+  if (!_jurisdictions_countries[0].value){
     _jurisdictions_countries[0].style.border = "1px #FF0000 solid";
     _jurisdictions_countries[0].nextElementSibling.nextElementSibling.innerHTML = "Jurisdiction Country is required";
-    return
-  }
-  else if (!_jurisdictions_states[0] || !_jurisdictions_states[0].value){
+    is_error = true;
+  };
+  if (!_jurisdictions_states[0] || !_jurisdictions_states[0].value){
     _jurisdictions_states[0].style.border = "1px #FF0000 solid";
     _jurisdictions_states[0].nextElementSibling.nextElementSibling.innerHTML = "Jurisdiction State is required";
-    return
-  }
-  else if (!_jurisdictions_numbers[0].value){
+    is_error = true;
+  };
+  if (!_jurisdictions_numbers[0].value){
     _jurisdictions_numbers[0].style.border = "1px #FF0000 solid";
     _jurisdictions_numbers[0].nextElementSibling.innerHTML = "Jurisdiction Registration Number is required";
-    return
-  }
-  else if (!_jurisdictions_years[0].value){
+    is_error = true;
+  };
+  if (!_jurisdictions_years[0].value){
     _jurisdictions_years[0].style.border = "1px #FF0000 solid";
     _jurisdictions_years[0].nextElementSibling.innerHTML = "Jurisdiction Year Admitted is required";
-    return
+    is_error = true;
+  };
+
+  if (is_error = true) {
+    return;
   }
 
   jurisdictions = [];
