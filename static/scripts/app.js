@@ -664,7 +664,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
 
   jurisdictions = [];
   for (let i = 0; i < _jurisdictions_numbers.length; i++) {
-    try {
+    //try {
       let country, state, number, year;
       country = _jurisdictions_countries[i].getAttribute("data-pk");
       state = _jurisdictions_states[i].getAttribute("data-pk");
@@ -676,16 +676,16 @@ on('body', 'click', '.register_final_attorney_btn', function() {
         number: number, 
         year: year
       });
-    } catch { null }
+    //} catch { null }
   };
 
+  files = send_files(_attachments);
   console.log("_jurisdictions_numbers ", _jurisdictions_numbers);
   console.log("_jurisdictions_numbers length ", _jurisdictions_numbers.length);
   console.log("jurisdictions ", jurisdictions);
   console.log("files ", files);
   return
 
-  files = send_files(_attachments);
   is_disciplined = false;
   if(form.querySelector('#disciplined_true').checked) {
     is_disciplined = true;
