@@ -73,6 +73,7 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
     let user_some = get_request_user(&req);
     let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
     if user_some.is_some() {
+        println!("user is auth!");
         let request_user = user_some.unwrap();
         
         let l = 2;
@@ -222,6 +223,7 @@ pub async fn attorney_overview_page(req: HttpRequest) -> actix_web::Result<HttpR
         }
     }
     else {
+        println!("user is anon!");
         crate::views::login_page(req).await
     }
 }
