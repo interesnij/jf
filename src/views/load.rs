@@ -31,7 +31,7 @@ pub fn load_routes(config: &mut web::ServiceConfig) {
     //config.route("/load/topics", web::get().to(topics_load));
     config.route("/load/clients", web::get().to(clients_load));
     config.route("/load/attorneys", web::get().to(attorneys_load));
-}
+} 
 
 
 #[derive(Debug, Deserialize)]
@@ -499,19 +499,53 @@ pub async fn clients_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
         users_list = Vec::new();
     }
 
-    #[derive(TemplateOnce)]
-    #[template(path = "desctop/generic/items/users_form.stpl")]
-    pub struct Template {
-        users_list: Vec<RequestClient>,
-        types:      String,
+    if types == "single_form".to_string() { 
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/generic/items/users_single_form.stpl")]
+        pub struct Template {
+            users_list: Vec<RequestClient>,
+        }
+        let body = Template {
+            users_list: users_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
-    let body = Template {
-        users_list: users_list,
-        types:      types,
+    else if types == "many_form".to_string() { 
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/generic/items/users_many_form.stpl")]
+        pub struct Template {
+            users_list: Vec<RequestClient>,
+        }
+        let body = Template {
+            users_list: users_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    else {
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/load/leads_and_clients.stpl")]
+        pub struct Template {
+            request_user: AuthResponseData,
+            count:        i32,
+            next:         Option<String>,
+            page_count:   i32,
+            users_list:   Vec<RequestClient>,
+        }
+        let body = Template {
+            request_user: request_user,
+            count:        count,
+            next:         next,
+            page_count:   page_count,
+            users_list:   users_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
 }
 
 //////////////////////
@@ -560,17 +594,51 @@ pub async fn attorneys_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
         users_list = Vec::new();
     }
 
-    #[derive(TemplateOnce)]
-    #[template(path = "desctop/generic/items/users_form.stpl")]
-    pub struct Template {
-        users_list: Vec<RequestAttorney>,
-        types:      String,
+    if types == "single_form".to_string() { 
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/generic/items/users_single_form.stpl")]
+        pub struct Template {
+            users_list: Vec<RequestAttorney>,
+        }
+        let body = Template {
+            users_list: users_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
-    let body = Template {
-        users_list: users_list,
-        types:      types,
+    else if types == "many_form".to_string() { 
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/generic/items/users_many_form.stpl")]
+        pub struct Template {
+            users_list: Vec<RequestAttorney>,
+        }
+        let body = Template {
+            users_list: users_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
     }
-    .render_once()
-    .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
-    Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    else {
+        #[derive(TemplateOnce)]
+        #[template(path = "desctop/load/leads_and_clients.stpl")]
+        pub struct Template {
+            request_user: AuthResponseData,
+            count:        i32,
+            next:         Option<String>,
+            page_count:   i32,
+            users_list:   Vec<RequestAttorney>,
+        }
+        let body = Template {
+            request_user: request_user,
+            count:        count,
+            next:         next,
+            page_count:   page_count,
+            users_list:   users_list,
+        }
+        .render_once()
+        .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+        Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+    }
 }
