@@ -345,37 +345,41 @@ function get_register_2_step_low(url) {
     _password1 = form.querySelector("#id_password");
     _password2 = form.querySelector("#id_password2");
 
-    _email.style.setProperty('border', 'inherit', 'important');
+    _email.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
     _email.nextElementSibling.innerHTML = "";
 
-    _password1.style.setProperty('border', 'inherit', 'important');
+    _password1.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
     _password1.nextElementSibling.innerHTML = "";
 
-    _password2.style.setProperty('border', 'inherit', 'important');
+    _password2.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
     _password2.nextElementSibling.innerHTML = "";
 
+    let is_error = false;
     if (!_email.value){
       _email.style.border = "1px #FF0000 solid";
       _email.nextElementSibling.innerHTML = "Email is required";
-      return
-    } else if (!_password1.value){
+      is_error = true;
+    };
+    if (!_password1.value){
       _password1.style.border = "1px #FF0000 solid";
       _password1.nextElementSibling.innerHTML = "Password is required";
-      return
-    }
-    else if (!_password2.value){
+      is_error = true;
+    };
+    if (!_password2.value){
       _password2.style.border = "1px #FF0000 solid";
       _password2.nextElementSibling.innerHTML = "Repeat the password";
-      return
-    }
+      is_error = true;
+    };
 
-    else if (_password1.value != _password2.value){
+    if (_password1.value != _password2.value){
       _password1.style.border = "1px #FF0000 solid";
       _password2.style.border = "1px #FF0000 solid";
       _password2.nextElementSibling.innerHTML = "Passwords must match";
       return 
-    }
-
+    };
+    if (is_error) {
+      return
+    };
     tObject = { 'email': _email.value, 'password': _password1.value};
     localStorage.setItem('reg_step_1', JSON.stringify(tObject));
     ajax_get_reload(url, true, 2);
@@ -620,7 +624,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     _last_name.style.border = "1px #FF0000 solid";
     _last_name.nextElementSibling.innerHTML = "Last Name is required";
     is_error = true;
-  };
+  }; 
   if (!_phone.value){
     _phone.style.border = "1px #FF0000 solid";
     _phone.nextElementSibling.innerHTML = "Phone is required";
@@ -634,27 +638,27 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   };
   if (!_jurisdictions_countries[0].value){
     _jurisdictions_countries[0].style.border = "1px #FF0000 solid";
-    _jurisdictions_countries[0].nextElementSibling.nextElementSibling.innerHTML = "Jurisdiction Country is required";
+    _jurisdictions_countries[0].nextElementSibling.nextElementSibling.innerHTML = "Country is required";
     is_error = true;
   };
   console.log(_jurisdictions_states[0]);
   if (_jurisdictions_states[0] != undefined && !_jurisdictions_states[0].value){
     _jurisdictions_states[0].style.border = "1px #FF0000 solid";
-    _jurisdictions_states[0].nextElementSibling.nextElementSibling.innerHTML = "Jurisdiction State is required";
+    _jurisdictions_states[0].nextElementSibling.nextElementSibling.innerHTML = "State is required";
     is_error = true;
   };
   if (!_jurisdictions_numbers[0].value){
     _jurisdictions_numbers[0].style.border = "1px #FF0000 solid";
-    _jurisdictions_numbers[0].nextElementSibling.innerHTML = "Jurisdiction Registration Number is required";
+    _jurisdictions_numbers[0].nextElementSibling.innerHTML = "Registration Number is required";
     is_error = true;
   };
   if (!_jurisdictions_years[0].value){
     _jurisdictions_years[0].style.border = "1px #FF0000 solid";
-    _jurisdictions_years[0].nextElementSibling.innerHTML = "Jurisdiction Year Admitted is required";
+    _jurisdictions_years[0].nextElementSibling.innerHTML = "Year Admitted is required";
     is_error = true;
   };
 
-  if (is_error = true) {
+  if (is_error) {
     return;
   }
 
