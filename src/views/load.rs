@@ -532,7 +532,6 @@ pub async fn clients_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
             users_list:   Vec<RequestAttorney>,
         }
         let body = Template {
-            request_user: request_user,
             users_list:   users_list,
         }
         .render_once()
@@ -620,7 +619,6 @@ pub async fn attorneys_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
             users_list:   Vec<RequestAttorney>,
         }
         let body = Template {
-            request_user: request_user,
             users_list:   users_list,
         }
         .render_once()
