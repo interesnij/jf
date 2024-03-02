@@ -4499,12 +4499,13 @@ line-height: 18px;
 color: #98989A;
 }
 .input-control__footer {
-margin-top: 4px;
-font-size: 12px;
-line-height: 18px;
-width: 100%;
-display: flex;
-justify-content: space-between;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 18px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #FF0000 !important
 }
 .input-control__help {
 color: #616161;

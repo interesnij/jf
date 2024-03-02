@@ -2,8 +2,10 @@
 
 <div class="d-flex justify-content-between">
    <label for="attachments" class="upload-control__label">Attachment</label>
+   
 </div> 
 <div class="dropzone" style="border: 1px solid rgb(224, 224, 225);">
+   <label style="color: #FF0000" class="attachments_error"></label>
    <div class="d-flex flex-wrap files_container">
       <span></span>
       <!-- added file -->

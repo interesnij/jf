@@ -29,19 +29,17 @@ on('body', 'click', '.profile-drop-down', function() {
 on('body', 'click', '#logg', function() {
   _this = this;
   form = _this.parentElement.parentElement; 
-  response1 = form.querySelector(".api_response1");
-  response2 = form.querySelector(".api_response2");
+  email = form.querySelector("#id_email");
+  password = form.querySelector("#id_password");
 
-  if (!form.querySelector("#id_email").value){
-    form.querySelector("#id_email").style.border = "1px #FF0000 solid";
-    response1.innerHTML = "Enter your email!";
-    response1.classList.add("error");
+  if (!email.value){
+    email.style.border = "1px #FF0000 solid";
+    email.nextElementSibling.innerHTML = "Enter your email!";
     return
   }
-  else if (!form.querySelector("#id_password").value){
-    form.querySelector("#id_password").style.border = "1px #FF0000 solid";
-    response2.innerHTML = "Enter the password!";
-    response2.classList.add("error")
+  else if (!password.value){
+    password.style.border = "1px #FF0000 solid";
+    password.nextElementSibling.innerHTML = "Enter the password!";
     return
   }
   else {
@@ -348,29 +346,34 @@ function get_register_2_step_low(url) {
     _password2 = form.querySelector("#id_password2");
 
     _email.style.setProperty('border', 'inherit', 'important');
+    _email.nextElementSibling.innerHTML = "";
+
     _password1.style.setProperty('border', 'inherit', 'important');
+    _password1.nextElementSibling.innerHTML = "";
+
     _password2.style.setProperty('border', 'inherit', 'important');
+    _password2.nextElementSibling.innerHTML = "";
 
     if (!_email.value){
       _email.style.border = "1px #FF0000 solid";
-      toast_error("Email is required");
+      _email.nextElementSibling.innerHTML = "Email is required";
       return
     } else if (!_password1.value){
       _password1.style.border = "1px #FF0000 solid";
-      toast_error("Password is required");
+      _password1.nextElementSibling.innerHTML = "Password is required";
       return
     }
     else if (!_password2.value){
       _password2.style.border = "1px #FF0000 solid";
-      toast_error("Password is required");
+      _password2.nextElementSibling.innerHTML = "Repeat the password";
       return
     }
 
     else if (_password1.value != _password2.value){
       _password1.style.border = "1px #FF0000 solid";
       _password2.style.border = "1px #FF0000 solid";
-      toast_error("Passwords must match");
-      return
+      _password2.nextElementSibling.innerHTML = "Passwords must match";
+      return 
     }
 
     tObject = { 'email': _email.value, 'password': _password1.value};
@@ -578,73 +581,86 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   _first_name.nextElementSibling.innerHTML = "";
   
   _last_name.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+  _last_name.nextElementSibling.innerHTML = "";
+
   _phone.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+  _phone.nextElementSibling.innerHTML = "";
+
   _attachments.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+  _attachments.parentElement.querySelector(".attachments_error").innerHTML = "";
+
   try {
       for (let i = 0; i < _jurisdictions_countries.length; i++) {
         _jurisdictions_countries[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+        _jurisdictions_countries[0].nextElementSibling.nextElementSibling.innerHTML = "";
       }
       for (let i = 0; i < _jurisdictions_numbers.length; i++) {
         _jurisdictions_numbers[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+        _jurisdictions_numbers[0].nextElementSibling.innerHTML = "";
       }
       for (let i = 0; i < _jurisdictions_years.length; i++) {
         _jurisdictions_years[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+        _jurisdictions_years[0].nextElementSibling.innerHTML = "";
       }
       for (let i = 0; i < _jurisdictions_states.length; i++) {
         _jurisdictions_states[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+        _jurisdictions_states[0].nextElementSibling.nextElementSibling.innerHTML = "";
       }
   } catch { null }
   /////
 
   if (!_first_name.value){
     _first_name.style.border = "1px #FF0000 solid";
-    //toast_error("First Name is required");
     _first_name.nextElementSibling.innerHTML = "First Name is required";
     return
   } else if (!_last_name.value){
     _last_name.style.border = "1px #FF0000 solid";
-    toast_error("Last Name is required");
+    _last_name.nextElementSibling.innerHTML = "Last Name is required";
     return
   }
   else if (!_phone.value){
     _phone.style.border = "1px #FF0000 solid";
-    toast_error("Phone is required");
+    _phone.nextElementSibling.innerHTML = "Phone is required";
     return
   }
   else if (!_attachments.value){
-    _attachments.parentElement.style.border = "1px #FF0000 solid";
-    toast_error("Registration Attachments is required");
+    parent = _attachments.parentElement;
+    parent.style.border = "1px #FF0000 solid";
+    parent.querySelector(".attachments_error").innerHTML = "Registration Attachments is required";
     return
   }
   else if (!_jurisdictions_countries[0].value){
-    _jurisdictions_countries[0].value.style.border = "1px #FF0000 solid";
-    toast_error("Jurisdiction Country is required");
+    _jurisdictions_countries[0].style.border = "1px #FF0000 solid";
+    _jurisdictions_countries[0].nextElementSibling.nextElementSibling.innerHTML = "Jurisdiction Country is required";
+    return
+  }
+  else if (!_jurisdictions_states[0] || !_jurisdictions_states[0].value){
+    _jurisdictions_states[0].style.border = "1px #FF0000 solid";
+    _jurisdictions_states[0].nextElementSibling.nextElementSibling.innerHTML = "Jurisdiction State is required";
     return
   }
   else if (!_jurisdictions_numbers[0].value){
-    _jurisdictions_numbers[0].value.style.border = "1px #FF0000 solid";
-    toast_error("Jurisdiction Registration Number is required");
+    _jurisdictions_numbers[0].style.border = "1px #FF0000 solid";
+    _jurisdictions_numbers[0].nextElementSibling.innerHTML = "Jurisdiction Registration Number is required";
     return
   }
   else if (!_jurisdictions_years[0].value){
-    _jurisdictions_years[0].value.style.border = "1px #FF0000 solid";
-    toast_error("Jurisdiction Year Admitted is required");
+    _jurisdictions_years[0].style.border = "1px #FF0000 solid";
+    _jurisdictions_years[0].nextElementSibling.innerHTML = "Jurisdiction Year Admitted is required";
     return
   }
 
   jurisdictions = [];
   for (let i = 0; i < _jurisdictions_numbers.length; i++) {
     try {
-      let country, state, city, number, year;
+      let country, state, number, year;
       country = _jurisdictions_countries[i].value;
       state = _jurisdictions_states[i].value;
-      city = _jurisdictions_cities[i].value;
       number = _jurisdictions_numbers[i].value;
       year = _jurisdictions_years[i].value;
       jurisdictions.append({
         country: country, 
         state: state,
-        city: city,
         number: number, 
         year: year
       });
