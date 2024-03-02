@@ -458,7 +458,7 @@ function get_active_button() {
       ajax_link.open( 'GET', url + "?ajax=1", true );
       ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', JSON.stringify(localStorage.getItem('request_data')));
+        ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
       }
       ajax_link.onreadystatechange = function () { 
         if ( this.readyState == 4 && this.status == 200 ) {
