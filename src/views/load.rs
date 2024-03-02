@@ -527,19 +527,12 @@ pub async fn clients_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     }
     else {
         #[derive(TemplateOnce)]
-        #[template(path = "desctop/load/leads_and_clients.stpl")]
+        #[template(path = "desctop/load/users_single_form.stpl")]
         pub struct Template {
-            request_user: AuthResponseData,
-            count:        i32,
-            next:         Option<String>,
-            page_count:   i32,
-            users_list:   Vec<RequestClient>,
+            users_list:   Vec<RequestAttorney>,
         }
         let body = Template {
             request_user: request_user,
-            count:        count,
-            next:         next,
-            page_count:   page_count,
             users_list:   users_list,
         }
         .render_once()
@@ -622,19 +615,12 @@ pub async fn attorneys_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
     }
     else {
         #[derive(TemplateOnce)]
-        #[template(path = "desctop/load/leads_and_clients.stpl")]
+        #[template(path = "desctop/load/users_single_form.stpl")]
         pub struct Template {
-            request_user: AuthResponseData,
-            count:        i32,
-            next:         Option<String>,
-            page_count:   i32,
             users_list:   Vec<RequestAttorney>,
         }
         let body = Template {
             request_user: request_user,
-            count:        count,
-            next:         next,
-            page_count:   page_count,
             users_list:   users_list,
         }
         .render_once()
