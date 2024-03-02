@@ -679,9 +679,10 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     } catch { null }
   };
 
-  console.log("_jurisdictions_numbers", _jurisdictions_numbers);
-  console.log("_jurisdictions_numbers length", _jurisdictions_numbers.length);
-  console.log("jurisdictions", jurisdictions);
+  console.log("_jurisdictions_numbers ", _jurisdictions_numbers);
+  console.log("_jurisdictions_numbers length ", _jurisdictions_numbers.length);
+  console.log("jurisdictions ", jurisdictions);
+  console.log("files ", files);
   return
 
   files = send_files(_attachments);
