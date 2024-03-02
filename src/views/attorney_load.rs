@@ -141,7 +141,7 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
                 users_list: Vec<LeadOrClientData>,
             }
             let body = Template {
-                users_list: users_list,
+                users_list: users_list, 
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
