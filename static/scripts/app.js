@@ -657,7 +657,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     _jurisdictions_years[0].nextElementSibling.innerHTML = "Year Admitted is required";
     is_error = true;
   };
-
+  console.log("is_error", is_error);
   if (is_error) {
     return;
   }
@@ -676,15 +676,9 @@ on('body', 'click', '.register_final_attorney_btn', function() {
         number: number, 
         year: year
       });
-    } catch { 
-      if (i == 0) {
-        return
-      }
-      else {
-        break
-      }
-    }
-  }
+    } catch { null }
+  };
+
 
   files = send_files(_attachments);
 
