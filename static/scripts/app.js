@@ -638,7 +638,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     is_error = true;
   };
   console.log(_jurisdictions_states[0]);
-  if (_jurisdictions_states[0] || !_jurisdictions_states[0].value){
+  if (_jurisdictions_states[0] != undefined && !_jurisdictions_states[0].value){
     _jurisdictions_states[0].style.border = "1px #FF0000 solid";
     _jurisdictions_states[0].nextElementSibling.nextElementSibling.innerHTML = "Jurisdiction State is required";
     is_error = true;
