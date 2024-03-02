@@ -670,7 +670,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
       state = _jurisdictions_states[i].getAttribute("data-pk");
       number = _jurisdictions_numbers[i].value;
       year = _jurisdictions_years[i].value;
-      jurisdictions.append({
+      jurisdictions.push({
         country: country, 
         state: state,
         number: number, 
