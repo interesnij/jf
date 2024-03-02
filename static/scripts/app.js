@@ -73,7 +73,7 @@ on('body', 'click', '.create_contact', function() {
   ajax_link.open( 'GET', "/create/contact?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+      ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -90,7 +90,7 @@ on('body', 'click', '.create_matter', function() {
   ajax_link.open( 'GET', "/create/matter?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+      ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -108,7 +108,7 @@ on('body', 'click', '.create_document', function() {
   ajax_link.open( 'GET', "/create/document?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -125,7 +125,7 @@ on('body', 'click', '.create_expense_entry', function() {
   ajax_link.open( 'GET', "/create/expense_entry?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -142,7 +142,7 @@ on('body', 'click', '.create_time_entry', function() {
   ajax_link.open( 'GET', "/create/time_entry?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -159,7 +159,7 @@ on('body', 'click', '.create_flat_fee', function() {
   ajax_link.open( 'GET', "/create/flat_fee?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -176,7 +176,7 @@ on('body', 'click', '.create_invoice', function() {
   ajax_link.open( 'GET', "/create/invoice?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -193,7 +193,7 @@ on('body', 'click', '.create_template', function() {
   ajax_link.open( 'GET', "/create/template?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -210,7 +210,7 @@ on('body', 'click', '.create_post', function() {
   ajax_link.open( 'GET', "/create/post?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -227,7 +227,7 @@ on('body', 'click', '.create_note', function() {
   ajax_link.open( 'GET', "/create/note?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -244,7 +244,7 @@ on('body', 'click', '.create_invoice', function() {
   ajax_link.open( 'GET', "/create/invoice?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-        ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+    ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
@@ -317,7 +317,7 @@ on('body', 'click', '.account_settings', function() {
   user_type = request_data.user_type;
   ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
   ajax_link.open( 'GET', "/" + user_type + "/settings/account?ajax=2", true );
-  ajax_link.setRequestHeader('Request-Data', request_data);
+  ajax_link.setRequestHeader('Request-Data', JSON.parse(request_data));
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
    
   ajax_link.onreadystatechange = function () {
@@ -736,7 +736,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     ajax_link.open( 'GET', link + "&ajax=2", true );
     ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     if (localStorage.getItem('request_data') !== null) {
-          ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+      ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
     } 
     ajax_link.onreadystatechange = function () {
     if ( this.readyState == 4 && this.status == 200 ) {
@@ -771,7 +771,7 @@ on('body', 'click', '.select_content', function() {
     ajax_link.open( 'GET', link + "&ajax=2", true );
     ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     if (localStorage.getItem('request_data') !== null) {
-          ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
+      ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
     } 
     ajax_link.onreadystatechange = function () {
     if ( this.readyState == 4 && this.status == 200 ) {
