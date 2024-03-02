@@ -494,7 +494,7 @@ function send_files(file_c) {
 
 on('body', 'click', '.add_jurisdiction_form', function() {
   block = this.parentElement.previousElementSibling;
-  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="input-control col-md-3 mt-2 load_content1 load_countries" data-link="/load/countries"></div><div class="select-control col-md-3 mt-2 states_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_number" class="input-control__label">Registration Number</label></div><input name="number" class="id_number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Year Admitted</label></div><input name="year" class="id_year" placeholder="Enter Registration Number" type="number"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="input-control col-md-3 mt-2 load_content1 load_countries" data-link="/load/countries"></div><div class="input-control col-md-3 mt-2 states_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_number" class="input-control__label">Registration Number</label></div><input name="number" class="id_number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Year Admitted</label></div><input name="year" class="id_year" placeholder="Enter Registration Number" type="number"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
   load_data(1, block);
 }); 
 on('body', 'click', '.add_firm_location_form', function() {
@@ -575,7 +575,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
 
   // return normal fields styles 
   _first_name.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-  _first_name.nextElementSibling.innerHTML = "First Name is required";
+  _first_name.nextElementSibling.innerHTML = "";
   
   _last_name.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
   _phone.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
