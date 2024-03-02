@@ -666,8 +666,8 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   for (let i = 0; i < _jurisdictions_numbers.length; i++) {
     try {
       let country, state, number, year;
-      country = _jurisdictions_countries[i].value;
-      state = _jurisdictions_states[i].value;
+      country = _jurisdictions_countries[i].getAttribute("data-pk");
+      state = _jurisdictions_states[i].getAttribute("data-pk");
       number = _jurisdictions_numbers[i].value;
       year = _jurisdictions_years[i].value;
       jurisdictions.append({
@@ -679,8 +679,16 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     } catch { null }
   };
 
+  console.log("_jurisdictions_numbers", _jurisdictions_numbers);
+  console.log("_jurisdictions_numbers length", _jurisdictions_numbers.length);
+  console.log("jurisdictions", jurisdictions);
+  return
 
   files = send_files(_attachments);
+  is_disciplined = false;
+  if(form.querySelector('#disciplined_true').checked) {
+    is_disciplined = true;
+  }
 
   fObject = {
     "email": email,
@@ -689,7 +697,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     "first_name": _first_name.value,
     "last_name": _last_name.value,
     "phone": _phone.value,
-    "is_disciplined": form.elements["disciplined"],
+    "is_disciplined": is_disciplined,
     "practice_jurisdictions": jurisdictions,
     "registration_attachments": files
   }
