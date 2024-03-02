@@ -70,7 +70,7 @@ pub struct AuthResponseData {
     pub role:                 String,
     pub email:                String,
     pub first_name:           String,
-    pub middle_name:          String,
+    pub middle_name:          Option<String>,
     pub last_name:            String,
     pub is_free_subscription: bool,
 }
