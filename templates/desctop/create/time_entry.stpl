@@ -56,9 +56,8 @@
                                     </div>
                                     <div 
                                         class="contact-select-control__menu load_content" 
-                                        data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All&types=form"
-                                    >
-                                    </div>
+                                        data-link="/attorney_load/leads_and_clients?search=&offset=0&limit=10&type=All&types=single_form"
+                                    ></div>
                                 </div>
                                 <div class="contact-select-control__footer"></div>
                             </div>

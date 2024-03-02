@@ -114,7 +114,7 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             "?search=", search,
             "&offset=", offset,
             "&limit=", limit
-            //"&type=", type
+            //"&type=", type 
         );
         let resp = request_get::<LeadsAndClientsData> (
             url,
@@ -134,9 +134,22 @@ pub async fn leads_and_clients_load(req: HttpRequest) -> actix_web::Result<HttpR
             users_list = Vec::new();
         }
 
-        if types == "form".to_string() {
+        if types == "single_form".to_string() { 
             #[derive(TemplateOnce)]
-            #[template(path = "desctop/generic/items/users_form.stpl")]
+            #[template(path = "desctop/generic/items/users_single_form.stpl")]
+            pub struct Template {
+                users_list: Vec<LeadOrClientData>,
+            }
+            let body = Template {
+                users_list: users_list,
+            }
+            .render_once()
+            .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
+            Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(body))
+        }
+        else if types == "many_form".to_string() { 
+            #[derive(TemplateOnce)]
+            #[template(path = "desctop/generic/items/users_many_form.stpl")]
             pub struct Template {
                 users_list: Vec<LeadOrClientData>,
             }
