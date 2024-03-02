@@ -527,9 +527,9 @@ pub async fn clients_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     }
     else {
         #[derive(TemplateOnce)]
-        #[template(path = "desctop/load/users_single_form.stpl")]
+        #[template(path = "desctop/generic/items/users_single_form.stpl")]
         pub struct Template {
-            users_list:   Vec<RequestAttorney>,
+            users_list:   Vec<RequestClient>,
         }
         let body = Template {
             users_list:   users_list,
@@ -614,7 +614,7 @@ pub async fn attorneys_load(req: HttpRequest) -> actix_web::Result<HttpResponse>
     }
     else {
         #[derive(TemplateOnce)]
-        #[template(path = "desctop/load/users_single_form.stpl")]
+        #[template(path = "desctop/generic/items/users_single_form.stpl")]
         pub struct Template {
             users_list:   Vec<RequestAttorney>,
         }
