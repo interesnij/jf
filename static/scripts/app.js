@@ -719,8 +719,6 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   console.log("files ", files);
   console.log("disciplined ", is_disciplined);
 
-  return
-
   fObject = {
     "email": email,
     "password1": password1,
