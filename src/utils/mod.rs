@@ -36,7 +36,7 @@ pub fn get_request_user(req: &HttpRequest) -> Option<AuthResponseData> {
     if _tokenize.is_some() { 
         println!("{}", _tokenize.unwrap());
         println!("_tokenize exist!");
-        let _user_res: AuthResponseData = serde_json::from_str(&_tokenize.unwrap()).expect("E.");
+        let _user_res: AuthResponseData = serde_json::from_str(&_tokenize.unwrap()).unwrap();
         //let _user_res: Result<AuthResponseData, serde_json::Error> = serde_json::from_str(&_tokenize.unwrap());
         return Some(_user_res);
         //if _user_res.is_ok() {
