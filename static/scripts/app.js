@@ -849,9 +849,16 @@ on('body', 'change', '.country', function() {
 on('body', 'change', '.state', function() {
   _this = this;
   val = _this.value;
-  if (val == '' || _this.parentElement.classList.contains("no_cities_load") ) {
+  if (val == '') {
     return
-  } 
+  };
+  option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
+  pk = option.getAttribute("data-pk");
+
+  if (_this.parentElement.classList.contains("no_cities_load") ) {
+    _this.setAttribute("data-pk", pk);
+    return
+  };
   
   option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
   pk = option.getAttribute("data-pk");
