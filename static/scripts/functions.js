@@ -443,8 +443,7 @@ function get_active_button() {
     ajax_link.send();
   };
 
-  function check_first_load() {
-
+function check_first_load() {
     span = document.body.querySelector("#reload");
     url = window.location.href;
     
