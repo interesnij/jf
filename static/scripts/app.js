@@ -90,7 +90,8 @@ on('body', 'click', '.create_matter', function() {
   ajax_link.open( 'GET', "/create/matter?ajax=2", true );
   ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
   if (localStorage.getItem('request_data') !== null) {
-      ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
+      //ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
+      ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
   } 
   ajax_link.onreadystatechange = function () {
   if ( this.readyState == 4 && this.status == 200 ) {
