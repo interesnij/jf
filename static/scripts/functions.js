@@ -460,8 +460,9 @@ function check_first_load() {
       //ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       if (localStorage.getItem('request_data') !== null) {
         data = localStorage.getItem('request_data');
-        ajax_link.setRequestHeader('Request-Data', data);
-        console.log("request data", data); 
+        ajax_link.setRequestHeader('Request-Data', JSON.stringify(data));
+        console.log("stringify data", JSON.stringify(data));
+        console.log("data", JSON.stringify(data)); 
       } 
       ajax_link.onreadystatechange = function () { 
         if ( this.readyState == 4 && this.status == 200 ) {
