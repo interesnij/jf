@@ -678,7 +678,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
       });
     //} catch { null }
   }; 
-
+  /*
   /////
   file_data = new FormData();
     file_data.append("token", "111");
@@ -707,6 +707,8 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     _link.send(file_data);
 
   ////
+  */
+  files = send_files(_attachments);
   is_disciplined = false;
   if(form.querySelector('#disciplined_true').checked) {
     is_disciplined = true;
@@ -838,7 +840,7 @@ on('body', 'change', '.country', function() {
             elem_ = document.createElement('span');
             elem_.innerHTML = ajax_link.responseText;
             block.innerHTML = elem_.innerHTML;
-            _this.value = pk
+            _this.setAttribute("data-pk", pk);
         } 
       }
       ajax_link.send();
