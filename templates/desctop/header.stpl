@@ -1,5 +1,5 @@
 <div class="main-layout">
- <% if is_ajax == 1 { %>
+ <% if is_ajax == 1 && request_user.onboard && (request_user.is_free_subscription || request_user.plan_id.is_some()) { %>
     <% if request_user.user_type == "client" { %>
         <% include!("client_sidebar.stpl"); %>
     <% } else { %>

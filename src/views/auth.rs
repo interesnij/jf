@@ -1100,10 +1100,12 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
 }
 
 pub async fn onboard_attorney_1_page(req: HttpRequest) -> impl Responder {
-    if get_request_user(&req).is_some() {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() { {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
+        let request_user = user_some.unwrap();
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
         let l = 2;
         let title: String;
@@ -1133,18 +1135,20 @@ pub async fn onboard_attorney_1_page(req: HttpRequest) -> impl Responder {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/1_onboard_attorney.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -1154,18 +1158,20 @@ pub async fn onboard_attorney_1_page(req: HttpRequest) -> impl Responder {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/1_onboard_attorney.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -1175,10 +1181,12 @@ pub async fn onboard_attorney_1_page(req: HttpRequest) -> impl Responder {
 }
 
 pub async fn onboard_attorney_2_page(req: HttpRequest) -> impl Responder {
-    if get_request_user(&req).is_some() {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() { {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
+        let request_user = user_some.unwrap();
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
         let l = 2;
         let title: String;
@@ -1208,18 +1216,20 @@ pub async fn onboard_attorney_2_page(req: HttpRequest) -> impl Responder {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/2_onboard_attorney.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -1229,18 +1239,20 @@ pub async fn onboard_attorney_2_page(req: HttpRequest) -> impl Responder {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/2_onboard_attorney.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -1250,10 +1262,12 @@ pub async fn onboard_attorney_2_page(req: HttpRequest) -> impl Responder {
 }
 
 pub async fn onboard_attorney_3_page(req: HttpRequest) -> impl Responder {
-    if get_request_user(&req).is_some() {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() { {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
+        let request_user = user_some.unwrap();
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
         let l = 2;
         let title: String;
@@ -1283,18 +1297,20 @@ pub async fn onboard_attorney_3_page(req: HttpRequest) -> impl Responder {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/3_onboard_attorney.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -1304,18 +1320,20 @@ pub async fn onboard_attorney_3_page(req: HttpRequest) -> impl Responder {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/3_onboard_attorney.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -1325,10 +1343,12 @@ pub async fn onboard_attorney_3_page(req: HttpRequest) -> impl Responder {
 }
 
 pub async fn onboard_attorney_4_page(req: HttpRequest) -> impl Responder {
-    if get_request_user(&req).is_some() {
+    let user_some = get_request_user(&req);
+    if user_some.is_some() { {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
+        let request_user = user_some.unwrap();
         let (is_desctop, is_ajax) = crate::utils::get_device_and_ajax(&req);
         let l = 2;
         let title: String;
@@ -1358,18 +1378,20 @@ pub async fn onboard_attorney_4_page(req: HttpRequest) -> impl Responder {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/4_onboard_attorney.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
@@ -1379,18 +1401,20 @@ pub async fn onboard_attorney_4_page(req: HttpRequest) -> impl Responder {
             #[derive(TemplateOnce)]
             #[template(path = "desctop/auth/4_onboard_attorney.stpl")]
             struct Template {
-                is_ajax:     i32,
-                title:       String,
-                description: String,
-                link:        String,
-                image:       String,
+                request_user: AuthResponseData,
+                is_ajax:      i32,
+                title:        String,
+                description:  String,
+                link:         String,
+                image:        String,
             }
             let body = Template {
-                is_ajax:     is_ajax,
-                title:       title,
-                description: description,
-                link:        link,
-                image:       image,
+                request_user: request_user,
+                is_ajax:      is_ajax,
+                title:        title,
+                description:  description,
+                link:         link,
+                image:        image,
             }
             .render_once()
             .map_err(|e| InternalError::new(e, StatusCode::INTERNAL_SERVER_ERROR))?;
