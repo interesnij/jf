@@ -462,7 +462,8 @@ function check_first_load() {
         data = localStorage.getItem('request_data');
         ajax_link.setRequestHeader('Request-Data', JSON.stringify(data));
         console.log("stringify data", JSON.stringify(data));
-        console.log("parse data", JSON.parse(data)); 
+        console.log("parse data", JSON.parse(data));
+        console.log("data", data);
       } 
       ajax_link.onreadystatechange = function () { 
         if ( this.readyState == 4 && this.status == 200 ) {
