@@ -38,16 +38,16 @@ pub fn get_request_user(req: &HttpRequest) -> Option<AuthResponseData> {
         println!("_tokenize exist!");
         let _user_res: AuthResponseData = serde_json::from_str(&_tokenize.unwrap());
         //let _user_res: Result<AuthResponseData, serde_json::Error> = serde_json::from_str(&_tokenize.unwrap());
-        //return Some(_user_res.expect("E."));
-        if _user_res.is_ok() {
-            let _user: AuthResponseData = _user_res.expect("E.");
-            println!("_user ok!");
-            return Some(_user);
-        }
-        else {
-            println!("_user errr......");
-            return None;
-        }
+        return Some(_user_res.expect("E."));
+        //if _user_res.is_ok() {
+        //    let _user: AuthResponseData = _user_res.expect("E.");
+        //    println!("_user ok!");
+        //    return Some(_user);
+        //}
+        //else {
+        //    println!("_user errr......");
+        //    return None;
+        //}
     }
     return None;
 }
