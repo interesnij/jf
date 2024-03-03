@@ -24,6 +24,6 @@
   <body>
     <div id="reload" tabindex="-1" style="outline: none;"></div>
     <script type="text/javascript" src="/static/scripts/functions1.js?ver6"></script>
-    <script type="text/javascript" src="/static/scripts/app.js?ver6"></script>
+    <script type="text/javascript" src="/static/scripts/app1.js?ver6"></script>
   </body>
 </html> 
