@@ -1101,7 +1101,7 @@ pub async fn login_page(req: HttpRequest) -> actix_web::Result<HttpResponse> {
 
 pub async fn onboard_attorney_1_page(req: HttpRequest) -> impl Responder {
     let user_some = get_request_user(&req);
-    if user_some.is_some() { {
+    if user_some.is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -1182,7 +1182,7 @@ pub async fn onboard_attorney_1_page(req: HttpRequest) -> impl Responder {
 
 pub async fn onboard_attorney_2_page(req: HttpRequest) -> impl Responder {
     let user_some = get_request_user(&req);
-    if user_some.is_some() { {
+    if user_some.is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -1263,7 +1263,7 @@ pub async fn onboard_attorney_2_page(req: HttpRequest) -> impl Responder {
 
 pub async fn onboard_attorney_3_page(req: HttpRequest) -> impl Responder {
     let user_some = get_request_user(&req);
-    if user_some.is_some() { {
+    if user_some.is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
@@ -1344,7 +1344,7 @@ pub async fn onboard_attorney_3_page(req: HttpRequest) -> impl Responder {
 
 pub async fn onboard_attorney_4_page(req: HttpRequest) -> impl Responder {
     let user_some = get_request_user(&req);
-    if user_some.is_some() { {
+    if user_some.is_some() {
         Ok(HttpResponse::Ok().content_type("text/html; charset=utf-8").body(""))
     }
     else {
