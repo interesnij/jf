@@ -677,19 +677,47 @@ on('body', 'click', '.register_final_attorney_btn', function() {
         year: year
       });
     //} catch { null }
-  };
+  }; 
 
-  files = send_files(_attachments);
-  console.log("_jurisdictions_numbers ", _jurisdictions_numbers);
-  console.log("_jurisdictions_numbers length ", _jurisdictions_numbers.length);
-  console.log("jurisdictions ", jurisdictions);
-  console.log("files ", files);
-  return
+  /////
+  file_data = new FormData();
+    file_data.append("token", "111");
+    file_data.append("folder", "111");
+    file_data.append("object_id", "111");
+    files = _attachments.files;
+    for (let i = 0; i < files.length; i++) {
+        console.log("upload", files[i]);
+        file_data.append("file", files[i]);
+    } 
+    _link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+    _link.open( 'POST', "https://k.juslaw.online/classic_create/", true );
+    _link.onreadystatechange = function () {
+    if ( _link.readyState == 4 && _link.status == 200 ) {
+        data = JSON.parse(_link.responseText);
+        res_files = data["files"];
+        if (res_files.length < 1) {
+            console.log("res_files.length < 1");
+        }
+        else {
+            files = res_files;
+        }
+    } else {
+        console.log("return");
+    }};
+    _link.send(file_data);
 
+  ////
   is_disciplined = false;
   if(form.querySelector('#disciplined_true').checked) {
     is_disciplined = true;
   }
+  console.log("_jurisdictions_numbers ", _jurisdictions_numbers);
+  console.log("_jurisdictions_numbers length ", _jurisdictions_numbers.length);
+  console.log("jurisdictions ", jurisdictions);
+  console.log("files ", files);
+  console.log("disciplined ", is_disciplined);
+
+  return
 
   fObject = {
     "email": email,
@@ -800,7 +828,7 @@ on('body', 'change', '.country', function() {
     }
     option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
     pk = option.getAttribute("data-pk");
-
+    
     block = _this.parentElement.parentElement.parentElement.querySelector(".states_container");
     ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     ajax_link.open( 'GET', "/load/states/" + pk + "?ajax=2", true );
@@ -810,6 +838,7 @@ on('body', 'change', '.country', function() {
             elem_ = document.createElement('span');
             elem_.innerHTML = ajax_link.responseText;
             block.innerHTML = elem_.innerHTML;
+            _this.value = pk
         } 
       }
       ajax_link.send();

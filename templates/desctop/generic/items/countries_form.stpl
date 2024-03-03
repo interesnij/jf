@@ -4,7 +4,7 @@
 <input type="text" placeholder="Start typing" name="country" class="country" list="country_list">
 <datalist id="country_list">
    <% for object in countries_list.iter() { %>
-      <option data-pk="<%= object.id %>" value="<%= object.name %>"></option>
+      <option class="datalist_option" data-pk="<%= object.id %>" value="<%= object.name %>"></option>
    <% } %>
 </datalist>  
 <div class="input-control__footer"></div>

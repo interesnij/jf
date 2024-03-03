@@ -395,7 +395,7 @@ function get_active_button() {
   
     ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
     if (localStorage.getItem('request_data') !== null) {
-      ajax_link.setRequestHeader('Request-Data', JSON.parse(localStorage.getItem('request_data')));
+      ajax_link.setRequestHeader('Request-Data', localStorage.getItem('request_data'));
     }
   
     ajax_link.onreadystatechange = function () {
