@@ -18,7 +18,7 @@
     <meta name="juslaw" content="Juslaw">
     <link rel="apple-touch-icon" href="/static/images/logo192.png">
     <link type="text/css" media="all" rel="stylesheet" href="/static/styles/bootstrap.css">
-    <link type="text/css" media="all" rel="stylesheet" href="/static/styles/app.css?ver3">
+    <link type="text/css" media="all" rel="stylesheet" href="/static/styles/app.css?ver4">
     <title>JusLaw</title>
   </head>
   <body>

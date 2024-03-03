@@ -336,6 +336,36 @@ on('body', 'click', '.account_settings', function() {
 //////////////////////////////////////
 /////////// auth function ////////
 
+function send_files(file_c) {
+  file_data = new FormData();
+  file_data.append("token", "111");
+  file_data.append("folder", "111");
+  file_data.append("object_id", "111");
+  files = file_c.files;
+  for (let i = 0; i < files.length; i++) {
+    console.log("upload", files[i]);
+    file_data.append("file", files[i]);
+  }
+  _link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  _link.open( 'POST', "https://k.juslaw.online/classic_create/", true );
+  _link.onreadystatechange = function () {
+  if ( _link.readyState == 4 && _link.status == 200 ) {
+    data = JSON.parse(_link.responseText);
+    res_files = data["files"];
+    if (res_files.length < 1) {
+      console.log("res_files.length < 1");
+      return
+    }
+    else {
+      return res_files[0];
+    }
+  } else {
+    console.log("return");
+    return
+  }};
+  _link.send(file_data);
+}
+
 function get_register_2_step_low(url) {
     /*
       reg_step_1 : { 'email': _email.value, 'password': _password1.value}
@@ -470,94 +500,25 @@ on('body', 'click', '.back_register_1_enterprise_btn', function() {
 });
 ///////////////////////////
 
-function send_files(file_c) {
-    file_data = new FormData();
-    file_data.append("token", "111");
-    file_data.append("folder", "111");
-    file_data.append("object_id", "111");
-    files = file_c.files;
-    for (let i = 0; i < files.length; i++) {
-      console.log("upload", files[i]);
-      file_data.append("file", files[i]);
-    }
-    _link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
-    _link.open( 'POST', "https://k.juslaw.online/classic_create/", true );
-    _link.onreadystatechange = function () {
-    if ( _link.readyState == 4 && _link.status == 200 ) {
-      data = JSON.parse(_link.responseText);
-      res_files = data["files"];
-      if (res_files.length < 1) {
-        console.log("res_files.length < 1");
-        return
-      }
-      else {
-        return res_files[0];
-      }
-    } else {
-      console.log("return");
-      return
-    }};
-    _link.send(file_data);
-}
-
-on('body', 'click', '.add_jurisdiction_form', function() {
-  block = this.parentElement.previousElementSibling;
-  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="input-control col-md-3 mt-2 load_content1 load_countries" data-link="/load/countries"></div><div class="input-control col-md-3 mt-2 states_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_number" class="input-control__label">Registration Number</label></div><input name="number" class="id_number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Year Admitted</label></div><input name="year" class="id_year" placeholder="Enter Registration Number" type="number"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
-  load_data(1, block);
-}); 
-on('body', 'click', '.add_firm_location_form', function() {
-  block = this.parentElement.previousElementSibling;
-  block.innerHTML = '<div class="d-flex flex-column w-100 pt-2"><div class="d-flex pr-3"></div><div class="col-12"><div class="row"><div class="input-control col-md-4 mt-2 load_content1 load_countries" data-link="/load/countries"></div><div class="input-control col-md-8"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Address</label></div><input class="id_address" name="address" placeholder="Enter an address here" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-4 mt-2 states_container"></div><div class="input-control col-md-4 mt-2 cities_container"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
-  load_data(1, block);
+on('body', 'click', '.onboard_2_attorney_btn', function() {
+    ajax_get_reload("/auth/onboard_attorney_2", true, 2)
 });
-on('body', 'click', '.add_education_form', function() {
-  block = this.parentElement.previousElementSibling;
-  block.innerHTML = '<div class="d-flex w-100 col-12 mt-0"><div class="flex-1"><div class="row"><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Law school / Graduate Institute</label></div><input name="school"  class="school" placeholder="Enter a school / graduate institute name" type="text" class="school active"><div class="input-control__footer"></div></div><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Years</label></div><input name="year" placeholder="Enter number of years" type="number" class="active year" value="1"><div class="input-control__footer"></div></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+on('body', 'click', '.onboard_3_attorney_btn', function() {
+  ajax_get_reload("/auth/onboard_attorney_3", true, 2)
+});
+on('body', 'click', '.onboard_4_attorney_btn', function() {
+  ajax_get_reload("/auth/onboard_attorney_4", true, 2)
 });
 
-on('body', 'click', '.select-control__menu-item', function() {
-  _this = this;
-  c = this.parentElement.previousElementSibling;
-  c.querySelector("span").innerHTML = _this.innerHTML;
-  c.querySelector(".hidden_input").value = _this.getAttribute("data-pk");
-  menu_items = _this.parentElement.querySelectorAll(".select-control__menu-item");
-  for (let i = 0; i < menu_items.length; i++) {
-    menu_items[i].classList.remove("active");
-  } 
-  _this.classList.add("active");
+on('body', 'click', '.back_onboard_1_attorney_btn', function() {
+  ajax_get_reload("/auth/onboard_attorney_1", true, 2)
 });
-
-function show_law_reg_success_modal() {
-  span = document.body.querySelector("#reload");
-  span2 = document.createElement("span");
-  span2.innerHTML = '<div class="modal-control-container open"><div tabindex="-1" class="modal-control"><div class="modal-control__header"><div class="my-auto title text-ellipsis w-100 text-center">Application Received</div></div><div class="modal-control__content ignore-onclickoutside"><div class="pb-4" style="width: 600px;"><div class="text-black" style="font-size: 18px;">JusLaw has received your application.</div><br><div class="text-dark">The verification process of your application will take up to 5 days. Please check your inbox for an email from JusLaw to verify your email in the meantime. If your application is approved, our team will guide you to set up your account.</div></div><div class="d-flex mt-4"><a class="btn btn--green ripple-effect normal ml-auto return_login_hundler"><span>Return Home</span></a></div></div></div></div>';
-  span.append(span2); 
-}
-on('body', 'click', '.return_login_hundler', function() {
-    document.body.querySelector(".modal-control-container").remove();
-    ajax_get_reload("/", true, 2);
+on('body', 'click', '.back_onboard_2_attorney_btn', function() {
+  ajax_get_reload("/auth/onboard_attorney_2", true, 2)
 });
-
-on('body', 'click', '.close_juri_block', function() {
-  this.parentElement.remove();
+on('body', 'click', '.back_onboard_3_attorney_btn', function() {
+  ajax_get_reload("/auth/onboard_attorney_3", true, 2)
 });
-
-on('body', 'click', '.select_files', function() {
-  this.previousElementSibling.previousElementSibling.click();
-});
-
-on('body', 'change', '#id_attachments', function() {
-  console.log('Selected file: ' + this.value);
-  files = this.files;
-  len = files.length;
-  if (len > 10) {
-    alert("The maximum number of photos is 10")
-  }
-  for (let i = 0; i < len; i++) {
-    console.log("file", files[i].name);
-    //file_data.append("file", files[i]);
-  }
-}); 
 
 
 on('body', 'click', '.register_final_attorney_btn', function() {
@@ -885,3 +846,63 @@ on('body', 'click', '.firm_plus_input', function(event) {
     block.classList.add("hidden");
   }
 });
+
+
+on('body', 'click', '.add_jurisdiction_form', function() {
+  block = this.parentElement.previousElementSibling;
+  block.innerHTML = '<div class="d-flex col-12 w-100 mt-0 juri_block"><div class="flex-1"><div class="row"><div class="input-control col-md-3 mt-2 load_content1 load_countries" data-link="/load/countries"></div><div class="input-control col-md-3 mt-2 states_container"></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label for="id_number" class="input-control__label">Registration Number</label></div><input name="number" class="id_number" placeholder="Enter Registration Number" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-3 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Year Admitted</label></div><input name="year" class="id_year" placeholder="Enter Registration Number" type="number"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+  load_data(1, block);
+}); 
+on('body', 'click', '.add_firm_location_form', function() {
+  block = this.parentElement.previousElementSibling;
+  block.innerHTML = '<div class="d-flex flex-column w-100 pt-2"><div class="d-flex pr-3"></div><div class="col-12"><div class="row"><div class="input-control col-md-4 mt-2 load_content1 load_countries" data-link="/load/countries"></div><div class="input-control col-md-8"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Address</label></div><input class="id_address" name="address" placeholder="Enter an address here" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-4 mt-2 states_container"></div><div class="input-control col-md-4 mt-2 cities_container"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+  load_data(1, block);
+});
+on('body', 'click', '.add_education_form', function() {
+  block = this.parentElement.previousElementSibling;
+  block.innerHTML = '<div class="d-flex w-100 col-12 mt-0"><div class="flex-1"><div class="row"><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Law school / Graduate Institute</label></div><input name="school"  class="school" placeholder="Enter a school / graduate institute name" type="text" class="school active"><div class="input-control__footer"></div></div><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Years</label></div><input name="year" placeholder="Enter number of years" type="number" class="active year" value="1"><div class="input-control__footer"></div></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+});
+
+on('body', 'click', '.select-control__menu-item', function() {
+  _this = this;
+  c = this.parentElement.previousElementSibling;
+  c.querySelector("span").innerHTML = _this.innerHTML;
+  c.querySelector(".hidden_input").value = _this.getAttribute("data-pk");
+  menu_items = _this.parentElement.querySelectorAll(".select-control__menu-item");
+  for (let i = 0; i < menu_items.length; i++) {
+    menu_items[i].classList.remove("active");
+  } 
+  _this.classList.add("active");
+});
+
+function show_law_reg_success_modal() {
+  span = document.body.querySelector("#reload");
+  span2 = document.createElement("span");
+  span2.innerHTML = '<div class="modal-control-container open"><div tabindex="-1" class="modal-control"><div class="modal-control__header"><div class="my-auto title text-ellipsis w-100 text-center">Application Received</div></div><div class="modal-control__content ignore-onclickoutside"><div class="pb-4" style="width: 600px;"><div class="text-black" style="font-size: 18px;">JusLaw has received your application.</div><br><div class="text-dark">The verification process of your application will take up to 5 days. Please check your inbox for an email from JusLaw to verify your email in the meantime. If your application is approved, our team will guide you to set up your account.</div></div><div class="d-flex mt-4"><a class="btn btn--green ripple-effect normal ml-auto return_login_hundler"><span>Return Home</span></a></div></div></div></div>';
+  span.append(span2); 
+}
+on('body', 'click', '.return_login_hundler', function() {
+    document.body.querySelector(".modal-control-container").remove();
+    ajax_get_reload("/", true, 2);
+});
+
+on('body', 'click', '.close_juri_block', function() {
+  this.parentElement.remove();
+});
+
+on('body', 'click', '.select_files', function() {
+  this.previousElementSibling.previousElementSibling.click();
+});
+
+on('body', 'change', '#id_attachments', function() {
+  console.log('Selected file: ' + this.value);
+  files = this.files;
+  len = files.length;
+  if (len > 10) {
+    alert("The maximum number of photos is 10")
+  }
+  for (let i = 0; i < len; i++) {
+    console.log("file", files[i].name);
+    //file_data.append("file", files[i]);
+  }
+}); 

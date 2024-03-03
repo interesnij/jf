@@ -555,7 +555,8 @@ font-size: 18px;
 line-height: 24px;
 }
 .onboarding-page {
-font-family: var(--font-family-primary);
+  font-family: var(--font-family-primary);
+  padding-bottom: 150px 
 }
 .onboarding-page .subscription-title {
 color: #297D4A;
