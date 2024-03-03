@@ -1,5 +1,6 @@
 <% include!("../anon_header.stpl"); %>
 
+<% include!("navbar.stpl"); %>
 <div class="signup-page doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
     <div class="signup-page-layout">
         <a href="/">

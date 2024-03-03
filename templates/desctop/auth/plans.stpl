@@ -1,5 +1,6 @@
 <% include!("../header.stpl"); %>
-plans
+
+<% include!("navbar.stpl"); %>
 <div class="onboarding-layout--content">
     <div class="onboarding-page">
         <div class="subscription-title">Subscription</div>

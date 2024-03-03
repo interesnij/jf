@@ -1,4 +1,4 @@
-onboard
+
 <% match request_user.user_type.as_str() {
     "attorney" => include!("1_onboard_attorney.stpl"),
     "paralegal" => include!("1_onboard_attorney.stpl"),

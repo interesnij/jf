@@ -1,7 +1,0 @@
-<% if is_ajax == 2 { %>
-    </div>
-    <script type="text/javascript" src="/static/scripts/settings.js"></script>
-    <script type="text/javascript" src="/static/scripts/reg.js"></script>
-  </body>
-</html>
-<% } %>
