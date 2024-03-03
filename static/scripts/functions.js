@@ -457,11 +457,11 @@ function check_first_load() {
   
       ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
       ajax_link.open( 'GET', url + "?ajax=1", true );
-      ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+      //ajax_link.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       if (localStorage.getItem('request_data') !== null) {
         data = localStorage.getItem('request_data');
         ajax_link.setRequestHeader('Request-Data', data);
-        console.log("request data", data);
+        console.log("request data", data); 
       } 
       ajax_link.onreadystatechange = function () { 
         if ( this.readyState == 4 && this.status == 200 ) {
