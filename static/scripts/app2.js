@@ -55,7 +55,7 @@ on('body', 'click', '.multi_item_h', function() {
 });
 
 on('body', 'click', '.multi-select-control__item-close', function() {
-    block = this.parentElement.parentElement.parentElement.nextElementSibling;
+    block = this.parentElement.parentElement.nextElementSibling;
     pk = this.previousElementSibling.getAttribute("data-pk");
     this.parentElement.remove();
     name_c = block.querySelector( '[data-pk=' + '"' + pk + '"' + ']' );
