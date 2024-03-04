@@ -501,23 +501,23 @@ on('body', 'click', '.back_register_1_enterprise_btn', function() {
 ///////////////////////////
 
 on('body', 'click', '.onboard_2_attorney_btn', function() {
-    ajax_get_reload("/auth/onboard_attorney_2", true, 2)
+    ajax_get_reload("/auth/onboard_attorney_2", true, 2, "onboarding-page")
 });
 on('body', 'click', '.onboard_3_attorney_btn', function() {
-  ajax_get_reload("/auth/onboard_attorney_3", true, 2)
+  ajax_get_reload("/auth/onboard_attorney_3", true, 2, "onboarding-page")
 }); 
 on('body', 'click', '.onboard_4_attorney_btn', function() {
-  ajax_get_reload("/auth/onboard_attorney_4", true, 2)
+  ajax_get_reload("/auth/onboard_attorney_4", true, 2, "onboarding-page")
 });
 
 on('body', 'click', '.back_onboard_1_attorney_btn', function() {
-  ajax_get_reload("/auth/onboard_attorney_1", true, 2)
+  ajax_get_reload("/auth/onboard_attorney_1", true, 2, "onboarding-page")
 });
 on('body', 'click', '.back_onboard_2_attorney_btn', function() {
-  ajax_get_reload("/auth/onboard_attorney_2", true, 2)
+  ajax_get_reload("/auth/onboard_attorney_2", true, 2, "onboarding-page")
 });
 on('body', 'click', '.back_onboard_3_attorney_btn', function() {
-  ajax_get_reload("/auth/onboard_attorney_3", true, 2)
+  ajax_get_reload("/auth/onboard_attorney_3", true, 2, "onboarding-page")
 });
 
 

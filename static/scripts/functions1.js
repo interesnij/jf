@@ -389,7 +389,7 @@ function get_active_button() {
   //} catch { null }
 };
   
-  function ajax_get_reload(url, history_enable, ajax) {
+  function ajax_get_reload(url, history_enable, ajax, _class) {
     var ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     ajax_link.open( 'GET', url + "?ajax=" + ajax, true );  
   

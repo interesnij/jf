@@ -295,7 +295,7 @@
                       <div class="multi-select-control__label"></div>
                     </div>
                     <div class="multi-select-control__container">
-                      <div class="multi-select-control active">
+                      <div class="multi-select-control">
                         <div class="flex-1 d-flex flex-wrap">
                             <!-- active languages -->
                           <div class="multi-select-control__item">

@@ -7637,7 +7637,7 @@ z-index: 999;
 }
 .onboarding-layout--content {
 background: #F4F5F9;
-padding: 128px 160px 96px 160px;
+padding: 128px 15% 96px 15%;
 }
 .onboarding-layout--account {
 position: relative;
