@@ -25,7 +25,6 @@ on('body', 'click', '.multi_item_h', function() {
       this.classList.remove("active");
       name_c = block.querySelector( '[data-pk=' + '"' + pk + '"' + ']' );
       name_c.parentElement.remove();
-      block.querySelector(".hidden_input" + pk).remove();
   } else {
       this.classList.add("active");
 
