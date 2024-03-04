@@ -32,15 +32,21 @@ on('body', 'click', '.multi_item_h', function() {
       input.setAttribute("value", pk);
       input.setAttribute("type", "hidden");
       input.setAttribute("name", block.getAttribute("data-name"));
-      input.classList.add(".hidden_input" + pk);
-      block.append(input);
-      item = '<div class="multi-select-control__item"><span class="my-auto" data-id="' 
+      input.classList.add("hidden_input" + pk);
+      item = '<div class="multi-select-control__item">'
+      + input + 
+      '<span class="my-auto" data-id="' 
       + pk +
       '">'
       + this.querySelector("span").innerHTML +
-      '</span><img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close close_multi_item"></div>';
+      '</span><img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close parent_remove"></div>';
+      block.append(item);
   }
 });
+
+on('body', 'click', '.parent_remove', function() {
+  this.parentElement.remove();
+}
 
 on('body', 'click', '.menu-button', function() {
   block = this.nextElementSibling;

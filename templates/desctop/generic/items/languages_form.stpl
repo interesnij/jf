@@ -15,7 +15,7 @@
                 <!--
                 <div class="multi-select-control__item">
                     <span class="my-auto" data-id="">English</span>
-                    <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close close_multi_item">
+                    <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close parent_remove">
                 </div>  
                 -->
             </div>
