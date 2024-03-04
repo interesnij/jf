@@ -18,7 +18,7 @@ on('body', 'click', '.multi_select_h', function(e) {
   }
 });
 
-on('body', 'click', '.multi-select-control__menu-item', function() {
+on('body', 'click', '.multi_item_h', function() {
   block = this.parentElement.previousElementSibling;
   pk = this.getAttribute("data-pk");
   if (block.querySelector( '[data-pk=' + '"' + pk + '"' + ']' )) {

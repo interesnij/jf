@@ -22,7 +22,7 @@
         </div> 
         <div class="multi-select-control__menu" style="max-height:450px">
             <% for object in languages_list.iter() { %> 
-                <div data-pk="<%= object.id %>" class="multi-select-control__menu-item"><span><%= object.title %></span></div>
+                <div data-pk="<%= object.id %>" class="multi-select-control__menu-item multi_item_h"><span><%= object.title %></span></div>
             <% } %>
         </div>
     </div>
