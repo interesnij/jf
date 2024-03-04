@@ -46,7 +46,7 @@ on('body', 'click', '.multi_item_h', function() {
 
 on('body', 'click', '.parent_remove', function() {
   this.parentElement.remove();
-}
+});
 
 on('body', 'click', '.menu-button', function() {
   block = this.nextElementSibling;
