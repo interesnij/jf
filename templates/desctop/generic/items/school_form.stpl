@@ -1,0 +1,30 @@
+<div class="d-flex w-100 col-12 mt-0">
+    <div class="flex-1">
+        <div class="row">
+            <div class="input-control col-md-6 mt-2">
+                <div class="d-flex justify-content-between align-items-center">
+                    <label for="id_university_title" class="input-control__label">
+                        Law school / Graduate Institute
+                    </label>
+                </div>
+                <input name="university_title" placeholder="Enter a school / graduate institute name" type="text" class="title">
+                <div class="input-control__footer"></div>
+            </div>
+            <div class="col-md-6 mt-2">
+                <div class="d-flex justify-content-between">
+                    <div class="select-control__label">Year of graduation</div>
+                </div>
+                <input name="year" class="year" placeholder="Enter Registration Number" type="number">
+                <div class="input-control__footer"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<span></span>
+<div class="col-12 mt-2">
+    <div class="add-button pointer add_school_form">
+        <img src="/static/images/plus_black.svg" alt="plus">
+        Add School / Graduate Institute
+    </div>
+    <span class="error-text alert-hidden">Please input your School</span>
+</div>

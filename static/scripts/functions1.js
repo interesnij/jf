@@ -443,6 +443,37 @@ function get_active_button() {
     ajax_link.send();
   };
 
+
+function get_image_priview(ggg, img) {
+    entrou = false;
+    img.click();
+    img.onchange = function() {
+        if (!entrou) {
+            imgPath = img.value;
+            extn = imgPath.substring(imgPath.lastIndexOf(".") + 1).toLowerCase();
+            if (extn == "gif" || extn == "png" || extn == "jpg" || extn == "jpeg") {
+                if (typeof FileReader != "undefined") {
+                    if (ggg) {}
+                    ggg.innerHTML = "";
+                    reader = new FileReader();
+                    reader.onload = function(e) {
+                        $img = document.createElement("img");
+                        $img.src = e.target.result;
+                        ggg.append($img)
+                    };
+                    reader.readAsDataURL(img.files[0])
+                }
+            } else {
+                this.value = null
+            }
+        }
+        entrou = true;
+        setTimeout(function() {
+            entrou = false
+        }, 1000)
+    }
+};
+
 function check_first_load() {
     span = document.body.querySelector("#reload");
     url = window.location.href;

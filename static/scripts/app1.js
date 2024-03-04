@@ -505,7 +505,7 @@ on('body', 'click', '.onboard_2_attorney_btn', function() {
 });
 on('body', 'click', '.onboard_3_attorney_btn', function() {
   ajax_get_reload("/auth/onboard_attorney_3", true, 2)
-});
+}); 
 on('body', 'click', '.onboard_4_attorney_btn', function() {
   ajax_get_reload("/auth/onboard_attorney_4", true, 2)
 });
@@ -837,6 +837,30 @@ on('body', 'change', '.state', function() {
     }
     ajax_link.send();
 });
+
+on('body', 'change', '.city', function() {
+    _this = this;
+    val = _this.value;
+    if (val == '') {
+      return
+    };
+    option = _this.nextElementSibling.querySelector('[value=' + '"' + val + '"' + ']')
+    pk = option.getAttribute("data-pk");
+    _this.setAttribute("data-pk", pk);
+    return
+}); 
+
+on('body', 'click', '.upload_avatar_c', function(event) {
+  block = this.previousElementSibling;
+  get_image_priview(block.querySelector(".user-avatar"), block.querySelector("#id_avatar"));
+});
+
+on('body', 'click', '.remove_avatar_c', function() {
+  block = this.previousElementSibling;
+  block.querySelector("#id_avatar").value = '';
+  block.querySelector(".user-avatar").innerHTML = '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>';
+});
+
 
 on('body', 'click', '.firm_plus_input', function(event) {
   block = this.parentElement.parentElement.parentElement.parentElement.nextElementSibling;

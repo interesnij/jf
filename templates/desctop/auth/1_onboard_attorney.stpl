@@ -2,103 +2,82 @@
 
 <% include!("navbar.stpl"); %>
 <div class="onboarding-layout--content doc_title" data-title="<%= title %>" data-description="<%= description %>" data-uri="<%= link %>" data-image="<%= image %>">
-   <div class="onboarding-page">
-      <div class="onboarding-page__container mt-4 d-flex flex-column">
-         <div class="subscription-title">Welcome to JusLaw</div>
-         <div class="text-gray text-center">Set up your profile so clients can easily find you</div>
-         <div class="mt-4 text-gray text-center">Step 1 of 4</div>
-         <div class="subscription-heading mb-4">Personal Information</div>
-         <form class="js_form">
-            <div class="card-control p-4">
-               <div class="row">
-                  <div class="col-12">
-                     <div class="heading">Profile Photo</div>
-                     <div class="profile-photo-control mt-2">
-                        <div class="d-flex">
-                           <div class="dropzone">
-                              <div class="d-flex flex-wrap"></div>
-                              <input name="avatar" accept="image/jpeg, image/png" type="file" autocomplete="off" tabindex="-1" style="display: none;">
-                              <div class="user-avatar-container large toRight">
-                                    <div class="user-avatar large">
-                                        <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path>
-                                        </svg>
+    <div class="onboarding-page">
+        <div class="onboarding-page__container mt-4 d-flex flex-column">
+            <div class="subscription-title">Welcome to JusLaw</div>
+            <div class="text-gray text-center">Set up your profile so clients can easily find you</div>
+            <div class="mt-4 text-gray text-center">Step 1 of 4</div>
+            <div class="subscription-heading mb-4">Personal Information</div>
+            <form class="js_form">
+                <div class="card-control p-4">
+                    <div class="row">
+                        
+                        <% include!("../generic/items/avatar_form.stpl"); %>
+
+                        <div class="heading mt-3 col-12">Personal Information</div>
+                        <div class="d-flex w-100">
+                            <div class="col-md-6 mt-3">
+                                <div class="input-control">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_first_name" class="input-control__label">First Name</label>
                                     </div>
-                              </div>
-                           </div>
-                           <button class="btn btn--green ripple-effect normal my-auto ml-4">
-                                <span>Add Photo</span>
-                           </button>
-                           <button class="btn btn--outline btn--disabled btn--green ripple-effect normal my-auto ml-4" disabled="">
-                                <span>Remove</span>
-                           </button>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="heading mt-3 col-12">Personal Information</div>
-                  <div class="d-flex w-100">
-                     <div class="col-md-6 mt-3">
-                        <div class="input-control">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <label for="id_first_name" class="input-control__label">First Name</label>
+                                    <input id="id_first_name" name="first_name" placeholder="Enter first name here" type="text" class="active">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="input-control mt-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_middle_name" class="input-control__label">Middle Name</label>
+                                        <div class="input-control__required">Optional</div>
+                                    </div>
+                                    <input id="id_middle_name" name="middle_name" placeholder="Enter middle name here" type="text" class="active">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="input-control mt-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_last_name" class="input-control__label">Last Name</label>
+                                    </div>
+                                    <input id="id_last_name" name="last_name" placeholder="Enter last name here" type="text" class="active">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="input-control mt-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_email" class="input-control__label">Email</label>
+                                    </div>
+                                    <input id="id_email" name="email" placeholder="Enter email here" type="text" class="active">
+                                    <div class="input-control__footer"></div>
+                                </div>
+                                <div class="input-control mt-2">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <label for="id_last_name" class="input-control__label">Phone</label>
+                                    </div>
+                                    <input id="id_phone" name="phone" placeholder="+1 (123) 456 - 7890" type="tel">
+                                    <div class="input-control__footer"></div>
+                                </div>
                             </div>
-                            <input id="id_first_name" name="first_name" placeholder="Enter first name here" type="text" class="active">
-                            <div class="input-control__footer"></div>
-                        </div>
-                        <div class="input-control mt-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <label for="id_middle_name" class="input-control__label">Middle Name</label>
-                                <div class="input-control__required">Optional</div>
+                            <div class="col-md-6 d-flex flex-column mt-3">
+                                <div class="textarea-form-control d-flex flex-column h-100">
+                                    <div class="d-flex justify-content-between">
+                                        <div class="textarea-form-control__label">Biography</div>
+                                        <div class="textarea-form-control__required">Optional</div>
+                                    </div>
+                                    <textarea name="biography" placeholder="Describe your legal practice" class="flex-1"></textarea>
+                                    <div class="textarea-form-control__footer"></div>
+                                </div>
                             </div>
-                            <input id="id_middle_name" name="middle_name" placeholder="Enter middle name here" type="text" class="active">
-                            <div class="input-control__footer"></div>
                         </div>
-                        <div class="input-control mt-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <label for="id_last_name" class="input-control__label">Last Name</label>
-                            </div>
-                            <input id="id_last_name" name="last_name" placeholder="Enter last name here" type="text" class="active">
-                            <div class="input-control__footer"></div>
-                        </div>
-                        <div class="input-control mt-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <label for="id_email" class="input-control__label">Email</label>
-                            </div>
-                            <input id="id_email" name="email" placeholder="Enter email here" type="text" class="active">
-                            <div class="input-control__footer"></div>
-                        </div>
-                        <div class="input-control mt-2">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <label for="id_last_name" class="input-control__label">Phone</label>
-                            </div>
-                            <input id="id_phone" name="phone" placeholder="+1 (123) 456 - 7890" type="tel">
-                            <div class="input-control__footer"></div>
-                        </div>
-                     </div>
-                     <div class="col-md-6 d-flex flex-column mt-3">
-                        <div class="textarea-form-control d-flex flex-column h-100">
-                            <div class="d-flex justify-content-between">
-                                <div class="textarea-form-control__label">Biography</div>
-                                <div class="textarea-form-control__required">Optional</div>
-                            </div>
-                            <textarea name="biography" placeholder="Describe your legal practice" class="flex-1"></textarea>
-                            <div class="textarea-form-control__footer"></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="signup-bar">
-                <div class="ml-auto">You can change your profile information at anytime under 
-                    <b>Edit Profile</b>
+                    </div>
                 </div>
-                <button type="button" class="btn btn--green ripple-effect normal ml-auto onboard_2_attorney_btn">
-                    <span>Next</span>
-                </button>
-            </div>
-         </form>
-      </div>
-   </div>
+                <div class="signup-bar">
+                    <div class="ml-auto">You can change your profile information at anytime under 
+                        <b>Edit Profile</b>
+                    </div>
+                    <button type="button" class="btn btn--green ripple-effect normal ml-auto onboard_2_attorney_btn">
+                        <span>Next</span>
+                    </button>
+                </div>
+            </form> 
+        </div>
+    </div>
 </div>
 
 <% include!("../footer.stpl"); %>
