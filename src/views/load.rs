@@ -334,15 +334,15 @@ pub async fn appointment_types_load(req: HttpRequest) -> actix_web::Result<HttpR
 #[derive(Debug, Deserialize)]
 pub struct FeeTypessData { 
     pub results: Vec<FeeTypesData>,
-}
+} 
 
 pub async fn fee_types_load(req: HttpRequest) -> actix_web::Result<HttpResponse> {
     let l = 2;
     let object_list: Vec<FeeTypesData>;
 
-    let url = concat_string!(
+    let url = concat_string!( 
         API.to_owned(),
-        "users/appointment-types/"
+        "users/fee-types/"
         //"?state=", _id.to_string(),
     ); 
     let resp = request_get::<FeeTypessData> (

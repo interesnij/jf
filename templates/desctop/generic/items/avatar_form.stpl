@@ -13,10 +13,10 @@
                 </div>
                 </div>
             </div>
-            <button class="btn btn--green ripple-effect normal my-auto ml-4 upload_avatar_c">
+            <button class="btn btn--green ripple-effect normal my-auto ml-4 upload_avatar_c" type="button">
                 <span>Add Photo</span>
             </button> 
-            <button class="btn btn--outline btn--disabled btn--green ripple-effect normal my-auto ml-4 remove_avatar_c">
+            <button class="btn btn--outline btn--disabled btn--green ripple-effect normal my-auto ml-4 remove_avatar_c" type="button">
                 <span>Remove</span>
             </button>
             

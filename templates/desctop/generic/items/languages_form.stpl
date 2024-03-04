@@ -1,11 +1,30 @@
-<div class="select-control__main">
-    <div class="flex-1 d-flex justify-content-between">
-        <span class="my-auto">Select a Languages</span>
+<div class="heading mt-3 w-100">
+    <div class="col-6 d-flex"><span class="mb-1">Languages spoken</span>
+        <div class="text-gray ml-auto mt-auto">Optional</div>
     </div>
-    <input type="text" placeholder="Start typing" name="language" list="language_list" id="id_city">
-    <datalist id="language_list">
-        <% for object in languages_list.iter() { %>
-            <option data-pk="<%= object.id %>" value="<%= object.title %>"></option>
-        <% } %>
-    </datalist> 
 </div>
+
+<div class="mt-0 col-6">
+    <div class="d-flex justify-content-between">
+        <div class="multi-select-control__label"></div>
+    </div>
+    <div class="multi-select-control__container">
+        <div class="multi-select-control">
+            <div class="flex-1 d-flex flex-wrap">
+                <!-- active languages -->
+                <div class="multi-select-control__item">
+                    <span class="my-auto">English</span>
+                    <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close">
+                </div>  
+                <!-- active languages -->
+            </div>
+        </div>
+        <div class="multi-select-control__menu">
+            <% for object in languages_list.iter() { %>
+                <div data-pk="<%= object.id %>" class="multi-select-control__menu-item"><span><%= object.title %></span></div>
+            <% } %>
+        </div>
+    </div>
+    <div class="multi-select-control__footer"></div>
+</div>
+
