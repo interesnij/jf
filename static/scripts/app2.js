@@ -28,24 +28,39 @@ on('body', 'click', '.multi_item_h', function() {
       block.querySelector(".hidden_input" + pk).remove();
   } else {
       this.classList.add("active");
-      input = document.createElement("input");
-      input.setAttribute("value", pk);
-      input.setAttribute("type", "hidden");
-      input.setAttribute("name", block.getAttribute("data-name"));
-      input.classList.add("hidden_input" + pk);
-      item = '<div class="multi-select-control__item">'
-      + input + 
-      '<span class="my-auto" data-id="' 
-      + pk +
-      '">'
-      + this.querySelector("span").innerHTML +
-      '</span><img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close parent_remove"></div>';
-      block.append(item);
+
+      $input = document.createElement("input");
+      $input.setAttribute("value", pk);
+      $input.setAttribute("type", "hidden");
+      $input.setAttribute("name", block.getAttribute("data-name"));
+      $input.classList.add("hidden_input" + pk);
+
+      $span = document.createElement("span");
+      $span.classList.add("my-auto");
+      $span.setAttribute("data-pk", pk);
+      $span.innerHTML = this.innerHTML;
+
+      $close = document.createElement("img");
+      $close.setAttribute("src", "/static/images/close.svg");
+      $close.classList.add("hidden_input", "multi-select-control__item-close", "parent_remove");
+      $close.setAttribute("alt", "close");
+
+      $item = document.createElement("div");
+      $item.classList.add("multi-select-control__item");
+      $item.append($input);
+      $item.append($span);
+      $item.append($close);
+
+      block.append($item);
   }
 });
 
-on('body', 'click', '.parent_remove', function() {
-  this.parentElement.remove();
+on('body', 'click', '.multi-select-control__item-close', function() {
+    block = this.parentElement.parentElement.parentElement.nextElementSibling;
+    pk = this.previousElementSibling.getAttribute("data-pk");
+    this.parentElement.remove();
+    name_c = block.querySelector( '[data-pk=' + '"' + pk + '"' + ']' );
+    name_c.classList.add("active");
 });
 
 on('body', 'click', '.menu-button', function() {
