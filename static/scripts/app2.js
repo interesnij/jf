@@ -8,7 +8,7 @@ on('body', 'click', '.multi_select_h', function(e) {
   //if (e.target.classList.contains("close_multi_item")) {}
   console.log(e.target.classList);
   if (block.classList.contains("open")) {
-    block.remove("open");
+    block.classList.remove("open");
     block.style.opacity = "0";
     block.style.visibility = "hidden";
   } else {
@@ -27,7 +27,7 @@ on('body', 'click', '.multi-select-control__menu-item', function() {
       name_c.parentElement.remove();
       block.querySelector(".hidden_input" + pk).remove();
   } else {
-      this.classList.remove("active");
+      this.classList.add("active");
       input = document.createElement("input");
       input.setAttribute("value", pk);
       input.setAttribute("type", "hidden");
