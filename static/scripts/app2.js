@@ -59,7 +59,7 @@ on('body', 'click', '.multi-select-control__item-close', function() {
     pk = this.previousElementSibling.getAttribute("data-pk");
     this.parentElement.remove();
     name_c = block.querySelector( '[data-pk=' + '"' + pk + '"' + ']' );
-    name_c.classList.add("active");
+    name_c.classList.remove("active");
 });
 
 on('body', 'click', '.menu-button', function() {
