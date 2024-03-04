@@ -17,8 +17,8 @@
                         </div>
                         <div class="heading mt-3 col-12 ">Fees and Payment</div>
                         <div class="text-black mt-2 col-12 ">Fee Type<span class="text-gray ml-2">Select all that apply</span></div>
-                        <div class="mt-0 d-flex flex-wrap col-12">d
-                            <div class="d-flex load_content2" data-link="/load/fee_types_load"></div>
+                        <div class="mt-0 d-flex flex-wrap col-12">
+                            <div class="d-flex load_content2" data-link="/load/fee_types"></div>
                         </div>
                         <div class="text-black mt-2 col-12 ">Accepted Payment Methods<span class="text-gray ml-2">Select all that apply</span></div>
                         <div class="mt-0 d-flex flex-wrap col-12">

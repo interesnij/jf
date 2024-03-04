@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="heading col-12">Education</div>
                         
-                        <% include!("../generic/items/school_form.stpl"); %>
+                        <% include!("../generic/items/education_form.stpl"); %>
 
                         <div class="heading col-12 mt-2">Years of Experience</div>
                         <div class="input-control col-6 mt-1">
