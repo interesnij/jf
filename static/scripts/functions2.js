@@ -410,19 +410,25 @@ function get_active_button() {
           //
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
-  
-          meta_block.innerHTML = elem_.innerHTML;
-          _meta = elem_.querySelector(".doc_title");
-          _title = _meta.getAttribute("data-title");
-          _uri = "" + _meta.getAttribute("data-uri");
-          _description = _meta.getAttribute("data-description");
-          _image = "https://app.juslaw.com" + _meta.getAttribute("data-image");
-          document.title = _title;
-          document.querySelector('meta[name="url"]').setAttribute("content", _uri);
-          document.querySelector('meta[name="title"]').setAttribute("content", _title);
-          document.querySelector('meta[name="description"]').setAttribute("content", _description);
-          document.querySelector('meta[name="image"]').setAttribute("content", _image);
-          document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
+          if (!_class) {
+            console.log("default block!");
+            meta_block.innerHTML = elem_.innerHTML;
+            _meta = elem_.querySelector(".doc_title");
+            _title = _meta.getAttribute("data-title");
+            _uri = "" + _meta.getAttribute("data-uri");
+            _description = _meta.getAttribute("data-description");
+            _image = "https://app.juslaw.com" + _meta.getAttribute("data-image");
+            document.title = _title;
+            document.querySelector('meta[name="url"]').setAttribute("content", _uri);
+            document.querySelector('meta[name="title"]').setAttribute("content", _title);
+            document.querySelector('meta[name="description"]').setAttribute("content", _description);
+            document.querySelector('meta[name="image"]').setAttribute("content", _image);
+            document.querySelector('link[rel="canonical"]').setAttribute("href", _uri);
+          }
+          else {
+            document.body.querySelector("." + _class).innerHTML = elem_.querySelector("." + _class).innerHTML;
+            console.log("class exist!", _class);
+          }
         } catch { null };
 
         try {
