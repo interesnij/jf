@@ -7,12 +7,12 @@ on('body', 'click', '.multi_select_h', function(e) {
   block = this.parentElement.nextElementSibling;
   //if (e.target.classList.contains("close_multi_item")) {}
   console.log(e.target.classList);
-  if (block.contains("open")) {
+  if (block.classList.contains("open")) {
     block.remove("open");
     block.style.opacity = "0";
     block.style.visibility = "hidden";
   } else {
-    block.add("open");
+    block.classList.add("open");
     block.style.opacity = "1";
     block.style.visibility = "visible";
   }
