@@ -10,18 +10,19 @@
         <div class="multi-select-control__label"></div>
     </div>
     <div class="multi-select-control__container">
-        <div class="multi-select-control">
-            <div class="flex-1 d-flex flex-wrap">
-                <!-- active languages -->
+        <div class="multi-select-control" data-name="language">
+            <input class="hidden_input" type="hidden" name="language">
+            <div class="flex-1 d-flex flex-wrap multi_select_h">
+                <!--
                 <div class="multi-select-control__item">
-                    <span class="my-auto">English</span>
-                    <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close">
+                    <span class="my-auto" data-id="">English</span>
+                    <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close close_multi_item">
                 </div>  
-                <!-- active languages -->
+                -->
             </div>
-        </div>
-        <div class="multi-select-control__menu">
-            <% for object in languages_list.iter() { %>
+        </div> 
+        <div class="multi-select-control__menu" style="max-height:450px">
+            <% for object in languages_list.iter() { %> 
                 <div data-pk="<%= object.id %>" class="multi-select-control__menu-item"><span><%= object.title %></span></div>
             <% } %>
         </div>

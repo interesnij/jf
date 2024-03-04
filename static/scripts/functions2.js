@@ -411,7 +411,7 @@ function get_active_button() {
           elem_ = document.createElement('span');
           elem_.innerHTML = ajax_link.responseText;
           if (!_class) {
-            console.log("default block!");
+            //console.log("default block!");
             meta_block.innerHTML = elem_.innerHTML;
             _meta = elem_.querySelector(".doc_title");
             _title = _meta.getAttribute("data-title");
@@ -427,7 +427,7 @@ function get_active_button() {
           }
           else {
             document.body.querySelector("." + _class).innerHTML = elem_.querySelector("." + _class).innerHTML;
-            console.log("class exist!", _class);
+            //console.log("class exist!", _class);
           }
         } catch { null };
 

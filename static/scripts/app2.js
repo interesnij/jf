@@ -1,7 +1,46 @@
 
 
 //пока сокеты оставим неактивными
-//connect() 
+//connect()
+
+on('body', 'click', '.multi_select_h', function(e) {
+  block = this.parentElement.nextElementSibling;
+  //if (e.target.classList.contains("close_multi_item")) {}
+  console.log(e.target.classList);
+  if (block.contains("open")) {
+    block.remove("open");
+    block.style.opacity = "0";
+    block.style.visibility = "hidden";
+  } else {
+    block.add("open");
+    block.style.opacity = "1";
+    block.style.visibility = "visible";
+  }
+});
+
+on('body', 'click', '.multi-select-control__menu-item', function() {
+  block = this.parentElement.previousElementSibling;
+  pk = this.getAttribute("data-pk");
+  if (block.querySelector( '[data-pk=' + '"' + pk + '"' + ']' )) {
+      this.classList.remove("active");
+      name_c = block.querySelector( '[data-pk=' + '"' + pk + '"' + ']' );
+      name_c.parentElement.remove();
+      block.querySelector(".hidden_input" + pk).remove();
+  } else {
+      this.classList.remove("active");
+      input = document.createElement("input");
+      input.setAttribute("value", pk);
+      input.setAttribute("type", "hidden");
+      input.setAttribute("name", block.getAttribute("data-name"));
+      input.classList.add(".hidden_input" + pk);
+      block.append(input);
+      item = '<div class="multi-select-control__item"><span class="my-auto" data-id="' 
+      + pk +
+      '">'
+      + this.querySelector("span").innerHTML +
+      '</span><img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close close_multi_item"></div>';
+  }
+});
 
 on('body', 'click', '.menu-button', function() {
   block = this.nextElementSibling;
