@@ -27,34 +27,42 @@
                         </div>
                         
                         <div class="heading mt-3 col-12">Hourly Rate<span class="text-gray ml-2">Optional</span></div>
-                        <div class="col-6">
+                        <div class="col-12">
                             <div class="sc-fWPcWZ YixBW">
                                 <div class="flex-1 d-flex">
                                     <div class="sc-fHYyUA fHTtxI">
                                         <input name="hourly_rate" id="id_hourly_rate" pattern="[0-9]*" placeholder="Enter your hourly rate">
                                     </div>
                                 </div> 
-                                <div class="sc-gsxoIA kfwLZt">
-                                    <div class="select-control__container w-100" tabindex="0">
-                                        <div class="select-control__main border-none w-100 active">
-                                            <div class="d-flex">
-                                                <span class="my-auto">USD</span>
-                                                <input class="hidden_input" type="hidden" name="currency" value="1">
-                                            </div>
-                                            <img src="/static/images/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
-                                        </div> 
-                                        <div class="select-control__menu">
-                                            <div class="select-control__menu-item active" data-pk="1"><span>USD</span></div>
-                                            <div class="select-control__menu-item" data-pk="2"><span>GBP</span></div>
-                                            <div class="select-control__menu-item" data-pk="3"><span>ERU</span></div>
+                                <div class="sc-fbNZge kcjhkj">
+                                    <div class="flex-1 d-flex">
+                                        <div class="sc-GTVdH dXaChH">
+                                            <input id="id_hourly_rate" pattern="[0-9.]+" placeholder="" value="">
                                         </div>
                                     </div>
-                                    <div class="select-control__footer"></div>
+                                    <div class="sc-gsxoIA kfwLZt">
+                                        <div class="select-control__container w-100" tabindex="0">
+                                            <div class="select-control__main border-none w-100 active">
+                                                <div class="d-flex">
+                                                    <span class="my-auto">USD</span>
+                                                    <input class="hidden_input" type="hidden" name="currency" value="1">
+                                                </div>
+                                                <img src="/static/static/arrow-drop-down.svg" class="select-control__arrow ml-auto" alt="arrow">
+                                            </div>
+                                            <div class="select-control__menu">
+                                                <div class="select-control__menu-item active" data-pk="1"><span>USD</span></div>
+                                                <div class="select-control__menu-item" data-pk="2"><span>GBP</span></div>
+                                                <div class="select-control__menu-item" data-pk="3"><span>ERU</span></div>
+                                            </div>
+                                        </div>
+                                        <div class="select-control__footer"></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="load_content4" data-link="/load/languages" tabindex="0"></div>
+                        </div> 
+                        <div class="col-12">
+                            <div class="load_content4" data-link="/load/languages" tabindex="0"></div>
+                        </div> 
 
                         <div class="heading mt-3 col-12">Do you want to submit proposals for potential client engagements?</div>
                         <div class="col-12">
