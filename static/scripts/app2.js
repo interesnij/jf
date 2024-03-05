@@ -4,7 +4,7 @@
 //connect()
 
 on('body', 'click', '.multi_select_h', function(e) {
-  block = this.parentElement.nextElementSibling;
+  block = this.nextElementSibling;
   //if (e.target.classList.contains("close_multi_item")) {}
   console.log(e.target.classList);
   if (block.classList.contains("open")) {
@@ -19,7 +19,7 @@ on('body', 'click', '.multi_select_h', function(e) {
 });
 
 on('body', 'click', '.multi_item_h', function() {
-  block = this.parentElement.previousElementSibling;
+  block = this.parentElement.previousElementSibling.querySelector(".flex-wrap");
   pk = this.getAttribute("data-pk");
   if (block.querySelector( '[data-pk=' + '"' + pk + '"' + ']' )) {
       this.classList.remove("active");
@@ -940,10 +940,14 @@ on('body', 'click', '.add_firm_location_form', function() {
   block = this.parentElement.previousElementSibling;
   block.innerHTML = '<div class="d-flex flex-column w-100 pt-2"><div class="d-flex pr-3"></div><div class="col-12"><div class="row"><div class="input-control col-md-4 mt-2 load_content1 load_countries" data-link="/load/countries"></div><div class="input-control col-md-8"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Address</label></div><input class="id_address" name="address" placeholder="Enter an address here" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-4 mt-2 states_container"></div><div class="input-control col-md-4 mt-2 cities_container"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
   load_data(1, block);
-});
+}); 
 on('body', 'click', '.add_education_form', function() {
   block = this.parentElement.previousElementSibling;
   block.innerHTML = '<div class="d-flex w-100 col-12 mt-0"><div class="flex-1"><div class="row"><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Law school / Graduate Institute</label></div><input name="school"  class="school" placeholder="Enter a school / graduate institute name" type="text" class="school active"><div class="input-control__footer"></div></div><div class="input-control col-md-6 mt-2"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Years</label></div><input name="year" placeholder="Enter number of years" type="number" class="active year" value="1"><div class="input-control__footer"></div></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></div><span></span>';
+});
+on('body', 'click', '.add_office_address_form', function() {
+  block = this.parentElement.previousElementSibling;
+  block.innerHTML = '<div class="d-flex flex-column w-100 pt-2"><div class="d-flex pr-3"></div><div class="col-12"><div class="row"><div class="input-control col-md-4 load_content2 load_countries states_nieded" data-link="/load/countries"></div><div class="input-control col-md-8"><div class="d-flex justify-content-between align-items-center"><label class="input-control__label">Address</label></div><input class="id_address" name="address" placeholder="Enter an address here" type="text"><div class="input-control__footer"></div></div><div class="input-control col-md-4 states_container"></div><div class="input-control col-md-4 cities_container"></div><div class="input-control col-md-4"><div class="d-flex justify-content-between align-items-center"><label for="id_zip_code" class="input-control__label">Zip code</label></div><input id="id_zip_code" name="zip_code" placeholder="Enter a zip code here" type="text" class="active" value="10007"><div class="input-control__footer"></div></div></div></div><img class="sc-jXktde kxdlOK mb-auto close_juri_block" src="/static/images/close.svg"></img></div><span></span>';
 });
 
 on('body', 'click', '.select-control__menu-item', function() {

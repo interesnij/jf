@@ -9,17 +9,12 @@
     <div class="d-flex justify-content-between">
         <div class="multi-select-control__label"></div>
     </div>
-    <div class="multi-select-control__container">
-        <div class="multi-select-control" data-name="language">
-            <div class="flex-1 d-flex flex-wrap multi_select_h">
-                <!--
-                <div class="multi-select-control__item">
-                    <span class="my-auto" data-id="">English</span>
-                    <img src="/static/images/close.svg" alt="close" class="multi-select-control__item-close parent_remove">
-                </div>  
-                -->
-            </div>
-        </div> 
+    <div class="multi-select-control__container"> 
+        <div class="multi-select-control multi_select_h" data-name="language">
+            <div class="flex-1 d-flex flex-wrap"> 
+                <span class="my-auto place_h hidden">Select langauges</span>
+            </div>  
+        </div>
         <div class="multi-select-control__menu" style="max-height:450px">
             <% for object in languages_list.iter() { %> 
                 <div data-pk="<%= object.id %>" class="multi-select-control__menu-item multi_item_h"><span><%= object.title %></span></div>
