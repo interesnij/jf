@@ -541,6 +541,7 @@ function validate(
         } 
     }
 
+    console.log("validate error", is_error);
     if (is_error) {
       return false;
     }
