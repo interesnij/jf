@@ -509,7 +509,7 @@ function validate(
         } 
     }
     if (password2) {
-        if (!password1.value){
+        if (!password2.value){
             password2.style.border = "1px #FF0000 solid";
             password2.nextElementSibling.innerHTML = "Repeat the password";
             is_error = true;
