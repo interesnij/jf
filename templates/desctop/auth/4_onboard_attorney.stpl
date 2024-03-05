@@ -11,28 +11,36 @@
             <form class="js_form">
                 <div class="card-control p-4">
                 <div class="row">
-                        <div class="heading col-12">Accepted Appointment Type<span class="text-gray ml-2">Select all that apply</span></div>
+                        <div class="heading col-12">Accepted Appointment Type
+                            <span class="text-gray ml-2">Select all that apply</span>
+                        </div>
                         <div class="mt-1 d-flex flex-wrap col-12"> 
                             <div class="d-flex load_content1" data-link="/load/appointment_types"></div>
                         </div>
 
-                        <div class="heading mt-3 col-12">Fees and Payment<span class="text-gray ml-2">Select all that apply</span></div>
+                        <div class="heading mt-3 col-12">Fees and Payment
+                            <span class="text-gray ml-2">Select all that apply</span>
+                        </div>
                         <div class="mt-0 d-flex flex-wrap col-12">
                             <div class="d-flex load_content2" data-link="/load/fee_types"></div>
                         </div>
 
-                        <div class="heading mt-3 col-12">Accepted Payment Methods<span class="text-gray ml-2">Select all that apply</span></div>
+                        <div class="heading mt-3 col-12">Accepted Payment Methods
+                            <span class="text-gray ml-2">Select all that apply</span>
+                        </div>
                         <div class="mt-0 d-flex flex-wrap col-12">
                             <div class="d-flex load_content3" data-link="/load/payment_methods"></div>
                         </div>
                         
-                        <div class="heading mt-3 col-12">Hourly Rate<span class="text-gray ml-2">Optional</span></div>
+                        <div class="heading mt-3 col-12">Hourly Rate
+                            <span class="text-gray ml-2">Optional</span>
+                        </div>
                         <div class="col-6">
                             <div class="sc-fWPcWZ YixBW">
                                 <div class="sc-fbNZge kcjhkj">
                                     <div class="flex-1 d-flex">
                                         <div class="sc-GTVdH dXaChH">
-                                            <input id="id_hourly_rate" pattern="[0-9.]+" placeholder="" value="">
+                                            <input id="id_hourly_rate" name="hourly_rate" pattern="[0-9.]+" placeholder="500">
                                         </div>
                                     </div>
                                     <div class="sc-gsxoIA kfwLZt">
@@ -54,7 +62,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> 
+                        </div>
+                        <div class="col-6"></div> 
                         <div class="col-6">
                             <div class="load_content4" data-link="/load/languages" tabindex="0"></div>
                         </div> 

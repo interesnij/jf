@@ -388,8 +388,167 @@ function get_active_button() {
     } 
   //} catch { null }
 };
+
+function validate(
+    first_name, 
+    last_name, 
+    phone, 
+    attachments, 
+    country, 
+    state,
+    email,
+    password1,
+    password2,
+    year,
+    number,
+  ) 
+  {
+    let is_error = false;
+
+    if (first_name) {
+        if (!first_name.value){
+            first_name.style.border = "1px #FF0000 solid";
+            first_name.nextElementSibling.innerHTML = "First Name is required";
+            is_error = true;
+        }
+        else {
+            first_name.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            first_name.nextElementSibling.innerHTML = "";
+        }
+    }
+    if (last_name) {
+        if (!last_name.value){
+            last_name.style.border = "1px #FF0000 solid";
+            last_name.nextElementSibling.innerHTML = "Last Name is required";
+            is_error = true;
+        }
+        else {
+            last_name.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            last_name.nextElementSibling.innerHTML = "";
+        }
+    }
+    if (phone) {
+        if (!phone.value){
+            phone.style.border = "1px #FF0000 solid";
+            phone.nextElementSibling.innerHTML = "Phone Name is required";
+            is_error = true;
+        }
+        else {
+            phone.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            phone.nextElementSibling.innerHTML = "";
+        }
+    }
+    if (attachments) {
+          if (!attachments.value){
+            parent = attachments.parentElement;
+            parent.style.border = "1px #FF0000 solid";
+            parent.querySelector(".attachments_error").innerHTML = "Attachments is required";
+            is_error = true;
+        }
+        else {
+            parent = attachments.parentElement;
+            attachments.parent.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            attachments.parent.querySelector(".attachments_error").innerHTML = "";
+        }
+    }
+    if (country) {
+        if (!country.value){
+            country.style.border = "1px #FF0000 solid";
+            country.nextElementSibling.nextElementSibling.innerHTML = "Country is required";
+            is_error = true;
+        }
+        else {
+            country.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            country.nextElementSibling.nextElementSibling.innerHTML = "";
+        }
+    }
+    if (state) {
+        if (state != undefined && !state.value){
+            state.style.border = "1px #FF0000 solid";
+            state.nextElementSibling.nextElementSibling.innerHTML = "State is required";
+            is_error = true;
+        }
+        else if (state != undefined) {
+            state.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            state.nextElementSibling.nextElementSibling.innerHTML = "";
+        }
+    }
+    if (city) {
+        if (!city.value){
+            city.style.border = "1px #FF0000 solid";
+            city.nextElementSibling.nextElementSibling.innerHTML = "City is required";
+            is_error = true;
+        }
+        else {
+            city.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            city.nextElementSibling.nextElementSibling.innerHTML = "";
+        } 
+    }
+
+    if (email) {
+        if (!email.value){
+            email.style.border = "1px #FF0000 solid";
+            email.nextElementSibling.innerHTML = "Email is required";
+            is_error = true;
+        }
+        else {
+            email.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            email.nextElementSibling.innerHTML = "";
+        } 
+    }
+    if (password1) {
+        if (!password1.value){
+            password1.style.border = "1px #FF0000 solid";
+            password1.nextElementSibling.innerHTML = "Password is required";
+            is_error = true;
+        }
+        else {
+            password1.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            password1.nextElementSibling.innerHTML = "";
+        } 
+    }
+    if (password2) {
+        if (!password1.value){
+            password2.style.border = "1px #FF0000 solid";
+            password2.nextElementSibling.innerHTML = "Repeat the password";
+            is_error = true;
+        }
+        else {
+            password2.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            password2.nextElementSibling.innerHTML = "";
+        } 
+    }
+    if (year) {
+        if (!year.value){
+            year.style.border = "1px #FF0000 solid";
+            year.nextElementSibling.innerHTML = "Year is required";
+            is_error = true;
+        }
+        else {
+            year.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            year.nextElementSibling.innerHTML = "";
+        } 
+    }
+    if (number) {
+        if (!number.value){
+            number.style.border = "1px #FF0000 solid";
+            number.nextElementSibling.innerHTML = "Number is required";
+            is_error = true;
+        }
+        else {
+            number.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
+            number.nextElementSibling.innerHTML = "";
+        } 
+    }
+
+    if (is_error) {
+      return false;
+    }
+    return true;
+
+}
   
-  function ajax_get_reload(url, history_enable, ajax, _class) {
+function ajax_get_reload(url, history_enable, ajax, _class) {
     var ajax_link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     ajax_link.open( 'GET', url + "?ajax=" + ajax, true );  
   

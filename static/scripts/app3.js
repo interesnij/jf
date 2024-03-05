@@ -41,7 +41,7 @@ on('body', 'click', '.multi_item_h', function() {
 
       $close = document.createElement("img");
       $close.setAttribute("src", "/static/images/close.svg");
-      $close.classList.add("hidden_input", "multi-select-control__item-close", "parent_remove");
+      $close.classList.add("hidden_input", "multi-select-control__item-close");
       $close.setAttribute("alt", "close");
 
       $item = document.createElement("div");
@@ -60,7 +60,7 @@ on('body', 'click', '.multi_item_h', function() {
 });
 
 on('body', 'click', '.multi-select-control__item-close', function() {
-    block = this.parentElement.parentElement.nextElementSibling;
+    block = this.parentElement.parentElement.parentElement.nextElementSibling;
     pk = this.previousElementSibling.getAttribute("data-pk");
     this.parentElement.remove();
     name_c = block.querySelector( '[data-pk=' + '"' + pk + '"' + ']' );
@@ -607,82 +607,18 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   _jurisdictions_numbers = form.querySelectorAll(".id_number");
   _jurisdictions_years = form.querySelectorAll(".id_year");
 
-  // return normal fields styles 
-  _first_name.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-  _first_name.nextElementSibling.innerHTML = "";
+  let is_error = validate (
+    _first_name,
+    _last_name,
+    _phone,
+    _attachments,
+    _jurisdictions_countries[0],
+    _jurisdictions_states[0],
+    null, null, null,
+    _jurisdictions_years[0],
+    _jurisdictions_numbers[0]
+  );
   
-  _last_name.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-  _last_name.nextElementSibling.innerHTML = "";
-
-  _phone.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-  _phone.nextElementSibling.innerHTML = "";
-
-  _attachments.parentElement.style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-  _attachments.parentElement.querySelector(".attachments_error").innerHTML = "";
-
-  try {
-      for (let i = 0; i < _jurisdictions_countries.length; i++) {
-        _jurisdictions_countries[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-        _jurisdictions_countries[0].nextElementSibling.nextElementSibling.innerHTML = "";
-      }
-      for (let i = 0; i < _jurisdictions_numbers.length; i++) {
-        _jurisdictions_numbers[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-        _jurisdictions_numbers[0].nextElementSibling.innerHTML = "";
-      }
-      for (let i = 0; i < _jurisdictions_years.length; i++) {
-        _jurisdictions_years[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-        _jurisdictions_years[0].nextElementSibling.innerHTML = "";
-      }
-      for (let i = 0; i < _jurisdictions_states.length; i++) {
-        _jurisdictions_states[i].style.setProperty('border', '1px solid rgba(0, 0, 0, 0.25)', 'important');
-        _jurisdictions_states[0].nextElementSibling.nextElementSibling.innerHTML = "";
-      }
-  } catch { null }
-  /////
-
-  let is_error = false;
-  if (!_first_name.value){
-    _first_name.style.border = "1px #FF0000 solid";
-    _first_name.nextElementSibling.innerHTML = "First Name is required";
-    is_error = true;
-  };
-  if (!_last_name.value){
-    _last_name.style.border = "1px #FF0000 solid";
-    _last_name.nextElementSibling.innerHTML = "Last Name is required";
-    is_error = true;
-  }; 
-  if (!_phone.value){
-    _phone.style.border = "1px #FF0000 solid";
-    _phone.nextElementSibling.innerHTML = "Phone is required";
-    is_error = true;
-  };
-  if (!_attachments.value){
-    parent = _attachments.parentElement;
-    parent.style.border = "1px #FF0000 solid";
-    parent.querySelector(".attachments_error").innerHTML = "Registration Attachments is required";
-    is_error = true;
-  };
-  if (!_jurisdictions_countries[0].value){
-    _jurisdictions_countries[0].style.border = "1px #FF0000 solid";
-    _jurisdictions_countries[0].nextElementSibling.nextElementSibling.innerHTML = "Country is required";
-    is_error = true;
-  };
-  console.log(_jurisdictions_states[0]);
-  if (_jurisdictions_states[0] != undefined && !_jurisdictions_states[0].value){
-    _jurisdictions_states[0].style.border = "1px #FF0000 solid";
-    _jurisdictions_states[0].nextElementSibling.nextElementSibling.innerHTML = "State is required";
-    is_error = true;
-  };
-  if (!_jurisdictions_numbers[0].value){
-    _jurisdictions_numbers[0].style.border = "1px #FF0000 solid";
-    _jurisdictions_numbers[0].nextElementSibling.innerHTML = "Registration Number is required";
-    is_error = true;
-  };
-  if (!_jurisdictions_years[0].value){
-    _jurisdictions_years[0].style.border = "1px #FF0000 solid";
-    _jurisdictions_years[0].nextElementSibling.innerHTML = "Year Admitted is required";
-    is_error = true;
-  };
   console.log("is_error", is_error);
   if (is_error) {
     return;
@@ -706,7 +642,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   }; 
   
   /////
-  file_data = new FormData();
+    file_data = new FormData();
     file_data.append("token", "111");
     file_data.append("folder", "111");
     file_data.append("object_id", "111");
@@ -731,19 +667,12 @@ on('body', 'click', '.register_final_attorney_btn', function() {
         console.log("return");
     }};
     _link.send(file_data);
+    /////
 
-  ////
- 
-  //files = send_files(_attachments);
   is_disciplined = false;
   if(form.querySelector('#disciplined_true').checked) {
     is_disciplined = true;
   }
-  console.log("_jurisdictions_numbers ", _jurisdictions_numbers);
-  console.log("_jurisdictions_numbers length ", _jurisdictions_numbers.length);
-  console.log("jurisdictions ", jurisdictions);
-  console.log("files ", files);
-  console.log("disciplined ", is_disciplined);
 
   fObject = {
     "email": email,
