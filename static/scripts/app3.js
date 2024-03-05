@@ -607,7 +607,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
   _jurisdictions_numbers = form.querySelectorAll(".id_number");
   _jurisdictions_years = form.querySelectorAll(".id_year");
 
-  let is_error = validate (
+  let is_ok = validate (
     _first_name,
     _last_name,
     _phone,
@@ -618,9 +618,9 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     _jurisdictions_years[0],
     _jurisdictions_numbers[0]
   );
-  
-  console.log("is_error", is_error);
-  if (is_error) {
+
+  console.log("is_ok", is_ok);
+  if (!is_ok) {
     return;
   }
 
