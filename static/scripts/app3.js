@@ -4,7 +4,7 @@
 //connect()
 
 on('body', 'click', '.multi_select_h', function(e) {
-  block = this.nextElementSibling;
+  block = this.nextElementSibling; 
   //if (e.target.classList.contains("close_multi_item")) {}
   console.log(e.target.classList);
   if (block.classList.contains("open")) {
@@ -51,6 +51,11 @@ on('body', 'click', '.multi_item_h', function() {
       $item.append($close);
 
       block.append($item);
+      
+      items_block = this.parentElement;
+      items_block.classList.remove("open");
+      items_block.style.opacity = "0";
+      items_block.style.visibility = "hidden";
   }
 });
 
