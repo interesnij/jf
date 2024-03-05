@@ -396,6 +396,7 @@ function validate(
     attachments, 
     country, 
     state,
+    city,
     email,
     password1,
     password2,
