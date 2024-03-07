@@ -10,13 +10,13 @@
             <div class="label">Step 2 of 2</div>
             <div class="title mb-4">Additional Information</div>
             <form class="js_form">
-                <div class="card-control">
-                    <div class="d-flex">
+                <div class="card-control">  
+                    <div class="d-flex firm_plus_input">
                         <span class="my-1">I am signing up as a company or organization</span>
                         <div class="sc-bQdRvg hZpUCz ml-auto">
                             <div class="">
                                 <label class="checkbox-control">
-                                    <input class="firm_plus_input" type="checkbox"><span></span>
+                                    <input class="f_checkbox" type="checkbox"><span></span>
                                 </label>
                             </div>
                         </div> 
@@ -27,8 +27,13 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <label for="is_firm_name" class="input-control__label">Company Name</label>
                             </div>
-                            <input id="is_firm_name" name="firm_name" placeholder="Enter your company name" type="text">
+                            <input list="firm_name_list" class="search_firm_name" id="is_firm_name" name="firm_name" placeholder="Enter your company name" type="text">
                             <div class="input-control__footer"></div>
+                            <datalist id="firm_name_list">
+                                <!--
+                                    <option value=""></option>
+                                -->
+                            </datalist>
                         </div>
                         <div class="input-control col-6 mt-1">
                             <div class="d-flex justify-content-between align-items-center">

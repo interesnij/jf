@@ -611,7 +611,7 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     _first_name,
     _last_name,
     _phone,
-    _attachments,
+    _attachments, 
     _jurisdictions_countries[0],
     _jurisdictions_states[0],
     null, null, null,
@@ -641,30 +641,14 @@ on('body', 'click', '.register_final_attorney_btn', function() {
     //} catch { null }
   }; 
   
-  /////
-    file_data = new FormData();
-    file_data.append("token", "111");
-    file_data.append("folder", "111");
-    file_data.append("object_id", "111");
-    files = _attachments.files;
-    for (let i = 0; i < files.length; i++) {
-        console.log("upload", files[i]);
-        file_data.append("file", files[i]);
-    } 
+  ///// 
+    file_data = get_file_data(_attachments.files);
     _link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
     _link.open( 'POST', "https://k.juslaw.online/classic_create/", true );
     _link.onreadystatechange = function () {
     if ( _link.readyState == 4 && _link.status == 200 ) {
         data = JSON.parse(_link.responseText);
-        res_files = data["files"];
-        if (res_files.length < 1) {
-            console.log("res_files.length < 1");
-        }
-        else {
-            files = res_files;
-        }
-    } else {
-        console.log("return");
+        files = data["files"];
     }};
     _link.send(file_data);
     /////
@@ -854,13 +838,39 @@ on('body', 'click', '.remove_avatar_c', function() {
   block.querySelector(".user-avatar").innerHTML = '<svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>';
 });
 
+on('body', 'change', '.search_firm_name', function() {
+  val = this.value;
+  if (val.length < 3) {
+      console.log("length < 3");
+      return;
+  }
+  block = this.nextElementSibling.nextElementSibling;
+  _link = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject( 'Microsoft.XMLHTTP' );
+  _link.open( 'POST', "https://backend.juslaw.com/api/v1/users/law-firms/?search=" + val, true );
+  _link.onreadystatechange = function () {
+  if ( _link.readyState == 4 && _link.status == 200 ) {
+      data = JSON.parse(_link.responseText);
+      list = data["results"];
+      for (let i = 0; i < list.length; i++) {
+        opt = document.createElement("option");
+        opt.setAttribute("value", list[i]);
+        block.append(opt);
+        console.log("value", list[i]);
+      }
+  }};
+  _link.send();
+});
 
-on('body', 'click', '.firm_plus_input', function(event) {
-  block = this.parentElement.parentElement.parentElement.parentElement.nextElementSibling;
-  if (event.currentTarget.checked) {
-    block.classList.remove("hidden");
-  } else {
-    block.classList.add("hidden");
+
+on('body', 'click', '.firm_plus_input', function() {
+  block = this.nextElementSibling;
+  check = block.querySelector(".f_checkbox");
+  if (block.classList.contains("hidden")) {
+      block.classList.remove("hidden");
+      check.setAttribute("checked", "true");
+  } else { 
+      block.classList.add("hidden");
+      check.setAttribute("checked", "false");
   }
 });
 

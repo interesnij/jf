@@ -3,7 +3,7 @@
     <% for object in specialities_list.iter() { %>
         <div class="col-md-6 my-1">
             <label class="checkbox-component"><%= object.title %>
-                <input data-pk="<%= object.id %>" name="speciality" type="checkbox">
+                <input class="speciality" data-pk="<%= object.id %>" name="speciality" type="checkbox">
                 <span></span>
             </label>
         </div>

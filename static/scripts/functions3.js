@@ -388,6 +388,17 @@ function get_active_button() {
     } 
   //} catch { null }
 };
+function get_file_data(_files) {
+    file_data = new FormData();
+    file_data.append("token", "111");
+    file_data.append("folder", "111");
+    file_data.append("object_id", "111");
+    for (let i = 0; i < _files.length; i++) {
+      file_data.append("file", _files[i]);
+    }
+    return file_data;
+}
+
 
 function validate(
     first_name, 
