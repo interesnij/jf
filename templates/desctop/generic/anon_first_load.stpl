@@ -23,7 +23,7 @@
   </head>
   <body>
     <div id="reload" tabindex="-1" style="outline: none;"></div>
-    <script type="text/javascript" src="/static/scripts/functions3.js?ver6"></script>
-    <script type="text/javascript" src="/static/scripts/app3.js?ver6"></script>
+    <script type="text/javascript" src="/static/scripts/functions4.js?ver6"></script>
+    <script type="text/javascript" src="/static/scripts/app4.js?ver6"></script>
   </body>
 </html> 
